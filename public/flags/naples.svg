@@ -1,0 +1,17 @@
+<!-- Kingdom of Naples / Two Sicilies: blue field with Bourbon fleur-de-lis -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+  <rect width="3" height="2" fill="#003DA5"/>
+  <!-- Simplified Bourbon fleur-de-lis in gold, centred -->
+  <g transform="translate(1.5,1) scale(0.18)" fill="#F5C518">
+    <!-- stem -->
+    <rect x="-1" y="0" width="2" height="4"/>
+    <!-- left petal -->
+    <ellipse cx="-3" cy="-1" rx="2.2" ry="1.2" transform="rotate(-30,-3,-1)"/>
+    <!-- right petal -->
+    <ellipse cx="3" cy="-1" rx="2.2" ry="1.2" transform="rotate(30,3,-1)"/>
+    <!-- centre petal -->
+    <ellipse cx="0" cy="-3.5" rx="1.2" ry="2.2"/>
+    <!-- base bar -->
+    <rect x="-2.5" y="1.5" width="5" height="1.2" rx="0.4"/>
+  </g>
+</svg>

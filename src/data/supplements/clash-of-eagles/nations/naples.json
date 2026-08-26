@@ -2,6 +2,7 @@
   "id": "naples",
   "name": "The Neapolitan Army 1812",
   "blurb": "Murat's Kingdom of Naples contingent.",
+  "flagFile": "/flags/naples.svg",
   "units": [
     {
       "id": "np-div-cmd",

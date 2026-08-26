@@ -2,6 +2,7 @@
   "id": "french-imperial-guard",
   "name": "The French Imperial Guard 1812",
   "blurb": "Napoleon's Old, Middle and Young Guard, plus their elite cavalry.",
+  "flagFile": "/flags/french-empire.svg",
   "units": [
     {
       "id": "fig-div-cmd",

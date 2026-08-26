@@ -1,0 +1,15 @@
+<!-- Kingdom of Westphalia (Jerome Bonaparte): blue field with central white horse (simplified) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+  <rect width="3" height="2" fill="#003DA5"/>
+  <!-- Simplified white horse (Niedersächsisches Ross) -->
+  <g transform="translate(1.5,1.05) scale(0.26)" fill="#ffffff">
+    <ellipse cx="0" cy="0" rx="1.4" ry="1.0" transform="rotate(-20)"/>
+    <ellipse cx="0.5" cy="-1.4" rx="0.6" ry="1.0" transform="rotate(15,0.5,-1.4)"/>
+    <ellipse cx="1.0" cy="-2.4" rx="0.9" ry="0.6" transform="rotate(-10,1,-2.4)"/>
+    <rect x="0.5" y="0.8" width="0.4" height="1.4" rx="0.2" transform="rotate(-30,0.7,0.8)"/>
+    <rect x="0.8" y="0.8" width="0.4" height="1.4" rx="0.2" transform="rotate(-50,1.0,0.8)"/>
+    <rect x="-0.8" y="0.5" width="0.4" height="1.5" rx="0.2"/>
+    <rect x="-1.2" y="0.5" width="0.4" height="1.5" rx="0.2"/>
+    <path d="M-1.4,0 Q-3,-0.5 -2.5,-1.8" stroke="#ffffff" stroke-width="0.35" fill="none"/>
+  </g>
+</svg>

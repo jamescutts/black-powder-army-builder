@@ -2,6 +2,7 @@
   "id": "france",
   "name": "The French 1812",
   "blurb": "The Grande Armée's line regiments and their German and Iberian auxiliaries.",
+  "flagFile": "/flags/france.svg",
   "units": [
     {
       "id": "fr-div-cmd",

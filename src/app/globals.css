@@ -10,3 +10,8 @@ body {
 .mantine-Paper-root[data-with-border] {
   --paper-border-width: 2px;
 }
+
+/* Centre-align orphan cards in the nation grid */
+.nation-grid {
+  justify-content: center;
+}

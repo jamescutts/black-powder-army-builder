@@ -2,6 +2,7 @@
   "id": "vistula-legion",
   "name": "Vistula Legion",
   "blurb": "A standalone Polish legion list; artillery drawn from the Imperial Guard Artillery Reserve.",
+  "flagFile": "/flags/poland.svg",
   "units": [
     {
       "id": "vl-div-cmd",

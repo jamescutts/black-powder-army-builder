@@ -2,6 +2,7 @@
   "id": "spanish",
   "name": "The Spanish 1807-1814",
   "blurb": "'Guerra al Cuchillo' — the Spanish regular army and its guerrilla-descended irregulars.",
+  "flagFile": "/flags/spain.svg",
   "units": [
     {
       "id": "sp-div-cmd",

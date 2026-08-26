@@ -2,6 +2,7 @@
   "id": "russia",
   "name": "Russia 1812-15",
   "blurb": "The Tsar's army, from raw Opolchenie militia to the Imperial Guard.",
+  "flagFile": "/flags/russia.svg",
   "units": [
     {
       "id": "ru-div-cmd",

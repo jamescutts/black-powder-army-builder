@@ -2,6 +2,7 @@
   "id": "peninsular-british",
   "name": "The Peninsular British 1806-1814",
   "blurb": "Wellington's Anglo-Portuguese army, from Vimeiro to the Pyrenees.",
+  "flagFile": "/flags/britain.svg",
   "units": [
     {
       "id": "pb-div-cmd",

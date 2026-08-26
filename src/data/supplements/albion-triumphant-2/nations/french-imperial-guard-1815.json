@@ -2,6 +2,7 @@
   "id": "french-imperial-guard-1815",
   "name": "The French Army of the North 1815 — Imperial Guard",
   "blurb": "Napoleon's Old, Middle and Young Guard during the Hundred Days.",
+  "flagFile": "/flags/french-empire.svg",
   "units": [
     {
       "id": "fig15-div-cmd",

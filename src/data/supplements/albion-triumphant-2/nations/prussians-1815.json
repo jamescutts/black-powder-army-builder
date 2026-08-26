@@ -2,6 +2,7 @@
   "id": "prussians-1815",
   "name": "The Prussians 1815",
   "blurb": "Blücher's army — the bridesmaid, but never the bride, at Waterloo.",
+  "flagFile": "/flags/prussia.svg",
   "units": [
     {
       "id": "pr15-brig-cmd",

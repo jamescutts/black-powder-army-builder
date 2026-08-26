@@ -1,0 +1,5 @@
+<!-- Kingdom of Saxony: white over green horizontal bicolour -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+  <rect width="3" height="1" y="0" fill="#ffffff"/>
+  <rect width="3" height="1" y="1" fill="#009900"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+  <!-- Blue field -->
+  <rect width="60" height="30" fill="#012169"/>
+
+  <!-- St Andrew: white X, full width -->
+  <polygon points="0,0 8,0 30,11 52,0 60,0 60,4 38,15 60,26 60,30 52,30 30,19 8,30 0,30 0,26 22,15 0,4" fill="#ffffff"/>
+
+  <!-- St Patrick: red counterchanged X (offset — red only on upper-left and lower-right of each arm) -->
+  <!-- Top-left arm: red on left side -->
+  <polygon points="0,0 0,3 27,14 30,12 30,11" fill="#C8102E"/>
+  <!-- Top-right arm: red on right side -->
+  <polygon points="60,0 60,3 33,14 30,12 30,11" fill="#C8102E"/>
+  <!-- Bottom-left arm: red on left side -->
+  <polygon points="0,30 0,27 27,16 30,18 30,19" fill="#C8102E"/>
+  <!-- Bottom-right arm: red on right side -->
+  <polygon points="60,30 60,27 33,16 30,18 30,19" fill="#C8102E"/>
+
+  <!-- St George: white fimbriation -->
+  <rect x="24" y="0"  width="12" height="30" fill="#ffffff"/>
+  <rect x="0"  y="9"  width="60" height="12" fill="#ffffff"/>
+  <!-- St George: red cross -->
+  <rect x="26" y="0"  width="8"  height="30" fill="#C8102E"/>
+  <rect x="0"  y="11" width="60" height="8"  fill="#C8102E"/>
+</svg>

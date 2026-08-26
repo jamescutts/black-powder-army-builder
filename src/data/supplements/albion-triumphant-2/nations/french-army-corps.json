@@ -2,6 +2,7 @@
   "id": "french-army-corps",
   "name": "The French Army of the North 1815 — Army Corps",
   "blurb": "Napoleon's line corps of the Waterloo campaign.",
+  "flagFile": "/flags/france.svg",
   "units": [
     {
       "id": "fac-div-cmd",

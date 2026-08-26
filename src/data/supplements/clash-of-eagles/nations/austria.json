@@ -2,6 +2,7 @@
   "id": "austria",
   "name": "Austria 1812",
   "blurb": "Austria's contribution to the invasion under Schwarzenberg.",
+  "flagFile": "/flags/austria.svg",
   "units": [
     {
       "id": "at-inf-div-cmd",

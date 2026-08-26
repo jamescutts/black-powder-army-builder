@@ -89,6 +89,10 @@ export interface Nation {
   supplementId: string;
   name: string;
   blurb: string;
+  /** Path to the flag SVG served from /public, e.g. "/flags/france.svg" */
+  flagFile?: string;
+  /** Multiple flag paths, used when a nation entry covers several states (e.g. Confederation of the Rhine) */
+  flagFiles?: string[];
   units: UnitEntry[];
   /** Brigade types available to this nation. Infantry/Cavalry/Artillery units can only be added inside a brigade instance. */
   brigades: BrigadeType[];

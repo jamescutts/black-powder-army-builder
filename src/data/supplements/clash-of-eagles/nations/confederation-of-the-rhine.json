@@ -2,6 +2,7 @@
   "id": "confederation-of-the-rhine",
   "name": "Saxony, Bavaria, Württemberg, Westphalia & the Confederation of the Rhine",
   "blurb": "The German states of Napoleon's Confederation of the Rhine, 1812.",
+  "flagFiles": ["/flags/saxony.svg", "/flags/bavaria.svg", "/flags/wurttemberg.svg", "/flags/westphalia.svg"],
   "units": [
     {
       "id": "cotr-div-cmd",

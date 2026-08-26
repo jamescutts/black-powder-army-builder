@@ -2,6 +2,7 @@
   "id": "grand-duchy-of-warsaw",
   "name": "The Grand Duchy of Warsaw 1812",
   "blurb": "Polish forces, Lithuanian formations and the Bug Division.",
+  "flagFile": "/flags/grand-duchy-warsaw.svg",
   "units": [
     {
       "id": "gdw-div-cmd",

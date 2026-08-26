@@ -2,6 +2,7 @@
   "id": "prussia",
   "name": "Prussia 1812",
   "blurb": "The reformed Prussian army of the Wars of Liberation.",
+  "flagFile": "/flags/prussia.svg",
   "units": [
     {
       "id": "pr-brig-cmd",

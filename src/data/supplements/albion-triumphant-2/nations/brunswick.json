@@ -2,6 +2,7 @@
   "id": "brunswick",
   "name": "The Anglo-Netherlands Army 1815 — Brunswick",
   "blurb": "The 'Black Brunswickers' of Friedrich Wilhelm, Duke of Brunswick.",
+  "flagFile": "/flags/brunswick.svg",
   "units": [
     {
       "id": "bw-div-cmd",

@@ -1,0 +1,23 @@
+<!-- Kingdom of Bavaria: white and blue lozenges (simplified as horizontal bicolour) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+  <!-- 4 columns of alternating lozenges, simplified as vertical stripes -->
+  <rect width="3" height="1" y="0" fill="#ffffff"/>
+  <rect width="3" height="1" y="1" fill="#0070C0"/>
+  <!-- lozenge overlay, 2 rows x 4 cols -->
+  <rect width="0.75" height="0.5" x="0"    y="0"   fill="#0070C0"/>
+  <rect width="0.75" height="0.5" x="0.75" y="0"   fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="1.5"  y="0"   fill="#0070C0"/>
+  <rect width="0.75" height="0.5" x="2.25" y="0"   fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="0"    y="0.5" fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="0.75" y="0.5" fill="#0070C0"/>
+  <rect width="0.75" height="0.5" x="1.5"  y="0.5" fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="2.25" y="0.5" fill="#0070C0"/>
+  <rect width="0.75" height="0.5" x="0"    y="1"   fill="#0070C0"/>
+  <rect width="0.75" height="0.5" x="0.75" y="1"   fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="1.5"  y="1"   fill="#0070C0"/>
+  <rect width="0.75" height="0.5" x="2.25" y="1"   fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="0"    y="1.5" fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="0.75" y="1.5" fill="#0070C0"/>
+  <rect width="0.75" height="0.5" x="1.5"  y="1.5" fill="#ffffff"/>
+  <rect width="0.75" height="0.5" x="2.25" y="1.5" fill="#0070C0"/>
+</svg>

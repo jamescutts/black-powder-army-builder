@@ -2,6 +2,7 @@
   "id": "peninsular-french",
   "name": "The Peninsular French 1807-1814",
   "blurb": "The Armées d'Espagne — Napoleon's marshals against Wellington, from Vimeiro to Toulouse.",
+  "flagFile": "/flags/france.svg",
   "units": [
     {
       "id": "pf-div-cmd",

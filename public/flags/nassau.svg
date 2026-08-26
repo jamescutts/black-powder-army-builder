@@ -1,0 +1,5 @@
+<!-- Nassau: orange over blue diagonal, simplified as horizontal bicolour -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
+  <rect width="3" height="1" y="0" fill="#F77F00"/>
+  <rect width="3" height="1" y="1" fill="#003DA5"/>
+</svg>
