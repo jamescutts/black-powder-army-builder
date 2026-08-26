@@ -1,0 +1,376 @@
+{
+  "id": "prussia",
+  "name": "Prussia 1812",
+  "blurb": "The reformed Prussian army of the Wars of Liberation.",
+  "units": [
+    {
+      "id": "pr-brig-cmd",
+      "name": "Infantry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "1+ per army; may add up to 1 sub commander for 10 points"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "pr-cav-brig-cmd",
+      "name": "Cavalry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "pr-musketeer",
+      "name": "Musketeer",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "pr-fusilier",
+      "name": "Fusilier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "pr-jager",
+      "name": "Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "pr-guard-musketeer",
+      "name": "Guard Musketeer",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 47
+    },
+    {
+      "id": "pr-guard-fusilier",
+      "name": "Guard Fusilier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 50
+    },
+    {
+      "id": "pr-dragoon",
+      "name": "Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "pr-hussars",
+      "name": "Hussars",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "pr-foot-arty-half",
+      "name": "Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
+      "id": "pr-foot-arty",
+      "name": "Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "pr-horse-arty-half",
+      "name": "Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 22
+    },
+    {
+      "id": "pr-horse-arty",
+      "name": "Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "pr-heavy-arty-half",
+      "name": "Heavy Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Smoothbore Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
+    },
+    {
+      "id": "pr-heavy-arty",
+      "name": "Heavy Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Smoothbore Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    }
+  ],
+  "brigades": [
+    {
+      "id": "pr-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Musketeer Battalion (1-2 per regiment, 1-2 regiments per brigade)",
+          "unitIds": [
+            "pr-musketeer",
+            "pr-guard-musketeer"
+          ],
+          "min": 1,
+          "max": 4
+        },
+        {
+          "label": "Fusilier Battalion (0-1 per regiment, optional)",
+          "unitIds": [
+            "pr-fusilier",
+            "pr-guard-fusilier"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Attached Jäger Battalion (optional, brigade support)",
+          "unitIds": [
+            "pr-jager"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Attached Dragoon Regiment (optional, brigade support, 1 per army)",
+          "unitIds": [
+            "pr-dragoon"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr-dragoon",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Attached Hussar Regiment (optional, brigade support, 1 per army)",
+          "unitIds": [
+            "pr-hussars"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr-hussars",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Foot Artillery Battery (optional, if 6+ battalions taken)",
+          "unitIds": [
+            "pr-foot-arty-half",
+            "pr-foot-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "pr-brig-cmd",
+      "note": "Brigade Support is ONE choice of Jäger, Dragoon or Hussar per brigade (not enforced structurally — pick only one)"
+    },
+    {
+      "id": "pr-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Dragoon Regiment (max 2)",
+          "unitIds": [
+            "pr-dragoon"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Hussar Regiment (max 2)",
+          "unitIds": [
+            "pr-hussars"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Horse Artillery Battery (optional, max 1)",
+          "unitIds": [
+            "pr-horse-arty-half",
+            "pr-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "2-4 total choices per brigade (not fully enforced); 1 per Infantry Brigade in the army",
+      "commanderUnitId": "pr-cav-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "pr-infantry-brigade"
+        ],
+        "ratio": 1
+      }
+    },
+    {
+      "id": "pr-army-artillery",
+      "name": "Army Artillery",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "pr-heavy-arty-half",
+            "pr-heavy-arty",
+            "pr-foot-arty-half",
+            "pr-foot-arty",
+            "pr-horse-arty-half",
+            "pr-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "note": "Up to 1 Heavy battery (if 3 brigades taken), up to 2 Foot batteries (1 per 2 brigades), up to 1 Horse battery (if 3 brigades taken). A brigade can carry no more than 2 batteries."
+    }
+  ],
+  "notes": [
+    "1+ Infantry Brigades: 1-2 Infantry Regiments (1-2 Musketeer battalions and 0-1 Fusilier battalion each), plus Brigade Support (Jäger battalion, or a Dragoon/Hussar regiment per army) and Artillery Support (1 Foot battery if 6+ battalions taken).",
+    "Army Artillery: up to 1 Heavy battery (if 3 brigades taken), up to 2 Foot batteries (1 per 2 brigades), up to 1 Horse battery (if 3 brigades taken). A brigade can carry no more than 2 batteries.",
+    "Up to 2 Cavalry Brigades (1 per Infantry Brigade in the army): 2-4 choices of up to 2 Dragoon regiments, up to 2 Hussar regiments, up to 1 Horse Artillery battery.",
+    "Allies: a Late Prussian army can take 25% allies from any one allied list."
+  ]
+}

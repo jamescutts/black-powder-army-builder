@@ -1,0 +1,447 @@
+{
+  "id": "prussians-1815",
+  "name": "The Prussians 1815",
+  "blurb": "Blücher's army — the bridesmaid, but never the bride, at Waterloo.",
+  "units": [
+    {
+      "id": "pr15-brig-cmd",
+      "name": "Infantry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "A brigade commander must have one Prussian infantry brigade; may purchase a subordinate commander for +10 points"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "pr15-cav-cmd",
+      "name": "Cavalry / Landwehr Cavalry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "pr15-musketeer",
+      "name": "Musketeer",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "pr15-fusilier",
+      "name": "Fusilier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Sharpshooters",
+        "Skirmish"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "pr15-jager-bn",
+      "name": "Jäger Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Elite 5+",
+        "Reliable",
+        "Sharpshooters",
+        "Skirmish"
+      ],
+      "cost": 50
+    },
+    {
+      "id": "pr15-jager-coys",
+      "name": "Jäger Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Elite 5+",
+        "Reliable",
+        "Sharpshooters",
+        "Skirmish"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "pr15-jager-coy",
+      "name": "Jäger Company",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "2",
+      "shooting": "1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Elite 5+",
+        "Reliable",
+        "Sharpshooters",
+        "Skirmish"
+      ],
+      "cost": 21
+    },
+    {
+      "id": "pr15-schutzen",
+      "name": "Schützen",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Rifle Mixed Formation",
+        "Skirmish",
+        "Sharpshooters"
+      ],
+      "cost": 32
+    },
+    {
+      "id": "pr15-landwehr",
+      "name": "Landwehr Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Unreliable"
+      ],
+      "cost": 33
+    },
+    {
+      "id": "pr15-dragoon",
+      "name": "Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "pr15-uhlan",
+      "name": "Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "pr15-hussar",
+      "name": "Hussars",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "pr15-mounted-landwehr",
+      "name": "Mounted Landwehr",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "5",
+      "morale": "5",
+      "stamina": "2",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Unreliable"
+      ],
+      "cost": 32
+    },
+    {
+      "id": "pr15-foot-arty",
+      "name": "Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "pr15-horse-arty",
+      "name": "Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 26
+    },
+    {
+      "id": "pr15-heavy-arty",
+      "name": "Heavy Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    }
+  ],
+  "brigades": [
+    {
+      "id": "pr15-infantry-brigade",
+      "name": "Prussian Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "commanderUnitId": "pr15-brig-cmd",
+      "slots": [
+        {
+          "label": "Musketeer Battalion (1-2 per regiment, 1-2 Line Regiments per brigade)",
+          "unitIds": [
+            "pr15-musketeer"
+          ],
+          "min": 2,
+          "max": 4
+        },
+        {
+          "label": "Fusilier Battalion (0-1 per regiment, optional)",
+          "unitIds": [
+            "pr15-fusilier"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Landwehr Battalion (1-2 Landwehr Regiments)",
+          "unitIds": [
+            "pr15-landwehr"
+          ],
+          "min": 2,
+          "max": 6
+        },
+        {
+          "label": "Attached Jäger Company (1 per infantry regiment chosen)",
+          "unitIds": [
+            "pr15-jager-coy",
+            "pr15-jager-coys",
+            "pr15-jager-bn"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Attached Small Hussar Regiment (optional, 1 per army)",
+          "unitIds": [
+            "pr15-hussar"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr15-hussar",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Attached Small Landwehr Cavalry Regiment (optional, 1 per army)",
+          "unitIds": [
+            "pr15-mounted-landwehr"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr15-mounted-landwehr",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Attached Small Schützen Battalion (optional, 1 per army)",
+          "unitIds": [
+            "pr15-schutzen"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr15-schutzen",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Foot Artillery Battery (optional, if 4+ battalions taken)",
+          "unitIds": [
+            "pr15-foot-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "pr15-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "pr15-cav-cmd",
+      "note": "1 per 2 Infantry Brigades taken; choose Cavalry or Landwehr Cavalry Brigades",
+      "slots": [
+        {
+          "label": "Uhlan, Dragoon or Hussar Regiment",
+          "unitIds": [
+            "pr15-uhlan",
+            "pr15-dragoon",
+            "pr15-hussar"
+          ],
+          "min": 2,
+          "max": 4
+        },
+        {
+          "label": "Horse Artillery Battery (optional)",
+          "unitIds": [
+            "pr15-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "pr15-infantry-brigade"
+        ],
+        "ratio": 2
+      }
+    },
+    {
+      "id": "pr15-landwehr-cavalry-brigade",
+      "name": "Landwehr Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "pr15-cav-cmd",
+      "note": "1 per 2 Infantry Brigades taken; choose Cavalry or Landwehr Cavalry Brigades",
+      "slots": [
+        {
+          "label": "Landwehr Cavalry Regiment",
+          "unitIds": [
+            "pr15-mounted-landwehr"
+          ],
+          "min": 2,
+          "max": 5
+        },
+        {
+          "label": "Horse Artillery Battery (optional)",
+          "unitIds": [
+            "pr15-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "pr15-infantry-brigade"
+        ],
+        "ratio": 2
+      }
+    },
+    {
+      "id": "pr15-army-reserve-artillery",
+      "name": "Army Reserve Artillery",
+      "min": 0,
+      "max": 3,
+      "note": "Batteries can attach to any brigade, but a brigade can carry no more than two",
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "pr15-heavy-arty",
+            "pr15-foot-arty",
+            "pr15-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "A Prussian Infantry Brigade Commander has no Staff Rating 7 option in this list — the minimum is Staff Rating 8.",
+    "Prussian Staff System: a brigade commander may purchase a subordinate commander for +10 points, who issues orders using the brigade commander's Staff Rating.",
+    "Angriffskolonne (Assault Column) and Zug Column (Column of Companies) represent Prussian attack and manoeuvre formations.",
+    "'No prisoners! No pity!': against a French army, all Prussian infantry and cavalry count as Tough Fighters.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Valiant upgrade, Large battalions, Veteran status, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

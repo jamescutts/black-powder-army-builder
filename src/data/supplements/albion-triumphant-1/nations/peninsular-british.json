@@ -1,0 +1,756 @@
+{
+  "id": "peninsular-british",
+  "name": "The Peninsular British 1806-1814",
+  "blurb": "Wellington's Anglo-Portuguese army, from Vimeiro to the Pyrenees.",
+  "units": [
+    {
+      "id": "pb-div-cmd",
+      "name": "Army or Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "pb-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9 (Late)",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "pb-line",
+      "name": "British and KGL Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "pb-light-inf",
+      "name": "British Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "pb-kgl-light",
+      "name": "KGL Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire",
+        "Skirmish",
+        "Sharpshooter",
+        "Rifle Mixed Order"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "pb-foot-guard",
+      "name": "British Foot Guard",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Reliable",
+        "Elite 3+",
+        "Steady Line",
+        "First Fire"
+      ],
+      "cost": 62
+    },
+    {
+      "id": "pb-chasseurs-brit",
+      "name": "Chasseurs Britannique",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Steady Line",
+        "First Fire",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 50
+    },
+    {
+      "id": "pb-highland",
+      "name": "Highland Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Tough Fighter",
+        "Steady Line",
+        "First Fire"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "pb-rifle-coy",
+      "name": "Rifle Company",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "2",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Skirmish",
+        "First Fire",
+        "Sharpshooter",
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 24
+    },
+    {
+      "id": "pb-rifle-coys",
+      "name": "Rifle Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "4",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Skirmish",
+        "Sharpshooter",
+        "Reliable",
+        "Elite 4+",
+        "First Fire"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "pb-rifle-bn",
+      "name": "Rifle Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter",
+        "Reliable",
+        "Elite 4+",
+        "First Fire"
+      ],
+      "cost": 56
+    },
+    {
+      "id": "pb-detachments",
+      "name": "Battalion of Detachments",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire"
+      ],
+      "cost": 35
+    },
+    {
+      "id": "pb-brunswick-oels-coys",
+      "name": "Brunswick Oels Jaeger Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "5",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 29
+    },
+    {
+      "id": "pb-brunswick-oels-coy",
+      "name": "Brunswick Oels Jaeger Company",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "2",
+      "shooting": "1",
+      "morale": "5",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 14
+    },
+    {
+      "id": "pb-portuguese-line",
+      "name": "Portuguese Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "pb-loyal-lusitanian",
+      "name": "Loyal Lusitanian Legion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "pb-cacadores",
+      "name": "Caçadores",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "Skirmish",
+        "Reliable",
+        "Elite 5+",
+        "Rifle Mixed Order",
+        "Sharpshooter"
+      ],
+      "cost": 52
+    },
+    {
+      "id": "pb-dragoon-guards",
+      "name": "British and KGL Dragoon Guards / Dragoons",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "variants": [
+        {
+          "label": "British (Gallop at Anything)",
+          "cost": 47
+        },
+        {
+          "label": "KGL (Ferocious Charge)",
+          "cost": 49
+        }
+      ]
+    },
+    {
+      "id": "pb-light-dragoon-hussar",
+      "name": "British and KGL Light Dragoon / Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "variants": [
+        {
+          "label": "British (Gallop at Anything)",
+          "cost": 44
+        },
+        {
+          "label": "KGL (Ferocious Charge)",
+          "cost": 46
+        }
+      ]
+    },
+    {
+      "id": "pb-household-cavalry",
+      "name": "Household Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "variants": [
+        {
+          "label": "Standard",
+          "cost": 56
+        },
+        {
+          "label": "Small",
+          "cost": 48
+        }
+      ]
+    },
+    {
+      "id": "pb-portuguese-cavalry",
+      "name": "Portuguese Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Wavering"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "pb-royal-arty",
+      "name": "Royal and KGL Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Cannon",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Shrapnel"
+      ],
+      "cost": 31
+    },
+    {
+      "id": "pb-royal-horse-arty",
+      "name": "Royal Horse and KGL Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Cannon",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Marauder",
+        "Shrapnel"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "pb-portuguese-arty",
+      "name": "Portuguese Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    }
+  ],
+  "brigades": [
+    {
+      "id": "pb-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "commanderUnitId": "pb-brig-cmd",
+      "slots": [
+        {
+          "label": "Line Infantry Battalion",
+          "unitIds": [
+            "pb-line",
+            "pb-chasseurs-brit",
+            "pb-highland",
+            "pb-detachments"
+          ],
+          "min": 2,
+          "max": 4
+        },
+        {
+          "label": "Attached Rifle Company, Small (optional, 1 per army)",
+          "unitIds": [
+            "pb-rifle-coys"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pb-rifle-coys",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Attached Tiny Company - Rifle or Brunswick Oels (optional, 1 per army)",
+          "unitIds": [
+            "pb-rifle-coy",
+            "pb-brunswick-oels-coy"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pb-rifle-coy",
+              "armyMax": 1
+            },
+            {
+              "unitId": "pb-brunswick-oels-coy",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Attached Portuguese Line Battalion (optional, Early)",
+          "unitIds": [
+            "pb-portuguese-line"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "pb-guards-brigade",
+      "name": "Guards Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pb-brig-cmd",
+      "note": "If at least 2 other British brigades are taken (Middle/Late)",
+      "slots": [
+        {
+          "label": "Foot Guard Battalion",
+          "unitIds": [
+            "pb-foot-guard"
+          ],
+          "min": 2,
+          "max": 2
+        },
+        {
+          "label": "Attached Tiny Rifle Company (optional)",
+          "unitIds": [
+            "pb-rifle-coy"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "pb-infantry-brigade"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "pb-light-brigade",
+      "name": "Light Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pb-brig-cmd",
+      "note": "Middle/Late campaign periods",
+      "slots": [
+        {
+          "label": "Light Infantry Battalion",
+          "unitIds": [
+            "pb-light-inf"
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "label": "Caçadores Battalion",
+          "unitIds": [
+            "pb-cacadores"
+          ],
+          "min": 1,
+          "max": 1
+        },
+        {
+          "label": "Additional Battalion (optional)",
+          "unitIds": [
+            "pb-rifle-bn",
+            "pb-rifle-coys",
+            "pb-portuguese-line",
+            "pb-brunswick-oels-coys"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "id": "pb-portuguese-infantry-brigade",
+      "name": "Portuguese Infantry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "pb-brig-cmd",
+      "note": "0 to 1 (Early), 0 to 1 per 2 British Brigades (Middle/Late)",
+      "slots": [
+        {
+          "label": "Portuguese Line Infantry Regiment",
+          "unitIds": [
+            "pb-portuguese-line"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Caçadores Battalion (optional)",
+          "unitIds": [
+            "pb-cacadores"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Loyal Lusitanian Legion (if no Caçadores chosen)",
+          "unitIds": [
+            "pb-loyal-lusitanian"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "pb-infantry-brigade"
+        ],
+        "ratio": 2
+      }
+    },
+    {
+      "id": "pb-kgl-brigade",
+      "name": "King's German Legion Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pb-brig-cmd",
+      "note": "Middle/Late campaign periods",
+      "slots": [
+        {
+          "label": "KGL Line Battalion",
+          "unitIds": [
+            "pb-line"
+          ],
+          "min": 2,
+          "max": 3
+        },
+        {
+          "label": "KGL Light Battalion (optional, Late)",
+          "unitIds": [
+            "pb-kgl-light"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "id": "pb-light-cavalry-brigade",
+      "name": "Light Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "pb-brig-cmd",
+      "note": "0 to 1 (Early), 1 per 3 Infantry Brigades (Middle/Late)",
+      "slots": [
+        {
+          "label": "Light Dragoon or Hussar Regiment",
+          "unitIds": [
+            "pb-light-dragoon-hussar"
+          ],
+          "min": 2,
+          "max": 3
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "pb-infantry-brigade"
+        ],
+        "ratio": 3
+      }
+    },
+    {
+      "id": "pb-heavy-cavalry-brigade",
+      "name": "Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "pb-brig-cmd",
+      "note": "1 per 3 Infantry Brigades (Middle/Late)",
+      "slots": [
+        {
+          "label": "Dragoon Regiment",
+          "unitIds": [
+            "pb-dragoon-guards"
+          ],
+          "min": 2,
+          "max": 3
+        },
+        {
+          "label": "Household Cavalry (optional)",
+          "unitIds": [
+            "pb-household-cavalry"
+          ],
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "pb-infantry-brigade"
+        ],
+        "ratio": 3
+      }
+    },
+    {
+      "id": "pb-portuguese-cavalry-brigade",
+      "name": "Portuguese Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pb-brig-cmd",
+      "slots": [
+        {
+          "label": "Portuguese Cavalry Regiment",
+          "unitIds": [
+            "pb-portuguese-cavalry"
+          ],
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "id": "pb-divisional-artillery",
+      "name": "Divisional Artillery",
+      "min": 0,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "pb-royal-arty",
+            "pb-portuguese-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "pb-horse-artillery",
+      "name": "Horse Artillery Batteries",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "pb-royal-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Periods: Early 1806-1808, Middle 1809-1812, Late 1813-1814.",
+    "Detached Elite Companies: a brigade's battalions may lose their Light and/or Grenadier companies to form combined Tiny/Small/Standard-sized detachment units, addable to any Infantry Brigade — see p.101 of the book for the full conversion table.",
+    "Household Cavalry (1st/2nd Life Guards, Royal Horse Guards) saw little Peninsular action; include 1 to 3 at the listed cost if desired.",
+    "Half battery: pay half points (rounded up) to field an artillery battery at half strength.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, Ferocious Charge swaps, etc.) — apply these manually per the book when finalising a list.",
+    "Allies: not specified beyond the Portuguese integration above."
+  ]
+}

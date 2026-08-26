@@ -1,0 +1,249 @@
+{
+  "id": "naples",
+  "name": "The Neapolitan Army 1812",
+  "blurb": "Murat's Kingdom of Naples contingent.",
+  "units": [
+    {
+      "id": "np-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "np-brig-cmd",
+      "name": "Infantry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "np-cav-brig-cmd",
+      "name": "Guard Cavalry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 15
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "np-line-infantry",
+      "name": "Neapolitan Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "2",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Unreliable",
+        "Wavering"
+      ],
+      "cost": 20
+    },
+    {
+      "id": "np-light-infantry",
+      "name": "Neapolitan Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "2",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Unreliable",
+        "Wavering",
+        "Poor Skirmishers"
+      ],
+      "cost": 20
+    },
+    {
+      "id": "np-guard-infantry",
+      "name": "Neapolitan Guard Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Unreliable"
+      ],
+      "cost": 33
+    },
+    {
+      "id": "np-marines",
+      "name": "Neapolitan Marines",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Unreliable",
+        "Small"
+      ],
+      "cost": 25
+    },
+    {
+      "id": "np-guard-light-cavalry",
+      "name": "Neapolitan Guard Light Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "shooting": "0",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Unreliable",
+        "Wavering"
+      ],
+      "cost": 21
+    },
+    {
+      "id": "np-guard-heavy-cavalry",
+      "name": "Neapolitan Guard Heavy Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1",
+        "Unreliable",
+        "Wavering"
+      ],
+      "cost": 35
+    },
+    {
+      "id": "np-horse-arty",
+      "name": "Neapolitan Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Unreliable",
+        "Wavering"
+      ],
+      "cost": 21
+    }
+  ],
+  "brigades": [
+    {
+      "id": "np-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Line / Light Infantry Battalion",
+          "unitIds": [
+            "np-line-infantry",
+            "np-light-infantry"
+          ],
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "commanderUnitId": "np-brig-cmd"
+    },
+    {
+      "id": "np-guard-infantry-brigade",
+      "name": "Guard Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Guard Infantry Battalion",
+          "unitIds": [
+            "np-guard-infantry"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Guard Marine Battalion (optional)",
+          "unitIds": [
+            "np-marines"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "np-brig-cmd"
+    },
+    {
+      "id": "np-guard-cavalry-brigade",
+      "name": "Guard Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Guard Cavalry Regiment",
+          "unitIds": [
+            "np-guard-light-cavalry",
+            "np-guard-heavy-cavalry"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Horse Artillery (optional)",
+          "unitIds": [
+            "np-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "np-cav-brig-cmd"
+    }
+  ],
+  "notes": [
+    "Divisional Commander plus Infantry and Guard Cavalry Brigade Commanders.",
+    "Up to 1 Infantry Brigade: 0-3 Line Infantry regiments (1-2 battalions), plus up to 2 Light Infantry regiments (1-2 battalions).",
+    "Up to 1 Guard Infantry Brigade: 1 Guard Infantry Regiment (1-2 battalions), plus an optional Small Guard Marine battalion.",
+    "Up to 1 Guard Cavalry Brigade: 1-2 regiments from Guard Light Cavalry and Guard Heavy Cavalry, plus an optional Horse Artillery battery.",
+    "Allies: a Neapolitan army can take 25% allies from any allied list."
+  ]
+}

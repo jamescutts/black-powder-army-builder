@@ -1,0 +1,390 @@
+{
+  "id": "french-army-corps",
+  "name": "The French Army of the North 1815 — Army Corps",
+  "blurb": "Napoleon's line corps of the Waterloo campaign.",
+  "units": [
+    {
+      "id": "fac-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Upgrade with 'A marshal's baton in every knapsack' for +10 points"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fac-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Upgrade with 'A marshal's baton in every knapsack' for +10 points"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fac-arty-brig-cmd",
+      "name": "Artillery Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 15
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fac-line",
+      "name": "Battalions de Ligne",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "fac-legere",
+      "name": "Légère (Light)",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fac-grenadier",
+      "name": "Grenadier or Combined Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Elite 5+",
+        "Pas de Charge"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "fac-voltigeur-tirailleur",
+      "name": "Combined Voltigeurs Tirailleur",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Elite 5+",
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "fac-cuirassier",
+      "name": "Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fac-carabinier",
+      "name": "Carabinier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fac-chevau-legers-lancers",
+      "name": "Chevau-Légers Lancers",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "fac-dragoon",
+      "name": "Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "fac-line-light-cav",
+      "name": "Line Light Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fac-foot-arty",
+      "name": "Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "fac-heavy-foot-arty",
+      "name": "Heavy Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    },
+    {
+      "id": "fac-horse-arty",
+      "name": "Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    }
+  ],
+  "brigades": [
+    {
+      "id": "fac-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "commanderUnitId": "fac-brig-cmd",
+      "slots": [
+        {
+          "label": "Line Infantry Battalion (3-7 per brigade)",
+          "unitIds": [
+            "fac-line",
+            "fac-legere",
+            "fac-grenadier",
+            "fac-voltigeur-tirailleur"
+          ],
+          "min": 3,
+          "max": 7
+        }
+      ]
+    },
+    {
+      "id": "fac-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "fac-brig-cmd",
+      "note": "1 per 2 Line Infantry Brigades",
+      "slots": [
+        {
+          "label": "Line Cavalry Regiment (regiments in a brigade must be the same class)",
+          "unitIds": [
+            "fac-dragoon",
+            "fac-line-light-cav",
+            "fac-chevau-legers-lancers"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "fac-infantry-brigade"
+        ],
+        "ratio": 2
+      }
+    },
+    {
+      "id": "fac-reserve-cavalry-brigade",
+      "name": "Reserve Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "fac-brig-cmd",
+      "note": "Corps/Army reserve, from Corps and Army Support (up to 50% of points)",
+      "slots": [
+        {
+          "label": "Light Cavalry Regiment",
+          "unitIds": [
+            "fac-dragoon",
+            "fac-line-light-cav",
+            "fac-chevau-legers-lancers"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "id": "fac-heavy-cavalry-brigade",
+      "name": "Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "fac-brig-cmd",
+      "note": "1 per 3 Infantry Brigades, from Corps and Army Support",
+      "slots": [
+        {
+          "label": "Cuirassier/Carabinier Regiment",
+          "unitIds": [
+            "fac-cuirassier",
+            "fac-carabinier"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "fac-infantry-brigade"
+        ],
+        "ratio": 3
+      }
+    },
+    {
+      "id": "fac-divisional-artillery",
+      "name": "Divisional Artillery Attachments",
+      "min": 0,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "fac-foot-arty",
+            "fac-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fac-artillery-brigade",
+      "name": "Artillery Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "fac-arty-brig-cmd",
+      "note": "If at least 12 infantry battalions are taken",
+      "slots": [
+        {
+          "label": "Foot Battery",
+          "unitIds": [
+            "fac-foot-arty",
+            "fac-heavy-foot-arty"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "Cavalry Column of Attack: a two-base-wide, three-base-deep formation with its own combat and command bonuses — see book for full rules.",
+    "Grand Battery Rules: guns bought from infantry/cavalry brigades and Corps Artillery can attach to an Artillery Brigade (max 6 batteries); it must, so far as possible, target the same enemy brigade.",
+    "Allies: up to 25% of points can be spent on the French Imperial Guard infantry and cavalry brigades.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Veteran status, Tough Fighters, Wavering/Unreliable conscript downgrades, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

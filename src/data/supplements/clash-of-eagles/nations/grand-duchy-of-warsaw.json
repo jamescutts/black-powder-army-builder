@@ -1,0 +1,332 @@
+{
+  "id": "grand-duchy-of-warsaw",
+  "name": "The Grand Duchy of Warsaw 1812",
+  "blurb": "Polish forces, Lithuanian formations and the Bug Division.",
+  "units": [
+    {
+      "id": "gdw-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "gdw-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "gdw-polish-infantry",
+      "name": "Polish Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Tough Fighters vs. Russians"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "gdw-chasseur",
+      "name": "Chasseur battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter",
+        "Tough Fighters v Russians"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "gdw-jager",
+      "name": "Jäger battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter",
+        "Tough Fighters v Russians"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "gdw-uhlan",
+      "name": "Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Tough Fighters v Russians"
+      ],
+      "cost": 49
+    },
+    {
+      "id": "gdw-hussar",
+      "name": "Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder",
+        "Tough Fighters v Russians"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "gdw-chasseur-a-cheval",
+      "name": "Chasseur-à-Cheval",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder",
+        "Tough Fighters v Russians"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "gdw-regimental-arty-section",
+      "name": "Regimental Artillery Section",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "1-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 11
+    },
+    {
+      "id": "gdw-regimental-battery",
+      "name": "Regimental Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 19
+    },
+    {
+      "id": "gdw-half-foot-arty",
+      "name": "Half Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
+      "id": "gdw-foot-arty",
+      "name": "Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "gdw-half-heavy-foot-arty",
+      "name": "Half Heavy Foot Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 23
+    },
+    {
+      "id": "gdw-heavy-foot-arty",
+      "name": "Heavy Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    },
+    {
+      "id": "gdw-half-horse-arty",
+      "name": "Half Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 22
+    },
+    {
+      "id": "gdw-horse-arty",
+      "name": "Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    }
+  ],
+  "brigades": [
+    {
+      "id": "gdw-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Polish Infantry Battalion",
+          "unitIds": [
+            "gdw-polish-infantry"
+          ],
+          "min": 1,
+          "max": 4
+        },
+        {
+          "label": "Chasseur / Jäger Battalion (optional)",
+          "unitIds": [
+            "gdw-chasseur",
+            "gdw-jager"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "gdw-brig-cmd"
+    },
+    {
+      "id": "gdw-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "gdw-uhlan",
+            "gdw-hussar",
+            "gdw-chasseur-a-cheval"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "note": "1 per 2 Infantry Brigades",
+      "commanderUnitId": "gdw-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "gdw-infantry-brigade"
+        ],
+        "ratio": 2
+      }
+    },
+    {
+      "id": "gdw-artillery",
+      "name": "Divisional / Reserve Artillery",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "gdw-regimental-arty-section",
+            "gdw-regimental-battery",
+            "gdw-half-foot-arty",
+            "gdw-foot-arty",
+            "gdw-half-heavy-foot-arty",
+            "gdw-heavy-foot-arty",
+            "gdw-half-horse-arty",
+            "gdw-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Can recreate formations that crossed into Russia, Lithuanian forces raised on liberation, and the 'Bug Division'.",
+    "1 to 2 Infantry Brigades: 1 or 2 Regiments of Polish Infantry (1-4 battalions), plus 0 to 2 Chasseur/Jäger battalions (Lithuanians and Bug Division).",
+    "0 to 1 Regimental Artillery section per 3 battalions, or 0 to 1 Regimental Artillery battery per infantry regiment of 3+ battalions.",
+    "0 to 1 Cavalry Brigade (1 per 2 Infantry Brigades): 1 or 2 regiments from up to 1 Hussar, up to 6 Uhlan, up to 3 Chasseur-à-Cheval (army-wide caps).",
+    "Divisional Artillery: 0 to 2 Foot Artillery batteries (1 per 7 battalions).",
+    "Reserve Artillery: up to 1 Horse battery (if 8 battalions taken) and up to 1 Heavy Foot battery (if 8 battalions taken), attached to any brigade.",
+    "Allies: a Polish army can take 25% allies from any single allied list."
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "id": "spanish",
+  "name": "The Spanish 1807-1814",
+  "blurb": "'Guerra al Cuchillo' — the Spanish regular army and its guerrilla-descended irregulars.",
+  "units": [
+    {
+      "id": "sp-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 15
+        }
+      ]
+    },
+    {
+      "id": "sp-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 15
+        }
+      ]
+    },
+    {
+      "id": "sp-line",
+      "name": "Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "2",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Wavering",
+        "Unreliable"
+      ],
+      "cost": 20
+    },
+    {
+      "id": "sp-light",
+      "name": "Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Wavering",
+        "Unreliable",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 25
+    },
+    {
+      "id": "sp-light-half",
+      "name": "Light Infantry Half Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "3",
+      "shooting": "2",
+      "morale": "5",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Wavering",
+        "Unreliable",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 17
+    },
+    {
+      "id": "sp-militia",
+      "name": "Militia Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "2",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Wavering"
+      ],
+      "cost": 27
+    },
+    {
+      "id": "sp-grenadier",
+      "name": "Grenadier Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Unreliable"
+      ],
+      "cost": 32
+    },
+    {
+      "id": "sp-guard-infantry",
+      "name": "Guard Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Elite 5+"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "sp-guard-heavy",
+      "name": "Guard Heavy Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "sp-heavy",
+      "name": "Heavy Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1",
+        "Wavering",
+        "Unreliable"
+      ],
+      "cost": 33
+    },
+    {
+      "id": "sp-lancer",
+      "name": "Lancer",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "6",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Wavering",
+        "Unreliable"
+      ],
+      "cost": 33
+    },
+    {
+      "id": "sp-guard-light",
+      "name": "Guard Light Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder",
+        "Elite 5+"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "sp-light-cav",
+      "name": "Light Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Marauder",
+        "Wavering",
+        "Unreliable"
+      ],
+      "cost": 26
+    },
+    {
+      "id": "sp-artillery",
+      "name": "Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "A la Muerte"
+      ],
+      "cost": 27
+    },
+    {
+      "id": "sp-horse-artillery",
+      "name": "Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Moves as foot artillery",
+        "A la Muerte"
+      ],
+      "cost": 19
+    }
+  ],
+  "brigades": [
+    {
+      "id": "sp-vanguard-brigade",
+      "name": "Vanguard Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "sp-brig-cmd",
+      "slots": [
+        {
+          "label": "Light Infantry Battalion (Early)",
+          "unitIds": [
+            "sp-light"
+          ],
+          "min": 2,
+          "max": 3
+        },
+        {
+          "label": "Additional Battalion (Middle/Late)",
+          "unitIds": [
+            "sp-light-half",
+            "sp-militia"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "id": "sp-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "commanderUnitId": "sp-brig-cmd",
+      "slots": [
+        {
+          "label": "Spanish Line Infantry Battalion (1-3 regiments)",
+          "unitIds": [
+            "sp-line"
+          ],
+          "min": 1,
+          "max": 9
+        },
+        {
+          "label": "Grenadier Battalion (optional, max 4 in army)",
+          "unitIds": [
+            "sp-grenadier"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Militia Battalion (optional)",
+          "unitIds": [
+            "sp-militia"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Light Battalion (optional)",
+          "unitIds": [
+            "sp-light"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ]
+    },
+    {
+      "id": "sp-guard-infantry-brigade",
+      "name": "Guard Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "sp-brig-cmd",
+      "note": "Early/Middle periods",
+      "slots": [
+        {
+          "label": "Guard Infantry Battalion",
+          "unitIds": [
+            "sp-guard-infantry"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Line Infantry Battalion (optional)",
+          "unitIds": [
+            "sp-line"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Militia Battalion (optional)",
+          "unitIds": [
+            "sp-militia"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "sp-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "sp-brig-cmd",
+      "note": "Up to 1 per 3 Infantry Brigades",
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "sp-light-cav",
+            "sp-heavy",
+            "sp-lancer",
+            "sp-guard-light",
+            "sp-guard-heavy"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "sp-infantry-brigade"
+        ],
+        "ratio": 3
+      }
+    },
+    {
+      "id": "sp-artillery-support",
+      "name": "Artillery Support",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "sp-artillery",
+            "sp-horse-artillery"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Periods: Early 1807-1809, Middle 1810-1812, Late 1813-1814.",
+    "A la Muerte: Spanish artillery batteries that break due to shooting casualties only break on a roll of 4 or less.",
+    "Personal Qualities of Commanders: for aggression/independence/decisiveness, Spanish commanders roll 1-3 = Low, 4-5 = Normal, 6 = High.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Veteran status via removing Wavering/Unreliable, +1 Hand-to-Hand, Small downgrades, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

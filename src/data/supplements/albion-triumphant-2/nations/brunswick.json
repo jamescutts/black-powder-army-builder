@@ -1,0 +1,239 @@
+{
+  "id": "brunswick",
+  "name": "The Anglo-Netherlands Army 1815 — Brunswick",
+  "blurb": "The 'Black Brunswickers' of Friedrich Wilhelm, Duke of Brunswick.",
+  "units": [
+    {
+      "id": "bw-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff rating 7", "cost": 0 },
+        { "label": "Staff rating 8", "cost": 25 }
+      ]
+    },
+    {
+      "id": "bw-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff rating 7", "cost": 0 },
+        { "label": "Staff rating 8", "cost": 25 }
+      ]
+    },
+    {
+      "id": "bw-leib-light",
+      "name": "Brunswick Leib Light",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Skirmish", "Elite 5+", "Sharpshooter"],
+      "cost": 43
+    },
+    {
+      "id": "bw-line",
+      "name": "Brunswick Line Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Unreliable"],
+      "cost": 33
+    },
+    {
+      "id": "bw-light",
+      "name": "Brunswick Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Skirmish", "Sharpshooter", "Unreliable"],
+      "cost": 36
+    },
+    {
+      "id": "bw-vanguard-jager-coys",
+      "name": "Brunswick Vanguard Jäger Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": ["Marauder", "Skirmish", "Sharpshooter"],
+      "cost": 38
+    },
+    {
+      "id": "bw-vanguard-light-coys",
+      "name": "Brunswick Vanguard Light Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": ["Marauder", "Skirmish", "Sharpshooter"],
+      "cost": 36
+    },
+    {
+      "id": "bw-vanguard-battalion",
+      "name": "Brunswick Vanguard Batalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Marauder", "Rifle Mixed Formation", "Skirmish", "Sharpshooter"],
+      "cost": 46
+    },
+    {
+      "id": "bw-hussar",
+      "name": "Brunswick Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Marauder"],
+      "cost": 41
+    },
+    {
+      "id": "bw-uhlan",
+      "name": "Brunswick Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Lance", "Marauder"],
+      "cost": 48
+    },
+    {
+      "id": "bw-uhlan-squadron",
+      "name": "Brunswick Uhlan Squadron",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "5",
+      "morale": "4",
+      "stamina": "2",
+      "special": ["Small", "Lance", "Marauder"],
+      "cost": 40
+    },
+    {
+      "id": "bw-horse-battery",
+      "name": "Brunswick Horse Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": ["Marauder"],
+      "cost": 30
+    },
+    {
+      "id": "bw-foot-battery",
+      "name": "Brunswick Foot Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 27
+    }
+  ],
+  "brigades": [
+    {
+      "id": "bw-infantry-brigade",
+      "name": "Brunswick Infantry Brigade",
+      "min": 1,
+      "max": 2,
+      "commanderUnitId": "bw-brig-cmd",
+      "slots": [
+        {
+          "label": "Brunswick Infantry Battalion (Line or Light, all same type)",
+          "unitIds": ["bw-line", "bw-light"],
+          "min": 2,
+          "max": 3
+        },
+        {
+          "label": "Leib Light Battalion (optional, 1 per army)",
+          "unitIds": ["bw-leib-light"],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [{ "unitId": "bw-leib-light", "armyMax": 1 }]
+        }
+      ]
+    },
+    {
+      "id": "bw-advanced-guard",
+      "name": "Advanced Guard Independent Command",
+      "min": 0,
+      "max": 1,
+      "note": "Independently commanded by the Divisional Commander — no separate Brigade Commander cost",
+      "slots": [
+        {
+          "label": "Vanguard Jäger/Light Company or Battalion",
+          "unitIds": ["bw-vanguard-jager-coys", "bw-vanguard-light-coys", "bw-vanguard-battalion"],
+          "min": 1,
+          "max": 3
+        }
+      ]
+    },
+    {
+      "id": "bw-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "bw-brig-cmd",
+      "slots": [
+        { "label": "Hussar Regiment (optional)", "unitIds": ["bw-hussar"], "min": 0, "max": 1 },
+        {
+          "label": "Uhlan Regiment (optional, historically Small)",
+          "unitIds": ["bw-uhlan", "bw-uhlan-squadron"],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "bw-divisional-artillery",
+      "name": "Divisional Artillery Support",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        { "label": "Battery", "unitIds": ["bw-foot-battery", "bw-horse-battery"], "min": 1, "max": 1 }
+      ]
+    }
+  ],
+  "notes": [
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "Brunswick brigades were either Light or Line, made up of 2-3 battalions of the same type each.",
+    "The Advanced Guard was an independent formation, directly under the Divisional Commander.",
+    "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Dutch/Belgian Brigades.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

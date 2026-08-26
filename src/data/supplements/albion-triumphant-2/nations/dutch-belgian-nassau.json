@@ -1,0 +1,243 @@
+{
+  "id": "dutch-belgian-nassau",
+  "name": "The Anglo-Netherlands Army 1815 — Dutch, Belgians and Nassau",
+  "blurb": "The Kingdom of the Netherlands' own troops, alongside the Duchy of Nassau's regiments.",
+  "units": [
+    {
+      "id": "dbn-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff rating 7", "cost": 0 },
+        { "label": "Staff rating 8", "cost": 25 }
+      ]
+    },
+    {
+      "id": "dbn-brig-cmd",
+      "name": "Dutch/Belgian Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff rating 7", "cost": 0 },
+        { "label": "Staff rating 8", "cost": 25 }
+      ]
+    },
+    {
+      "id": "dbn-nassau-brig-cmd",
+      "name": "Nassau Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff rating 7", "cost": 0 },
+        { "label": "Staff rating 8", "cost": 25 }
+      ]
+    },
+    {
+      "id": "dbn-cav-brig-cmd",
+      "name": "Cavalry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff rating 7", "cost": 0 },
+        { "label": "Staff rating 8", "cost": 25 }
+      ]
+    },
+    {
+      "id": "dbn-jager",
+      "name": "Dutch/Belgian Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Skirmish", "Sharpshooter"],
+      "cost": 39
+    },
+    {
+      "id": "dbn-militia",
+      "name": "Dutch Militia",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": ["Freshly Raised"],
+      "cost": 29
+    },
+    {
+      "id": "dbn-line",
+      "name": "Dutch/Belgian/Nassau Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "dbn-nassau-jager-coy",
+      "name": "Nassau Jäger Company",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "2",
+      "shooting": "1",
+      "morale": "4",
+      "stamina": "1",
+      "special": ["Tiny", "Skirmish", "Sharpshooter"],
+      "cost": 17
+    },
+    {
+      "id": "dbn-nassau-landwehr",
+      "name": "Nassau Landwehr",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Unreliable"],
+      "cost": 33
+    },
+    {
+      "id": "dbn-carabinier",
+      "name": "Dutch/Belgian Carabinier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Heavy Cavalry D1"],
+      "cost": 44
+    },
+    {
+      "id": "dbn-light-dragoon-hussar",
+      "name": "Dutch/Belgian Light Dragoon / Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": ["Marauder"],
+      "cost": 41
+    },
+    {
+      "id": "dbn-belgian-foot-battery",
+      "name": "Belgian Foot Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "dbn-dutch-horse-battery",
+      "name": "Dutch Horse Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": ["Marauder"],
+      "cost": 30
+    }
+  ],
+  "brigades": [
+    {
+      "id": "dbn-dutch-belgian-infantry-brigade",
+      "name": "Dutch/Belgian Infantry Brigade",
+      "min": 1,
+      "max": 4,
+      "commanderUnitId": "dbn-brig-cmd",
+      "slots": [
+        {
+          "label": "Infantry Battalion",
+          "unitIds": ["dbn-line", "dbn-militia", "dbn-jager"],
+          "min": 2,
+          "max": 5
+        }
+      ]
+    },
+    {
+      "id": "dbn-nassau-infantry-brigade",
+      "name": "Nassau Infantry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "dbn-nassau-brig-cmd",
+      "slots": [
+        { "label": "Nassau Line/Landwehr Battalion", "unitIds": ["dbn-line", "dbn-nassau-landwehr"], "min": 2, "max": 5 },
+        {
+          "label": "Attached Jäger Company (optional, 1 per army)",
+          "unitIds": ["dbn-nassau-jager-coy"],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [{ "unitId": "dbn-nassau-jager-coy", "armyMax": 1 }]
+        }
+      ]
+    },
+    {
+      "id": "dbn-light-cavalry-brigade",
+      "name": "Light Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "dbn-cav-brig-cmd",
+      "slots": [
+        { "label": "Light Dragoon/Hussar Regiment", "unitIds": ["dbn-light-dragoon-hussar"], "min": 1, "max": 3 }
+      ]
+    },
+    {
+      "id": "dbn-heavy-cavalry-brigade",
+      "name": "Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "dbn-cav-brig-cmd",
+      "slots": [
+        { "label": "Carabinier Regiment", "unitIds": ["dbn-carabinier"], "min": 1, "max": 3 }
+      ]
+    },
+    {
+      "id": "dbn-divisional-artillery",
+      "name": "Divisional Artillery",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        { "label": "Battery", "unitIds": ["dbn-belgian-foot-battery"], "min": 1, "max": 1 }
+      ]
+    },
+    {
+      "id": "dbn-horse-artillery",
+      "name": "Horse Artillery",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        { "label": "Battery", "unitIds": ["dbn-dutch-horse-battery"], "min": 1, "max": 1 }
+      ]
+    }
+  ],
+  "notes": [
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "Netherlands brigades comprised 2-5 infantry battalions and a mix of foot types.",
+    "Nassau brigades had a limited range of battalion types (Line, Militia and up to 2 Jäger battalions).",
+    "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Brunswick Brigades.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, Wavering downgrades, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

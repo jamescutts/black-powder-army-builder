@@ -1,0 +1,464 @@
+{
+  "id": "austria",
+  "name": "Austria 1812",
+  "blurb": "Austria's contribution to the invasion under Schwarzenberg.",
+  "units": [
+    {
+      "id": "at-inf-div-cmd",
+      "name": "Infantry Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "at-brig-cmd",
+      "name": "Infantry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "1-3 per army"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "at-grenadier",
+      "name": "Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 47
+    },
+    {
+      "id": "at-jager",
+      "name": "Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Carbine and Rifles",
+      "handToHand": "6",
+      "shooting": "2/3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooters"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "at-infantry",
+      "name": "Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Large",
+        "Poor Skirmishers",
+        "Elite 5+ if Hungarian"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "at-grenz",
+      "name": "Grenz",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Large",
+        "Skirmish",
+        "Tough Fighter",
+        "Unreliable",
+        "Rifle Mixed Formation"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "at-cuirassier",
+      "name": "Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "at-dragoon",
+      "name": "Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "at-chevauleger",
+      "name": "Chevauleger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Large",
+        "Abteilung",
+        "Marauder"
+      ],
+      "cost": 49
+    },
+    {
+      "id": "at-hussar",
+      "name": "Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Large Abteilung",
+        "Marauder"
+      ],
+      "cost": 51
+    },
+    {
+      "id": "at-uhlan",
+      "name": "Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Large, Abteilung",
+        "Marauder Lance"
+      ],
+      "cost": 56
+    },
+    {
+      "id": "at-3pdr-brigade-battery",
+      "name": "3-pdr Brigade Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Battery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 19
+    },
+    {
+      "id": "at-6pdr-brigade-battery-half",
+      "name": "6-pdr Brigade Battery (Half Battery)",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
+      "id": "at-6pdr-brigade-battery",
+      "name": "6-pdr Brigade Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "at-cavalry-arty-half",
+      "name": "Cavalry Artillery (Half Battery)",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 20
+    },
+    {
+      "id": "at-cavalry-arty",
+      "name": "Cavalry Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 28
+    },
+    {
+      "id": "at-position-battery-half",
+      "name": "Position Battery (Half Battery)",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
+    },
+    {
+      "id": "at-position-battery",
+      "name": "Position Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    }
+  ],
+  "brigades": [
+    {
+      "id": "at-line-infantry-brigade",
+      "name": "Line Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Line Infantry Battalion (German or Hungarian)",
+          "unitIds": [
+            "at-infantry"
+          ],
+          "min": 1,
+          "max": 4
+        },
+        {
+          "label": "Grenadier or Grenz Battalion (optional)",
+          "unitIds": [
+            "at-grenadier",
+            "at-grenz"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "6-pdr Brigade Battery (optional)",
+          "unitIds": [
+            "at-6pdr-brigade-battery-half",
+            "at-6pdr-brigade-battery"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "Minimum of one Line Infantry Brigade per 500 points in the army; cannot have more Hungarian than German regiments",
+      "commanderUnitId": "at-brig-cmd"
+    },
+    {
+      "id": "at-light-cavalry-brigade",
+      "name": "Light Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Hussar / Chevauleger Regiment",
+          "unitIds": [
+            "at-hussar",
+            "at-chevauleger"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Dragoon Regiment (optional)",
+          "unitIds": [
+            "at-dragoon"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Cavalry Battery (optional)",
+          "unitIds": [
+            "at-cavalry-arty-half",
+            "at-cavalry-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "at-brig-cmd"
+    },
+    {
+      "id": "at-advanced-guard-brigade",
+      "name": "Advanced Guard Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Any eligible battalion/regiment (max 6; infantry battalions must equal or exceed cavalry regiments)",
+          "unitIds": [
+            "at-jager",
+            "at-infantry",
+            "at-grenz",
+            "at-hussar",
+            "at-dragoon",
+            "at-uhlan",
+            "at-chevauleger",
+            "at-3pdr-brigade-battery",
+            "at-6pdr-brigade-battery"
+          ],
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "commanderUnitId": "at-brig-cmd"
+    },
+    {
+      "id": "at-grenadier-brigade",
+      "name": "Grenadier Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Grenadier Battalion",
+          "unitIds": [
+            "at-grenadier"
+          ],
+          "min": 2,
+          "max": 6
+        },
+        {
+          "label": "Line Regiment / Hussar Regiment / Battery (optional, max 2 choices)",
+          "unitIds": [
+            "at-infantry",
+            "at-hussar",
+            "at-6pdr-brigade-battery"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "note": "Although not part of the campaign, included for completeness",
+      "commanderUnitId": "at-brig-cmd"
+    },
+    {
+      "id": "at-heavy-cavalry-brigade",
+      "name": "Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Dragoon or Cuirassier Regiment (max 3 regiments of any kind)",
+          "unitIds": [
+            "at-dragoon",
+            "at-cuirassier"
+          ],
+          "min": 1,
+          "max": 3
+        },
+        {
+          "label": "Cavalry Battery (optional)",
+          "unitIds": [
+            "at-cavalry-arty-half",
+            "at-cavalry-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "Although not part of the campaign, included for completeness",
+      "commanderUnitId": "at-brig-cmd"
+    },
+    {
+      "id": "at-reserve-artillery",
+      "name": "Reserve Artillery",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Position Battery",
+          "unitIds": [
+            "at-position-battery-half",
+            "at-position-battery"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "note": "Up to 25% of points on Abteilung and Army Support from reserves; 1 per 9 line infantry battalions"
+    }
+  ],
+  "notes": [
+    "Minimum of one Line Infantry Brigade per 500 points. A brigade has 1-2 German or Hungarian Line Infantry Regiments of up to 2 Large battalions (cannot have more Hungarian than German regiments).",
+    "A Line Infantry Brigade may add up to two of: Grenadier battalions, Large Grenz battalions (max 1 per 4 infantry battalions), or a 6-pdr Brigade battery.",
+    "Up to 1 Light Cavalry Brigade: 1-2 Large Hussar/Chevauleger regiments, plus an optional Dragoon regiment and a cavalry battery (1 per 3 cavalry regiments).",
+    "Up to 1 Advanced Guard Brigade: up to 6 infantry battalions/cavalry regiments (Jäger, Line, Grenz, Hussar, Dragoon, Large Uhlan/Chevauleger, plus a battery) — infantry battalions must equal or exceed cavalry regiments.",
+    "Reserves: up to 25% of points on Abteilung and Army Support, including Reserve Artillery (1 Position battery per 9 line infantry battalions).",
+    "0 to 1 Grenadier Brigade and 0 to 1 Heavy Cavalry Brigade are included for completeness, although not part of the campaign.",
+    "Cavalry note: Austrian regiments fought as two-squadron Abteilungen — a regiment may be replaced by 2, 3 or 4 Small units at 8 points per squadron-sized reduction step (standard unit price).",
+    "Allies: an Austrian army can take 25% allies from the French or Confederation States Saxon list."
+  ]
+}

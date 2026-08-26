@@ -1,0 +1,124 @@
+{
+  "id": "vistula-legion",
+  "name": "Vistula Legion",
+  "blurb": "A standalone Polish legion list; artillery drawn from the Imperial Guard Artillery Reserve.",
+  "units": [
+    {
+      "id": "vl-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "vl-brig-cmd",
+      "name": "Vistula Legion Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "vl-infantry",
+      "name": "Vistula Legion Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Pas de Charge",
+        "Tough Fighter"
+      ],
+      "cost": 47
+    },
+    {
+      "id": "vl-regimental-arty-section",
+      "name": "Regimental Artillery Section",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "1/1/1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 11
+    },
+    {
+      "id": "vl-regimental-battery",
+      "name": "Regimental Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 19
+    }
+  ],
+  "brigades": [
+    {
+      "id": "vl-infantry-brigade",
+      "name": "Vistula Legion Infantry Brigade",
+      "min": 1,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Infantry Battalion",
+          "unitIds": [
+            "vl-infantry"
+          ],
+          "min": 1,
+          "max": 3
+        },
+        {
+          "label": "Regimental Artillery (optional)",
+          "unitIds": [
+            "vl-regimental-arty-section",
+            "vl-regimental-battery"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "vl-brig-cmd"
+    }
+  ],
+  "notes": [
+    "1 to 2 Vistula Legion Infantry Brigades: 1 to 2 Infantry Regiments of 1 to 3 battalions each.",
+    "0 to 1 Regimental Artillery section per 2 battalions, or 0 to 1 Regimental Artillery Battery per regiment of 3+ battalions.",
+    "Allies: a Vistula Legion list can take 50% allies from the French Imperial Guard army list."
+  ]
+}

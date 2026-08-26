@@ -1,0 +1,479 @@
+{
+  "id": "french-imperial-guard-1815",
+  "name": "The French Army of the North 1815 — Imperial Guard",
+  "blurb": "Napoleon's Old, Middle and Young Guard during the Hundred Days.",
+  "units": [
+    {
+      "id": "fig15-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Has the rule 'A marshal's baton in every knapsack'"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fig15-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Upgrade with 'A marshal's baton in every knapsack' for +10 points"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fig15-old-guard-grenadiers",
+      "name": "Old Guard Grenadiers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Elite 3+",
+        "Reliable",
+        "Tough Fighters"
+      ],
+      "cost": 61
+    },
+    {
+      "id": "fig15-old-guard-chasseurs",
+      "name": "Old Guard Chasseurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Elite 3+",
+        "Reliable",
+        "Tough Fighters"
+      ],
+      "cost": 61
+    },
+    {
+      "id": "fig15-middle-guard-grenadiers",
+      "name": "Middle Guard Grenadiers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 53
+    },
+    {
+      "id": "fig15-middle-guard-chasseurs",
+      "name": "Middle Guard Chasseurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 53
+    },
+    {
+      "id": "fig15-yg-voltigeurs",
+      "name": "Young Guard Voltigeurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Elite 5+",
+        "Pas de Charge",
+        "Skirmish"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "fig15-yg-tirailleurs",
+      "name": "Young Guard Tirailleurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Elite 5+",
+        "Pas de Charge",
+        "Skirmish"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "fig15-marines-small",
+      "name": "Marines of the Guard",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "2",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "fig15-marines-tiny",
+      "name": "Marines of the Guard (Tiny)",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "3",
+      "shooting": "1",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 22
+    },
+    {
+      "id": "fig15-grenadier-guards-a-cheval",
+      "name": "Grenadier Guards à Cheval",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fig15-empress-dragoons",
+      "name": "Empress Dragoons",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fig15-gendarmes-tiny",
+      "name": "Gendarmes d'Elite (Tiny)",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Heavy Cavalry D3",
+        "Reliable"
+      ],
+      "cost": 25
+    },
+    {
+      "id": "fig15-chasseurs-a-cheval",
+      "name": "Chasseurs à Cheval",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "7",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Marauder",
+        "Reliable"
+      ],
+      "cost": 51
+    },
+    {
+      "id": "fig15-guard-lancer",
+      "name": "Guard Lancer",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "8",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Reliable"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fig15-horse-arty",
+      "name": "Guard Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Elite 4+",
+        "Marauder",
+        "Reliable"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "fig15-heavy-arty",
+      "name": "Guard Heavy Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 46
+    },
+    {
+      "id": "fig15-foot-marine-arty",
+      "name": "Guards Foot/Marine Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 36
+    }
+  ],
+  "brigades": [
+    {
+      "id": "fig15-old-guard-brigade",
+      "name": "Old Guard Infantry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "fig15-brig-cmd",
+      "note": "Each brigade has two battalions of either Old or Middle Guard, not mixed",
+      "slots": [
+        {
+          "label": "Old Guard Battalion",
+          "unitIds": [
+            "fig15-old-guard-grenadiers",
+            "fig15-old-guard-chasseurs"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ]
+    },
+    {
+      "id": "fig15-middle-guard-brigade",
+      "name": "Middle Guard Infantry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "fig15-brig-cmd",
+      "slots": [
+        {
+          "label": "Middle Guard Battalion",
+          "unitIds": [
+            "fig15-middle-guard-grenadiers",
+            "fig15-middle-guard-chasseurs"
+          ],
+          "min": 2,
+          "max": 4
+        },
+        {
+          "label": "Marines of the Guard (optional)",
+          "unitIds": [
+            "fig15-marines-small",
+            "fig15-marines-tiny"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fig15-young-guard-brigade",
+      "name": "Young Guard Infantry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "fig15-brig-cmd",
+      "slots": [
+        {
+          "label": "Young Guard Battalion",
+          "unitIds": [
+            "fig15-yg-voltigeurs",
+            "fig15-yg-tirailleurs"
+          ],
+          "min": 2,
+          "max": 4
+        },
+        {
+          "label": "Marines of the Guard (optional)",
+          "unitIds": [
+            "fig15-marines-small",
+            "fig15-marines-tiny"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fig15-heavy-cavalry-brigade",
+      "name": "Guards Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "fig15-brig-cmd",
+      "note": "If at least 3 infantry brigades taken",
+      "slots": [
+        {
+          "label": "Guard Heavy Cavalry Regiment",
+          "unitIds": [
+            "fig15-grenadier-guards-a-cheval",
+            "fig15-empress-dragoons"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Gendarmes d'Elite - Tiny (optional)",
+          "unitIds": [
+            "fig15-gendarmes-tiny"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fig15-light-cavalry-brigade",
+      "name": "Guards Light Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "fig15-brig-cmd",
+      "note": "If at least 3 infantry brigades taken",
+      "slots": [
+        {
+          "label": "Guard Lancer Regiment (optional)",
+          "unitIds": [
+            "fig15-guard-lancer"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Chasseurs à Cheval Regiment (optional)",
+          "unitIds": [
+            "fig15-chasseurs-a-cheval"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fig15-guards-artillery",
+      "name": "Guards Artillery Support",
+      "min": 0,
+      "max": 8,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "fig15-horse-arty",
+            "fig15-foot-marine-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fig15-heavy-artillery",
+      "name": "Guards Heavy Artillery",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Heavy Battery",
+          "unitIds": [
+            "fig15-heavy-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "The Old and Middle Guard formed their own Division of the Hundred Days campaign; each brigade fields two battalions of either Old or Middle Guard, but not mixed.",
+    "0 to 1 Marines of the Guard battalion (Tiny) may substitute for the Small version if desired.",
+    "Allies: up to 25% of points may be spent on the French Army of the North Corps list; any minimums from that list apply to the points spent here (e.g. taking a Guard Heavy Cavalry Brigade needs three Corps infantry brigades first).",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Valiant upgrade, Large regiments, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

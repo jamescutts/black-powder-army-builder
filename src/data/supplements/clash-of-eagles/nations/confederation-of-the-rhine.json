@@ -1,0 +1,1329 @@
+{
+  "id": "confederation-of-the-rhine",
+  "name": "Saxony, Bavaria, Württemberg, Westphalia & the Confederation of the Rhine",
+  "blurb": "The German states of Napoleon's Confederation of the Rhine, 1812.",
+  "units": [
+    {
+      "id": "cotr-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "A Divisional commander must select brigades from the same nationality"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "cotr-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "sax-musketeer",
+      "name": "Saxon Musketeer",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Unreliable",
+        "Poor Mixed Formation",
+        "Lacking Initiative"
+      ],
+      "cost": 33
+    },
+    {
+      "id": "sax-light-infantry",
+      "name": "Saxon Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter",
+        "Unreliable",
+        "Lacking Initiative"
+      ],
+      "cost": 36
+    },
+    {
+      "id": "sax-grenadier",
+      "name": "Saxon Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Poor Mixed Formation"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "sax-garde-du-corps",
+      "name": "Saxon Garde du Corps",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D2/3",
+        "Superbly Drilled"
+      ],
+      "cost": 65
+    },
+    {
+      "id": "sax-cuirassier",
+      "name": "Saxon Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D2/3",
+        "Superbly Drilled"
+      ],
+      "cost": 65
+    },
+    {
+      "id": "sax-polish-cuirassier",
+      "name": "Polish Cuirassier (Saxon service)",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "sax-uhlan",
+      "name": "Saxon Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable Lancer",
+        "Marauder"
+      ],
+      "cost": 52
+    },
+    {
+      "id": "sax-hussar-chevau-leger",
+      "name": "Saxon Hussars and Chevau Léger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "sax-regimental-arty",
+      "name": "Saxon Regimental Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Regimental Artillery",
+      "handToHand": "1",
+      "shooting": "2/1/1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 13
+    },
+    {
+      "id": "sax-foot-arty",
+      "name": "Saxon Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "sax-horse-arty",
+      "name": "Saxon Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder",
+        "Moves as Austrian Cavalry Artillery"
+      ],
+      "cost": 28
+    },
+    {
+      "id": "sax-heavy-arty",
+      "name": "Saxon Heavy Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    },
+    {
+      "id": "wp-line-infantry",
+      "name": "Westphalian Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Poor Mixed Formation",
+        "Lacking Initiative"
+      ],
+      "cost": 35
+    },
+    {
+      "id": "wp-light-infantry",
+      "name": "Westphalian Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Light Infantry Mixed Formation",
+        "Lacking Initiative"
+      ],
+      "cost": 35
+    },
+    {
+      "id": "wp-jager",
+      "name": "Westphalian Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Light Infantry Mixed Formation",
+        "Skirmish",
+        "Rifle Mixed Formation",
+        "Sharpshooter"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "wp-guard-grenadier",
+      "name": "Westphalian Guard Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Large"
+      ],
+      "cost": 54
+    },
+    {
+      "id": "wp-guard-jager",
+      "name": "Westphalian Guard Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Light Infantry Mixed Formation",
+        "Skirmish",
+        "Sharpshooter",
+        "Large"
+      ],
+      "cost": 57
+    },
+    {
+      "id": "wp-jager-karabinier",
+      "name": "Westphalian Jäger-Karabinier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 52
+    },
+    {
+      "id": "wp-hussar",
+      "name": "Westphalian Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "wp-cuirassier",
+      "name": "Westphalian Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3"
+      ],
+      "cost": 54
+    },
+    {
+      "id": "wp-guard-chevau-leger",
+      "name": "Westphalian Guard Chevau Léger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "wp-garde-du-corps",
+      "name": "Westphalian Garde du Corps",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "wp-regimental-arty",
+      "name": "Westphalian Regimental Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Regimental Artillery",
+      "handToHand": "1",
+      "shooting": "1/1/1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 11
+    },
+    {
+      "id": "wp-foot-arty",
+      "name": "Westphalian Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "wp-horse-arty",
+      "name": "Westphalian Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "wp-heavy-arty",
+      "name": "Westphalian Heavy Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    },
+    {
+      "id": "wt-line-infantry",
+      "name": "Württemberg Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "wt-light-infantry",
+      "name": "Württemberg Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter",
+        "Light Infantry",
+        "Mixed Formation"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "wt-jagers",
+      "name": "Württemberg Jägers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled carbine and rifles",
+      "handToHand": "6",
+      "shooting": "2/3",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Skirmish",
+        "Rifle Mixed Formation",
+        "Light Infantry",
+        "Mixed Formation",
+        "Sharpshooter",
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 57
+    },
+    {
+      "id": "wt-chevauleger-jagers-cavalry",
+      "name": "Württemberg Chevauleger and Jägers cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "wt-light-arty-half",
+      "name": "Württemberg Light Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
+      "id": "wt-light-arty",
+      "name": "Württemberg Light Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "wt-horse-arty-half",
+      "name": "Württemberg Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 22
+    },
+    {
+      "id": "wt-horse-arty",
+      "name": "Württemberg Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "wt-heavy-arty-half",
+      "name": "Württemberg Heavy Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
+    },
+    {
+      "id": "wt-heavy-arty",
+      "name": "Württemberg Heavy Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 28
+    },
+    {
+      "id": "ocs-line-infantry",
+      "name": "Other Confederation States Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "ocs-jagers",
+      "name": "Other Confederation States Jägers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Rifle Mixed Order",
+        "Skirmish",
+        "Light Infantry Mixed Formation",
+        "Sharpshooter"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "ocs-guard",
+      "name": "Other Confederation States Guard",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "ocs-hessian-guard-fusilier",
+      "name": "Hessian Guard Fusilier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter",
+        "Light Infantry Mixed Formation"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "ocs-hussars-chevauleger",
+      "name": "Other Confederation States Hussars and Chevauleger Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "ocs-uhlan",
+      "name": "Other Confederation States Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Lance",
+        "Marauder"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "ocs-foot-arty",
+      "name": "Other Confederation Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "ocs-horse-arty",
+      "name": "Other Confederation Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "bav-line-infantry",
+      "name": "Bavarian Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Rifle Mixed Formation",
+        "Lacking Initiative"
+      ],
+      "cost": 37
+    },
+    {
+      "id": "bav-light-infantry",
+      "name": "Bavarian Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Rifle Mixed Formation",
+        "Light Infantry Mixed Formation",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "bav-chevau-leger",
+      "name": "Bavarian Chevau Léger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "bav-foot-arty",
+      "name": "Bavarian Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "bav-light-arty",
+      "name": "Bavarian Light Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "2/1/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder",
+        "Moves as Austrian Cavalry Artillery"
+      ],
+      "cost": 20
+    },
+    {
+      "id": "bav-position-battery",
+      "name": "Bavarian Position Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    },
+    {
+      "id": "rb-line-infantry",
+      "name": "Rheinbund Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Poor Mixed Formation"
+      ],
+      "cost": 31
+    },
+    {
+      "id": "rb-light-infantry",
+      "name": "Rheinbund Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Poor Skirmish"
+      ],
+      "cost": 31
+    }
+  ],
+  "brigades": [
+    {
+      "id": "wt-infantry-brigade",
+      "name": "Württemberg Infantry Brigade",
+      "min": 1,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Line Infantry Battalion",
+          "unitIds": [
+            "wt-line-infantry"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Light Infantry / Jäger Battalion (optional)",
+          "unitIds": [
+            "wt-light-infantry",
+            "wt-jagers"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Battery (optional)",
+          "unitIds": [
+            "wt-light-arty-half",
+            "wt-light-arty",
+            "wt-horse-arty-half",
+            "wt-horse-arty",
+            "wt-heavy-arty-half",
+            "wt-heavy-arty"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "wt-cavalry-brigade",
+      "name": "Württemberg Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "wt-chevauleger-jagers-cavalry"
+          ],
+          "min": 1,
+          "max": 4
+        }
+      ],
+      "note": "1 per Infantry Brigade",
+      "commanderUnitId": "cotr-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "wt-infantry-brigade"
+        ],
+        "ratio": 1
+      }
+    },
+    {
+      "id": "bav-infantry-brigade",
+      "name": "Bavarian Infantry Brigade",
+      "min": 1,
+      "max": 3,
+      "slots": [
+        {
+          "label": "Line Infantry Battalion",
+          "unitIds": [
+            "bav-line-infantry"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Light Infantry Battalion (optional)",
+          "unitIds": [
+            "bav-light-infantry"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Chevauleger Regiment (optional)",
+          "unitIds": [
+            "bav-chevau-leger"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Battery (optional)",
+          "unitIds": [
+            "bav-foot-arty",
+            "bav-light-arty",
+            "bav-position-battery"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "bav-cavalry-brigade",
+      "name": "Bavarian Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Chevauleger Regiment",
+          "unitIds": [
+            "bav-chevau-leger"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Light Battery (optional)",
+          "unitIds": [
+            "bav-light-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "1 per Infantry Brigade, if none attached there",
+      "commanderUnitId": "cotr-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "bav-infantry-brigade"
+        ],
+        "ratio": 1
+      }
+    },
+    {
+      "id": "sax-infantry-brigade",
+      "name": "Saxon Infantry Brigade",
+      "min": 1,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Musketeer / Light Infantry Battalion",
+          "unitIds": [
+            "sax-musketeer",
+            "sax-light-infantry"
+          ],
+          "min": 1,
+          "max": 4
+        },
+        {
+          "label": "Grenadier Battalion (optional)",
+          "unitIds": [
+            "sax-grenadier"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Battery (optional)",
+          "unitIds": [
+            "sax-regimental-arty",
+            "sax-foot-arty",
+            "sax-heavy-arty"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "sax-grenadier-brigade",
+      "name": "Saxon Grenadier Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Grenadier Battalion",
+          "unitIds": [
+            "sax-grenadier"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Light Infantry Regiment (optional)",
+          "unitIds": [
+            "sax-light-infantry"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Battery (optional)",
+          "unitIds": [
+            "sax-foot-arty",
+            "sax-heavy-arty"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "sax-cavalry-brigade",
+      "name": "Saxon Light Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "sax-uhlan",
+            "sax-hussar-chevau-leger"
+          ],
+          "min": 1,
+          "max": 3
+        },
+        {
+          "label": "Horse Artillery (optional)",
+          "unitIds": [
+            "sax-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "0-1 brigade per Infantry Brigade",
+      "commanderUnitId": "cotr-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "sax-infantry-brigade"
+        ],
+        "ratio": 1
+      }
+    },
+    {
+      "id": "sax-cavalry-reserve",
+      "name": "Saxon Cavalry Reserve",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cuirassier Regiment",
+          "unitIds": [
+            "sax-garde-du-corps",
+            "sax-cuirassier",
+            "sax-polish-cuirassier"
+          ],
+          "min": 1,
+          "max": 3
+        },
+        {
+          "label": "Horse Artillery (optional)",
+          "unitIds": [
+            "sax-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "wp-guard-infantry-brigade",
+      "name": "Westphalian Guard Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Guard Battalion",
+          "unitIds": [
+            "wp-guard-grenadier",
+            "wp-guard-jager",
+            "wp-jager-karabinier"
+          ],
+          "min": 1,
+          "max": 3
+        },
+        {
+          "label": "Regimental Artillery (optional)",
+          "unitIds": [
+            "wp-regimental-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "wp-infantry-brigade",
+      "name": "Westphalian Infantry Brigade",
+      "min": 1,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Infantry Battalion (max 7 per brigade)",
+          "unitIds": [
+            "wp-line-infantry",
+            "wp-light-infantry",
+            "wp-jager"
+          ],
+          "min": 1,
+          "max": 7
+        },
+        {
+          "label": "Battery (optional)",
+          "unitIds": [
+            "wp-regimental-arty",
+            "wp-foot-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "wp-cavalry-brigade",
+      "name": "Westphalian Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "wp-hussar",
+            "wp-guard-chevau-leger",
+            "wp-garde-du-corps"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Horse Artillery (optional)",
+          "unitIds": [
+            "wp-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "1 per Infantry Brigade",
+      "commanderUnitId": "cotr-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "wp-infantry-brigade"
+        ],
+        "ratio": 1
+      }
+    },
+    {
+      "id": "wp-cavalry-reserve",
+      "name": "Westphalian Cavalry Reserve",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cuirassier Regiment",
+          "unitIds": [
+            "wp-cuirassier"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Horse Artillery (optional)",
+          "unitIds": [
+            "wp-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "If 2 Infantry Brigades taken",
+      "commanderUnitId": "cotr-brig-cmd",
+      "requires": {
+        "brigadeTypeIds": [
+          "wp-infantry-brigade"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "wp-artillery-reserve",
+      "name": "Westphalian Artillery Reserve",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Heavy Battery",
+          "unitIds": [
+            "wp-heavy-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "note": "If 8 infantry battalions taken"
+    },
+    {
+      "id": "ocs-infantry-brigade",
+      "name": "Other Confederation States Infantry Brigade",
+      "min": 0,
+      "max": 3,
+      "slots": [
+        {
+          "label": "Line / Guard / Hessian Fusilier Battalion",
+          "unitIds": [
+            "ocs-line-infantry",
+            "ocs-guard",
+            "ocs-hessian-guard-fusilier"
+          ],
+          "min": 1,
+          "max": 4
+        },
+        {
+          "label": "Jäger Battalion (optional)",
+          "unitIds": [
+            "ocs-jagers"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Battery (optional)",
+          "unitIds": [
+            "ocs-foot-arty",
+            "ocs-horse-arty"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "note": "Up to 1 per nationality: Baden, Hesse, Berg, etc.",
+      "commanderUnitId": "cotr-brig-cmd"
+    },
+    {
+      "id": "ocs-cavalry-brigade",
+      "name": "Other Confederation States Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "ocs-hussars-chevauleger",
+            "ocs-uhlan"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "note": "1 per Infantry Brigade",
+      "commanderUnitId": "cotr-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "ocs-infantry-brigade"
+        ],
+        "ratio": 1
+      }
+    },
+    {
+      "id": "rb-infantry-brigade",
+      "name": "Rheinbund Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Infantry Battalion (1-3 regiments of 1-2 battalions)",
+          "unitIds": [
+            "rb-line-infantry",
+            "rb-light-infantry"
+          ],
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "note": "Can be taken by any Divisional commander regardless of nationality",
+      "commanderUnitId": "cotr-brig-cmd"
+    }
+  ],
+  "notes": [
+    "A Divisional Commander must select brigades from a single nationality (Saxon, Bavarian, Württemberg, Westphalian, Other Confederation States or Rheinbund).",
+    "Württemberg: 1-2 Infantry Brigades (1-2 Line regiments), 0-1 Light Infantry Brigade (adds Jäger battalions), 0-1 Cavalry Brigade (1 per infantry brigade), Divisional Artillery.",
+    "Bavaria: 1-3 Infantry Brigades (add Light Infantry battalion / Chevauleger regiment), 0-2 Cavalry Brigades (1 per infantry brigade, or if none attached), Divisional Artillery.",
+    "Saxony: 1-2 Infantry Brigades (add Grenadier battalion), 0-1 Saxon Grenadier Brigade, up to 2 Light Cavalry Brigades (0-1 per infantry brigade), a Cavalry Reserve (Garde du Corps/Cuirassier/Polish Cuirassier).",
+    "Westphalia: 0-1 Guard Infantry Brigade, 1-2 Infantry Brigades (max 7 battalions per brigade), 0-2 Cavalry Brigades, a Cavalry Reserve (Cuirassiers, if 2 infantry brigades taken), and an Artillery Reserve (1 Heavy Battery if 8 battalions taken).",
+    "Other Confederation States: up to 1 Infantry Brigade per nationality (Baden, Hesse, Berg, etc.), 0-1 Cavalry Brigade (1 per infantry brigade).",
+    "Rheinbund: up to 1 Infantry Brigade (1-3 regiments of 1-2 battalions); this brigade can be taken by any Divisional commander regardless of nationality.",
+    "Allies: a Confederation of the Rhine army can take 25% allies from any one allied list."
+  ]
+}

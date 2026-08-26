@@ -1,0 +1,780 @@
+{
+  "id": "french-imperial-guard",
+  "name": "The French Imperial Guard 1812",
+  "blurb": "Napoleon's Old, Middle and Young Guard, plus their elite cavalry.",
+  "units": [
+    {
+      "id": "fig-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Has the rule 'A Marshal's baton in every knapsack'"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 35
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 60
+        }
+      ]
+    },
+    {
+      "id": "fig-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Upgrade with 'A Marshal's baton in every knapsack' for +10 points"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fig-old-guard-grenadiers",
+      "name": "Old Guard Grenadiers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Elite 3+",
+        "Reliable",
+        "Tough Fighters"
+      ],
+      "cost": 61
+    },
+    {
+      "id": "fig-old-guard-chasseurs",
+      "name": "Old Guard Chasseurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Elite 3+",
+        "Reliable",
+        "Tough Fighters"
+      ],
+      "cost": 61
+    },
+    {
+      "id": "fig-middle-guard-grenadiers",
+      "name": "Middle Guard Grenadiers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 53
+    },
+    {
+      "id": "fig-middle-guard-chasseurs",
+      "name": "Middle Guard Chasseurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 53
+    },
+    {
+      "id": "fig-fusilier-grenadiers",
+      "name": "Fusilier-Grenadiers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 53
+    },
+    {
+      "id": "fig-fusilier-chasseurs",
+      "name": "Fusilier-Chasseurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Elite 4+",
+        "Reliable"
+      ],
+      "cost": 53
+    },
+    {
+      "id": "fig-yg-voltigeurs",
+      "name": "Young Guard Voltigeurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter",
+        "Light Infantry Mixed Formation"
+      ],
+      "cost": 50
+    },
+    {
+      "id": "fig-yg-tirailleurs",
+      "name": "Young Guard Tirailleurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter",
+        "Light Infantry Mixed Formation"
+      ],
+      "cost": 50
+    },
+    {
+      "id": "fig-velites-florence",
+      "name": "Velites of Florence",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Pas de Charge"
+      ],
+      "cost": 46
+    },
+    {
+      "id": "fig-velites-turin",
+      "name": "Velites of Turin",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Pas de Charge"
+      ],
+      "cost": 46
+    },
+    {
+      "id": "fig-marines",
+      "name": "Marines of the Guard",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "2",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Pas de Charge",
+        "Small"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "fig-engineers",
+      "name": "Engineers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "2",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Pas de Charge",
+        "Small"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "fig-vistula-legion-infantry",
+      "name": "Vistula Legion Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Pas de Charge",
+        "Tough Fighter"
+      ],
+      "cost": 47
+    },
+    {
+      "id": "fig-grenadiers-a-cheval-regt",
+      "name": "Grenadiers-à-Cheval",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "10",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable"
+      ],
+      "cost": 60
+    },
+    {
+      "id": "fig-empress-dragoons",
+      "name": "Empress Dragoons",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "10",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable"
+      ],
+      "cost": 60
+    },
+    {
+      "id": "fig-gendarmes-elite",
+      "name": "Gendarmes d'Elite",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable",
+        "Small"
+      ],
+      "cost": 52
+    },
+    {
+      "id": "fig-chasseurs-a-cheval",
+      "name": "Chasseurs-à-Cheval",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "7",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder"
+      ],
+      "cost": 52
+    },
+    {
+      "id": "fig-mamluke",
+      "name": "Mamluke",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "3",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Marauder",
+        "Tiny"
+      ],
+      "cost": 22
+    },
+    {
+      "id": "fig-polish-lancers",
+      "name": "Polish Lancers",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "8",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder",
+        "Lancer"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fig-dutch-red-lancers",
+      "name": "Dutch ('Red') Lancers",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "8",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder",
+        "Lancer"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fig-italian-gardes-honneur",
+      "name": "Italian Gardes d'Honneur",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Heavy Cavalry D3",
+        "Reliable",
+        "Tiny"
+      ],
+      "cost": 24
+    },
+    {
+      "id": "fig-yg-regimental-arty-section",
+      "name": "Young Guard Regimental Artillery Section",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "1/1/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 5+"
+      ],
+      "cost": 19
+    },
+    {
+      "id": "fig-yg-regimental-battery",
+      "name": "Young Guard Regimental Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 5+"
+      ],
+      "cost": 31
+    },
+    {
+      "id": "fig-og-foot-arty-half",
+      "name": "Old Guard Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 31
+    },
+    {
+      "id": "fig-og-foot-arty",
+      "name": "Old Guard Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "fig-og-heavy-foot-arty",
+      "name": "Old Guard Heavy Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "fig-og-horse-arty-half",
+      "name": "Old Guard Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 34
+    },
+    {
+      "id": "fig-og-horse-arty",
+      "name": "Old Guard Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Marauder"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "fig-og-regimental-arty-section",
+      "name": "Old Guard Regimental Artillery Section",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "1/1/1",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 21
+    },
+    {
+      "id": "fig-yg-horse-arty",
+      "name": "Young Guard Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Marauder"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "fig-vistula-regimental-arty-section",
+      "name": "Vistula Legion Regimental Artillery Section",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "1/1/1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 11
+    },
+    {
+      "id": "fig-vistula-regimental-battery",
+      "name": "Vistula Legion Regimental Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 19
+    }
+  ],
+  "brigades": [
+    {
+      "id": "fig-old-guard-brigade",
+      "name": "Old Guard Infantry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Guard Infantry Battalion",
+          "unitIds": [
+            "fig-old-guard-grenadiers",
+            "fig-old-guard-chasseurs",
+            "fig-middle-guard-grenadiers",
+            "fig-middle-guard-chasseurs",
+            "fig-fusilier-grenadiers",
+            "fig-fusilier-chasseurs",
+            "fig-vistula-legion-infantry"
+          ],
+          "min": 1,
+          "max": 4
+        },
+        {
+          "label": "Regimental / Foot Artillery (optional)",
+          "unitIds": [
+            "fig-og-regimental-arty-section",
+            "fig-og-foot-arty-half",
+            "fig-og-foot-arty",
+            "fig-vistula-regimental-arty-section",
+            "fig-vistula-regimental-battery"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "fig-brig-cmd"
+    },
+    {
+      "id": "fig-young-guard-brigade",
+      "name": "Young Guard Infantry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Guard Infantry Battalion",
+          "unitIds": [
+            "fig-yg-voltigeurs",
+            "fig-yg-tirailleurs"
+          ],
+          "min": 1,
+          "max": 6
+        },
+        {
+          "label": "Regimental Artillery (optional)",
+          "unitIds": [
+            "fig-yg-regimental-arty-section",
+            "fig-yg-regimental-battery"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "fig-brig-cmd"
+    },
+    {
+      "id": "fig-heavy-cavalry-brigade",
+      "name": "Imperial Guard Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Heavy Cavalry Regiment",
+          "unitIds": [
+            "fig-grenadiers-a-cheval-regt",
+            "fig-empress-dragoons"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "fig-brig-cmd"
+    },
+    {
+      "id": "fig-light-cavalry-brigade",
+      "name": "Imperial Guard Light Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "slots": [
+        {
+          "label": "Light Cavalry Regiment",
+          "unitIds": [
+            "fig-chasseurs-a-cheval",
+            "fig-polish-lancers",
+            "fig-dutch-red-lancers"
+          ],
+          "min": 1,
+          "max": 2,
+          "unitCaps": [
+            {
+              "unitId": "fig-chasseurs-a-cheval",
+              "armyMax": 1
+            },
+            {
+              "unitId": "fig-polish-lancers",
+              "armyMax": 1
+            },
+            {
+              "unitId": "fig-dutch-red-lancers",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Attached small unit (optional)",
+          "unitIds": [
+            "fig-mamluke",
+            "fig-gendarmes-elite"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "fig-brig-cmd"
+    },
+    {
+      "id": "fig-artillery-reserve",
+      "name": "Imperial Guard Artillery Reserve",
+      "min": 0,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "fig-og-horse-arty-half",
+            "fig-og-horse-arty",
+            "fig-yg-horse-arty",
+            "fig-og-heavy-foot-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fig-italian-brigade",
+      "name": "Italian Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Velite Battalion",
+          "unitIds": [
+            "fig-velites-florence",
+            "fig-velites-turin"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Italian Gardes d'Honneur (optional)",
+          "unitIds": [
+            "fig-italian-gardes-honneur"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "fig-brig-cmd"
+    },
+    {
+      "id": "fig-marines-brigade",
+      "name": "Marines / Engineers (attach to any Infantry Brigade)",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Marines / Engineers Battalion",
+          "unitIds": [
+            "fig-marines",
+            "fig-engineers"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Divisional Commander always carries 'A Marshal's baton in every knapsack'.",
+    "0 to 2 Old Guard Infantry Brigades: 0-1 Old Guard regiment (1-2 battalions), 0-2 Middle Guard regiments (only one brigade may take two).",
+    "0 to 2 Young Guard Infantry Brigades: 1-3 Young Guard regiments; one brigade may add a Fusilier-Grenadier and a Fusilier-Chasseur regiment.",
+    "0 to 1 Imperial Guard Heavy Cavalry Brigade: up to 1 Grenadiers à Cheval and up to 1 Empress Dragoons regiment.",
+    "0 to 3 Imperial Guard Light Cavalry Brigades: Chasseurs à Cheval de la Garde or Polish/Dutch 'Red' Lancers, plus Tiny Mamelukes or Small Gendarmes d'Elite.",
+    "Imperial Guard Artillery Reserve: up to 5 Old Guard Horse batteries or 4 Young Guard Horse batteries, plus 1 Old Guard Heavy Foot battery if 8 infantry battalions taken.",
+    "0 to 1 Italian Brigade (1-2 Velite battalions, 0-1 Tiny Italian Gardes d'Honneur) and Marines/Engineers battalion may attach to any Infantry Brigade.",
+    "Allies: an Imperial Guard army may take 50% allies from the main French list, plus 25% from any other allied list."
+  ]
+}

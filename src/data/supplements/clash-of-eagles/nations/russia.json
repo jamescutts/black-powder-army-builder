@@ -1,0 +1,964 @@
+{
+  "id": "russia",
+  "name": "Russia 1812-15",
+  "blurb": "The Tsar's army, from raw Opolchenie militia to the Imperial Guard.",
+  "units": [
+    {
+      "id": "ru-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 20
+        }
+      ]
+    },
+    {
+      "id": "ru-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Half of all Russian Brigade commanders, rounding up, must be Staff Rating 7"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 20
+        }
+      ]
+    },
+    {
+      "id": "ru-inf-combined-grenadier",
+      "name": "Infantry or Combined Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Tough Fighter",
+        "Poor",
+        "Skirmisher",
+        "Lacking Initiative"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "ru-grenadier",
+      "name": "Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Tough Fighter",
+        "Poor",
+        "Skirmisher",
+        "Lacking Initiative",
+        "Elite 4+"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "ru-jager",
+      "name": "Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Rifle Mixed Formation",
+        "Light Infantry Mixed Formation",
+        "Skirmish",
+        "Sharpshooter",
+        "Tough Fighter",
+        "Lacking Initiative"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "ru-opolchenie",
+      "name": "Opolchenie",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Pike or Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "0/2",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Militia",
+        "Untested",
+        "Unreliable",
+        "Lacking Initiative"
+      ],
+      "variants": [
+        {
+          "label": "Pike",
+          "cost": 19
+        },
+        {
+          "label": "Smoothbore Musket",
+          "cost": 23
+        }
+      ]
+    },
+    {
+      "id": "ru-opolchenie-jagers",
+      "name": "Opolchenie Jägers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket and Rifled Musket",
+      "handToHand": "5",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Poor",
+        "Skirmish",
+        "Militia",
+        "Lacking Initiative"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "ru-volunteer-jager",
+      "name": "Volunteer Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket or Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Poor",
+        "Skirmish",
+        "Militia",
+        "Lacking Initiative"
+      ],
+      "variants": [
+        {
+          "label": "Smoothbore Musket",
+          "cost": 37
+        },
+        {
+          "label": "Rifle",
+          "cost": 40
+        }
+      ]
+    },
+    {
+      "id": "ru-life-guard-infantry",
+      "name": "Life Guard Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Tough Fighter",
+        "Poor Skirmisher",
+        "Reliable",
+        "Elite 3+",
+        "Valiant"
+      ],
+      "cost": 61
+    },
+    {
+      "id": "ru-life-guard-jager",
+      "name": "Life Guard Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Rifle Mixed Formation",
+        "Light Infantry Mixed Formation",
+        "Skirmish Sharpshooter"
+      ],
+      "cost": 59
+    },
+    {
+      "id": "ru-dragoon-on-foot",
+      "name": "Dragoon on foot",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Skirmish",
+        "Small"
+      ],
+      "cost": 28
+    },
+    {
+      "id": "ru-cuirassier",
+      "name": "Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "ru-dragoon",
+      "name": "Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "ru-uhlan",
+      "name": "Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "ru-hussar",
+      "name": "Hussars",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder"
+      ],
+      "cost": 46
+    },
+    {
+      "id": "ru-mounted-jager",
+      "name": "Mounted Jäger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "ru-mounted-cossack",
+      "name": "Mounted Cossack",
+      "category": "Cavalry",
+      "type": "Irregular or Regular Cavalry",
+      "armament": "Lance, Bow / Lance",
+      "handToHand": "5",
+      "shooting": "2/0",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Unreliable"
+      ],
+      "variants": [
+        {
+          "label": "Irregular",
+          "cost": 37
+        },
+        {
+          "label": "Regular",
+          "cost": 39
+        }
+      ]
+    },
+    {
+      "id": "ru-life-guard-cuirassier",
+      "name": "Life Guard Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "10",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 60
+    },
+    {
+      "id": "ru-chevalier-guard",
+      "name": "Chevalier Guard",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "10",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 60
+    },
+    {
+      "id": "ru-life-guard-horse",
+      "name": "Life Guard Horse",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "10",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 60
+    },
+    {
+      "id": "ru-lg-dragoon",
+      "name": "Life Guard Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D1"
+      ],
+      "cost": 54
+    },
+    {
+      "id": "ru-life-guard-uhlan",
+      "name": "Life Guard Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Lancer",
+        "Marauder"
+      ],
+      "cost": 54
+    },
+    {
+      "id": "ru-life-guard-cossack",
+      "name": "Life Guard Cossack",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Lancer",
+        "Marauder"
+      ],
+      "cost": 54
+    },
+    {
+      "id": "ru-lg-hussar",
+      "name": "Life Guard Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "7",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder"
+      ],
+      "cost": 47
+    },
+    {
+      "id": "ru-light-arty-half",
+      "name": "Light Artillery Half-Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-1-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 24
+    },
+    {
+      "id": "ru-light-arty",
+      "name": "Light Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "2",
+      "shooting": "4-2-2",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Large"
+      ],
+      "cost": 36
+    },
+    {
+      "id": "ru-guard-light-arty-half",
+      "name": "Guard Light Artillery Half-Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-1-1",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 36
+    },
+    {
+      "id": "ru-guard-light-arty",
+      "name": "Guard Light Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "2",
+      "shooting": "4/2/2",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Large"
+      ],
+      "cost": 48
+    },
+    {
+      "id": "ru-horse-arty-half",
+      "name": "Horse Artillery Half-Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 27
+    },
+    {
+      "id": "ru-horse-arty",
+      "name": "Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "2",
+      "shooting": "4-2-2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Marauder",
+        "Large"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "ru-guard-horse-arty-half",
+      "name": "Guard Horse Artillery Half-Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-1-1",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Marauder",
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "ru-guard-horse-arty",
+      "name": "Guard Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "2",
+      "shooting": "4-2-2",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Marauder",
+        "Reliable",
+        "Elite 4+",
+        "Large"
+      ],
+      "cost": 51
+    },
+    {
+      "id": "ru-position-arty-half",
+      "name": "Position Artillery Half-Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Art)",
+      "handToHand": "1",
+      "shooting": "3-1-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 28
+    },
+    {
+      "id": "ru-position-arty",
+      "name": "Position Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Art)",
+      "handToHand": "2",
+      "shooting": "4-2-2",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Large"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "ru-guard-position-arty-half",
+      "name": "Guard Position Artillery Half-Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Art)",
+      "handToHand": "1",
+      "shooting": "3-1-1",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "ru-guard-position-arty",
+      "name": "Guard Position Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Art)",
+      "handToHand": "2",
+      "shooting": "4-2-2",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Large"
+      ],
+      "cost": 52
+    },
+    {
+      "id": "ru-unicorn",
+      "name": "Unicorn Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Field Howitzer / Heavy Artillery (Siege Art)",
+      "handToHand": "1",
+      "shooting": "2-2-2",
+      "morale": "4",
+      "stamina": "2",
+      "variants": [
+        {
+          "label": "10 pdr",
+          "cost": 23
+        },
+        {
+          "label": "20 pdr",
+          "cost": 27
+        }
+      ]
+    },
+    {
+      "id": "ru-earthworks",
+      "name": "Earthworks",
+      "category": "Support",
+      "type": "Terrain",
+      "armament": "-",
+      "special": [
+        "0 to 1 per 500 points"
+      ],
+      "variants": [
+        {
+          "label": "Standard Earthworks",
+          "cost": 15
+        },
+        {
+          "label": "Large Earthworks, +1 save",
+          "cost": 25
+        },
+        {
+          "label": "Large Earthworks, +2 save",
+          "cost": 35
+        }
+      ]
+    }
+  ],
+  "brigades": [
+    {
+      "id": "ru-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 3,
+      "slots": [
+        {
+          "label": "Infantry Battalion",
+          "unitIds": [
+            "ru-inf-combined-grenadier",
+            "ru-opolchenie",
+            "ru-opolchenie-jagers",
+            "ru-volunteer-jager",
+            "ru-jager"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "ru-brig-cmd"
+    },
+    {
+      "id": "ru-jager-brigade",
+      "name": "Jäger Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Jäger Regiment",
+          "unitIds": [
+            "ru-jager"
+          ],
+          "min": 2,
+          "max": 3
+        },
+        {
+          "label": "Grenadier Regiment (optional)",
+          "unitIds": [
+            "ru-grenadier"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "ru-brig-cmd"
+    },
+    {
+      "id": "ru-combined-grenadier-brigade",
+      "name": "Combined Grenadier Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Combined Grenadier Battalion",
+          "unitIds": [
+            "ru-inf-combined-grenadier"
+          ],
+          "min": 2,
+          "max": 7
+        }
+      ],
+      "commanderUnitId": "ru-brig-cmd"
+    },
+    {
+      "id": "ru-grenadier-brigade",
+      "name": "Grenadier Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Grenadier Regiment",
+          "unitIds": [
+            "ru-grenadier"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "commanderUnitId": "ru-brig-cmd"
+    },
+    {
+      "id": "ru-light-cavalry-brigade",
+      "name": "Light Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "ru-dragoon",
+            "ru-hussar",
+            "ru-mounted-jager",
+            "ru-uhlan",
+            "ru-mounted-cossack",
+            "ru-dragoon-on-foot"
+          ],
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "commanderUnitId": "ru-brig-cmd"
+    },
+    {
+      "id": "ru-heavy-cavalry-brigade",
+      "name": "Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Dragoon or Cuirassier Regiment (do not mix types)",
+          "unitIds": [
+            "ru-dragoon",
+            "ru-cuirassier",
+            "ru-dragoon-on-foot"
+          ],
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "commanderUnitId": "ru-brig-cmd"
+    },
+    {
+      "id": "ru-cossack-brigade",
+      "name": "Cossack Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cossack Regiment",
+          "unitIds": [
+            "ru-mounted-cossack"
+          ],
+          "min": 2,
+          "max": 6
+        }
+      ],
+      "commanderUnitId": "ru-brig-cmd"
+    },
+    {
+      "id": "ru-army-artillery",
+      "name": "Army Artillery (attaches to any brigade)",
+      "min": 0,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "ru-light-arty-half",
+            "ru-light-arty",
+            "ru-horse-arty-half",
+            "ru-horse-arty",
+            "ru-position-arty-half",
+            "ru-position-arty",
+            "ru-unicorn"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "note": "1 Light battery per 6 battalions, 1 Horse per 4 cavalry regiments, 1 Position per 9 battalions, 1 Unicorn per 6 battalions"
+    },
+    {
+      "id": "ru-guard-infantry-brigade",
+      "name": "Imperial Guard Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Life Guard Infantry Regiment",
+          "unitIds": [
+            "ru-life-guard-infantry",
+            "ru-life-guard-jager"
+          ],
+          "min": 1,
+          "max": 3
+        },
+        {
+          "label": "Guard Artillery (optional)",
+          "unitIds": [
+            "ru-guard-light-arty-half",
+            "ru-guard-light-arty",
+            "ru-guard-position-arty-half",
+            "ru-guard-position-arty"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "note": "Only if at least 3 infantry brigades taken; up to 25% of the army may be Guard brigades",
+      "commanderUnitId": "ru-brig-cmd",
+      "requires": {
+        "brigadeTypeIds": [
+          "ru-infantry-brigade"
+        ],
+        "min": 3
+      }
+    },
+    {
+      "id": "ru-guard-light-cavalry-brigade",
+      "name": "Imperial Guard Light Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Life Guard Light Cavalry Regiment",
+          "unitIds": [
+            "ru-life-guard-uhlan",
+            "ru-life-guard-cossack",
+            "ru-lg-hussar"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Guard Horse Artillery (optional)",
+          "unitIds": [
+            "ru-guard-horse-arty-half",
+            "ru-guard-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "Only if at least 4 infantry brigades taken",
+      "commanderUnitId": "ru-brig-cmd",
+      "requires": {
+        "brigadeTypeIds": [
+          "ru-infantry-brigade"
+        ],
+        "min": 4
+      }
+    },
+    {
+      "id": "ru-guard-heavy-cavalry-brigade",
+      "name": "Imperial Guard Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Life Guard Heavy Cavalry Regiment",
+          "unitIds": [
+            "ru-life-guard-cuirassier",
+            "ru-chevalier-guard",
+            "ru-life-guard-horse",
+            "ru-lg-dragoon"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Guard Horse Artillery (optional)",
+          "unitIds": [
+            "ru-guard-horse-arty-half",
+            "ru-guard-horse-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "Only if at least 4 infantry brigades taken",
+      "commanderUnitId": "ru-brig-cmd",
+      "requires": {
+        "brigadeTypeIds": [
+          "ru-infantry-brigade"
+        ],
+        "min": 4
+      }
+    },
+    {
+      "id": "ru-earthworks-brigade",
+      "name": "Earthworks",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Earthworks",
+          "unitIds": [
+            "ru-earthworks"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "note": "0 to 1 per 500 points"
+    }
+  ],
+  "notes": [
+    "Divisional Commander, plus 1-3 Infantry Brigade Commanders (half of all brigade commanders, rounding up, must be Staff Rating 7).",
+    "1 to 2 Infantry Regiments per brigade (Combined Grenadier / Opolchenie / Opolchenie Jäger / Volunteer Jäger / Jäger battalions), 41 pts each unless noted.",
+    "0 to 1 Jäger Brigade: 2 to 3 Jäger Regiments, plus up to 1 Grenadier regiment.",
+    "0 to 1 Combined Grenadier Brigade: 2 to 7 Combined Grenadier battalions.",
+    "0 to 1 Grenadier Brigade: 1 or 2 Grenadier regiments.",
+    "0 to 1 Light Cavalry Brigade: 1 to 3 regiments from Dragoons, Hussars, Uhlans, Mounted/Irregular Cossacks (first Cossack regiment free).",
+    "0 to 1 Heavy Cavalry Brigade: 1 to 3 regiments of Dragoons or Cuirassiers (cannot mix).",
+    "0 to 1 Cossack Brigade: 2 to 6 Cossack regiments.",
+    "Artillery batteries attach to brigades at set ratios (1 Light per 6 infantry battalions, 1 Horse per 4 cavalry regiments, 1 Position per 9 battalions, 1 Unicorn per 6 battalions).",
+    "Up to 25% of the army may be Imperial Guard brigades (Guard Infantry needs 3+ infantry brigades already taken; Guard Light/Heavy Cavalry need 4+ infantry brigades).",
+    "0 to 1 Earthworks per 500 points."
+  ]
+}

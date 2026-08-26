@@ -1,0 +1,658 @@
+{
+  "id": "anglo-netherlands-british",
+  "name": "The Anglo-Netherlands Army 1815 — Britain",
+  "blurb": "Wellington's British, King's German Legion and Hanoverian contingents at Waterloo.",
+  "units": [
+    {
+      "id": "anb-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "anb-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "anb-line",
+      "name": "British Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "anb-kgl-line",
+      "name": "King's German Legion Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire",
+        "Rifle Mixed Formation"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "anb-light",
+      "name": "British Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "anb-kgl-light",
+      "name": "King's German Legion Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Steady Line",
+        "First Fire",
+        "Skirmish",
+        "Sharpshooter",
+        "Rifle Mixed Formation"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "anb-foot-guard",
+      "name": "British Foot Guards",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "4",
+      "morale": "3",
+      "stamina": "4",
+      "special": [
+        "Reliable",
+        "Elite 3+",
+        "Steady Line",
+        "First Fire"
+      ],
+      "cost": 62
+    },
+    {
+      "id": "anb-highland",
+      "name": "Highland Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Tough Fighter",
+        "Steady Line",
+        "First Fire"
+      ],
+      "cost": 40
+    },
+    {
+      "id": "anb-rifle-coy",
+      "name": "Rifle Company",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "2",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Skirmish",
+        "Sharpshooter",
+        "Reliable",
+        "Elite 4+",
+        "First Fire"
+      ],
+      "cost": 24
+    },
+    {
+      "id": "anb-rifle-coys",
+      "name": "Rifle Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "4",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Skirmish",
+        "Sharpshooter",
+        "Reliable",
+        "Elite 4+",
+        "First Fire"
+      ],
+      "cost": 47
+    },
+    {
+      "id": "anb-rifle-bn",
+      "name": "Rifle Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter",
+        "Reliable",
+        "Elite 4+",
+        "First Fire"
+      ],
+      "cost": 56
+    },
+    {
+      "id": "anb-hanover-line",
+      "name": "Hanoverian Field Line Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "anb-hanover-light",
+      "name": "Hanoverian Field Light Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "anb-hanover-landwehr",
+      "name": "Hanoverian Landwehr",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Freshly Raised",
+        "Unreliable"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "anb-hanover-jager",
+      "name": "Hanoverian Jäger Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Skirmish",
+        "Sharpshooter",
+        "Rifle Mixed Formation"
+      ],
+      "cost": 33
+    },
+    {
+      "id": "anb-household-cav",
+      "name": "Household Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3",
+        "Gallop at Anything",
+        "Reliable"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "anb-dragoons-dragoon-guards",
+      "name": "Dragoons and Dragoon Guards",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1",
+        "Gallop at Anything"
+      ],
+      "cost": 47
+    },
+    {
+      "id": "anb-light-dragoon-hussar",
+      "name": "British and KGL Light Dragoon / Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Ferocious Charge",
+        "Marauder"
+      ],
+      "cost": 46
+    },
+    {
+      "id": "anb-hanover-light-cav",
+      "name": "Hanoverian Light Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "anb-hanover-cumberland-hussars",
+      "name": "Hanoverian Duke of Cumberland Hussars",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "morale": "6",
+      "stamina": "2",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 27
+    },
+    {
+      "id": "anb-royal-arty",
+      "name": "Royal and KGL Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Shrapnel"
+      ],
+      "cost": 31
+    },
+    {
+      "id": "anb-royal-horse-arty",
+      "name": "Royal Horse and KGL Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Marauder",
+        "Shrapnel"
+      ],
+      "cost": 34
+    },
+    {
+      "id": "anb-hanover-foot-arty",
+      "name": "Hanoverian Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    }
+  ],
+  "brigades": [
+    {
+      "id": "anb-british-infantry-brigade",
+      "name": "British Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "commanderUnitId": "anb-brig-cmd",
+      "slots": [
+        {
+          "label": "Line Infantry Battalion",
+          "unitIds": [
+            "anb-line",
+            "anb-light",
+            "anb-highland"
+          ],
+          "min": 2,
+          "max": 4
+        },
+        {
+          "label": "Attached Rifle Company (optional)",
+          "unitIds": [
+            "anb-rifle-coy",
+            "anb-rifle-coys",
+            "anb-rifle-bn"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "anb-kgl-infantry-brigade",
+      "name": "King's German Legion Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "anb-brig-cmd",
+      "slots": [
+        {
+          "label": "KGL Line Battalion",
+          "unitIds": [
+            "anb-kgl-line",
+            "anb-kgl-light"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ]
+    },
+    {
+      "id": "anb-hanoverian-brigade",
+      "name": "Hanoverian Brigade",
+      "min": 1,
+      "max": 4,
+      "commanderUnitId": "anb-brig-cmd",
+      "slots": [
+        {
+          "label": "Hanoverian Battalion (Landwehr, or Field Line/Light)",
+          "unitIds": [
+            "anb-hanover-landwehr",
+            "anb-hanover-line",
+            "anb-hanover-light"
+          ],
+          "min": 2,
+          "max": 5
+        },
+        {
+          "label": "Attached Jäger Company (optional)",
+          "unitIds": [
+            "anb-hanover-jager"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "anb-guards-brigade",
+      "name": "Guards Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "anb-brig-cmd",
+      "note": "If 2 British or KGL Infantry Brigades in the army",
+      "slots": [
+        {
+          "label": "Foot Guards Battalion",
+          "unitIds": [
+            "anb-foot-guard"
+          ],
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "anb-british-infantry-brigade",
+          "anb-kgl-infantry-brigade"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "anb-light-cavalry-brigade",
+      "name": "Light Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "anb-brig-cmd",
+      "note": "1 per 3 Infantry Brigades in the army",
+      "slots": [
+        {
+          "label": "Light Dragoon or Hussar Regiment",
+          "unitIds": [
+            "anb-light-dragoon-hussar"
+          ],
+          "min": 2,
+          "max": 3
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "anb-british-infantry-brigade",
+          "anb-kgl-infantry-brigade",
+          "anb-hanoverian-brigade"
+        ],
+        "ratio": 3
+      }
+    },
+    {
+      "id": "anb-hanoverian-cavalry-brigade",
+      "name": "Hanoverian Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "anb-brig-cmd",
+      "note": "If a Hanoverian Infantry Brigade is in the army",
+      "slots": [
+        {
+          "label": "Hanoverian Light Cavalry Regiment",
+          "unitIds": [
+            "anb-hanover-light-cav"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Duke of Cumberland Hussars (optional)",
+          "unitIds": [
+            "anb-hanover-cumberland-hussars"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "anb-hanoverian-brigade"
+        ],
+        "min": 1
+      }
+    },
+    {
+      "id": "anb-heavy-cavalry-brigade",
+      "name": "Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "anb-brig-cmd",
+      "note": "1 per 3 Infantry Brigades in the army",
+      "slots": [
+        {
+          "label": "Dragoon Regiment",
+          "unitIds": [
+            "anb-dragoons-dragoon-guards"
+          ],
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "anb-british-infantry-brigade",
+          "anb-kgl-infantry-brigade",
+          "anb-hanoverian-brigade"
+        ],
+        "ratio": 3
+      }
+    },
+    {
+      "id": "anb-household-brigade",
+      "name": "Household Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "anb-brig-cmd",
+      "note": "If one Heavy Cavalry Brigade is in the army",
+      "slots": [
+        {
+          "label": "Household Cavalry Regiment",
+          "unitIds": [
+            "anb-household-cav"
+          ],
+          "min": 1,
+          "max": 2
+        }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "anb-heavy-cavalry-brigade"
+        ],
+        "min": 1
+      }
+    },
+    {
+      "id": "anb-divisional-artillery",
+      "name": "Divisional Artillery",
+      "min": 0,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "anb-royal-arty",
+            "anb-hanover-foot-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "anb-horse-artillery",
+      "name": "Horse Artillery Batteries",
+      "min": 0,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "anb-royal-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "anb-artillery-brigade",
+      "name": "Artillery Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "anb-brig-cmd",
+      "note": "Alternative to taking Royal Horse Artillery batteries in direct support",
+      "slots": [
+        {
+          "label": "Royal Horse Artillery Battery",
+          "unitIds": [
+            "anb-royal-horse-arty"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "Detached Light Companies: British/KGL Line battalions can lose their Light company to form combined Small/Standard detachment units, addable to any infantry brigade.",
+    "Four-Deep Line, Column of Companies and Deep Formation are available special formations — see book for full rules.",
+    "Half battery: pay half points (rounded up) to field an artillery battery at half strength; one horse battery per army can be exchanged for a rocket troop.",
+    "Allies: up to 50% of points may be spent on Dutch/Belgian, Nassau or Brunswick Brigades.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, First Fire add-ons, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

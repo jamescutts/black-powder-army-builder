@@ -1,0 +1,423 @@
+{
+  "id": "peninsular-french",
+  "name": "The Peninsular French 1807-1814",
+  "blurb": "The Armées d'Espagne — Napoleon's marshals against Wellington, from Vimeiro to Toulouse.",
+  "units": [
+    {
+      "id": "pf-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "pf-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "pf-line",
+      "name": "Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "pf-light",
+      "name": "Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "pf-conscript",
+      "name": "Conscript Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Wavering"
+      ],
+      "cost": 32
+    },
+    {
+      "id": "pf-combined-grenadier",
+      "name": "Combined Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Elite 5+"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "pf-combined-voltigeurs",
+      "name": "Combined Voltiguers",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Sharpshooter",
+        "Skirmish"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "pf-young-guard",
+      "name": "Young Guard",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Elite 5+",
+        "Pas de Charge",
+        "Skirmish"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "pf-guard-grenadier-a-cheval",
+      "name": "Guard Grenadier à Cheval",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "pf-gendarme-elite",
+      "name": "Gendarme d'Elite",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "pf-empress-dragoon",
+      "name": "Empress Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "pf-guard-lancer",
+      "name": "Guard Lancer",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "8",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Reliable"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "pf-guard-light",
+      "name": "Guard Light Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "7",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder"
+      ],
+      "cost": 51
+    },
+    {
+      "id": "pf-vistula-lancer",
+      "name": "Vistula Lancer",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Lancer",
+        "Marauder"
+      ],
+      "cost": 50
+    },
+    {
+      "id": "pf-dragoon",
+      "name": "Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "pf-line-light-cav",
+      "name": "Line Light Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "pf-foot-arty",
+      "name": "Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "pf-horse-arty",
+      "name": "Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 21
+    }
+  ],
+  "brigades": [
+    {
+      "id": "pf-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 6,
+      "commanderUnitId": "pf-brig-cmd",
+      "slots": [
+        {
+          "label": "Line Infantry Battalion (1-3 regiments of 1-4 battalions)",
+          "unitIds": [
+            "pf-line",
+            "pf-conscript",
+            "pf-light"
+          ],
+          "min": 1,
+          "max": 12
+        }
+      ]
+    },
+    {
+      "id": "pf-reserve-infantry-brigade",
+      "name": "Reserve Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pf-brig-cmd",
+      "slots": [
+        {
+          "label": "Combined Grenadier or Conscript Line Battalion",
+          "unitIds": [
+            "pf-combined-grenadier",
+            "pf-conscript",
+            "pf-combined-voltigeurs"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ]
+    },
+    {
+      "id": "pf-young-guard-brigade",
+      "name": "Young Guard Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pf-brig-cmd",
+      "note": "Middle period only, if at least 3 infantry brigades taken",
+      "slots": [
+        {
+          "label": "Young Guard Infantry Battalion",
+          "unitIds": [
+            "pf-young-guard"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "pf-infantry-brigade"
+        ],
+        "min": 3
+      }
+    },
+    {
+      "id": "pf-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "pf-brig-cmd",
+      "note": "0 to 1 (Early), up to 1 per 2 Infantry Brigades (Middle/Late)",
+      "slots": [
+        {
+          "label": "Dragoon, Chasseur à Cheval or Vistula Lancer Regiment",
+          "unitIds": [
+            "pf-dragoon",
+            "pf-line-light-cav",
+            "pf-vistula-lancer"
+          ],
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "pf-infantry-brigade"
+        ],
+        "ratio": 2
+      }
+    },
+    {
+      "id": "pf-guard-cavalry-brigade",
+      "name": "Guard Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pf-brig-cmd",
+      "note": "Middle period, if at least 3 infantry brigades and 1 cavalry brigade are chosen",
+      "slots": [
+        {
+          "label": "Guard Cavalry Regiment",
+          "unitIds": [
+            "pf-guard-lancer",
+            "pf-guard-light",
+            "pf-guard-grenadier-a-cheval",
+            "pf-gendarme-elite",
+            "pf-empress-dragoon"
+          ],
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "pf-infantry-brigade"
+        ],
+        "min": 3
+      }
+    },
+    {
+      "id": "pf-army-artillery",
+      "name": "Army Artillery (Divisional/Corps assets)",
+      "min": 0,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "pf-foot-arty",
+            "pf-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Periods: Early 1807-1808, Middle 1809-1811, Late 1812-1814.",
+    "Combined Grenadiers/Voltigeurs: the Grenadier/Carabinier or Voltigeur companies from Line and Light battalions in a brigade can be pooled into a separate Combined battalion, addable to any Infantry Brigade.",
+    "Foreign Formations: upgrades and downgrades in the Infantry Brigade selection can represent the Swiss, Irish, Hanoverian, Nassau, Baden, Hesse-Darmstadt and Legion de Midi troop types.",
+    "This builder omits the book's many point-modifier upgrades/downgrades (Veteran status, Tough Fighters, Large, Small, Unreliable, etc.) — apply these manually per the book when finalising a list."
+  ]
+}

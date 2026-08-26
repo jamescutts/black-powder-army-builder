@@ -1,0 +1,12 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f2ecd6;
+  color: #2b1f14;
+}
+
+/* Thicker borders on all Paper cards */
+.mantine-Paper-root[data-with-border] {
+  --paper-border-width: 2px;
+}

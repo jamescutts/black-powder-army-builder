@@ -1,0 +1,629 @@
+{
+  "id": "france",
+  "name": "The French 1812",
+  "blurb": "The Grande Armée's line regiments and their German and Iberian auxiliaries.",
+  "units": [
+    {
+      "id": "fr-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fr-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Upgrade with 'A Marshal's baton in every knapsack' for +10 points"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50
+        }
+      ]
+    },
+    {
+      "id": "fr-line-infantry",
+      "name": "French Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "fr-light-infantry",
+      "name": "French Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter",
+        "Light Infantry",
+        "Mixed Formation"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fr-combined-grenadier",
+      "name": "Combined Grenadier or Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "7",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Elite 5+"
+      ],
+      "cost": 43
+    },
+    {
+      "id": "fr-voltigeurs",
+      "name": "Voltigeurs",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Pas de Charge",
+        "Skirmish",
+        "Sharpshooter",
+        "Light Infantry",
+        "Mixed Formation"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fr-portuguese-infantry",
+      "name": "Portuguese Infantry (French service)",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "fr-spanish-infantry",
+      "name": "Spanish Infantry (French service)",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "cost": 36
+    },
+    {
+      "id": "fr-rheinbund-infantry",
+      "name": "Rheinbund Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "cost": 31
+    },
+    {
+      "id": "fr-cuirassier",
+      "name": "Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fr-carabinier",
+      "name": "Carabinier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 58
+    },
+    {
+      "id": "fr-lancer",
+      "name": "Lancer",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "special": [
+        "Lancer",
+        "Marauder"
+      ],
+      "variants": [
+        {
+          "label": "Standard",
+          "cost": 48
+        },
+        {
+          "label": "Small",
+          "cost": 40
+        }
+      ]
+    },
+    {
+      "id": "fr-polish-uhlan",
+      "name": "Polish Uhlan",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "7",
+      "morale": "4",
+      "special": [
+        "Lancer",
+        "Marauder"
+      ],
+      "variants": [
+        {
+          "label": "Standard",
+          "cost": 48
+        },
+        {
+          "label": "Small",
+          "cost": 40
+        }
+      ]
+    },
+    {
+      "id": "fr-dragoon",
+      "name": "Dragoon",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "8",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D1"
+      ],
+      "cost": 44
+    },
+    {
+      "id": "fr-hussar-regt",
+      "name": "Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fr-chasseur-a-cheval",
+      "name": "Chasseurs à Cheval",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fr-wurttemberg-horse-jager",
+      "name": "Württemberg Horse-Jäger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fr-bavarian-chevauleger",
+      "name": "Bavarian Chevauleger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fr-regimental-arty-section",
+      "name": "Regimental Artillery Section",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "1-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 11
+    },
+    {
+      "id": "fr-regimental-battery",
+      "name": "Regimental Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 19
+    },
+    {
+      "id": "fr-half-foot-arty",
+      "name": "Half Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
+      "id": "fr-foot-arty",
+      "name": "Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "fr-half-heavy-foot-arty",
+      "name": "Half Heavy Foot Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
+    },
+    {
+      "id": "fr-heavy-foot-arty",
+      "name": "Heavy Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    },
+    {
+      "id": "fr-half-horse-arty",
+      "name": "Half Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 22
+    },
+    {
+      "id": "fr-horse-arty",
+      "name": "Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    }
+  ],
+  "brigades": [
+    {
+      "id": "fr-infantry-brigade",
+      "name": "Infantry Brigade",
+      "min": 1,
+      "max": 4,
+      "slots": [
+        {
+          "label": "Line Infantry Battalion (1-3 regiments, 1-4 battalions each)",
+          "unitIds": [
+            "fr-line-infantry"
+          ],
+          "min": 1,
+          "max": 10
+        },
+        {
+          "label": "Light Infantry Battalion (optional, max 1 regiment per division)",
+          "unitIds": [
+            "fr-light-infantry"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Foreign Infantry Battalion (optional, max 1 regiment per division)",
+          "unitIds": [
+            "fr-portuguese-infantry",
+            "fr-spanish-infantry",
+            "fr-rheinbund-infantry"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Attached Combined Grenadier or Voltigeur Battalion (optional)",
+          "unitIds": [
+            "fr-combined-grenadier",
+            "fr-voltigeurs"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Regimental Artillery (optional)",
+          "unitIds": [
+            "fr-regimental-arty-section",
+            "fr-regimental-battery"
+          ],
+          "min": 0,
+          "max": 3
+        }
+      ],
+      "commanderUnitId": "fr-brig-cmd"
+    },
+    {
+      "id": "fr-light-cavalry-brigade",
+      "name": "Light Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Hussar Regiment",
+          "unitIds": [
+            "fr-hussar-regt"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Lancer Regiment",
+          "unitIds": [
+            "fr-lancer"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Chasseur à Cheval Regiment",
+          "unitIds": [
+            "fr-chasseur-a-cheval"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Polish Uhlan Regiment (max 1 per army)",
+          "unitIds": [
+            "fr-polish-uhlan"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "fr-polish-uhlan",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Württemberg Horse-Jäger Regiment (optional, Early)",
+          "unitIds": [
+            "fr-wurttemberg-horse-jager"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Bavarian Chevauleger Regiment (optional, Early)",
+          "unitIds": [
+            "fr-bavarian-chevauleger"
+          ],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "note": "1-4 total regiments per brigade, max 1 per 2 Infantry Brigades in the army",
+      "commanderUnitId": "fr-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "fr-infantry-brigade"
+        ],
+        "ratio": 2
+      }
+    },
+    {
+      "id": "fr-heavy-cavalry-brigade",
+      "name": "Heavy Cavalry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cuirassier Regiment",
+          "unitIds": [
+            "fr-cuirassier"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Carabinier Regiment",
+          "unitIds": [
+            "fr-carabinier"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Dragoon Regiment",
+          "unitIds": [
+            "fr-dragoon"
+          ],
+          "min": 0,
+          "max": 4
+        },
+        {
+          "label": "Small Lancer Regiment (optional)",
+          "unitIds": [
+            "fr-lancer"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "1-4 total regiments per brigade; if at least 2 Infantry Brigades taken",
+      "commanderUnitId": "fr-brig-cmd",
+      "requires": {
+        "brigadeTypeIds": [
+          "fr-infantry-brigade"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "fr-divisional-artillery",
+      "name": "Divisional Artillery",
+      "min": 0,
+      "max": 6,
+      "slots": [
+        {
+          "label": "Battery",
+          "unitIds": [
+            "fr-half-foot-arty",
+            "fr-foot-arty",
+            "fr-half-heavy-foot-arty",
+            "fr-heavy-foot-arty",
+            "fr-half-horse-arty",
+            "fr-horse-arty"
+          ],
+          "min": 1,
+          "max": 1
+        }
+      ]
+    },
+    {
+      "id": "fr-artillery-brigade",
+      "name": "Reserve Artillery Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Foot / Heavy Battery",
+          "unitIds": [
+            "fr-foot-arty",
+            "fr-heavy-foot-arty",
+            "fr-half-foot-arty",
+            "fr-half-heavy-foot-arty"
+          ],
+          "min": 2,
+          "max": 6
+        }
+      ],
+      "note": "If 12+ infantry battalions taken; up to 50% of points on Corps and Army Support",
+      "commanderUnitId": "fr-brig-cmd"
+    }
+  ],
+  "notes": [
+    "Divisional Commander, then 1 to 4 Infantry Brigades: 1 to 3 Infantry Regiments each (0-3 Line, 0-1 Light, 0-1 Foreign [Spanish/Portuguese/Rheinbund]). Max 10 battalions per brigade, max 1 Light regiment per division.",
+    "0 to 1 Regimental Artillery section per two battalions, or 0 to 1 Regimental Artillery Battery per regiment of 3+ battalions.",
+    "0 to 2 Light Cavalry Brigades (max 1 per 2 Infantry Brigades): 1 to 4 regiments from Hussars, Lancers, Chasseurs à Cheval, Polish Uhlans, Württemberg Horse-Jägers, Bavarian Chevaulegers.",
+    "Divisional Artillery: up to 1 Foot battery (6+ battalions in army) and up to 1 Horse battery (3+ cavalry regiments) attach to any brigade.",
+    "Corps and Army Support: up to 50% of points on Reserve Artillery, a Heavy Cavalry Brigade (if 2+ infantry brigades taken), and an Artillery Brigade (if 12+ infantry battalions taken).",
+    "0 to 1 Heavy Cavalry Brigade (if 2 Infantry Brigades taken): 1 to 3 regiments of Carabiniers/Cuirassiers, or Dragoons, plus up to 1 Small Lancer regiment.",
+    "Allies: a French army can take 25% allies from the Imperial Guard list, plus 25% from any other allied list."
+  ]
+}
