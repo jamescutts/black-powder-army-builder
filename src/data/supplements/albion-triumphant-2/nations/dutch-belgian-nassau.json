@@ -2,7 +2,7 @@
   "id": "dutch-belgian-nassau",
   "name": "The Anglo-Netherlands Army 1815 — Dutch, Belgians and Nassau",
   "blurb": "The Kingdom of the Netherlands' own troops, alongside the Duchy of Nassau's regiments.",
-  "flagFile": "/flags/netherlands.svg",
+  "flagFiles": ["/flags/netherlands.svg", "/flags/nassau.svg"],
   "units": [
     {
       "id": "dbn-div-cmd",

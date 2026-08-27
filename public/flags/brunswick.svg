@@ -1,9 +1,9 @@
-<!-- Duchy of Brunswick: black field with yellow/gold rearing horse (Niedersächsisches Ross)
-     The "Black Brunswickers" used a black livery throughout. -->
+<!-- Duchy of Brunswick: black field (for the "Black Brunswickers'" black livery) with the
+     traditional white/silver Brunswick-Lüneburg rearing horse (Sachsenross), not gold. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
   <rect width="3" height="2" fill="#111111"/>
   <!-- Simplified rearing horse in gold/yellow, centred -->
-  <g transform="translate(1.5,1.1) scale(0.28)" fill="#F5C518">
+  <g transform="translate(1.5,1.1) scale(0.28)" fill="#f0f0f0">
     <!-- body -->
     <ellipse cx="0" cy="0" rx="1.4" ry="1.0" transform="rotate(-20)"/>
     <!-- neck -->

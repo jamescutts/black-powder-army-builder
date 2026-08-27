@@ -1,6 +1,6 @@
-<!-- Kingdom of Prussia: black / white / black triband, wider white centre -->
+<!-- Kingdom of Prussia: black over white bicolour — the state's actual colours. The previous
+     black-white-black triband didn't correspond to any real historical Prussian flag. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
-  <rect width="3" height="0.5"  y="0"    fill="#000000"/>
-  <rect width="3" height="1.0"  y="0.5"  fill="#ffffff"/>
-  <rect width="3" height="0.5"  y="1.5"  fill="#000000"/>
+  <rect width="3" height="1" y="0" fill="#000000"/>
+  <rect width="3" height="1" y="1" fill="#ffffff"/>
 </svg>

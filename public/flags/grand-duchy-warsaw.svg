@@ -1,5 +1,6 @@
-<!-- Duchy of Warsaw: white over blue horizontal bicolour -->
+<!-- Duchy of Warsaw, 1807-1815: national colours are Polish white and red (as on poland.svg) — the
+     previous blue has no basis in Polish heraldry. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
   <rect width="3" height="1" y="0" fill="#ffffff"/>
-  <rect width="3" height="1" y="1" fill="#003DA5"/>
+  <rect width="3" height="1" y="1" fill="#DC143C"/>
 </svg>

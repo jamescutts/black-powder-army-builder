@@ -1,4 +1,4 @@
-import { createTheme, Paper, type MantineColorsTuple } from "@mantine/core";
+import { createTheme, type MantineColorsTuple } from "@mantine/core";
 
 // Warm brown accent — pulled from the supplement's ink/heading colour (dark saddle-brown on cream).
 const brown: MantineColorsTuple = [
