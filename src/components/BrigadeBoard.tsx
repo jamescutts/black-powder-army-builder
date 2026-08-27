@@ -13,7 +13,7 @@ import {
   ThemeIcon,
   Tooltip,
 } from "@mantine/core";
-import { IconPlus, IconTrash, IconUserStar } from "@tabler/icons-react";
+import { IconCopy, IconPlus, IconTrash, IconUserStar } from "@tabler/icons-react";
 import type { Nation } from "@/data/types";
 import type { RosterBrigadeInstance, RosterState } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
@@ -67,6 +67,22 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
       ...roster,
       brigadeInstances: roster.brigadeInstances.filter((bi) => bi.key !== key),
     });
+  }
+
+  function handleCloneBrigade(key: string) {
+    const source = roster.brigadeInstances.find((bi) => bi.key === key);
+    if (!source) return;
+    const clone: RosterBrigadeInstance = {
+      ...source,
+      key: newKey("brigade"),
+      commanderLine: source.commanderLine
+        ? { ...source.commanderLine, key: newKey("cmd") }
+        : null,
+      slotLines: source.slotLines.map((slot) =>
+        slot.map((line) => ({ ...line, key: newKey("unit") }))
+      ),
+    };
+    onChange({ ...roster, brigadeInstances: [...roster.brigadeInstances, clone] });
   }
 
   function handleCommanderVariant(instanceKey: string, variantLabel: string) {
@@ -172,11 +188,20 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                   #{sameTypeIndex}
                 </Badge>
               </Group>
-              <Tooltip label="Remove this brigade">
-                <ActionIcon color="red" variant="subtle" onClick={() => handleRemoveBrigade(instance.key)}>
-                  <IconTrash size={16} />
-                </ActionIcon>
-              </Tooltip>
+              <Group gap={4}>
+                {effectiveMax(bt, roster.brigadeInstances) > countByType(roster.brigadeInstances, bt.id) && (
+                  <Tooltip label="Clone this brigade">
+                    <ActionIcon color="brown" variant="subtle" onClick={() => handleCloneBrigade(instance.key)}>
+                      <IconCopy size={16} />
+                    </ActionIcon>
+                  </Tooltip>
+                )}
+                <Tooltip label="Remove this brigade">
+                  <ActionIcon color="red" variant="subtle" onClick={() => handleRemoveBrigade(instance.key)}>
+                    <IconTrash size={16} />
+                  </ActionIcon>
+                </Tooltip>
+              </Group>
             </Group>
             {bt.note && (
               <Text size="xs" c="dimmed" mb="sm">

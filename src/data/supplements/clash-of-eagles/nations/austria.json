@@ -13,11 +13,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -33,11 +35,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -285,17 +289,22 @@
       "category": "Command",
       "type": "Named Commander",
       "armament": "-",
-      "special": ["Staff Rating 8", "+1 combat die"],
+      "special": [
+        "+1 combat die"
+      ],
       "variants": [
         {
           "label": "Decisive, Staff Rating 8",
-          "cost": 75
+          "cost": 75,
+          "staffRating": 8
         },
         {
           "label": "Hesitant, Staff Rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "at-cmd-bianchi",
@@ -305,10 +314,10 @@
       "armament": "-",
       "cost": 75,
       "special": [
-        "Staff Rating 7",
         "+2 combat attacks",
         "Decisive"
-      ]
+      ],
+      "staffRating": 7
     }
   ],
   "brigades": [

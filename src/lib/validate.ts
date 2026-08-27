@@ -10,7 +10,21 @@ export interface ValidationIssue {
 export function validateRoster(nation: Nation, roster: RosterState): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
+  // Determine which Command units are army-level (not tied to a brigade as its required commander)
+  const brigadeCommanderIds = new Set(
+    nation.brigades.map((b) => b.commanderUnitId).filter((id): id is string => Boolean(id))
+  );
+  const hasArmyCommandUnits = nation.units.some(
+    (u) => u.category === "Command" && !brigadeCommanderIds.has(u.id)
+  );
+
   const commandTotal = roster.commandItems.reduce((s, l) => s + l.qty, 0);
+  if (hasArmyCommandUnits && commandTotal === 0) {
+    issues.push({
+      level: "error",
+      message: "Army Command: an army commander is required",
+    });
+  }
   if (commandTotal > 1) {
     issues.push({
       level: "error",

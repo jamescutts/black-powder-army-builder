@@ -2,10 +2,11 @@
 
 import { Alert, Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text } from "@mantine/core";
 import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
-import type { Nation } from "@/data/types";
+import type { Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost } from "@/lib/units";
 import { validateRoster } from "@/lib/validate";
+import { RosterViewModal } from "@/components/RosterViewModal";
 
 interface Props {
   nation: Nation;
@@ -16,6 +17,17 @@ function lineTotal(nation: Nation, line: RosterUnitLine): number {
   const unit = nation.units.find((u) => u.id === line.unitId);
   if (!unit) return 0;
   return unitCost(unit, line.variantLabel) * line.qty;
+}
+
+function getStaffRating(unit: UnitEntry, variantLabel?: string): number | undefined {
+  // Named commanders have a fixed staffRating on the unit itself
+  if (unit.staffRating !== undefined) return unit.staffRating;
+  // Generic commanders have staffRating on the selected variant
+  if (variantLabel && unit.variants) {
+    const variant = unit.variants.find((v) => v.label === variantLabel);
+    if (variant?.staffRating !== undefined) return variant.staffRating;
+  }
+  return undefined;
 }
 
 function LineList({
@@ -32,6 +44,7 @@ function LineList({
       {lines.map((line) => {
         const unit = nation.units.find((u) => u.id === line.unitId);
         if (!unit) return null;
+        const sr = unit.category === "Command" ? getStaffRating(unit, line.variantLabel) : undefined;
         return (
           <Group key={line.key} justify="space-between" wrap="nowrap">
             <Text
@@ -44,7 +57,7 @@ function LineList({
               {commander ? "★ " : ""}
               {line.qty > 1 ? `${line.qty}× ` : ""}
               {unit.name}
-              {line.variantLabel ? ` (${line.variantLabel})` : ""}
+              {sr !== undefined ? ` (Staff Rating ${sr})` : ""}
             </Text>
             <Text size="xs" c="dimmed">
               {lineTotal(nation, line)}
@@ -76,9 +89,43 @@ export function RosterPanel({ nation, roster }: Props) {
     <Stack gap="md">
       <Paper withBorder p="md" radius="md">
         <Group justify="space-between" mb="sm">
-          <Text fw={700} size="lg">
-            Roster
-          </Text>
+          <Group gap="sm" align="center">
+            {nation.flagFile && (
+              <div style={{
+                position: "relative",
+                width: 54,
+                height: 36,
+                borderRadius: 3,
+                border: "1px solid var(--mantine-color-gray-3)",
+                overflow: "hidden",
+                flexShrink: 0,
+              }}>
+                <img
+                  src={nation.flagFile}
+                  alt={`${nation.name} flag`}
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+                <div style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: [
+                    "radial-gradient(ellipse at center, transparent 40%, rgba(60,30,5,0.35) 100%)",
+                    "linear-gradient(135deg, rgba(180,130,60,0.18) 0%, rgba(120,70,20,0.22) 100%)",
+                  ].join(", "),
+                  mixBlendMode: "multiply",
+                  pointerEvents: "none",
+                }} />
+              </div>
+            )}
+            <Stack gap={0}>
+              <Text fw={700} size="lg">
+                Roster
+              </Text>
+              <Text size="xs" c="dimmed">
+                {nation.name}
+              </Text>
+            </Stack>
+          </Group>
           <Badge size="xl" variant="filled" color="brown">
             {grandTotal} pts
           </Badge>
@@ -96,7 +143,7 @@ export function RosterPanel({ nation, roster }: Props) {
                     {commandTotal} pts
                   </Text>
                 </Group>
-                <LineList nation={nation} lines={roster.commandItems} />
+                <LineList nation={nation} lines={roster.commandItems} commander />
               </div>
             )}
 
@@ -143,6 +190,8 @@ export function RosterPanel({ nation, roster }: Props) {
           <Text fw={700}>{grandTotal} pts total</Text>
         </Group>
       </Paper>
+
+      <RosterViewModal nation={nation} roster={roster} />
 
       {issues.length === 0 ? (
         <Alert color="green" variant="light" icon={<IconCircleCheck />}>

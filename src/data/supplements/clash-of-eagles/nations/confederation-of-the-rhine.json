@@ -21,11 +21,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -38,11 +40,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -840,11 +844,11 @@
       "armament": "-",
       "cost": 125,
       "special": [
-        "Staff Rating 8",
         "Decisive",
         "Aggressive",
         "+2 combat attacks"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "cotr-cmd-thielmann",
@@ -854,12 +858,12 @@
       "armament": "-",
       "cost": 150,
       "special": [
-        "Staff Rating 8",
         "Aggressive",
         "Headstrong",
         "+3 combat attacks if he charged",
         "Can also be used as a Prussian commander during the Hundred Days (Albion Triumphant II)"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "cotr-cmd-lecoq",
@@ -869,12 +873,12 @@
       "armament": "-",
       "cost": 150,
       "special": [
-        "Staff Rating 8",
         "Decisive",
         "Inspirational",
         "+2 combat attacks",
         "Hero of the Army: while Le Coq is in command, D3 units in the Saxon army are Valiant"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "cotr-cmd-von-ochs",
@@ -884,10 +888,10 @@
       "armament": "-",
       "cost": 0,
       "special": [
-        "Staff Rating 7",
         "+1 combat attack",
         "Irresponsible"
-      ]
+      ],
+      "staffRating": 7
     }
   ],
   "brigades": [

@@ -11,8 +11,16 @@
       "type": "Command",
       "armament": "-",
       "variants": [
-        { "label": "Staff rating 7", "cost": 0 },
-        { "label": "Staff rating 8", "cost": 25 }
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25,
+          "staffRating": 8
+        }
       ]
     },
     {
@@ -22,8 +30,16 @@
       "type": "Command",
       "armament": "-",
       "variants": [
-        { "label": "Staff rating 7", "cost": 0 },
-        { "label": "Staff rating 8", "cost": 25 }
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25,
+          "staffRating": 8
+        }
       ]
     },
     {
@@ -36,7 +52,11 @@
       "shooting": "3",
       "morale": "4",
       "stamina": "3",
-      "special": ["Skirmish", "Elite 5+", "Sharpshooter"],
+      "special": [
+        "Skirmish",
+        "Elite 5+",
+        "Sharpshooter"
+      ],
       "cost": 43
     },
     {
@@ -49,7 +69,9 @@
       "shooting": "3",
       "morale": "4",
       "stamina": "3",
-      "special": ["Unreliable"],
+      "special": [
+        "Unreliable"
+      ],
       "cost": 33
     },
     {
@@ -62,7 +84,11 @@
       "shooting": "3",
       "morale": "4",
       "stamina": "3",
-      "special": ["Skirmish", "Sharpshooter", "Unreliable"],
+      "special": [
+        "Skirmish",
+        "Sharpshooter",
+        "Unreliable"
+      ],
       "cost": 36
     },
     {
@@ -75,7 +101,11 @@
       "shooting": "2",
       "morale": "4",
       "stamina": "2",
-      "special": ["Marauder", "Skirmish", "Sharpshooter"],
+      "special": [
+        "Marauder",
+        "Skirmish",
+        "Sharpshooter"
+      ],
       "cost": 38
     },
     {
@@ -88,7 +118,11 @@
       "shooting": "2",
       "morale": "4",
       "stamina": "2",
-      "special": ["Marauder", "Skirmish", "Sharpshooter"],
+      "special": [
+        "Marauder",
+        "Skirmish",
+        "Sharpshooter"
+      ],
       "cost": 36
     },
     {
@@ -101,7 +135,12 @@
       "shooting": "3",
       "morale": "4",
       "stamina": "3",
-      "special": ["Marauder", "Rifle Mixed Formation", "Skirmish", "Sharpshooter"],
+      "special": [
+        "Marauder",
+        "Rifle Mixed Formation",
+        "Skirmish",
+        "Sharpshooter"
+      ],
       "cost": 46
     },
     {
@@ -113,7 +152,9 @@
       "handToHand": "6",
       "morale": "4",
       "stamina": "3",
-      "special": ["Marauder"],
+      "special": [
+        "Marauder"
+      ],
       "cost": 41
     },
     {
@@ -125,7 +166,10 @@
       "handToHand": "7",
       "morale": "4",
       "stamina": "3",
-      "special": ["Lance", "Marauder"],
+      "special": [
+        "Lance",
+        "Marauder"
+      ],
       "cost": 48
     },
     {
@@ -137,7 +181,11 @@
       "handToHand": "5",
       "morale": "4",
       "stamina": "2",
-      "special": ["Small", "Lance", "Marauder"],
+      "special": [
+        "Small",
+        "Lance",
+        "Marauder"
+      ],
       "cost": 40
     },
     {
@@ -150,7 +198,9 @@
       "shooting": "3-2-1",
       "morale": "4",
       "stamina": "1",
-      "special": ["Marauder"],
+      "special": [
+        "Marauder"
+      ],
       "cost": 30
     },
     {
@@ -176,16 +226,26 @@
       "slots": [
         {
           "label": "Brunswick Infantry Battalion (Line or Light, all same type)",
-          "unitIds": ["bw-line", "bw-light"],
+          "unitIds": [
+            "bw-line",
+            "bw-light"
+          ],
           "min": 2,
           "max": 3
         },
         {
           "label": "Leib Light Battalion (optional, 1 per army)",
-          "unitIds": ["bw-leib-light"],
+          "unitIds": [
+            "bw-leib-light"
+          ],
           "min": 0,
           "max": 1,
-          "unitCaps": [{ "unitId": "bw-leib-light", "armyMax": 1 }]
+          "unitCaps": [
+            {
+              "unitId": "bw-leib-light",
+              "armyMax": 1
+            }
+          ]
         }
       ]
     },
@@ -198,7 +258,11 @@
       "slots": [
         {
           "label": "Vanguard Jäger/Light Company or Battalion",
-          "unitIds": ["bw-vanguard-jager-coys", "bw-vanguard-light-coys", "bw-vanguard-battalion"],
+          "unitIds": [
+            "bw-vanguard-jager-coys",
+            "bw-vanguard-light-coys",
+            "bw-vanguard-battalion"
+          ],
           "min": 1,
           "max": 3
         }
@@ -211,10 +275,20 @@
       "max": 1,
       "commanderUnitId": "bw-brig-cmd",
       "slots": [
-        { "label": "Hussar Regiment (optional)", "unitIds": ["bw-hussar"], "min": 0, "max": 1 },
+        {
+          "label": "Hussar Regiment (optional)",
+          "unitIds": [
+            "bw-hussar"
+          ],
+          "min": 0,
+          "max": 1
+        },
         {
           "label": "Uhlan Regiment (optional, historically Small)",
-          "unitIds": ["bw-uhlan", "bw-uhlan-squadron"],
+          "unitIds": [
+            "bw-uhlan",
+            "bw-uhlan-squadron"
+          ],
           "min": 0,
           "max": 1
         }
@@ -226,7 +300,15 @@
       "min": 0,
       "max": 2,
       "slots": [
-        { "label": "Battery", "unitIds": ["bw-foot-battery", "bw-horse-battery"], "min": 1, "max": 1 }
+        {
+          "label": "Battery",
+          "unitIds": [
+            "bw-foot-battery",
+            "bw-horse-battery"
+          ],
+          "min": 1,
+          "max": 1
+        }
       ]
     }
   ],

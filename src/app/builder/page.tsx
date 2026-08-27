@@ -1,11 +1,11 @@
 "use client";
 
 import { Suspense, useEffect, useMemo, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import {
   ActionIcon,
   Anchor,
-  Button,
   Container,
   Grid,
   Group,
@@ -15,7 +15,7 @@ import {
   Title,
   Tooltip,
 } from "@mantine/core";
-import { IconArrowLeft, IconTrash } from "@tabler/icons-react";
+import { IconTrash } from "@tabler/icons-react";
 import { supplements, nations, getSupplement, getNation, getNationsForSupplement } from "@/data";
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
@@ -35,7 +35,6 @@ export default function BuilderPage() {
 }
 
 function BuilderContent() {
-  const router = useRouter();
   const searchParams = useSearchParams();
 
   // Resolve initial nation from search params, falling back to saved roster or first nation
@@ -97,17 +96,19 @@ function BuilderContent() {
   return (
     <Container size="xl" py="lg">
       <Stack gap="lg">
-        <Stack gap="sm">
-          <Stack gap={0}>
-            <Title
-              order={1}
-              fz={56}
-              fw={700}
-              c="brown.7"
-              style={{ fontFamily: "var(--font-script), cursive", lineHeight: 1.1 }}
-            >
-              Black Powder Army Builder
-            </Title>
+        <Group justify="space-between" align="flex-end" wrap="wrap">
+          <Stack gap={0} style={{ userSelect: "none" }}>
+            <Anchor component={Link} href="/" underline="never">
+              <Title
+                order={1}
+                fz={56}
+                fw={700}
+                c="brown.7"
+                style={{ fontFamily: "var(--font-script), cursive", lineHeight: 1.1 }}
+              >
+                Black Powder Army Builder
+              </Title>
+            </Anchor>
             <Text c="dimmed" size="sm">
               Points calculator for{" "}
               <Anchor href="https://www.warlordgames.com" target="_blank" rel="noreferrer" c="brown.7">
@@ -116,17 +117,6 @@ function BuilderContent() {
               supplement army lists.
             </Text>
           </Stack>
-          <Group align="flex-end">
-            <Button
-              variant="subtle"
-              color="brown.7"
-              leftSection={<IconArrowLeft size={16} />}
-              onClick={() => router.push("/")}
-              px={0}
-            >
-              Change supplement / nation
-            </Button>
-          </Group>
           <Group align="flex-end">
             <Select
               label="Supplement"
@@ -156,7 +146,7 @@ function BuilderContent() {
               </ActionIcon>
             </Tooltip>
           </Group>
-        </Stack>
+        </Group>
 
         <Text size="sm" c="dimmed">
           {supplement.blurb} — {nation.blurb}
@@ -167,7 +157,7 @@ function BuilderContent() {
             <BrigadeBoard key={nation.id} nation={nation} roster={roster} onChange={setRoster} />
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 5 }}>
-            <Stack gap="md">
+            <Stack gap="md" style={{ position: "sticky", top: 16 }}>
               <RosterPanel nation={nation} roster={roster} />
               <ForceOrgNotes nation={nation} />
             </Stack>

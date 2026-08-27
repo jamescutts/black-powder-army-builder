@@ -16,11 +16,13 @@
       "variants": [
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -33,11 +35,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -264,11 +268,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "Aggressive",
         "+2 combat attacks",
         "Marschall Vorwärts: when fighting the French with Blücher in command, Prussian units may make a normal move before the game begins, and one unit in the army may be given Ferocious Charge"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "pr15-cmd-zieten",
@@ -278,11 +282,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "Highly Decisive",
         "+2 combat attacks",
         "Brave: any Prussian unit within 12\" of Zieten adds +1 to any break test roll"
-      ]
+      ],
+      "staffRating": 8
     }
   ],
   "brigades": [

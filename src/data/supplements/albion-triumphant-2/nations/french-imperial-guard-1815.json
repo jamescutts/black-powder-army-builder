@@ -16,11 +16,13 @@
       "variants": [
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -36,15 +38,18 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },

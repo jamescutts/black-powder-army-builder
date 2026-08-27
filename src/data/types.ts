@@ -4,6 +4,8 @@ export interface UnitVariant {
   /** Short label shown in a select, e.g. "Musket" or "Staff rating 8" */
   label: string;
   cost: number;
+  /** Staff rating for this variant (commanders only), e.g. 7, 8, or 9 */
+  staffRating?: number;
   /** Optional stat overrides for this variant, merged over the base unit stats */
   handToHand?: string;
   shooting?: string;
@@ -20,6 +22,8 @@ export interface UnitEntry {
   morale?: string;
   stamina?: string;
   special?: string[];
+  /** Staff rating for named commanders with a fixed rating, e.g. 8 or 9 */
+  staffRating?: number;
   /** Flat cost, used when the unit has a single price */
   cost?: number;
   /** Alternative priced options (weapon choice, staff rating, half/full battery, etc.) */

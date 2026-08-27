@@ -16,15 +16,18 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -40,15 +43,18 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -61,15 +67,18 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 15
+          "cost": 15,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -259,12 +268,12 @@
       "armament": "-",
       "cost": 75,
       "special": [
-        "Staff Rating 10",
         "Aggressive",
         "Decisive",
         "+3 combat attacks",
         "Le Petit Tondu: units taking a morale check for supporting a unit that breaks may re-roll their morale roll"
-      ]
+      ],
+      "staffRating": 10
     }
   ],
   "brigades": [

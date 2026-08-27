@@ -13,11 +13,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -30,11 +32,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -287,10 +291,10 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "+1 combat attack",
         "Battle Injury: must roll on the Personal Qualities of Commanders chart each turn"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "pf-cmd-massena",
@@ -300,11 +304,11 @@
       "armament": "-",
       "cost": 50,
       "special": [
-        "Staff Rating 9",
         "High Independence",
         "+2 combat attacks",
         "Dear Child of Victory: troops under his command defending buildings gain Tough Fighters"
-      ]
+      ],
+      "staffRating": 9
     },
     {
       "id": "pf-cmd-sebastiani",
@@ -314,11 +318,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "No combat attack bonus",
         "General Surprise: opponent chooses whether Sebastiani's side goes first or second",
         "In pointed games, reduces the enemy's points gained from destroying him by D6x10"
-      ]
+      ],
+      "staffRating": 8
     }
   ],
   "brigades": [

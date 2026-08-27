@@ -13,11 +13,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 20
+          "cost": 20,
+          "staffRating": 8
         }
       ]
     },
@@ -33,11 +35,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 20
+          "cost": 20,
+          "staffRating": 8
         }
       ]
     },
@@ -669,12 +673,12 @@
       "armament": "-",
       "cost": 75,
       "special": [
-        "Staff Rating 7",
         "+1 combat die",
         "Command Distance 18\"",
         "Saviour of the Motherland: all Russian troops within 12\" add +1 to break test dice",
         "Immobile: cannot move unless an enemy unit is within proximity range"
-      ]
+      ],
+      "staffRating": 7
     },
     {
       "id": "ru-cmd-barclay",
@@ -684,11 +688,11 @@
       "armament": "-",
       "cost": 100,
       "special": [
-        "Staff Rating 8",
         "Decisive",
         "+1 combat die",
         "If he fails to give an order to a unit, may try again on a different unit on a D6 roll of 4+"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "ru-cmd-bagration",
@@ -698,12 +702,12 @@
       "armament": "-",
       "cost": 175,
       "special": [
-        "Staff Rating 9",
         "Decisive",
         "Inspirational",
         "+2 combat dice",
         "Lion of the Army: once per game a Russian cavalry or infantry unit may re-roll a failed break test as if Valiant"
-      ]
+      ],
+      "staffRating": 9
     },
     {
       "id": "ru-cmd-raevsky",
@@ -713,10 +717,10 @@
       "armament": "-",
       "cost": 100,
       "special": [
-        "Staff Rating 8",
         "Inspirational",
         "+2 combat dice"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "ru-cmd-eugene-wurttemberg",
@@ -726,10 +730,10 @@
       "armament": "-",
       "cost": 100,
       "special": [
-        "Staff Rating 8",
         "+2 combat attacks",
         "Headstrong"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "ru-cmd-platov",
@@ -739,11 +743,11 @@
       "armament": "-",
       "cost": 150,
       "special": [
-        "Staff Rating 8",
         "+2 combat attacks",
         "Army receives one additional free Cossack regiment",
         "Once per game may issue a Follow Me order to a whole Light Cavalry brigade rather than a single regiment"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "ru-cmd-bogdanovsky",
@@ -753,11 +757,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 7",
         "+1 combat attack",
         "Aggressive",
         "Irresponsible"
-      ]
+      ],
+      "staffRating": 7
     },
     {
       "id": "ru-cmd-denisov",
@@ -767,10 +771,10 @@
       "armament": "-",
       "cost": 100,
       "special": [
-        "Staff Rating 8",
         "+1 combat attack",
         "Cossack cavalry under his command can charge normally"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "ru-cmd-vorontsov",
@@ -780,10 +784,10 @@
       "armament": "-",
       "cost": 75,
       "special": [
-        "Staff Rating 8",
         "+1 combat attack",
         "Decisive"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "ru-cmd-stroganov",
@@ -793,11 +797,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 7",
         "+1 combat attack",
         "Decisive",
         "Irresponsible"
-      ]
+      ],
+      "staffRating": 7
     },
     {
       "id": "ru-cmd-kutaisov",
@@ -807,13 +811,13 @@
       "armament": "-",
       "cost": 150,
       "special": [
-        "Staff Rating 7",
         "+2 combat attacks",
         "Decisive",
         "Headstrong",
         "Aggressive",
         "Russian batteries under his command ignore their proximity rule"
-      ]
+      ],
+      "staffRating": 7
     }
   ],
   "brigades": [

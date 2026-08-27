@@ -27,3 +27,46 @@ body {
 .nation-grid {
   justify-content: center;
 }
+
+/* Print styles: only show modal content */
+@media print {
+  body {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  /* Hide everything except the modal overlay */
+  body > *:not(.mantine-Modal-root):not([data-portal]) {
+    display: none !important;
+  }
+
+  /* Hide modal backdrop and chrome */
+  .mantine-Modal-overlay {
+    display: none !important;
+  }
+
+  .mantine-Modal-header {
+    display: none !important;
+  }
+
+  .mantine-Modal-inner {
+    padding: 0 !important;
+    position: static !important;
+    overflow: visible !important;
+  }
+
+  .mantine-Modal-content {
+    box-shadow: none !important;
+    border: none !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .mantine-Modal-body {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+}

@@ -16,11 +16,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -33,11 +35,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -50,11 +54,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -67,11 +73,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -213,11 +221,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "Aggressive",
         "+2 combat attacks where his force has charged",
         "The Prince is a brave young man, but that's all: Blunders on any double, not just double 6"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "dbn-cmd-ghigny",
@@ -227,13 +235,13 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "Aggressive",
         "High Independence",
         "+2 combat attacks",
         "Hotly Engaged: despite High Independence, only Blunders on a 12",
         "Can also be used as a French commander during the Peninsular Campaign (Albion Triumphant I)"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "dbn-cmd-chasse",
@@ -243,10 +251,10 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "+1 combat attack",
         "General Baïonette: once per game, at the start of any turn, may nominate one of his battalions to receive Ferocious Charge for that turn only"
-      ]
+      ],
+      "staffRating": 8
     }
   ],
   "brigades": [

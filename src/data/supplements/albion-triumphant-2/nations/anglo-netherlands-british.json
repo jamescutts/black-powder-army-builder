@@ -13,15 +13,18 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -34,11 +37,13 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -395,12 +400,12 @@
       "armament": "-",
       "cost": 50,
       "special": [
-        "Staff Rating 9",
         "Decisive",
         "+1 attack to any combat where his force charged",
         "+3 attacks to any combat where his side is defending",
         "The French are going to get a devil of a surprise: Wellington can choose which side of the table to fight on during an encounter battle"
-      ]
+      ],
+      "staffRating": 9
     },
     {
       "id": "anb-cmd-alten",
@@ -410,11 +415,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "Headstrong",
         "+1 combat attack",
         "The flower of the Army: when giving an order to a light or rifle battalion, brigade or division, Alten adds +1 to his Staff Rating"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "anb-cmd-kempt",
@@ -424,10 +429,10 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "+2 combat attacks",
         "Seen Some Action: may re-roll a failed command roll, but still only Blunders on a 12"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "anb-cmd-pack",
@@ -437,10 +442,10 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "+1 combat attack",
         "The Devil break the gaolers back: a unit under his command can be given the Valiant rule, and all units in his brigade are classed as Tough Fighters"
-      ]
+      ],
+      "staffRating": 8
     }
   ],
   "brigades": [

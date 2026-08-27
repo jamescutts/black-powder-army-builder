@@ -39,7 +39,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <em>Black Powder</em>, all supplement titles, army list content, and associated intellectual property are copyright &copy; Warlord Games. All rights reserved.
             </p>
             <p style={{ margin: 0, fontSize: "var(--mantine-font-size-xs)", color: "var(--mantine-color-dimmed)", lineHeight: 1.6 }}>
-              This tool contains no reproduction of rules text and is intended solely as a points calculation aid for personal use.
+              Open source on{" "}
+              <a href="https://github.com/jamescutts/black-powder-army-builder" target="_blank" rel="noreferrer" style={{ color: "var(--mantine-color-brown-7)" }}>
+                GitHub
+              </a>
+              {" "}— contributions and feedback welcome.
             </p>
           </footer>
         </MantineProvider>

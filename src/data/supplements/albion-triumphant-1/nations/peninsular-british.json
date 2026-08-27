@@ -13,15 +13,18 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -34,15 +37,18 @@
       "variants": [
         {
           "label": "Staff rating 7",
-          "cost": 0
+          "cost": 0,
+          "staffRating": 7
         },
         {
           "label": "Staff rating 8",
-          "cost": 25
+          "cost": 25,
+          "staffRating": 8
         },
         {
           "label": "Staff rating 9 (Late)",
-          "cost": 50
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -449,12 +455,12 @@
       "armament": "-",
       "cost": 50,
       "special": [
-        "Staff Rating 9",
         "Decisive",
         "+1 attack to any combat where his force charged",
         "+3 attacks to any combat where his side is defending",
         "The French are going to get a devil of a surprise: Wellington can choose which side of the table to fight on during an encounter battle"
-      ]
+      ],
+      "staffRating": 9
     },
     {
       "id": "pb-cmd-picton",
@@ -464,11 +470,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "Decisive",
         "+2 combat attacks",
         "Come on you damn rascals: one battalion in his Division may re-roll a failed break test as if Valiant"
-      ]
+      ],
+      "staffRating": 8
     },
     {
       "id": "pb-cmd-craufurd",
@@ -478,11 +484,11 @@
       "armament": "-",
       "cost": 25,
       "special": [
-        "Staff Rating 8",
         "High Independence",
         "+1 combat attack",
         "Epic March: troops under his command may make a free move before the start of the battle"
-      ]
+      ],
+      "staffRating": 8
     }
   ],
   "brigades": [
