@@ -278,6 +278,47 @@
       "morale": "4",
       "stamina": "1",
       "cost": 21
+    },
+    {
+      "id": "pf-cmd-junot",
+      "name": "General Jean Andoche Junot, 1st Duc d'Abrantès",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "+1 combat attack",
+        "Battle Injury: must roll on the Personal Qualities of Commanders chart each turn"
+      ]
+    },
+    {
+      "id": "pf-cmd-massena",
+      "name": "Marshal André Masséna, 1st Duc de Rivoli",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 50,
+      "special": [
+        "Staff Rating 9",
+        "High Independence",
+        "+2 combat attacks",
+        "Dear Child of Victory: troops under his command defending buildings gain Tough Fighters"
+      ]
+    },
+    {
+      "id": "pf-cmd-sebastiani",
+      "name": "General Horace François Bastien Sebastiani",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "No combat attack bonus",
+        "General Surprise: opponent chooses whether Sebastiani's side goes first or second",
+        "In pointed games, reduces the enemy's points gained from destroying him by D6x10"
+      ]
     }
   ],
   "brigades": [
@@ -419,6 +460,7 @@
     "Periods: Early 1807-1808, Middle 1809-1811, Late 1812-1814.",
     "Combined Grenadiers/Voltigeurs: the Grenadier/Carabinier or Voltigeur companies from Line and Light battalions in a brigade can be pooled into a separate Combined battalion, addable to any Infantry Brigade.",
     "Foreign Formations: upgrades and downgrades in the Infantry Brigade selection can represent the Swiss, Irish, Hanoverian, Nassau, Baden, Hesse-Darmstadt and Legion de Midi troop types.",
-    "This builder omits the book's many point-modifier upgrades/downgrades (Veteran status, Tough Fighters, Large, Small, Unreliable, etc.) — apply these manually per the book when finalising a list."
+    "This builder omits the book's many point-modifier upgrades/downgrades (Veteran status, Tough Fighters, Large, Small, Unreliable, etc.) — apply these manually per the book when finalising a list.",
+    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
   ]
 }

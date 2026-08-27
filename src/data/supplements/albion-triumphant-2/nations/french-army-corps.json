@@ -250,6 +250,21 @@
         "Marauder"
       ],
       "cost": 30
+    },
+    {
+      "id": "fac-cmd-napoleon",
+      "name": "Napoleon Bonaparte, Emperor of the French",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 75,
+      "special": [
+        "Staff Rating 10",
+        "Aggressive",
+        "Decisive",
+        "+3 combat attacks",
+        "Le Petit Tondu: units taking a morale check for supporting a unit that breaks may re-roll their morale roll"
+      ]
     }
   ],
   "brigades": [
@@ -386,6 +401,7 @@
     "Cavalry Column of Attack: a two-base-wide, three-base-deep formation with its own combat and command bonuses — see book for full rules.",
     "Grand Battery Rules: guns bought from infantry/cavalry brigades and Corps Artillery can attach to an Artillery Brigade (max 6 batteries); it must, so far as possible, target the same enemy brigade.",
     "Allies: up to 25% of points can be spent on the French Imperial Guard infantry and cavalry brigades.",
-    "This builder omits the book's many point-modifier upgrades/downgrades (Veteran status, Tough Fighters, Wavering/Unreliable conscript downgrades, etc.) — apply these manually per the book when finalising a list."
+    "This builder omits the book's many point-modifier upgrades/downgrades (Veteran status, Tough Fighters, Wavering/Unreliable conscript downgrades, etc.) — apply these manually per the book when finalising a list.",
+    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
   ]
 }

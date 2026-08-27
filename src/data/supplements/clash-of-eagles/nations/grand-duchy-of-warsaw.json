@@ -242,6 +242,19 @@
         "Marauder"
       ],
       "cost": 30
+    },
+    {
+      "id": "gdw-cmd-poniatowski",
+      "name": "Marshal Prince Poniatowski",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 150,
+      "special": [
+        "Staff Rating 9",
+        "Inspirational to Polish formations",
+        "+2 combat dice"
+      ]
     }
   ],
   "brigades": [

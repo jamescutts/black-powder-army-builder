@@ -103,6 +103,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
             eligibleUnits={commandUnits}
             lines={roster.commandItems}
             onChange={(lines) => onChange({ ...roster, commandItems: lines })}
+            maxTotal={1}
+            highlightLabel="Army Commander"
           />
         ) : (
           <Text size="sm" c="dimmed">

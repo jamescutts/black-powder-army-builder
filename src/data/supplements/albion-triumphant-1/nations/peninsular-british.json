@@ -440,6 +440,49 @@
       "morale": "4",
       "stamina": "2",
       "cost": 27
+    },
+    {
+      "id": "pb-cmd-wellington",
+      "name": "Sir Arthur Wellesley, Duke of Wellington",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 50,
+      "special": [
+        "Staff Rating 9",
+        "Decisive",
+        "+1 attack to any combat where his force charged",
+        "+3 attacks to any combat where his side is defending",
+        "The French are going to get a devil of a surprise: Wellington can choose which side of the table to fight on during an encounter battle"
+      ]
+    },
+    {
+      "id": "pb-cmd-picton",
+      "name": "Major-General Sir Thomas Picton",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "Decisive",
+        "+2 combat attacks",
+        "Come on you damn rascals: one battalion in his Division may re-roll a failed break test as if Valiant"
+      ]
+    },
+    {
+      "id": "pb-cmd-craufurd",
+      "name": "Major-General Robert Craufurd",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "High Independence",
+        "+1 combat attack",
+        "Epic March: troops under his command may make a free move before the start of the battle"
+      ]
     }
   ],
   "brigades": [
@@ -752,6 +795,7 @@
     "Household Cavalry (1st/2nd Life Guards, Royal Horse Guards) saw little Peninsular action; include 1 to 3 at the listed cost if desired.",
     "Half battery: pay half points (rounded up) to field an artillery battery at half strength.",
     "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, Ferocious Charge swaps, etc.) — apply these manually per the book when finalising a list.",
-    "Allies: not specified beyond the Portuguese integration above."
+    "Allies: not specified beyond the Portuguese integration above.",
+    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
   ]
 }

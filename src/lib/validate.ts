@@ -10,6 +10,14 @@ export interface ValidationIssue {
 export function validateRoster(nation: Nation, roster: RosterState): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
+  const commandTotal = roster.commandItems.reduce((s, l) => s + l.qty, 0);
+  if (commandTotal > 1) {
+    issues.push({
+      level: "error",
+      message: `Army Command: only one army commander allowed (have ${commandTotal})`,
+    });
+  }
+
   for (const bt of nation.brigades) {
     const count = countByType(roster.brigadeInstances, bt.id);
     if (count < bt.min) {

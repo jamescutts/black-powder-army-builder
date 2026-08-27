@@ -278,6 +278,37 @@
       "morale": "4",
       "stamina": "2",
       "cost": 31
+    },
+    {
+      "id": "at-cmd-schwarzenberg",
+      "name": "Fürst zu Schwarzenberg",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "special": ["Staff Rating 8", "+1 combat die"],
+      "variants": [
+        {
+          "label": "Decisive, Staff Rating 8",
+          "cost": 75
+        },
+        {
+          "label": "Hesitant, Staff Rating 8",
+          "cost": 25
+        }
+      ]
+    },
+    {
+      "id": "at-cmd-bianchi",
+      "name": "Feldmarschall-Leutnant Bianchi",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 75,
+      "special": [
+        "Staff Rating 7",
+        "+2 combat attacks",
+        "Decisive"
+      ]
     }
   ],
   "brigades": [

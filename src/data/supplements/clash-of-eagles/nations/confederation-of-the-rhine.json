@@ -2,7 +2,12 @@
   "id": "confederation-of-the-rhine",
   "name": "Saxony, Bavaria, Württemberg, Westphalia & the Confederation of the Rhine",
   "blurb": "The German states of Napoleon's Confederation of the Rhine, 1812.",
-  "flagFiles": ["/flags/saxony.svg", "/flags/bavaria.svg", "/flags/wurttemberg.svg", "/flags/westphalia.svg"],
+  "flagFiles": [
+    "/flags/saxony.svg",
+    "/flags/bavaria.svg",
+    "/flags/wurttemberg.svg",
+    "/flags/westphalia.svg"
+  ],
   "units": [
     {
       "id": "cotr-div-cmd",
@@ -826,6 +831,63 @@
         "Poor Skirmish"
       ],
       "cost": 31
+    },
+    {
+      "id": "cotr-cmd-reynier",
+      "name": "General Reynier (Saxon Corps)",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 125,
+      "special": [
+        "Staff Rating 8",
+        "Decisive",
+        "Aggressive",
+        "+2 combat attacks"
+      ]
+    },
+    {
+      "id": "cotr-cmd-thielmann",
+      "name": "Generalleutnant von Thielmann (Saxon Corps)",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 150,
+      "special": [
+        "Staff Rating 8",
+        "Aggressive",
+        "Headstrong",
+        "+3 combat attacks if he charged",
+        "Can also be used as a Prussian commander during the Hundred Days (Albion Triumphant II)"
+      ]
+    },
+    {
+      "id": "cotr-cmd-lecoq",
+      "name": "Generalleutnant Le Coq (Saxon Corps)",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 150,
+      "special": [
+        "Staff Rating 8",
+        "Decisive",
+        "Inspirational",
+        "+2 combat attacks",
+        "Hero of the Army: while Le Coq is in command, D3 units in the Saxon army are Valiant"
+      ]
+    },
+    {
+      "id": "cotr-cmd-von-ochs",
+      "name": "General von Ochs (Westphalian Corps)",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 0,
+      "special": [
+        "Staff Rating 7",
+        "+1 combat attack",
+        "Irresponsible"
+      ]
     }
   ],
   "brigades": [

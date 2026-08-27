@@ -2,7 +2,10 @@
   "id": "dutch-belgian-nassau",
   "name": "The Anglo-Netherlands Army 1815 — Dutch, Belgians and Nassau",
   "blurb": "The Kingdom of the Netherlands' own troops, alongside the Duchy of Nassau's regiments.",
-  "flagFiles": ["/flags/netherlands.svg", "/flags/nassau.svg"],
+  "flagFiles": [
+    "/flags/netherlands.svg",
+    "/flags/nassau.svg"
+  ],
   "units": [
     {
       "id": "dbn-div-cmd",
@@ -11,8 +14,14 @@
       "type": "Command",
       "armament": "-",
       "variants": [
-        { "label": "Staff rating 7", "cost": 0 },
-        { "label": "Staff rating 8", "cost": 25 }
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
       ]
     },
     {
@@ -22,8 +31,14 @@
       "type": "Command",
       "armament": "-",
       "variants": [
-        { "label": "Staff rating 7", "cost": 0 },
-        { "label": "Staff rating 8", "cost": 25 }
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
       ]
     },
     {
@@ -33,8 +48,14 @@
       "type": "Command",
       "armament": "-",
       "variants": [
-        { "label": "Staff rating 7", "cost": 0 },
-        { "label": "Staff rating 8", "cost": 25 }
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
       ]
     },
     {
@@ -44,8 +65,14 @@
       "type": "Command",
       "armament": "-",
       "variants": [
-        { "label": "Staff rating 7", "cost": 0 },
-        { "label": "Staff rating 8", "cost": 25 }
+        {
+          "label": "Staff rating 7",
+          "cost": 0
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25
+        }
       ]
     },
     {
@@ -58,7 +85,10 @@
       "shooting": "3",
       "morale": "4",
       "stamina": "3",
-      "special": ["Skirmish", "Sharpshooter"],
+      "special": [
+        "Skirmish",
+        "Sharpshooter"
+      ],
       "cost": 39
     },
     {
@@ -71,7 +101,9 @@
       "shooting": "3",
       "morale": "5",
       "stamina": "3",
-      "special": ["Freshly Raised"],
+      "special": [
+        "Freshly Raised"
+      ],
       "cost": 29
     },
     {
@@ -96,7 +128,11 @@
       "shooting": "1",
       "morale": "4",
       "stamina": "1",
-      "special": ["Tiny", "Skirmish", "Sharpshooter"],
+      "special": [
+        "Tiny",
+        "Skirmish",
+        "Sharpshooter"
+      ],
       "cost": 17
     },
     {
@@ -109,7 +145,9 @@
       "shooting": "3",
       "morale": "4",
       "stamina": "3",
-      "special": ["Unreliable"],
+      "special": [
+        "Unreliable"
+      ],
       "cost": 33
     },
     {
@@ -121,7 +159,9 @@
       "handToHand": "8",
       "morale": "4",
       "stamina": "3",
-      "special": ["Heavy Cavalry D1"],
+      "special": [
+        "Heavy Cavalry D1"
+      ],
       "cost": 44
     },
     {
@@ -133,7 +173,9 @@
       "handToHand": "6",
       "morale": "4",
       "stamina": "3",
-      "special": ["Marauder"],
+      "special": [
+        "Marauder"
+      ],
       "cost": 41
     },
     {
@@ -158,8 +200,53 @@
       "shooting": "3-2-1",
       "morale": "4",
       "stamina": "1",
-      "special": ["Marauder"],
+      "special": [
+        "Marauder"
+      ],
       "cost": 30
+    },
+    {
+      "id": "dbn-cmd-orange",
+      "name": "Prince of Orange",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "Aggressive",
+        "+2 combat attacks where his force has charged",
+        "The Prince is a brave young man, but that's all: Blunders on any double, not just double 6"
+      ]
+    },
+    {
+      "id": "dbn-cmd-ghigny",
+      "name": "Major General Baron de Ghigny",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "Aggressive",
+        "High Independence",
+        "+2 combat attacks",
+        "Hotly Engaged: despite High Independence, only Blunders on a 12",
+        "Can also be used as a French commander during the Peninsular Campaign (Albion Triumphant I)"
+      ]
+    },
+    {
+      "id": "dbn-cmd-chasse",
+      "name": "Lieutenant General David Hendrik, Baron Chassé",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "+1 combat attack",
+        "General Baïonette: once per game, at the start of any turn, may nominate one of his battalions to receive Ferocious Charge for that turn only"
+      ]
     }
   ],
   "brigades": [
@@ -172,7 +259,11 @@
       "slots": [
         {
           "label": "Infantry Battalion",
-          "unitIds": ["dbn-line", "dbn-militia", "dbn-jager"],
+          "unitIds": [
+            "dbn-line",
+            "dbn-militia",
+            "dbn-jager"
+          ],
           "min": 2,
           "max": 5
         }
@@ -185,13 +276,28 @@
       "max": 2,
       "commanderUnitId": "dbn-nassau-brig-cmd",
       "slots": [
-        { "label": "Nassau Line/Landwehr Battalion", "unitIds": ["dbn-line", "dbn-nassau-landwehr"], "min": 2, "max": 5 },
+        {
+          "label": "Nassau Line/Landwehr Battalion",
+          "unitIds": [
+            "dbn-line",
+            "dbn-nassau-landwehr"
+          ],
+          "min": 2,
+          "max": 5
+        },
         {
           "label": "Attached Jäger Company (optional, 1 per army)",
-          "unitIds": ["dbn-nassau-jager-coy"],
+          "unitIds": [
+            "dbn-nassau-jager-coy"
+          ],
           "min": 0,
           "max": 1,
-          "unitCaps": [{ "unitId": "dbn-nassau-jager-coy", "armyMax": 1 }]
+          "unitCaps": [
+            {
+              "unitId": "dbn-nassau-jager-coy",
+              "armyMax": 1
+            }
+          ]
         }
       ]
     },
@@ -202,7 +308,14 @@
       "max": 2,
       "commanderUnitId": "dbn-cav-brig-cmd",
       "slots": [
-        { "label": "Light Dragoon/Hussar Regiment", "unitIds": ["dbn-light-dragoon-hussar"], "min": 1, "max": 3 }
+        {
+          "label": "Light Dragoon/Hussar Regiment",
+          "unitIds": [
+            "dbn-light-dragoon-hussar"
+          ],
+          "min": 1,
+          "max": 3
+        }
       ]
     },
     {
@@ -212,7 +325,14 @@
       "max": 1,
       "commanderUnitId": "dbn-cav-brig-cmd",
       "slots": [
-        { "label": "Carabinier Regiment", "unitIds": ["dbn-carabinier"], "min": 1, "max": 3 }
+        {
+          "label": "Carabinier Regiment",
+          "unitIds": [
+            "dbn-carabinier"
+          ],
+          "min": 1,
+          "max": 3
+        }
       ]
     },
     {
@@ -221,7 +341,14 @@
       "min": 0,
       "max": 4,
       "slots": [
-        { "label": "Battery", "unitIds": ["dbn-belgian-foot-battery"], "min": 1, "max": 1 }
+        {
+          "label": "Battery",
+          "unitIds": [
+            "dbn-belgian-foot-battery"
+          ],
+          "min": 1,
+          "max": 1
+        }
       ]
     },
     {
@@ -230,7 +357,14 @@
       "min": 0,
       "max": 2,
       "slots": [
-        { "label": "Battery", "unitIds": ["dbn-dutch-horse-battery"], "min": 1, "max": 1 }
+        {
+          "label": "Battery",
+          "unitIds": [
+            "dbn-dutch-horse-battery"
+          ],
+          "min": 1,
+          "max": 1
+        }
       ]
     }
   ],
@@ -239,6 +373,7 @@
     "Netherlands brigades comprised 2-5 infantry battalions and a mix of foot types.",
     "Nassau brigades had a limited range of battalion types (Line, Militia and up to 2 Jäger battalions).",
     "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Brunswick Brigades.",
-    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, Wavering downgrades, etc.) — apply these manually per the book when finalising a list."
+    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, Wavering downgrades, etc.) — apply these manually per the book when finalising a list.",
+    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
   ]
 }

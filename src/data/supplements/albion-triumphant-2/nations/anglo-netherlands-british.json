@@ -386,6 +386,61 @@
       "morale": "4",
       "stamina": "2",
       "cost": 27
+    },
+    {
+      "id": "anb-cmd-wellington",
+      "name": "Sir Arthur Wellesley, Duke of Wellington",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 50,
+      "special": [
+        "Staff Rating 9",
+        "Decisive",
+        "+1 attack to any combat where his force charged",
+        "+3 attacks to any combat where his side is defending",
+        "The French are going to get a devil of a surprise: Wellington can choose which side of the table to fight on during an encounter battle"
+      ]
+    },
+    {
+      "id": "anb-cmd-alten",
+      "name": "Lieutenant General Count Charles Alten",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "Headstrong",
+        "+1 combat attack",
+        "The flower of the Army: when giving an order to a light or rifle battalion, brigade or division, Alten adds +1 to his Staff Rating"
+      ]
+    },
+    {
+      "id": "anb-cmd-kempt",
+      "name": "Major General Sir James Kempt",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "+2 combat attacks",
+        "Seen Some Action: may re-roll a failed command roll, but still only Blunders on a 12"
+      ]
+    },
+    {
+      "id": "anb-cmd-pack",
+      "name": "Major General Sir Denis Pack",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 25,
+      "special": [
+        "Staff Rating 8",
+        "+1 combat attack",
+        "The Devil break the gaolers back: a unit under his command can be given the Valiant rule, and all units in his brigade are classed as Tough Fighters"
+      ]
     }
   ],
   "brigades": [
@@ -654,6 +709,7 @@
     "Four-Deep Line, Column of Companies and Deep Formation are available special formations — see book for full rules.",
     "Half battery: pay half points (rounded up) to field an artillery battery at half strength; one horse battery per army can be exchanged for a rocket troop.",
     "Allies: up to 50% of points may be spent on Dutch/Belgian, Nassau or Brunswick Brigades.",
-    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, First Fire add-ons, etc.) — apply these manually per the book when finalising a list."
+    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, First Fire add-ons, etc.) — apply these manually per the book when finalising a list.",
+    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
   ]
 }

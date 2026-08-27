@@ -401,6 +401,103 @@
         "Marauder"
       ],
       "cost": 30
+    },
+    {
+      "id": "fr-cmd-davout",
+      "name": "Marshal Davout",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 150,
+      "special": [
+        "Staff Rating 9",
+        "Decisive",
+        "+2 combat dice",
+        "Command Distance 24\"",
+        "If Davout gives an order to a unit in another commander's command, that commander has Staff Rating -2 next turn for all orders except Rally On Me"
+      ]
+    },
+    {
+      "id": "fr-cmd-murat",
+      "name": "Marshal Murat",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 200,
+      "special": [
+        "Staff Rating 9",
+        "Aggressive",
+        "Inspirational",
+        "+2 combat dice",
+        "Once per game may perform a Follow Me order to a whole cavalry brigade rather than a single regiment"
+      ]
+    },
+    {
+      "id": "fr-cmd-compans",
+      "name": "General de Division Compans",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 125,
+      "special": [
+        "Staff Rating 8",
+        "+2 combat attacks",
+        "Aggressive",
+        "Inspirational"
+      ]
+    },
+    {
+      "id": "fr-cmd-friant",
+      "name": "General de Division Friant",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 175,
+      "special": [
+        "Staff Rating 9",
+        "+3 combat attacks",
+        "Decisive",
+        "Independent"
+      ]
+    },
+    {
+      "id": "fr-cmd-dessaix",
+      "name": "General de Division Count Dessaix",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 100,
+      "special": [
+        "Staff Rating 9",
+        "+1 combat attack",
+        "Aggressive"
+      ]
+    },
+    {
+      "id": "fr-cmd-tharreau",
+      "name": "General de Division Tharreau",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 100,
+      "special": [
+        "Staff Rating 8",
+        "+2 combat attacks",
+        "Headstrong"
+      ]
+    },
+    {
+      "id": "fr-cmd-marchand",
+      "name": "General de Division Marchand",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 125,
+      "special": [
+        "Staff Rating 9",
+        "+2 combat attacks",
+        "Decisive"
+      ]
     }
   ],
   "brigades": [
