@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   ActionIcon,
@@ -36,6 +36,7 @@ export default function BuilderPage() {
 
 function BuilderContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
 
   // Resolve initial nation from search params, falling back to saved roster or first nation
   const initialNationId = useMemo(() => {
@@ -72,7 +73,11 @@ function BuilderContent() {
     [nation.supplementId]
   );
   const nationOptionsForSupplement = useMemo(
-    () => getNationsForSupplement(supplement.id).map((n) => ({ value: n.id, label: n.name })),
+    () => getNationsForSupplement(supplement.id).map((n) => ({
+      value: n.id,
+      label: n.name,
+      flagFile: n.flagFile,
+    })),
     [supplement.id]
   );
 
@@ -81,11 +86,13 @@ function BuilderContent() {
     const firstNation = getNationsForSupplement(value)[0];
     if (!firstNation) return;
     setRoster(emptyRoster(firstNation.id));
+    router.replace(`?nation=${firstNation.id}`, { scroll: false });
   }
 
   function handleNationChange(value: string | null) {
     if (!value) return;
     setRoster(emptyRoster(value));
+    router.replace(`?nation=${value}`, { scroll: false });
   }
 
   function handleClear() {
@@ -133,11 +140,21 @@ function BuilderContent() {
               onChange={handleNationChange}
               w={260}
               allowDeselect={false}
+              leftSection={nation.flagFile ? <img src={nation.flagFile} alt="" width={20} height={14} style={{ objectFit: "cover", borderRadius: 2 }} /> : undefined}
+              renderOption={({ option }) => {
+                const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
+                return (
+                  <Group gap="xs" wrap="nowrap">
+                    {flag && <img src={flag} alt="" width={20} height={14} style={{ objectFit: "cover", borderRadius: 2 }} />}
+                    <span>{option.label}</span>
+                  </Group>
+                );
+              }}
             />
             <Tooltip label="Clear army">
               <ActionIcon
                 color="red"
-                variant="light"
+                variant="filled"
                 size="lg"
                 onClick={handleClear}
                 aria-label="Clear army"

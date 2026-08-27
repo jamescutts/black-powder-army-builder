@@ -1,6 +1,15 @@
 import type { Nation } from "@/data/types";
 import type { RosterState } from "@/types/army";
-import { countByType, effectiveMax, requirementMet, requirementLabel } from "@/lib/brigadeLimits";
+import {
+  countByType,
+  effectiveMax,
+  requirementMet,
+  requirementLabel,
+  unitCapRequirementMet,
+  effectiveUnitCapMax,
+  slotFillRequirementMet,
+  slotUnitCount,
+} from "@/lib/brigadeLimits";
 
 export interface ValidationIssue {
   level: "error";
@@ -73,6 +82,48 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
     }
 
     bt.slots.forEach((slot, i) => {
+      // ─── Regiment-based slot ───────────────────────────────────────────
+      if (slot.regiment) {
+        const regDef = slot.regiment;
+        for (const bi of instances) {
+          const regiments = bi.regimentSlots?.[i] ?? [];
+          // Check regiment count
+          if (regiments.length < regDef.min) {
+            issues.push({
+              level: "error",
+              message: `${bt.name} → ${slot.label}: needs at least ${regDef.min} ${regDef.label}${regDef.min > 1 ? "s" : ""} (have ${regiments.length})`,
+            });
+          }
+          if (regiments.length > regDef.max) {
+            issues.push({
+              level: "error",
+              message: `${bt.name} → ${slot.label}: maximum ${regDef.max} ${regDef.label}${regDef.max > 1 ? "s" : ""} allowed (have ${regiments.length})`,
+            });
+          }
+          // Check each regiment's sub-slots
+          regiments.forEach((reg, regIdx) => {
+            regDef.slots.forEach((subSlot, subIdx) => {
+              const lines = reg.slotLines[subIdx] ?? [];
+              const total = lines.reduce((s, l) => s + l.qty, 0);
+              if (total < subSlot.min) {
+                issues.push({
+                  level: "error",
+                  message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: needs at least ${subSlot.min} (have ${total})`,
+                });
+              }
+              if (total > subSlot.max) {
+                issues.push({
+                  level: "error",
+                  message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: maximum ${subSlot.max} allowed (have ${total})`,
+                });
+              }
+            });
+          });
+        }
+        return; // skip flat-slot logic for this slot
+      }
+
+      // ─── Flat slot ─────────────────────────────────────────────────────
       for (const bi of instances) {
         const lines = bi.slotLines[i] ?? [];
         const total = lines.reduce((s, l) => s + l.qty, 0);
@@ -88,6 +139,17 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             message: `${bt.name} → ${slot.label}: maximum ${slot.max} allowed (have ${total})`,
           });
         }
+        // Check slot-level prerequisite (e.g. "artillery only if 6+ battalions in this brigade")
+        if (total > 0 && !slotFillRequirementMet(slot, bi)) {
+          const needed = slot.requiresSlotFill!.min;
+          const have = slot.requiresSlotFill!.slotIndices.reduce(
+            (sum, idx) => sum + slotUnitCount(bi, idx), 0
+          );
+          issues.push({
+            level: "error",
+            message: `${bt.name} → ${slot.label}: requires ${needed} units in this brigade first (have ${have})`,
+          });
+        }
       }
 
       for (const cap of slot.unitCaps ?? []) {
@@ -95,11 +157,29 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           const lines = bi.slotLines[i] ?? [];
           return sum + lines.filter((l) => l.unitId === cap.unitId).reduce((s, l) => s + l.qty, 0);
         }, 0);
-        if (total > cap.armyMax) {
-          const unitName = nation.units.find((u) => u.id === cap.unitId)?.name ?? cap.unitId;
+        if (total === 0) continue;
+
+        const unitName = nation.units.find((u) => u.id === cap.unitId)?.name ?? cap.unitId;
+
+        // Check prerequisite brigade threshold
+        if (!unitCapRequirementMet(cap, roster.brigadeInstances)) {
+          const reqMin = cap.requiresBrigades!.min;
           issues.push({
             level: "error",
-            message: `${unitName}: maximum ${cap.armyMax} in the army across all ${bt.name} brigades (have ${total})`,
+            message: `${unitName}: requires ${reqMin} brigades taken before it can be fielded (have ${total})`,
+          });
+          continue;
+        }
+
+        // Check effective max (may be ratio-scaled)
+        const max = effectiveUnitCapMax(cap, roster.brigadeInstances);
+        if (total > max) {
+          const reason = cap.maxRatio
+            ? ` — scaled by brigades taken (1 per ${cap.maxRatio.ratio})`
+            : "";
+          issues.push({
+            level: "error",
+            message: `${unitName}: maximum ${max} in the army across all ${bt.name} brigades (have ${total})${reason}`,
           });
         }
       }

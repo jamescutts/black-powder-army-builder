@@ -7,7 +7,14 @@ export function loadRoster(): RosterState | null {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
-    return JSON.parse(raw) as RosterState;
+    const roster = JSON.parse(raw) as RosterState;
+    // Migrate old rosters that don't have regimentSlots on brigade instances
+    for (const bi of roster.brigadeInstances) {
+      if (!bi.regimentSlots) {
+        bi.regimentSlots = bi.slotLines.map(() => null);
+      }
+    }
+    return roster;
   } catch {
     return null;
   }

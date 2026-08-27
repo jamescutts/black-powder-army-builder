@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Alert, Badge, Button, Divider, Group, List, Modal, Stack, Table, Text, Title } from "@mantine/core";
 import { IconAlertTriangle, IconDownload, IconEye, IconPrinter } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
@@ -64,8 +64,13 @@ function RosterContent({ nation, roster }: Props) {
   const brigadeTotals = roster.brigadeInstances.map((instance) => {
     const bt = nation.brigades.find((b) => b.id === instance.brigadeTypeId);
     const commanderCost = instance.commanderLine ? lineTotal(nation, instance.commanderLine) : 0;
-    const total =
-      commanderCost + instance.slotLines.flat().reduce((s, l) => s + lineTotal(nation, l), 0);
+    const flatSlotCost = instance.slotLines.flat().reduce((s, l) => s + lineTotal(nation, l), 0);
+    const regimentCost = (instance.regimentSlots ?? []).reduce((sum, regSlot) => {
+      if (!regSlot) return sum;
+      return sum + regSlot.reduce((rSum, reg) =>
+        rSum + reg.slotLines.flat().reduce((lSum, l) => lSum + lineTotal(nation, l), 0), 0);
+    }, 0);
+    const total = commanderCost + flatSlotCost + regimentCost;
     return { instance, bt, total };
   });
 
@@ -121,7 +126,7 @@ function RosterContent({ nation, roster }: Props) {
         const issues = validateRoster(nation, roster);
         if (issues.length === 0) return null;
         return (
-          <Alert color="red" variant="light" icon={<IconAlertTriangle />} title="Roster issues">
+          <Alert color="red" variant="filled" icon={<IconAlertTriangle />} title="Roster issues">
             <List size="sm" spacing={4}>
               {issues.map((issue, idx) => (
                 <List.Item key={idx}>{issue.message}</List.Item>
@@ -220,7 +225,7 @@ function RosterContent({ nation, roster }: Props) {
               </Group>
             )}
 
-            {unitLines.length > 0 && (
+            {(unitLines.length > 0 || (instance.regimentSlots ?? []).some((r) => r && r.some((reg) => reg.slotLines.flat().length > 0))) && (
             <Table verticalSpacing={4} fz="xs" layout="fixed">
               <colgroup>
                 <col style={{ width: "22%" }} />
@@ -239,6 +244,28 @@ function RosterContent({ nation, roster }: Props) {
                 </Table.Tr>
               </Table.Thead>
               <Table.Tbody>
+                {/* Regiment units */}
+                {bt.slots.map((slot, slotIdx) => {
+                  if (!slot.regiment) return null;
+                  const regiments = instance.regimentSlots?.[slotIdx] ?? [];
+                  return regiments.map((reg, regIdx) => {
+                    const regLines = reg.slotLines.flat();
+                    if (regLines.length === 0) return null;
+                    return (
+                      <Fragment key={reg.key}>
+                        <Table.Tr>
+                          <Table.Td colSpan={5} style={{ paddingTop: 8 }}>
+                            <Text size="xs" fw={600} c="dimmed">{slot.regiment!.label} #{regIdx + 1}</Text>
+                          </Table.Td>
+                        </Table.Tr>
+                        {regLines.map((line) => (
+                          <UnitRow key={line.key} nation={nation} line={line} />
+                        ))}
+                      </Fragment>
+                    );
+                  });
+                })}
+                {/* Flat slot units */}
                 {unitLines.map((line) => (
                   <UnitRow key={line.key} nation={nation} line={line} />
                 ))}

@@ -53,10 +53,10 @@ export default function HomePage() {
             <Title
               order={1}
               fz={{ base: 44, sm: 64 }}
-              fw={700}
+              fw={800}
               c="brown.7"
               ta="center"
-              style={{ fontFamily: "var(--font-script), cursive", lineHeight: 1.1 }}
+              style={{ fontFamily: "var(--font-script), cursive", lineHeight: 1.1, WebkitTextStroke: "0.5px currentColor" }}
             >
               Black Powder Army Builder
             </Title>

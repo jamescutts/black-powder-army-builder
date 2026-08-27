@@ -75,8 +75,13 @@ export function RosterPanel({ nation, roster }: Props) {
   const brigadeTotals = roster.brigadeInstances.map((instance) => {
     const bt = nation.brigades.find((b) => b.id === instance.brigadeTypeId);
     const commanderCost = instance.commanderLine ? lineTotal(nation, instance.commanderLine) : 0;
-    const total =
-      commanderCost + instance.slotLines.flat().reduce((s, l) => s + lineTotal(nation, l), 0);
+    const flatSlotCost = instance.slotLines.flat().reduce((s, l) => s + lineTotal(nation, l), 0);
+    const regimentCost = (instance.regimentSlots ?? []).reduce((sum, regSlot) => {
+      if (!regSlot) return sum;
+      return sum + regSlot.reduce((rSum, reg) =>
+        rSum + reg.slotLines.flat().reduce((lSum, l) => lSum + lineTotal(nation, l), 0), 0);
+    }, 0);
+    const total = commanderCost + flatSlotCost + regimentCost;
     return { instance, bt, total };
   });
 
@@ -148,7 +153,7 @@ export function RosterPanel({ nation, roster }: Props) {
             )}
 
             {brigadeTotals.map(({ instance, bt, total }) => {
-              const lines = instance.slotLines.flat();
+              const flatLines = instance.slotLines.flat();
               if (!bt) return null;
               return (
                 <div key={instance.key}>
@@ -163,9 +168,29 @@ export function RosterPanel({ nation, roster }: Props) {
                   {instance.commanderLine && (
                     <LineList nation={nation} lines={[instance.commanderLine]} commander />
                   )}
-                  {lines.length > 0 ? (
-                    <LineList nation={nation} lines={lines} />
-                  ) : (
+                  {/* Regiment slots */}
+                  {bt.slots.map((slot, slotIdx) => {
+                    if (!slot.regiment) return null;
+                    const regiments = instance.regimentSlots?.[slotIdx] ?? [];
+                    if (regiments.length === 0) return null;
+                    return regiments.map((reg, regIdx) => {
+                      const regLines = reg.slotLines.flat();
+                      if (regLines.length === 0) return null;
+                      return (
+                        <div key={reg.key} style={{ marginLeft: 8 }}>
+                          <Text size="xs" fw={600} c="dimmed">
+                            {slot.regiment!.label} #{regIdx + 1}
+                          </Text>
+                          <LineList nation={nation} lines={regLines} />
+                        </div>
+                      );
+                    });
+                  })}
+                  {/* Flat slot lines */}
+                  {flatLines.length > 0 && (
+                    <LineList nation={nation} lines={flatLines} />
+                  )}
+                  {flatLines.length === 0 && (instance.regimentSlots ?? []).every((r) => !r || r.length === 0) && (
                     <Text size="xs" c="dimmed" fs="italic">
                       No units yet
                     </Text>
@@ -198,7 +223,7 @@ export function RosterPanel({ nation, roster }: Props) {
           Roster meets every brigade&apos;s minimum/maximum requirement.
         </Alert>
       ) : (
-        <Alert color="red" variant="light" icon={<IconAlertTriangle />} title="Roster issues">
+        <Alert color="red" variant="filled" icon={<IconAlertTriangle />} title="Roster issues">
           <List size="sm" spacing={4}>
             {issues.map((i, idx) => (
               <List.Item key={idx}>{i.message}</List.Item>

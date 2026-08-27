@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ActionIcon, Badge, Button, Group, NumberInput, Paper, Select, Stack, Text, ThemeIcon } from "@mantine/core";
-import { IconPlus, IconTrash, IconUserStar } from "@tabler/icons-react";
+import { IconPlus, IconTrash, IconCrown } from "@tabler/icons-react";
 import type { UnitEntry } from "@/data/types";
 import type { RosterUnitLine } from "@/types/army";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
@@ -163,7 +163,7 @@ export function UnitLineEditor({
                 <Stack gap={4}>
                   <Group gap="xs" wrap="nowrap">
                     <ThemeIcon size="sm" variant="light" color="brown">
-                      <IconUserStar size={14} />
+                      <IconCrown size={14} />
                     </ThemeIcon>
                     <Text size="sm" fw={600}>
                       {highlightLabel}

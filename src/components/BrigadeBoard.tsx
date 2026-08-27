@@ -13,13 +13,13 @@ import {
   ThemeIcon,
   Tooltip,
 } from "@mantine/core";
-import { IconCopy, IconPlus, IconTrash, IconUserStar } from "@tabler/icons-react";
+import { IconCopy, IconPlus, IconTrash, IconSword } from "@tabler/icons-react";
 import type { Nation } from "@/data/types";
-import type { RosterBrigadeInstance, RosterState } from "@/types/army";
+import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
-import { countByType, effectiveMax, requirementMet, requirementLabel } from "@/lib/brigadeLimits";
+import { countByType, effectiveMax } from "@/lib/brigadeLimits";
 
 interface Props {
   nation: Nation;
@@ -58,6 +58,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
           }
         : null,
       slotLines: bt.slots.map(() => []),
+      regimentSlots: bt.slots.map((slot) => slot.regiment ? [] : null),
     };
     onChange({ ...roster, brigadeInstances: [...roster.brigadeInstances, instance] });
   }
@@ -80,6 +81,16 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         : null,
       slotLines: source.slotLines.map((slot) =>
         slot.map((line) => ({ ...line, key: newKey("unit") }))
+      ),
+      regimentSlots: source.regimentSlots.map((regSlot) =>
+        regSlot
+          ? regSlot.map((reg) => ({
+              key: newKey("regiment"),
+              slotLines: reg.slotLines.map((lines) =>
+                lines.map((line) => ({ ...line, key: newKey("unit") }))
+              ),
+            }))
+          : null
       ),
     };
     onChange({ ...roster, brigadeInstances: [...roster.brigadeInstances, clone] });
@@ -106,6 +117,54 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         return { ...bi, slotLines };
       }),
     });
+  }
+
+  function handleRegimentSlotsChange(instanceKey: string, slotIndex: number, regiments: RosterRegimentInstance[]) {
+    onChange({
+      ...roster,
+      brigadeInstances: roster.brigadeInstances.map((bi) => {
+        if (bi.key !== instanceKey) return bi;
+        const regimentSlots = bi.regimentSlots.slice();
+        regimentSlots[slotIndex] = regiments;
+        return { ...bi, regimentSlots };
+      }),
+    });
+  }
+
+  function handleAddRegiment(instanceKey: string, slotIndex: number, subSlotCount: number) {
+    const bi = roster.brigadeInstances.find((b) => b.key === instanceKey);
+    if (!bi) return;
+    const current = bi.regimentSlots[slotIndex] ?? [];
+    const newReg: RosterRegimentInstance = {
+      key: newKey("regiment"),
+      slotLines: Array.from({ length: subSlotCount }, () => []),
+    };
+    handleRegimentSlotsChange(instanceKey, slotIndex, [...current, newReg]);
+  }
+
+  function handleRemoveRegiment(instanceKey: string, slotIndex: number, regKey: string) {
+    const bi = roster.brigadeInstances.find((b) => b.key === instanceKey);
+    if (!bi) return;
+    const current = bi.regimentSlots[slotIndex] ?? [];
+    handleRegimentSlotsChange(instanceKey, slotIndex, current.filter((r) => r.key !== regKey));
+  }
+
+  function handleRegimentSubSlotChange(
+    instanceKey: string,
+    slotIndex: number,
+    regKey: string,
+    subSlotIndex: number,
+    lines: RosterBrigadeInstance["slotLines"][number]
+  ) {
+    const bi = roster.brigadeInstances.find((b) => b.key === instanceKey);
+    if (!bi) return;
+    const current = (bi.regimentSlots[slotIndex] ?? []).map((reg) => {
+      if (reg.key !== regKey) return reg;
+      const slotLines = reg.slotLines.slice();
+      slotLines[subSlotIndex] = lines;
+      return { ...reg, slotLines };
+    });
+    handleRegimentSlotsChange(instanceKey, slotIndex, current);
   }
 
   return (
@@ -142,18 +201,10 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         <Group gap="xs">
           <Select
             style={{ flex: 1 }}
-            data={nation.brigades.map((bt) => {
-              const count = countByType(roster.brigadeInstances, bt.id);
-              const max = effectiveMax(bt, roster.brigadeInstances);
-              const unmet = !requirementMet(bt, roster.brigadeInstances);
-              const reqLabel = requirementLabel(bt, nation.brigades);
-              const maxLabel = bt.max === max ? max : `${max} now (max ${bt.max})`;
-              return {
-                value: bt.id,
-                label: `${bt.name} (${count}/${bt.min}-${maxLabel} taken)${unmet && reqLabel ? ` — ${reqLabel}` : ""}`,
-                disabled: count >= max || unmet,
-              };
-            })}
+            data={nation.brigades.map((bt) => ({
+              value: bt.id,
+              label: bt.name,
+            }))}
             value={pickedBrigadeTypeId}
             onChange={setPickedBrigadeTypeId}
             searchable
@@ -214,7 +265,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                 <Group justify="space-between" wrap="nowrap">
                   <Group gap="xs" wrap="nowrap">
                     <ThemeIcon size="sm" variant="light" color="brown">
-                      <IconUserStar size={14} />
+                      <IconSword size={14} />
                     </ThemeIcon>
                     <Text size="sm" fw={600}>
                       Brigade Commander (required)
@@ -246,6 +297,71 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
 
             <Stack gap="sm">
               {bt.slots.map((slot, slotIndex) => {
+                // Regiment-based slot
+                if (slot.regiment) {
+                  const regDef = slot.regiment;
+                  const regiments = instance.regimentSlots?.[slotIndex] ?? [];
+                  return (
+                    <Stack key={slotIndex} gap="xs">
+                      {/* Regiment header row */}
+                      <Group justify="space-between">
+                        <Group gap="xs">
+                          <Text size="sm" fw={600}>{regDef.label}</Text>
+                          <Badge size="sm" variant="light" color={regiments.length >= regDef.min ? "green" : "red"}>
+                            {regiments.length} / {regDef.min}-{regDef.max}
+                          </Badge>
+                        </Group>
+                        {regiments.length < regDef.max && (
+                          <Button
+                            size="compact-xs"
+                            variant="light"
+                            leftSection={<IconPlus size={12} />}
+                            onClick={() => handleAddRegiment(instance.key, slotIndex, regDef.slots.length)}
+                          >
+                            Add {regDef.label}
+                          </Button>
+                        )}
+                      </Group>
+
+                      {/* Regiment instances */}
+                      {regiments.map((reg, regIdx) => (
+                        <Paper key={reg.key} withBorder p="sm" radius="sm">
+                          <Group justify="space-between" mb="xs">
+                            <Text size="sm" fw={500}>{regDef.label} #{regIdx + 1}</Text>
+                            <ActionIcon
+                              color="red"
+                              variant="subtle"
+                              size="sm"
+                              onClick={() => handleRemoveRegiment(instance.key, slotIndex, reg.key)}
+                            >
+                              <IconTrash size={14} />
+                            </ActionIcon>
+                          </Group>
+                          <Stack gap="sm">
+                            {regDef.slots.map((subSlot, subSlotIdx) => {
+                              const eligibleUnits = nation.units.filter((u) => subSlot.unitIds.includes(u.id));
+                              return (
+                                <UnitLineEditor
+                                  key={subSlotIdx}
+                                  label={subSlot.label}
+                                  min={subSlot.min}
+                                  max={subSlot.max}
+                                  eligibleUnits={eligibleUnits}
+                                  lines={reg.slotLines[subSlotIdx] ?? []}
+                                  onChange={(lines) =>
+                                    handleRegimentSubSlotChange(instance.key, slotIndex, reg.key, subSlotIdx, lines)
+                                  }
+                                />
+                              );
+                            })}
+                          </Stack>
+                        </Paper>
+                      ))}
+                    </Stack>
+                  );
+                }
+
+                // Flat slot (no regiment)
                 const eligibleUnits = nation.units.filter((u) => slot.unitIds.includes(u.id));
                 return (
                   <UnitLineEditor

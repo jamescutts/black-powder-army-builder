@@ -5,6 +5,13 @@ export interface RosterUnitLine {
   qty: number;
 }
 
+/** A single regiment instance within a regiment-type slot */
+export interface RosterRegimentInstance {
+  key: string;
+  /** One array of unit lines per regiment sub-slot, indexed same as RegimentDef.slots */
+  slotLines: RosterUnitLine[][];
+}
+
 export interface RosterBrigadeInstance {
   key: string;
   brigadeTypeId: string;
@@ -12,6 +19,12 @@ export interface RosterBrigadeInstance {
   commanderLine: RosterUnitLine | null;
   /** One array of lines per slot, indexed the same as the brigade type's `slots` array */
   slotLines: RosterUnitLine[][];
+  /**
+   * For regiment-type slots: one array of regiment instances per slot, indexed the same as
+   * the brigade type's `slots` array. Only populated for slots that have a `regiment` definition.
+   * For non-regiment slots this entry is undefined/empty.
+   */
+  regimentSlots: (RosterRegimentInstance[] | null)[];
 }
 
 export interface RosterState {

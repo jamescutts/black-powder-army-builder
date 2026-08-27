@@ -30,6 +30,28 @@ export interface UnitEntry {
   variants?: UnitVariant[];
 }
 
+export interface RegimentSlot {
+  /** Label for this sub-slot within the regiment, e.g. "Musketeer Battalion" */
+  label: string;
+  /** Unit ids eligible to fill this sub-slot */
+  unitIds: string[];
+  /** Minimum units required in this sub-slot per regiment */
+  min: number;
+  /** Maximum units allowed in this sub-slot per regiment */
+  max: number;
+}
+
+export interface RegimentDef {
+  /** Display label for the regiment group, e.g. "Infantry Regiment" */
+  label: string;
+  /** Minimum number of regiments required in this slot per brigade instance */
+  min: number;
+  /** Maximum number of regiments allowed in this slot per brigade instance */
+  max: number;
+  /** Internal composition of each regiment instance */
+  slots: RegimentSlot[];
+}
+
 export interface BrigadeSlot {
   /** Label for this slot within the brigade, e.g. "Infantry Battalion" */
   label: string;
@@ -40,11 +62,36 @@ export interface BrigadeSlot {
   /** Maximum number of units allowed in this slot per brigade instance */
   max: number;
   /**
+   * If present, this slot uses a regiment sub-structure instead of the flat unitIds/min/max.
+   * The parent `unitIds`, `min`, and `max` are ignored when `regiment` is set.
+   */
+  regiment?: RegimentDef;
+  /**
+   * This slot is only available when the total unit qty across the listed sibling slot indices
+   * (0-based, same brigade instance) reaches `min`.
+   * e.g. "Foot Artillery only if 6+ infantry battalions taken" →
+   * { slotIndices: [0, 1], min: 6 } where slots 0 and 1 are Musketeer and Fusilier.
+   */
+  requiresSlotFill?: { slotIndices: number[]; min: number };
+  /**
    * Per-unit caps that apply across every instance of this brigade type in the army
    * (not just one instance), e.g. "max 1 Chasseurs à Cheval de la Garde regiment in the army"
    * even though several brigades of this type may be taken.
+   *
+   * Optional `requiresBrigades`: this unit can only be taken when the summed count of the listed
+   * brigade types reaches `min`, e.g. Heavy Artillery requires 3 brigades taken.
+   *
+   * Optional `maxRatio`: the effective armyMax is dynamic — floor(linkedBrigadeCount / ratio),
+   * clamped to armyMax, e.g. Foot batteries at 1 per 2 brigades (max 2).
    */
-  unitCaps?: { unitId: string; armyMax: number }[];
+  unitCaps?: {
+    unitId: string;
+    armyMax: number;
+    /** Unit is only available when this many of the listed brigade types exist in the army */
+    requiresBrigades?: { brigadeTypeIds: string[]; min: number };
+    /** armyMax is dynamic: min(armyMax, floor(sum(count(brigadeTypeIds)) / ratio)) */
+    maxRatio?: { brigadeTypeIds: string[]; ratio: number };
+  }[];
 }
 
 export interface BrigadeType {

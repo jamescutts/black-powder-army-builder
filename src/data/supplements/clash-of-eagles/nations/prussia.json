@@ -243,35 +243,36 @@
       "max": 6,
       "slots": [
         {
-          "label": "Musketeer Battalion (1-2 per regiment, 1-2 regiments per brigade)",
-          "unitIds": [
-            "pr-musketeer",
-            "pr-guard-musketeer"
-          ],
-          "min": 1,
-          "max": 4
-        },
-        {
-          "label": "Fusilier Battalion (0-1 per regiment, optional)",
-          "unitIds": [
-            "pr-fusilier",
-            "pr-guard-fusilier"
-          ],
+          "label": "Infantry Regiments",
+          "unitIds": [],
           "min": 0,
-          "max": 2
+          "max": 0,
+          "regiment": {
+            "label": "Infantry Regiment",
+            "min": 1,
+            "max": 2,
+            "slots": [
+              {
+                "label": "Musketeer Battalion",
+                "unitIds": ["pr-musketeer", "pr-guard-musketeer"],
+                "min": 1,
+                "max": 2
+              },
+              {
+                "label": "Fusilier Battalion",
+                "unitIds": ["pr-fusilier", "pr-guard-fusilier"],
+                "min": 0,
+                "max": 1
+              }
+            ]
+          }
         },
         {
-          "label": "Attached Jäger Battalion (optional, brigade support)",
+          "label": "Brigade Support (one choice: Jäger, Dragoon, or Hussar)",
           "unitIds": [
-            "pr-jager"
-          ],
-          "min": 0,
-          "max": 1
-        },
-        {
-          "label": "Attached Dragoon Regiment (optional, brigade support, 1 per army)",
-          "unitIds": [
-            "pr-dragoon"
+            "pr-jager",
+            "pr-dragoon",
+            "pr-hussars"
           ],
           "min": 0,
           "max": 1,
@@ -279,17 +280,7 @@
             {
               "unitId": "pr-dragoon",
               "armyMax": 1
-            }
-          ]
-        },
-        {
-          "label": "Attached Hussar Regiment (optional, brigade support, 1 per army)",
-          "unitIds": [
-            "pr-hussars"
-          ],
-          "min": 0,
-          "max": 1,
-          "unitCaps": [
+            },
             {
               "unitId": "pr-hussars",
               "armyMax": 1
@@ -297,17 +288,18 @@
           ]
         },
         {
-          "label": "Foot Artillery Battery (optional, if 6+ battalions taken)",
+          "label": "Foot Artillery Battery (optional, if 6+ infantry battalions taken)",
           "unitIds": [
             "pr-foot-arty-half",
             "pr-foot-arty"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "requiresSlotFill": { "slotIndices": [0], "min": 6 }
         }
       ],
       "commanderUnitId": "pr-brig-cmd",
-      "note": "Brigade Support is ONE choice of Jäger, Dragoon or Hussar per brigade (not enforced structurally — pick only one)"
+      "note": "1-2 Infantry Regiments (1-2 Musketeer + 0-1 Fusilier each). Brigade Support: one choice of Jäger, Dragoon, or Hussar. Dragoon/Hussar limited to 1 per army."
     },
     {
       "id": "pr-cavalry-brigade",
@@ -357,20 +349,70 @@
       "max": 4,
       "slots": [
         {
-          "label": "Battery",
+          "label": "Heavy Artillery Battery (max 1, requires 3 brigades)",
           "unitIds": [
             "pr-heavy-arty-half",
-            "pr-heavy-arty",
+            "pr-heavy-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr-heavy-arty",
+              "armyMax": 1,
+              "requiresBrigades": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "min": 3 }
+            },
+            {
+              "unitId": "pr-heavy-arty-half",
+              "armyMax": 1,
+              "requiresBrigades": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "min": 3 }
+            }
+          ]
+        },
+        {
+          "label": "Foot Artillery Battery (max 2, 1 per 2 brigades)",
+          "unitIds": [
             "pr-foot-arty-half",
-            "pr-foot-arty",
+            "pr-foot-arty"
+          ],
+          "min": 0,
+          "max": 2,
+          "unitCaps": [
+            {
+              "unitId": "pr-foot-arty",
+              "armyMax": 2,
+              "maxRatio": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "ratio": 2 }
+            },
+            {
+              "unitId": "pr-foot-arty-half",
+              "armyMax": 2,
+              "maxRatio": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "ratio": 2 }
+            }
+          ]
+        },
+        {
+          "label": "Horse Artillery Battery (max 1, requires 3 brigades)",
+          "unitIds": [
             "pr-horse-arty-half",
             "pr-horse-arty"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr-horse-arty",
+              "armyMax": 1,
+              "requiresBrigades": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "min": 3 }
+            },
+            {
+              "unitId": "pr-horse-arty-half",
+              "armyMax": 1,
+              "requiresBrigades": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "min": 3 }
+            }
+          ]
         }
       ],
-      "note": "Up to 1 Heavy battery (if 3 brigades taken), up to 2 Foot batteries (1 per 2 brigades), up to 1 Horse battery (if 3 brigades taken). A brigade can carry no more than 2 batteries."
+      "note": "Batteries can be attached to any brigade although a brigade can have no more than 2 batteries."
     }
   ],
   "notes": [
