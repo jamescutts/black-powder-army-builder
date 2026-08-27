@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { Alert, Badge, Button, Divider, Group, List, Modal, Stack, Table, Text, Title } from "@mantine/core";
-import { IconAlertTriangle, IconEye, IconPrinter } from "@tabler/icons-react";
+import { IconAlertTriangle, IconDownload, IconEye, IconPrinter } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
 import type { Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
@@ -99,7 +100,7 @@ function RosterContent({ nation, roster }: Props) {
                 ].join(", "),
                 mixBlendMode: "multiply",
                 pointerEvents: "none",
-              }} />
+              }} data-flag-overlay />
             </div>
           )}
           <Stack gap={0}>
@@ -146,7 +147,7 @@ function RosterContent({ nation, roster }: Props) {
                   style={{ padding: "8px 12px", border: "1px solid var(--mantine-color-gray-3)", borderRadius: 6 }}
                 >
                   {sr !== undefined && (
-                    <Group gap={8} align="center" wrap="nowrap" style={{
+                    <Group gap={8} align="center" wrap="nowrap" data-staff-rating style={{
                       flexShrink: 0,
                       padding: "6px 10px",
                       borderRadius: 6,
@@ -175,10 +176,16 @@ function RosterContent({ nation, roster }: Props) {
 
       {brigadeTotals.map(({ instance, bt, total }) => {
         if (!bt) return null;
-        const allLines = [
-          ...(instance.commanderLine ? [instance.commanderLine] : []),
-          ...instance.slotLines.flat(),
-        ];
+        const unitLines = instance.slotLines.flat();
+        const commanderLine = instance.commanderLine;
+        const commanderUnit = commanderLine
+          ? nation.units.find((u) => u.id === commanderLine.unitId)
+          : undefined;
+        const commanderSr = commanderUnit && commanderLine
+          ? getStaffRating(commanderUnit, commanderLine.variantLabel)
+          : undefined;
+        const commanderCost = commanderLine ? lineTotal(nation, commanderLine) : 0;
+
         return (
           <div key={instance.key}>
             <Group justify="space-between" align="baseline" mt="sm">
@@ -187,6 +194,33 @@ function RosterContent({ nation, roster }: Props) {
               </Title>
               <Text size="sm" c="dimmed">{total} pts</Text>
             </Group>
+
+            {commanderUnit && commanderLine && (
+              <Group gap="sm" align="center" wrap="nowrap" style={{ padding: "6px 0" }}>
+                {commanderSr !== undefined && (
+                  <Group gap={6} align="center" wrap="nowrap" data-staff-rating style={{
+                    flexShrink: 0,
+                    padding: "4px 8px",
+                    borderRadius: 6,
+                    backgroundColor: "var(--mantine-color-brown-light)",
+                  }}>
+                    <Stack gap={0}>
+                      <Text size="9px" c="dark" fw={600} tt="uppercase" lh={1}>Staff</Text>
+                      <Text size="9px" c="dark" fw={600} tt="uppercase" lh={1}>Rating</Text>
+                    </Stack>
+                    <Text size="lg" fw={700} c="dark" lh={1}>{commanderSr}</Text>
+                  </Group>
+                )}
+                <Text fw={600} size="sm" style={{ flex: 1, minWidth: 0 }}>
+                  {commanderUnit.name}
+                </Text>
+                <Text fw={600} size="sm" c="dimmed" style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
+                  {commanderCost} pts
+                </Text>
+              </Group>
+            )}
+
+            {unitLines.length > 0 && (
             <Table verticalSpacing={4} fz="xs" layout="fixed">
               <colgroup>
                 <col style={{ width: "22%" }} />
@@ -205,11 +239,12 @@ function RosterContent({ nation, roster }: Props) {
                 </Table.Tr>
               </Table.Thead>
               <Table.Tbody>
-                {allLines.map((line) => (
+                {unitLines.map((line) => (
                   <UnitRow key={line.key} nation={nation} line={line} />
                 ))}
               </Table.Tbody>
             </Table>
+            )}
           </div>
         );
       })}
@@ -239,36 +274,155 @@ function RosterContent({ nation, roster }: Props) {
 
 export function RosterViewModal({ nation, roster }: Props) {
   const [opened, { open, close }] = useDisclosure(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   function handlePrint() {
-    // Open the modal first if not already open, then print
     if (!opened) {
       open();
-      // Wait for modal to render before printing
       setTimeout(() => window.print(), 300);
     } else {
       window.print();
     }
   }
 
+  const [pdfLoading, setPdfLoading] = useState(false);
+
+  async function handleDownloadPdf() {
+    setPdfLoading(true);
+
+    // Ensure modal is open so contentRef is in the DOM
+    if (!opened) {
+      open();
+      // Wait for modal to render
+      await new Promise((r) => setTimeout(r, 400));
+    }
+
+    const el = contentRef.current;
+    if (!el) {
+      setPdfLoading(false);
+      return;
+    }
+
+    try {
+      const html2canvas = (await import("html2canvas-pro")).default;
+      const { jsPDF } = await import("jspdf");
+
+      // Convert SVG img elements to inline data URIs so html2canvas can render them
+      const images = el.querySelectorAll("img");
+      const originals: { img: HTMLImageElement; src: string }[] = [];
+      await Promise.all(
+        Array.from(images).map(async (img) => {
+          if (!img.src.endsWith(".svg")) return;
+          try {
+            const resp = await fetch(img.src);
+            const svgText = await resp.text();
+            const dataUri = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgText)))}`;
+            originals.push({ img, src: img.src });
+            img.src = dataUri;
+          } catch {
+            // If fetch fails, leave original src
+          }
+        })
+      );
+
+      // Hide gradient overlays that html2canvas can't render (mixBlendMode)
+      const overlays = el.querySelectorAll<HTMLElement>("[data-flag-overlay]");
+      overlays.forEach((o) => { o.style.display = "none"; });
+
+      // Wait a tick for image src changes to take effect
+      await new Promise((r) => setTimeout(r, 100));
+
+      const canvas = await html2canvas(el, {
+        scale: 2,
+        backgroundColor: "#ffffff",
+        useCORS: true,
+        logging: false,
+        windowWidth: 900,
+      });
+
+      // Restore original image sources and overlays
+      for (const { img, src } of originals) {
+        img.src = src;
+      }
+      overlays.forEach((o) => { o.style.display = ""; });
+
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4",
+      });
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      const margin = 10;
+      const usableWidth = pageWidth - margin * 2;
+      const usableHeight = pageHeight - margin * 2;
+      const imgWidth = usableWidth;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      // Calculate how many pages we need
+      const totalPages = Math.ceil(imgHeight / usableHeight);
+
+      for (let page = 0; page < totalPages; page++) {
+        if (page > 0) pdf.addPage();
+
+        // Crop a section of the canvas for this page
+        const sourceY = Math.round((page * usableHeight / imgHeight) * canvas.height);
+        const sourceHeight = Math.round((usableHeight / imgHeight) * canvas.height);
+        const pageCanvas = document.createElement("canvas");
+        pageCanvas.width = canvas.width;
+        pageCanvas.height = Math.min(sourceHeight, canvas.height - sourceY);
+        const ctx = pageCanvas.getContext("2d");
+        if (ctx) {
+          ctx.drawImage(
+            canvas,
+            0, sourceY, canvas.width, pageCanvas.height,
+            0, 0, canvas.width, pageCanvas.height
+          );
+        }
+        const pageImgData = pageCanvas.toDataURL("image/png");
+        const pageImgHeight = (pageCanvas.height * imgWidth) / canvas.width;
+        pdf.addImage(pageImgData, "PNG", margin, margin, imgWidth, pageImgHeight);
+      }
+
+      pdf.save(`${nation.name.replace(/[^a-zA-Z0-9]/g, "-")}-roster.pdf`);
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+    } finally {
+      setPdfLoading(false);
+    }
+  }
+
   return (
     <>
-      <Group grow>
+      <Stack gap="xs">
         <Button
           color="brown"
           leftSection={<IconEye size={16} />}
           onClick={open}
+          fullWidth
         >
-          View
+          View Roster
         </Button>
-        <Button
-          color="brown"
-          leftSection={<IconPrinter size={16} />}
-          onClick={handlePrint}
-        >
-          Print
-        </Button>
-      </Group>
+        <Group grow>
+          <Button
+            color="brown"
+            variant="light"
+            leftSection={<IconPrinter size={16} />}
+            onClick={handlePrint}
+          >
+            Print
+          </Button>
+          <Button
+            color="brown"
+            variant="light"
+            leftSection={<IconDownload size={16} />}
+            onClick={handleDownloadPdf}
+            loading={pdfLoading}
+          >
+            Download PDF
+          </Button>
+        </Group>
+      </Stack>
 
       <Modal
         opened={opened}
@@ -277,7 +431,26 @@ export function RosterViewModal({ nation, roster }: Props) {
         size="90%"
         centered
       >
-        <RosterContent nation={nation} roster={roster} />
+        <div ref={contentRef}>
+          <RosterContent nation={nation} roster={roster} />
+        </div>
+        <Group grow mt="lg">
+          <Button
+            color="brown"
+            leftSection={<IconPrinter size={16} />}
+            onClick={handlePrint}
+          >
+            Print
+          </Button>
+          <Button
+            color="brown"
+            leftSection={<IconDownload size={16} />}
+            onClick={handleDownloadPdf}
+            loading={pdfLoading}
+          >
+            Download PDF
+          </Button>
+        </Group>
       </Modal>
     </>
   );

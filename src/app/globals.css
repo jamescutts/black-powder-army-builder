@@ -33,14 +33,16 @@ body {
   body {
     background: white !important;
     background-image: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* Hide everything except the modal overlay */
-  body > *:not(.mantine-Modal-root):not([data-portal]) {
+  /* Hide everything outside the portal */
+  body > *:not([data-portal]) {
     display: none !important;
   }
 
-  /* Hide modal backdrop and chrome */
+  /* Inside portal: hide backdrop and modal chrome */
   .mantine-Modal-overlay {
     display: none !important;
   }
@@ -53,20 +55,52 @@ body {
     padding: 0 !important;
     position: static !important;
     overflow: visible !important;
+    display: block !important;
   }
 
   .mantine-Modal-content {
     box-shadow: none !important;
     border: none !important;
+    border-radius: 0 !important;
     max-height: none !important;
     overflow: visible !important;
     position: static !important;
     width: 100% !important;
     max-width: 100% !important;
+    transform: none !important;
   }
 
   .mantine-Modal-body {
-    padding: 0 !important;
+    padding: 16px !important;
     overflow: visible !important;
+    font-size: 11px !important;
+  }
+
+  /* Ensure staff rating boxes print with backgrounds */
+  [data-staff-rating] {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide the flag overlay in print — it doesn't render well */
+  [data-flag-overlay] {
+    display: none !important;
+  }
+
+  /* Darken dimmed text for white background legibility */
+  .mantine-Text-root[data-c="dimmed"],
+  [style*="color: var(--mantine-color-dimmed)"] {
+    color: #555 !important;
+  }
+
+  /* Ensure brown text stays visible */
+  .mantine-Text-root[data-c="brown.6"],
+  .mantine-Title-root[data-c="brown.7"] {
+    color: #5c3a1e !important;
+  }
+
+  /* Hide the print/download buttons inside the modal when printing */
+  .mantine-Modal-body > .mantine-Group-root:last-child {
+    display: none !important;
   }
 }
