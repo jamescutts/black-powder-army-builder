@@ -230,24 +230,33 @@
       "max": 3,
       "slots": [
         {
-          "label": "Line / Light Infantry Battalion",
-          "unitIds": [
-            "it-line-infantry",
-            "it-light-infantry"
-          ],
-          "min": 1,
-          "max": 8
+          "label": "Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Infantry Regiment",
+            "min": 1,
+            "max": 2,
+            "slots": [
+              {
+                "label": "Line or Light Infantry Battalion",
+                "unitIds": ["it-line-infantry", "it-light-infantry"],
+                "min": 1,
+                "max": 4
+              }
+            ]
+          }
         },
         {
-          "label": "Regimental Artillery (optional)",
-          "unitIds": [
-            "it-regimental-arty-section"
-          ],
+          "label": "Regimental Artillery (section per regiment, or battery per regiment of 3+)",
+          "unitIds": ["it-regimental-arty-section"],
           "min": 0,
           "max": 2
         }
       ],
-      "commanderUnitId": "it-brig-cmd"
+      "commanderUnitId": "it-brig-cmd",
+      "note": "1-2 Line Infantry regiments (1-4 battalions each). May replace a Line regiment with a Light Infantry regiment. Up to 1 Regimental Artillery section per regiment, or battery per regiment of 3+ battalions."
     },
     {
       "id": "it-cavalry-brigade",
@@ -277,18 +286,30 @@
       "id": "it-divisional-artillery",
       "name": "Divisional Artillery",
       "min": 0,
-      "max": 4,
+      "max": 1,
       "slots": [
         {
-          "label": "Battery",
-          "unitIds": [
-            "it-foot-arty",
-            "it-horse-arty"
-          ],
-          "min": 1,
-          "max": 1
+          "label": "Foot Artillery Battery (0-1)",
+          "unitIds": ["it-foot-arty"],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["it-line-infantry", "it-light-infantry", "it-royal-guard-grenadiers", "it-royal-guard-chasseurs", "it-royal-velite-infantry", "it-guard-conscripts"],
+            "min": 8
+          }
+        },
+        {
+          "label": "Horse Artillery Battery (0-1)",
+          "unitIds": ["it-horse-arty"],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["it-line-infantry", "it-light-infantry", "it-royal-guard-grenadiers", "it-royal-guard-chasseurs", "it-royal-velite-infantry", "it-guard-conscripts"],
+            "min": 8
+          }
         }
-      ]
+      ],
+      "note": "Requires 8+ infantry battalions in the army (from any brigade). Attached to any Infantry Brigade."
     },
     {
       "id": "it-guard-brigade",
@@ -297,52 +318,110 @@
       "max": 1,
       "slots": [
         {
-          "label": "Guard Infantry Battalion",
-          "unitIds": [
-            "it-royal-guard-grenadiers",
-            "it-royal-guard-chasseurs",
-            "it-royal-velite-infantry",
-            "it-guard-conscripts"
-          ],
-          "min": 1,
-          "max": 6
+          "label": "Guard Infantry Regiment",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Guard Infantry Regiment",
+            "min": 0,
+            "max": 1,
+            "slots": [
+              {
+                "label": "Guard Grenadier or Chasseur Battalion",
+                "unitIds": ["it-royal-guard-grenadiers", "it-royal-guard-chasseurs"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
         },
         {
-          "label": "Guard Dragoons (optional)",
-          "unitIds": [
-            "it-guard-dragoons"
-          ],
+          "label": "Royal Velite Infantry Regiment",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Royal Velite Infantry Regiment",
+            "min": 0,
+            "max": 1,
+            "slots": [
+              {
+                "label": "Royal Velite Battalion",
+                "unitIds": ["it-royal-velite-infantry"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
+        },
+        {
+          "label": "Guard Conscript Infantry Regiment",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Guard Conscript Infantry Regiment",
+            "min": 0,
+            "max": 1,
+            "slots": [
+              {
+                "label": "Guard Conscript Battalion",
+                "unitIds": ["it-guard-conscripts"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
+        },
+        {
+          "label": "Guard Dragoon Regiment (0-2)",
+          "unitIds": ["it-guard-dragoons"],
           "min": 0,
           "max": 2
         },
         {
-          "label": "Guard Artillery (optional)",
-          "unitIds": [
-            "it-foot-arty",
-            "it-horse-arty"
-          ],
+          "label": "Foot Artillery Battery (0-2)",
+          "unitIds": ["it-foot-arty"],
           "min": 0,
-          "max": 4
+          "max": 2
+        },
+        {
+          "label": "Horse Artillery Battery (0-2)",
+          "unitIds": ["it-horse-arty"],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Regimental Artillery (section or battery, 0-1)",
+          "unitIds": ["it-regimental-arty-section"],
+          "min": 0,
+          "max": 1
         }
       ],
-      "commanderUnitId": "it-brig-cmd"
+      "commanderUnitId": "it-brig-cmd",
+      "note": "Up to 1 regiment each of Guard Infantry, Royal Velite, and Guard Conscripts (up to 2 battalions each). Plus up to 2 Guard Dragoons, artillery, and 1 Regimental Artillery section."
     },
     {
       "id": "it-reserve-artillery",
       "name": "Reserve Artillery",
       "min": 0,
-      "max": 2,
+      "max": 1,
       "slots": [
         {
           "label": "Heavy Foot Battery",
           "unitIds": [
             "it-heavy-foot-arty"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 2,
+          "requiresArmyUnitCount": {
+            "unitIds": ["it-line-infantry", "it-light-infantry", "it-royal-guard-grenadiers", "it-royal-guard-chasseurs", "it-royal-velite-infantry", "it-guard-conscripts"],
+            "min": 10
+          }
         }
       ],
-      "note": "1 per 10 infantry battalions in the army"
+      "note": "Up to 2 Heavy Foot batteries. 1 per 10 infantry battalions."
     }
   ],
   "notes": [

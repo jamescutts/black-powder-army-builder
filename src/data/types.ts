@@ -74,6 +74,13 @@ export interface BrigadeSlot {
    */
   requiresSlotFill?: { slotIndices: number[]; min: number };
   /**
+   * This slot is only available when the total qty of the listed unit ids across the entire army
+   * (all brigade instances, all slots including regiment sub-slots) reaches `min`.
+   * e.g. "Divisional Artillery requires 8+ infantry battalions" →
+   * { unitIds: ["it-line-infantry", "it-light-infantry", ...], min: 8 }
+   */
+  requiresArmyUnitCount?: { unitIds: string[]; min: number };
+  /**
    * Per-unit caps that apply across every instance of this brigade type in the army
    * (not just one instance), e.g. "max 1 Chasseurs à Cheval de la Garde regiment in the army"
    * even though several brigades of this type may be taken.

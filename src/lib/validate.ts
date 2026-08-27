@@ -9,6 +9,8 @@ import {
   effectiveUnitCapMax,
   slotFillRequirementMet,
   slotUnitCount,
+  armyUnitCountRequirementMet,
+  countUnitsInArmy,
 } from "@/lib/brigadeLimits";
 
 export interface ValidationIssue {
@@ -148,6 +150,15 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           issues.push({
             level: "error",
             message: `${bt.name} → ${slot.label}: requires ${needed} units in this brigade first (have ${have})`,
+          });
+        }
+        // Check army-wide unit count prerequisite (e.g. "requires 8+ infantry battalions in the army")
+        if (total > 0 && !armyUnitCountRequirementMet(slot, roster.brigadeInstances)) {
+          const needed = slot.requiresArmyUnitCount!.min;
+          const have = countUnitsInArmy(roster.brigadeInstances, slot.requiresArmyUnitCount!.unitIds);
+          issues.push({
+            level: "error",
+            message: `${bt.name} → ${slot.label}: requires ${needed} qualifying units in the army (have ${have})`,
           });
         }
       }

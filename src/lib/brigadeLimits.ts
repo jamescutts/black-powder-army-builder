@@ -89,3 +89,46 @@ export function slotFillRequirementMet(
   );
   return total >= slot.requiresSlotFill.min;
 }
+
+// ─── Army-wide unit count requirement ────────────────────────────────────────
+
+/**
+ * Count the total qty of specified unit ids across the entire army (all brigade instances,
+ * flat slots and regiment sub-slots).
+ */
+export function countUnitsInArmy(instances: RosterBrigadeInstance[], unitIds: string[]): number {
+  const idSet = new Set(unitIds);
+  let total = 0;
+  for (const bi of instances) {
+    // Flat slots
+    for (const lines of bi.slotLines) {
+      for (const line of lines) {
+        if (idSet.has(line.unitId)) total += line.qty;
+      }
+    }
+    // Regiment slots
+    for (const regSlot of bi.regimentSlots ?? []) {
+      if (!regSlot) continue;
+      for (const reg of regSlot) {
+        for (const lines of reg.slotLines) {
+          for (const line of lines) {
+            if (idSet.has(line.unitId)) total += line.qty;
+          }
+        }
+      }
+    }
+  }
+  return total;
+}
+
+/**
+ * Whether a slot's `requiresArmyUnitCount` condition is met.
+ */
+export function armyUnitCountRequirementMet(
+  slot: BrigadeSlot,
+  instances: RosterBrigadeInstance[]
+): boolean {
+  if (!slot.requiresArmyUnitCount) return true;
+  const count = countUnitsInArmy(instances, slot.requiresArmyUnitCount.unitIds);
+  return count >= slot.requiresArmyUnitCount.min;
+}
