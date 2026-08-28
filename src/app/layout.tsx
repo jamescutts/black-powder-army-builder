@@ -38,13 +38,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p style={{ margin: "0 0 6px", fontSize: "var(--mantine-font-size-xs)", color: "var(--mantine-color-dimmed)", lineHeight: 1.6 }}>
               <em>Black Powder</em>, all supplement titles, army list content, and associated intellectual property are copyright &copy; Warlord Games. All rights reserved.
             </p>
-            <p style={{ margin: 0, fontSize: "var(--mantine-font-size-xs)", color: "var(--mantine-color-dimmed)", lineHeight: 1.6 }}>
+            {/* <p style={{ margin: 0, fontSize: "var(--mantine-font-size-xs)", color: "var(--mantine-color-dimmed)", lineHeight: 1.6 }}>
               Open source on{" "}
               <a href="https://github.com/jamescutts/black-powder-army-builder" target="_blank" rel="noreferrer" style={{ color: "var(--mantine-color-brown-7)" }}>
                 GitHub
               </a>
               {" "}— contributions and feedback welcome.
-            </p>
+            </p> */}
           </footer>
         </MantineProvider>
       </body>
