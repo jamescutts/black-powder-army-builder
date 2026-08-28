@@ -36,6 +36,25 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     (u) => u.category === "Command" && !brigadeCommanderIds.has(u.id)
   );
 
+  // Total army points, used for points-scaled slot maximums (e.g. Earthworks "1 per 500 pts").
+  const lineCost = (unitId: string, variantLabel: string | undefined, qty: number) => {
+    const unit = nation.units.find((u) => u.id === unitId);
+    return unit ? unitCost(unit, variantLabel) * qty : 0;
+  };
+  const armyTotalPoints =
+    roster.commandItems.reduce((s, l) => s + lineCost(l.unitId, l.variantLabel, l.qty), 0) +
+    roster.brigadeInstances.reduce((sum, bi) => {
+      let t = bi.commanderLine
+        ? lineCost(bi.commanderLine.unitId, bi.commanderLine.variantLabel, bi.commanderLine.qty)
+        : 0;
+      for (const lines of bi.slotLines) for (const l of lines) t += lineCost(l.unitId, l.variantLabel, l.qty);
+      for (const regSlot of bi.regimentSlots ?? []) {
+        if (!regSlot) continue;
+        for (const reg of regSlot) for (const lines of reg.slotLines) for (const l of lines) t += lineCost(l.unitId, l.variantLabel, l.qty);
+      }
+      return sum + t;
+    }, 0);
+
   const [pickedBrigadeTypeId, setPickedBrigadeTypeId] = useState<string | null>(
     nation.brigades[0]?.id ?? null
   );
@@ -363,12 +382,15 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
 
                 // Flat slot (no regiment)
                 const eligibleUnits = nation.units.filter((u) => slot.unitIds.includes(u.id));
+                const slotMax = slot.maxPerPoints
+                  ? Math.floor(armyTotalPoints / slot.maxPerPoints.perPoints)
+                  : slot.max;
                 return (
                   <UnitLineEditor
                     key={slotIndex}
                     label={slot.label}
                     min={slot.min}
-                    max={slot.max}
+                    max={slotMax}
                     eligibleUnits={eligibleUnits}
                     lines={instance.slotLines[slotIndex] ?? []}
                     onChange={(lines) => handleSlotChange(instance.key, slotIndex, lines)}

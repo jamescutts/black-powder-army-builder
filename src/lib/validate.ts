@@ -1,5 +1,6 @@
 import type { Nation } from "@/data/types";
-import type { RosterState } from "@/types/army";
+import type { RosterBrigadeInstance, RosterState } from "@/types/army";
+import { unitCost } from "@/lib/units";
 import {
   countByType,
   effectiveMax,
@@ -12,6 +13,30 @@ import {
   armyUnitCountRequirementMet,
   countUnitsInArmy,
 } from "@/lib/brigadeLimits";
+
+/** Total points for a single brigade instance (commander + flat slots + regiment sub-slots). */
+function brigadeInstancePoints(nation: Nation, bi: RosterBrigadeInstance): number {
+  const unitLinePoints = (unitId: string, variantLabel: string | undefined, qty: number) => {
+    const unit = nation.units.find((u) => u.id === unitId);
+    return unit ? unitCost(unit, variantLabel) * qty : 0;
+  };
+  let total = 0;
+  if (bi.commanderLine) {
+    total += unitLinePoints(bi.commanderLine.unitId, bi.commanderLine.variantLabel, bi.commanderLine.qty);
+  }
+  for (const lines of bi.slotLines) {
+    for (const l of lines) total += unitLinePoints(l.unitId, l.variantLabel, l.qty);
+  }
+  for (const regSlot of bi.regimentSlots ?? []) {
+    if (!regSlot) continue;
+    for (const reg of regSlot) {
+      for (const lines of reg.slotLines) {
+        for (const l of lines) total += unitLinePoints(l.unitId, l.variantLabel, l.qty);
+      }
+    }
+  }
+  return total;
+}
 
 export interface ValidationIssue {
   level: "error";
@@ -43,6 +68,14 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
     });
   }
 
+  // Army total points (used for per-points caps like Earthworks "1 per 500 points")
+  const armyTotalPoints =
+    roster.commandItems.reduce((sum, l) => {
+      const unit = nation.units.find((u) => u.id === l.unitId);
+      return sum + (unit ? unitCost(unit, l.variantLabel) * l.qty : 0);
+    }, 0) +
+    roster.brigadeInstances.reduce((sum, bi) => sum + brigadeInstancePoints(nation, bi), 0);
+
   for (const bt of nation.brigades) {
     const count = countByType(roster.brigadeInstances, bt.id);
     if (count < bt.min) {
@@ -60,6 +93,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         }`,
       });
     }
+
     if (count > 0 && !requirementMet(bt, roster.brigadeInstances)) {
       const label = requirementLabel(bt, nation.brigades);
       issues.push({
@@ -126,6 +160,9 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
       }
 
       // ─── Flat slot ─────────────────────────────────────────────────────
+      const slotMax = slot.maxPerPoints
+        ? Math.floor(armyTotalPoints / slot.maxPerPoints.perPoints)
+        : slot.max;
       for (const bi of instances) {
         const lines = bi.slotLines[i] ?? [];
         const total = lines.reduce((s, l) => s + l.qty, 0);
@@ -135,11 +172,52 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             message: `${bt.name} → ${slot.label}: needs at least ${slot.min} (have ${total})`,
           });
         }
-        if (total > slot.max) {
+        if (total > slotMax) {
+          const reason = slot.maxPerPoints ? ` (1 per ${slot.maxPerPoints.perPoints} pts, army is ${armyTotalPoints} pts)` : "";
           issues.push({
             level: "error",
-            message: `${bt.name} → ${slot.label}: maximum ${slot.max} allowed (have ${total})`,
+            message: `${bt.name} → ${slot.label}: maximum ${slotMax} allowed${reason} (have ${total})`,
           });
+        }
+        // Check single-unit-type constraint (e.g. cannot mix Cuirassier and Dragoon)
+        if (slot.singleUnitType) {
+          const distinctUnitIds = new Set(lines.filter((l) => l.qty > 0).map((l) => l.unitId));
+          if (distinctUnitIds.size > 1) {
+            const names = [...distinctUnitIds].map(
+              (id) => nation.units.find((u) => u.id === id)?.name ?? id
+            );
+            issues.push({
+              level: "error",
+              message: `${bt.name} → ${slot.label}: cannot mix types (have ${names.join(", ")})`,
+            });
+          }
+        }
+        // Check per-brigade-instance unit limits (e.g. up to 2 Dragoon per this brigade)
+        for (const limit of slot.unitLimits ?? []) {
+          const unitTotal = lines
+            .filter((l) => l.unitId === limit.unitId)
+            .reduce((s, l) => s + l.qty, 0);
+          if (unitTotal > limit.max) {
+            const unitName = nation.units.find((u) => u.id === limit.unitId)?.name ?? limit.unitId;
+            issues.push({
+              level: "error",
+              message: `${bt.name} → ${slot.label}: maximum ${limit.max} ${unitName} per brigade (have ${unitTotal})`,
+            });
+          }
+        }
+        // Check combined group limits (e.g. up to 1 Cossack OR Uhlan combined)
+        for (const grp of slot.unitGroupLimits ?? []) {
+          const grpTotal = lines
+            .filter((l) => grp.unitIds.includes(l.unitId))
+            .reduce((s, l) => s + l.qty, 0);
+          if (grpTotal > grp.max) {
+            const label = grp.label ??
+              grp.unitIds.map((id) => nation.units.find((u) => u.id === id)?.name ?? id).join(" / ");
+            issues.push({
+              level: "error",
+              message: `${bt.name} → ${slot.label}: maximum ${grp.max} ${label} combined per brigade (have ${grpTotal})`,
+            });
+          }
         }
         // Check slot-level prerequisite (e.g. "artillery only if 6+ battalions in this brigade")
         if (total > 0 && !slotFillRequirementMet(slot, bi)) {
@@ -195,6 +273,40 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         }
       }
     });
+  }
+
+  // ─── Army-wide points-percentage caps (e.g. Imperial Guard ≤ 25% of army) ──
+  for (const cap of nation.pointsCaps ?? []) {
+    if (armyTotalPoints === 0) continue;
+
+    const cappedTotal = roster.brigadeInstances
+      .filter((bi) => cap.brigadeTypeIds.includes(bi.brigadeTypeId))
+      .reduce((sum, bi) => sum + brigadeInstancePoints(nation, bi), 0);
+    if (cappedTotal === 0) continue;
+
+    const percent = (cappedTotal / armyTotalPoints) * 100;
+    if (percent > cap.maxPercent) {
+      const label = cap.label ?? "these brigades";
+      issues.push({
+        level: "error",
+        message: `${label}: may not exceed ${cap.maxPercent}% of the army (currently ${Math.round(percent)}%, ${cappedTotal} of ${armyTotalPoints} pts)`,
+      });
+    }
+  }
+
+  // ─── Army-wide unit ratio caps (e.g. 1 Light battery per 6 battalions) ─────
+  for (const cap of nation.unitRatioCaps ?? []) {
+    const capCount = countUnitsInArmy(roster.brigadeInstances, cap.capUnitIds);
+    if (capCount === 0) continue;
+    const perCount = countUnitsInArmy(roster.brigadeInstances, cap.perUnitIds);
+    const allowed = Math.floor(perCount / cap.ratio);
+    if (capCount > allowed) {
+      const label = cap.label ?? "these units";
+      issues.push({
+        level: "error",
+        message: `${label}: maximum ${allowed} allowed (1 per ${cap.ratio}; have ${capCount}, based on ${perCount} qualifying units)`,
+      });
+    }
   }
 
   return issues;

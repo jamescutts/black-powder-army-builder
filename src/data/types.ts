@@ -62,6 +62,13 @@ export interface BrigadeSlot {
   /** Maximum number of units allowed in this slot per brigade instance */
   max: number;
   /**
+   * If present, the effective slot `max` scales with the army's total points:
+   * effectiveMax = floor(armyPoints / perPoints), clamped to at least the static `max` value if
+   * you want a floor — here it simply overrides `max`.
+   * e.g. Earthworks "1 per 500 points" → { perPoints: 500 }.
+   */
+  maxPerPoints?: { perPoints: number };
+  /**
    * If present, this slot uses a regiment sub-structure instead of the flat unitIds/min/max.
    * The parent `unitIds`, `min`, and `max` are ignored when `regiment` is set.
    */
@@ -80,6 +87,24 @@ export interface BrigadeSlot {
    * { unitIds: ["it-line-infantry", "it-light-infantry", ...], min: 8 }
    */
   requiresArmyUnitCount?: { unitIds: string[]; min: number };
+  /**
+   * When true, all units filling this slot (within a single brigade instance) must be the same
+   * unit id — you cannot mix different unit types.
+   * e.g. Russian Heavy Cavalry: "cannot mix Cuirassier and Dragoon regiments".
+   */
+  singleUnitType?: boolean;
+  /**
+   * Per-unit caps that apply within a single brigade instance (this slot only).
+   * e.g. Russian Light Cavalry Brigade: "up to 2 Dragoon, up to 1 Uhlan" per brigade.
+   */
+  unitLimits?: { unitId: string; max: number }[];
+  /**
+   * Combined caps on a GROUP of unit ids within a single brigade instance (this slot only).
+   * The summed qty of all listed unit ids must not exceed `max`.
+   * e.g. Russian Guard Light Cavalry: "up to 1 Life Guard Cossack OR Uhlan" →
+   * { unitIds: ["ru-life-guard-cossack", "ru-life-guard-uhlan"], max: 1, label: "Cossack/Uhlan" }
+   */
+  unitGroupLimits?: { unitIds: string[]; max: number; label?: string }[];
   /**
    * Per-unit caps that apply across every instance of this brigade type in the army
    * (not just one instance), e.g. "max 1 Chasseurs à Cheval de la Garde regiment in the army"
@@ -154,6 +179,24 @@ export interface Nation {
   units: UnitEntry[];
   /** Brigade types available to this nation. Infantry/Cavalry/Artillery units can only be added inside a brigade instance. */
   brigades: BrigadeType[];
+  /**
+   * Points-percentage caps on groups of brigade types, relative to the whole army's total points.
+   * e.g. Russian Imperial Guard brigades combined may not exceed 25% of the army →
+   * { brigadeTypeIds: ["ru-guard-infantry-brigade", ...], maxPercent: 25, label: "Imperial Guard" }
+   */
+  pointsCaps?: { brigadeTypeIds: string[]; maxPercent: number; label?: string }[];
+  /**
+   * Army-wide ratio caps on certain units, limited by the count of other units in the army.
+   * The total qty of `capUnitIds` across the whole army may not exceed floor(count(perUnitIds) / ratio).
+   * e.g. Russian Light batteries: "1 per 6 infantry battalions in the army" →
+   * { capUnitIds: ["ru-light-arty-half", "ru-light-arty"], perUnitIds: [<all infantry battalions>], ratio: 6, label: "Light batteries" }
+   */
+  unitRatioCaps?: {
+    capUnitIds: string[];
+    perUnitIds: string[];
+    ratio: number;
+    label?: string;
+  }[];
   /** Freeform bullet-point summary of the brigade / force-organisation rules for reference */
   notes: string[];
   alliesNote?: string;
