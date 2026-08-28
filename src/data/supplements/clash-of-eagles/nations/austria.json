@@ -328,33 +328,36 @@
       "max": 6,
       "slots": [
         {
-          "label": "Line Infantry Battalion (German or Hungarian)",
-          "unitIds": [
-            "at-infantry"
-          ],
-          "min": 1,
-          "max": 4
+          "label": "Line Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Line Infantry Regiment",
+            "min": 1,
+            "max": 2,
+            "slots": [
+              {
+                "label": "Large Line Infantry Battalion (German or Hungarian)",
+                "unitIds": ["at-infantry"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
         },
         {
-          "label": "Grenadier or Grenz Battalion (optional)",
+          "label": "Additional Troops (choose up to 2: Grenadier, Grenz, or 6-pdr Battery)",
           "unitIds": [
             "at-grenadier",
-            "at-grenz"
-          ],
-          "min": 0,
-          "max": 2
-        },
-        {
-          "label": "6-pdr Brigade Battery (optional)",
-          "unitIds": [
-            "at-6pdr-brigade-battery-half",
+            "at-grenz",
             "at-6pdr-brigade-battery"
           ],
           "min": 0,
-          "max": 1
+          "max": 2
         }
       ],
-      "note": "Minimum of one Line Infantry Brigade per 500 points in the army; cannot have more Hungarian than German regiments",
+      "note": "1-2 German or Hungarian regiments (up to 2 Large battalions each). Cannot have more Hungarian than German regiments. Additional: Grenadier battalions, OR Large Grenz (max 1 per 4 infantry), OR 6-pdr Battery (1 per 6 infantry).",
       "commanderUnitId": "at-brig-cmd"
     },
     {
