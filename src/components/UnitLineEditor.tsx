@@ -15,6 +15,13 @@ interface Props {
   label?: string;
   min?: number;
   max?: number;
+  /**
+   * Optional callback returning the effective max for the CURRENT contents of this slot.
+   * Used for dynamic caps (e.g. regimental artillery "1 per 2 battalions", or Foreign regiment
+   * dropping to 1 when Rhinbund is selected). When provided, it overrides the static `max` for
+   * the badge display and range check.
+   */
+  computeMax?: (lines: RosterUnitLine[]) => number | undefined;
   /** Once total qty across all lines reaches this, the picker/add controls are hidden entirely
    * (rather than just disabled) — e.g. capping the free-standing Army Command slot at one commander. */
   maxTotal?: number;
@@ -30,6 +37,7 @@ export function UnitLineEditor({
   label,
   min,
   max,
+  computeMax,
   maxTotal,
   highlightLabel,
 }: Props) {
@@ -40,8 +48,11 @@ export function UnitLineEditor({
   );
 
   const total = lines.reduce((s, l) => s + l.qty, 0);
-  const hasConstraint = min !== undefined || max !== undefined;
-  const inRange = (min === undefined || total >= min) && (max === undefined || total <= max);
+  const effectiveMaxValue = computeMax ? computeMax(lines) : max;
+  const hasConstraint = min !== undefined || effectiveMaxValue !== undefined;
+  const inRange =
+    (min === undefined || total >= min) &&
+    (effectiveMaxValue === undefined || total <= effectiveMaxValue);
   const atMaxTotal = maxTotal !== undefined && total >= maxTotal;
 
   function handlePickUnit(id: string | null) {
@@ -95,8 +106,8 @@ export function UnitLineEditor({
           {hasConstraint && (
             <Badge size="sm" color={inRange ? "green" : "red"} variant="light">
               {total}
-              {min !== undefined || max !== undefined
-                ? ` / ${min ?? 0}${max !== undefined && max !== min ? `-${max}` : ""}`
+              {min !== undefined || effectiveMaxValue !== undefined
+                ? ` / ${min ?? 0}${effectiveMaxValue !== undefined && effectiveMaxValue !== min ? `-${effectiveMaxValue}` : ""}`
                 : ""}
             </Badge>
           )}

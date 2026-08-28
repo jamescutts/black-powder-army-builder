@@ -39,6 +39,13 @@ export interface RegimentSlot {
   min: number;
   /** Maximum units allowed in this sub-slot per regiment */
   max: number;
+  /**
+   * When true, all units in this sub-slot must be the same unit id (no mixing types).
+   * e.g. French Foreign Regiment: Spanish OR Portuguese OR Rhinbund, not mixed.
+   */
+  singleUnitType?: boolean;
+  /** Per-unit caps within this sub-slot, e.g. Rhinbund limited to 1 battalion. */
+  unitLimits?: { unitId: string; max: number }[];
 }
 
 export interface RegimentDef {
@@ -48,6 +55,12 @@ export interface RegimentDef {
   min: number;
   /** Maximum number of regiments allowed in this slot per brigade instance */
   max: number;
+  /**
+   * Maximum number of these regiments across the WHOLE army (all brigade instances of this type
+   * and, when this slot appears in multiple brigade types, all of them). Used for rules like
+   * "max 1 Light Regiment per division". Omit for no army-wide cap.
+   */
+  armyMax?: number;
   /** Internal composition of each regiment instance */
   slots: RegimentSlot[];
 }
@@ -68,6 +81,21 @@ export interface BrigadeSlot {
    * e.g. Earthworks "1 per 500 points" → { perPoints: 500 }.
    */
   maxPerPoints?: { perPoints: number };
+  /**
+   * Per-unit caps within this slot whose max is computed dynamically from the SAME brigade
+   * instance's composition. Used for regimental artillery rules:
+   *  - `perBattalions`: max = floor(total units in `countSlotIndices` / ratio)
+   *    e.g. section "1 per 2 battalions" → { unitId, perBattalions: { countSlotIndices: [0,1,2], ratio: 2 } }
+   *  - `perQualifyingRegiment`: max = number of regiments (in `regimentSlotIndices`) whose battalion
+   *    count is at least `minBattalions`.
+   *    e.g. battery "1 per regiment of 3+ battalions" →
+   *    { unitId, perQualifyingRegiment: { regimentSlotIndices: [0,1,2], minBattalions: 3 } }
+   */
+  dynamicUnitLimits?: {
+    unitId: string;
+    perBattalions?: { countSlotIndices: number[]; ratio: number };
+    perQualifyingRegiment?: { regimentSlotIndices: number[]; minBattalions: number };
+  }[];
   /**
    * If present, this slot uses a regiment sub-structure instead of the flat unitIds/min/max.
    * The parent `unitIds`, `min`, and `max` are ignored when `regiment` is set.
@@ -105,6 +133,14 @@ export interface BrigadeSlot {
    * { unitIds: ["ru-life-guard-cossack", "ru-life-guard-uhlan"], max: 1, label: "Cossack/Uhlan" }
    */
   unitGroupLimits?: { unitIds: string[]; max: number; label?: string }[];
+  /**
+   * Mutually exclusive unit groups within this slot: at most ONE of the listed groups may have
+   * units present in a single brigade instance. Units within the same group can coexist.
+   * e.g. French Heavy Cavalry "Carabinier/Cuirassier OR Dragoon" →
+   * [{ unitIds: ["fr-carabinier", "fr-cuirassier"], label: "Carabinier/Cuirassier" },
+   *  { unitIds: ["fr-dragoon"], label: "Dragoon" }]
+   */
+  mutuallyExclusiveGroups?: { unitIds: string[]; label?: string }[];
   /**
    * Per-unit caps that apply across every instance of this brigade type in the army
    * (not just one instance), e.g. "max 1 Chasseurs à Cheval de la Garde regiment in the army"
@@ -145,6 +181,19 @@ export interface BrigadeType {
    * e.g. a Heavy Cavalry Brigade that needs "2 Infantry Brigades taken" first.
    */
   requires?: { brigadeTypeIds: string[]; min: number };
+  /**
+   * Maximum total units (battalions/regiments-worth) allowed across ALL slots in a single brigade
+   * instance — counts flat slot lines and regiment sub-slot lines together.
+   * e.g. French Infantry Brigade "max 10 battalions per brigade" → { maxBattalions: 10 }.
+   * By default counts every unit; set `countSlotIndices` to only count specific slots.
+   */
+  maxBattalions?: { max: number; countSlotIndices?: number[] };
+  /**
+   * Maximum combined number of regiments across the listed regiment-slot indices in a single
+   * brigade instance. e.g. French Infantry Brigade "1-3 Infantry Regiments total" across the
+   * Line/Light/Foreign regiment slots → { slotIndices: [0, 1, 2], max: 3 }.
+   */
+  maxRegimentsTotal?: { slotIndices: number[]; max: number; min?: number };
   /**
    * Unit id (from the nation's `units` list, category "Command") this brigade must be led by.
    * Omitted for pooled/attached support brigades that don't carry their own commander

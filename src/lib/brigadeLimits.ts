@@ -1,5 +1,5 @@
 import type { BrigadeType, BrigadeSlot } from "@/data/types";
-import type { RosterBrigadeInstance } from "@/types/army";
+import type { RosterBrigadeInstance, RosterUnitLine } from "@/types/army";
 
 export function countByType(instances: RosterBrigadeInstance[], brigadeTypeId: string): number {
   return instances.filter((bi) => bi.brigadeTypeId === brigadeTypeId).length;
@@ -131,4 +131,56 @@ export function armyUnitCountRequirementMet(
   if (!slot.requiresArmyUnitCount) return true;
   const count = countUnitsInArmy(instances, slot.requiresArmyUnitCount.unitIds);
   return count >= slot.requiresArmyUnitCount.min;
+}
+
+// ─── Effective per-slot max for the UI badge (dynamic caps) ──────────────────
+
+/**
+ * Compute the effective max qty for a flat slot given its current lines and the brigade instance.
+ * Considers static `max`, per-unit `unitLimits`, and `dynamicUnitLimits` (regimental artillery
+ * ratios). Because dynamic slots use `singleUnitType`, the effective max is the cap that applies
+ * to whichever unit type is currently in the slot (falling back to the static max when empty).
+ */
+export function effectiveSlotMax(
+  slot: BrigadeSlot,
+  lines: RosterUnitLine[],
+  instance: RosterBrigadeInstance
+): number {
+  // Determine which unit ids are currently present
+  const presentIds = [...new Set(lines.filter((l) => l.qty > 0).map((l) => l.unitId))];
+
+  const capForUnit = (unitId: string): number => {
+    // dynamicUnitLimits take priority
+    const dyn = slot.dynamicUnitLimits?.find((d) => d.unitId === unitId);
+    if (dyn) {
+      if (dyn.perBattalions) {
+        const battalions = dyn.perBattalions.countSlotIndices.reduce(
+          (sum, idx) => sum + slotUnitCount(instance, idx), 0
+        );
+        return Math.floor(battalions / dyn.perBattalions.ratio);
+      }
+      if (dyn.perQualifyingRegiment) {
+        const { regimentSlotIndices, minBattalions } = dyn.perQualifyingRegiment;
+        let qualifying = 0;
+        for (const idx of regimentSlotIndices) {
+          for (const reg of instance.regimentSlots?.[idx] ?? []) {
+            const bn = reg.slotLines.reduce((s, ls) => s + ls.reduce((a, l) => a + l.qty, 0), 0);
+            if (bn >= minBattalions) qualifying += 1;
+          }
+        }
+        return qualifying;
+      }
+    }
+    const lim = slot.unitLimits?.find((u) => u.unitId === unitId);
+    if (lim) return lim.max;
+    return slot.max;
+  };
+
+  if (presentIds.length === 0) {
+    // Nothing picked yet: if every eligible unit shares the same dynamic/limit we could show it,
+    // but generally fall back to the static slot max.
+    return slot.max;
+  }
+  // singleUnitType slots have one present id; otherwise take the max cap among present ids.
+  return Math.max(...presentIds.map(capForUnit));
 }

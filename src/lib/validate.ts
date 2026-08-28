@@ -117,6 +117,62 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
       }
     }
 
+    // ─── Per-instance: max total battalions across all slots ──────────────
+    if (bt.maxBattalions) {
+      const includeIdx = bt.maxBattalions.countSlotIndices;
+      for (const bi of instances) {
+        let count = 0;
+        bt.slots.forEach((slot, si) => {
+          if (includeIdx && !includeIdx.includes(si)) return;
+          count += slotUnitCount(bi, si);
+        });
+        if (count > bt.maxBattalions.max) {
+          issues.push({
+            level: "error",
+            message: `${bt.name}: maximum ${bt.maxBattalions.max} battalions per brigade (have ${count})`,
+          });
+        }
+      }
+    }
+
+    // ─── Per-instance: max combined regiments across regiment slots ───────
+    if (bt.maxRegimentsTotal) {
+      for (const bi of instances) {
+        const regTotal = bt.maxRegimentsTotal.slotIndices.reduce(
+          (sum, si) => sum + (bi.regimentSlots?.[si]?.length ?? 0), 0
+        );
+        if (regTotal > bt.maxRegimentsTotal.max) {
+          issues.push({
+            level: "error",
+            message: `${bt.name}: maximum ${bt.maxRegimentsTotal.max} regiments per brigade (have ${regTotal})`,
+          });
+        }
+        const regMin = bt.maxRegimentsTotal.min;
+        if (regMin !== undefined && regTotal < regMin) {
+          issues.push({
+            level: "error",
+            message: `${bt.name}: needs at least ${regMin} regiment${regMin === 1 ? "" : "s"} per brigade (have ${regTotal})`,
+          });
+        }
+      }
+    }
+
+    // ─── Army-wide: regiment slot armyMax (e.g. 1 Light Regiment per division) ─
+    bt.slots.forEach((slot, si) => {
+      if (!slot.regiment || slot.regiment.armyMax === undefined) return;
+      const armyMax = slot.regiment.armyMax;
+      // Count these regiments across all instances of THIS brigade type
+      const armyRegCount = instances.reduce(
+        (sum, bi) => sum + (bi.regimentSlots?.[si]?.length ?? 0), 0
+      );
+      if (armyRegCount > armyMax) {
+        issues.push({
+          level: "error",
+          message: `${bt.name} → ${slot.regiment.label}: maximum ${armyMax} in the army (have ${armyRegCount})`,
+        });
+      }
+    });
+
     bt.slots.forEach((slot, i) => {
       // ─── Regiment-based slot ───────────────────────────────────────────
       if (slot.regiment) {
@@ -152,6 +208,30 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
                   level: "error",
                   message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: maximum ${subSlot.max} allowed (have ${total})`,
                 });
+              }
+              // Single-unit-type constraint within the sub-slot (no mixing)
+              if (subSlot.singleUnitType) {
+                const distinct = new Set(lines.filter((l) => l.qty > 0).map((l) => l.unitId));
+                if (distinct.size > 1) {
+                  const names = [...distinct].map(
+                    (id) => nation.units.find((u) => u.id === id)?.name ?? id
+                  );
+                  issues.push({
+                    level: "error",
+                    message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: cannot mix types (have ${names.join(", ")})`,
+                  });
+                }
+              }
+              // Per-unit caps within the sub-slot
+              for (const limit of subSlot.unitLimits ?? []) {
+                const uTotal = lines.filter((l) => l.unitId === limit.unitId).reduce((s, l) => s + l.qty, 0);
+                if (uTotal > limit.max) {
+                  const uName = nation.units.find((u) => u.id === limit.unitId)?.name ?? limit.unitId;
+                  issues.push({
+                    level: "error",
+                    message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: maximum ${limit.max} ${uName} (have ${uTotal})`,
+                  });
+                }
               }
             });
           });
@@ -192,6 +272,21 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             });
           }
         }
+        // Check mutually exclusive unit groups (e.g. Carabinier/Cuirassier OR Dragoon)
+        if (slot.mutuallyExclusiveGroups) {
+          const presentGroups = slot.mutuallyExclusiveGroups.filter((g) =>
+            lines.some((l) => l.qty > 0 && g.unitIds.includes(l.unitId))
+          );
+          if (presentGroups.length > 1) {
+            const labels = presentGroups.map((g, idx) =>
+              g.label ?? g.unitIds.map((id) => nation.units.find((u) => u.id === id)?.name ?? id).join("/") ?? `group ${idx + 1}`
+            );
+            issues.push({
+              level: "error",
+              message: `${bt.name} → ${slot.label}: cannot combine ${labels.join(" with ")} (choose one group)`,
+            });
+          }
+        }
         // Check per-brigade-instance unit limits (e.g. up to 2 Dragoon per this brigade)
         for (const limit of slot.unitLimits ?? []) {
           const unitTotal = lines
@@ -217,6 +312,43 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
               level: "error",
               message: `${bt.name} → ${slot.label}: maximum ${grp.max} ${label} combined per brigade (have ${grpTotal})`,
             });
+          }
+        }
+        // Check dynamic per-unit limits (regimental artillery ratios)
+        for (const dyn of slot.dynamicUnitLimits ?? []) {
+          const uTotal = lines.filter((l) => l.unitId === dyn.unitId).reduce((s, l) => s + l.qty, 0);
+          if (uTotal === 0) continue;
+          const uName = nation.units.find((u) => u.id === dyn.unitId)?.name ?? dyn.unitId;
+
+          if (dyn.perBattalions) {
+            const battalions = dyn.perBattalions.countSlotIndices.reduce(
+              (sum, idx) => sum + slotUnitCount(bi, idx), 0
+            );
+            const allowed = Math.floor(battalions / dyn.perBattalions.ratio);
+            if (uTotal > allowed) {
+              issues.push({
+                level: "error",
+                message: `${bt.name} → ${slot.label}: maximum ${allowed} ${uName} (1 per ${dyn.perBattalions.ratio} battalions; ${battalions} in brigade, have ${uTotal})`,
+              });
+            }
+          }
+
+          if (dyn.perQualifyingRegiment) {
+            const { regimentSlotIndices, minBattalions } = dyn.perQualifyingRegiment;
+            let qualifying = 0;
+            for (const idx of regimentSlotIndices) {
+              const regs = bi.regimentSlots?.[idx] ?? [];
+              for (const reg of regs) {
+                const bnCount = reg.slotLines.reduce((s, ls) => s + ls.reduce((a, l) => a + l.qty, 0), 0);
+                if (bnCount >= minBattalions) qualifying += 1;
+              }
+            }
+            if (uTotal > qualifying) {
+              issues.push({
+                level: "error",
+                message: `${bt.name} → ${slot.label}: maximum ${qualifying} ${uName} (1 per regiment of ${minBattalions}+ battalions, have ${uTotal})`,
+              });
+            }
           }
         }
         // Check slot-level prerequisite (e.g. "artillery only if 6+ battalions in this brigade")

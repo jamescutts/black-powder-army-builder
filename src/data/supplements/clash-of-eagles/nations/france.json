@@ -198,20 +198,28 @@
       "armament": "Lance",
       "handToHand": "7",
       "morale": "4",
+      "stamina": "3",
       "special": [
         "Lancer",
         "Marauder"
       ],
-      "variants": [
-        {
-          "label": "Standard",
-          "cost": 48
-        },
-        {
-          "label": "Small",
-          "cost": 40
-        }
-      ]
+      "cost": 48
+    },
+    {
+      "id": "fr-lancer-small",
+      "name": "Lancer (Small)",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "5",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Small"
+      ],
+      "cost": 40
     },
     {
       "id": "fr-polish-uhlan",
@@ -221,20 +229,28 @@
       "armament": "Lance",
       "handToHand": "7",
       "morale": "4",
+      "stamina": "3",
       "special": [
         "Lancer",
         "Marauder"
       ],
-      "variants": [
-        {
-          "label": "Standard",
-          "cost": 48
-        },
-        {
-          "label": "Small",
-          "cost": 40
-        }
-      ]
+      "cost": 48
+    },
+    {
+      "id": "fr-polish-uhlan-small",
+      "name": "Polish Uhlan (Small)",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "5",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Lancer",
+        "Marauder",
+        "Small"
+      ],
+      "cost": 40
     },
     {
       "id": "fr-dragoon",
@@ -514,51 +530,92 @@
       "max": 4,
       "slots": [
         {
-          "label": "Line Infantry Battalion (1-3 regiments, 1-4 battalions each)",
-          "unitIds": [
-            "fr-line-infantry"
-          ],
-          "min": 1,
-          "max": 10
-        },
-        {
-          "label": "Light Infantry Battalion (optional, max 1 regiment per division)",
-          "unitIds": [
-            "fr-light-infantry"
-          ],
+          "label": "Line Infantry Regiments",
+          "unitIds": [],
           "min": 0,
-          "max": 4
+          "max": 0,
+          "regiment": {
+            "label": "Line Infantry Regiment",
+            "min": 0,
+            "max": 3,
+            "slots": [
+              {
+                "label": "Line Infantry Battalion (1-5)",
+                "unitIds": ["fr-line-infantry"],
+                "min": 1,
+                "max": 5
+              }
+            ]
+          }
         },
         {
-          "label": "Foreign Infantry Battalion (optional, max 1 regiment per division)",
-          "unitIds": [
-            "fr-portuguese-infantry",
-            "fr-spanish-infantry",
-            "fr-rheinbund-infantry"
-          ],
+          "label": "Light Infantry Regiment (max 1 per division)",
+          "unitIds": [],
           "min": 0,
-          "max": 4
+          "max": 0,
+          "regiment": {
+            "label": "Light Infantry Regiment",
+            "min": 0,
+            "max": 1,
+            "armyMax": 1,
+            "slots": [
+              {
+                "label": "Light Infantry Battalion (1-5)",
+                "unitIds": ["fr-light-infantry"],
+                "min": 1,
+                "max": 5
+              }
+            ]
+          }
         },
         {
-          "label": "Attached Combined Grenadier or Voltigeur Battalion (optional)",
-          "unitIds": [
-            "fr-combined-grenadier",
-            "fr-voltigeurs"
-          ],
+          "label": "Foreign Infantry Regiment (Spanish, Portuguese, or Rhinbund)",
+          "unitIds": [],
           "min": 0,
-          "max": 2
+          "max": 0,
+          "regiment": {
+            "label": "Foreign Infantry Regiment",
+            "min": 0,
+            "max": 1,
+            "slots": [
+              {
+                "label": "Spanish (1-2), Portuguese (1-2), or Rhinbund (1) — one type only",
+                "unitIds": ["fr-spanish-infantry", "fr-portuguese-infantry", "fr-rheinbund-infantry"],
+                "min": 1,
+                "max": 2,
+                "singleUnitType": true,
+                "unitLimits": [
+                  { "unitId": "fr-rheinbund-infantry", "max": 1 }
+                ]
+              }
+            ]
+          }
         },
         {
-          "label": "Regimental Artillery (optional)",
+          "label": "Regimental Artillery (section per 2 battalions, OR battery per regiment of 3+)",
           "unitIds": [
             "fr-regimental-arty-section",
             "fr-regimental-battery"
           ],
           "min": 0,
-          "max": 3
+          "max": 3,
+          "singleUnitType": true,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "fr-regimental-arty-section",
+              "perBattalions": { "countSlotIndices": [0, 1, 2], "ratio": 2 }
+            },
+            {
+              "unitId": "fr-regimental-battery",
+              "perQualifyingRegiment": { "regimentSlotIndices": [0, 1, 2], "minBattalions": 3 }
+            }
+          ]
         }
       ],
-      "commanderUnitId": "fr-brig-cmd"
+      "commanderUnitId": "fr-brig-cmd",
+      "maxBattalions": { "max": 10, "countSlotIndices": [0, 1, 2] },
+      "maxRegimentsTotal": { "slotIndices": [0, 1, 2], "max": 3, "min": 1 },
+      "note": "1-3 Infantry Regiments (0-3 Line 1-5 bn, 0-1 Light 1-5 bn, 0-1 Foreign). Max 1 Light Regiment per division, max 10 battalions per brigade."
     },
     {
       "id": "fr-light-cavalry-brigade",
@@ -567,61 +624,28 @@
       "max": 2,
       "slots": [
         {
-          "label": "Hussar Regiment",
+          "label": "Cavalry Regiments (1-4: up to 2 Hussar, 3 Lancer, 4 Chasseur, 3 Polish Uhlan, 2 W.Horse-Jäger, 2 Bav. Chevauleger)",
           "unitIds": [
-            "fr-hussar-regt"
-          ],
-          "min": 0,
-          "max": 4
-        },
-        {
-          "label": "Lancer Regiment",
-          "unitIds": [
-            "fr-lancer"
-          ],
-          "min": 0,
-          "max": 4
-        },
-        {
-          "label": "Chasseur à Cheval Regiment",
-          "unitIds": [
-            "fr-chasseur-a-cheval"
-          ],
-          "min": 0,
-          "max": 4
-        },
-        {
-          "label": "Polish Uhlan Regiment (max 1 per army)",
-          "unitIds": [
-            "fr-polish-uhlan"
-          ],
-          "min": 0,
-          "max": 1,
-          "unitCaps": [
-            {
-              "unitId": "fr-polish-uhlan",
-              "armyMax": 1
-            }
-          ]
-        },
-        {
-          "label": "Württemberg Horse-Jäger Regiment (optional, Early)",
-          "unitIds": [
-            "fr-wurttemberg-horse-jager"
-          ],
-          "min": 0,
-          "max": 2
-        },
-        {
-          "label": "Bavarian Chevauleger Regiment (optional, Early)",
-          "unitIds": [
+            "fr-hussar-regt",
+            "fr-lancer",
+            "fr-chasseur-a-cheval",
+            "fr-polish-uhlan",
+            "fr-wurttemberg-horse-jager",
             "fr-bavarian-chevauleger"
           ],
-          "min": 0,
-          "max": 2
+          "min": 1,
+          "max": 4,
+          "unitLimits": [
+            { "unitId": "fr-hussar-regt", "max": 2 },
+            { "unitId": "fr-lancer", "max": 3 },
+            { "unitId": "fr-chasseur-a-cheval", "max": 4 },
+            { "unitId": "fr-polish-uhlan", "max": 3 },
+            { "unitId": "fr-wurttemberg-horse-jager", "max": 2 },
+            { "unitId": "fr-bavarian-chevauleger", "max": 2 }
+          ]
         }
       ],
-      "note": "1-4 total regiments per brigade, max 1 per 2 Infantry Brigades in the army",
+      "note": "1-4 total regiments per brigade. Max 1 Light Cavalry Brigade per 2 Infantry Brigades in the army.",
       "commanderUnitId": "fr-brig-cmd",
       "maxRatio": {
         "brigadeTypeIds": [
@@ -637,39 +661,38 @@
       "max": 1,
       "slots": [
         {
-          "label": "Cuirassier Regiment",
+          "label": "Heavy Cavalry Regiments (up to 2 Carabinier + 3 Cuirassier, OR up to 4 Dragoon)",
           "unitIds": [
-            "fr-cuirassier"
-          ],
-          "min": 0,
-          "max": 4
-        },
-        {
-          "label": "Carabinier Regiment",
-          "unitIds": [
-            "fr-carabinier"
-          ],
-          "min": 0,
-          "max": 4
-        },
-        {
-          "label": "Dragoon Regiment",
-          "unitIds": [
+            "fr-carabinier",
+            "fr-cuirassier",
             "fr-dragoon"
           ],
-          "min": 0,
-          "max": 4
+          "min": 1,
+          "max": 4,
+          "unitLimits": [
+            { "unitId": "fr-carabinier", "max": 2 },
+            { "unitId": "fr-cuirassier", "max": 3 },
+            { "unitId": "fr-dragoon", "max": 4 }
+          ],
+          "unitGroupLimits": [
+            { "unitIds": ["fr-carabinier", "fr-cuirassier"], "max": 3, "label": "Carabinier/Cuirassier combined" }
+          ],
+          "mutuallyExclusiveGroups": [
+            { "unitIds": ["fr-carabinier", "fr-cuirassier"], "label": "Carabinier/Cuirassier" },
+            { "unitIds": ["fr-dragoon"], "label": "Dragoon" }
+          ]
         },
         {
-          "label": "Small Lancer Regiment (optional)",
+          "label": "Small Lancer Regiment (0-1, requires 2+ heavy cavalry regiments)",
           "unitIds": [
-            "fr-lancer"
+            "fr-lancer-small"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "requiresSlotFill": { "slotIndices": [0], "min": 2 }
         }
       ],
-      "note": "1-4 total regiments per brigade; if at least 2 Infantry Brigades taken",
+      "note": "1-3 regiments: 0-2 Carabinier + 0-3 Cuirassier, OR 0-4 Dragoon. Plus 0-1 Small Lancer if 2+ heavy cavalry regiments taken. Requires 2 Infantry Brigades.",
       "commanderUnitId": "fr-brig-cmd",
       "requires": {
         "brigadeTypeIds": [
@@ -682,43 +705,162 @@
       "id": "fr-divisional-artillery",
       "name": "Divisional Artillery",
       "min": 0,
-      "max": 6,
+      "max": 1,
       "slots": [
         {
-          "label": "Battery",
+          "label": "Foot Artillery Battery (up to 1, if 6+ battalions in army)",
           "unitIds": [
-            "fr-half-foot-arty",
-            "fr-foot-arty",
-            "fr-half-heavy-foot-arty",
-            "fr-heavy-foot-arty",
-            "fr-half-horse-arty",
+            "fr-foot-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
+            "min": 6
+          }
+        },
+        {
+          "label": "Horse Artillery Battery (up to 1, if 3+ cavalry regiments in army)",
+          "unitIds": [
             "fr-horse-arty"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fr-cuirassier", "fr-carabinier", "fr-lancer", "fr-lancer-small", "fr-polish-uhlan", "fr-polish-uhlan-small", "fr-dragoon", "fr-hussar-regt", "fr-chasseur-a-cheval", "fr-wurttemberg-horse-jager", "fr-bavarian-chevauleger"],
+            "min": 3
+          }
         }
-      ]
+      ],
+      "note": "Batteries can be attached to any brigade in the army. Not counted against the Corps and Army Support limit."
     },
     {
       "id": "fr-artillery-brigade",
-      "name": "Reserve Artillery Brigade",
+      "name": "Reserve Artillery",
       "min": 0,
       "max": 1,
       "slots": [
         {
-          "label": "Foot / Heavy Battery",
+          "label": "Foot Artillery Battery (up to 2, 1 per 8 infantry battalions)",
           "unitIds": [
-            "fr-foot-arty",
-            "fr-heavy-foot-arty",
-            "fr-half-foot-arty",
-            "fr-half-heavy-foot-arty"
+            "fr-foot-arty"
           ],
-          "min": 2,
-          "max": 6
+          "min": 0,
+          "max": 2,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
+            "min": 12
+          }
+        },
+        {
+          "label": "Horse Artillery Battery (up to 1, 1 per 4 cavalry regiments)",
+          "unitIds": [
+            "fr-horse-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
+            "min": 12
+          }
+        },
+        {
+          "label": "Heavy Artillery Battery (up to 2, 1 per 9 infantry battalions)",
+          "unitIds": [
+            "fr-heavy-foot-arty"
+          ],
+          "min": 0,
+          "max": 2,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
+            "min": 12
+          }
         }
       ],
-      "note": "If 12+ infantry battalions taken; up to 50% of points on Corps and Army Support",
+      "note": "Batteries attach to any infantry brigade. Up to 2 Foot (1 per 8 battalions), up to 1 Horse (1 per 4 cavalry regiments), up to 2 Heavy (1 per 9 battalions). Requires 12+ infantry battalions in the army.",
       "commanderUnitId": "fr-brig-cmd"
+    },
+    {
+      "id": "fr-artillery-brigade-standalone",
+      "name": "Artillery Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Foot / Heavy Battery (2-6 total, at least 2 Foot; up to half may be Heavy)",
+          "unitIds": [
+            "fr-foot-arty",
+            "fr-heavy-foot-arty"
+          ],
+          "min": 2,
+          "max": 6,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
+            "min": 12
+          }
+        }
+      ],
+      "note": "2-4 Foot batteries (up to half may be upgraded to Heavy). Batteries from Divisional or Reserve artillery may be added, to a maximum of 6 batteries. Requires 12+ infantry battalions in the army.",
+      "commanderUnitId": "fr-brig-cmd"
+    }
+  ],
+  "pointsCaps": [
+    {
+      "brigadeTypeIds": [
+        "fr-heavy-cavalry-brigade",
+        "fr-artillery-brigade",
+        "fr-artillery-brigade-standalone"
+      ],
+      "maxPercent": 50,
+      "label": "Corps and Army Support (Reserve Artillery + Heavy Cavalry)"
+    }
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": ["fr-half-foot-arty", "fr-foot-arty"],
+      "perUnitIds": [
+        "fr-line-infantry",
+        "fr-light-infantry",
+        "fr-combined-grenadier",
+        "fr-voltigeurs",
+        "fr-portuguese-infantry",
+        "fr-spanish-infantry",
+        "fr-rheinbund-infantry"
+      ],
+      "ratio": 8,
+      "label": "Reserve Foot batteries"
+    },
+    {
+      "capUnitIds": ["fr-half-heavy-foot-arty", "fr-heavy-foot-arty"],
+      "perUnitIds": [
+        "fr-line-infantry",
+        "fr-light-infantry",
+        "fr-combined-grenadier",
+        "fr-voltigeurs",
+        "fr-portuguese-infantry",
+        "fr-spanish-infantry",
+        "fr-rheinbund-infantry"
+      ],
+      "ratio": 9,
+      "label": "Reserve Heavy batteries"
+    },
+    {
+      "capUnitIds": ["fr-half-horse-arty", "fr-horse-arty"],
+      "perUnitIds": [
+        "fr-cuirassier",
+        "fr-carabinier",
+        "fr-lancer",
+        "fr-lancer-small",
+        "fr-polish-uhlan",
+        "fr-polish-uhlan-small",
+        "fr-dragoon",
+        "fr-hussar-regt",
+        "fr-chasseur-a-cheval",
+        "fr-wurttemberg-horse-jager",
+        "fr-bavarian-chevauleger"
+      ],
+      "ratio": 4,
+      "label": "Reserve Horse batteries"
     }
   ],
   "notes": [

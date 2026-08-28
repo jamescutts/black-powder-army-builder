@@ -19,7 +19,7 @@ import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from 
 import { UnitLineEditor } from "./UnitLineEditor";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
-import { countByType, effectiveMax } from "@/lib/brigadeLimits";
+import { countByType, effectiveMax, effectiveSlotMax } from "@/lib/brigadeLimits";
 
 interface Props {
   nation: Nation;
@@ -359,12 +359,25 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                           <Stack gap="sm">
                             {regDef.slots.map((subSlot, subSlotIdx) => {
                               const eligibleUnits = nation.units.filter((u) => subSlot.unitIds.includes(u.id));
+                              const subComputeMax = subSlot.unitLimits
+                                ? (subLines: typeof reg.slotLines[number]) => {
+                                    const presentIds = [...new Set(subLines.filter((l) => l.qty > 0).map((l) => l.unitId))];
+                                    if (presentIds.length === 0) return subSlot.max;
+                                    return Math.max(
+                                      ...presentIds.map((id) => {
+                                        const lim = subSlot.unitLimits!.find((u) => u.unitId === id);
+                                        return lim ? lim.max : subSlot.max;
+                                      })
+                                    );
+                                  }
+                                : undefined;
                               return (
                                 <UnitLineEditor
                                   key={subSlotIdx}
                                   label={subSlot.label}
                                   min={subSlot.min}
                                   max={subSlot.max}
+                                  computeMax={subComputeMax}
                                   eligibleUnits={eligibleUnits}
                                   lines={reg.slotLines[subSlotIdx] ?? []}
                                   onChange={(lines) =>
@@ -385,12 +398,14 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                 const slotMax = slot.maxPerPoints
                   ? Math.floor(armyTotalPoints / slot.maxPerPoints.perPoints)
                   : slot.max;
+                const hasDynamicMax = !!(slot.dynamicUnitLimits || slot.unitLimits);
                 return (
                   <UnitLineEditor
                     key={slotIndex}
                     label={slot.label}
                     min={slot.min}
                     max={slotMax}
+                    computeMax={hasDynamicMax ? (lines) => effectiveSlotMax(slot, lines, instance) : undefined}
                     eligibleUnits={eligibleUnits}
                     lines={instance.slotLines[slotIndex] ?? []}
                     onChange={(lines) => handleSlotChange(instance.key, slotIndex, lines)}
