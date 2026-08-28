@@ -450,22 +450,6 @@
       "cost": 31
     },
     {
-      "id": "fig-og-foot-arty-half",
-      "name": "Old Guard Foot Artillery Half Battery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Artillery",
-      "handToHand": "1",
-      "shooting": "2-1-1",
-      "morale": "3",
-      "stamina": "1",
-      "special": [
-        "Reliable",
-        "Elite 4+"
-      ],
-      "cost": 31
-    },
-    {
       "id": "fig-og-foot-arty",
       "name": "Old Guard Foot Artillery",
       "category": "Artillery",
@@ -596,33 +580,74 @@
       "max": 2,
       "slots": [
         {
-          "label": "Guard Infantry Battalion",
-          "unitIds": [
-            "fig-old-guard-grenadiers",
-            "fig-old-guard-chasseurs",
-            "fig-middle-guard-grenadiers",
-            "fig-middle-guard-chasseurs",
-            "fig-fusilier-grenadiers",
-            "fig-fusilier-chasseurs",
-            "fig-vistula-legion-infantry"
-          ],
-          "min": 1,
-          "max": 4
+          "label": "Old Guard Infantry Regiment (0-1, 1-2 battalions)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Old Guard Infantry Regiment",
+            "min": 0,
+            "max": 1,
+            "slots": [
+              {
+                "label": "Old Guard Battalion (Grenadiers or Chasseurs)",
+                "unitIds": ["fig-old-guard-grenadiers", "fig-old-guard-chasseurs"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
         },
         {
-          "label": "Regimental / Foot Artillery (optional)",
+          "label": "Middle Guard Infantry Regiments (0-2, 1-2 battalions each)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Middle Guard Infantry Regiment",
+            "min": 0,
+            "max": 2,
+            "slots": [
+              {
+                "label": "Middle Guard Battalion (Grenadiers or Chasseurs)",
+                "unitIds": ["fig-middle-guard-grenadiers", "fig-middle-guard-chasseurs"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
+        },
+        {
+          "label": "Regimental Artillery Section (1 per 2 battalions in the brigade)",
           "unitIds": [
-            "fig-og-regimental-arty-section",
-            "fig-og-foot-arty-half",
-            "fig-og-foot-arty",
-            "fig-vistula-regimental-arty-section",
-            "fig-vistula-regimental-battery"
+            "fig-og-regimental-arty-section"
           ],
           "min": 0,
-          "max": 2
+          "max": 3,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "fig-og-regimental-arty-section",
+              "perBattalions": { "countSlotIndices": [0, 1], "ratio": 2 }
+            }
+          ]
+        },
+        {
+          "label": "Foot Artillery Battery (up to 2, 1 per 2 Old Guard battalions)",
+          "unitIds": [
+            "fig-og-foot-arty"
+          ],
+          "min": 0,
+          "max": 2,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "fig-og-foot-arty",
+              "perBattalions": { "countSlotIndices": [0], "ratio": 2 }
+            }
+          ]
         }
       ],
-      "commanderUnitId": "fig-brig-cmd"
+      "commanderUnitId": "fig-brig-cmd",
+      "note": "0-1 Old Guard Regiment (1-2 battalions), 0-2 Middle Guard Regiments (1-2 battalions each). Regimental Artillery: 1 section per 2 battalions in the brigade. Foot Artillery: up to 2 batteries, 1 per 2 Old Guard battalions. Only one Old Guard Brigade in the army may take two Middle Guard regiments (not auto-enforced)."
     },
     {
       "id": "fig-young-guard-brigade",
@@ -631,25 +656,95 @@
       "max": 2,
       "slots": [
         {
-          "label": "Guard Infantry Battalion",
-          "unitIds": [
-            "fig-yg-voltigeurs",
-            "fig-yg-tirailleurs"
-          ],
-          "min": 1,
-          "max": 6
+          "label": "Young Guard Infantry Regiments (1-3, each 1-2 battalions)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Young Guard Infantry Regiment",
+            "min": 1,
+            "max": 3,
+            "slots": [
+              {
+                "label": "Young Guard Battalion (Voltigeurs or Tirailleurs)",
+                "unitIds": ["fig-yg-voltigeurs", "fig-yg-tirailleurs"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
         },
         {
-          "label": "Regimental Artillery (optional)",
+          "label": "Fusilier-Grenadier Regiment (0-1, 1-2 battalions; one brigade only)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Fusilier-Grenadier Regiment",
+            "min": 0,
+            "max": 1,
+            "armyMax": 1,
+            "slots": [
+              {
+                "label": "Fusilier-Grenadier Battalion",
+                "unitIds": ["fig-fusilier-grenadiers"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
+        },
+        {
+          "label": "Fusilier-Chasseur Regiment (0-1, 1-2 battalions; one brigade only)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Fusilier-Chasseur Regiment",
+            "min": 0,
+            "max": 1,
+            "armyMax": 1,
+            "slots": [
+              {
+                "label": "Fusilier-Chasseur Battalion",
+                "unitIds": ["fig-fusilier-chasseurs"],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
+        },
+        {
+          "label": "Regimental Artillery (section 1 per 2 battalions, OR one battery)",
           "unitIds": [
             "fig-yg-regimental-arty-section",
             "fig-yg-regimental-battery"
           ],
           "min": 0,
-          "max": 2
+          "max": 4,
+          "singleUnitType": true,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "fig-yg-regimental-arty-section",
+              "perBattalions": { "countSlotIndices": [0, 1, 2], "ratio": 2 }
+            }
+          ]
+        },
+        {
+          "label": "Young Guard Artillery Battery (0-1, if 6+ Young Guard/Fusilier battalions in the brigade)",
+          "unitIds": [
+            "fig-yg-horse-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": ["fig-yg-voltigeurs", "fig-yg-tirailleurs", "fig-fusilier-grenadiers", "fig-fusilier-chasseurs"],
+            "min": 6
+          }
         }
       ],
-      "commanderUnitId": "fig-brig-cmd"
+      "commanderUnitId": "fig-brig-cmd",
+      "note": "1-3 Young Guard Regiments (1-2 battalions each). One brigade in the army may add a Fusilier-Grenadier regiment and a Fusilier-Chasseur regiment (1-2 battalions each). Regimental Artillery: 1 section per 2 battalions in the brigade, or 1 battery. Plus 0-1 Young Guard Artillery battery if 6+ Young Guard/Fusilier battalions in the brigade."
     },
     {
       "id": "fig-heavy-cavalry-brigade",
@@ -658,15 +753,20 @@
       "max": 1,
       "slots": [
         {
-          "label": "Heavy Cavalry Regiment",
+          "label": "Heavy Cavalry Regiment (up to 1 Grenadiers à Cheval, up to 1 Empress Dragoons)",
           "unitIds": [
             "fig-grenadiers-a-cheval-regt",
             "fig-empress-dragoons"
           ],
           "min": 1,
-          "max": 2
+          "max": 2,
+          "unitLimits": [
+            { "unitId": "fig-grenadiers-a-cheval-regt", "max": 1 },
+            { "unitId": "fig-empress-dragoons", "max": 1 }
+          ]
         }
       ],
+      "note": "Up to 1 Grenadiers à Cheval and up to 1 Empress Dragoons regiment.",
       "commanderUnitId": "fig-brig-cmd"
     },
     {
