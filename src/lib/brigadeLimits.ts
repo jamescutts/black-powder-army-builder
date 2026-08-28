@@ -55,7 +55,7 @@ export function effectiveUnitCapMax(cap: UnitCap, instances: RosterBrigadeInstan
   return Math.min(cap.armyMax, ratioMax);
 }
 
-// ─── Slot-level prerequisite (requiresSlotFill) ──────────────────────────────
+// ─── Brigade-level unit count prerequisite (requiresBrigadeCount) ────────────
 
 /**
  * Count total unit qty for a given slot index in a brigade instance.
@@ -75,19 +75,44 @@ export function slotUnitCount(instance: RosterBrigadeInstance, slotIndex: number
 }
 
 /**
- * Whether a slot's `requiresSlotFill` condition is met for a given brigade instance.
- * Sums the qty of units across the specified sibling slot indices (supporting both flat and
- * regiment slots) and checks against the minimum.
+ * Count the total qty of the specified unit ids within a single brigade instance
+ * (every slot, flat and regiment sub-slots).
  */
-export function slotFillRequirementMet(
+export function countUnitsInInstance(instance: RosterBrigadeInstance, unitIds: string[]): number {
+  const idSet = new Set(unitIds);
+  let total = 0;
+  // Flat slots
+  for (const lines of instance.slotLines) {
+    for (const line of lines) {
+      if (idSet.has(line.unitId)) total += line.qty;
+    }
+  }
+  // Regiment slots
+  for (const regSlot of instance.regimentSlots ?? []) {
+    if (!regSlot) continue;
+    for (const reg of regSlot) {
+      for (const lines of reg.slotLines) {
+        for (const line of lines) {
+          if (idSet.has(line.unitId)) total += line.qty;
+        }
+      }
+    }
+  }
+  return total;
+}
+
+/**
+ * Whether a slot's `requiresBrigadeCount` condition is met for a given brigade instance.
+ * Counts the qty of the listed unit ids within this brigade instance (all slots, flat and
+ * regiment sub-slots) and checks against the minimum.
+ */
+export function brigadeCountRequirementMet(
   slot: BrigadeSlot,
   instance: RosterBrigadeInstance
 ): boolean {
-  if (!slot.requiresSlotFill) return true;
-  const total = slot.requiresSlotFill.slotIndices.reduce(
-    (sum, idx) => sum + slotUnitCount(instance, idx), 0
-  );
-  return total >= slot.requiresSlotFill.min;
+  if (!slot.requiresBrigadeCount) return true;
+  const total = countUnitsInInstance(instance, slot.requiresBrigadeCount.unitIds);
+  return total >= slot.requiresBrigadeCount.min;
 }
 
 // ─── Army-wide unit count requirement ────────────────────────────────────────
@@ -181,6 +206,13 @@ export function effectiveSlotMax(
     // but generally fall back to the static slot max.
     return slot.max;
   }
-  // singleUnitType slots have one present id; otherwise take the max cap among present ids.
+  // For singleUnitType slots (one present id) or slots with dynamic ratios, the effective max is
+  // the cap that applies to whichever unit type is present. For ordinary mixed slots, per-unit
+  // `unitLimits` cap individual units but do NOT reduce the slot's overall capacity, so the
+  // effective total max is the static slot max.
+  const usesDynamicOrSingle = slot.singleUnitType || (slot.dynamicUnitLimits?.length ?? 0) > 0;
+  if (!usesDynamicOrSingle) {
+    return slot.max;
+  }
   return Math.max(...presentIds.map(capForUnit));
 }

@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import { bodyFont, headingFont, scriptFont } from "./fonts";
 import { theme } from "@/theme";
+import { DisclaimerModal } from "@/components/DisclaimerModal";
 
 export const metadata: Metadata = {
   title: "Black Powder Army Builder",
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <MantineProvider theme={theme} defaultColorScheme="light" forceColorScheme="light">
+          <DisclaimerModal />
           {children}
           <footer style={{
             borderTop: "1px solid var(--mantine-color-gray-3)",

@@ -102,12 +102,15 @@ export interface BrigadeSlot {
    */
   regiment?: RegimentDef;
   /**
-   * This slot is only available when the total unit qty across the listed sibling slot indices
-   * (0-based, same brigade instance) reaches `min`.
-   * e.g. "Foot Artillery only if 6+ infantry battalions taken" →
-   * { slotIndices: [0, 1], min: 6 } where slots 0 and 1 are Musketeer and Fusilier.
+   * This slot is only available when the combined qty of the listed unit ids within the SAME
+   * brigade instance (counting every slot, flat and regiment sub-slots) reaches `min`.
+   * Counting by unit id — rather than by slot position — keeps the rule stable when slots are
+   * reordered and lets a mixed slot contribute only its eligible units.
+   * e.g. Prussian "Foot Artillery only if 6+ infantry battalions taken" →
+   * { unitIds: ["pr-musketeer", "pr-guard-musketeer", "pr-fusilier", "pr-guard-fusilier", "pr-jager"], min: 6 }
+   * (a Jäger in the Brigade Support slot counts; a Dragoon/Hussar there does not).
    */
-  requiresSlotFill?: { slotIndices: number[]; min: number };
+  requiresBrigadeCount?: { unitIds: string[]; min: number };
   /**
    * This slot is only available when the total qty of the listed unit ids across the entire army
    * (all brigade instances, all slots including regiment sub-slots) reaches `min`.
@@ -134,13 +137,19 @@ export interface BrigadeSlot {
    */
   unitGroupLimits?: { unitIds: string[]; max: number; label?: string }[];
   /**
-   * Mutually exclusive unit groups within this slot: at most ONE of the listed groups may have
-   * units present in a single brigade instance. Units within the same group can coexist.
-   * e.g. French Heavy Cavalry "Carabinier/Cuirassier OR Dragoon" →
+   * Mutually exclusive unit groups within this slot: at most `maxGroups` of the listed groups may
+   * have units present in a single brigade instance. Units within the same group can coexist.
+   * `maxGroups` defaults to 1 (strictly exclusive). Set it higher for "choose up to N of the
+   * following" rules. It is read from the first group entry that defines it.
+   * e.g. French Heavy Cavalry "Carabinier/Cuirassier OR Dragoon" (at most one group) →
    * [{ unitIds: ["fr-carabinier", "fr-cuirassier"], label: "Carabinier/Cuirassier" },
    *  { unitIds: ["fr-dragoon"], label: "Dragoon" }]
+   * e.g. Austrian Line Brigade "choose up to two of Grenadier / Grenz / 6-pdr" →
+   * [{ unitIds: ["at-grenadier"], label: "Grenadier", maxGroups: 2 },
+   *  { unitIds: ["at-grenz"], label: "Grenz" },
+   *  { unitIds: ["at-6pdr-brigade-battery"], label: "6-pdr Battery" }]
    */
-  mutuallyExclusiveGroups?: { unitIds: string[]; label?: string }[];
+  mutuallyExclusiveGroups?: { unitIds: string[]; label?: string; maxGroups?: number }[];
   /**
    * Per-unit caps that apply across every instance of this brigade type in the army
    * (not just one instance), e.g. "max 1 Chasseurs à Cheval de la Garde regiment in the army"
@@ -176,6 +185,14 @@ export interface BrigadeType {
    * min(max, floor(sum(count(brigadeTypeIds)) / ratio)).
    */
   maxRatio?: { brigadeTypeIds: string[]; ratio: number };
+  /**
+   * Requires a minimum number of this brigade type that scales with the army's total points:
+   * required = ceil(armyPoints / perPoints), i.e. at least one brigade for every `perPoints`
+   * points (or fraction thereof) in the army.
+   * e.g. Austria "you must have at least 1 Line Brigade per 500 points" → { perPoints: 500 }.
+   * This is a per-points floor and is checked in addition to the static `min`.
+   */
+  minPerPoints?: { perPoints: number };
   /**
    * This brigade type cannot be added until the summed count of `brigadeTypeIds` reaches `min`,
    * e.g. a Heavy Cavalry Brigade that needs "2 Infantry Brigades taken" first.

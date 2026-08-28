@@ -8,8 +8,9 @@ import {
   requirementLabel,
   unitCapRequirementMet,
   effectiveUnitCapMax,
-  slotFillRequirementMet,
+  brigadeCountRequirementMet,
   slotUnitCount,
+  countUnitsInInstance,
   armyUnitCountRequirementMet,
   countUnitsInArmy,
 } from "@/lib/brigadeLimits";
@@ -83,6 +84,16 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         level: "error",
         message: `${bt.name}: needs at least ${bt.min} (have ${count})`,
       });
+    }
+    // Per-points minimum floor, e.g. "at least 1 Line Brigade per 500 points"
+    if (bt.minPerPoints && armyTotalPoints > 0) {
+      const requiredByPoints = Math.ceil(armyTotalPoints / bt.minPerPoints.perPoints);
+      if (count < requiredByPoints) {
+        issues.push({
+          level: "error",
+          message: `${bt.name}: needs at least ${requiredByPoints} for a ${armyTotalPoints}-point army (1 per ${bt.minPerPoints.perPoints} points; have ${count})`,
+        });
+      }
     }
     const max = effectiveMax(bt, roster.brigadeInstances);
     if (count > max) {
@@ -272,18 +283,22 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             });
           }
         }
-        // Check mutually exclusive unit groups (e.g. Carabinier/Cuirassier OR Dragoon)
+        // Check mutually exclusive unit groups: at most `maxGroups` (default 1) may be present
         if (slot.mutuallyExclusiveGroups) {
+          const maxGroups =
+            slot.mutuallyExclusiveGroups.find((g) => g.maxGroups != null)?.maxGroups ?? 1;
           const presentGroups = slot.mutuallyExclusiveGroups.filter((g) =>
             lines.some((l) => l.qty > 0 && g.unitIds.includes(l.unitId))
           );
-          if (presentGroups.length > 1) {
+          if (presentGroups.length > maxGroups) {
             const labels = presentGroups.map((g, idx) =>
               g.label ?? g.unitIds.map((id) => nation.units.find((u) => u.id === id)?.name ?? id).join("/") ?? `group ${idx + 1}`
             );
+            const choose =
+              maxGroups === 1 ? "choose one option" : `choose at most ${maxGroups} options`;
             issues.push({
               level: "error",
-              message: `${bt.name} → ${slot.label}: cannot combine ${labels.join(" with ")} (choose one group)`,
+              message: `${bt.name} → ${slot.label}: too many options selected (${labels.join(", ")}) — ${choose}`,
             });
           }
         }
@@ -351,15 +366,13 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             }
           }
         }
-        // Check slot-level prerequisite (e.g. "artillery only if 6+ battalions in this brigade")
-        if (total > 0 && !slotFillRequirementMet(slot, bi)) {
-          const needed = slot.requiresSlotFill!.min;
-          const have = slot.requiresSlotFill!.slotIndices.reduce(
-            (sum, idx) => sum + slotUnitCount(bi, idx), 0
-          );
+        // Check brigade-level unit count prerequisite (e.g. "artillery only if 6+ battalions in this brigade")
+        if (total > 0 && !brigadeCountRequirementMet(slot, bi)) {
+          const needed = slot.requiresBrigadeCount!.min;
+          const have = countUnitsInInstance(bi, slot.requiresBrigadeCount!.unitIds);
           issues.push({
             level: "error",
-            message: `${bt.name} → ${slot.label}: requires ${needed} units in this brigade first (have ${have})`,
+            message: `${bt.name} → ${slot.label}: requires ${needed} qualifying units in this brigade first (have ${have})`,
           });
         }
         // Check army-wide unit count prerequisite (e.g. "requires 8+ infantry battalions in the army")

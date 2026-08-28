@@ -53,7 +53,7 @@
       "morale": "4",
       "stamina": "3",
       "special": [
-        "Pas de charge"
+        "Pas de Charge"
       ],
       "cost": 38
     },
@@ -68,7 +68,7 @@
       "morale": "4",
       "stamina": "3",
       "special": [
-        "Pas de charge",
+        "Pas de Charge",
         "Skirmish",
         "Sharpshooters",
         "Light Infantry Mixed Formation"
@@ -134,7 +134,7 @@
       "morale": "4",
       "stamina": "3",
       "special": [
-        "Pas de charge",
+        "Pas de Charge",
         "Reliable Elite 5+"
       ],
       "cost": 46
@@ -235,15 +235,16 @@
           "min": 0,
           "max": 0,
           "regiment": {
-            "label": "Infantry Regiment",
+            "label": "Infantry Regiment (all Line or all Light)",
             "min": 1,
             "max": 2,
             "slots": [
               {
-                "label": "Line or Light Infantry Battalion",
+                "label": "Line or Light Infantry Battalion (one type per regiment)",
                 "unitIds": ["it-line-infantry", "it-light-infantry"],
                 "min": 1,
-                "max": 4
+                "max": 4,
+                "singleUnitType": true
               }
             ]
           }
@@ -424,12 +425,28 @@
       "note": "Up to 2 Heavy Foot batteries. 1 per 10 infantry battalions."
     }
   ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": ["it-heavy-foot-arty"],
+      "perUnitIds": [
+        "it-line-infantry",
+        "it-light-infantry",
+        "it-royal-guard-grenadiers",
+        "it-royal-guard-chasseurs",
+        "it-royal-velite-infantry",
+        "it-guard-conscripts"
+      ],
+      "ratio": 10,
+      "label": "Reserve Heavy Foot batteries"
+    }
+  ],
   "notes": [
-    "1 to 3 Infantry Brigades: 1 or 2 Line (or Light) Infantry regiments of 1-4 battalions, plus Regimental Artillery.",
+    "1 to 3 Infantry Brigades: 1 or 2 Infantry regiments of 1-4 battalions each (each regiment is all Line or all Light), plus Regimental Artillery.",
     "0 to 1 Cavalry Brigade (1 per 2 Infantry Brigades): up to 2 Chasseur à Cheval regiments.",
     "Divisional Artillery: up to 1 Foot and 1 Horse battery (1 per 8 infantry battalions), attached to any brigade.",
     "0 to 1 Italian Guard Brigade: up to 1 regiment each of Guard Infantry, Royal Velite Infantry and Guard Conscript Infantry, plus up to 2 Guard Dragoon regiments and Guard artillery.",
     "Reserve Artillery: up to 2 Heavy Foot Artillery batteries (1 per 10 infantry battalions), attached to any brigade.",
+    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade up to 2 battalions per brigade to Veteran, Reliable + Elite 5+ (+8 pts/battalion); upgrade any or all battalions in a brigade to Tough Fighters (+1 pt/battalion); upgrade a cavalry regiment to Veteran, Reliable + 1 Hand-to-Hand (+6 pts/regiment); upgrade any artillery battery to Veteran (+8 pts/battery); downgrade a battalion to Small (-8 pts), to Wavering (-6 pts), to Morale 5 (-4 pts), to Unreliable (-3 pts), or by removing pas de charge (-2 pts); downgrade a cavalry regiment to Small (-8 pts) or to Wavering (-6 pts); downgrade any gun battery to a half battery.",
     "Allies: an Italian army can take 25% allies from any one allied list."
   ]
 }

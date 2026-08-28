@@ -126,7 +126,7 @@
           "unitIds": ["vl-regimental-arty-section", "vl-regimental-battery"],
           "min": 0,
           "max": 1,
-          "requiresSlotFill": { "slotIndices": [0], "min": 2 }
+          "requiresBrigadeCount": { "unitIds": ["vl-infantry"], "min": 2 }
         }
       ],
       "commanderUnitId": "vl-brig-cmd",
