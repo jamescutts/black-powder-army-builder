@@ -4,8 +4,9 @@ import { Suspense, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { getNation } from "@/data";
 
-// Legacy URL shim: /black-powder/builder?nation=X now lives at /black-powder/{supplement}/{nation}.
-export default function LegacyBuilderRedirect() {
+// Legacy URL shim: this app originally lived at the site root, with the builder at
+// /builder?nation=X. It now lives under /black-powder/{supplement}/{nation}.
+export default function LegacyRootBuilderRedirect() {
   return (
     <Suspense>
       <RedirectToNewUrl />
