@@ -28,12 +28,23 @@ interface Props {
 }
 
 export function BrigadeBoard({ nation, roster, onChange }: Props) {
-  // Army-level commanders only: units not tied to any brigade as its required commander.
-  const brigadeCommanderIds = new Set(
-    nation.brigades.map((b) => b.commanderUnitId).filter((id): id is string => Boolean(id))
-  );
+  // Army-level commanders only: exclude any Command unit that's tied to a brigade, either as
+  // its required commander or as a purchasable option within one of its slots (e.g. a
+  // subordinate commander attached to an Infantry Brigade).
+  const brigadeScopedCommandIds = new Set<string>();
+  for (const b of nation.brigades) {
+    if (b.commanderUnitId) brigadeScopedCommandIds.add(b.commanderUnitId);
+    for (const slot of b.slots) {
+      for (const id of slot.unitIds) brigadeScopedCommandIds.add(id);
+      if (slot.regiment) {
+        for (const rSlot of slot.regiment.slots) {
+          for (const id of rSlot.unitIds) brigadeScopedCommandIds.add(id);
+        }
+      }
+    }
+  }
   const commandUnits = nation.units.filter(
-    (u) => u.category === "Command" && !brigadeCommanderIds.has(u.id)
+    (u) => u.category === "Command" && !brigadeScopedCommandIds.has(u.id)
   );
 
   // Total army points, used for points-scaled slot maximums (e.g. Earthworks "1 per 500 pts").

@@ -266,14 +266,19 @@
       "commanderUnitId": "dbn-brig-cmd",
       "slots": [
         {
-          "label": "Infantry Battalion",
+          "label": "Infantry Battalion (1-3 Line, 1-3 Militia, 0-2 Jäger)",
           "unitIds": [
             "dbn-line",
             "dbn-militia",
             "dbn-jager"
           ],
           "min": 2,
-          "max": 5
+          "max": 5,
+          "unitLimits": [
+            { "unitId": "dbn-line", "max": 3 },
+            { "unitId": "dbn-militia", "max": 3 },
+            { "unitId": "dbn-jager", "max": 2 }
+          ]
         }
       ]
     },
@@ -285,13 +290,19 @@
       "commanderUnitId": "dbn-nassau-brig-cmd",
       "slots": [
         {
-          "label": "Nassau Line/Landwehr Battalion",
+          "label": "Line Infantry Battalion (up to 1 may be a Landwehr Battalion, 1 per army)",
           "unitIds": [
             "dbn-line",
             "dbn-nassau-landwehr"
           ],
           "min": 2,
-          "max": 5
+          "max": 5,
+          "unitCaps": [
+            {
+              "unitId": "dbn-nassau-landwehr",
+              "armyMax": 1
+            }
+          ]
         },
         {
           "label": "Attached Jäger Company (optional, 1 per army)",
@@ -347,39 +358,95 @@
       "id": "dbn-divisional-artillery",
       "name": "Divisional Artillery",
       "min": 0,
-      "max": 4,
+      "max": 1,
+      "note": "Requires at least 2 brigades and 6 infantry battalions taken in the army. Batteries attach to any brigade.",
       "slots": [
         {
-          "label": "Battery",
+          "label": "Foot Artillery Battery (optional, if 2+ brigades and 6+ infantry battalions taken)",
           "unitIds": [
             "dbn-belgian-foot-battery"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["dbn-line", "dbn-militia", "dbn-jager", "dbn-nassau-jager-coy"],
+            "min": 6
+          },
+          "unitCaps": [
+            {
+              "unitId": "dbn-belgian-foot-battery",
+              "armyMax": 1,
+              "requiresBrigades": {
+                "brigadeTypeIds": [
+                  "dbn-dutch-belgian-infantry-brigade",
+                  "dbn-nassau-infantry-brigade",
+                  "dbn-heavy-cavalry-brigade",
+                  "dbn-light-cavalry-brigade"
+                ],
+                "min": 2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Horse Artillery Battery (optional, if 2+ brigades and 6+ infantry battalions taken)",
+          "unitIds": [
+            "dbn-dutch-horse-battery"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["dbn-line", "dbn-militia", "dbn-jager", "dbn-nassau-jager-coy"],
+            "min": 6
+          },
+          "unitCaps": [
+            {
+              "unitId": "dbn-dutch-horse-battery",
+              "armyMax": 1,
+              "requiresBrigades": {
+                "brigadeTypeIds": [
+                  "dbn-dutch-belgian-infantry-brigade",
+                  "dbn-nassau-infantry-brigade",
+                  "dbn-heavy-cavalry-brigade",
+                  "dbn-light-cavalry-brigade"
+                ],
+                "min": 2
+              }
+            }
+          ]
         }
       ]
     },
     {
-      "id": "dbn-horse-artillery",
-      "name": "Horse Artillery",
+      "id": "dbn-horse-artillery-batteries",
+      "name": "Horse Artillery Batteries",
       "min": 0,
-      "max": 2,
+      "max": 1,
+      "note": "1 battery, requiring 3+ Cavalry Regiments (Carabinier and/or Light Dragoon/Hussar) taken in the army. Attaches to any Cavalry Brigade.",
       "slots": [
         {
-          "label": "Battery",
+          "label": "Horse Artillery Battery (optional, if 3+ Cavalry Regiments taken)",
           "unitIds": [
             "dbn-dutch-horse-battery"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["dbn-carabinier", "dbn-light-dragoon-hussar"],
+            "min": 3
+          },
+          "unitCaps": [
+            {
+              "unitId": "dbn-dutch-horse-battery",
+              "armyMax": 1
+            }
+          ]
         }
       ]
     }
   ],
   "notes": [
     "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "Netherlands brigades comprised 2-5 infantry battalions and a mix of foot types.",
-    "Nassau brigades had a limited range of battalion types (Line, Militia and up to 2 Jäger battalions).",
     "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Brunswick Brigades.",
     "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
   ]

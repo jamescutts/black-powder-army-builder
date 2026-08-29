@@ -101,7 +101,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
     () => getNationsForSupplement(supplement.id).map((n) => ({
       value: n.id,
       label: n.name,
-      flagFile: n.flagFile,
+      flagFile: n.flagFile ?? n.flagFiles?.[0],
     })),
     [supplement.id]
   );
@@ -163,7 +163,11 @@ function BuilderContent({ nationId }: { nationId: string }) {
               onChange={handleNationChange}
               w={260}
               allowDeselect={false}
-              leftSection={nation.flagFile ? <FlagIcon src={nation.flagFile} alt="" /> : undefined}
+              leftSection={
+                nation.flagFile || nation.flagFiles?.[0] ? (
+                  <FlagIcon src={(nation.flagFile ?? nation.flagFiles?.[0])!} alt="" />
+                ) : undefined
+              }
               renderOption={({ option }) => {
                 const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
                 return (

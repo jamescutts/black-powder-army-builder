@@ -93,9 +93,9 @@ export function RosterPanel({ nation, roster }: Props) {
   return (
     <Stack gap="md">
       <Paper withBorder p="md" radius="md">
-        <Group justify="space-between" mb="sm">
-          <Group gap="sm" align="center">
-            {nation.flagFile && (
+        <Group justify="space-between" align="flex-start" wrap="nowrap" mb="sm">
+          <Group gap="sm" align="center" wrap="nowrap" style={{ minWidth: 0 }}>
+            {(nation.flagFile ?? nation.flagFiles?.[0]) && (
               <div style={{
                 position: "relative",
                 width: 54,
@@ -106,7 +106,7 @@ export function RosterPanel({ nation, roster }: Props) {
                 flexShrink: 0,
               }}>
                 <img
-                  src={nation.flagFile}
+                  src={nation.flagFile ?? nation.flagFiles?.[0]}
                   alt={`${nation.name} flag`}
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
@@ -122,7 +122,7 @@ export function RosterPanel({ nation, roster }: Props) {
                 }} />
               </div>
             )}
-            <Stack gap={0}>
+            <Stack gap={0} style={{ minWidth: 0 }}>
               <Text fw={700} size="lg">
                 Roster
               </Text>
@@ -131,7 +131,7 @@ export function RosterPanel({ nation, roster }: Props) {
               </Text>
             </Stack>
           </Group>
-          <Badge size="xl" variant="filled" color="brown">
+          <Badge size="xl" variant="filled" color="brown" style={{ flexShrink: 0 }}>
             {grandTotal} pts
           </Badge>
         </Group>

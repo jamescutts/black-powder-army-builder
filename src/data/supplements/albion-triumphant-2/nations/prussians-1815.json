@@ -1,7 +1,7 @@
 {
   "id": "prussians-1815",
   "name": "The Prussians 1815",
-  "blurb": "Blücher's army — the bridesmaid, but never the bride, at Waterloo.",
+  "blurb": "Prussia's rebuilt army of 1815, fielding regular, Reserve and Landwehr troops.",
   "flagFile": "/flags/prussia.svg",
   "units": [
     {
@@ -30,7 +30,7 @@
       "type": "Command",
       "armament": "-",
       "special": [
-        "A brigade commander must have one Prussian infantry brigade; may purchase a subordinate commander for +10 points"
+        "A brigade commander must have one Prussian infantry brigade"
       ],
       "variants": [
         {
@@ -44,6 +44,17 @@
           "staffRating": 9
         }
       ]
+    },
+    {
+      "id": "pr15-sub-cmd",
+      "name": "Subordinate Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Issues orders using the Brigade Commander's Staff Rating"
+      ],
+      "cost": 10
     },
     {
       "id": "pr15-cav-cmd",
@@ -346,8 +357,16 @@
       "min": 1,
       "max": 6,
       "commanderUnitId": "pr15-brig-cmd",
-      "maxRegimentsTotal": { "slotIndices": [0, 1], "max": 3, "min": 2 },
+      "maxRegimentsTotal": { "slotIndices": [1, 2], "max": 3, "min": 2 },
       "slots": [
+        {
+          "label": "Subordinate Commander (optional, +10 points, uses the Brigade Commander's Staff Rating)",
+          "unitIds": [
+            "pr15-sub-cmd"
+          ],
+          "min": 0,
+          "max": 1
+        },
         {
           "label": "Line Infantry Regiments",
           "unitIds": [],
@@ -600,7 +619,6 @@
   "notes": [
     "A Corps Commander leads the army (Staff Rating 8-9, matching the Prussian standard of no Staff Rating 7 option) — the Prussians organised as Corps rather than Divisions in 1815. Not itemised in this supplement's Prussian list, but included here as the standard army-level commander.",
     "The Attached Jäger slot is capped at 3 (the maximum possible regiments per brigade) rather than tied to the actual number of regiments taken (2 or 3) — verify you've taken no more than 1 per regiment.",
-    "Prussian Staff System: a brigade commander may purchase a subordinate commander for +10 points, who issues orders using the brigade commander's Staff Rating.",
     "Angriffskolonne (Assault Column) and Zug Column (Column of Companies) represent Prussian attack and manoeuvre formations.",
     "'No prisoners! No pity!': against a French army, all Prussian infantry and cavalry count as Tough Fighters.",
     "Named commanders have no official points cost in this supplement — priced here at the generic Corps Commander cost for their Staff Rating; adjust freely."

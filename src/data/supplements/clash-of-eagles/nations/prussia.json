@@ -1,7 +1,7 @@
 {
   "id": "prussia",
   "name": "Prussia 1812",
-  "blurb": "The reformed Prussian army of the Wars of Liberation.",
+  "blurb": "Prussia's Auxiliary Corps under Yorck, a reluctant ally serving alongside MacDonald's X Corps.",
   "flagFile": "/flags/prussia.svg",
   "units": [
     {
@@ -35,7 +35,7 @@
       "type": "Command",
       "armament": "-",
       "special": [
-        "1+ per army; may add up to 1 sub commander for 10 points"
+        "1+ per army"
       ],
       "variants": [
         {
@@ -54,6 +54,17 @@
           "staffRating": 9
         }
       ]
+    },
+    {
+      "id": "pr-sub-cmd",
+      "name": "Subordinate Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Issues orders using the Brigade Commander's Staff Rating"
+      ],
+      "cost": 10
     },
     {
       "id": "pr-cav-brig-cmd",
@@ -228,6 +239,14 @@
       "max": 6,
       "slots": [
         {
+          "label": "Subordinate Commander (optional, +10 points, uses the Brigade Commander's Staff Rating)",
+          "unitIds": [
+            "pr-sub-cmd"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
           "label": "Infantry Regiments",
           "unitIds": [],
           "min": 0,
@@ -388,11 +407,7 @@
   ],
   "notes": [
     "A Divisional (army) Commander leads the army (Staff Rating 7-9). Not itemised in the supplement's Prussian list, but included here as the standard army-level commander.",
-    "1+ Infantry Brigades: 1-2 Infantry Regiments (1-2 Musketeer battalions and 0-1 Fusilier battalion each), plus Brigade Support (Jäger battalion, or a Dragoon/Hussar regiment per army) and Artillery Support (1 Foot battery if 6+ battalions taken).",
-    "Each Infantry Brigade Commander may purchase one subordinate commander for +10 points.",
-    "Army Artillery: up to 1 Heavy battery (if 3 brigades taken), up to 2 Foot batteries (1 per 2 brigades), up to 1 Horse battery (if 3 brigades taken). A brigade can carry no more than 2 batteries.",
-    "Up to 2 Cavalry Brigades (1 per Infantry Brigade in the army): 2-4 choices of up to 2 Dragoon regiments, up to 2 Hussar regiments, up to 1 Horse Artillery battery.",
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade 1 Infantry Regiment to Guard (+11 pts/battalion); upgrade any infantry battalion to Veteran, Reliable + Elite 5+ (+8 pts/battalion); upgrade a Musketeer or Fusilier battalion to Large (+8 pts/battalion); downgrade any battalion to Small (-8 pts/battalion); upgrade a Dragoon or Hussar regiment to Veteran, Reliable + 1 Hand-to-Hand (+6 pts/regiment); downgrade any cavalry regiment to Small (-8 pts/regiment); upgrade any artillery battery to Veteran, Reliable + Elite 5+ (+8 pts/battery); downgrade a Foot, Horse or Heavy battery to a half battery (-8 pts).",
+    "Army Artillery batteries can be attached to any brigade, although a brigade can carry no more than 2.",
     "Allies: a Late Prussian army can take 25% allies from any one allied list."
   ]
 }

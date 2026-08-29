@@ -79,9 +79,9 @@ function RosterContent({ nation, roster }: Props) {
 
   return (
     <Stack gap="md">
-      <Group justify="space-between" align="center">
-        <Group gap="sm" align="center">
-          {nation.flagFile && (
+      <Group justify="space-between" align="flex-start" wrap="nowrap">
+        <Group gap="sm" align="center" wrap="nowrap" style={{ minWidth: 0 }}>
+          {(nation.flagFile ?? nation.flagFiles?.[0]) && (
             <div style={{
               position: "relative",
               width: 54,
@@ -92,7 +92,7 @@ function RosterContent({ nation, roster }: Props) {
               flexShrink: 0,
             }}>
               <img
-                src={nation.flagFile}
+                src={nation.flagFile ?? nation.flagFiles?.[0]}
                 alt={`${nation.name} flag`}
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
@@ -108,7 +108,7 @@ function RosterContent({ nation, roster }: Props) {
               }} data-flag-overlay />
             </div>
           )}
-          <Stack gap={0}>
+          <Stack gap={0} style={{ minWidth: 0 }}>
             <Title order={3}>{nation.name}</Title>
             <Text size="sm" c="dimmed">
               {supplement?.name ? `${supplement.name} \u2014 ` : ""}
@@ -117,7 +117,7 @@ function RosterContent({ nation, roster }: Props) {
             </Text>
           </Stack>
         </Group>
-        <Badge size="xl" variant="filled" color="brown">
+        <Badge size="xl" variant="filled" color="brown" style={{ flexShrink: 0 }}>
           {grandTotal} pts
         </Badge>
       </Group>
