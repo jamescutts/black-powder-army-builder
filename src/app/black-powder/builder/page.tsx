@@ -26,6 +26,39 @@ import { loadRoster, saveRoster, clearRoster } from "@/lib/storage";
 
 const SUPPLEMENT_OPTIONS = supplements.map((s) => ({ value: s.id, label: s.name }));
 
+function FlagIcon({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div
+      style={{
+        position: "relative",
+        width: 20,
+        height: 14,
+        borderRadius: 2,
+        overflow: "hidden",
+        flexShrink: 0,
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+      />
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: [
+            "radial-gradient(ellipse at center, transparent 40%, rgba(60,30,5,0.35) 100%)",
+            "linear-gradient(135deg, rgba(180,130,60,0.18) 0%, rgba(120,70,20,0.22) 100%)",
+          ].join(", "),
+          mixBlendMode: "multiply",
+          pointerEvents: "none",
+        }}
+      />
+    </div>
+  );
+}
+
 export default function BuilderPage() {
   return (
     <Suspense>
@@ -105,7 +138,7 @@ function BuilderContent() {
       <Stack gap="lg">
         <Group justify="space-between" align="flex-end" wrap="wrap">
           <Stack gap={0} style={{ userSelect: "none" }}>
-            <Anchor component={Link} href="/" underline="never">
+            <Anchor component={Link} href="/black-powder" underline="never">
               <Title
                 order={1}
                 fz={56}
@@ -140,12 +173,12 @@ function BuilderContent() {
               onChange={handleNationChange}
               w={260}
               allowDeselect={false}
-              leftSection={nation.flagFile ? <img src={nation.flagFile} alt="" width={20} height={14} style={{ objectFit: "cover", borderRadius: 2 }} /> : undefined}
+              leftSection={nation.flagFile ? <FlagIcon src={nation.flagFile} alt="" /> : undefined}
               renderOption={({ option }) => {
                 const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
                 return (
                   <Group gap="xs" wrap="nowrap">
-                    {flag && <img src={flag} alt="" width={20} height={14} style={{ objectFit: "cover", borderRadius: 2 }} />}
+                    {flag && <FlagIcon src={flag} alt="" />}
                     <span>{option.label}</span>
                   </Group>
                 );

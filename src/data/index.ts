@@ -11,6 +11,9 @@ import coeVistulaLegion from "./supplements/clash-of-eagles/nations/vistula-legi
 import coeGrandDuchyOfWarsaw from "./supplements/clash-of-eagles/nations/grand-duchy-of-warsaw.json";
 import coeConfederationOfTheRhine from "./supplements/clash-of-eagles/nations/confederation-of-the-rhine.json";
 import coeWurttemberg from "./supplements/clash-of-eagles/nations/wurttemberg.json";
+import coeBavaria from "./supplements/clash-of-eagles/nations/bavaria.json";
+import coeSaxony from "./supplements/clash-of-eagles/nations/saxony.json";
+import coeWestphalia from "./supplements/clash-of-eagles/nations/westphalia.json";
 import coeAustria from "./supplements/clash-of-eagles/nations/austria.json";
 import coeItaly from "./supplements/clash-of-eagles/nations/italy.json";
 import coeNaples from "./supplements/clash-of-eagles/nations/naples.json";
@@ -58,8 +61,11 @@ const clashOfEaglesNations = withSupplement("clash-of-eagles", [
   coeFrenchImperialGuard,
   coeVistulaLegion,
   coeGrandDuchyOfWarsaw,
-  coeConfederationOfTheRhine,
   coeWurttemberg,
+  coeBavaria,
+  coeSaxony,
+  coeWestphalia,
+  coeConfederationOfTheRhine,
   coeAustria,
   coeItaly,
   coeNaples,

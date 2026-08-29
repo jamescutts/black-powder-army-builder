@@ -1,0 +1,563 @@
+{
+  "id": "westphalia",
+  "name": "Westphalia 1812",
+  "blurb": "The Kingdom of Westphalia's contingent in Napoleon's Grande Armée.",
+  "flagFile": "/flags/westphalia.svg",
+  "units": [
+    {
+      "id": "wp-div-cmd",
+      "name": "Divisional Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25,
+          "staffRating": 8
+        }
+      ]
+    },
+    {
+      "id": "wp-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25,
+          "staffRating": 8
+        }
+      ]
+    },
+    {
+      "id": "wp-cmd-von-ochs",
+      "name": "General von Ochs (Westphalian Corps)",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 0,
+      "special": [
+        "+1 combat attack",
+        "Irresponsible"
+      ],
+      "staffRating": 7
+    },
+    {
+      "id": "wp-line-infantry",
+      "name": "Westphalian Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Poor Mixed Formation",
+        "Lacking Initiative"
+      ],
+      "cost": 35
+    },
+    {
+      "id": "wp-light-infantry",
+      "name": "Westphalian Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Light Infantry Mixed Formation",
+        "Lacking Initiative"
+      ],
+      "cost": 35
+    },
+    {
+      "id": "wp-jager",
+      "name": "Westphalian Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Light Infantry Mixed Formation",
+        "Skirmish",
+        "Rifle Mixed Formation",
+        "Sharpshooter"
+      ],
+      "cost": 39
+    },
+    {
+      "id": "wp-guard-grenadier",
+      "name": "Westphalian Guard Grenadier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Large"
+      ],
+      "cost": 54
+    },
+    {
+      "id": "wp-guard-jager",
+      "name": "Westphalian Guard Jäger",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Light Infantry Mixed Formation",
+        "Skirmish",
+        "Sharpshooter",
+        "Large"
+      ],
+      "cost": 57
+    },
+    {
+      "id": "wp-jager-karabinier",
+      "name": "Westphalian Jäger-Karabinier",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 52
+    },
+    {
+      "id": "wp-hussar",
+      "name": "Westphalian Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "shooting": "0",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "wp-cuirassier",
+      "name": "Westphalian Cuirassier",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "9",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "3",
+      "special": [
+        "Heavy Cavalry D3"
+      ],
+      "cost": 54
+    },
+    {
+      "id": "wp-guard-chevau-leger",
+      "name": "Westphalian Guard Chevau Léger",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Reliable",
+        "Marauder"
+      ],
+      "cost": 45
+    },
+    {
+      "id": "wp-garde-du-corps",
+      "name": "Westphalian Garde du Corps",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "5",
+      "shooting": "0",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Tiny",
+        "Reliable",
+        "Heavy Cavalry D3"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "wp-regimental-arty",
+      "name": "Westphalian Regimental Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Regimental Artillery",
+      "handToHand": "1",
+      "shooting": "1/1/1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 11
+    },
+    {
+      "id": "wp-foot-arty",
+      "name": "Westphalian Foot Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 27
+    },
+    {
+      "id": "wp-horse-arty",
+      "name": "Westphalian Horse Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 30
+    },
+    {
+      "id": "wp-heavy-arty",
+      "name": "Westphalian Heavy Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Siege Artillery",
+      "handToHand": "1",
+      "shooting": "3/2/1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 31
+    },
+    {
+      "id": "rb-line-infantry",
+      "name": "Rheinbund Line Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Poor Mixed Formation"
+      ],
+      "cost": 31
+    },
+    {
+      "id": "rb-light-infantry",
+      "name": "Rheinbund Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "5",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Poor Skirmish"
+      ],
+      "cost": 31
+    }
+  ],
+  "brigades": [
+    {
+      "id": "wp-guard-infantry-brigade",
+      "name": "Westphalian Guard Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Guard Battalion",
+          "unitIds": [
+            "wp-guard-grenadier",
+            "wp-guard-jager",
+            "wp-jager-karabinier"
+          ],
+          "min": 1,
+          "max": 3,
+          "unitLimits": [
+            { "unitId": "wp-guard-grenadier", "max": 1 },
+            { "unitId": "wp-guard-jager", "max": 1 },
+            { "unitId": "wp-jager-karabinier", "max": 1 }
+          ]
+        },
+        {
+          "label": "Regimental Artillery (optional, requires a Grenadier Guard battalion)",
+          "unitIds": [
+            "wp-regimental-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": [
+              "wp-guard-grenadier"
+            ],
+            "min": 1
+          }
+        }
+      ],
+      "commanderUnitId": "wp-brig-cmd",
+      "note": "Up to 1 each of Grenadier Guard, Guard Jäger and Jäger-Karabiniers battalions."
+    },
+    {
+      "id": "wp-infantry-brigade",
+      "name": "Westphalian Infantry Brigade",
+      "min": 1,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Line Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Line Infantry Regiment",
+            "min": 1,
+            "max": 3,
+            "slots": [
+              {
+                "label": "Line Infantry Battalion",
+                "unitIds": [
+                  "wp-line-infantry"
+                ],
+                "min": 1,
+                "max": 3
+              }
+            ]
+          }
+        },
+        {
+          "label": "Light Infantry / Jäger Battalion (optional)",
+          "unitIds": [
+            "wp-light-infantry",
+            "wp-jager"
+          ],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Regimental Artillery (1 per 2 battalions in the brigade)",
+          "unitIds": [
+            "wp-regimental-arty"
+          ],
+          "min": 0,
+          "max": 4,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "wp-regimental-arty",
+              "perBattalions": { "countSlotIndices": [0, 1], "ratio": 2 }
+            }
+          ]
+        },
+        {
+          "label": "Foot Artillery Battery (optional)",
+          "unitIds": [
+            "wp-foot-arty"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "commanderUnitId": "wp-brig-cmd",
+      "maxBattalions": { "max": 7, "countSlotIndices": [0, 1] },
+      "note": "1-3 Line Infantry regiments of 1-3 battalions each, plus an optional Light Infantry or Jäger battalion (max 7 battalions per brigade)."
+    },
+    {
+      "id": "wp-cavalry-brigade",
+      "name": "Westphalian Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Cavalry Regiment",
+          "unitIds": [
+            "wp-hussar",
+            "wp-guard-chevau-leger",
+            "wp-garde-du-corps"
+          ],
+          "min": 1,
+          "max": 2,
+          "unitLimits": [
+            { "unitId": "wp-hussar", "max": 2 },
+            { "unitId": "wp-guard-chevau-leger", "max": 1 },
+            { "unitId": "wp-garde-du-corps", "max": 1 }
+          ]
+        },
+        {
+          "label": "Horse Artillery (optional, if 2 regiments taken)",
+          "unitIds": [
+            "wp-horse-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": [
+              "wp-hussar",
+              "wp-guard-chevau-leger",
+              "wp-garde-du-corps"
+            ],
+            "min": 2
+          }
+        }
+      ],
+      "note": "1 per Infantry Brigade (Guard or standard). Up to 2 regiments (up to 2 Hussar, up to 1 Guard Chevauleger, up to 1 Garde du Corps).",
+      "commanderUnitId": "wp-brig-cmd",
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "wp-infantry-brigade",
+          "wp-guard-infantry-brigade"
+        ],
+        "ratio": 1
+      }
+    },
+    {
+      "id": "wp-cavalry-reserve",
+      "name": "Westphalian Cavalry Reserve",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Cuirassier Regiment",
+          "unitIds": [
+            "wp-cuirassier"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Horse Artillery (optional, if 2 regiments taken)",
+          "unitIds": [
+            "wp-horse-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": [
+              "wp-cuirassier"
+            ],
+            "min": 2
+          }
+        }
+      ],
+      "note": "If 2 Infantry Brigades taken (Guard or standard)",
+      "commanderUnitId": "wp-brig-cmd",
+      "requires": {
+        "brigadeTypeIds": [
+          "wp-infantry-brigade",
+          "wp-guard-infantry-brigade"
+        ],
+        "min": 2
+      }
+    },
+    {
+      "id": "wp-artillery-reserve",
+      "name": "Westphalian Artillery Reserve",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Heavy Battery (if 8 infantry battalions taken)",
+          "unitIds": [
+            "wp-heavy-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": [
+              "wp-line-infantry",
+              "wp-light-infantry",
+              "wp-jager",
+              "wp-guard-grenadier",
+              "wp-guard-jager",
+              "wp-jager-karabinier",
+              "rb-line-infantry",
+              "rb-light-infantry"
+            ],
+            "min": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "rb-infantry-brigade",
+      "name": "Rheinbund Infantry Brigade",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Rheinbund Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Rheinbund Infantry Regiment",
+            "min": 1,
+            "max": 3,
+            "slots": [
+              {
+                "label": "Rheinbund Infantry Battalion",
+                "unitIds": [
+                  "rb-line-infantry",
+                  "rb-light-infantry"
+                ],
+                "min": 1,
+                "max": 2
+              }
+            ]
+          }
+        }
+      ],
+      "commanderUnitId": "wp-brig-cmd",
+      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each (Line or Light Infantry, same cost). Can be taken by any Divisional commander regardless of nationality."
+    }
+  ],
+  "notes": [
+    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book."
+  ]
+}

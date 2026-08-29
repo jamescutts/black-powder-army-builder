@@ -3,45 +3,65 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-  Anchor,
   Box,
   Button,
   Card,
   Center,
   Container,
   Group,
-  SimpleGrid,
   Stack,
   Text,
   Title,
 } from "@mantine/core";
 import { IconArrowRight } from "@tabler/icons-react";
-import { supplements, getNationsForSupplement } from "@/data";
-import type { Supplement } from "@/data/types";
-import type { Nation } from "@/data/types";
+
+interface Ruleset {
+  id: string;
+  name: string;
+  blurb: string;
+  href: string;
+}
+
+// A small engraved-style fleuron, in the spirit of the rule-divider ornaments printed
+// between sections in period rulebooks and title pages.
+function PeriodOrnament() {
+  return (
+    <svg
+      viewBox="0 0 200 40"
+      width={140}
+      height={28}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+    >
+      <path d="M4 20 C 40 4, 68 4, 96 20" opacity={0.85} />
+      <path d="M104 20 C 132 4, 160 4, 196 20" opacity={0.85} />
+      <path d="M4 20 C 40 36, 68 36, 96 20" opacity={0.45} />
+      <path d="M104 20 C 132 36, 160 36, 196 20" opacity={0.45} />
+      <circle cx="100" cy="20" r="3.5" fill="currentColor" stroke="none" />
+      <circle cx="4" cy="20" r="1.5" fill="currentColor" stroke="none" />
+      <circle cx="196" cy="20" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+const RULESETS: Ruleset[] = [
+  {
+    id: "black-powder",
+    name: "Black Powder",
+    blurb: "Warlord Games' mass-battle rules for horse-and-musket warfare, 1700-1900.",
+    href: "/black-powder",
+  },
+];
 
 export default function HomePage() {
   const router = useRouter();
-  const [selectedSupplement, setSelectedSupplement] = useState<Supplement | null>(null);
-  const [selectedNation, setSelectedNation] = useState<Nation | null>(null);
-
-  const nations = selectedSupplement
-    ? getNationsForSupplement(selectedSupplement.id)
-    : [];
-
-  function handleSupplementSelect(supplement: Supplement) {
-    if (selectedSupplement?.id === supplement.id) return;
-    setSelectedSupplement(supplement);
-    setSelectedNation(null);
-  }
-
-  function handleNationSelect(nation: Nation) {
-    setSelectedNation(nation);
-  }
+  const [selectedRuleset, setSelectedRuleset] = useState<Ruleset | null>(null);
 
   function handleStart() {
-    if (!selectedNation) return;
-    router.push(`/builder?nation=${selectedNation.id}`);
+    if (!selectedRuleset) return;
+    router.push(selectedRuleset.href);
   }
 
   return (
@@ -58,40 +78,32 @@ export default function HomePage() {
               ta="center"
               style={{ fontFamily: "var(--font-script), cursive", lineHeight: 1.1, WebkitTextStroke: "0.5px currentColor" }}
             >
-              Black Powder Army Builder
+              Army Builder
             </Title>
             <Text c="dimmed" size="sm" ta="center">
-              Points calculator for{" "}
-              <Anchor
-                href="https://www.warlordgames.com"
-                target="_blank"
-                rel="noreferrer"
-                c="brown.7"
-              >
-                Black Powder
-              </Anchor>{" "}
-              supplement army lists.
+              Points calculators for tabletop wargame army lists.
             </Text>
           </Stack>
         </Center>
 
-        {/* Supplement selection */}
+        {/* Ruleset selection */}
         <Stack gap="md">
           <Title order={3} fz={18} fw={600} c="brown.8" ta="center">
-            Choose a supplement
+            Choose a rule set
           </Title>
-          <SimpleGrid cols={{ base: 1, sm: 3 }} spacing="md">
-            {supplements.map((supplement) => {
-              const isSelected = selectedSupplement?.id === supplement.id;
+          <Group justify="center" gap="md" wrap="wrap">
+            {RULESETS.map((ruleset) => {
+              const isSelected = selectedRuleset?.id === ruleset.id;
               return (
                 <Card
-                  key={supplement.id}
+                  key={ruleset.id}
                   withBorder
                   radius="md"
                   padding="lg"
-                  onClick={() => handleSupplementSelect(supplement)}
+                  onClick={() => setSelectedRuleset(ruleset)}
                   style={{
                     cursor: "pointer",
+                    width: 260,
                     borderColor: isSelected ? "var(--mantine-color-brown-6)" : undefined,
                     borderWidth: isSelected ? 2 : 1,
                     backgroundColor: isSelected
@@ -103,7 +115,10 @@ export default function HomePage() {
                       : undefined,
                   }}
                 >
-                  <Stack gap={6} align="center">
+                  <Stack gap={10} align="center">
+                    <Box c={isSelected ? "brown.6" : "brown.4"}>
+                      <PeriodOrnament />
+                    </Box>
                     <Text
                       fw={600}
                       fz="md"
@@ -111,122 +126,20 @@ export default function HomePage() {
                       ta="center"
                       style={{ lineHeight: 1.3 }}
                     >
-                      {supplement.name}
+                      {ruleset.name}
                     </Text>
                     <Text size="xs" c="dimmed" ta="center" style={{ lineHeight: 1.5 }}>
-                      {supplement.blurb}
+                      {ruleset.blurb}
                     </Text>
                   </Stack>
                 </Card>
               );
             })}
-          </SimpleGrid>
+          </Group>
         </Stack>
 
-        {/* Nation selection — only shown once a supplement is picked */}
-        {selectedSupplement && (
-          <Stack gap="md">
-            <Title order={3} fz={18} fw={600} c="brown.8" ta="center">
-              Choose a nation
-            </Title>
-            <SimpleGrid
-                cols={{ base: 2, sm: 3, md: 4 }}
-                spacing="md"
-                className="nation-grid"
-              >
-              {nations.map((nation) => {
-                const isSelected = selectedNation?.id === nation.id;
-                return (
-                  <Card
-                    key={nation.id}
-                    withBorder
-                    radius="md"
-                    padding="md"
-                    onClick={() => handleNationSelect(nation)}
-                    style={{
-                      cursor: "pointer",
-                      borderColor: isSelected ? "var(--mantine-color-brown-6)" : undefined,
-                      borderWidth: isSelected ? 2 : 1,
-                      backgroundColor: isSelected
-                        ? "var(--mantine-color-brown-0)"
-                        : "var(--mantine-color-white)",
-                      transition: "border-color 120ms ease, background-color 120ms ease, box-shadow 120ms ease",
-                      boxShadow: isSelected
-                        ? "0 2px 12px color-mix(in srgb, var(--mantine-color-brown-6) 20%, transparent)"
-                        : undefined,
-                    }}
-                  >
-                    <Stack gap={8} align="center">
-                      {(() => {
-                        const flags = nation.flagFiles ?? (nation.flagFile ? [nation.flagFile] : []);
-                        if (flags.length === 0) return null;
-                        return (
-                          <Group gap={flags.length === 1 ? 4 : 8} justify="center" align="center" wrap="nowrap" style={{ width: "100%", height: 56, paddingInline: flags.length > 1 ? 8 : 0 }}>
-                            {flags.map((f, i) => (
-                              <div
-                                key={i}
-                                style={{
-                                  position: "relative",
-                                  height: flags.length === 1 ? 56 : 32,
-                                  aspectRatio: "3 / 2",
-                                  borderRadius: 4,
-                                  border: "1px solid var(--mantine-color-gray-3)",
-                                  overflow: "hidden",
-                                  flexShrink: 0,
-                                }}
-                              >
-                                <img
-                                  src={f}
-                                  alt=""
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    objectFit: "cover",
-                                    display: "block",
-                                  }}
-                                />
-                                {/* Weathered overlay: sepia tint + edge vignette */}
-                                <div style={{
-                                  position: "absolute",
-                                  inset: 0,
-                                  background: [
-                                    "radial-gradient(ellipse at center, transparent 40%, rgba(60,30,5,0.35) 100%)",
-                                    "linear-gradient(135deg, rgba(180,130,60,0.18) 0%, rgba(120,70,20,0.22) 100%)",
-                                  ].join(", "),
-                                  mixBlendMode: "multiply",
-                                  pointerEvents: "none",
-                                }} />
-                              </div>
-                            ))}
-                          </Group>
-                        );
-                      })()}
-                      <Stack gap={4} align="center">
-                        <Text
-                          fw={600}
-                          fz="sm"
-                          c={isSelected ? "brown.7" : "brown.9"}
-                          ta="center"
-                          style={{ lineHeight: 1.3 }}
-                        >
-                          {nation.name}
-                        </Text>
-                        {nation.blurb && (
-                          <Text size="xs" c="dimmed" ta="center" lineClamp={2} style={{ lineHeight: 1.5 }}>
-                            {nation.blurb}
-                          </Text>
-                        )}
-                      </Stack>
-                    </Stack>
-                  </Card>
-                );
-              })}
-            </SimpleGrid>
-          </Stack>
-        )}
-
         {/* CTA */}
-        {selectedNation && (
+        {selectedRuleset && (
           <Center>
             <Box>
               <Button
@@ -236,7 +149,7 @@ export default function HomePage() {
                 onClick={handleStart}
                 px={40}
               >
-                Build army
+                Continue
               </Button>
             </Box>
           </Center>

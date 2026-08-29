@@ -1,11 +1,11 @@
 {
-  "id": "wurttemberg",
-  "name": "Württemberg 1812",
-  "blurb": "The Kingdom of Württemberg's contingent in Napoleon's Grande Armée.",
-  "flagFile": "/flags/wurttemberg.svg",
+  "id": "bavaria",
+  "name": "Bavaria 1812",
+  "blurb": "The Kingdom of Bavaria's contingent in Napoleon's Grande Armée.",
+  "flagFile": "/flags/bavaria.svg",
   "units": [
     {
-      "id": "wt-div-cmd",
+      "id": "bav-div-cmd",
       "name": "Divisional Commander",
       "category": "Command",
       "type": "Command",
@@ -24,7 +24,7 @@
       ]
     },
     {
-      "id": "wt-brig-cmd",
+      "id": "bav-brig-cmd",
       "name": "Brigade Commander",
       "category": "Command",
       "type": "Command",
@@ -43,8 +43,8 @@
       ]
     },
     {
-      "id": "wt-line-infantry",
-      "name": "Württemberg Line Infantry",
+      "id": "bav-line-infantry",
+      "name": "Bavarian Line Infantry",
       "category": "Infantry",
       "type": "Regular Infantry",
       "armament": "Smoothbore Musket",
@@ -52,11 +52,15 @@
       "shooting": "3",
       "morale": "4",
       "stamina": "3",
+      "special": [
+        "Rifle Mixed Formation",
+        "Lacking Initiative"
+      ],
       "cost": 36
     },
     {
-      "id": "wt-light-infantry",
-      "name": "Württemberg Light Infantry",
+      "id": "bav-light-infantry",
+      "name": "Bavarian Light Infantry",
       "category": "Infantry",
       "type": "Regular Infantry",
       "armament": "Smoothbore Musket",
@@ -65,41 +69,21 @@
       "morale": "4",
       "stamina": "3",
       "special": [
-        "Skirmish",
-        "Sharpshooter",
-        "Light Infantry",
-        "Mixed Formation"
-      ],
-      "cost": 39
-    },
-    {
-      "id": "wt-jagers",
-      "name": "Württemberg Jägers",
-      "category": "Infantry",
-      "type": "Regular Infantry",
-      "armament": "Rifled carbine and rifles",
-      "handToHand": "6",
-      "shooting": "2/3",
-      "morale": "4",
-      "stamina": "4",
-      "special": [
-        "Skirmish",
         "Rifle Mixed Formation",
-        "Light Infantry",
-        "Mixed Formation",
-        "Sharpshooter",
-        "Reliable",
-        "Elite 4+"
+        "Light Infantry Mixed Formation",
+        "Skirmish",
+        "Sharpshooter"
       ],
-      "cost": 57
+      "cost": 40
     },
     {
-      "id": "wt-chevauleger",
-      "name": "Württemberg Chevauleger",
+      "id": "bav-chevau-leger",
+      "name": "Bavarian Chevau Léger",
       "category": "Cavalry",
       "type": "Regular Cavalry",
       "armament": "Sabre",
       "handToHand": "6",
+      "shooting": "3",
       "morale": "4",
       "stamina": "3",
       "special": [
@@ -108,36 +92,24 @@
       "cost": 41
     },
     {
-      "id": "wt-hussar-chasseur",
-      "name": "French Hussar / Chasseur à Cheval (Württemberg service)",
-      "category": "Cavalry",
-      "type": "Regular Cavalry",
-      "armament": "Sabre",
-      "handToHand": "6",
+      "id": "bav-light-arty",
+      "name": "Bavarian Light Artillery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "2/1/1",
       "morale": "4",
-      "stamina": "3",
+      "stamina": "1",
       "special": [
-        "Marauder"
+        "Marauder",
+        "Moves as Austrian Cavalry Artillery"
       ],
-      "cost": 41
+      "cost": 20
     },
     {
-      "id": "wt-jager-cavalry",
-      "name": "Württemberg Jäger Cavalry",
-      "category": "Cavalry",
-      "type": "Regular Cavalry",
-      "armament": "Sabre",
-      "handToHand": "6",
-      "morale": "4",
-      "stamina": "3",
-      "special": [
-        "Marauder"
-      ],
-      "cost": 41
-    },
-    {
-      "id": "wt-light-arty",
-      "name": "Württemberg Light Artillery",
+      "id": "bav-foot-arty",
+      "name": "Bavarian Foot Artillery",
       "category": "Artillery",
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
@@ -148,23 +120,8 @@
       "cost": 27
     },
     {
-      "id": "wt-horse-arty",
-      "name": "Württemberg Horse Artillery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Artillery",
-      "handToHand": "1",
-      "shooting": "3-2-1",
-      "morale": "4",
-      "stamina": "1",
-      "special": [
-        "Marauder"
-      ],
-      "cost": 30
-    },
-    {
-      "id": "wt-heavy-arty",
-      "name": "Württemberg Heavy Artillery",
+      "id": "bav-position-battery",
+      "name": "Bavarian Position Battery",
       "category": "Artillery",
       "type": "Regular Artillery",
       "armament": "Smoothbore Siege Artillery",
@@ -207,10 +164,10 @@
   ],
   "brigades": [
     {
-      "id": "wt-infantry-brigade",
-      "name": "Württemberg Infantry Brigade",
+      "id": "bav-infantry-brigade",
+      "name": "Bavarian Infantry Brigade",
       "min": 1,
-      "max": 2,
+      "max": 3,
       "slots": [
         {
           "label": "Line Infantry Regiments",
@@ -225,148 +182,123 @@
               {
                 "label": "Line Infantry Battalion",
                 "unitIds": [
-                  "wt-line-infantry"
+                  "bav-line-infantry"
                 ],
                 "min": 1,
                 "max": 2
               }
             ]
           }
-        }
-      ],
-      "commanderUnitId": "wt-brig-cmd",
-      "note": "1-2 regiments of 1-2 Line Infantry battalions each."
-    },
-    {
-      "id": "wt-light-infantry-brigade",
-      "name": "Württemberg Light Infantry Brigade",
-      "min": 0,
-      "max": 1,
-      "slots": [
-        {
-          "label": "Light Infantry Battalion",
-          "unitIds": [
-            "wt-light-infantry"
-          ],
-          "min": 1,
-          "max": 2
         },
         {
-          "label": "Jäger Battalion (optional)",
+          "label": "Light Infantry Battalion (optional)",
           "unitIds": [
-            "wt-jagers"
+            "bav-light-infantry"
           ],
           "min": 0,
-          "max": 2
+          "max": 1
         },
         {
-          "label": "Line Infantry Regiment (optional)",
-          "unitIds": [],
-          "min": 0,
-          "max": 0,
-          "regiment": {
-            "label": "Line Infantry Regiment",
-            "min": 0,
-            "max": 1,
-            "slots": [
-              {
-                "label": "Line Infantry Battalion",
-                "unitIds": [
-                  "wt-line-infantry"
-                ],
-                "min": 1,
-                "max": 2
-              }
-            ]
-          }
-        }
-      ],
-      "commanderUnitId": "wt-brig-cmd",
-      "note": "1-2 Light Infantry battalions, up to 2 Jäger battalions, plus an optional Line Infantry regiment (1-2 battalions)."
-    },
-    {
-      "id": "wt-cavalry-brigade",
-      "name": "Württemberg Cavalry Brigade",
-      "min": 0,
-      "max": 2,
-      "slots": [
-        {
-          "label": "Cavalry Regiment",
+          "label": "Chevauleger Regiment (optional)",
           "unitIds": [
-            "wt-chevauleger",
-            "wt-hussar-chasseur",
-            "wt-jager-cavalry"
-          ],
-          "min": 1,
-          "max": 4,
-          "unitLimits": [
-            { "unitId": "wt-chevauleger", "max": 2 },
-            { "unitId": "wt-hussar-chasseur", "max": 2 },
-            { "unitId": "wt-jager-cavalry", "max": 1 }
-          ]
-        },
-        {
-          "label": "Horse Artillery (optional)",
-          "unitIds": [
-            "wt-horse-arty"
+            "bav-chevau-leger"
           ],
           "min": 0,
           "max": 1
         }
       ],
-      "note": "1 per Infantry Brigade. 1-4 Cavalry regiments (up to 2 Chevauleger, up to 2 Hussar/Chasseur à Cheval, up to 1 Jäger Cavalry).",
-      "commanderUnitId": "wt-brig-cmd",
+      "commanderUnitId": "bav-brig-cmd",
+      "note": "1-2 regiments of 1-2 Line Infantry battalions each, plus an optional Light Infantry battalion and Chevauleger regiment."
+    },
+    {
+      "id": "bav-cavalry-brigade",
+      "name": "Bavarian Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "slots": [
+        {
+          "label": "Chevauleger Regiment",
+          "unitIds": [
+            "bav-chevau-leger"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Light Battery (optional, if 2 regiments taken)",
+          "unitIds": [
+            "bav-light-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": [
+              "bav-chevau-leger"
+            ],
+            "min": 2
+          }
+        }
+      ],
+      "note": "1 per Infantry Brigade, if no Chevauleger regiment already attached there.",
+      "commanderUnitId": "bav-brig-cmd",
       "maxRatio": {
         "brigadeTypeIds": [
-          "wt-infantry-brigade"
+          "bav-infantry-brigade"
         ],
         "ratio": 1
       }
     },
     {
-      "id": "wt-divisional-artillery",
-      "name": "Württemberg Divisional Artillery",
+      "id": "bav-divisional-artillery",
+      "name": "Bavarian Divisional Artillery",
       "min": 0,
       "max": 1,
       "slots": [
         {
-          "label": "Light Artillery Battery (0-2, 1 per 7 battalions taken)",
+          "label": "Light Artillery Battery (0-2, 1 per 5 battalions taken)",
           "unitIds": [
-            "wt-light-arty"
-          ],
-          "min": 0,
-          "max": 2
-        },
-        {
-          "label": "Horse Artillery Battery (0-2, if 7 battalions taken)",
-          "unitIds": [
-            "wt-horse-arty"
+            "bav-light-arty"
           ],
           "min": 0,
           "max": 2,
           "requiresArmyUnitCount": {
             "unitIds": [
-              "wt-line-infantry",
-              "wt-light-infantry",
-              "wt-jagers",
+              "bav-line-infantry",
+              "bav-light-infantry",
               "rb-line-infantry",
               "rb-light-infantry"
             ],
-            "min": 7
+            "min": 5
           }
         },
         {
-          "label": "Heavy Artillery Battery (0-1, if 8 battalions taken)",
+          "label": "Foot Artillery Battery (0-1, if 6 battalions taken)",
           "unitIds": [
-            "wt-heavy-arty"
+            "bav-foot-arty"
           ],
           "min": 0,
           "max": 1,
           "requiresArmyUnitCount": {
             "unitIds": [
-              "wt-line-infantry",
-              "wt-light-infantry",
-              "wt-jagers",
+              "bav-line-infantry",
+              "bav-light-infantry",
+              "rb-line-infantry",
+              "rb-light-infantry"
+            ],
+            "min": 6
+          }
+        },
+        {
+          "label": "Heavy Foot Battery (0-1, if 8 battalions taken)",
+          "unitIds": [
+            "bav-position-battery"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": [
+              "bav-line-infantry",
+              "bav-light-infantry",
               "rb-line-infantry",
               "rb-light-infantry"
             ],
@@ -374,7 +306,7 @@
           }
         }
       ],
-      "note": "Attach to any brigade. Light Artillery is 1 per 7 infantry battalions in the army (max 2)."
+      "note": "Attach to any brigade. Light Artillery is 1 per 5 infantry battalions in the army (max 2)."
     },
     {
       "id": "rb-infantry-brigade",
@@ -405,19 +337,12 @@
           }
         }
       ],
-      "commanderUnitId": "wt-brig-cmd",
+      "commanderUnitId": "bav-brig-cmd",
       "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each (Line or Light Infantry, same cost). Can be taken by any Divisional commander regardless of nationality."
     }
   ],
-  "unitRatioCaps": [
-    {
-      "capUnitIds": ["wt-light-arty"],
-      "perUnitIds": ["wt-line-infantry", "wt-light-infantry", "wt-jagers", "rb-line-infantry", "rb-light-infantry"],
-      "ratio": 7,
-      "label": "Light batteries"
-    }
-  ],
   "notes": [
+    "A Cavalry Brigade's cap of 1 per Infantry Brigade is not reduced when that Infantry Brigade already has its own Chevauleger regiment attached — verify this manually per the book.",
     "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book."
   ]
 }

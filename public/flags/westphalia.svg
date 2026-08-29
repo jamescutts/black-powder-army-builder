@@ -1,17 +1,8 @@
-<!-- Kingdom of Westphalia (Jerome Bonaparte), 1807-1813: a brand-new Napoleonic client kingdom with
-     no dynastic link to the House of Hanover, so the traditional Guelph "white horse" (Sachsenross)
-     is the wrong symbol here — that belongs to the displaced Hanoverian rulers of the region, not
-     Jerome's regime. Represented instead with a Napoleonic gold eagle, as used by Napoleon's other
-     Bonaparte-ruled client kingdoms. -->
+<!-- Kingdom of Westphalia (Jerome Bonaparte), 1807-1813: national flag was a vertical bicolour,
+     white (hoist) over blue (fly) — per the Commons "Flag of Kingdom of Westphalia.svg" reference
+     and en.wikipedia.org/wiki/Kingdom_of_Westphalia. Not to be confused with the separate Royal
+     Standard (blue field with a gold eagle), which is a different flag from the plain national one. -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
-  <rect width="3" height="2" fill="#003DA5"/>
-  <!-- Simplified Napoleonic eagle, centred -->
-  <g transform="translate(1.5,1) scale(0.22)" fill="#F5C518">
-    <ellipse cx="0" cy="0" rx="1.2" ry="1.8"/>
-    <ellipse cx="-2.8" cy="-0.5" rx="2" ry="0.8" transform="rotate(20,-2.8,-0.5)"/>
-    <ellipse cx="2.8" cy="-0.5" rx="2" ry="0.8" transform="rotate(-20,2.8,-0.5)"/>
-    <circle cx="0" cy="-2.1" r="0.8"/>
-    <polygon points="0.2,-2.5 0.9,-2.2 0.2,-1.9"/>
-    <polygon points="-0.5,1.8 0,3.2 0.5,1.8"/>
-  </g>
+  <rect width="1.5" height="2" x="0" fill="#ffffff"/>
+  <rect width="1.5" height="2" x="1.5" fill="#112AA0"/>
 </svg>
