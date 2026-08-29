@@ -140,7 +140,7 @@
       "name": "Württemberg Light Artillery",
       "category": "Artillery",
       "type": "Regular Artillery",
-      "armament": "Smoothbore Artillery",
+      "armament": "Smoothbore Siege Artillery",
       "handToHand": "1",
       "shooting": "3/2/1",
       "morale": "4",
@@ -172,7 +172,7 @@
       "shooting": "3/2/1",
       "morale": "4",
       "stamina": "2",
-      "cost": 31
+      "cost": 28
     },
     {
       "id": "rb-line-infantry",
