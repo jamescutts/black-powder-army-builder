@@ -231,15 +231,17 @@
             "bw-light"
           ],
           "min": 2,
-          "max": 3
+          "max": 3,
+          "singleUnitType": true
         },
         {
-          "label": "Leib Light Battalion (optional, 1 per army)",
+          "label": "Leib Light Battalion (optional, 1 per army, Light Infantry brigades only)",
           "unitIds": [
             "bw-leib-light"
           ],
           "min": 0,
           "max": 1,
+          "requiresBrigadeCount": { "unitIds": ["bw-light"], "min": 2 },
           "unitCaps": [
             {
               "unitId": "bw-leib-light",
@@ -332,8 +334,6 @@
   ],
   "notes": [
     "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "Brunswick brigades were either Light or Line, made up of 2-3 battalions of the same type each.",
-    "The Leib Light Battalion (1 per army) may only be added to a Brigade formed from Light Infantry.",
     "The Advanced Guard was an independent formation, directly under the Divisional Commander: Vanguard Jäger and/or Light Infantry companies, or (not combined with companies) Vanguard Battalions.",
     "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Dutch/Belgian Brigades."
   ]
