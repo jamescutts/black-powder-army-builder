@@ -1,11 +1,10 @@
 {
   "id": "confederation-of-the-rhine",
-  "name": "Saxony, Bavaria, Württemberg, Westphalia & the Confederation of the Rhine",
+  "name": "Saxony, Bavaria, Westphalia & the Confederation of the Rhine",
   "blurb": "The German states of Napoleon's Confederation of the Rhine, 1812.",
   "flagFiles": [
     "/flags/saxony.svg",
     "/flags/bavaria.svg",
-    "/flags/wurttemberg.svg",
     "/flags/westphalia.svg"
   ],
   "units": [
@@ -454,149 +453,6 @@
       "cost": 31
     },
     {
-      "id": "wt-line-infantry",
-      "name": "Württemberg Line Infantry",
-      "category": "Infantry",
-      "type": "Regular Infantry",
-      "armament": "Smoothbore Musket",
-      "handToHand": "6",
-      "shooting": "3",
-      "morale": "4",
-      "stamina": "3",
-      "cost": 36
-    },
-    {
-      "id": "wt-light-infantry",
-      "name": "Württemberg Light Infantry",
-      "category": "Infantry",
-      "type": "Regular Infantry",
-      "armament": "Smoothbore Musket",
-      "handToHand": "6",
-      "shooting": "3",
-      "morale": "4",
-      "stamina": "3",
-      "special": [
-        "Skirmish",
-        "Sharpshooter",
-        "Light Infantry",
-        "Mixed Formation"
-      ],
-      "cost": 39
-    },
-    {
-      "id": "wt-jagers",
-      "name": "Württemberg Jägers",
-      "category": "Infantry",
-      "type": "Regular Infantry",
-      "armament": "Rifled carbine and rifles",
-      "handToHand": "6",
-      "shooting": "2/3",
-      "morale": "4",
-      "stamina": "4",
-      "special": [
-        "Skirmish",
-        "Rifle Mixed Formation",
-        "Light Infantry",
-        "Mixed Formation",
-        "Sharpshooter",
-        "Reliable",
-        "Elite 4+"
-      ],
-      "cost": 57
-    },
-    {
-      "id": "wt-chevauleger-jagers-cavalry",
-      "name": "Württemberg Chevauleger and Jägers cavalry",
-      "category": "Cavalry",
-      "type": "Regular Cavalry",
-      "armament": "Sabre",
-      "handToHand": "6",
-      "morale": "4",
-      "stamina": "3",
-      "special": [
-        "Marauder"
-      ],
-      "cost": 41
-    },
-    {
-      "id": "wt-light-arty-half",
-      "name": "Württemberg Light Artillery Half Battery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Artillery",
-      "handToHand": "1",
-      "shooting": "2-1-1",
-      "morale": "4",
-      "stamina": "1",
-      "cost": 19
-    },
-    {
-      "id": "wt-light-arty",
-      "name": "Württemberg Light Artillery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Siege Artillery",
-      "handToHand": "1",
-      "shooting": "3/2/1",
-      "morale": "4",
-      "stamina": "2",
-      "cost": 27
-    },
-    {
-      "id": "wt-horse-arty-half",
-      "name": "Württemberg Horse Artillery Half Battery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Artillery",
-      "handToHand": "1",
-      "shooting": "2-1-1",
-      "morale": "4",
-      "stamina": "1",
-      "special": [
-        "Marauder"
-      ],
-      "cost": 22
-    },
-    {
-      "id": "wt-horse-arty",
-      "name": "Württemberg Horse Artillery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Artillery",
-      "handToHand": "1",
-      "shooting": "3-2-1",
-      "morale": "4",
-      "stamina": "1",
-      "special": [
-        "Marauder"
-      ],
-      "cost": 30
-    },
-    {
-      "id": "wt-heavy-arty-half",
-      "name": "Württemberg Heavy Artillery Half Battery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Artillery",
-      "handToHand": "1",
-      "shooting": "2-1-1",
-      "morale": "4",
-      "stamina": "1",
-      "cost": 23
-    },
-    {
-      "id": "wt-heavy-arty",
-      "name": "Württemberg Heavy Artillery",
-      "category": "Artillery",
-      "type": "Regular Artillery",
-      "armament": "Smoothbore Siege Artillery",
-      "handToHand": "1",
-      "shooting": "3/2/1",
-      "morale": "4",
-      "stamina": "2",
-      "cost": 28
-    },
-    {
       "id": "ocs-line-infantry",
       "name": "Other Confederation States Line Infantry",
       "category": "Infantry",
@@ -895,69 +751,6 @@
     }
   ],
   "brigades": [
-    {
-      "id": "wt-infantry-brigade",
-      "name": "Württemberg Infantry Brigade",
-      "min": 1,
-      "max": 2,
-      "slots": [
-        {
-          "label": "Line Infantry Battalion",
-          "unitIds": [
-            "wt-line-infantry"
-          ],
-          "min": 1,
-          "max": 2
-        },
-        {
-          "label": "Light Infantry / Jäger Battalion (optional)",
-          "unitIds": [
-            "wt-light-infantry",
-            "wt-jagers"
-          ],
-          "min": 0,
-          "max": 2
-        },
-        {
-          "label": "Battery (optional)",
-          "unitIds": [
-            "wt-light-arty-half",
-            "wt-light-arty",
-            "wt-horse-arty-half",
-            "wt-horse-arty",
-            "wt-heavy-arty-half",
-            "wt-heavy-arty"
-          ],
-          "min": 0,
-          "max": 2
-        }
-      ],
-      "commanderUnitId": "cotr-brig-cmd"
-    },
-    {
-      "id": "wt-cavalry-brigade",
-      "name": "Württemberg Cavalry Brigade",
-      "min": 0,
-      "max": 2,
-      "slots": [
-        {
-          "label": "Cavalry Regiment",
-          "unitIds": [
-            "wt-chevauleger-jagers-cavalry"
-          ],
-          "min": 1,
-          "max": 4
-        }
-      ],
-      "note": "1 per Infantry Brigade",
-      "commanderUnitId": "cotr-brig-cmd",
-      "maxRatio": {
-        "brigadeTypeIds": [
-          "wt-infantry-brigade"
-        ],
-        "ratio": 1
-      }
-    },
     {
       "id": "bav-infantry-brigade",
       "name": "Bavarian Infantry Brigade",
@@ -1384,8 +1177,8 @@
     }
   ],
   "notes": [
-    "A Divisional Commander must select brigades from a single nationality (Saxon, Bavarian, Württemberg, Westphalian, Other Confederation States or Rheinbund).",
-    "Württemberg: 1-2 Infantry Brigades (1-2 Line regiments), 0-1 Light Infantry Brigade (adds Jäger battalions), 0-1 Cavalry Brigade (1 per infantry brigade), Divisional Artillery.",
+    "A Divisional Commander must select brigades from a single nationality (Saxon, Bavarian, Westphalian, Other Confederation States or Rheinbund) — e.g. a Saxon Divisional commander can only select Saxon Brigades.",
+    "Württemberg now has its own army list — see the separate Württemberg 1812 nation entry.",
     "Bavaria: 1-3 Infantry Brigades (add Light Infantry battalion / Chevauleger regiment), 0-2 Cavalry Brigades (1 per infantry brigade, or if none attached), Divisional Artillery.",
     "Saxony: 1-2 Infantry Brigades (add Grenadier battalion), 0-1 Saxon Grenadier Brigade, up to 2 Light Cavalry Brigades (0-1 per infantry brigade), a Cavalry Reserve (Garde du Corps/Cuirassier/Polish Cuirassier).",
     "Westphalia: 0-1 Guard Infantry Brigade, 1-2 Infantry Brigades (max 7 battalions per brigade), 0-2 Cavalry Brigades, a Cavalry Reserve (Cuirassiers, if 2 infantry brigades taken), and an Artillery Reserve (1 Heavy Battery if 8 battalions taken).",
