@@ -417,7 +417,5 @@
       "label": "Light batteries"
     }
   ],
-  "notes": [
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book."
-  ]
+  "notes": []
 }

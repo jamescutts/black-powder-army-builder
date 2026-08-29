@@ -5,6 +5,25 @@
   "flagFile": "/flags/prussia.svg",
   "units": [
     {
+      "id": "pr15-corps-cmd",
+      "name": "Corps Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 8",
+          "cost": 25,
+          "staffRating": 8
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50,
+          "staffRating": 9
+        }
+      ]
+    },
+    {
       "id": "pr15-brig-cmd",
       "name": "Infantry Brigade Commander",
       "category": "Command",
@@ -102,7 +121,6 @@
       "morale": "4",
       "stamina": "2",
       "special": [
-        "Small",
         "Elite 5+",
         "Reliable",
         "Sharpshooters",
@@ -222,6 +240,38 @@
       "cost": 32
     },
     {
+      "id": "pr15-hussar-attached",
+      "name": "Small Hussar Regiment",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Small",
+        "Marauder"
+      ],
+      "cost": 33
+    },
+    {
+      "id": "pr15-mounted-landwehr-attached",
+      "name": "Small Landwehr Cavalry Regiment",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Lance",
+      "handToHand": "5",
+      "morale": "5",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Lancer",
+        "Marauder",
+        "Unreliable"
+      ],
+      "cost": 24
+    },
+    {
       "id": "pr15-foot-arty",
       "name": "Foot Artillery",
       "category": "Artillery",
@@ -296,67 +346,86 @@
       "min": 1,
       "max": 6,
       "commanderUnitId": "pr15-brig-cmd",
+      "maxRegimentsTotal": { "slotIndices": [0, 1], "max": 3, "min": 2 },
       "slots": [
         {
-          "label": "Musketeer Battalion (1-2 per regiment, 1-2 Line Regiments per brigade)",
-          "unitIds": [
-            "pr15-musketeer"
-          ],
-          "min": 2,
-          "max": 4
+          "label": "Line Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Line Infantry Regiment",
+            "min": 1,
+            "max": 2,
+            "slots": [
+              {
+                "label": "Musketeer Battalion",
+                "unitIds": [
+                  "pr15-musketeer"
+                ],
+                "min": 1,
+                "max": 2
+              },
+              {
+                "label": "Fusilier Battalion (optional)",
+                "unitIds": [
+                  "pr15-fusilier"
+                ],
+                "min": 0,
+                "max": 1
+              }
+            ]
+          }
         },
         {
-          "label": "Fusilier Battalion (0-1 per regiment, optional)",
+          "label": "Landwehr Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Landwehr Infantry Regiment",
+            "min": 1,
+            "max": 2,
+            "slots": [
+              {
+                "label": "Landwehr Battalion",
+                "unitIds": [
+                  "pr15-landwehr"
+                ],
+                "min": 2,
+                "max": 3
+              }
+            ]
+          }
+        },
+        {
+          "label": "Attached Jäger Company (Tiny, 1 per infantry regiment chosen, max 3)",
           "unitIds": [
-            "pr15-fusilier"
+            "pr15-jager-coy"
           ],
           "min": 0,
-          "max": 2
-        },
-        {
-          "label": "Landwehr Battalion (1-2 Landwehr Regiments)",
-          "unitIds": [
-            "pr15-landwehr"
-          ],
-          "min": 2,
-          "max": 6
-        },
-        {
-          "label": "Attached Jäger Company (1 per infantry regiment chosen)",
-          "unitIds": [
-            "pr15-jager-coy",
-            "pr15-jager-coys",
-            "pr15-jager-bn"
-          ],
-          "min": 0,
-          "max": 2
+          "max": 3
         },
         {
           "label": "Attached Small Hussar Regiment (optional, 1 per army)",
           "unitIds": [
-            "pr15-hussar"
+            "pr15-hussar-attached"
           ],
           "min": 0,
           "max": 1,
           "unitCaps": [
-            {
-              "unitId": "pr15-hussar",
-              "armyMax": 1
-            }
+            { "unitId": "pr15-hussar-attached", "armyMax": 1 }
           ]
         },
         {
           "label": "Attached Small Landwehr Cavalry Regiment (optional, 1 per army)",
           "unitIds": [
-            "pr15-mounted-landwehr"
+            "pr15-mounted-landwehr-attached"
           ],
           "min": 0,
           "max": 1,
           "unitCaps": [
-            {
-              "unitId": "pr15-mounted-landwehr",
-              "armyMax": 1
-            }
+            { "unitId": "pr15-mounted-landwehr-attached", "armyMax": 1 }
           ]
         },
         {
@@ -367,21 +436,23 @@
           "min": 0,
           "max": 1,
           "unitCaps": [
-            {
-              "unitId": "pr15-schutzen",
-              "armyMax": 1
-            }
+            { "unitId": "pr15-schutzen", "armyMax": 1 }
           ]
         },
         {
-          "label": "Foot Artillery Battery (optional, if 4+ battalions taken)",
+          "label": "Foot Artillery Battery (optional, if 4+ infantry battalions taken in the brigade)",
           "unitIds": [
             "pr15-foot-arty"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": ["pr15-musketeer", "pr15-fusilier", "pr15-landwehr"],
+            "min": 4
+          }
         }
-      ]
+      ],
+      "note": "2-3 Infantry regiments: 1-2 Line regiments (1-2 Musketeer + 0-1 Fusilier battalions each) and 1-2 Landwehr regiments (2-3 Landwehr battalions each)."
     },
     {
       "id": "pr15-cavalry-brigade",
@@ -389,7 +460,7 @@
       "min": 0,
       "max": 3,
       "commanderUnitId": "pr15-cav-cmd",
-      "note": "1 per 2 Infantry Brigades taken; choose Cavalry or Landwehr Cavalry Brigades",
+      "note": "1 per 2 Infantry Brigades taken; choose Cavalry or Landwehr Cavalry Brigades. 2-4 regiments (up to 2 Uhlan, up to 2 Dragoon, up to 3 Hussar).",
       "slots": [
         {
           "label": "Uhlan, Dragoon or Hussar Regiment",
@@ -399,15 +470,24 @@
             "pr15-hussar"
           ],
           "min": 2,
-          "max": 4
+          "max": 4,
+          "unitLimits": [
+            { "unitId": "pr15-uhlan", "max": 2 },
+            { "unitId": "pr15-dragoon", "max": 2 },
+            { "unitId": "pr15-hussar", "max": 3 }
+          ]
         },
         {
-          "label": "Horse Artillery Battery (optional)",
+          "label": "Horse Artillery Battery (optional, if 2 regiments taken)",
           "unitIds": [
             "pr15-horse-arty"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": ["pr15-uhlan", "pr15-dragoon", "pr15-hussar"],
+            "min": 2
+          }
         }
       ],
       "maxRatio": {
@@ -434,12 +514,16 @@
           "max": 5
         },
         {
-          "label": "Horse Artillery Battery (optional)",
+          "label": "Horse Artillery Battery (optional, if 2 regiments taken)",
           "unitIds": [
             "pr15-horse-arty"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": ["pr15-mounted-landwehr"],
+            "min": 2
+          }
         }
       ],
       "maxRatio": {
@@ -453,29 +537,72 @@
       "id": "pr15-army-reserve-artillery",
       "name": "Army Reserve Artillery",
       "min": 0,
-      "max": 3,
-      "note": "Batteries can attach to any brigade, but a brigade can carry no more than two",
+      "max": 1,
+      "note": "Batteries can be attached to any brigade, although a brigade can carry no more than two.",
       "slots": [
         {
-          "label": "Battery",
+          "label": "Heavy Artillery Battery (0-1, if 3 brigades taken)",
           "unitIds": [
-            "pr15-heavy-arty",
-            "pr15-foot-arty",
+            "pr15-heavy-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr15-heavy-arty",
+              "armyMax": 1,
+              "requiresBrigades": {
+                "brigadeTypeIds": ["pr15-infantry-brigade", "pr15-cavalry-brigade", "pr15-landwehr-cavalry-brigade"],
+                "min": 3
+              }
+            }
+          ]
+        },
+        {
+          "label": "Foot Artillery Battery (0-1, if 2 brigades taken)",
+          "unitIds": [
+            "pr15-foot-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr15-foot-arty",
+              "armyMax": 1,
+              "requiresBrigades": {
+                "brigadeTypeIds": ["pr15-infantry-brigade", "pr15-cavalry-brigade", "pr15-landwehr-cavalry-brigade"],
+                "min": 2
+              }
+            }
+          ]
+        },
+        {
+          "label": "Horse Artillery Battery (0-1, if 4 brigades taken)",
+          "unitIds": [
             "pr15-horse-arty"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pr15-horse-arty",
+              "armyMax": 1,
+              "requiresBrigades": {
+                "brigadeTypeIds": ["pr15-infantry-brigade", "pr15-cavalry-brigade", "pr15-landwehr-cavalry-brigade"],
+                "min": 4
+              }
+            }
+          ]
         }
       ]
     }
   ],
   "notes": [
-    "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "A Prussian Infantry Brigade Commander has no Staff Rating 7 option in this list — the minimum is Staff Rating 8.",
+    "A Corps Commander leads the army (Staff Rating 8-9, matching the Prussian standard of no Staff Rating 7 option) — the Prussians organised as Corps rather than Divisions in 1815. Not itemised in this supplement's Prussian list, but included here as the standard army-level commander.",
+    "The Attached Jäger slot is capped at 3 (the maximum possible regiments per brigade) rather than tied to the actual number of regiments taken (2 or 3) — verify you've taken no more than 1 per regiment.",
     "Prussian Staff System: a brigade commander may purchase a subordinate commander for +10 points, who issues orders using the brigade commander's Staff Rating.",
     "Angriffskolonne (Assault Column) and Zug Column (Column of Companies) represent Prussian attack and manoeuvre formations.",
     "'No prisoners! No pity!': against a French army, all Prussian infantry and cavalry count as Tough Fighters.",
-    "This builder omits the book's many point-modifier upgrades/downgrades (Valiant upgrade, Large battalions, Veteran status, etc.) — apply these manually per the book when finalising a list.",
-    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
+    "Named commanders have no official points cost in this supplement — priced here at the generic Corps Commander cost for their Staff Rating; adjust freely."
   ]
 }

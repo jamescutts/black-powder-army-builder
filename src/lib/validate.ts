@@ -97,10 +97,13 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
     }
     const max = effectiveMax(bt, roster.brigadeInstances);
     if (count > max) {
+      const cappedByNames = bt.maxRatio?.brigadeTypeIds.map(
+        (id) => nation.brigades.find((b) => b.id === id)?.name ?? id
+      );
       issues.push({
         level: "error",
         message: `${bt.name}: maximum ${max} allowed right now (have ${count})${
-          bt.maxRatio ? ` — capped by ${bt.maxRatio.brigadeTypeIds.join("/")} taken` : ""
+          cappedByNames ? ` — capped by ${cappedByNames.join("/")} taken` : ""
         }`,
       });
     }

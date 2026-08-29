@@ -342,7 +342,6 @@
     }
   ],
   "notes": [
-    "A Cavalry Brigade's cap of 1 per Infantry Brigade is not reduced when that Infantry Brigade already has its own Chevauleger regiment attached — verify this manually per the book.",
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book."
+    "A Cavalry Brigade's cap of 1 per Infantry Brigade is not reduced when that Infantry Brigade already has its own Chevauleger regiment attached — verify this manually per the book."
   ]
 }

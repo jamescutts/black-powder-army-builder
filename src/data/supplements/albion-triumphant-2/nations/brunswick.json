@@ -298,16 +298,34 @@
       "id": "bw-divisional-artillery",
       "name": "Divisional Artillery Support",
       "min": 0,
-      "max": 2,
+      "max": 1,
+      "note": "One Foot Battery (attached to any Infantry Brigade) and one Horse Artillery Battery (attached to a Cavalry Brigade), each max 1 per army.",
       "slots": [
         {
-          "label": "Battery",
+          "label": "Foot Battery (0-1, attached to any Infantry Brigade)",
           "unitIds": [
-            "bw-foot-battery",
+            "bw-foot-battery"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            { "unitId": "bw-foot-battery", "armyMax": 1 }
+          ]
+        },
+        {
+          "label": "Horse Artillery Battery (0-1, attached to one Cavalry Brigade)",
+          "unitIds": [
             "bw-horse-battery"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "bw-horse-battery",
+              "armyMax": 1,
+              "requiresBrigades": { "brigadeTypeIds": ["bw-cavalry-brigade"], "min": 1 }
+            }
+          ]
         }
       ]
     }
@@ -315,8 +333,8 @@
   "notes": [
     "Maximums and minimums are per 1,000 points unless otherwise stated.",
     "Brunswick brigades were either Light or Line, made up of 2-3 battalions of the same type each.",
-    "The Advanced Guard was an independent formation, directly under the Divisional Commander.",
-    "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Dutch/Belgian Brigades.",
-    "This builder omits the book's many point-modifier upgrades/downgrades (Large, Small, Veteran status, etc.) — apply these manually per the book when finalising a list."
+    "The Leib Light Battalion (1 per army) may only be added to a Brigade formed from Light Infantry.",
+    "The Advanced Guard was an independent formation, directly under the Divisional Commander: Vanguard Jäger and/or Light Infantry companies, or (not combined with companies) Vanguard Battalions.",
+    "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Dutch/Belgian Brigades."
   ]
 }

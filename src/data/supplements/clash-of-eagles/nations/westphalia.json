@@ -557,7 +557,5 @@
       "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each (Line or Light Infantry, same cost). Can be taken by any Divisional commander regardless of nationality."
     }
   ],
-  "notes": [
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book."
-  ]
+  "notes": []
 }
