@@ -658,8 +658,12 @@
     "Up to 1 Light Cavalry Brigade: 1-2 Large Hussar/Chevauleger regiments, plus an optional Dragoon regiment and a cavalry battery (1 per 3 cavalry regiments).",
     "Up to 1 Advanced Guard Brigade: up to 6 infantry battalions/cavalry regiments (Jäger, Line, Grenz, Hussar, Dragoon, Large Uhlan/Chevauleger, plus a battery) — infantry battalions must equal or exceed cavalry regiments.",
     "Reserves: up to 25% of points on Abteilung and Army Support, including Reserve Artillery (1 Position battery per 9 line infantry battalions).",
-    "0 to 1 Grenadier Brigade and 0 to 1 Heavy Cavalry Brigade are included for completeness, although not part of the campaign.",
-    "Cavalry note: Austrian regiments fought as two-squadron Abteilungen — a regiment may be replaced by 2, 3 or 4 Small units at 8 points per squadron-sized reduction step (standard unit price).",
-    "Allies: an Austrian army can take 25% allies from the French or Confederation States Saxon list."
+    "0 to 1 Grenadier Brigade and 0 to 1 Heavy Cavalry Brigade are included for completeness, although not part of the campaign."
+  ],
+  "specialRules": [
+    "Cavalry note: Austrian regiments fought as two-squadron Abteilungen — a regiment may be replaced by 2, 3 or 4 Small units at 8 points per squadron-sized reduction step (standard unit price)."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "nationIds": ["france", "saxony"] }
   ]
 }

@@ -446,7 +446,9 @@
     "Divisional Artillery: up to 1 Foot and 1 Horse battery (1 per 8 infantry battalions), attached to any brigade.",
     "0 to 1 Italian Guard Brigade: up to 1 regiment each of Guard Infantry, Royal Velite Infantry and Guard Conscript Infantry, plus up to 2 Guard Dragoon regiments and Guard artillery.",
     "Reserve Artillery: up to 2 Heavy Foot Artillery batteries (1 per 10 infantry battalions), attached to any brigade.",
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade up to 2 battalions per brigade to Veteran, Reliable + Elite 5+ (+8 pts/battalion); upgrade any or all battalions in a brigade to Tough Fighters (+1 pt/battalion); upgrade a cavalry regiment to Veteran, Reliable + 1 Hand-to-Hand (+6 pts/regiment); upgrade any artillery battery to Veteran (+8 pts/battery); downgrade a battalion to Small (-8 pts), to Wavering (-6 pts), to Morale 5 (-4 pts), to Unreliable (-3 pts), or by removing pas de charge (-2 pts); downgrade a cavalry regiment to Small (-8 pts) or to Wavering (-6 pts); downgrade any gun battery to a half battery.",
-    "Allies: an Italian army can take 25% allies from any one allied list."
+    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade up to 2 battalions per brigade to Veteran, Reliable + Elite 5+ (+8 pts/battalion); upgrade any or all battalions in a brigade to Tough Fighters (+1 pt/battalion); upgrade a cavalry regiment to Veteran, Reliable + 1 Hand-to-Hand (+6 pts/regiment); upgrade any artillery battery to Veteran (+8 pts/battery); downgrade a battalion to Small (-8 pts), to Wavering (-6 pts), to Morale 5 (-4 pts), to Unreliable (-3 pts), or by removing pas de charge (-2 pts); downgrade a cavalry regiment to Small (-8 pts) or to Wavering (-6 pts); downgrade any gun battery to a half battery."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "note": "any one allied list" }
   ]
 }

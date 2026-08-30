@@ -295,7 +295,9 @@
     "Up to 1 Infantry Brigade: 0-3 Line Infantry regiments (1-2 battalions), plus up to 2 Light Infantry regiments (1-2 battalions).",
     "Up to 1 Guard Infantry Brigade: 1 Guard Infantry Regiment (1-2 battalions), plus an optional Small Guard Marine battalion.",
     "Up to 1 Guard Cavalry Brigade: up to 1 Guard Light Cavalry and up to 1 Guard Heavy Cavalry regiment (1-2 total), plus an optional Horse Artillery battery.",
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade any battalion to Large (+8 pts/battalion); upgrade any battalion by removing Unreliable and Wavering (-9 pts/battalion); upgrade any battalion by increasing Hand-to-Hand and Shooting values by 1 (+3 pts); downgrade any battalion to Small (-8 pts/battalion). Guard Infantry: upgrade any battalion by removing Unreliable (-3 pts). Guard Cavalry: upgrade any regiment by removing Unreliable and Wavering (+9 pts/regiment); downgrade any regiment to Small (-8 pts/regiment); downgrade the Horse Artillery battery to a half battery (-8 pts).",
-    "Allies: a Neapolitan army can take 25% allies from any allied list."
+    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade any battalion to Large (+8 pts/battalion); upgrade any battalion by removing Unreliable and Wavering (-9 pts/battalion); upgrade any battalion by increasing Hand-to-Hand and Shooting values by 1 (+3 pts); downgrade any battalion to Small (-8 pts/battalion). Guard Infantry: upgrade any battalion by removing Unreliable (-3 pts). Guard Cavalry: upgrade any regiment by removing Unreliable and Wavering (+9 pts/regiment); downgrade any regiment to Small (-8 pts/regiment); downgrade the Horse Artillery battery to a half battery (-8 pts)."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "note": "any allied list" }
   ]
 }

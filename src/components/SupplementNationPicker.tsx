@@ -228,6 +228,11 @@ export function SupplementNationPicker({ initialSupplementId }: { initialSupplem
                             {nation.blurb}
                           </Text>
                         )}
+                        {nation.attribution && (
+                          <Text size="xs" c="brown.6" fs="italic" ta="center">
+                            Community list by {nation.attribution.author}
+                          </Text>
+                        )}
                       </Stack>
                     </Stack>
                   </Card>

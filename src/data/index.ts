@@ -34,6 +34,11 @@ import at2FrenchArmyCorps from "./supplements/albion-triumphant-2/nations/french
 import at2FrenchImperialGuard from "./supplements/albion-triumphant-2/nations/french-imperial-guard-1815.json";
 import at2Prussians from "./supplements/albion-triumphant-2/nations/prussians-1815.json";
 
+// --- Community Lists ---
+import communityListsSupplement from "./supplements/community-lists/supplement.json";
+import clOttomanEmpire from "./supplements/community-lists/nations/ottoman-empire.json";
+import clPrussia1806 from "./supplements/community-lists/nations/prussia-1806.json";
+
 type NationSource = Omit<Nation, "supplementId">;
 
 function withSupplement(supplementId: string, list: NationSource[]): Nation[] {
@@ -49,10 +54,15 @@ function withSupplement(supplementId: string, list: NationSource[]): Nation[] {
  *    block below and append its result to `nations`.
  */
 
+// Community Lists are unofficial/fan-made and off by default; set
+// NEXT_PUBLIC_SHOW_COMMUNITY_LISTS=true (e.g. in a preview/staging environment) to show them.
+const showCommunityLists = process.env.NEXT_PUBLIC_SHOW_COMMUNITY_LISTS === "true";
+
 export const supplements: Supplement[] = [
   clashOfEaglesSupplement as Supplement,
   albionTriumphant1Supplement as Supplement,
   albionTriumphant2Supplement as Supplement,
+  ...(showCommunityLists ? [communityListsSupplement as Supplement] : []),
 ];
 
 const clashOfEaglesNations = withSupplement("clash-of-eagles", [
@@ -87,10 +97,16 @@ const albionTriumphant2Nations = withSupplement("albion-triumphant-2", [
   at2Prussians,
 ] as NationSource[]);
 
+const communityListsNations = withSupplement("community-lists", [
+  clOttomanEmpire,
+  clPrussia1806,
+] as NationSource[]);
+
 export const nations: Nation[] = [
   ...clashOfEaglesNations,
   ...albionTriumphant1Nations,
   ...albionTriumphant2Nations,
+  ...(showCommunityLists ? communityListsNations : []),
 ];
 
 export function getSupplement(id: string): Supplement | undefined {

@@ -1,0 +1,603 @@
+{
+  "id": "ottoman-empire",
+  "name": "Ottoman Empire",
+  "blurb": "Napoleonic-era Ottoman army: Janissary corps, Sipahi and Deli cavalry, Nizam-i-Cedid reformed infantry and irregular Sekhan levies.",
+  "flagFile": "/flags/ottoman-empire.svg",
+  "attribution": {
+    "author": "Napoleonic Wargames",
+    "sourceUrl": "https://www.youtube.com/watch?v=BphFMuBJvtM"
+  },
+  "units": [
+    {
+      "id": "ot-cinc-commander",
+      "name": "(Divisional) Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff Rating 6", "cost": 0, "staffRating": 6 },
+        { "label": "Staff Rating 7", "cost": 25, "staffRating": 7 },
+        { "label": "Staff Rating 8", "cost": 50, "staffRating": 8 },
+        { "label": "Staff Rating 6 + the Sultan (all commanders +1 to C-in-C re-rolls)", "cost": 25, "staffRating": 6 },
+        { "label": "Staff Rating 7 + the Sultan (all commanders +1 to C-in-C re-rolls)", "cost": 50, "staffRating": 7 },
+        { "label": "Staff Rating 8 + the Sultan (all commanders +1 to C-in-C re-rolls)", "cost": 75, "staffRating": 8 }
+      ]
+    },
+    {
+      "id": "ot-aga-odjak",
+      "name": "Infantry Odjak Commander (Aga)",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Strategy Rating 6", "cost": 0, "staffRating": 6 },
+        { "label": "Strategy Rating 7", "cost": 25, "staffRating": 7 },
+        { "label": "Strategy Rating 8 (max 1 in army)", "cost": 50, "staffRating": 8 }
+      ]
+    },
+    {
+      "id": "ot-aga-bashi-bazook",
+      "name": "Bashi Bazook Commander (Aga)",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Strategy Rating 6", "cost": 0, "staffRating": 6 },
+        { "label": "Strategy Rating 7", "cost": 25, "staffRating": 7 },
+        { "label": "Strategy Rating 8 (max 1 in army)", "cost": 50, "staffRating": 8 }
+      ]
+    },
+    {
+      "id": "ot-pasha-guard-cavalry",
+      "name": "Turkish Guard Commander (Pasha)",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Strategy Rating 6", "cost": 0, "staffRating": 6 },
+        { "label": "Strategy Rating 7", "cost": 25, "staffRating": 7 },
+        { "label": "Strategy Rating 8 (max 1 in army)", "cost": 50, "staffRating": 8 }
+      ]
+    },
+    {
+      "id": "ot-bey-cavalry",
+      "name": "Cavalry Commander (Bey)",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Strategy Rating 6", "cost": 0, "staffRating": 6 },
+        { "label": "Strategy Rating 7", "cost": 25, "staffRating": 7 },
+        { "label": "Strategy Rating 8 (max 1 in army)", "cost": 50, "staffRating": 8 }
+      ]
+    },
+    {
+      "id": "ot-omda-fellaheen",
+      "name": "Fellaheen Commander (Omda)",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "staffRating": 6,
+      "cost": 0
+    },
+    {
+      "id": "ot-corbaci-nizam",
+      "name": "Nizam-i-Cedid Commander (Corbaci)",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Strategy Rating 6", "cost": 0, "staffRating": 6 },
+        { "label": "Strategy Rating 7", "cost": 25, "staffRating": 7 },
+        { "label": "Strategy Rating 8 (max 1 in army)", "cost": 50, "staffRating": 8 }
+      ]
+    },
+    {
+      "id": "ot-kazan",
+      "name": "Kazan",
+      "category": "Support",
+      "type": "Brigade Upgrade",
+      "armament": "-",
+      "cost": 25
+    },
+    {
+      "id": "ot-djemaat-janissary",
+      "name": "Djemaat Janissary Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "TBD",
+      "variants": [
+        { "label": "Standard", "cost": 36 },
+        { "label": "Tough Fighter", "cost": 41 }
+      ]
+    },
+    {
+      "id": "ot-coroudjis-janissary",
+      "name": "Coroudjis Janissary Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "TBD",
+      "variants": [
+        { "label": "Standard", "cost": 40 },
+        { "label": "Tough Fighter", "cost": 45 }
+      ]
+    },
+    {
+      "id": "ot-oglans-janissary",
+      "name": "Oglans Janissary Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "TBD",
+      "cost": 34
+    },
+    {
+      "id": "ot-reyes",
+      "name": "Reyes",
+      "category": "Infantry",
+      "type": "Irregular Infantry",
+      "armament": "TBD",
+      "cost": 22
+    },
+    {
+      "id": "ot-div-light-artillery",
+      "name": "Light Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "cost": 29
+    },
+    {
+      "id": "ot-div-mortar",
+      "name": "Mortar Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "cost": 27
+    },
+    {
+      "id": "ot-berluk-janissary",
+      "name": "Berluk Janissary Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "TBD",
+      "cost": 42
+    },
+    {
+      "id": "ot-solak-janissary",
+      "name": "Solak Janissary Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "TBD",
+      "cost": 46
+    },
+    {
+      "id": "ot-bashi-bazook-infantry",
+      "name": "Bashi Bazook Infantry",
+      "category": "Infantry",
+      "type": "Irregular Infantry",
+      "armament": "TBD",
+      "cost": 42
+    },
+    {
+      "id": "ot-bashi-bazook-cavalry",
+      "name": "Bashi Bazook Cavalry",
+      "category": "Cavalry",
+      "type": "Irregular Cavalry",
+      "armament": "TBD",
+      "cost": 44
+    },
+    {
+      "id": "ot-azab",
+      "name": "Azabs",
+      "category": "Infantry",
+      "type": "Irregular Infantry",
+      "armament": "TBD",
+      "cost": 26
+    },
+    {
+      "id": "ot-derbent",
+      "name": "Derbents",
+      "category": "Infantry",
+      "type": "Irregular Infantry",
+      "armament": "TBD",
+      "cost": 31
+    },
+    {
+      "id": "ot-fellaheen-sekhan",
+      "name": "Fellaheen (Sekhan-attached)",
+      "category": "Infantry",
+      "type": "Irregular Infantry",
+      "armament": "TBD",
+      "cost": 27
+    },
+    {
+      "id": "ot-cairo-janissary",
+      "name": "Cairo Janissary",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "TBD",
+      "variants": [
+        { "label": "Standard", "cost": 38 },
+        { "label": "With Baktasi", "cost": 44 }
+      ]
+    },
+    {
+      "id": "ot-guard-cavalry",
+      "name": "Guard Cavalry",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "TBD",
+      "cost": 56
+    },
+    {
+      "id": "ot-sipahi",
+      "name": "Sipahi",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "TBD",
+      "cost": 37
+    },
+    {
+      "id": "ot-istanbul-sipahi",
+      "name": "Istanbul Sipahi",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "TBD",
+      "cost": 39
+    },
+    {
+      "id": "ot-deli",
+      "name": "Deli",
+      "category": "Cavalry",
+      "type": "Irregular Cavalry",
+      "armament": "TBD",
+      "cost": 42
+    },
+    {
+      "id": "ot-arab",
+      "name": "Arabs",
+      "category": "Cavalry",
+      "type": "Irregular Cavalry",
+      "armament": "TBD",
+      "cost": 32
+    },
+    {
+      "id": "ot-yorouk",
+      "name": "Yorouk",
+      "category": "Cavalry",
+      "type": "Irregular Cavalry",
+      "armament": "TBD",
+      "cost": 32
+    },
+    {
+      "id": "ot-mameluke",
+      "name": "Mamelukes",
+      "category": "Cavalry",
+      "type": "Irregular Cavalry",
+      "armament": "TBD",
+      "cost": 35
+    },
+    {
+      "id": "ot-fellaheen",
+      "name": "Fellaheen",
+      "category": "Infantry",
+      "type": "Irregular Infantry",
+      "armament": "TBD",
+      "cost": 20
+    },
+    {
+      "id": "ot-nizam-i-cedid",
+      "name": "Nizam-i-Cedid Battalion",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "TBD",
+      "cost": 36
+    },
+    {
+      "id": "ot-heavy-artillery",
+      "name": "Heavy Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "cost": 26
+    },
+    {
+      "id": "ot-heavy-mortar",
+      "name": "Heavy Mortar Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "cost": 26
+    },
+    {
+      "id": "ot-very-heavy-artillery",
+      "name": "Very Heavy Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "cost": 40
+    }
+  ],
+  "brigades": [
+    {
+      "id": "ot-janissary-brigade",
+      "name": "Janissary Brigade",
+      "min": 0,
+      "max": 3,
+      "commanderUnitId": "ot-aga-odjak",
+      "mutuallyExclusiveGroups": [
+        { "unitIds": ["ot-djemaat-janissary"], "label": "Djemaat" },
+        { "unitIds": ["ot-coroudjis-janissary"], "label": "Coroudjis" },
+        { "unitIds": ["ot-oglans-janissary"], "label": "Oglans" }
+      ],
+      "slots": [
+        {
+          "label": "Orta of Janissaries (Djemaat)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Orta of Janissaries (Djemaat)",
+            "min": 0,
+            "max": 4,
+            "slots": [
+              { "label": "Djemaat Janissary Battalion", "unitIds": ["ot-djemaat-janissary"], "min": 1, "max": 2 }
+            ]
+          }
+        },
+        {
+          "label": "Orta of Janissaries (Coroudjis)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Orta of Janissaries (Coroudjis)",
+            "min": 0,
+            "max": 3,
+            "slots": [
+              { "label": "Coroudjis Janissary Battalion", "unitIds": ["ot-coroudjis-janissary"], "min": 1, "max": 2 }
+            ]
+          }
+        },
+        {
+          "label": "Orta of Janissaries (Oglans)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Orta of Janissaries (Oglans)",
+            "min": 0,
+            "max": 4,
+            "slots": [
+              { "label": "Oglans Janissary Battalion", "unitIds": ["ot-oglans-janissary"], "min": 1, "max": 2 }
+            ]
+          }
+        },
+        {
+          "label": "Reyes (optional, 1 per brigade)",
+          "unitIds": ["ot-reyes"],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Kazan (optional, purchased by the Aga)",
+          "unitIds": ["ot-kazan"],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "Choose one Orta type per brigade (Djemaat, Coroudjis or Oglans) — Reyes and the Kazan are always available regardless of Orta type. Up to 1 Orta of Djemaat (up to 2 units) may be permanently upgraded to the 99th Orta, gaining Baktasi permanently for +9 pts/unit (+12 if Large) — not modelled here, apply manually."
+    },
+    {
+      "id": "ot-guard-janissary-brigade",
+      "name": "Guard Janissary Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "ot-aga-odjak",
+      "mutuallyExclusiveGroups": [
+        { "unitIds": ["ot-berluk-janissary"], "label": "Berluk" },
+        { "unitIds": ["ot-solak-janissary"], "label": "Solak" }
+      ],
+      "slots": [
+        {
+          "label": "Orta of Janissaries (Berluk)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Orta of Janissaries (Berluk)",
+            "min": 0,
+            "max": 4,
+            "slots": [
+              { "label": "Berluk Janissary Battalion", "unitIds": ["ot-berluk-janissary"], "min": 1, "max": 2 }
+            ]
+          }
+        },
+        {
+          "label": "Orta of Janissaries (Solak)",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Orta of Janissaries (Solak)",
+            "min": 0,
+            "max": 4,
+            "slots": [
+              { "label": "Solak Janissary Battalion", "unitIds": ["ot-solak-janissary"], "min": 1, "max": 2 }
+            ]
+          }
+        },
+        {
+          "label": "Kazan (optional, purchased by the Aga)",
+          "unitIds": ["ot-kazan"],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "note": "Solaks may only be taken if the C-in-C has taken the Sultan upgrade — and then only in this one brigade."
+    },
+    {
+      "id": "ot-sekhan-brigade",
+      "name": "Sekhan Brigade",
+      "min": 1,
+      "max": 4,
+      "commanderUnitId": "ot-aga-bashi-bazook",
+      "mutuallyExclusiveGroups": [
+        { "unitIds": ["ot-bashi-bazook-infantry", "ot-bashi-bazook-cavalry"], "label": "Bashi Bazook" },
+        { "unitIds": ["ot-azab"], "label": "Azabs" }
+      ],
+      "slots": [
+        { "label": "Bashi Bazook Infantry", "unitIds": ["ot-bashi-bazook-infantry"], "min": 0, "max": 4 },
+        { "label": "Bashi Bazook Cavalry", "unitIds": ["ot-bashi-bazook-cavalry"], "min": 0, "max": 2 },
+        { "label": "Azabs (alternative to Bashi Bazook)", "unitIds": ["ot-azab"], "min": 0, "max": 4 },
+        { "label": "Derbents (optional, up to 2 per brigade)", "unitIds": ["ot-derbent"], "min": 0, "max": 2 },
+        { "label": "Fellaheen (optional, up to 4 per brigade)", "unitIds": ["ot-fellaheen-sekhan"], "min": 0, "max": 4 },
+        { "label": "Cairo Janissary (only if the Sultan upgrade is NOT taken)", "unitIds": ["ot-cairo-janissary"], "min": 0, "max": 4 },
+        {
+          "label": "Kazan (optional, only if this brigade includes Cairo Janissary)",
+          "unitIds": ["ot-kazan"],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": { "unitIds": ["ot-cairo-janissary"], "min": 1 }
+        }
+      ],
+      "note": "Choose Bashi Bazook Infantry/Cavalry OR Azabs. Cairo Janissary units are only available if the C-in-C has NOT taken the Sultan upgrade."
+    },
+    {
+      "id": "ot-divisional-artillery",
+      "name": "Ottoman Divisional Artillery",
+      "min": 0,
+      "max": 8,
+      "slots": [
+        {
+          "label": "Light Artillery or Mortar Battery (up to 2, requires host Janissary Brigade to have 4+ battalions)",
+          "unitIds": ["ot-div-light-artillery", "ot-div-mortar"],
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "note": "Attach to any Janissary or Guard Janissary Brigade that has at least 4 battalions taken. Not linked structurally to a specific brigade instance here — track the 4-battalion requirement manually."
+    },
+    {
+      "id": "ot-kapikulu-brigade",
+      "name": "Kapikulu — Guard Cavalry Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "ot-pasha-guard-cavalry",
+      "slots": [
+        { "label": "Guard Cavalry (2 or 4 per brigade)", "unitIds": ["ot-guard-cavalry"], "min": 2, "max": 4 }
+      ],
+      "note": "Only available if the C-in-C has taken the Sultan upgrade. Must be exactly 2 or 4 units (not 3)."
+    },
+    {
+      "id": "ot-sipahi-brigade",
+      "name": "Sipahi Brigade",
+      "min": 1,
+      "max": 4,
+      "commanderUnitId": "ot-bey-cavalry",
+      "slots": [
+        { "label": "Sipahi", "unitIds": ["ot-sipahi"], "min": 0, "max": 4 },
+        { "label": "Istanbul Sipahi", "unitIds": ["ot-istanbul-sipahi"], "min": 0, "max": 2 }
+      ],
+      "note": "Sipahi Brigades become 0+ (instead of 1+) if the army includes 1 or more Mameluke units."
+    },
+    {
+      "id": "ot-deli-brigade",
+      "name": "Deli Brigade",
+      "min": 1,
+      "max": 4,
+      "commanderUnitId": "ot-bey-cavalry",
+      "mutuallyExclusiveGroups": [
+        { "unitIds": ["ot-deli", "ot-arab", "ot-yorouk"], "label": "Deli/Arab/Yorouk" },
+        { "unitIds": ["ot-mameluke"], "label": "Mameluke" }
+      ],
+      "unitCaps": [
+        {
+          "unitId": "ot-mameluke",
+          "armyMax": 6,
+          "requiresBrigades": { "brigadeTypeIds": ["ot-deli-brigade"], "min": 1 }
+        }
+      ],
+      "slots": [
+        { "label": "Deli", "unitIds": ["ot-deli"], "min": 0, "max": 4 },
+        { "label": "Arabs", "unitIds": ["ot-arab"], "min": 0, "max": 4 },
+        { "label": "Yorouk", "unitIds": ["ot-yorouk"], "min": 0, "max": 4 },
+        { "label": "Mamelukes (alternative to Deli/Arabs/Yorouk — cannot be mixed with them)", "unitIds": ["ot-mameluke"], "min": 0, "max": 6 }
+      ],
+      "note": "Mamelukes cannot be included in a brigade with any other unit type. Only 1 Mameluke brigade may be included in the army, and only if the C-in-C has taken the Sultan upgrade. Up to half of a brigade's Arab units may be upgraded to Arab Camel for +4 pts/unit (+7 if Large) — apply manually."
+    },
+    {
+      "id": "ot-fellaheen-brigade",
+      "name": "Fellaheen Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "ot-omda-fellaheen",
+      "slots": [
+        { "label": "Fellaheen", "unitIds": ["ot-fellaheen"], "min": 1, "max": 4 }
+      ]
+    },
+    {
+      "id": "ot-nizam-brigade",
+      "name": "Nizam-i-Cedid Brigade",
+      "min": 0,
+      "max": 6,
+      "commanderUnitId": "ot-corbaci-nizam",
+      "slots": [
+        {
+          "label": "Orta of Nizam-i-Cedid",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Orta of Nizam-i-Cedid",
+            "min": 1,
+            "max": 4,
+            "slots": [
+              { "label": "Nizam-i-Cedid Battalion", "unitIds": ["ot-nizam-i-cedid"], "min": 1, "max": 2 }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "ot-positional-artillery",
+      "name": "Ottoman Positional Artillery",
+      "min": 0,
+      "max": 6,
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "ot-janissary-brigade",
+          "ot-guard-janissary-brigade",
+          "ot-sekhan-brigade",
+          "ot-kapikulu-brigade",
+          "ot-sipahi-brigade",
+          "ot-deli-brigade",
+          "ot-nizam-brigade"
+        ],
+        "ratio": 3
+      },
+      "unitCaps": [
+        {
+          "unitId": "ot-heavy-mortar",
+          "armyMax": 2,
+          "maxRatio": { "brigadeTypeIds": ["ot-janissary-brigade"], "ratio": 3 }
+        }
+      ],
+      "slots": [
+        { "label": "Heavy Artillery Battery", "unitIds": ["ot-heavy-artillery"], "min": 0, "max": 2 },
+        { "label": "Heavy Mortar Battery (only 1 per 3 Janissary Brigades)", "unitIds": ["ot-heavy-mortar"], "min": 0, "max": 2 },
+        { "label": "Very Heavy Artillery Battery", "unitIds": ["ot-very-heavy-artillery"], "min": 0, "max": 1 }
+      ],
+      "note": "Up to 1 Positional Artillery choice per 3 non-Fellaheen Brigades in the army."
+    }
+  ],
+  "notes": [
+    "Community list transcribed from the 'Napoleonic Wargames' Ottoman Empire Black Powder supplement (see attribution/source link). Unit combat stats (Hand-to-Hand, Shooting, Morale, Stamina) and armament have not yet been entered — only costs and force organisation from the points chart are included so far. Check the source for full unit profiles before playing.",
+    "This builder omits several of the book's point-modifier upgrades/downgrades — apply these manually per the book: any Janissary, Guard Janissary, Sekhan, Kapikulu, Sipahi, Deli or Nizam-i-Cedid unit may be upgraded to Large (+8 pts/unit) or downgraded to Small (-8 pts/unit); any unit or regiment may be downgraded to Wavering (-8 pts/unit, -4 if Small, -12 if Large); Divisional and Positional Artillery batteries may be upgraded to Large (+8 or +12 pts/battery) or downgraded to a Half Battery (-8 or -12 pts/battery).",
+    "Baktasi and other add-ons (not modelled as selectable options): any Janissary or Guard Janissary unit may take a Baktasi for +6 pts (+9 if Large); Nizam-i-Cedid units may be 'Freshly Raised' for +2 pts (+1 if Small, +4 if Large).",
+    "Only one commander in the whole army may have Strategy/Staff Rating 8."
+  ],
+  "specialRules": [
+    "The C-in-C may be the Sultan himself (+25 pts on top of Staff Rating), giving all commanders +1 to their C-in-C re-rolls. Taking the Sultan unlocks Kapikulu Guard Cavalry Brigades, lets the Guard Janissary Brigade take Solaks, and allows one Mameluke-only Deli Brigade."
+  ]
+}

@@ -4,11 +4,20 @@ import { Fragment, useRef, useState } from "react";
 import { Alert, Badge, Button, Divider, Group, List, Modal, Stack, Table, Text, Title } from "@mantine/core";
 import { IconAlertTriangle, IconDownload, IconEye, IconPrinter } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
-import type { Nation, UnitEntry } from "@/data/types";
+import type { AlliesRule, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost, unitStatLine } from "@/lib/units";
-import { getSupplement } from "@/data";
+import { getNation, getSupplement } from "@/data";
 import { validateRoster } from "@/lib/validate";
+
+function formatAllyRule(rule: AlliesRule): string {
+  const names = (rule.nationIds ?? [])
+    .map((id) => getNation(id)?.name)
+    .filter((name): name is string => name !== undefined);
+  const source = names.length > 0 ? names.join(" or ") : rule.note;
+  const extra = names.length > 0 && rule.note ? ` (${rule.note})` : "";
+  return `Up to ${rule.maxPercent}% of points from ${source}${extra}.`;
+}
 
 interface Props {
   nation: Nation;
@@ -282,6 +291,32 @@ function RosterContent({ nation, roster }: Props) {
           Total: {grandTotal} pts
         </Text>
       </Group>
+
+      {nation.specialRules && nation.specialRules.length > 0 && (
+        <>
+          <Title order={4} c="brown.7" mt="sm" style={{ fontFamily: "var(--font-heading), serif" }}>
+            Special Rules
+          </Title>
+          <List size="xs" spacing={4}>
+            {nation.specialRules.map((rule, i) => (
+              <List.Item key={i}>{rule}</List.Item>
+            ))}
+          </List>
+        </>
+      )}
+
+      {nation.alliesRules && nation.alliesRules.length > 0 && (
+        <>
+          <Title order={4} c="brown.7" mt="sm" style={{ fontFamily: "var(--font-heading), serif" }}>
+            Allied Contingents
+          </Title>
+          <List size="xs" spacing={4}>
+            {nation.alliesRules.map((rule, i) => (
+              <List.Item key={i}>{formatAllyRule(rule)}</List.Item>
+            ))}
+          </List>
+        </>
+      )}
 
       {nation.notes.length > 0 && (
         <>

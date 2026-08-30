@@ -434,7 +434,9 @@
   ],
   "notes": [
     "A Divisional Commander must select brigades from a single nationality (Baden, Hessian or Berg) — e.g. a Baden Divisional commander can only select Baden Brigades. Rheinbund is the exception: it can be taken by any Divisional commander regardless of nationality.",
-    "Württemberg, Bavaria, Saxony and Westphalia now have their own army lists — see the separate Württemberg 1812, Bavaria 1812, Saxony 1812 and Westphalia 1812 nation entries.",
-    "Allies: a Confederation of the Rhine army can take 25% allies from any one allied list."
+    "Württemberg, Bavaria, Saxony and Westphalia now have their own army lists — see the separate Württemberg 1812, Bavaria 1812, Saxony 1812 and Westphalia 1812 nation entries."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "note": "any one allied list" }
   ]
 }

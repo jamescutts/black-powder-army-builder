@@ -399,7 +399,9 @@
     }
   ],
   "notes": [
-    "Periods: Early 1807-1809, Middle 1810-1812, Late 1813-1814.",
+    "Periods: Early 1807-1809, Middle 1810-1812, Late 1813-1814."
+  ],
+  "specialRules": [
     "A la Muerte: Spanish artillery batteries that break due to shooting casualties only break on a roll of 4 or less.",
     "Personal Qualities of Commanders: for aggression/independence/decisiveness, Spanish commanders roll 1-3 = Low, 4-5 = Normal, 6 = High."
   ]

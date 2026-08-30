@@ -385,7 +385,9 @@
     "Regimental Artillery: 1 section per 3 battalions and/or 1 battery per infantry regiment of 3+ battalions (section and battery may be mixed).",
     "0 to 1 Cavalry Brigade (1 per 2 Infantry Brigades): 1 or 2 regiments per brigade from up to 1 Hussar, up to 6 Uhlan, up to 3 Chasseur-à-Cheval (army-wide caps).",
     "Divisional Artillery: 0 to 2 Foot Artillery batteries (1 per 7 infantry battalions).",
-    "Reserve Artillery: up to 1 Horse battery and up to 1 Heavy Foot battery (each if 8+ infantry battalions taken), attached to any brigade.",
-    "Allies: a Polish army can take 25% allies from any single allied list."
+    "Reserve Artillery: up to 1 Horse battery and up to 1 Heavy Foot battery (each if 8+ infantry battalions taken), attached to any brigade."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "note": "any single allied list" }
   ]
 }

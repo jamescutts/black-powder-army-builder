@@ -1,12 +1,75 @@
 "use client";
 
-import { Alert, List, Text } from "@mantine/core";
-import { IconInfoCircle, IconAlertTriangle } from "@tabler/icons-react";
-import type { Nation } from "@/data/types";
+import type { ReactNode } from "react";
+import Link from "next/link";
+import { Alert, Anchor, List, Text } from "@mantine/core";
+import { IconInfoCircle, IconAlertTriangle, IconStar, IconFlag } from "@tabler/icons-react";
+import type { AlliesRule, Nation } from "@/data/types";
+import { getNation } from "@/data";
+
+function joinNodes(nodes: ReactNode[], sep: string): ReactNode {
+  return nodes.flatMap((node, i) => (i === 0 ? [node] : [sep, node]));
+}
+
+function AllyRuleItem({ rule }: { rule: AlliesRule }) {
+  const names = (rule.nationIds ?? [])
+    .map((id) => getNation(id))
+    .filter((ally): ally is Nation => ally !== undefined)
+    .map((ally) => (
+      <Anchor
+        key={ally.id}
+        component={Link}
+        href={`/black-powder/${ally.supplementId}/${ally.id}`}
+        c="brown.7"
+      >
+        {ally.name}
+      </Anchor>
+    ));
+
+  return (
+    <List.Item>
+      Up to {rule.maxPercent}% of points from{" "}
+      {names.length > 0 ? joinNodes(names, " or ") : rule.note}
+      {names.length > 0 && rule.note && <> ({rule.note})</>}.
+    </List.Item>
+  );
+}
 
 export function ForceOrgNotes({ nation }: { nation: Nation }) {
   return (
     <>
+      {nation.specialRules && nation.specialRules.length > 0 && (
+        <Alert
+          variant="light"
+          color="brown"
+          title="National special rules"
+          icon={<IconStar />}
+        >
+          <List size="sm" spacing={4}>
+            {nation.specialRules.map((rule, i) => (
+              <List.Item key={i}>{rule}</List.Item>
+            ))}
+          </List>
+        </Alert>
+      )}
+      {nation.alliesRules && nation.alliesRules.length > 0 && (
+        <Alert
+          variant="light"
+          color="gray"
+          title="Allied contingents"
+          icon={<IconFlag />}
+        >
+          <Text size="sm" mb="xs">
+            Adding allied brigades isn&rsquo;t supported yet — build the allied portion as its own
+            roster and combine the totals manually.
+          </Text>
+          <List size="sm" spacing={4}>
+            {nation.alliesRules.map((rule, i) => (
+              <AllyRuleItem key={i} rule={rule} />
+            ))}
+          </List>
+        </Alert>
+      )}
       <Alert
         variant="light"
         color="orange"

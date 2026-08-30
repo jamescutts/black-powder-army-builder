@@ -1,0 +1,331 @@
+{
+  "id": "prussia-1806",
+  "name": "Prussia (1806)",
+  "blurb": "The old-model Prussian Army on the eve of Jena-Auerstedt: Frederician-drilled Musketeer and Fusilier regiments, converged Grenadier battalions, and Cuirassier, Dragoon and Hussar squadrons, still fighting in the linear tactics of the previous century.",
+  "flagFile": "/flags/prussia.svg",
+  "attribution": {
+    "author": "Shakos and Sprues",
+    "sourceUrl": "https://www.youtube.com/@ShakosAndSprues"
+  },
+  "units": [
+    {
+      "id": "pr06-cinc-commander",
+      "name": "(C-in-C)",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff Rating 6", "cost": 0 },
+        { "label": "Staff Rating 7", "cost": 0 },
+        { "label": "Staff Rating 8", "cost": 0 }
+      ]
+    },
+    {
+      "id": "pr06-brig-commander",
+      "name": "Infantry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff Rating 7", "cost": 0 },
+        { "label": "Staff Rating 8", "cost": 0 }
+      ]
+    },
+    {
+      "id": "pr06-cav-commander",
+      "name": "Cavalry Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        { "label": "Staff Rating 7", "cost": 0 },
+        { "label": "Staff Rating 8", "cost": 0 }
+      ]
+    },
+    {
+      "id": "pr06-cmd-brunswick",
+      "name": "Feldmarschall Charles William Ferdinand, Duke of Brunswick",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "staffRating": 8
+    },
+    {
+      "id": "pr06-cmd-hohenlohe",
+      "name": "General Frederick Louis, Prince of Hohenlohe-Ingelfingen",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "staffRating": 6
+    },
+    {
+      "id": "pr06-cmd-ruchel",
+      "name": "General Ernst von Rüchel",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "staffRating": 6
+    },
+    {
+      "id": "pr06-cmd-kalckreuth",
+      "name": "General Friedrich Adolf, Count von Kalckreuth",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "staffRating": 7
+    },
+    {
+      "id": "pr06-cmd-blucher",
+      "name": "General-Leutnant Gebhard Leberecht von Blücher",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "staffRating": 7
+    },
+    {
+      "id": "pr06-cmd-tauentzien",
+      "name": "General-Major Bogislav Friedrich Emanuel von Tauentzien",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "staffRating": 6
+    },
+    {
+      "id": "pr06-cmd-louisferdinand",
+      "name": "Prince Louis Ferdinand of Prussia",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "staffRating": 7
+    },
+    {
+      "id": "pr06-musketeer",
+      "name": "Musketeer Battalion",
+      "category": "Infantry",
+      "type": "Line Infantry",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-fusilier",
+      "name": "Fusilier Battalion",
+      "category": "Infantry",
+      "type": "Fusilier Infantry",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-grenadier",
+      "name": "Grenadier Battalion",
+      "category": "Infantry",
+      "type": "Elite Infantry",
+      "armament": "TBD",
+      "special": ["Converged/composite battalion, formed from the grenadier companies detached from several parent Musketeer regiments"]
+    },
+    {
+      "id": "pr06-jager",
+      "name": "Jäger Company",
+      "category": "Infantry",
+      "type": "Light Infantry (Skirmish)",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-guard-infantry",
+      "name": "Guard Infantry Battalion",
+      "category": "Infantry",
+      "type": "Guard Infantry",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-cuirassier",
+      "name": "Cuirassier Regiment",
+      "category": "Cavalry",
+      "type": "Heavy Cavalry",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-dragoon",
+      "name": "Dragoon Regiment",
+      "category": "Cavalry",
+      "type": "Medium Cavalry",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-hussar",
+      "name": "Hussar Regiment",
+      "category": "Cavalry",
+      "type": "Light Cavalry",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-guard-cuirassier",
+      "name": "Guard Cuirassier Regiment",
+      "category": "Cavalry",
+      "type": "Guard Heavy Cavalry",
+      "armament": "TBD"
+    },
+    {
+      "id": "pr06-foot-artillery",
+      "name": "Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery"
+    },
+    {
+      "id": "pr06-horse-artillery",
+      "name": "Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery"
+    },
+    {
+      "id": "pr06-heavy-artillery",
+      "name": "Heavy/Howitzer Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery"
+    }
+  ],
+  "brigades": [
+    {
+      "id": "pr06-line-infantry-brigade",
+      "name": "Line Infantry Brigade",
+      "min": 1,
+      "max": 8,
+      "commanderUnitId": "pr06-brig-commander",
+      "slots": [
+        {
+          "label": "Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Infantry Regiment",
+            "min": 1,
+            "max": 2,
+            "slots": [
+              { "label": "Musketeer Battalion", "unitIds": ["pr06-musketeer"], "min": 1, "max": 2 }
+            ]
+          }
+        },
+        {
+          "label": "Attached Grenadier Battalion (optional, 1 per brigade)",
+          "unitIds": ["pr06-grenadier"],
+          "min": 0,
+          "max": 1
+        },
+        {
+          "label": "Foot Artillery Battery (optional, if 4+ battalions taken in the brigade)",
+          "unitIds": ["pr06-foot-artillery"],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": { "unitIds": ["pr06-musketeer", "pr06-grenadier"], "min": 4 }
+        }
+      ],
+      "note": "Modeled on the standard brigades seen throughout Brunswick's and Hohenlohe's Armies: one attached converged Grenadier Battalion, 1-2 Infantry Regiments (each 1-2 Musketeer battalions only — Fusilier battalions were independent units, not part of the numbered regiments), and one Foot Artillery battery."
+    },
+    {
+      "id": "pr06-advance-guard-brigade",
+      "name": "Advance Guard Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "pr06-brig-commander",
+      "slots": [
+        { "label": "Fusilier Battalion", "unitIds": ["pr06-fusilier"], "min": 1, "max": 4 },
+        { "label": "Jäger Company", "unitIds": ["pr06-jager"], "min": 0, "max": 2 },
+        { "label": "Hussar Regiment", "unitIds": ["pr06-hussar"], "min": 0, "max": 2 },
+        { "label": "Horse Artillery Battery", "unitIds": ["pr06-horse-artillery"], "min": 0, "max": 1 }
+      ],
+      "note": "Represents the light advance-guard brigades fielded by Blücher, Rüchel and Hohenlohe: pure Fusilier battalions supported by Jäger companies, attached Hussars and a Horse battery — no line Musketeer battalions."
+    },
+    {
+      "id": "pr06-reserve-grenadier-brigade",
+      "name": "Reserve Grenadier Brigade",
+      "min": 0,
+      "max": 2,
+      "commanderUnitId": "pr06-brig-commander",
+      "slots": [
+        { "label": "Grenadier Battalion", "unitIds": ["pr06-grenadier"], "min": 2, "max": 5 },
+        { "label": "Foot Artillery Battery", "unitIds": ["pr06-foot-artillery"], "min": 0, "max": 1 }
+      ],
+      "note": "Represents Kalckreuth's and Hohenlohe's Reserve Division brigades, formed entirely of pooled converged Grenadier battalions with no parent line regiments attached."
+    },
+    {
+      "id": "pr06-cavalry-brigade",
+      "name": "Cavalry Brigade",
+      "min": 0,
+      "max": 4,
+      "commanderUnitId": "pr06-cav-commander",
+      "maxRatio": { "brigadeTypeIds": ["pr06-line-infantry-brigade"], "ratio": 2 },
+      "slots": [
+        {
+          "label": "Cuirassier, Dragoon or Hussar Regiment",
+          "unitIds": ["pr06-cuirassier", "pr06-dragoon", "pr06-hussar"],
+          "min": 2,
+          "max": 4
+        },
+        {
+          "label": "Horse Artillery Battery (optional, if 2 regiments taken)",
+          "unitIds": ["pr06-horse-artillery"],
+          "min": 0,
+          "max": 1,
+          "requiresBrigadeCount": { "unitIds": ["pr06-cuirassier", "pr06-dragoon", "pr06-hussar"], "min": 2 }
+        }
+      ],
+      "note": "1 per 2 Line Infantry Brigades taken. Mixed Cuirassier, Dragoon and Hussar regiments, as seen throughout each division's cavalry brigades."
+    },
+    {
+      "id": "pr06-guard-brigade",
+      "name": "Guard Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pr06-brig-commander",
+      "slots": [
+        { "label": "Guard Infantry Battalion", "unitIds": ["pr06-guard-infantry"], "min": 1, "max": 3 },
+        { "label": "Guard Cuirassier Regiment", "unitIds": ["pr06-guard-cuirassier"], "min": 0, "max": 3 },
+        { "label": "Foot Artillery Battery", "unitIds": ["pr06-foot-artillery"], "min": 0, "max": 1 }
+      ],
+      "note": "Represents Kalckreuth's elite brigade (Grenadier Garde, Leib Garde and Guard Infantry Regiment) together with the Garde du Corps and Gensdarmes Guard Cuirassier regiments found across the order of battle, pooled into a single elite brigade option. Max 1 per army."
+    },
+    {
+      "id": "pr06-corps-artillery",
+      "name": "Corps Artillery",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        { "label": "Foot Artillery Battery", "unitIds": ["pr06-foot-artillery"], "min": 0, "max": 2 },
+        { "label": "Horse Artillery Battery", "unitIds": ["pr06-horse-artillery"], "min": 0, "max": 1 },
+        {
+          "label": "Heavy/Howitzer Battery (requires 3+ other brigades taken)",
+          "unitIds": ["pr06-heavy-artillery"],
+          "min": 0,
+          "max": 2,
+          "unitCaps": [
+            {
+              "unitId": "pr06-heavy-artillery",
+              "armyMax": 2,
+              "requiresBrigades": {
+                "brigadeTypeIds": [
+                  "pr06-line-infantry-brigade",
+                  "pr06-advance-guard-brigade",
+                  "pr06-reserve-grenadier-brigade",
+                  "pr06-cavalry-brigade",
+                  "pr06-guard-brigade"
+                ],
+                "min": 3
+              }
+            }
+          ]
+        }
+      ],
+      "note": "Pooled corps-level artillery reserve; batteries here represent guns held back from the brigade-level batteries above, per Rüchel's and Kalckreuth's corps artillery."
+    }
+  ],
+  "notes": [
+    "Community list authored by Shakos and Sprues (see attribution link) and adapted here for the app — structured from the Prussian order of battle at Jena-Auerstedt, 14 October 1806 (https://en.wikipedia.org/wiki/Battle_of_Jena%E2%80%93Auerstedt_order_of_battle#Prussian_Army).",
+    "This is a generic 1806 Prussian force-organisation list, not a literal recreation of any single corps from the battle — the brigade types (Line, Advance Guard, Reserve Grenadier, Cavalry, Guard) are drawn from the recurring patterns seen across Brunswick's Main Army, Hohenlohe's Army, Rüchel's Corps and Kalckreuth's Reserve Corps.",
+    "Unit combat stats (Hand-to-Hand, Shooting, Morale, Stamina) and all points costs are placeholders (TBD/unset) — only unit categories and force-organisation have been entered so far. Verify and fill in your own values before playing.",
+    "The Saxon contingent that fought as part of Hohenlohe's Army at Jena is deliberately excluded from this Prussian list.",
+    "Named commanders' Staff Ratings are suggested placeholders based on historical reputation, not derived from any published points source — adjust freely.",
+    "Prince Louis Ferdinand of Prussia was killed at the Battle of Saalfeld on 10 October 1806, four days before Jena-Auerstedt — he is included here for narrative/what-if flavour only.",
+    "Grenadier Battalions represent converged/composite units formed from the grenadier companies detached from their parent Musketeer regiments, per period Prussian practice."
+  ]
+}

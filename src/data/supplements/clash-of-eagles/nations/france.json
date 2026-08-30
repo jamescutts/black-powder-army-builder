@@ -869,7 +869,10 @@
     "0 to 2 Light Cavalry Brigades (max 1 per 2 Infantry Brigades): 1 to 4 regiments from Hussars, Lancers, Chasseurs à Cheval, Polish Uhlans, Württemberg Horse-Jägers, Bavarian Chevaulegers.",
     "Divisional Artillery: up to 1 Foot battery (6+ battalions in army) and up to 1 Horse battery (3+ cavalry regiments) attach to any brigade.",
     "Corps and Army Support: up to 50% of points on Reserve Artillery, a Heavy Cavalry Brigade (if 2+ infantry brigades taken), and an Artillery Brigade (if 12+ infantry battalions taken).",
-    "0 to 1 Heavy Cavalry Brigade (if 2 Infantry Brigades taken): 1 to 3 regiments of Carabiniers/Cuirassiers, or Dragoons, plus up to 1 Small Lancer regiment.",
-    "Allies: a French army can take 25% allies from the Imperial Guard list, plus 25% from any other allied list."
+    "0 to 1 Heavy Cavalry Brigade (if 2 Infantry Brigades taken): 1 to 3 regiments of Carabiniers/Cuirassiers, or Dragoons, plus up to 1 Small Lancer regiment."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "nationIds": ["french-imperial-guard"] },
+    { "maxPercent": 25, "note": "any other allied list" }
   ]
 }

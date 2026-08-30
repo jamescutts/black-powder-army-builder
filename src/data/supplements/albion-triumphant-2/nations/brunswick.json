@@ -334,7 +334,9 @@
   ],
   "notes": [
     "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "The Advanced Guard was an independent formation, directly under the Divisional Commander: Vanguard Jäger and/or Light Infantry companies, or (not combined with companies) Vanguard Battalions.",
-    "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Dutch/Belgian Brigades."
+    "The Advanced Guard was an independent formation, directly under the Divisional Commander: Vanguard Jäger and/or Light Infantry companies, or (not combined with companies) Vanguard Battalions."
+  ],
+  "alliesRules": [
+    { "maxPercent": 50, "nationIds": ["anglo-netherlands-british", "dutch-belgian-nassau"] }
   ]
 }

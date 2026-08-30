@@ -447,7 +447,9 @@
   ],
   "notes": [
     "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "Allies: up to 50% of points may be spent on British, KGL, Hanoverian and Brunswick Brigades.",
     "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
+  ],
+  "alliesRules": [
+    { "maxPercent": 50, "nationIds": ["anglo-netherlands-british", "brunswick"] }
   ]
 }

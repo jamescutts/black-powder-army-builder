@@ -478,7 +478,13 @@
   "notes": [
     "Maximums and minimums are per 1,000 points unless otherwise stated.",
     "The Old and Middle Guard formed their own Division of the Hundred Days campaign; each brigade fields two battalions of either Old or Middle Guard, but not mixed.",
-    "0 to 1 Marines of the Guard battalion (Tiny) may substitute for the Small version if desired.",
-    "Allies: up to 25% of points may be spent on the French Army of the North Corps list; any minimums from that list apply to the points spent here (e.g. taking a Guard Heavy Cavalry Brigade needs three Corps infantry brigades first)."
+    "0 to 1 Marines of the Guard battalion (Tiny) may substitute for the Small version if desired."
+  ],
+  "alliesRules": [
+    {
+      "maxPercent": 25,
+      "nationIds": ["french-army-corps"],
+      "note": "any minimums from that list apply to the points spent here (e.g. taking a Guard Heavy Cavalry Brigade needs three Corps infantry brigades first)"
+    }
   ]
 }

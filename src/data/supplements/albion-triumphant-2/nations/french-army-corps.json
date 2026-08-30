@@ -208,8 +208,22 @@
       "cost": 44
     },
     {
-      "id": "fac-line-light-cav",
-      "name": "Line Light Cavalry",
+      "id": "fac-hussar",
+      "name": "Hussar",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "6",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 41
+    },
+    {
+      "id": "fac-chasseur-a-cheval",
+      "name": "Chasseur à Cheval",
       "category": "Cavalry",
       "type": "Regular Cavalry",
       "armament": "Sabre",
@@ -261,6 +275,21 @@
       "cost": 30
     },
     {
+      "id": "fac-horse-arty-attached",
+      "name": "Attached Horse Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 26
+    },
+    {
       "id": "fac-cmd-napoleon",
       "name": "Napoleon Bonaparte, Emperor of the French",
       "category": "Command",
@@ -287,10 +316,7 @@
         {
           "label": "Line Infantry Battalion (3-7 per brigade)",
           "unitIds": [
-            "fac-line",
-            "fac-legere",
-            "fac-grenadier",
-            "fac-voltigeur-tirailleur"
+            "fac-line"
           ],
           "min": 3,
           "max": 7
@@ -301,19 +327,30 @@
       "id": "fac-cavalry-brigade",
       "name": "Cavalry Brigade",
       "min": 0,
-      "max": 3,
+      "max": 2,
       "commanderUnitId": "fac-brig-cmd",
-      "note": "1 per 2 Line Infantry Brigades",
+      "note": "1 per 2 Infantry Brigades. Army-wide: up to 2 Dragoon, up to 2 Hussar, up to 2 Chasseur-à-Cheval, up to 2 Chevaux Léger regiments.",
       "slots": [
         {
           "label": "Line Cavalry Regiment (regiments in a brigade must be the same class)",
           "unitIds": [
             "fac-dragoon",
-            "fac-line-light-cav",
+            "fac-hussar",
+            "fac-chasseur-a-cheval",
             "fac-chevau-legers-lancers"
           ],
           "min": 1,
-          "max": 2
+          "max": 2,
+          "mutuallyExclusiveGroups": [
+            { "unitIds": ["fac-dragoon"], "label": "Dragoon" },
+            { "unitIds": ["fac-hussar", "fac-chasseur-a-cheval", "fac-chevau-legers-lancers"], "label": "Light Cavalry" }
+          ],
+          "unitCaps": [
+            { "unitId": "fac-dragoon", "armyMax": 2 },
+            { "unitId": "fac-hussar", "armyMax": 2 },
+            { "unitId": "fac-chasseur-a-cheval", "armyMax": 2 },
+            { "unitId": "fac-chevau-legers-lancers", "armyMax": 2 }
+          ]
         }
       ],
       "maxRatio": {
@@ -329,19 +366,36 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "fac-brig-cmd",
-      "note": "Corps/Army reserve, from Corps and Army Support (up to 50% of points)",
+      "note": "Corps/Army reserve, 1 per 2 Infantry Brigades. Army-wide (within this brigade): up to 2 Dragoon, up to 2 Hussar, up to 2 Chasseur-à-Cheval, up to 2 Chevaux Léger regiments.",
       "slots": [
         {
-          "label": "Light Cavalry Regiment",
+          "label": "Light Cavalry Regiment (regiments in a brigade must be the same class)",
           "unitIds": [
             "fac-dragoon",
-            "fac-line-light-cav",
+            "fac-hussar",
+            "fac-chasseur-a-cheval",
             "fac-chevau-legers-lancers"
           ],
           "min": 1,
-          "max": 2
+          "max": 2,
+          "mutuallyExclusiveGroups": [
+            { "unitIds": ["fac-dragoon"], "label": "Dragoon" },
+            { "unitIds": ["fac-hussar", "fac-chasseur-a-cheval", "fac-chevau-legers-lancers"], "label": "Light Cavalry" }
+          ],
+          "unitCaps": [
+            { "unitId": "fac-dragoon", "armyMax": 2 },
+            { "unitId": "fac-hussar", "armyMax": 2 },
+            { "unitId": "fac-chasseur-a-cheval", "armyMax": 2 },
+            { "unitId": "fac-chevau-legers-lancers", "armyMax": 2 }
+          ]
         }
-      ]
+      ],
+      "maxRatio": {
+        "brigadeTypeIds": [
+          "fac-infantry-brigade"
+        ],
+        "ratio": 2
+      }
     },
     {
       "id": "fac-heavy-cavalry-brigade",
@@ -349,16 +403,24 @@
       "min": 0,
       "max": 2,
       "commanderUnitId": "fac-brig-cmd",
-      "note": "1 per 3 Infantry Brigades, from Corps and Army Support",
+      "note": "Corps/Army reserve, 1 per 3 Infantry Brigades. Army-wide (within this brigade): up to 2 Cuirassier, up to 2 Carabinier regiments.",
       "slots": [
         {
-          "label": "Cuirassier/Carabinier Regiment",
+          "label": "Cuirassier/Carabinier Regiment (regiments in a brigade must be the same type)",
           "unitIds": [
             "fac-cuirassier",
             "fac-carabinier"
           ],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "mutuallyExclusiveGroups": [
+            { "unitIds": ["fac-cuirassier"], "label": "Cuirassier" },
+            { "unitIds": ["fac-carabinier"], "label": "Carabinier" }
+          ],
+          "unitCaps": [
+            { "unitId": "fac-cuirassier", "armyMax": 2 },
+            { "unitId": "fac-carabinier", "armyMax": 2 }
+          ]
         }
       ],
       "maxRatio": {
@@ -372,16 +434,77 @@
       "id": "fac-divisional-artillery",
       "name": "Divisional Artillery Attachments",
       "min": 0,
-      "max": 6,
+      "max": 1,
+      "note": "Batteries attach to any Infantry Brigade.",
       "slots": [
         {
-          "label": "Battery",
+          "label": "Foot Artillery Battery (optional, if 4+ infantry battalions taken)",
           "unitIds": [
-            "fac-foot-arty",
-            "fac-horse-arty"
+            "fac-foot-arty"
           ],
-          "min": 1,
-          "max": 1
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fac-line"],
+            "min": 4
+          },
+          "unitCaps": [
+            { "unitId": "fac-foot-arty", "armyMax": 1 }
+          ]
+        },
+        {
+          "label": "Horse Artillery Battery (optional, if 2+ Cavalry regiments taken)",
+          "unitIds": [
+            "fac-horse-arty-attached"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fac-dragoon", "fac-hussar", "fac-chasseur-a-cheval", "fac-chevau-legers-lancers", "fac-cuirassier", "fac-carabinier"],
+            "min": 2
+          },
+          "unitCaps": [
+            { "unitId": "fac-horse-arty-attached", "armyMax": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fac-corps-artillery",
+      "name": "Corps Artillery Attachments",
+      "min": 0,
+      "max": 1,
+      "note": "Corps/Army reserve. Batteries attach to any Infantry or Cavalry Brigade.",
+      "slots": [
+        {
+          "label": "Foot Artillery Battery (optional, if 4+ infantry battalions taken)",
+          "unitIds": [
+            "fac-foot-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fac-line"],
+            "min": 4
+          },
+          "unitCaps": [
+            { "unitId": "fac-foot-arty", "armyMax": 1 }
+          ]
+        },
+        {
+          "label": "Horse Artillery Battery (optional, if 2+ Cavalry regiments taken)",
+          "unitIds": [
+            "fac-horse-arty-attached"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fac-dragoon", "fac-hussar", "fac-chasseur-a-cheval", "fac-chevau-legers-lancers", "fac-cuirassier", "fac-carabinier"],
+            "min": 2
+          },
+          "unitCaps": [
+            { "unitId": "fac-horse-arty-attached", "armyMax": 1 }
+          ]
         }
       ]
     },
@@ -391,25 +514,31 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "fac-arty-brig-cmd",
-      "note": "If at least 12 infantry battalions are taken",
+      "note": "Corps/Army reserve, if at least 12 infantry battalions are taken. Batteries bought from Infantry Brigades, Cavalry Brigades and Corps Artillery can also attach here (max 6 total).",
       "slots": [
         {
-          "label": "Foot Battery",
+          "label": "Foot Battery (2-4, if 12+ infantry battalions taken)",
           "unitIds": [
-            "fac-foot-arty",
-            "fac-heavy-foot-arty"
+            "fac-foot-arty"
           ],
           "min": 2,
-          "max": 4
+          "max": 4,
+          "requiresArmyUnitCount": {
+            "unitIds": ["fac-line"],
+            "min": 12
+          }
         }
       ]
     }
   ],
   "notes": [
-    "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "Cavalry Column of Attack: a two-base-wide, three-base-deep formation with its own combat and command bonuses — see book for full rules.",
-    "Grand Battery Rules: guns bought from infantry/cavalry brigades and Corps Artillery can attach to an Artillery Brigade (max 6 batteries); it must, so far as possible, target the same enemy brigade.",
-    "Allies: up to 25% of points can be spent on the French Imperial Guard infantry and cavalry brigades.",
     "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
+  ],
+  "specialRules": [
+    "Cavalry Column of Attack: a two-base-wide, three-base-deep formation with its own combat and command bonuses — see book for full rules.",
+    "Grand Battery Rules: guns bought from infantry/cavalry brigades and Corps Artillery can attach to an Artillery Brigade (max 6 batteries); it must, so far as possible, target the same enemy brigade."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "nationIds": ["french-imperial-guard-1815"] }
   ]
 }

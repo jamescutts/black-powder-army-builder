@@ -619,8 +619,10 @@
   "notes": [
     "A Corps Commander leads the army (Staff Rating 8-9, matching the Prussian standard of no Staff Rating 7 option) — the Prussians organised as Corps rather than Divisions in 1815. Not itemised in this supplement's Prussian list, but included here as the standard army-level commander.",
     "The Attached Jäger slot is capped at 3 (the maximum possible regiments per brigade) rather than tied to the actual number of regiments taken (2 or 3) — verify you've taken no more than 1 per regiment.",
-    "Angriffskolonne (Assault Column) and Zug Column (Column of Companies) represent Prussian attack and manoeuvre formations.",
-    "'No prisoners! No pity!': against a French army, all Prussian infantry and cavalry count as Tough Fighters.",
     "Named commanders have no official points cost in this supplement — priced here at the generic Corps Commander cost for their Staff Rating; adjust freely."
+  ],
+  "specialRules": [
+    "Angriffskolonne (Assault Column) and Zug Column (Column of Companies) represent Prussian attack and manoeuvre formations.",
+    "'No prisoners! No pity!': against a French army, all Prussian infantry and cavalry count as Tough Fighters."
   ]
 }

@@ -228,6 +228,32 @@ export interface Supplement {
   blurb: string;
 }
 
+/** Attribution for a fan/community-created army list, as opposed to an official Warlord Games book. */
+export interface NationAttribution {
+  /** Author or creator credited for this army list, e.g. "Napoleonic Wargames" */
+  author: string;
+  /** Link to the source (video, PDF, forum post, etc.) */
+  sourceUrl?: string;
+}
+
+/**
+ * One allowance for allied brigades, e.g. "up to 25% of points from the Imperial Guard list".
+ * A nation can have several of these (see France 1812: 25% Imperial Guard, plus a further 25%
+ * from any other allied list).
+ */
+export interface AlliesRule {
+  /** Max percentage of the army's total points that may be spent on allies under this rule */
+  maxPercent: number;
+  /** Ids (from this data set) of the nations eligible as allies under this rule */
+  nationIds?: string[];
+  /**
+   * Freeform qualifier for anything `nationIds` can't express — a generic "any one allied list"
+   * grant with no specific nation named, or extra conditions carried over from the ally's own
+   * list (e.g. the ally's minimums still apply to the points spent here).
+   */
+  note?: string;
+}
+
 export interface Nation {
   id: string;
   /**
@@ -242,6 +268,8 @@ export interface Nation {
   flagFile?: string;
   /** Multiple flag paths, used when a nation entry covers several states (e.g. Confederation of the Rhine) */
   flagFiles?: string[];
+  /** Set for fan/community-created lists (as opposed to an official Warlord Games supplement) to credit the author */
+  attribution?: NationAttribution;
   units: UnitEntry[];
   /** Brigade types available to this nation. Infantry/Cavalry/Artillery units can only be added inside a brigade instance. */
   brigades: BrigadeType[];
@@ -263,7 +291,23 @@ export interface Nation {
     ratio: number;
     label?: string;
   }[];
-  /** Freeform bullet-point summary of the brigade / force-organisation rules for reference */
+  /**
+   * Freeform bullet-point summary of the brigade / force-organisation rules for reference
+   * (min/max counts, ratios, per-points scaling, unimplemented upgrades/downgrades, etc.) —
+   * not in-game special rules or allied-contingent allowances. See `specialRules` and
+   * `alliesRules` for those.
+   */
   notes: string[];
-  alliesNote?: string;
+  /**
+   * National special rules with an in-game effect (formations, commander traits, unique unit
+   * interactions, etc.), as opposed to `notes`' force-organisation reminders.
+   * e.g. Prussia 1815 → "'No prisoners! No pity!': against a French army, all Prussian infantry
+   * and cavalry count as Tough Fighters."
+   */
+  specialRules?: string[];
+  /**
+   * Allied-contingent allowances, e.g. "up to 25% of points from the Imperial Guard list".
+   * Not currently enforced or buildable in the roster builder — shown for reference only.
+   */
+  alliesRules?: AlliesRule[];
 }

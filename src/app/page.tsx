@@ -2,7 +2,9 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
+  Anchor,
   Box,
   Button,
   Card,
@@ -154,6 +156,14 @@ export default function HomePage() {
             </Box>
           </Center>
         )}
+
+        <Center>
+          <Text size="xs" c="dimmed">
+            <Anchor component={Link} href="/docs" c="brown.7">
+              Docs: adding a new supplement or army list
+            </Anchor>
+          </Text>
+        </Center>
       </Stack>
     </Container>
   );

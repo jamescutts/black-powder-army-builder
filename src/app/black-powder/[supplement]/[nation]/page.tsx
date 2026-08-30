@@ -194,6 +194,20 @@ function BuilderContent({ nationId }: { nationId: string }) {
 
         <Text size="sm" c="dimmed">
           {supplement.blurb} — {nation.blurb}
+          {nation.attribution && (
+            <>
+              {" "}
+              (Community list by{" "}
+              {nation.attribution.sourceUrl ? (
+                <Anchor href={nation.attribution.sourceUrl} target="_blank" rel="noreferrer" c="brown.7">
+                  {nation.attribution.author}
+                </Anchor>
+              ) : (
+                nation.attribution.author
+              )}
+              )
+            </>
+          )}
         </Text>
 
         <Grid gap="lg">

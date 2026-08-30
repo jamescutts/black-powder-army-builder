@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { DisclaimerModal } from "@/components/DisclaimerModal";
 
 export const metadata: Metadata = {
@@ -25,6 +26,12 @@ export default function BlackPowderLayout({ children }: { children: React.ReactN
         </p>
         <p style={{ margin: "0 0 6px", fontSize: "var(--mantine-font-size-xs)", color: "var(--mantine-color-dimmed)", lineHeight: 1.6 }}>
           <em>Black Powder</em>, all supplement titles, army list content, and associated intellectual property are copyright &copy; Warlord Games. All rights reserved.
+        </p>
+        <p style={{ margin: 0, fontSize: "var(--mantine-font-size-xs)", color: "var(--mantine-color-dimmed)", lineHeight: 1.6 }}>
+          Want to add a nation, supplement, or community list?{" "}
+          <Link href="/docs" style={{ color: "var(--mantine-color-brown-7)" }}>
+            Read the docs
+          </Link>.
         </p>
       </footer>
     </>

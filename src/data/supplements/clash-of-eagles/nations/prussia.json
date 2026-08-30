@@ -407,7 +407,9 @@
   ],
   "notes": [
     "A Divisional (army) Commander leads the army (Staff Rating 7-9). Not itemised in the supplement's Prussian list, but included here as the standard army-level commander.",
-    "Army Artillery batteries can be attached to any brigade, although a brigade can carry no more than 2.",
-    "Allies: a Late Prussian army can take 25% allies from any one allied list."
+    "Army Artillery batteries can be attached to any brigade, although a brigade can carry no more than 2."
+  ],
+  "alliesRules": [
+    { "maxPercent": 25, "note": "any one allied list" }
   ]
 }
