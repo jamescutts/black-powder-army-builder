@@ -1,23 +1,9 @@
-<!-- Kingdom of Bavaria: white and blue lozenges (simplified as horizontal bicolour) -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
-  <!-- 4 columns of alternating lozenges, simplified as vertical stripes -->
-  <rect width="3" height="1" y="0" fill="#ffffff"/>
-  <rect width="3" height="1" y="1" fill="#0070C0"/>
-  <!-- lozenge overlay, 2 rows x 4 cols -->
-  <rect width="0.75" height="0.5" x="0"    y="0"   fill="#0070C0"/>
-  <rect width="0.75" height="0.5" x="0.75" y="0"   fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="1.5"  y="0"   fill="#0070C0"/>
-  <rect width="0.75" height="0.5" x="2.25" y="0"   fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="0"    y="0.5" fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="0.75" y="0.5" fill="#0070C0"/>
-  <rect width="0.75" height="0.5" x="1.5"  y="0.5" fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="2.25" y="0.5" fill="#0070C0"/>
-  <rect width="0.75" height="0.5" x="0"    y="1"   fill="#0070C0"/>
-  <rect width="0.75" height="0.5" x="0.75" y="1"   fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="1.5"  y="1"   fill="#0070C0"/>
-  <rect width="0.75" height="0.5" x="2.25" y="1"   fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="0"    y="1.5" fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="0.75" y="1.5" fill="#0070C0"/>
-  <rect width="0.75" height="0.5" x="1.5"  y="1.5" fill="#ffffff"/>
-  <rect width="0.75" height="0.5" x="2.25" y="1.5" fill="#0070C0"/>
+<!-- Kingdom of Bavaria: white and blue lozenges in diagonal bands, with a part-white lozenge in the
+     top-left corner. Geometry from Commons' "Flag of Bavaria (lozengy).svg", scaled to 3:2. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20">
+  <clipPath id="flag"><rect width="30" height="20"/></clipPath>
+  <rect width="30" height="20" fill="#ffffff"/>
+  <g clip-path="url(#flag)" fill="#0098D4">
+    <polygon points="-7.50,7.54 -0.00,9.45 3.00,16.09 -4.50,14.17"/><polygon points="-3.00,2.81 4.50,4.72 7.50,11.36 -0.00,9.45"/><polygon points="3.00,16.09 10.50,18.00 13.50,24.64 6.00,22.72"/><polygon points="1.50,-1.91 9.00,0.00 12.00,6.64 4.50,4.72"/><polygon points="7.50,11.36 15.00,13.27 18.00,19.91 10.50,18.00"/><polygon points="6.00,-6.64 13.50,-4.72 16.50,1.91 9.00,0.00"/><polygon points="12.00,6.64 19.50,8.55 22.50,15.19 15.00,13.27"/><polygon points="18.00,19.91 25.50,21.82 28.50,28.46 21.00,26.55"/><polygon points="16.50,1.91 24.00,3.83 27.00,10.46 19.50,8.55"/><polygon points="22.50,15.19 30.00,17.10 33.00,23.74 25.50,21.82"/><polygon points="21.00,-2.81 28.50,-0.90 31.50,5.74 24.00,3.83"/><polygon points="27.00,10.46 34.50,12.38 37.50,19.01 30.00,17.10"/><polygon points="25.50,-7.54 33.00,-5.62 36.00,1.01 28.50,-0.90"/>
+  </g>
 </svg>
