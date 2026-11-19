@@ -1,5 +1,6 @@
+<!-- Austrian Empire, 1804-1867: the Habsburg black over gold. (Red-white-red is the later republic's flag.)
+     As Commons' public-domain "Flag of the Habsburg Monarchy.svg". -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
-  <rect width="3" height="0.667" y="0"     fill="#ED2939"/>
-  <rect width="3" height="0.666" y="0.667" fill="#ffffff"/>
-  <rect width="3" height="0.667" y="1.333" fill="#ED2939"/>
+  <rect width="3" height="2" fill="#FFCC00"/>
+  <rect width="3" height="1" fill="#000000"/>
 </svg>
