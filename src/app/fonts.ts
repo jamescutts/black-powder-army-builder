@@ -1,4 +1,4 @@
-import { EB_Garamond, Cinzel, Tangerine } from "next/font/google";
+import { EB_Garamond, Spectral, Tangerine } from "next/font/google";
 
 // Body text — a classic old-book serif, close to the supplement's own typesetting.
 export const bodyFont = EB_Garamond({
@@ -8,10 +8,10 @@ export const bodyFont = EB_Garamond({
   display: "swap",
 });
 
-// Section headings — an engraved-capitals display serif for that period title-page feel.
-export const headingFont = Cinzel({
+// Headings — a sturdy mixed-case book serif, the same heading face as Fleet Ledger.
+export const headingFont = Spectral({
   subsets: ["latin"],
-  weight: ["400", "600", "700", "900"],
+  weight: ["500", "600", "700"],
   variable: "--font-heading",
   display: "swap",
 });

@@ -23,10 +23,93 @@ body {
   --paper-border-width: 2px;
 }
 
-/* Centre-align orphan cards in the nation grid */
+/*
+ * Nation cards: 2, 3 or 4 across. A grid of half-width tracks, each card spanning two, so every
+ * row is the same height (1fr rows) and a short last row can be nudged by half a card to sit centred.
+ */
 .nation-grid {
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: var(--mantine-spacing-md);
 }
+
+.nation-grid > * {
+  grid-column: span 2;
+}
+
+/* Phones: 2 across; a lone last card moves to the middle */
+@media (max-width: 47.99em) {
+  .nation-grid > :last-child:nth-child(2n + 1) {
+    grid-column: 2 / span 2;
+  }
+}
+
+/* Tablets: 3 across */
+@media (min-width: 48em) and (max-width: 61.99em) {
+  .nation-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .nation-grid > :last-child:nth-child(3n + 1) {
+    grid-column: 3 / span 2;
+  }
+
+  .nation-grid > :nth-last-child(2):nth-child(3n + 1) {
+    grid-column: 2 / span 2;
+  }
+}
+
+/* Desktop: 4 across */
+@media (min-width: 62em) {
+  .nation-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  .nation-grid > :last-child:nth-child(4n + 1) {
+    grid-column: 4 / span 2;
+  }
+
+  .nation-grid > :nth-last-child(2):nth-child(4n + 1) {
+    grid-column: 3 / span 2;
+  }
+
+  .nation-grid > :nth-last-child(3):nth-child(4n + 1) {
+    grid-column: 2 / span 2;
+  }
+}
+
+/* Army picker cards: buttons, so they work from the keyboard too */
+.picker-card.picker-card {
+  width: 100%;
+  height: 100%;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background-color: var(--mantine-color-white);
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+/* Lifts a little on hover, with a firmer edge */
+.picker-card.picker-card:hover {
+  border-color: var(--mantine-color-brown-4);
+  box-shadow: 0 2px 12px rgba(77, 44, 17, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Chosen: a brown frame and warm tint, so the choice stays clear while you pick the next step */
+.picker-card.picker-card[data-selected] {
+  background-color: var(--mantine-color-brown-0);
+  border-color: var(--mantine-color-brown-6);
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--mantine-color-brown-6) 20%, transparent);
+}
+
+.picker-card.picker-card:focus-visible {
+  outline: 2px solid var(--mantine-color-brown-6);
+  outline-offset: 2px;
+}
+
+
 
 /* Print styles: only show modal content */
 @media print {
@@ -103,4 +186,624 @@ body {
   .mantine-Modal-body > .mantine-Group-root:last-child {
     display: none !important;
   }
+}
+
+/* ------------------------------------------------------------------------
+   Site header and footer: dark ink bands framing the page top and bottom.
+   ------------------------------------------------------------------------ */
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main {
+  flex: 1;
+}
+
+/* Same width and gutter as the builder's page column, so the bands line up with the content */
+.site-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-inline: var(--mantine-spacing-md);
+}
+
+.site-header {
+  background: #33200f;
+  color: #f2ecd6;
+}
+
+.site-header-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px var(--mantine-spacing-md);
+  min-height: 72px;
+  padding-block: 8px;
+}
+
+/* The section title, in the same script as the rulebook's logotype */
+.site-brand-script {
+  font-family: var(--font-script), cursive;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 1;
+  -webkit-text-stroke: 0.4px currentColor;
+  white-space: nowrap;
+}
+
+@media (max-width: 48em) {
+  .site-brand-script {
+    font-size: 2rem;
+  }
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-brand-name {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.site-brand-name-sm {
+  font-size: 1.15rem;
+}
+
+.site-header-muted,
+.site-footer-muted {
+  color: rgba(242, 236, 214, 0.72);
+}
+
+.site-header-tagline {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: var(--mantine-font-size-sm);
+  font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Main menu: a row of tabs under the site title */
+.topnav {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+  height: 44px;
+  /* Pull left by one link's padding so the first label lines up with the title */
+  margin-left: calc(-1 * var(--mantine-spacing-sm));
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.topnav .topnav-link {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--mantine-spacing-sm);
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  color: rgba(242, 236, 214, 0.72);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+}
+
+.topnav .topnav-link:hover {
+  color: #f2ecd6;
+}
+
+.topnav .topnav-link[data-active] {
+  color: #f2ecd6;
+  border-bottom-color: #f2ecd6;
+}
+
+.site-footer {
+  margin-top: calc(var(--mantine-spacing-xl) * 3);
+}
+
+/* A page's opening band: the support band's parchment tint, ruled off from the page below */
+.page-band {
+  padding: var(--mantine-spacing-lg) 0;
+  background: rgba(107, 61, 23, 0.1);
+  border-bottom: 1px solid rgba(107, 61, 23, 0.18);
+}
+
+/* Support band: a tinted parchment strip to stand apart from the page above it */
+.site-support {
+  padding: 48px 0;
+  background: rgba(107, 61, 23, 0.1);
+  border-top: 1px solid rgba(107, 61, 23, 0.18);
+}
+
+.site-support-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--mantine-spacing-lg);
+}
+
+.site-support-text {
+  max-width: 620px;
+}
+
+.site-support-title {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+  margin-bottom: 4px;
+}
+
+.site-support-title h2 {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4d2c11;
+}
+
+.site-support-text p {
+  margin: 0;
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.6;
+  color: var(--mantine-color-dimmed);
+}
+
+.kofi-button {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 12px;
+  transition: transform 150ms ease;
+}
+
+.kofi-button img {
+  display: block;
+  height: 50px;
+  width: auto;
+}
+
+.kofi-button:hover {
+  transform: translateY(-1px);
+}
+
+.kofi-button:focus-visible {
+  outline: 2px solid #6b3d17;
+  outline-offset: 3px;
+}
+
+@media (max-width: 48em) {
+  .site-support {
+    padding-block: 32px;
+  }
+
+  .site-support-cup {
+    display: none;
+  }
+}
+
+/* Disclaimer: the first band of the footer, a shade deeper than the support band below it */
+.site-disclaimer {
+  padding: 28px 0;
+  background: rgba(107, 61, 23, 0.18);
+  border-top: 1px solid rgba(107, 61, 23, 0.25);
+}
+
+.site-disclaimer-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.site-disclaimer-label {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 700;
+  font-size: var(--mantine-font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b3d17;
+}
+
+.site-disclaimer-text {
+  max-width: 900px;
+  margin: 0;
+  font-size: var(--mantine-font-size-md);
+  line-height: 1.6;
+  color: #2b1f14;
+}
+
+.site-disclaimer a {
+  color: #6b3d17;
+  font-weight: 600;
+}
+
+/* The support band sits straight under the disclaimer, divided by a rule */
+.site-disclaimer + .site-support {
+  border-top: 1px solid rgba(107, 61, 23, 0.25);
+}
+
+.site-footer-main {
+  padding: calc(var(--mantine-spacing-xl) * 1.5) 0 calc(var(--mantine-spacing-xl) * 2);
+  background: #33200f;
+  color: #f2ecd6;
+  border-top: 4px solid #8a4f1c;
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.6;
+}
+
+.site-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--mantine-spacing-xl);
+}
+
+@media (min-width: 48em) {
+  .site-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 36em) {
+  .site-header-tagline {
+    display: none;
+  }
+}
+
+.site-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.site-footer-col p {
+  margin: 0;
+}
+
+.site-footer-heading.site-footer-heading {
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(242, 236, 214, 0.72);
+  margin-bottom: 2px;
+}
+
+.site-footer-link {
+  color: #f2ecd6;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(242, 236, 214, 0.35);
+  align-self: flex-start;
+}
+
+.site-footer-link:hover {
+  border-bottom-color: #f2ecd6;
+}
+
+.topnav-link:focus-visible,
+.site-brand:focus-visible,
+.site-footer-link:focus-visible {
+  outline: 2px solid #f2ecd6;
+  outline-offset: 2px;
+}
+
+/* Site search: a button at the right of the header's title row, and the results in its box */
+.site-header .site-search-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  margin-left: auto;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--mantine-radius-md);
+  color: #f2ecd6;
+  border: 1px solid rgba(242, 236, 214, 0.28);
+  background: rgba(242, 236, 214, 0.06);
+}
+
+.site-header .site-search-button:hover {
+  background: rgba(242, 236, 214, 0.14);
+}
+
+.site-header .site-search-button:focus-visible {
+  outline: 2px solid #f2ecd6;
+  outline-offset: 2px;
+}
+
+@media (min-width: 48em) {
+  .site-header .site-search-button {
+    min-width: 200px;
+  }
+}
+
+.site-search-button .site-search-kbd {
+  margin-left: auto;
+  background: transparent;
+  color: inherit;
+  border-color: rgba(242, 236, 214, 0.35);
+}
+
+.site-search-input {
+  border-bottom: 1px solid var(--mantine-color-default-border);
+}
+
+.site-search-results {
+  max-height: min(60vh, 520px);
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.site-search-result {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--mantine-radius-sm);
+}
+
+.site-search-result[data-active] {
+  background: var(--mantine-color-brown-0);
+}
+
+/* ------------------------------------------------------------------------
+   Home page: a painting hero, then full-width bands, as on Fleet Ledger.
+   ------------------------------------------------------------------------ */
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(480px, 68vh, 700px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 72px 0 40px;
+  color: #f7f1e1;
+}
+
+.home-hero-inner {
+  width: 100%;
+}
+
+.home-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Keeps Blücher and his staff, on the right of the painting, in view beside the text */
+  object-position: 70% 45%;
+  z-index: -2;
+}
+
+.home-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* Dark ink behind the text column, clearing towards the painting; a short fade at the foot for the stats */
+  background:
+    linear-gradient(
+      90deg,
+      rgba(33, 20, 10, 0.9) 0%,
+      rgba(33, 20, 10, 0.72) 36%,
+      rgba(33, 20, 10, 0.3) 58%,
+      rgba(33, 20, 10, 0.1) 100%
+    ),
+    linear-gradient(0deg, rgba(33, 20, 10, 0.7) 0%, transparent 32%);
+}
+
+.home-hero-body {
+  max-width: 640px;
+}
+
+/* Keeps the text clear where it crosses lighter parts of the painting */
+.home-hero-kicker,
+.home-hero-title.home-hero-title,
+.home-hero-lead {
+  text-shadow: 0 1px 12px rgba(33, 20, 10, 0.6);
+}
+
+.home-hero-kicker {
+  color: #e0bf74;
+  letter-spacing: 0.08em;
+}
+
+.home-hero-title.home-hero-title {
+  color: #fbf6e9;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+/* The asterisk on the hero title, matching the work-in-progress note below the hero */
+.home-hero-asterisk {
+  color: #e0bf74;
+  margin-left: 0.08em;
+}
+
+/* Work-in-progress note: a slim gold-parchment strip under the hero, lined up with the page column */
+.home-wip {
+  padding: 12px 0;
+  background: #efe0b4;
+  border-bottom: 1px solid #d9c287;
+  color: #3b2a17;
+}
+
+.home-wip-mark {
+  color: #a8761c;
+  font-weight: 700;
+}
+
+.home-hero-lead {
+  color: rgba(247, 241, 225, 0.9);
+  line-height: 1.6;
+  max-width: 56ch;
+}
+
+.home-hero-primary.home-hero-primary {
+  background: #c99a3c;
+  color: #2b1f14;
+}
+
+.home-hero-primary.home-hero-primary:hover {
+  background: #e0bf74;
+}
+
+.home-hero-stats {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(251, 246, 233, 0.2);
+}
+
+.home-hero-stat {
+  font-size: 2rem;
+  color: #fbf6e9;
+}
+
+.home-hero-stat-label {
+  color: rgba(247, 241, 225, 0.75);
+}
+
+.home-hero-credit.home-hero-credit {
+  position: absolute;
+  right: 24px;
+  bottom: 10px;
+  color: rgba(247, 241, 225, 0.6);
+}
+
+@media (max-width: 48em) {
+  .home-hero {
+    min-height: 0;
+    padding: 40px 0 44px;
+  }
+
+  .home-hero-shade {
+    background: rgba(33, 20, 10, 0.74);
+  }
+
+  .home-hero-credit.home-hero-credit {
+    left: var(--mantine-spacing-md);
+    right: auto;
+    bottom: 12px;
+  }
+}
+
+/* A section running the full window width */
+.home-band {
+  padding: 64px 0;
+}
+
+.home-band[data-tone="tint"] {
+  background: rgba(107, 61, 23, 0.1);
+  border-block: 1px solid rgba(107, 61, 23, 0.18);
+}
+
+@media (max-width: 48em) {
+  .home-band {
+    padding-block: 40px;
+  }
+}
+
+.home-card-points {
+  margin: 0;
+  padding-left: 1.1em;
+}
+
+/* Supplement cards on the home page are links, laid out left-aligned like Fleet Ledger's cards */
+.home-card.home-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  text-decoration: none;
+}
+
+/* The last band runs straight into the footer */
+.site-main:has(.home-bands) + .site-footer {
+  margin-top: 0;
+}
+
+/* Home page cards: a painting (or flags) across the top, as on Fleet Ledger's war and ship cards */
+.home-card-photo {
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  background: rgba(107, 61, 23, 0.12);
+  border-bottom: 1px solid var(--mantine-color-default-border);
+}
+
+.home-card-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 200ms ease;
+}
+
+.home-card:hover .home-card-photo img {
+  transform: scale(1.03);
+}
+
+/* The rule set card: picture on the left, text on the right, once there's room */
+@media (min-width: 62em) {
+  .home-card-wide.home-card-wide {
+    flex-direction: row;
+  }
+
+  .home-card-wide .home-card-photo {
+    flex: 0 0 46%;
+    aspect-ratio: auto;
+    min-height: 260px;
+    border-bottom: 0;
+    border-right: 1px solid var(--mantine-color-default-border);
+  }
+}
+
+/* Army cards: the army's flag (or flags) set in a tinted band */
+.home-card-flags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--mantine-spacing-sm);
+  height: 96px;
+  padding: 14px;
+  background:
+    radial-gradient(ellipse at center, rgba(255, 250, 235, 0.55), transparent 70%),
+    rgba(107, 61, 23, 0.1);
+  border-bottom: 1px solid var(--mantine-color-default-border);
+}
+
+.home-card-flag {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: 3px;
+  border: 1px solid rgba(43, 31, 20, 0.3);
+  box-shadow: 0 1px 4px rgba(43, 31, 20, 0.2);
+}
+
+.home-card-flag img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The same aged-paper tint as the flags in the army picker */
+.home-card-flag::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 40%, rgba(60, 30, 5, 0.35) 100%),
+    linear-gradient(135deg, rgba(180, 130, 60, 0.18) 0%, rgba(120, 70, 20, 0.22) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }

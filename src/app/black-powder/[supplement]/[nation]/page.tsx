@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
-import Link from "next/link";
 import {
   ActionIcon,
   Anchor,
@@ -124,92 +123,91 @@ function BuilderContent({ nationId }: { nationId: string }) {
   }
 
   return (
-    <Container size="xl" py="lg">
-      <Stack gap="lg">
-        <Group justify="space-between" align="flex-end" wrap="wrap">
-          <Stack gap={0} style={{ userSelect: "none" }}>
-            <Anchor component={Link} href="/black-powder" underline="never">
-              <Title
-                order={1}
-                fz={56}
-                fw={700}
-                c="brown.7"
-                style={{ fontFamily: "var(--font-script), cursive", lineHeight: 1.1 }}
-              >
-                Black Powder Army Builder
-              </Title>
-            </Anchor>
-            <Text c="dimmed" size="sm">
-              Points calculator for{" "}
-              <Anchor href="https://www.warlordgames.com" target="_blank" rel="noreferrer" c="brown.7">
-                Black Powder
-              </Anchor>{" "}
-              supplement army lists.
+    <>
+      {/* The army being built, in a tinted band under the site header, like the support band in the footer */}
+      <div className="page-band">
+        <Container size="xl">
+          <Stack gap="sm">
+            {/* The army being built on the left, with the pickers to change it centred beside it */}
+            <Group justify="space-between" align="center" wrap="wrap">
+              {/* Grows to fill the row, so a long nation name wraps beside the pickers instead of pushing them down */}
+              <Stack gap={0} style={{ flex: "1 1 320px", minWidth: 0, userSelect: "none" }}>
+                {/* Cinzel, the content heading font; the script is kept for the site name in the header */}
+                <Title order={1} fz={{ base: 22, sm: 26 }} fw={600} c="brown.7" lh={1.2}>
+                  {nation.name}
+                </Title>
+                {/* The book it comes from: italic and brown, like a title, rather than grey small print */}
+                <Text fz="md" fs="italic" c="brown.6" mt={2}>
+                  {supplement.name}
+                </Text>
+              </Stack>
+              <Group align="flex-end" wrap="wrap">
+                <Select
+                  label="Supplement"
+                  data={SUPPLEMENT_OPTIONS}
+                  value={supplement.id}
+                  onChange={handleSupplementChange}
+                  w={200}
+                  allowDeselect={false}
+                />
+                <Select
+                  label="Nation"
+                  data={nationOptionsForSupplement}
+                  value={nation.id}
+                  onChange={handleNationChange}
+                  w={260}
+                  allowDeselect={false}
+                  leftSection={
+                    nation.flagFile || nation.flagFiles?.[0] ? (
+                      <FlagIcon src={(nation.flagFile ?? nation.flagFiles?.[0])!} alt="" />
+                    ) : undefined
+                  }
+                  renderOption={({ option }) => {
+                    const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
+                    return (
+                      <Group gap="xs" wrap="nowrap">
+                        {flag && <FlagIcon src={flag} alt="" />}
+                        <span>{option.label}</span>
+                      </Group>
+                    );
+                  }}
+                />
+                <Tooltip label="Clear army">
+                  <ActionIcon
+                    color="red"
+                    variant="filled"
+                    size="lg"
+                    onClick={handleClear}
+                    aria-label="Clear army"
+                  >
+                    <IconTrash size={18} />
+                  </ActionIcon>
+                </Tooltip>
+              </Group>
+            </Group>
+
+            <Text size="sm" c="dimmed">
+              {supplement.blurb} — {nation.blurb}
+              {nation.attribution && (
+                <>
+                  {" "}
+                  (Community list by{" "}
+                  {nation.attribution.sourceUrl ? (
+                    <Anchor href={nation.attribution.sourceUrl} target="_blank" rel="noreferrer" c="brown.7">
+                      {nation.attribution.author}
+                    </Anchor>
+                  ) : (
+                    nation.attribution.author
+                  )}
+                  )
+                </>
+              )}
             </Text>
           </Stack>
-          <Group align="flex-end">
-            <Select
-              label="Supplement"
-              data={SUPPLEMENT_OPTIONS}
-              value={supplement.id}
-              onChange={handleSupplementChange}
-              w={200}
-              allowDeselect={false}
-            />
-            <Select
-              label="Nation"
-              data={nationOptionsForSupplement}
-              value={nation.id}
-              onChange={handleNationChange}
-              w={260}
-              allowDeselect={false}
-              leftSection={
-                nation.flagFile || nation.flagFiles?.[0] ? (
-                  <FlagIcon src={(nation.flagFile ?? nation.flagFiles?.[0])!} alt="" />
-                ) : undefined
-              }
-              renderOption={({ option }) => {
-                const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
-                return (
-                  <Group gap="xs" wrap="nowrap">
-                    {flag && <FlagIcon src={flag} alt="" />}
-                    <span>{option.label}</span>
-                  </Group>
-                );
-              }}
-            />
-            <Tooltip label="Clear army">
-              <ActionIcon
-                color="red"
-                variant="filled"
-                size="lg"
-                onClick={handleClear}
-                aria-label="Clear army"
-              >
-                <IconTrash size={18} />
-              </ActionIcon>
-            </Tooltip>
-          </Group>
-        </Group>
+        </Container>
+      </div>
 
-        <Text size="sm" c="dimmed">
-          {supplement.blurb} — {nation.blurb}
-          {nation.attribution && (
-            <>
-              {" "}
-              (Community list by{" "}
-              {nation.attribution.sourceUrl ? (
-                <Anchor href={nation.attribution.sourceUrl} target="_blank" rel="noreferrer" c="brown.7">
-                  {nation.attribution.author}
-                </Anchor>
-              ) : (
-                nation.attribution.author
-              )}
-              )
-            </>
-          )}
-        </Text>
-
+      <Container size="xl" py="lg">
         <Grid gap="lg">
           <Grid.Col span={{ base: 12, md: 7 }}>
             <BrigadeBoard key={nation.id} nation={nation} roster={roster} onChange={setRoster} />
@@ -221,7 +219,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
             </Stack>
           </Grid.Col>
         </Grid>
-      </Stack>
-    </Container>
+      </Container>
+    </>
   );
 }
