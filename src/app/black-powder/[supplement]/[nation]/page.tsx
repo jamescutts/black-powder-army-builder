@@ -21,7 +21,7 @@ import { emptyRoster } from "@/types/army";
 import { BrigadeBoard } from "@/components/BrigadeBoard";
 import { RosterPanel } from "@/components/RosterPanel";
 import { ForceOrgNotes } from "@/components/ForceOrgNotes";
-import { saveRoster, clearRoster } from "@/lib/storage";
+import { loadRoster, saveRoster, clearRoster } from "@/lib/storage";
 import { ConfirmModal } from "@/components/ConfirmModal";
 
 const SUPPLEMENT_OPTIONS = supplements.map((s) => ({ value: s.id, label: s.name }));
@@ -80,19 +80,25 @@ export default function BuilderPage() {
 function BuilderContent({ nationId }: { nationId: string }) {
   const router = useRouter();
 
-  const [roster, setRoster] = useState<RosterState>(() => emptyRoster(nationId));
-
-  // The nation is always driven by the URL — navigating to a new nation/supplement always
-  // starts a fresh army list for that nation.
-  useEffect(() => {
-    setRoster(emptyRoster(nationId));
-  }, [nationId]);
-
-  useEffect(() => {
-    saveRoster(roster);
-  }, [roster]);
-
   const nation = useMemo(() => getNation(nationId)!, [nationId]);
+
+  const [roster, setRoster] = useState<RosterState>(() => emptyRoster(nationId));
+  // Which nation's saved army has been read back from the browser. Until it has, nothing is saved,
+  // so the empty starting army can't overwrite the real one.
+  const [loadedFor, setLoadedFor] = useState<string | null>(null);
+
+  // The nation is driven by the URL. Each nation keeps its own saved army, read back after mount
+  // (localStorage isn't available while rendering on the server).
+  useEffect(() => {
+    setRoster(loadRoster(nation) ?? emptyRoster(nation.id));
+    setLoadedFor(nation.id);
+  }, [nation]);
+
+  useEffect(() => {
+    if (loadedFor !== nationId || roster.nationId !== nationId) return;
+    saveRoster(roster);
+  }, [roster, loadedFor, nationId]);
+
   const supplement = useMemo(
     () => getSupplement(nation.supplementId) ?? supplements[0],
     [nation.supplementId]
@@ -106,50 +112,39 @@ function BuilderContent({ nationId }: { nationId: string }) {
     [supplement.id]
   );
 
-  // Switching army or clearing it throws the current one away, so ask first once there's anything in it
+  // Clearing throws the army away, so ask first once there's anything in it. Switching nation doesn't
+  // need asking: each nation's army is saved separately and is there again on switching back.
   const hasUnits = roster.commandItems.length > 0 || roster.brigadeInstances.length > 0;
-  const [pending, setPending] = useState<{ kind: "clear" } | { kind: "switch"; href: string; name: string } | null>(null);
-
-  function switchTo(href: string, name: string) {
-    if (hasUnits) setPending({ kind: "switch", href, name });
-    else router.replace(href, { scroll: false });
-  }
+  const [confirmingClear, setConfirmingClear] = useState(false);
 
   function handleSupplementChange(value: string | null) {
     if (!value) return;
     const firstNation = getNationsForSupplement(value)[0];
     if (!firstNation) return;
-    switchTo(`/black-powder/${value}/${firstNation.id}`, firstNation.name);
+    router.replace(`/black-powder/${value}/${firstNation.id}`, { scroll: false });
   }
 
   function handleNationChange(value: string | null) {
     if (!value) return;
-    switchTo(`/black-powder/${supplement.id}/${value}`, getNation(value)?.name ?? "that army");
+    router.replace(`/black-powder/${supplement.id}/${value}`, { scroll: false });
   }
 
   function handleClear() {
     setRoster(emptyRoster(nationId));
-    clearRoster();
-  }
-
-  function handleConfirm() {
-    if (pending?.kind === "clear") handleClear();
-    if (pending?.kind === "switch") router.replace(pending.href, { scroll: false });
-    setPending(null);
+    clearRoster(nationId);
+    setConfirmingClear(false);
   }
 
   return (
     <>
       <ConfirmModal
-        opened={pending !== null}
-        title={pending?.kind === "switch" ? `Switch to ${pending.name}?` : "Clear this army?"}
-        confirmLabel={pending?.kind === "switch" ? "Switch army" : "Clear army"}
-        onConfirm={handleConfirm}
-        onCancel={() => setPending(null)}
+        opened={confirmingClear}
+        title="Clear this army?"
+        confirmLabel="Clear army"
+        onConfirm={handleClear}
+        onCancel={() => setConfirmingClear(false)}
       >
-        {pending?.kind === "switch"
-          ? `Switching starts a new, empty army list. The army you've built for ${nation.name} will be lost.`
-          : `This removes every unit and brigade from the army you've built for ${nation.name}. It can't be undone.`}
+        This removes every unit and brigade from the army you&apos;ve built for {nation.name}. It can&apos;t be undone.
       </ConfirmModal>
       {/* The army being built, in a tinted band under the site header, like the support band in the footer */}
       <div className="page-band">
@@ -204,7 +199,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
                     color="red"
                     variant="filled"
                     size="lg"
-                    onClick={() => setPending({ kind: "clear" })}
+                    onClick={() => setConfirmingClear(true)}
                     disabled={!hasUnits}
                     aria-label="Clear army"
                   >
@@ -235,19 +230,22 @@ function BuilderContent({ nationId }: { nationId: string }) {
         </Container>
       </div>
 
-      <Container size="xl" py="lg">
-        <Grid gap="lg">
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <BrigadeBoard key={nation.id} nation={nation} roster={roster} onChange={setRoster} />
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, md: 5 }}>
-            <Stack gap="md" style={{ position: "sticky", top: 16 }}>
-              <RosterPanel nation={nation} roster={roster} />
-              <ForceOrgNotes nation={nation} />
-            </Stack>
-          </Grid.Col>
-        </Grid>
-      </Container>
+      {/* Held back until the saved army is read, so it doesn't flash up empty first */}
+      {loadedFor === nationId && (
+        <Container size="xl" py="lg">
+          <Grid gap="lg">
+            <Grid.Col span={{ base: 12, md: 7 }}>
+              <BrigadeBoard key={nation.id} nation={nation} roster={roster} onChange={setRoster} />
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 5 }}>
+              <Stack gap="md" style={{ position: "sticky", top: 16 }}>
+                <RosterPanel nation={nation} roster={roster} />
+                <ForceOrgNotes nation={nation} />
+              </Stack>
+            </Grid.Col>
+          </Grid>
+        </Container>
+      )}
     </>
   );
 }
