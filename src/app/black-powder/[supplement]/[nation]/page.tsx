@@ -22,6 +22,7 @@ import { BrigadeBoard } from "@/components/BrigadeBoard";
 import { RosterPanel } from "@/components/RosterPanel";
 import { ForceOrgNotes } from "@/components/ForceOrgNotes";
 import { saveRoster, clearRoster } from "@/lib/storage";
+import { ConfirmModal } from "@/components/ConfirmModal";
 
 const SUPPLEMENT_OPTIONS = supplements.map((s) => ({ value: s.id, label: s.name }));
 
@@ -105,16 +106,25 @@ function BuilderContent({ nationId }: { nationId: string }) {
     [supplement.id]
   );
 
+  // Switching army or clearing it throws the current one away, so ask first once there's anything in it
+  const hasUnits = roster.commandItems.length > 0 || roster.brigadeInstances.length > 0;
+  const [pending, setPending] = useState<{ kind: "clear" } | { kind: "switch"; href: string; name: string } | null>(null);
+
+  function switchTo(href: string, name: string) {
+    if (hasUnits) setPending({ kind: "switch", href, name });
+    else router.replace(href, { scroll: false });
+  }
+
   function handleSupplementChange(value: string | null) {
     if (!value) return;
     const firstNation = getNationsForSupplement(value)[0];
     if (!firstNation) return;
-    router.replace(`/black-powder/${value}/${firstNation.id}`, { scroll: false });
+    switchTo(`/black-powder/${value}/${firstNation.id}`, firstNation.name);
   }
 
   function handleNationChange(value: string | null) {
     if (!value) return;
-    router.replace(`/black-powder/${supplement.id}/${value}`, { scroll: false });
+    switchTo(`/black-powder/${supplement.id}/${value}`, getNation(value)?.name ?? "that army");
   }
 
   function handleClear() {
@@ -122,8 +132,25 @@ function BuilderContent({ nationId }: { nationId: string }) {
     clearRoster();
   }
 
+  function handleConfirm() {
+    if (pending?.kind === "clear") handleClear();
+    if (pending?.kind === "switch") router.replace(pending.href, { scroll: false });
+    setPending(null);
+  }
+
   return (
     <>
+      <ConfirmModal
+        opened={pending !== null}
+        title={pending?.kind === "switch" ? `Switch to ${pending.name}?` : "Clear this army?"}
+        confirmLabel={pending?.kind === "switch" ? "Switch army" : "Clear army"}
+        onConfirm={handleConfirm}
+        onCancel={() => setPending(null)}
+      >
+        {pending?.kind === "switch"
+          ? `Switching starts a new, empty army list. The army you've built for ${nation.name} will be lost.`
+          : `This removes every unit and brigade from the army you've built for ${nation.name}. It can't be undone.`}
+      </ConfirmModal>
       {/* The army being built, in a tinted band under the site header, like the support band in the footer */}
       <div className="page-band">
         <Container size="xl">
@@ -177,7 +204,8 @@ function BuilderContent({ nationId }: { nationId: string }) {
                     color="red"
                     variant="filled"
                     size="lg"
-                    onClick={handleClear}
+                    onClick={() => setPending({ kind: "clear" })}
+                    disabled={!hasUnits}
                     aria-label="Clear army"
                   >
                     <IconTrash size={18} />

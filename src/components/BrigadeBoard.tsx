@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ActionIcon,
   Badge,
   Button,
   Group,
+  Notification,
   Paper,
   Select,
   Stack,
@@ -88,6 +89,15 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     return { value: bt.id, label: reason ? `${bt.name} (${reason})` : bt.name, disabled: !!reason };
   });
 
+  // After a brigade or regiment is removed, a notice offers to put it back. It re-inserts the removed
+  // piece into whatever the roster is by then, so other edits made meanwhile aren't lost.
+  const [undo, setUndo] = useState<{ message: string; restore: (r: RosterState) => RosterState } | null>(null);
+  useEffect(() => {
+    if (!undo) return;
+    const t = setTimeout(() => setUndo(null), 8000);
+    return () => clearTimeout(t);
+  }, [undo]);
+
   const [pickedBrigadeTypeId, setPickedBrigadeTypeId] = useState<string | null>(
     nation.brigades[0]?.id ?? null
   );
@@ -118,9 +128,21 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
   }
 
   function handleRemoveBrigade(key: string) {
+    const index = roster.brigadeInstances.findIndex((bi) => bi.key === key);
+    if (index < 0) return;
+    const removed = roster.brigadeInstances[index];
+    const name = nation.brigades.find((b) => b.id === removed.brigadeTypeId)?.name ?? "Brigade";
     onChange({
       ...roster,
       brigadeInstances: roster.brigadeInstances.filter((bi) => bi.key !== key),
+    });
+    setUndo({
+      message: `${name} removed`,
+      restore: (r) => {
+        const brigadeInstances = r.brigadeInstances.slice();
+        brigadeInstances.splice(Math.min(index, brigadeInstances.length), 0, removed);
+        return { ...r, brigadeInstances };
+      },
     });
   }
 
@@ -196,11 +218,29 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     handleRegimentSlotsChange(instanceKey, slotIndex, [...current, newReg]);
   }
 
-  function handleRemoveRegiment(instanceKey: string, slotIndex: number, regKey: string) {
+  function handleRemoveRegiment(instanceKey: string, slotIndex: number, regKey: string, label: string) {
     const bi = roster.brigadeInstances.find((b) => b.key === instanceKey);
     if (!bi) return;
     const current = bi.regimentSlots[slotIndex] ?? [];
+    const index = current.findIndex((r) => r.key === regKey);
+    if (index < 0) return;
+    const removed = current[index];
     handleRegimentSlotsChange(instanceKey, slotIndex, current.filter((r) => r.key !== regKey));
+    setUndo({
+      message: `${label} removed`,
+      // Only if its brigade is still there; otherwise there's nothing to put it back into
+      restore: (r) => ({
+        ...r,
+        brigadeInstances: r.brigadeInstances.map((b) => {
+          if (b.key !== instanceKey) return b;
+          const regimentSlots = b.regimentSlots.slice();
+          const regs = (regimentSlots[slotIndex] ?? []).slice();
+          regs.splice(Math.min(index, regs.length), 0, removed);
+          regimentSlots[slotIndex] = regs;
+          return { ...b, regimentSlots };
+        }),
+      }),
+    });
   }
 
   function handleRegimentSubSlotChange(
@@ -271,13 +311,13 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                 <Group gap={4}>
                   {effectiveMax(bt, roster.brigadeInstances) > countByType(roster.brigadeInstances, bt.id) && (
                     <Tooltip label="Clone this brigade">
-                      <ActionIcon color="brown" variant="subtle" onClick={() => handleCloneBrigade(instance.key)}>
+                      <ActionIcon color="brown" variant="subtle" aria-label={`Clone ${bt.name}`} onClick={() => handleCloneBrigade(instance.key)}>
                         <IconCopy size={16} />
                       </ActionIcon>
                     </Tooltip>
                   )}
                   <Tooltip label="Remove this brigade">
-                    <ActionIcon color="red" variant="subtle" onClick={() => handleRemoveBrigade(instance.key)}>
+                    <ActionIcon color="red" variant="subtle" aria-label={`Remove ${bt.name}`} onClick={() => handleRemoveBrigade(instance.key)}>
                       <IconTrash size={16} />
                     </ActionIcon>
                   </Tooltip>
@@ -361,7 +401,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                                 color="red"
                                 variant="subtle"
                                 size="sm"
-                                onClick={() => handleRemoveRegiment(instance.key, slotIndex, reg.key)}
+                                aria-label={`Remove ${regDef.label} ${regIdx + 1}`}
+                                onClick={() => handleRemoveRegiment(instance.key, slotIndex, reg.key, regDef.label)}
                               >
                                 <IconTrash size={14} />
                               </ActionIcon>
@@ -450,6 +491,26 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
           </Group>
         </Paper>
       </Stack>
+
+      {undo && (
+        <div className="undo-toast" role="status">
+          <Notification withBorder withCloseButton onClose={() => setUndo(null)} color="brown">
+            <Group justify="space-between" wrap="nowrap" gap="md">
+              <Text size="sm">{undo.message}</Text>
+              <Button
+                size="compact-sm"
+                variant="light"
+                onClick={() => {
+                  onChange(undo.restore(roster));
+                  setUndo(null);
+                }}
+              >
+                Undo
+              </Button>
+            </Group>
+          </Notification>
+        </div>
+      )}
     </Stack>
   );
 }
