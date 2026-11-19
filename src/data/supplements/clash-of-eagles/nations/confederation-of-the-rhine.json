@@ -2,7 +2,11 @@
   "id": "confederation-of-the-rhine",
   "name": "Other Confederation States & Rheinbund",
   "blurb": "The minor German states of Napoleon's Confederation of the Rhine, 1812.",
-  "flagFile": "/flags/confederation-rhine.svg",
+  "flagFiles": [
+    "/flags/baden.svg",
+    "/flags/hesse.svg",
+    "/flags/berg.svg"
+  ],
   "units": [
     {
       "id": "cotr-div-cmd",

@@ -1,5 +1,7 @@
-<!-- Kingdom of Württemberg: black over red horizontal bicolour -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2">
-  <rect width="3" height="1" y="0" fill="#000000"/>
-  <rect width="3" height="1" y="1" fill="#CC0000"/>
+<!-- Kingdom of Württemberg, 1809-1816: yellow, black and red. (Black over red only came in from 1817.)
+     As Commons' public-domain "Flagge Königreich Württemberg (1809–1816).svg". -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6">
+  <rect width="9" height="6" fill="#000000"/>
+  <rect width="9" height="2" fill="#F9C700"/>
+  <rect y="4" width="9" height="2" fill="#C10020"/>
 </svg>
