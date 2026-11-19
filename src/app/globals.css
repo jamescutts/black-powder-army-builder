@@ -247,17 +247,6 @@ body {
   flex-shrink: 0;
 }
 
-.site-brand-name {
-  font-family: var(--font-heading), Georgia, serif;
-  font-weight: 600;
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.site-brand-name-sm {
-  font-size: 1.15rem;
-}
-
 .site-header-muted,
 .site-footer-muted {
   color: rgba(242, 236, 214, 0.72);

@@ -46,7 +46,7 @@ export function SiteFooter() {
         <div className="site-inner site-footer-grid">
           <div className="site-footer-col">
             <div className="site-brand">
-              <span className="site-brand-name site-brand-name-sm">Army Builder</span>
+              <span className="site-brand-script">Army Builder</span>
             </div>
             <p className="site-footer-muted">
               Points calculators for tabletop wargame army lists, starting with Black Powder&apos;s horse-and-musket
