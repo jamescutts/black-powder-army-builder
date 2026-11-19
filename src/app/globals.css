@@ -323,6 +323,93 @@ body {
   background: rgba(107, 61, 23, 0.05);
 }
 
+.roster-title.roster-title {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+/* Roster legality, at the foot of the roster card: a solid red panel while there's anything to fix,
+   a quiet green line once the list is legal */
+.roster-status {
+  margin-top: var(--mantine-spacing-sm);
+  padding: 10px 12px;
+  border-radius: var(--mantine-radius-sm);
+  background: var(--mantine-color-red-6);
+  color: #fff;
+}
+
+.roster-status[data-ok] {
+  padding: 8px 10px;
+  background: rgba(63, 90, 30, 0.08);
+  border-left: 3px solid var(--mantine-color-green-7);
+  color: var(--mantine-color-green-9);
+}
+
+.roster-status-list {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Notes below the builder, set off by a rule like Fleet's page sections */
+.list-notes-wrap {
+  margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  padding-top: var(--mantine-spacing-xl);
+  border-top: 1px solid rgba(107, 61, 23, 0.2);
+}
+
+.notes-subhead.notes-subhead {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+/* Notes cards: a heading strip tinted by topic (force organisation amber, special rules brown,
+   allies slate), muted versions of the alert colours they replaced */
+.note-card {
+  overflow: hidden;
+  --note-tint: rgba(196, 150, 40, 0.16);
+  --note-ink: #7a5a12;
+  --note-edge: rgba(196, 150, 40, 0.45);
+}
+
+.note-card[data-tone="rules"] {
+  --note-tint: rgba(138, 79, 28, 0.13);
+  --note-ink: #6b3d17;
+  --note-edge: rgba(138, 79, 28, 0.4);
+}
+
+.note-card[data-tone="allies"] {
+  --note-tint: rgba(84, 98, 110, 0.13);
+  --note-ink: #3f4a54;
+  --note-edge: rgba(84, 98, 110, 0.38);
+}
+
+.note-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px var(--mantine-spacing-md);
+  background: var(--note-tint);
+  border-bottom: 1px solid var(--note-edge);
+  color: var(--note-ink);
+}
+
+.note-card-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.note-card-body {
+  padding: 12px var(--mantine-spacing-md) var(--mantine-spacing-md);
+}
+
+/* What the builder doesn't model yet: a pale amber strip, like Fleet's work-in-progress note */
+.builder-wip {
+  padding: 10px 14px;
+  border-radius: var(--mantine-radius-sm);
+  background: #efe3bf;
+  border: 1px solid #dcc98f;
+  color: #3d3423;
+}
+
 /* "Brigade removed · Undo", floating at the foot of the window */
 .undo-toast {
   position: fixed;

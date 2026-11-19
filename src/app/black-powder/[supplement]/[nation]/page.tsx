@@ -238,12 +238,16 @@ function BuilderContent({ nationId }: { nationId: string }) {
               <BrigadeBoard key={nation.id} nation={nation} roster={roster} onChange={setRoster} />
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 5 }}>
-              <Stack gap="md" style={{ position: "sticky", top: 16 }}>
+              {/* Only the roster follows you down the page; the reference notes sit below the builder */}
+              <div style={{ position: "sticky", top: 16 }}>
                 <RosterPanel nation={nation} roster={roster} />
-                <ForceOrgNotes nation={nation} />
-              </Stack>
+              </div>
             </Grid.Col>
           </Grid>
+
+          <div className="list-notes-wrap">
+            <ForceOrgNotes nation={nation} />
+          </div>
         </Container>
       )}
     </>

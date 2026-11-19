@@ -1,6 +1,6 @@
 "use client";
 
-import { Alert, Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text } from "@mantine/core";
+import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, Title } from "@mantine/core";
 import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
 import type { Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
@@ -123,9 +123,9 @@ export function RosterPanel({ nation, roster }: Props) {
               </div>
             )}
             <Stack gap={0} style={{ minWidth: 0 }}>
-              <Text fw={700} size="lg">
+              <Title order={2} className="roster-title">
                 Roster
-              </Text>
+              </Title>
               <Text size="xs" c="dimmed">
                 {nation.name}
               </Text>
@@ -136,7 +136,8 @@ export function RosterPanel({ nation, roster }: Props) {
           </Badge>
         </Group>
 
-        <ScrollArea.Autosize mah={420}>
+        {/* Capped to the window, so the whole sticky card, with its issues and buttons, stays on screen */}
+        <ScrollArea.Autosize mah="min(420px, max(140px, calc(100vh - 500px)))">
           <Stack gap="sm">
             {roster.commandItems.length > 0 && (
               <div>
@@ -214,23 +215,35 @@ export function RosterPanel({ nation, roster }: Props) {
           </Text>
           <Text fw={700}>{grandTotal} pts total</Text>
         </Group>
+
+        {/* Whether the list is legal, inside the card rather than as a loud box of its own */}
+        <div className="roster-status" data-ok={issues.length === 0 || undefined}>
+          {issues.length === 0 ? (
+            <Group gap={6} wrap="nowrap">
+              <IconCircleCheck size={16} aria-hidden />
+              <Text size="sm">Within every brigade&apos;s limits</Text>
+            </Group>
+          ) : (
+            <>
+              <Group gap={6} wrap="nowrap" mb={4}>
+                <IconAlertTriangle size={16} aria-hidden />
+                <Text size="sm" fw={600}>
+                  {issues.length === 1 ? "1 thing to fix" : `${issues.length} things to fix`}
+                </Text>
+              </Group>
+              <ScrollArea.Autosize mah={150}>
+                <List size="xs" spacing={2} className="roster-status-list">
+                  {issues.map((i, idx) => (
+                    <List.Item key={idx}>{i.message}</List.Item>
+                  ))}
+                </List>
+              </ScrollArea.Autosize>
+            </>
+          )}
+        </div>
       </Paper>
 
       <RosterViewModal nation={nation} roster={roster} />
-
-      {issues.length === 0 ? (
-        <Alert color="green" variant="light" icon={<IconCircleCheck />}>
-          Roster meets every brigade&apos;s minimum/maximum requirement.
-        </Alert>
-      ) : (
-        <Alert color="red" variant="filled" icon={<IconAlertTriangle />} title="Roster issues">
-          <List size="sm" spacing={4}>
-            {issues.map((i, idx) => (
-              <List.Item key={idx}>{i.message}</List.Item>
-            ))}
-          </List>
-        </Alert>
-      )}
     </Stack>
   );
 }
