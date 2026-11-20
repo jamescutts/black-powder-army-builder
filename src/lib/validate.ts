@@ -465,7 +465,10 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
 
   // ─── Army-wide unit ratio caps (e.g. 1 Light battery per 6 battalions) ─────
   for (const cap of nation.unitRatioCaps ?? []) {
-    const capCount = countUnitsInArmy(roster.brigadeInstances, cap.capUnitIds);
+    const capInstances = cap.brigadeTypeIds
+      ? roster.brigadeInstances.filter((bi) => cap.brigadeTypeIds!.includes(bi.brigadeTypeId))
+      : roster.brigadeInstances;
+    const capCount = countUnitsInArmy(capInstances, cap.capUnitIds);
     if (capCount === 0) continue;
     const perCount = countUnitsInArmy(roster.brigadeInstances, cap.perUnitIds);
     const allowed = Math.floor(perCount / cap.ratio);

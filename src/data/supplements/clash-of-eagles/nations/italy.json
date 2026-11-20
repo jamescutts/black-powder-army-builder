@@ -253,7 +253,13 @@
           "label": "Regimental Artillery (section per regiment, or battery per regiment of 3+)",
           "unitIds": ["it-regimental-arty-section"],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "it-regimental-arty-section",
+              "perQualifyingRegiment": { "regimentSlotIndices": [0], "minBattalions": 1 }
+            }
+          ]
         }
       ],
       "commanderUnitId": "it-brig-cmd",
@@ -394,14 +400,20 @@
           "max": 2
         },
         {
-          "label": "Regimental Artillery (section or battery, 0-1)",
+          "label": "Regimental Artillery Section (1 per 2 battalions in the brigade)",
           "unitIds": ["it-regimental-arty-section"],
           "min": 0,
-          "max": 1
+          "max": 3,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "it-regimental-arty-section",
+              "perBattalions": { "countSlotIndices": [0, 1, 2], "ratio": 2 }
+            }
+          ]
         }
       ],
       "commanderUnitId": "it-brig-cmd",
-      "note": "Up to 1 regiment each of Guard Infantry, Royal Velite, and Guard Conscripts (up to 2 battalions each). Plus up to 2 Guard Dragoons, artillery, and 1 Regimental Artillery section."
+      "note": "Up to 1 regiment each of Guard Infantry, Royal Velite, and Guard Conscripts (up to 2 battalions each). Plus up to 2 Guard Dragoons, artillery, and 1 Regimental Artillery section per 2 battalions in the brigade."
     },
     {
       "id": "it-reserve-artillery",
@@ -441,11 +453,8 @@
     }
   ],
   "notes": [
-    "1 to 3 Infantry Brigades: 1 or 2 Infantry regiments of 1-4 battalions each (each regiment is all Line or all Light), plus Regimental Artillery.",
-    "0 to 1 Cavalry Brigade (1 per 2 Infantry Brigades): up to 2 Chasseur à Cheval regiments.",
-    "Divisional Artillery: up to 1 Foot and 1 Horse battery (1 per 8 infantry battalions), attached to any brigade.",
-    "0 to 1 Italian Guard Brigade: up to 1 regiment each of Guard Infantry, Royal Velite Infantry and Guard Conscript Infantry, plus up to 2 Guard Dragoon regiments and Guard artillery.",
-    "Reserve Artillery: up to 2 Heavy Foot Artillery batteries (1 per 10 infantry battalions), attached to any brigade.",
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "A regiment may take a Regimental Artillery battery instead of a section: in an Infantry Brigade, a regiment of 3+ battalions; in the Guard Brigade, a regiment of 2+ battalions. The battery isn't in the builder yet.",
     "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade up to 2 battalions per brigade to Veteran, Reliable + Elite 5+ (+8 pts/battalion); upgrade any or all battalions in a brigade to Tough Fighters (+1 pt/battalion); upgrade a cavalry regiment to Veteran, Reliable + 1 Hand-to-Hand (+6 pts/regiment); upgrade any artillery battery to Veteran (+8 pts/battery); downgrade a battalion to Small (-8 pts), to Wavering (-6 pts), to Morale 5 (-4 pts), to Unreliable (-3 pts), or by removing pas de charge (-2 pts); downgrade a cavalry regiment to Small (-8 pts) or to Wavering (-6 pts); downgrade any gun battery to a half battery."
   ],
   "alliesRules": [

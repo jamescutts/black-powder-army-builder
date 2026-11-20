@@ -868,6 +868,11 @@ src/data/supplements/
   }
 ]
 `}</CodeBlock>
+          <Text size="sm">
+            Add <Code>brigadeTypeIds</Code> to count the capped units only in those brigade types,
+            when the same unit can also be bought elsewhere under its own rules (e.g. French
+            Reserve Artillery batteries, but not Divisional Artillery ones).
+          </Text>
         </Section>
 
         <Section id="community-lists" title="Community lists">

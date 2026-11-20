@@ -1337,16 +1337,8 @@
     }
   ],
   "notes": [
-    "Divisional Commander, plus 1-3 Infantry Brigade Commanders (half of all brigade commanders, rounding up, must be Staff Rating 7).",
-    "1 to 2 Infantry Regiments per brigade (Combined Grenadier / Opolchenie / Opolchenie Jäger / Volunteer Jäger / Jäger battalions), 41 pts each unless noted.",
-    "0 to 1 Jäger Brigade: 2 to 3 Jäger Regiments, plus up to 1 Grenadier regiment.",
-    "0 to 1 Combined Grenadier Brigade: 2 to 7 Combined Grenadier battalions.",
-    "0 to 1 Grenadier Brigade: 1 or 2 Grenadier regiments.",
-    "0 to 1 Light Cavalry Brigade: 1 to 3 regiments from Dragoons, Hussars, Uhlans, Mounted/Irregular Cossacks (first Cossack regiment free).",
-    "0 to 1 Heavy Cavalry Brigade: 1 to 3 regiments of Dragoons or Cuirassiers (cannot mix).",
-    "0 to 1 Cossack Brigade: 2 to 6 Cossack regiments.",
-    "Artillery batteries attach to brigades at set ratios (1 Light per 6 infantry battalions, 1 Horse per 4 cavalry regiments, 1 Position per 9 battalions, 1 Unicorn per 6 battalions).",
-    "Up to 25% of the army may be Imperial Guard brigades (Guard Infantry needs 3+ infantry brigades already taken; Guard Light/Heavy Cavalry need 4+ infantry brigades).",
-    "0 to 1 Earthworks per 500 points."
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "Half of all brigade commanders, rounding up, must be Staff Rating 7.",
+    "The first Cossack regiment in the army is free. The builder charges full points for it, so deduct its cost."
   ]
 }

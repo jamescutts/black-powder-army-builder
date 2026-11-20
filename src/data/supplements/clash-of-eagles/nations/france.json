@@ -598,7 +598,7 @@
             "fr-regimental-battery"
           ],
           "min": 0,
-          "max": 3,
+          "max": 5,
           "singleUnitType": true,
           "dynamicUnitLimits": [
             {
@@ -746,11 +746,7 @@
             "fr-foot-arty"
           ],
           "min": 0,
-          "max": 2,
-          "requiresArmyUnitCount": {
-            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
-            "min": 12
-          }
+          "max": 2
         },
         {
           "label": "Horse Artillery Battery (up to 1, 1 per 4 cavalry regiments)",
@@ -758,11 +754,7 @@
             "fr-horse-arty"
           ],
           "min": 0,
-          "max": 1,
-          "requiresArmyUnitCount": {
-            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
-            "min": 12
-          }
+          "max": 1
         },
         {
           "label": "Heavy Artillery Battery (up to 2, 1 per 9 infantry battalions)",
@@ -770,14 +762,10 @@
             "fr-heavy-foot-arty"
           ],
           "min": 0,
-          "max": 2,
-          "requiresArmyUnitCount": {
-            "unitIds": ["fr-line-infantry", "fr-light-infantry", "fr-combined-grenadier", "fr-voltigeurs", "fr-portuguese-infantry", "fr-spanish-infantry", "fr-rheinbund-infantry"],
-            "min": 12
-          }
+          "max": 2
         }
       ],
-      "note": "Batteries attach to any infantry brigade. Up to 2 Foot (1 per 8 battalions), up to 1 Horse (1 per 4 cavalry regiments), up to 2 Heavy (1 per 9 battalions). Requires 12+ infantry battalions in the army.",
+      "note": "Foot and Heavy batteries attach to any infantry brigade, the Horse battery to any brigade. Up to 2 Foot (1 per 8 infantry battalions), up to 1 Horse (1 per 4 cavalry regiments), up to 2 Heavy (1 per 9 battalions).",
       "commanderUnitId": "fr-brig-cmd"
     },
     {
@@ -828,7 +816,8 @@
         "fr-rheinbund-infantry"
       ],
       "ratio": 8,
-      "label": "Reserve Foot batteries"
+      "label": "Reserve Foot batteries",
+      "brigadeTypeIds": ["fr-artillery-brigade"]
     },
     {
       "capUnitIds": ["fr-half-heavy-foot-arty", "fr-heavy-foot-arty"],
@@ -842,7 +831,8 @@
         "fr-rheinbund-infantry"
       ],
       "ratio": 9,
-      "label": "Reserve Heavy batteries"
+      "label": "Reserve Heavy batteries",
+      "brigadeTypeIds": ["fr-artillery-brigade"]
     },
     {
       "capUnitIds": ["fr-half-horse-arty", "fr-horse-arty"],
@@ -860,16 +850,13 @@
         "fr-bavarian-chevauleger"
       ],
       "ratio": 4,
-      "label": "Reserve Horse batteries"
+      "label": "Reserve Horse batteries",
+      "brigadeTypeIds": ["fr-artillery-brigade"]
     }
   ],
   "notes": [
-    "Divisional Commander, then 1 to 4 Infantry Brigades: 1 to 3 Infantry Regiments each (0-3 Line, 0-1 Light, 0-1 Foreign [Spanish/Portuguese/Rheinbund]). Max 10 battalions per brigade, max 1 Light regiment per division.",
-    "0 to 1 Regimental Artillery section per two battalions, or 0 to 1 Regimental Artillery Battery per regiment of 3+ battalions.",
-    "0 to 2 Light Cavalry Brigades (max 1 per 2 Infantry Brigades): 1 to 4 regiments from Hussars, Lancers, Chasseurs à Cheval, Polish Uhlans, Württemberg Horse-Jägers, Bavarian Chevaulegers.",
-    "Divisional Artillery: up to 1 Foot battery (6+ battalions in army) and up to 1 Horse battery (3+ cavalry regiments) attach to any brigade.",
-    "Corps and Army Support: up to 50% of points on Reserve Artillery, a Heavy Cavalry Brigade (if 2+ infantry brigades taken), and an Artillery Brigade (if 12+ infantry battalions taken).",
-    "0 to 1 Heavy Cavalry Brigade (if 2 Infantry Brigades taken): 1 to 3 regiments of Carabiniers/Cuirassiers, or Dragoons, plus up to 1 Small Lancer regiment."
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "The standalone Artillery Brigade may upgrade no more than half of its batteries to Heavy."
   ],
   "alliesRules": [
     { "maxPercent": 25, "nationIds": ["french-imperial-guard"] },

@@ -632,6 +632,13 @@
       "note": "Reserve Artillery: 1 Position Battery per 9 line infantry battalions in the army, attached to any Line Infantry Brigade. Part of the up-to-25% Abteilung and Army Support from Reserves."
     }
   ],
+  "pointsCaps": [
+    {
+      "brigadeTypeIds": ["at-reserve-artillery"],
+      "maxPercent": 25,
+      "label": "Abteilung and Army Support from Reserves"
+    }
+  ],
   "unitRatioCaps": [
     {
       "capUnitIds": ["at-grenz"],
@@ -653,12 +660,10 @@
     }
   ],
   "notes": [
-    "Minimum of one Line Infantry Brigade per 500 points. A brigade has 1-2 German or Hungarian Line Infantry Regiments of up to 2 Large battalions (cannot have more Hungarian than German regiments).",
-    "A Line Infantry Brigade may add up to two of: Grenadier battalions, Large Grenz battalions (max 1 per 4 infantry battalions), or a 6-pdr Brigade battery.",
-    "Up to 1 Light Cavalry Brigade: 1-2 Large Hussar/Chevauleger regiments, plus an optional Dragoon regiment and a cavalry battery (1 per 3 cavalry regiments).",
-    "Up to 1 Advanced Guard Brigade: up to 6 infantry battalions/cavalry regiments (Jäger, Line, Grenz, Hussar, Dragoon, Large Uhlan/Chevauleger, plus a battery) — infantry battalions must equal or exceed cavalry regiments.",
-    "Reserves: up to 25% of points on Abteilung and Army Support, including Reserve Artillery (1 Position battery per 9 line infantry battalions).",
-    "0 to 1 Grenadier Brigade and 0 to 1 Heavy Cavalry Brigade are included for completeness, although not part of the campaign."
+    "Maximums and minimums are per 1,000 points unless otherwise stated.",
+    "A Line Infantry Brigade can't have more Hungarian than German regiments.",
+    "In the Advanced Guard Brigade, infantry battalions must equal or exceed cavalry regiments.",
+    "The Grenadier Brigade and Heavy Cavalry Brigade are included for completeness, although not part of the campaign. A Grenadier Brigade may take no more than two of its Line Infantry Regiment, Hussar Regiment and 6-pdr Brigade Battery options."
   ],
   "specialRules": [
     "Cavalry note: Austrian regiments fought as two-squadron Abteilungen — a regiment may be replaced by 2, 3 or 4 Small units at 8 points per squadron-sized reduction step (standard unit price)."
