@@ -24,6 +24,8 @@ import {
   countUnitsInInstance,
   armyUnitCountRequirementMet,
   countUnitsInArmy,
+  choicesTaken,
+  regimentsHolding,
 } from "@/lib/brigadeLimits";
 
 export interface ValidationIssue {
@@ -497,6 +499,58 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         });
       }
     }
+  }
+
+  // ─── Regiment balance across the army (Austria: no more Hungarian than German) ──
+  for (const rule of nation.regimentBalance ?? []) {
+    const more = regimentsHolding(roster.brigadeInstances, rule.atMost);
+    const fewer = regimentsHolding(roster.brigadeInstances, rule.atLeastAs);
+    if (more > fewer) issues.push({ level: "error", message: `${rule.label} (have ${more} against ${fewer})` });
+  }
+
+  // ─── Per brigade: one kind can't outnumber another, choices, battery capacity, slot and regiment caps ──
+  for (const bi of roster.brigadeInstances) {
+    const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
+    if (!bt) continue;
+    if (bt.atLeastAsMany) {
+      const have = countUnitsInInstance(bi, bt.atLeastAsMany.unitIds);
+      const against = countUnitsInInstance(bi, bt.atLeastAsMany.asUnitIds);
+      if (against > have) {
+        issues.push({ level: "error", brigadeKey: bi.key, message: `${bt.name}: ${bt.atLeastAsMany.label} (have ${have} against ${against})` });
+      }
+    }
+    if (bt.maxChoices) {
+      const taken = choicesTaken(bt, bi);
+      if (taken > bt.maxChoices.max) {
+        issues.push({ level: "error", brigadeKey: bi.key, message: `${bt.name}: ${bt.maxChoices.label} (have ${taken})` });
+      }
+    }
+    if (bt.maxBatteries !== undefined) {
+      const count = batteriesIn(nation, roster.brigadeInstances, bi.key);
+      if (count > bt.maxBatteries) {
+        issues.push({ level: "error", brigadeKey: bi.key, message: `${bt.name}: ${count} batteries, attached ones included; it can have no more than ${bt.maxBatteries}` });
+      }
+    }
+  }
+  for (const bt of nation.brigades) {
+    const instances = roster.brigadeInstances.filter((bi) => bi.brigadeTypeId === bt.id);
+    if (instances.length === 0) continue;
+    bt.slots.forEach((slot, i) => {
+      for (const cap of slot.unitGroupCaps ?? []) {
+        const have = instances.reduce((s, bi) => s + (bi.slotLines[i] ?? []).filter((l) => cap.unitIds.includes(l.unitId)).reduce((t, l) => t + l.qty, 0), 0);
+        if (have > cap.armyMax) issues.push({ level: "error", message: `${bt.name}: maximum ${cap.armyMax} ${cap.label} in the army (have ${have})` });
+      }
+      const above = slot.regiment?.limitBrigadesAbove;
+      if (above) {
+        const brigades = instances.filter((bi) => (bi.regimentSlots?.[i]?.length ?? 0) > above.count).length;
+        if (brigades > above.maxBrigades) {
+          issues.push({
+            level: "error",
+            message: `${bt.name}: only ${above.maxBrigades} brigade${above.maxBrigades === 1 ? "" : "s"} may take more than ${above.count} ${slot.regiment!.label}${above.count === 1 ? "" : "s"} (have ${brigades})`,
+          });
+        }
+      }
+    });
   }
 
   // ─── Brigade commanders' Staff Ratings (e.g. half of Russia's must be 7) ──

@@ -683,7 +683,11 @@
                 "min": 1,
                 "max": 2
               }
-            ]
+            ],
+            "limitBrigadesAbove": {
+              "count": 1,
+              "maxBrigades": 1
+            }
           }
         },
         {
@@ -727,7 +731,7 @@
         }
       ],
       "commanderUnitId": "fig-brig-cmd",
-      "note": "0-1 Old Guard Regiment (1-2 battalions), 0-2 Middle Guard Regiments (1-2 battalions each). Regimental Artillery: 1 section per 2 battalions in the brigade. Foot Artillery: up to 2 batteries, 1 per 2 Old Guard battalions. Only one Old Guard Brigade in the army may take two Middle Guard regiments (not auto-enforced).",
+      "note": "0-1 Old Guard Regiment (1-2 battalions), 0-2 Middle Guard Regiments (1-2 battalions each). Regimental Artillery: 1 section per 2 battalions in the brigade. Foot Artillery: up to 2 batteries, 1 per 2 Old Guard battalions. Only one Old Guard Brigade in the army may take two Middle Guard regiments.",
       "options": [
         {
           "id": "valiant",
@@ -958,14 +962,16 @@
             {
               "unitId": "fig-chasseurs-a-cheval",
               "armyMax": 1
-            },
+            }
+          ],
+          "unitGroupCaps": [
             {
-              "unitId": "fig-polish-lancers",
-              "armyMax": 1
-            },
-            {
-              "unitId": "fig-dutch-red-lancers",
-              "armyMax": 1
+              "unitIds": [
+                "fig-polish-lancers",
+                "fig-dutch-red-lancers"
+              ],
+              "armyMax": 2,
+              "label": "Polish or Dutch Lancers"
             }
           ]
         },
@@ -1137,8 +1143,6 @@
   ],
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 162). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "Only one Old Guard brigade may take two Middle Guard regiments (not checked by the builder).",
-    "The Polish and Dutch Lancers share a limit of two regiments in the army; the builder allows one of each.",
     "The book gives no stat line for a Young Guard half battery: the builder uses the Old Guard half battery's (2-1-1, Stamina 1) with the Young Guard's Morale 4 and Elite 5+, at 27 points (35 less 8)."
   ],
   "specialRules": [

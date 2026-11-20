@@ -61,6 +61,11 @@ export interface RegimentDef {
    * Regiment per division". Omit for no army-wide cap.
    */
   armyMax?: number;
+  /**
+   * Only `maxBrigades` brigades in the army may take more than `count` of these regiments, e.g. the
+   * Imperial Guard's "Only one brigade may take two Middle Guard regiments" → { count: 1, maxBrigades: 1 }
+   */
+  limitBrigadesAbove?: { count: number; maxBrigades: number };
   /** Internal composition of each regiment instance */
   slots: RegimentSlot[];
 }
@@ -136,6 +141,11 @@ export interface BrigadeSlot {
    * { unitIds: ["ru-life-guard-cossack", "ru-life-guard-uhlan"], max: 1, label: "Cossack/Uhlan" }
    */
   unitGroupLimits?: { unitIds: string[]; max: number; label?: string }[];
+  /**
+   * Combined caps on a group of units across the whole army (every brigade of this type, this slot),
+   * e.g. the Guard's "Polish or Dutch Lancers… maximum two regiments in the army"
+   */
+  unitGroupCaps?: { unitIds: string[]; armyMax: number; label: string }[];
   /**
    * Mutually exclusive unit groups within this slot: at most `maxGroups` of the listed groups may
    * have units present in a single brigade instance. Units within the same group can coexist.
@@ -243,6 +253,23 @@ export interface BrigadeType {
   name: string;
   /** Upgrades and downgrades from this brigade's Options box */
   options?: UnitOption[];
+  /**
+   * The brigade must have at least as many of `unitIds` as of `asUnitIds`, e.g. Austria's Advanced
+   * Guard, whose "infantry battalions must equal or exceed the number of cavalry regiments"
+   */
+  atLeastAsMany?: { unitIds: string[]; asUnitIds: string[]; label: string };
+  /**
+   * At most `max` of these choices may be taken: a regiment slot is taken when it has a regiment, a
+   * unit slot when it has any of `unitIds` (or any unit). e.g. Austria's Grenadier Brigade "can have a
+   * maximum of two further choices" from a Line regiment, a Hussar regiment and a 6-pdr battery.
+   */
+  maxChoices?: { max: number; choices: { slotIndex: number; unitIds?: string[] }[]; label: string };
+  /**
+   * The most batteries this brigade can hold, its own and those attached to it, e.g. France's
+   * Artillery Brigade "can have no more than 6 batteries". Batteries are counted by the army's
+   * `attachBatteries` battery ids.
+   */
+  maxBatteries?: number;
   /**
    * This brigade's batteries can each be attached to another brigade in the army, which may then hold at
    * most `maxPerBrigade` batteries, its own included. `batteryUnitIds` says which units count as a
@@ -384,6 +411,11 @@ export interface Nation {
    * { maxRating: 7, maxShareAbove: 0.5 } (so at most half, rounding down, may be rated 8).
    */
   brigadeCommanderRating?: { maxRating: number; maxShareAbove: number; label: string };
+  /**
+   * Across the army there can't be more regiments holding `atMost` units than holding `atLeastAs`
+   * units, e.g. Austria's "You cannot have more Hungarian than German regiments"
+   */
+  regimentBalance?: { atMost: string[]; atLeastAs: string[]; label: string }[];
   /**
    * Units the army gets for free, e.g. Russia's "one irregular Cossack regiment for free, attached to any
    * cavalry brigade" (and Platov's one more). The first `count` units in the army from `unitIds` (in

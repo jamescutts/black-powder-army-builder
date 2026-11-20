@@ -303,7 +303,11 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         { value: "none", label: "Not attached" },
         ...targets.map((t) => {
           const count = batteriesIn(nation, roster.brigadeInstances, t.key);
-          const full = rule.maxPerBrigade !== undefined && count >= rule.maxPerBrigade && line.attachedTo !== t.key;
+          const cap = Math.min(
+            rule.maxPerBrigade ?? Infinity,
+            nation.brigades.find((b) => b.id === t.brigadeTypeId)?.maxBatteries ?? Infinity
+          );
+          const full = count >= cap && line.attachedTo !== t.key;
           return {
             value: t.key,
             label: `${brigadeDisplayName(nation, roster, t.key)}${full ? ` (has ${count} batteries)` : ""}`,

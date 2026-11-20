@@ -1350,7 +1350,8 @@
           ],
           "group": "veteran-artillery"
         }
-      ]
+      ],
+      "maxBatteries": 6
     }
   ],
   "pointsCaps": [
@@ -1432,7 +1433,6 @@
   ],
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 156). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "An Artillery Brigade can hold no more than 6 batteries, attached ones included (not checked by the builder).",
     "The Heavy Cavalry Brigade has '1 to 3 cavalry regiments' but offers '0 to 4 Dragoon Regiments'; the builder allows 3. The Bavarian Chevauleger costs 41 points in the stat table (p. 154) but 48 in the Light Cavalry box (p. 157); the builder uses the table. The Divisional Artillery box offers the half battery twice for 'a foot battery'; the builder offers it on the Foot and Horse batteries."
   ],
   "alliesRules": [

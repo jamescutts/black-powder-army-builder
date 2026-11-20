@@ -221,3 +221,30 @@ export function effectiveSlotMax(
   }
   return Math.max(...presentIds.map(capForUnit));
 }
+
+// ─── Rules counted across a brigade's slots or the army's regiments ──────────
+
+/** Whether a choice in a brigade's `maxChoices` rule has been taken */
+export function choiceTaken(instance: RosterBrigadeInstance, choice: { slotIndex: number; unitIds?: string[] }): boolean {
+  const regiments = instance.regimentSlots?.[choice.slotIndex];
+  if (regiments && regiments.length > 0) return true;
+  return (instance.slotLines[choice.slotIndex] ?? []).some((l) => !choice.unitIds || choice.unitIds.includes(l.unitId));
+}
+
+/** How many of a brigade's `maxChoices` are taken */
+export function choicesTaken(bt: BrigadeType, instance: RosterBrigadeInstance): number {
+  return (bt.maxChoices?.choices ?? []).filter((c) => choiceTaken(instance, c)).length;
+}
+
+/** How many regiments in the army hold any of these units */
+export function regimentsHolding(instances: RosterBrigadeInstance[], unitIds: string[]): number {
+  return instances.reduce(
+    (n, bi) =>
+      n +
+      (bi.regimentSlots ?? []).reduce(
+        (m, slot) => m + (slot ?? []).filter((reg) => reg.slotLines.flat().some((l) => unitIds.includes(l.unitId))).length,
+        0
+      ),
+    0
+  );
+}

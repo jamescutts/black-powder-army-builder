@@ -3,6 +3,8 @@ import type { RosterBrigadeInstance, RosterState, RosterUnitLine } from "@/types
 import {
   armyUnitCountRequirementMet,
   brigadeCountRequirementMet,
+  choiceTaken,
+  choicesTaken,
   countUnitsInArmy,
   countUnitsInInstance,
   effectiveUnitCapMax,
@@ -66,6 +68,26 @@ export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: Ro
 
   const full = brigadeFullReason(place);
   if (full) return full;
+
+  // One kind can't outnumber another in the brigade (Austria's Advanced Guard: cavalry ≤ infantry)
+  const balance = bt.atLeastAsMany;
+  if (balance?.asUnitIds.includes(unitId)) {
+    if (countUnitsInInstance(instance, balance.asUnitIds) + 1 > countUnitsInInstance(instance, balance.unitIds)) {
+      return balance.label;
+    }
+  }
+
+  // A brigade limited in how many of its choices it takes (Austria's Grenadier Brigade: 2 of 3)
+  const choiceReason = choiceBlockedReason(bt, instance, slotIndex, unitId);
+  if (choiceReason) return choiceReason;
+
+  for (const cap of slot.unitGroupCaps ?? []) {
+    if (!cap.unitIds.includes(unitId)) continue;
+    const inArmy = roster.brigadeInstances
+      .filter((bi) => bi.brigadeTypeId === bt.id)
+      .reduce((s, bi) => s + countOf(bi.slotLines[slotIndex] ?? [], cap.unitIds), 0);
+    if (inArmy >= cap.armyMax) return `Up to ${cap.armyMax} ${cap.label} in the army`;
+  }
 
   if (slot.singleUnitType) {
     const other = lines.find((l) => l.qty > 0 && l.unitId !== unitId);
@@ -153,6 +175,18 @@ export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: Ro
   return null;
 }
 
+/**
+ * Why taking a choice would break a brigade's `maxChoices` rule, or null. Adding to a choice that's
+ * already taken is fine; starting a new one isn't once the brigade has its maximum.
+ */
+export function choiceBlockedReason(bt: BrigadeType, instance: RosterBrigadeInstance, slotIndex: number, unitId?: string): string | null {
+  const rule = bt.maxChoices;
+  if (!rule) return null;
+  const choice = rule.choices.find((c) => c.slotIndex === slotIndex && (!unitId || !c.unitIds || c.unitIds.includes(unitId)));
+  if (!choice || choiceTaken(instance, choice)) return null;
+  return choicesTaken(bt, instance) >= rule.max ? rule.label : null;
+}
+
 /** Why one more of a unit can't be added to a regiment's sub-slot right now, or null if it can */
 export function unitBlockedInRegimentSlot(
   place: SlotPlace,
@@ -182,6 +216,20 @@ export function regimentBlockedReason(place: SlotPlace): string | null {
   const regDef = bt.slots[slotIndex].regiment!;
   const regiments = instance.regimentSlots?.[slotIndex] ?? [];
   if (regiments.length >= regDef.max) return `Up to ${regDef.max} per brigade`;
+
+  const choiceReason = choiceBlockedReason(bt, instance, slotIndex);
+  if (choiceReason) return choiceReason;
+
+  // Only so many brigades may take more than a set number of these regiments (the Guard's Middle Guard)
+  const above = regDef.limitBrigadesAbove;
+  if (above && regiments.length >= above.count) {
+    const others = roster.brigadeInstances.filter(
+      (bi) => bi.key !== instance.key && bi.brigadeTypeId === bt.id && (bi.regimentSlots?.[slotIndex]?.length ?? 0) > above.count
+    ).length;
+    if (others >= above.maxBrigades) {
+      return `Only ${above.maxBrigades} brigade${above.maxBrigades === 1 ? "" : "s"} may take more than ${above.count}`;
+    }
+  }
 
   const total = bt.maxRegimentsTotal;
   if (total?.slotIndices.includes(slotIndex)) {

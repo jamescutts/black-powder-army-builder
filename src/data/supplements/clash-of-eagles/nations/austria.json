@@ -475,7 +475,7 @@
           ]
         }
       ],
-      "note": "1-2 German or Hungarian regiments (up to 2 Large battalions each, one nationality per regiment). Cannot have more Hungarian than German regiments (not auto-enforced). Additional/Replacement: choose up to two of these options — 1-2 Grenadier battalions, up to 2 Large Grenz battalions (max 1 per 4 infantry battalions in army), or 1 6-pdr Battery (1 per 6 infantry battalions in army).",
+      "note": "1-2 German or Hungarian regiments (up to 2 Large battalions each, one nationality per regiment). Cannot have more Hungarian than German regiments. Additional/Replacement: choose up to two of these options — 1-2 Grenadier battalions, up to 2 Large Grenz battalions (max 1 per 4 infantry battalions in army), or 1 6-pdr Battery (1 per 6 infantry battalions in army).",
       "commanderUnitId": "at-brig-cmd",
       "options": [
         {
@@ -876,7 +876,7 @@
           2
         ]
       },
-      "note": "Up to 6 infantry battalions and/or cavalry regiments total (batteries do not count toward the 6), with infantry battalions equal to or exceeding cavalry regiments (not auto-enforced). Choose from: 0-1 Line Infantry Regiment (1-2 battalions, one nationality); 0-2 Jäger battalions; 0-1 Grenz Regiment; 0-1 Hussar Regiment; 0-1 Dragoon Regiment; 0-1 Large Uhlan or Chevauleger regiment; 0-1 Cavalry Battery; 0-1 3-pdr or 6-pdr Brigade Battery.",
+      "note": "Up to 6 infantry battalions and/or cavalry regiments total (batteries do not count toward the 6), with infantry battalions equal to or exceeding cavalry regiments. Choose from: 0-1 Line Infantry Regiment (1-2 battalions, one nationality); 0-2 Jäger battalions; 0-1 Grenz Regiment; 0-1 Hussar Regiment; 0-1 Dragoon Regiment; 0-1 Large Uhlan or Chevauleger regiment; 0-1 Cavalry Battery; 0-1 3-pdr or 6-pdr Brigade Battery.",
       "commanderUnitId": "at-adv-guard-cmd",
       "options": [
         {
@@ -1082,7 +1082,22 @@
             "at-6pdr-brigade-battery": "at-6pdr-brigade-battery-half"
           }
         }
-      ]
+      ],
+      "atLeastAsMany": {
+        "unitIds": [
+          "at-infantry-german",
+          "at-infantry-hungarian",
+          "at-jager",
+          "at-grenz"
+        ],
+        "asUnitIds": [
+          "at-hussar",
+          "at-dragoon",
+          "at-uhlan",
+          "at-chevauleger"
+        ],
+        "label": "Its cavalry regiments can't outnumber its infantry battalions"
+      }
     },
     {
       "id": "at-grenadier-brigade",
@@ -1141,7 +1156,7 @@
           ]
         }
       ],
-      "note": "Although not part of the campaign, included for completeness. 2-6 Grenadier battalions, plus a maximum of two further options: 0-1 Line Infantry Regiment (1-2 battalions, one nationality), 0-1 Hussar Regiment, 0-1 6-pdr Brigade Battery (do not take all three).",
+      "note": "Although not part of the campaign, included for completeness. 2-6 Grenadier battalions, plus a maximum of two further options: 0-1 Line Infantry Regiment (1-2 battalions, one nationality), 0-1 Hussar Regiment, 0-1 6-pdr Brigade Battery.",
       "commanderUnitId": "at-grenadier-cmd",
       "options": [
         {
@@ -1329,7 +1344,28 @@
             "at-6pdr-brigade-battery": "at-6pdr-brigade-battery-half"
           }
         }
-      ]
+      ],
+      "maxChoices": {
+        "max": 2,
+        "choices": [
+          {
+            "slotIndex": 1
+          },
+          {
+            "slotIndex": 2,
+            "unitIds": [
+              "at-hussar"
+            ]
+          },
+          {
+            "slotIndex": 2,
+            "unitIds": [
+              "at-6pdr-brigade-battery"
+            ]
+          }
+        ],
+        "label": "Only two further choices: a Line regiment, a Hussar regiment or a 6-pdr battery"
+      }
     },
     {
       "id": "at-heavy-cavalry-brigade",
@@ -1554,8 +1590,6 @@
   ],
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 179). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "You can't have more Hungarian than German regiments (not checked by the builder).",
-    "An Advanced Guard Brigade's infantry battalions must equal or exceed its cavalry regiments, and a Grenadier Brigade may take at most two of its three further choices (not checked by the builder).",
     "Grenz cost 43 points in the stat table (p. 178) but 40 in the Line Infantry Brigade box (p. 179); Cavalry Artillery has Stamina 1 in the stat table but 2 in the chapter (p. 73). The builder uses the stat table.",
     "Only the 25% reserves cap on Reserve Artillery is checked; the book doesn't say which other brigades count as 'Abteilung and Army Support'."
   ],
@@ -1585,6 +1619,17 @@
       ],
       "maxPercent": 25,
       "label": "Abteilung and Army Support from Reserves"
+    }
+  ],
+  "regimentBalance": [
+    {
+      "atMost": [
+        "at-infantry-hungarian"
+      ],
+      "atLeastAs": [
+        "at-infantry-german"
+      ],
+      "label": "You can't have more Hungarian than German regiments"
     }
   ]
 }
