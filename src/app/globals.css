@@ -317,6 +317,43 @@ body {
   min-width: 0;
 }
 
+/* A brigade with something to fix: its top rule turns red, and the problems sit under its title */
+.brigade-card[data-issues] {
+  border-top-color: var(--mantine-color-red-6);
+}
+
+.brigade-card:focus {
+  outline: none;
+}
+
+.brigade-issues {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 8px 0 4px;
+  padding: 8px 10px;
+  border-radius: var(--mantine-radius-sm);
+  background: var(--mantine-color-red-6);
+  color: #fff;
+  font-size: var(--mantine-font-size-xs);
+  line-height: 1.45;
+}
+
+.brigade-issues-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.brigade-issues ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brigade-issues li + li {
+  margin-top: 2px;
+}
+
 /* The brigade title folds the card: a chevron that turns when it's closed */
 .brigade-toggle {
   display: inline-flex;
@@ -397,6 +434,25 @@ body {
 
 .roster-status-list {
   color: rgba(255, 255, 255, 0.92);
+}
+
+.roster-status-link {
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-underline-offset: 2px;
+}
+
+.roster-status-link:hover {
+  text-decoration-color: #fff;
+}
+
+.roster-status-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 /* Notes below the builder, set off by a rule like Fleet's page sections */

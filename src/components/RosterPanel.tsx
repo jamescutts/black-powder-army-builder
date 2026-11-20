@@ -1,11 +1,11 @@
 "use client";
 
-import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, Title } from "@mantine/core";
+import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, Title, UnstyledButton } from "@mantine/core";
 import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
 import type { Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost } from "@/lib/units";
-import { validateRoster } from "@/lib/validate";
+import { brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 
 interface Props {
@@ -89,6 +89,12 @@ export function RosterPanel({ nation, roster }: Props) {
     commandTotal + brigadeTotals.reduce((s, b) => s + b.total, 0);
 
   const issues = validateRoster(nation, roster);
+  // Army-wide problems are listed in full; a brigade's own problems are on its card, so here each
+  // brigade gets one line that takes you there
+  const armyIssues = issues.filter((i) => !i.brigadeKey);
+  const brigadeIssueCounts = roster.brigadeInstances
+    .map((bi) => ({ key: bi.key, count: issues.filter((i) => i.brigadeKey === bi.key).length }))
+    .filter((b) => b.count > 0);
 
   return (
     <Stack gap="md">
@@ -233,8 +239,19 @@ export function RosterPanel({ nation, roster }: Props) {
               </Group>
               <ScrollArea.Autosize mah={150}>
                 <List size="xs" spacing={2} className="roster-status-list">
-                  {issues.map((i, idx) => (
+                  {armyIssues.map((i, idx) => (
                     <List.Item key={idx}>{i.message}</List.Item>
+                  ))}
+                  {brigadeIssueCounts.map(({ key, count }) => (
+                    <List.Item key={key}>
+                      <UnstyledButton
+                        className="roster-status-link"
+                        onClick={() => window.dispatchEvent(new CustomEvent(REVEAL_BRIGADE_EVENT, { detail: key }))}
+                      >
+                        {brigadeDisplayName(nation, roster, key)}: {count === 1 ? "1 thing" : `${count} things`} to fix
+                        <span aria-hidden> →</span>
+                      </UnstyledButton>
+                    </List.Item>
                   ))}
                 </List>
               </ScrollArea.Autosize>

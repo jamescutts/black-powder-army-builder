@@ -42,6 +42,8 @@ function brigadeInstancePoints(nation: Nation, bi: RosterBrigadeInstance): numbe
 export interface ValidationIssue {
   level: "error";
   message: string;
+  /** The brigade instance this issue is about, when it's about one brigade rather than the whole army */
+  brigadeKey?: string;
 }
 
 export function validateRoster(nation: Nation, roster: RosterState): ValidationIssue[] {
@@ -143,6 +145,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         if (count > bt.maxBattalions.max) {
           issues.push({
             level: "error",
+            brigadeKey: bi.key,
             message: `${bt.name}: maximum ${bt.maxBattalions.max} battalions per brigade (have ${count})`,
           });
         }
@@ -158,6 +161,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         if (regTotal > bt.maxRegimentsTotal.max) {
           issues.push({
             level: "error",
+            brigadeKey: bi.key,
             message: `${bt.name}: maximum ${bt.maxRegimentsTotal.max} regiments per brigade (have ${regTotal})`,
           });
         }
@@ -165,6 +169,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         if (regMin !== undefined && regTotal < regMin) {
           issues.push({
             level: "error",
+            brigadeKey: bi.key,
             message: `${bt.name}: needs at least ${regMin} regiment${regMin === 1 ? "" : "s"} per brigade (have ${regTotal})`,
           });
         }
@@ -197,12 +202,14 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           if (regiments.length < regDef.min) {
             issues.push({
               level: "error",
+              brigadeKey: bi.key,
               message: `${bt.name} → ${slot.label}: needs at least ${regDef.min} ${regDef.label}${regDef.min > 1 ? "s" : ""} (have ${regiments.length})`,
             });
           }
           if (regiments.length > regDef.max) {
             issues.push({
               level: "error",
+              brigadeKey: bi.key,
               message: `${bt.name} → ${slot.label}: maximum ${regDef.max} ${regDef.label}${regDef.max > 1 ? "s" : ""} allowed (have ${regiments.length})`,
             });
           }
@@ -214,12 +221,14 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
               if (total < subSlot.min) {
                 issues.push({
                   level: "error",
+                  brigadeKey: bi.key,
                   message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: needs at least ${subSlot.min} (have ${total})`,
                 });
               }
               if (total > subSlot.max) {
                 issues.push({
                   level: "error",
+                  brigadeKey: bi.key,
                   message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: maximum ${subSlot.max} allowed (have ${total})`,
                 });
               }
@@ -232,6 +241,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
                   );
                   issues.push({
                     level: "error",
+                    brigadeKey: bi.key,
                     message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: cannot mix types (have ${names.join(", ")})`,
                   });
                 }
@@ -243,6 +253,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
                   const uName = nation.units.find((u) => u.id === limit.unitId)?.name ?? limit.unitId;
                   issues.push({
                     level: "error",
+                    brigadeKey: bi.key,
                     message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: maximum ${limit.max} ${uName} (have ${uTotal})`,
                   });
                 }
@@ -263,6 +274,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         if (total < slot.min) {
           issues.push({
             level: "error",
+            brigadeKey: bi.key,
             message: `${bt.name} → ${slot.label}: needs at least ${slot.min} (have ${total})`,
           });
         }
@@ -270,6 +282,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           const reason = slot.maxPerPoints ? ` (1 per ${slot.maxPerPoints.perPoints} pts, army is ${armyTotalPoints} pts)` : "";
           issues.push({
             level: "error",
+            brigadeKey: bi.key,
             message: `${bt.name} → ${slot.label}: maximum ${slotMax} allowed${reason} (have ${total})`,
           });
         }
@@ -282,6 +295,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             );
             issues.push({
               level: "error",
+              brigadeKey: bi.key,
               message: `${bt.name} → ${slot.label}: cannot mix types (have ${names.join(", ")})`,
             });
           }
@@ -301,6 +315,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
               maxGroups === 1 ? "choose one option" : `choose at most ${maxGroups} options`;
             issues.push({
               level: "error",
+              brigadeKey: bi.key,
               message: `${bt.name} → ${slot.label}: too many options selected (${labels.join(", ")}) — ${choose}`,
             });
           }
@@ -314,6 +329,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             const unitName = nation.units.find((u) => u.id === limit.unitId)?.name ?? limit.unitId;
             issues.push({
               level: "error",
+              brigadeKey: bi.key,
               message: `${bt.name} → ${slot.label}: maximum ${limit.max} ${unitName} per brigade (have ${unitTotal})`,
             });
           }
@@ -328,6 +344,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
               grp.unitIds.map((id) => nation.units.find((u) => u.id === id)?.name ?? id).join(" / ");
             issues.push({
               level: "error",
+              brigadeKey: bi.key,
               message: `${bt.name} → ${slot.label}: maximum ${grp.max} ${label} combined per brigade (have ${grpTotal})`,
             });
           }
@@ -346,6 +363,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             if (uTotal > allowed) {
               issues.push({
                 level: "error",
+                brigadeKey: bi.key,
                 message: `${bt.name} → ${slot.label}: maximum ${allowed} ${uName} (1 per ${dyn.perBattalions.ratio} battalions; ${battalions} in brigade, have ${uTotal})`,
               });
             }
@@ -364,6 +382,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
             if (uTotal > qualifying) {
               issues.push({
                 level: "error",
+                brigadeKey: bi.key,
                 message: `${bt.name} → ${slot.label}: maximum ${qualifying} ${uName} (1 per regiment of ${minBattalions}+ battalions, have ${uTotal})`,
               });
             }
@@ -375,6 +394,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           const have = countUnitsInInstance(bi, slot.requiresBrigadeCount!.unitIds);
           issues.push({
             level: "error",
+            brigadeKey: bi.key,
             message: `${bt.name} → ${slot.label}: requires ${needed} qualifying units in this brigade first (have ${have})`,
           });
         }
@@ -384,6 +404,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           const have = countUnitsInArmy(roster.brigadeInstances, slot.requiresArmyUnitCount!.unitIds);
           issues.push({
             level: "error",
+            brigadeKey: bi.key,
             message: `${bt.name} → ${slot.label}: requires ${needed} qualifying units in the army (have ${have})`,
           });
         }
@@ -459,3 +480,28 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
 
   return issues;
 }
+
+/** "2nd Infantry Brigade" when the army has more than one of that type, otherwise just "Infantry Brigade" */
+export function brigadeDisplayName(nation: Nation, roster: RosterState, brigadeKey: string): string {
+  const bi = roster.brigadeInstances.find((b) => b.key === brigadeKey);
+  const name = nation.brigades.find((b) => b.id === bi?.brigadeTypeId)?.name ?? "Brigade";
+  if (!bi) return name;
+  const sameType = roster.brigadeInstances.filter((b) => b.brigadeTypeId === bi.brigadeTypeId);
+  if (sameType.length < 2) return name;
+  const n = sameType.indexOf(bi) + 1;
+  const suffix = n % 10 === 1 && n % 100 !== 11 ? "st" : n % 10 === 2 && n % 100 !== 12 ? "nd" : n % 10 === 3 && n % 100 !== 13 ? "rd" : "th";
+  return `${n}${suffix} ${name}`;
+}
+
+/** An issue's message without the brigade name in front, for showing on that brigade's own card */
+export function brigadeIssueText(message: string, brigadeName: string): string {
+  const text = message.startsWith(`${brigadeName}: `)
+    ? message.slice(brigadeName.length + 2)
+    : message.startsWith(`${brigadeName} → `)
+      ? message.slice(brigadeName.length + 3)
+      : message;
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+/** Asks the builder to open a brigade's card and scroll to it, e.g. from the roster's issue list */
+export const REVEAL_BRIGADE_EVENT = "army-builder:reveal-brigade";

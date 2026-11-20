@@ -17,13 +17,14 @@ import {
   Tooltip,
   UnstyledButton,
 } from "@mantine/core";
-import { IconChevronDown, IconCopy, IconPlus, IconTrash, IconSword } from "@tabler/icons-react";
+import { IconAlertTriangle, IconChevronDown, IconCopy, IconPlus, IconTrash, IconSword } from "@tabler/icons-react";
 import type { Nation } from "@/data/types";
 import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
 import { limitBadge } from "@/lib/limitBadge";
+import { brigadeIssueText, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { countByType, effectiveMax, effectiveSlotMax, requirementLabel, requirementMet } from "@/lib/brigadeLimits";
 
 interface Props {
@@ -102,6 +103,38 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
       else next.add(key);
       return next;
     });
+  // Each brigade's own problems, shown on its card (the roster panel links here)
+  const issuesByBrigade = new Map<string, string[]>();
+  for (const issue of validateRoster(nation, roster)) {
+    if (!issue.brigadeKey) continue;
+    const bi = roster.brigadeInstances.find((b) => b.key === issue.brigadeKey);
+    const name = nation.brigades.find((b) => b.id === bi?.brigadeTypeId)?.name ?? "";
+    issuesByBrigade.set(issue.brigadeKey, [
+      ...(issuesByBrigade.get(issue.brigadeKey) ?? []),
+      brigadeIssueText(issue.message, name),
+    ]);
+  }
+
+  // The roster's "fix this" links open the brigade if it's folded, then bring it into view
+  useEffect(() => {
+    function reveal(e: Event) {
+      const key = (e as CustomEvent<string>).detail;
+      setCollapsed((prev) => {
+        if (!prev.has(key)) return prev;
+        const next = new Set(prev);
+        next.delete(key);
+        return next;
+      });
+      requestAnimationFrame(() => {
+        const el = document.getElementById(`brigade-${key}`);
+        el?.scrollIntoView({ behavior: "smooth", block: "start" });
+        el?.focus({ preventScroll: true });
+      });
+    }
+    window.addEventListener(REVEAL_BRIGADE_EVENT, reveal);
+    return () => window.removeEventListener(REVEAL_BRIGADE_EVENT, reveal);
+  }, []);
+
   const allCollapsed =
     roster.brigadeInstances.length > 0 && roster.brigadeInstances.every((bi) => collapsed.has(bi.key));
 
@@ -362,7 +395,10 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
               p="md"
               radius="md"
               className="brigade-card"
+              id={`brigade-${instance.key}`}
+              tabIndex={-1}
               data-collapsed={collapsed.has(instance.key) || undefined}
+              data-issues={issuesByBrigade.has(instance.key) || undefined}
             >
               <Group justify="space-between" wrap="nowrap">
                 {/* The title is the fold toggle; the heading wraps the button so it stays a heading */}
@@ -397,6 +433,18 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                   </Tooltip>
                 </Group>
               </Group>
+              {/* What's wrong with this brigade, shown whether it's open or folded */}
+              {issuesByBrigade.has(instance.key) && (
+                <div className="brigade-issues">
+                  <IconAlertTriangle size={15} aria-hidden className="brigade-issues-icon" />
+                  <ul>
+                    {issuesByBrigade.get(instance.key)!.map((text, i) => (
+                      <li key={i}>{text}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {collapsed.has(instance.key) &&
                 (() => {
                   const summary = brigadeSummary(instance);
