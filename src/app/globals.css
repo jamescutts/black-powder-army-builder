@@ -317,6 +317,49 @@ body {
   min-width: 0;
 }
 
+/* The brigade title folds the card: a chevron that turns when it's closed */
+.brigade-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  border-radius: var(--mantine-radius-sm);
+}
+
+.brigade-toggle:focus-visible {
+  outline: 2px solid var(--mantine-color-brown-6);
+  outline-offset: 2px;
+}
+
+.brigade-chevron {
+  flex-shrink: 0;
+  color: var(--mantine-color-brown-6);
+  transition: transform 150ms ease;
+}
+
+.brigade-card[data-collapsed] .brigade-chevron {
+  transform: rotate(-90deg);
+}
+
+/* Lines the summary and body up with the title text, past the chevron */
+.brigade-summary {
+  padding-left: 24px;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+.brigade-body {
+  padding-top: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brigade-chevron {
+    transition: none;
+  }
+}
+
 /* "Add French Line Infantry": long unit names shorten rather than widen the card */
 .add-unit-label {
   overflow: hidden;

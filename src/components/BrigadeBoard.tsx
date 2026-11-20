@@ -5,6 +5,7 @@ import {
   ActionIcon,
   Badge,
   Button,
+  Collapse,
   Group,
   Notification,
   Paper,
@@ -14,8 +15,9 @@ import {
   ThemeIcon,
   Title,
   Tooltip,
+  UnstyledButton,
 } from "@mantine/core";
-import { IconCopy, IconPlus, IconTrash, IconSword } from "@tabler/icons-react";
+import { IconChevronDown, IconCopy, IconPlus, IconTrash, IconSword } from "@tabler/icons-react";
 import type { Nation } from "@/data/types";
 import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
@@ -89,6 +91,46 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         : null;
     return { value: bt.id, label: reason ? `${bt.name} (${reason})` : bt.name, disabled: !!reason };
   });
+
+  // Brigades folded down to a one-line summary, so a big army stays easy to scan. Everything starts
+  // open, and new brigades are added open.
+  const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
+  const toggleCollapsed = (key: string) =>
+    setCollapsed((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  const allCollapsed =
+    roster.brigadeInstances.length > 0 && roster.brigadeInstances.every((bi) => collapsed.has(bi.key));
+
+  /**
+   * What a folded brigade still shows: its commander, then its units totalled by type across every
+   * slot and regiment, e.g. "2 regiments: 6× French Line Infantry · 1× Foot Artillery Section".
+   */
+  const brigadeSummary = (bi: RosterBrigadeInstance) => {
+    const commanderUnit = bi.commanderLine ? nation.units.find((u) => u.id === bi.commanderLine!.unitId) : undefined;
+    const commander = commanderUnit
+      ? `${commanderUnit.name}${bi.commanderLine!.variantLabel ? ` (${bi.commanderLine!.variantLabel})` : ""}`
+      : null;
+
+    const lines = [
+      ...bi.slotLines.flat(),
+      ...(bi.regimentSlots ?? []).flatMap((r) => (r ?? []).flatMap((reg) => reg.slotLines.flat())),
+    ];
+    const counts = new Map<string, number>();
+    for (const l of lines) {
+      const unit = nation.units.find((u) => u.id === l.unitId);
+      if (!unit) continue;
+      const name = l.variantLabel ? `${unit.name} (${l.variantLabel})` : unit.name;
+      counts.set(name, (counts.get(name) ?? 0) + l.qty);
+    }
+    const units = [...counts].map(([name, qty]) => `${qty}× ${name}`).join(" · ");
+    const regiments = (bi.regimentSlots ?? []).reduce((n, r) => n + (r?.length ?? 0), 0);
+    const regimentsLabel = regiments > 0 ? `${regiments} regiment${regiments === 1 ? "" : "s"}: ` : "";
+    return { commander, units: units ? regimentsLabel + units : "No units yet" };
+  };
 
   // After a brigade or regiment is removed, a notice offers to put it back. It re-inserts the removed
   // piece into whatever the roster is by then, so other edits made meanwhile aren't lost.
@@ -286,14 +328,27 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
       </Stack>
 
       <Stack gap="sm">
-        <Title order={2} className="builder-heading">
-          Brigades{" "}
-          {roster.brigadeInstances.length > 0 && (
-            <Text span c="dimmed" fz="md" ff="body" fw={400}>
-              {roster.brigadeInstances.length}
-            </Text>
+        <Group justify="space-between" align="baseline">
+          <Title order={2} className="builder-heading">
+            Brigades{" "}
+            {roster.brigadeInstances.length > 0 && (
+              <Text span c="dimmed" fz="md" ff="body" fw={400}>
+                {roster.brigadeInstances.length}
+              </Text>
+            )}
+          </Title>
+          {roster.brigadeInstances.length > 1 && (
+            <Button
+              size="compact-sm"
+              variant="subtle"
+              onClick={() =>
+                setCollapsed(allCollapsed ? new Set() : new Set(roster.brigadeInstances.map((bi) => bi.key)))
+              }
+            >
+              {allCollapsed ? "Expand all" : "Collapse all"}
+            </Button>
           )}
-        </Title>
+        </Group>
         {roster.brigadeInstances.map((instance) => {
           const bt = nation.brigades.find((b) => b.id === instance.brigadeTypeId);
           if (!bt) return null;
@@ -301,13 +356,31 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
             ? nation.units.find((u) => u.id === bt.commanderUnitId)
             : undefined;
           return (
-            <Paper key={instance.key} withBorder p="md" radius="md" className="brigade-card">
-              <Group justify="space-between" wrap="nowrap" mb={bt.note ? 2 : "sm"}>
+            <Paper
+              key={instance.key}
+              withBorder
+              p="md"
+              radius="md"
+              className="brigade-card"
+              data-collapsed={collapsed.has(instance.key) || undefined}
+            >
+              <Group justify="space-between" wrap="nowrap">
+                {/* The title is the fold toggle; the heading wraps the button so it stays a heading */}
                 <Title order={3} className="brigade-card-title">
-                  {bt.name}{" "}
-                  <Text span c="dimmed" fz="sm" ff="body" fw={400}>
-                    {brigadePoints(instance)} pts
-                  </Text>
+                  <UnstyledButton
+                    className="brigade-toggle"
+                    onClick={() => toggleCollapsed(instance.key)}
+                    aria-expanded={!collapsed.has(instance.key)}
+                    aria-controls={`brigade-body-${instance.key}`}
+                  >
+                    <IconChevronDown size={18} className="brigade-chevron" aria-hidden />
+                    <span>
+                      {bt.name}{" "}
+                      <Text span c="dimmed" fz="sm" ff="body" fw={400}>
+                        {brigadePoints(instance)} pts
+                      </Text>
+                    </span>
+                  </UnstyledButton>
                 </Title>
                 <Group gap={4}>
                   {effectiveMax(bt, roster.brigadeInstances) > countByType(roster.brigadeInstances, bt.id) && (
@@ -324,6 +397,25 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                   </Tooltip>
                 </Group>
               </Group>
+              {collapsed.has(instance.key) &&
+                (() => {
+                  const summary = brigadeSummary(instance);
+                  return (
+                    <div className="brigade-summary">
+                      {summary.commander && (
+                        <Text size="xs" c="brown.6" fs="italic">
+                          ★ {summary.commander}
+                        </Text>
+                      )}
+                      <Text size="xs" c={summary.units === "No units yet" ? "dimmed" : undefined}>
+                        {summary.units}
+                      </Text>
+                    </div>
+                  );
+                })()}
+
+              <Collapse expanded={!collapsed.has(instance.key)} id={`brigade-body-${instance.key}`}>
+              <div className="brigade-body">
               {bt.note && (
                 <Text size="xs" c="dimmed" mb="sm">
                   {bt.note}
@@ -338,7 +430,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                         <IconSword size={14} />
                       </ThemeIcon>
                       <Text size="sm" fw={600}>
-                        Brigade Commander (required)
+                        Brigade Commander
                       </Text>
                     </Group>
                     <Group gap={6} wrap="nowrap">
@@ -348,7 +440,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                           w={170}
                           data={commanderUnit.variants!.map((v) => ({
                             value: v.label,
-                            label: `${v.label} (${v.cost} pts)`,
+                            // A free commander just shows its rating; "(0 pts)" adds nothing
+                            label: v.cost ? `${v.label} (${v.cost} pts)` : v.label,
                           }))}
                           value={instance.commanderLine.variantLabel}
                           onChange={(v) => v && handleCommanderVariant(instance.key, v)}
@@ -357,9 +450,11 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                       ) : (
                         <Text size="xs">{commanderUnit.name}</Text>
                       )}
-                      <Badge size="sm" variant="filled" color="brown">
-                        {unitCost(commanderUnit, instance.commanderLine.variantLabel)} pts
-                      </Badge>
+                      {unitCost(commanderUnit, instance.commanderLine.variantLabel) > 0 && (
+                        <Badge size="sm" variant="filled" color="brown">
+                          {unitCost(commanderUnit, instance.commanderLine.variantLabel)} pts
+                        </Badge>
+                      )}
                     </Group>
                   </Group>
                 </Paper>
@@ -466,6 +561,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                   );
                 })}
               </Stack>
+              </div>
+              </Collapse>
             </Paper>
           );
         })}
