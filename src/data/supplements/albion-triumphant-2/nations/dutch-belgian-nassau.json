@@ -144,6 +144,23 @@
       "cost": 17
     },
     {
+      "id": "dbn-nassau-jager-coys",
+      "name": "Nassau Jäger Companies",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Rifled Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Small",
+        "Skirmish",
+        "Sharpshooter"
+      ],
+      "cost": 34
+    },
+    {
       "id": "dbn-nassau-landwehr",
       "name": "Nassau Landwehr",
       "category": "Infantry",
@@ -199,6 +216,18 @@
       "cost": 27
     },
     {
+      "id": "dbn-belgian-foot-battery-half",
+      "name": "Belgian Foot Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 14
+    },
+    {
       "id": "dbn-dutch-horse-battery",
       "name": "Dutch Horse Battery",
       "category": "Artillery",
@@ -212,6 +241,21 @@
         "Marauder"
       ],
       "cost": 30
+    },
+    {
+      "id": "dbn-dutch-horse-battery-half",
+      "name": "Dutch Horse Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 15
     },
     {
       "id": "dbn-cmd-orange",
@@ -262,7 +306,7 @@
       "id": "dbn-dutch-belgian-infantry-brigade",
       "name": "Dutch/Belgian Infantry Brigade",
       "min": 1,
-      "max": 4,
+      "max": 20,
       "commanderUnitId": "dbn-brig-cmd",
       "slots": [
         {
@@ -275,9 +319,113 @@
           "min": 2,
           "max": 5,
           "unitLimits": [
-            { "unitId": "dbn-line", "max": 3 },
-            { "unitId": "dbn-militia", "max": 3 },
-            { "unitId": "dbn-jager", "max": 2 }
+            {
+              "unitId": "dbn-line",
+              "max": 3
+            },
+            {
+              "unitId": "dbn-militia",
+              "max": 3
+            },
+            {
+              "unitId": "dbn-jager",
+              "max": 2
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "veteran-jager",
+          "label": "Veteran, Elite 5+",
+          "cost": 4,
+          "appliesTo": [
+            "dbn-jager"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-line",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "dbn-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "dbn-line",
+            "dbn-militia"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "large-jager",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "dbn-jager"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1,
+            "armyWide": true
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "dbn-line",
+            "dbn-militia",
+            "dbn-jager"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "morale-5",
+          "label": "Morale 5",
+          "cost": -4,
+          "appliesTo": [
+            "dbn-line",
+            "dbn-jager"
+          ],
+          "statBonus": {
+            "morale": 1
+          }
+        },
+        {
+          "id": "wavering",
+          "label": "Wavering",
+          "cost": -6,
+          "appliesTo": [
+            "dbn-line",
+            "dbn-militia",
+            "dbn-jager"
+          ],
+          "addSpecial": [
+            "Wavering"
           ]
         }
       ]
@@ -318,6 +466,56 @@
             }
           ]
         }
+      ],
+      "options": [
+        {
+          "id": "veteran",
+          "label": "Veteran, Elite 5+",
+          "cost": 4,
+          "appliesTo": [
+            "dbn-line",
+            "dbn-nassau-landwehr",
+            "dbn-nassau-jager-coy"
+          ],
+          "addSpecial": [
+            "Elite 5+"
+          ],
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "dbn-line",
+            "dbn-nassau-landwehr"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "dbn-line",
+            "dbn-nassau-landwehr"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "jager-small",
+          "label": "Small (Companies)",
+          "appliesTo": [
+            "dbn-nassau-jager-coy"
+          ],
+          "swapTo": {
+            "dbn-nassau-jager-coy": "dbn-nassau-jager-coys"
+          }
+        }
       ]
     },
     {
@@ -334,6 +532,43 @@
           ],
           "min": 1,
           "max": 3
+        }
+      ],
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "dbn-light-dragoon-hussar"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1,
+            "armyWide": true
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "dbn-light-dragoon-hussar"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "unreliable",
+          "label": "Unreliable",
+          "cost": -3,
+          "appliesTo": [
+            "dbn-light-dragoon-hussar"
+          ],
+          "addSpecial": [
+            "Unreliable"
+          ]
         }
       ]
     },
@@ -352,6 +587,29 @@
           "min": 1,
           "max": 3
         }
+      ],
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "dbn-carabinier"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "unreliable",
+          "label": "Unreliable",
+          "cost": -3,
+          "appliesTo": [
+            "dbn-carabinier"
+          ],
+          "addSpecial": [
+            "Unreliable"
+          ]
+        }
       ]
     },
     {
@@ -359,17 +617,22 @@
       "name": "Divisional Artillery",
       "min": 0,
       "max": 1,
-      "note": "Requires at least 2 brigades and 6 infantry battalions taken in the army. Batteries attach to any brigade.",
+      "note": "At least two brigades and six infantry battalions must be taken; each battery is attached to any brigade.",
       "slots": [
         {
-          "label": "Foot Artillery Battery (optional, if 2+ brigades and 6+ infantry battalions taken)",
+          "label": "Foot Artillery Battery (optional)",
           "unitIds": [
             "dbn-belgian-foot-battery"
           ],
           "min": 0,
           "max": 1,
           "requiresArmyUnitCount": {
-            "unitIds": ["dbn-line", "dbn-militia", "dbn-jager", "dbn-nassau-jager-coy"],
+            "unitIds": [
+              "dbn-line",
+              "dbn-militia",
+              "dbn-jager",
+              "dbn-nassau-landwehr"
+            ],
             "min": 6
           },
           "unitCaps": [
@@ -389,14 +652,19 @@
           ]
         },
         {
-          "label": "Horse Artillery Battery (optional, if 2+ brigades and 6+ infantry battalions taken)",
+          "label": "Horse Artillery Battery (optional)",
           "unitIds": [
             "dbn-dutch-horse-battery"
           ],
           "min": 0,
           "max": 1,
           "requiresArmyUnitCount": {
-            "unitIds": ["dbn-line", "dbn-militia", "dbn-jager", "dbn-nassau-jager-coy"],
+            "unitIds": [
+              "dbn-line",
+              "dbn-militia",
+              "dbn-jager",
+              "dbn-nassau-landwehr"
+            ],
             "min": 6
           },
           "unitCaps": [
@@ -415,41 +683,96 @@
             }
           ]
         }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "dbn-dutch-belgian-infantry-brigade",
+          "dbn-nassau-infantry-brigade",
+          "dbn-light-cavalry-brigade",
+          "dbn-heavy-cavalry-brigade"
+        ],
+        "min": 2
+      },
+      "options": [
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "dbn-belgian-foot-battery",
+            "dbn-dutch-horse-battery"
+          ],
+          "swapTo": {
+            "dbn-belgian-foot-battery": "dbn-belgian-foot-battery-half",
+            "dbn-dutch-horse-battery": "dbn-dutch-horse-battery-half"
+          }
+        }
       ]
     },
     {
       "id": "dbn-horse-artillery-batteries",
       "name": "Horse Artillery Batteries",
       "min": 0,
-      "max": 1,
-      "note": "1 battery, requiring 3+ Cavalry Regiments (Carabinier and/or Light Dragoon/Hussar) taken in the army. Attaches to any Cavalry Brigade.",
+      "max": 20,
+      "note": "One battery per 3 cavalry regiments in the army, attached to any cavalry brigade.",
       "slots": [
         {
-          "label": "Horse Artillery Battery (optional, if 3+ Cavalry Regiments taken)",
+          "label": "Horse Artillery Battery",
           "unitIds": [
             "dbn-dutch-horse-battery"
           ],
-          "min": 0,
-          "max": 1,
-          "requiresArmyUnitCount": {
-            "unitIds": ["dbn-carabinier", "dbn-light-dragoon-hussar"],
-            "min": 3
-          },
-          "unitCaps": [
-            {
-              "unitId": "dbn-dutch-horse-battery",
-              "armyMax": 1
-            }
-          ]
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "options": [
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "dbn-dutch-horse-battery"
+          ],
+          "swapTo": {
+            "dbn-dutch-horse-battery": "dbn-dutch-horse-battery-half"
+          }
         }
       ]
     }
   ],
   "notes": [
-    "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
+    "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 115). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "A Dutch/Belgian brigade's 2-5 battalions come from 1-3 Line, 1-3 Militia and 0-2 Jäger; the builder checks the maximums but not that there's a Line and a Militia battalion.",
+    "A Nassau brigade's Militia battalion (one per army) is the Nassau Landwehr, 3 points less than a Line battalion.",
+    "The Horse Artillery battery can be split into two half batteries at 15 points each, each with a separate cavalry brigade. Half batteries cost half points, rounded up (Foot 14, Horse 15), with the usual half battery stat line (2-1-1, Stamina 1).",
+    "Named commanders have no official points cost in this supplement; they're priced here at the Divisional Commander cost for their Staff Rating, so adjust as you agree."
   ],
   "alliesRules": [
-    { "maxPercent": 50, "nationIds": ["anglo-netherlands-british", "brunswick"] }
+    {
+      "maxPercent": 50,
+      "nationIds": [
+        "anglo-netherlands-british",
+        "brunswick"
+      ]
+    }
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "dbn-dutch-horse-battery"
+      ],
+      "brigadeTypeIds": [
+        "dbn-horse-artillery-batteries"
+      ],
+      "perUnitIds": [
+        "dbn-carabinier",
+        "dbn-light-dragoon-hussar"
+      ],
+      "ratio": 3,
+      "label": "Horse Artillery batteries"
+    }
+  ],
+  "upgradesModelled": true,
+  "specialRules": [
+    "Netherlands and Nassau infantry: Must Form Square, Mixed Formation and Column of Companies (see the British rules), and they can use Attack Column. Line, Militia and Landwehr battalions can form skirmish order in terrain they couldn't normally enter.",
+    "Dutch and Belgian cavalry can form Line, Deep Formation (see the British rules) and March Column."
   ]
 }

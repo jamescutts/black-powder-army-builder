@@ -223,6 +223,11 @@ export interface UnitOption {
      * (+6) Veteran upgrades, which together may cover "up to half of all German or Hungarian battalions"
      */
     sharedWith?: string[];
+    /**
+     * A cap across the whole army on top of the brigade's own limit, e.g. Britain's "Upgrade 1 in 4
+     * battalions to Light infantry (maximum of 3 in army)". Counted by option id, like `armyWide`.
+     */
+    armyMax?: number;
   };
   /**
    * The size the unit becomes. Each step from its own size (Small, standard, Large) changes Hand-to-Hand

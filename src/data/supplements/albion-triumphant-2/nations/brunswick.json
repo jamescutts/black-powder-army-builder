@@ -204,6 +204,21 @@
       "cost": 30
     },
     {
+      "id": "bw-horse-battery-half",
+      "name": "Brunswick Horse Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 15
+    },
+    {
       "id": "bw-foot-battery",
       "name": "Brunswick Foot Battery",
       "category": "Artillery",
@@ -214,6 +229,18 @@
       "morale": "4",
       "stamina": "1",
       "cost": 27
+    },
+    {
+      "id": "bw-foot-battery-half",
+      "name": "Brunswick Foot Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 14
     }
   ],
   "brigades": [
@@ -241,12 +268,58 @@
           ],
           "min": 0,
           "max": 1,
-          "requiresBrigadeCount": { "unitIds": ["bw-light"], "min": 2 },
+          "requiresBrigadeCount": {
+            "unitIds": [
+              "bw-light"
+            ],
+            "min": 2
+          },
           "unitCaps": [
             {
               "unitId": "bw-leib-light",
               "armyMax": 1
             }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "bw-line",
+            "bw-light",
+            "bw-leib-light"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "bw-line",
+            "bw-light",
+            "bw-leib-light"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "steady",
+          "label": "Not Unreliable",
+          "cost": 3,
+          "appliesTo": [
+            "bw-line",
+            "bw-light"
+          ],
+          "removeSpecial": [
+            "Unreliable"
           ]
         }
       ]
@@ -266,7 +339,38 @@
             "bw-vanguard-battalion"
           ],
           "min": 1,
-          "max": 3
+          "max": 3,
+          "mutuallyExclusiveGroups": [
+            {
+              "unitIds": [
+                "bw-vanguard-jager-coys",
+                "bw-vanguard-light-coys"
+              ],
+              "label": "Vanguard companies"
+            },
+            {
+              "unitIds": [
+                "bw-vanguard-battalion"
+              ],
+              "label": "Vanguard Battalion"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "veteran",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "bw-vanguard-jager-coys",
+            "bw-vanguard-light-coys",
+            "bw-vanguard-battalion"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
         }
       ]
     },
@@ -294,6 +398,30 @@
           "min": 0,
           "max": 1
         }
+      ],
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "bw-hussar",
+            "bw-uhlan"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "bw-hussar",
+            "bw-uhlan"
+          ],
+          "group": "size",
+          "size": "small"
+        }
       ]
     },
     {
@@ -311,7 +439,10 @@
           "min": 0,
           "max": 1,
           "unitCaps": [
-            { "unitId": "bw-foot-battery", "armyMax": 1 }
+            {
+              "unitId": "bw-foot-battery",
+              "armyMax": 1
+            }
           ]
         },
         {
@@ -325,18 +456,52 @@
             {
               "unitId": "bw-horse-battery",
               "armyMax": 1,
-              "requiresBrigades": { "brigadeTypeIds": ["bw-cavalry-brigade"], "min": 1 }
+              "requiresBrigades": {
+                "brigadeTypeIds": [
+                  "bw-cavalry-brigade"
+                ],
+                "min": 1
+              }
             }
           ]
+        }
+      ],
+      "options": [
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "bw-foot-battery",
+            "bw-horse-battery"
+          ],
+          "swapTo": {
+            "bw-foot-battery": "bw-foot-battery-half",
+            "bw-horse-battery": "bw-horse-battery-half"
+          }
         }
       ]
     }
   ],
   "notes": [
-    "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "The Advanced Guard was an independent formation, directly under the Divisional Commander: Vanguard Jäger and/or Light Infantry companies, or (not combined with companies) Vanguard Battalions."
+    "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 113). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "The Advanced Guard is commanded directly by the Divisional Commander, with no Brigade Commander of its own: Vanguard Jäger and/or Light companies, or Vanguard Battalions.",
+    "The foot battery goes in an infantry brigade and the horse battery with the cavalry brigade; build them here and deploy them with those brigades.",
+    "The brigade box prices Line Infantry at 22 points; the stat table's 33 is used. The chapter (p. 47) gives the Foot battery Stamina 2 and the Vanguard Battalion no Marauder; the list's table is followed.",
+    "Half batteries cost half points, rounded up (Foot 14, Horse 15), with the usual half battery stat line (2-1-1, Stamina 1).",
+    "The Uhlan regiment was historically Small: take the Uhlan Squadron, or a Small Uhlan regiment, which is the same."
   ],
   "alliesRules": [
-    { "maxPercent": 50, "nationIds": ["anglo-netherlands-british", "dutch-belgian-nassau"] }
+    {
+      "maxPercent": 50,
+      "nationIds": [
+        "anglo-netherlands-british",
+        "dutch-belgian-nassau"
+      ]
+    }
+  ],
+  "upgradesModelled": true,
+  "specialRules": [
+    "All Brunswick infantry: Must Form Square, Mixed Formation, Column of Companies (see the British rules), and can form skirmish order in terrain they couldn't normally enter. Brunswick infantry can use Attack Column.",
+    "Brunswick cavalry can form Line, Deep Formation (see the British rules) and March Column."
   ]
 }

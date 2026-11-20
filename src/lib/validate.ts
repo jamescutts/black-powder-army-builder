@@ -10,6 +10,7 @@ import {
   limitText,
   optionAllowance,
   optionTaken,
+  optionTakenInArmy,
   unitNoun,
 } from "@/lib/options";
 import {
@@ -440,6 +441,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
 
   // ─── Upgrades and downgrades: limits, and ones that can't be combined ──────
   const armyWideReported = new Set<string>();
+  const armyMaxReported = new Set<string>();
   for (const bi of roster.brigadeInstances) {
     const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
     if (!bt?.options?.length) continue;
@@ -461,6 +463,17 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           brigadeKey: o.limit?.armyWide ? undefined : bi.key,
           message: `${o.limit?.armyWide ? "Army" : bt.name}: ${o.label} on ${taken} ${noun}, only ${allowed} allowed${limit ? ` (${limit})` : ""}`,
         });
+      }
+      // A cap across the army on top of the brigade's own limit, reported once
+      if (o.limit?.armyMax !== undefined && !armyMaxReported.has(o.id)) {
+        armyMaxReported.add(o.id);
+        const inArmy = optionTakenInArmy(o, roster.brigadeInstances);
+        if (inArmy > o.limit.armyMax) {
+          issues.push({
+            level: "error",
+            message: `Army: ${o.label} on ${inArmy} ${unitNoun(nation, o.appliesTo, inArmy)}, only ${o.limit.armyMax} allowed in the army`,
+          });
+        }
       }
     }
 

@@ -165,6 +165,11 @@ export function optionTaken(o: UnitOption, instance: RosterBrigadeInstance, army
     .reduce((s, { line }) => s + line.qty, 0);
 }
 
+/** How many units in the whole army have taken an option (and those it shares its limit with) */
+export function optionTakenInArmy(o: UnitOption, army: RosterBrigadeInstance[]): number {
+  return army.length ? optionTaken({ ...o, limit: { ...o.limit, armyWide: true } }, army[0], army) : 0;
+}
+
 /** What an option adds to one of a unit's cost: its own cost, or the difference its swap makes */
 export function optionDelta(nation: Nation, o: UnitOption, base: UnitEntry): number {
   const to = o.swapTo?.[base.id] ? nation.units.find((u) => u.id === o.swapTo![base.id]) : undefined;
@@ -220,6 +225,13 @@ export function limitText(nation: Nation, o: UnitOption): string | null {
   return null;
 }
 
+/** The limit text with any army-wide cap added, e.g. "1 per 4 battalions, 3 in the army" */
+export function fullLimitText(nation: Nation, o: UnitOption): string | null {
+  const own = limitText(nation, o);
+  const army = o.limit?.armyMax !== undefined ? `${o.limit.armyMax} in the army` : null;
+  return [own, army].filter(Boolean).join(", ") || null;
+}
+
 /**
  * Why a unit can't take an option right now, or null if it can (or already has it). Options in the same
  * group as one it has are fine: taking one swaps out the other.
@@ -241,10 +253,13 @@ export function unitOptionBlocked(
   if (clash) return o.excludesReason ?? clash.excludesReason ?? `Can't be combined with ${clash.label}`;
   const allowed = optionAllowance(o, instance, army);
   if (optionTaken(o, instance, army) >= allowed) {
-    const limit = limitText(nation, o);
+    const limit = fullLimitText(nation, o);
     return allowed === 0 && o.limit?.per
       ? `Needs ${o.limit.per.ratio} ${unitNoun(nation, o.limit.per.unitIds, o.limit.per.ratio)} in the ${o.limit.armyWide ? "army" : "brigade"} (${limit})`
       : `Limit reached${limit ? ` (${limit})` : ""}`;
+  }
+  if (o.limit?.armyMax !== undefined && army && optionTakenInArmy(o, army) >= o.limit.armyMax) {
+    return `Limit reached (${o.limit.armyMax} in the army)`;
   }
   return null;
 }

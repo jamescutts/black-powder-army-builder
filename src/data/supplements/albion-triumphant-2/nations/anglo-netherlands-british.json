@@ -48,6 +48,20 @@
       ]
     },
     {
+      "id": "anb-brig-cmd-sr7",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        }
+      ]
+    },
+    {
       "id": "anb-line",
       "name": "British Line Infantry",
       "category": "Infantry",
@@ -151,6 +165,24 @@
         "First Fire"
       ],
       "cost": 40
+    },
+    {
+      "id": "anb-highland-fc",
+      "name": "Highland Infantry, Ferocious Charge",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Tough Fighter",
+        "Steady Line",
+        "First Fire",
+        "Ferocious Charge"
+      ],
+      "cost": 43
     },
     {
       "id": "anb-rifle-coy",
@@ -364,6 +396,22 @@
       "cost": 31
     },
     {
+      "id": "anb-royal-arty-half",
+      "name": "Royal and KGL Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Shrapnel"
+      ],
+      "cost": 15
+    },
+    {
       "id": "anb-royal-horse-arty",
       "name": "Royal Horse and KGL Horse Artillery",
       "category": "Artillery",
@@ -381,6 +429,23 @@
       "cost": 34
     },
     {
+      "id": "anb-royal-horse-arty-half",
+      "name": "Royal Horse and KGL Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Marauder",
+        "Shrapnel"
+      ],
+      "cost": 17
+    },
+    {
       "id": "anb-hanover-foot-arty",
       "name": "Hanoverian Foot Artillery",
       "category": "Artillery",
@@ -391,6 +456,19 @@
       "morale": "4",
       "stamina": "2",
       "cost": 27
+    },
+    {
+      "id": "anb-hanover-foot-arty-half",
+      "name": "Hanoverian Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [],
+      "cost": 13
     },
     {
       "id": "anb-cmd-wellington",
@@ -453,15 +531,13 @@
       "id": "anb-british-infantry-brigade",
       "name": "British Infantry Brigade",
       "min": 1,
-      "max": 6,
+      "max": 20,
       "commanderUnitId": "anb-brig-cmd",
       "slots": [
         {
           "label": "Line Infantry Battalion",
           "unitIds": [
-            "anb-line",
-            "anb-light",
-            "anb-highland"
+            "anb-line"
           ],
           "min": 2,
           "max": 4
@@ -469,12 +545,153 @@
         {
           "label": "Attached Rifle Company (optional)",
           "unitIds": [
-            "anb-rifle-coy",
             "anb-rifle-coys",
-            "anb-rifle-bn"
+            "anb-rifle-coy"
           ],
           "min": 0,
           "max": 1
+        }
+      ],
+      "options": [
+        {
+          "id": "light-infantry",
+          "label": "Light infantry",
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "anb-line": "anb-light"
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "anb-line"
+              ],
+              "ratio": 4
+            },
+            "armyMax": 3
+          }
+        },
+        {
+          "id": "highlanders",
+          "label": "Highlanders",
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "anb-line": "anb-highland"
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "anb-line"
+              ],
+              "ratio": 4
+            },
+            "armyMax": 4,
+            "sharedWith": [
+              "highlanders-fc"
+            ]
+          }
+        },
+        {
+          "id": "highlanders-fc",
+          "label": "Highlanders, Ferocious Charge",
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "anb-line": "anb-highland-fc"
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "anb-line"
+              ],
+              "ratio": 4
+            },
+            "armyMax": 4,
+            "sharedWith": [
+              "highlanders"
+            ]
+          }
+        },
+        {
+          "id": "rifles",
+          "label": "Rifles",
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "anb-line": "anb-rifle-bn"
+          },
+          "limit": {
+            "max": 1,
+            "armyWide": true
+          },
+          "excludes": [
+            "veteran-5",
+            "veteran-4"
+          ],
+          "excludesReason": "Rifles are already Reliable, Elite 4+"
+        },
+        {
+          "id": "veteran-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 8,
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+",
+          "cost": 10,
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "per": {
+              "unitIds": [
+                "anb-line"
+              ],
+              "ratio": 4
+            }
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-line"
+          ],
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -486,13 +703,56 @@
       "commanderUnitId": "anb-brig-cmd",
       "slots": [
         {
-          "label": "KGL Line Battalion",
+          "label": "Line Infantry Battalion",
           "unitIds": [
-            "anb-kgl-line",
-            "anb-kgl-light"
+            "anb-kgl-line"
           ],
           "min": 2,
           "max": 4
+        }
+      ],
+      "options": [
+        {
+          "id": "kgl-light-infantry",
+          "label": "Light infantry",
+          "appliesTo": [
+            "anb-kgl-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "anb-kgl-line": "anb-kgl-light"
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "anb-kgl-line"
+              ],
+              "ratio": 4
+            },
+            "armyMax": 2
+          }
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+",
+          "cost": 10,
+          "appliesTo": [
+            "anb-kgl-line"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-kgl-line"
+          ],
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -500,18 +760,49 @@
       "id": "anb-hanoverian-brigade",
       "name": "Hanoverian Brigade",
       "min": 1,
-      "max": 4,
+      "max": 20,
       "commanderUnitId": "anb-brig-cmd",
       "slots": [
         {
-          "label": "Hanoverian Battalion (Landwehr, or Field Line/Light)",
+          "label": "Hanoverian Battalion",
           "unitIds": [
             "anb-hanover-landwehr",
             "anb-hanover-line",
             "anb-hanover-light"
           ],
           "min": 2,
-          "max": 5
+          "max": 5,
+          "mutuallyExclusiveGroups": [
+            {
+              "unitIds": [
+                "anb-hanover-landwehr"
+              ],
+              "label": "Landwehr"
+            },
+            {
+              "unitIds": [
+                "anb-hanover-line",
+                "anb-hanover-light"
+              ],
+              "label": "Field Line and Light"
+            }
+          ],
+          "unitLimits": [
+            {
+              "unitId": "anb-hanover-line",
+              "max": 3
+            },
+            {
+              "unitId": "anb-hanover-light",
+              "max": 2
+            }
+          ],
+          "unitCaps": [
+            {
+              "unitId": "anb-hanover-light",
+              "armyMax": 2
+            }
+          ]
         },
         {
           "label": "Attached Jäger Company (optional)",
@@ -520,6 +811,32 @@
           ],
           "min": 0,
           "max": 1
+        }
+      ],
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-hanover-landwehr",
+            "anb-hanover-line",
+            "anb-hanover-light"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "first-fire",
+          "label": "First Fire",
+          "cost": 3,
+          "appliesTo": [
+            "anb-hanover-line",
+            "anb-hanover-light"
+          ],
+          "addSpecial": [
+            "First Fire"
+          ]
         }
       ]
     },
@@ -546,7 +863,29 @@
           "anb-kgl-infantry-brigade"
         ],
         "min": 2
-      }
+      },
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "anb-foot-guard"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-foot-guard"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "anb-light-cavalry-brigade",
@@ -572,14 +911,56 @@
           "anb-hanoverian-brigade"
         ],
         "ratio": 3
-      }
+      },
+      "options": [
+        {
+          "id": "veteran",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "anb-light-dragoon-hussar"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          },
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "anb-light-dragoon-hussar"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-light-dragoon-hussar"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "anb-hanoverian-cavalry-brigade",
       "name": "Hanoverian Cavalry Brigade",
       "min": 0,
       "max": 1,
-      "commanderUnitId": "anb-brig-cmd",
+      "commanderUnitId": "anb-brig-cmd-sr7",
       "note": "If a Hanoverian Infantry Brigade is in the army",
       "slots": [
         {
@@ -604,7 +985,34 @@
           "anb-hanoverian-brigade"
         ],
         "min": 1
-      }
+      },
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "anb-hanover-light-cav",
+            "anb-hanover-cumberland-hussars"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-hanover-light-cav",
+            "anb-hanover-cumberland-hussars"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "anb-heavy-cavalry-brigade",
@@ -630,7 +1038,19 @@
           "anb-hanoverian-brigade"
         ],
         "ratio": 3
-      }
+      },
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-dragoons-dragoon-guards"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "anb-household-brigade",
@@ -647,6 +1067,14 @@
           ],
           "min": 1,
           "max": 2
+        },
+        {
+          "label": "Dragoon Guard Regiment (optional)",
+          "unitIds": [
+            "anb-dragoons-dragoon-guards"
+          ],
+          "min": 0,
+          "max": 1
         }
       ],
       "requires": {
@@ -654,13 +1082,26 @@
           "anb-heavy-cavalry-brigade"
         ],
         "min": 1
-      }
+      },
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "anb-household-cav",
+            "anb-dragoons-dragoon-guards"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "anb-divisional-artillery",
       "name": "Divisional Artillery",
       "min": 0,
-      "max": 6,
+      "max": 20,
       "slots": [
         {
           "label": "Battery",
@@ -669,7 +1110,52 @@
             "anb-hanover-foot-arty"
           ],
           "min": 1,
-          "max": 1
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "anb-hanover-foot-arty",
+              "armyMax": 2
+            }
+          ]
+        }
+      ],
+      "note": "One battery per 4 infantry battalions in the army, placed in an infantry brigade of the same nationality",
+      "options": [
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "anb-royal-arty",
+            "anb-hanover-foot-arty"
+          ],
+          "swapTo": {
+            "anb-royal-arty": "anb-royal-arty-half",
+            "anb-hanover-foot-arty": "anb-hanover-foot-arty-half"
+          }
+        },
+        {
+          "id": "elite-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 4,
+          "appliesTo": [
+            "anb-royal-arty"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "elite-4",
+          "label": "Veteran, Elite 4+",
+          "cost": 6,
+          "appliesTo": [
+            "anb-royal-arty"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 4+"
+          ]
         }
       ]
     },
@@ -677,7 +1163,7 @@
       "id": "anb-horse-artillery",
       "name": "Horse Artillery Batteries",
       "min": 0,
-      "max": 4,
+      "max": 20,
       "slots": [
         {
           "label": "Battery",
@@ -687,6 +1173,46 @@
           "min": 1,
           "max": 1
         }
+      ],
+      "note": "One battery per 3 cavalry regiments in the army, attached to a cavalry brigade",
+      "excludesBrigadeTypes": [
+        "anb-artillery-brigade"
+      ],
+      "options": [
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "anb-royal-horse-arty"
+          ],
+          "swapTo": {
+            "anb-royal-horse-arty": "anb-royal-horse-arty-half"
+          }
+        },
+        {
+          "id": "elite-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 4,
+          "appliesTo": [
+            "anb-royal-horse-arty"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "elite-4",
+          "label": "Veteran, Elite 4+",
+          "cost": 6,
+          "appliesTo": [
+            "anb-royal-horse-arty"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 4+"
+          ]
+        }
       ]
     },
     {
@@ -694,8 +1220,8 @@
       "name": "Artillery Brigade",
       "min": 0,
       "max": 1,
-      "commanderUnitId": "anb-brig-cmd",
-      "note": "Alternative to taking Royal Horse Artillery batteries in direct support",
+      "commanderUnitId": "anb-brig-cmd-sr7",
+      "note": "Instead of taking Royal Horse Artillery batteries in direct support",
       "slots": [
         {
           "label": "Royal Horse Artillery Battery",
@@ -705,19 +1231,117 @@
           "min": 2,
           "max": 4
         }
+      ],
+      "options": [
+        {
+          "id": "elite-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 4,
+          "appliesTo": [
+            "anb-royal-horse-arty"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "elite-4",
+          "label": "Veteran, Elite 4+",
+          "cost": 6,
+          "appliesTo": [
+            "anb-royal-horse-arty"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 4+"
+          ]
+        }
       ]
     }
   ],
   "notes": [
-    "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "Detached Light Companies: British/KGL Line battalions can lose their Light company to form combined Small/Standard detachment units, addable to any infantry brigade.",
-    "Half battery: pay half points (rounded up) to field an artillery battery at half strength; one horse battery per army can be exchanged for a rocket troop.",
-    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
+    "Maximums and minimums are per 1,000 points unless otherwise stated (p. 109). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "Divisional batteries go in an infantry brigade of the same nationality, and Horse batteries with a cavalry brigade; build them as their own entries here and deploy them with the brigade.",
+    "Detached Light Companies: the Line battalions of a British or KGL brigade can lose their Light companies (and with them Mixed Formation). Two battalions' companies make a Tiny unit, three or four a Small unit, for any infantry brigade. Not built here.",
+    "Rockets and howitzers: one Horse battery per army can be exchanged for a rocket battery (Black Powder p. 84), and one battery for a smoothbore field howitzer battery (p. 80). An Artillery Brigade can't have more 9-pounder than 6-pounder batteries. Not built here.",
+    "The brigade boxes price a Small Rifle company at 48, Household Cavalry at 61 and a Dragoon Guard regiment at 49; the stat table says 47, 58 and 47, which the builder uses.",
+    "Half batteries cost what the Options boxes take off (Royal 15, Horse 17, Hanoverian 13), with the half battery stat line on p. 108 (2-1-1, Stamina 1).",
+    "Named commanders have no official points cost in this supplement; they're priced here at the Divisional Commander cost for their Staff Rating, so adjust as you agree."
   ],
   "specialRules": [
-    "Four-Deep Line, Column of Companies and Deep Formation are available special formations — see book for full rules."
+    "Cannot Form Attack Column: British, KGL and Hanoverian Field infantry can only form Line, Four-Deep Line, Column of Companies, Mixed Formation, March Column or Square. They can still break into skirmish order to enter terrain they couldn't normally, and form Attack Column in built-up areas. Hanoverian Landwehr can form Attack Column.",
+    "Must Form Square: British, KGL and Hanoverian infantry.",
+    "Four-Deep Line: three bases wide and two deep; −1 Shooting and −1 Hand-to-Hand, doesn't count as a column (no +1 to be hit by artillery), keeps Steady Line and First Fire and can form Mixed Formation.",
+    "Column of Companies: one company wide (four bases deep). +1 Staff Rating to order it; shoots with one die; −2 Hand-to-Hand; counts as an Attack Column when shot at by artillery but gets no Morale bonus for it.",
+    "Rifle Mixed Formation: as Mixed Formation (Black Powder p. 78), but the shot counts as from a rifle.",
+    "Lie Down: a battalion ordered to Lie Down makes artillery re-roll hits on it at medium and long range, but is dispersed if contacted. Any army's infantry can do this.",
+    "Deep Formation (all cavalry): two bases wide, three deep. +1 Staff Rating to order it, +1 combat resolution, −1 Hand-to-Hand, and artillery gets +1 to hit it.",
+    "Ferocious Charge and Gallop at Anything: British cavalry suffer +2 on their Command roll when they leave the table. Gallop at Anything gives +1 to Charge orders and Ferocious Charge, but the unit must make a breakthrough move if allowed, even off the table.",
+    "Shrapnel: British guns can fire at medium range with 3 dice, but need 5s to hit."
   ],
   "alliesRules": [
-    { "maxPercent": 50, "nationIds": ["dutch-belgian-nassau", "brunswick"] }
-  ]
+    {
+      "maxPercent": 50,
+      "nationIds": [
+        "dutch-belgian-nassau",
+        "brunswick"
+      ]
+    }
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "anb-royal-arty",
+        "anb-hanover-foot-arty"
+      ],
+      "brigadeTypeIds": [
+        "anb-divisional-artillery"
+      ],
+      "perUnitIds": [
+        "anb-line",
+        "anb-kgl-line",
+        "anb-foot-guard",
+        "anb-hanover-landwehr",
+        "anb-hanover-line",
+        "anb-hanover-light"
+      ],
+      "ratio": 4,
+      "label": "Divisional Artillery batteries"
+    },
+    {
+      "capUnitIds": [
+        "anb-royal-horse-arty"
+      ],
+      "brigadeTypeIds": [
+        "anb-horse-artillery"
+      ],
+      "perUnitIds": [
+        "anb-household-cav",
+        "anb-dragoons-dragoon-guards",
+        "anb-light-dragoon-hussar",
+        "anb-hanover-light-cav",
+        "anb-hanover-cumberland-hussars"
+      ],
+      "ratio": 3,
+      "label": "Horse Artillery batteries"
+    }
+  ],
+  "pointsCaps": [
+    {
+      "brigadeTypeIds": [
+        "anb-guards-brigade",
+        "anb-light-cavalry-brigade",
+        "anb-hanoverian-cavalry-brigade",
+        "anb-heavy-cavalry-brigade",
+        "anb-household-brigade",
+        "anb-divisional-artillery",
+        "anb-horse-artillery",
+        "anb-artillery-brigade"
+      ],
+      "maxPercent": 50,
+      "label": "Army Support Brigades"
+    }
+  ],
+  "upgradesModelled": true
 }

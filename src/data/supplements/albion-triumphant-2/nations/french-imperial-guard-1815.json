@@ -33,7 +33,7 @@
       "type": "Command",
       "armament": "-",
       "special": [
-        "Upgrade with 'A marshal's baton in every knapsack' for +10 points"
+        "Can take 'A Marshal's baton in every knapsack' (+10 points): pick it with the Staff Rating"
       ],
       "variants": [
         {
@@ -50,6 +50,53 @@
           "label": "Staff rating 9",
           "cost": 50,
           "staffRating": 9
+        },
+        {
+          "label": "Staff rating 7, Marshal's baton",
+          "cost": 10,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8, Marshal's baton",
+          "cost": 35,
+          "staffRating": 8
+        },
+        {
+          "label": "Staff rating 9, Marshal's baton",
+          "cost": 60,
+          "staffRating": 9
+        }
+      ]
+    },
+    {
+      "id": "fig15-yg-brig-cmd",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "special": [
+        "Can take 'A Marshal's baton in every knapsack' (+10 points): pick it with the Staff Rating"
+      ],
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25,
+          "staffRating": 8
+        },
+        {
+          "label": "Staff rating 7, Marshal's baton",
+          "cost": 10,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8, Marshal's baton",
+          "cost": 35,
+          "staffRating": 8
         }
       ]
     },
@@ -332,6 +379,20 @@
           "min": 2,
           "max": 4
         }
+      ],
+      "options": [
+        {
+          "id": "valiant",
+          "label": "Valiant",
+          "cost": 3,
+          "appliesTo": [
+            "fig15-old-guard-grenadiers",
+            "fig15-old-guard-chasseurs"
+          ],
+          "addSpecial": [
+            "Valiant"
+          ]
+        }
       ]
     },
     {
@@ -359,6 +420,20 @@
           "min": 0,
           "max": 1
         }
+      ],
+      "options": [
+        {
+          "id": "valiant",
+          "label": "Valiant",
+          "cost": 3,
+          "appliesTo": [
+            "fig15-middle-guard-grenadiers",
+            "fig15-middle-guard-chasseurs"
+          ],
+          "addSpecial": [
+            "Valiant"
+          ]
+        }
       ]
     },
     {
@@ -366,7 +441,7 @@
       "name": "Young Guard Infantry Brigade",
       "min": 0,
       "max": 2,
-      "commanderUnitId": "fig15-brig-cmd",
+      "commanderUnitId": "fig15-yg-brig-cmd",
       "slots": [
         {
           "label": "Young Guard Battalion",
@@ -394,7 +469,6 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "fig15-brig-cmd",
-      "note": "If at least 3 infantry brigades taken",
       "slots": [
         {
           "label": "Guard Heavy Cavalry Regiment",
@@ -413,6 +487,27 @@
           "min": 0,
           "max": 1
         }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "fig15-old-guard-brigade",
+          "fig15-middle-guard-brigade",
+          "fig15-young-guard-brigade"
+        ],
+        "min": 3
+      },
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "fig15-grenadier-guards-a-cheval",
+            "fig15-empress-dragoons"
+          ],
+          "group": "size",
+          "size": "large"
+        }
       ]
     },
     {
@@ -421,7 +516,6 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "fig15-brig-cmd",
-      "note": "If at least 3 infantry brigades taken",
       "slots": [
         {
           "label": "Guard Lancer Regiment (optional)",
@@ -439,13 +533,34 @@
           "min": 0,
           "max": 1
         }
+      ],
+      "requires": {
+        "brigadeTypeIds": [
+          "fig15-old-guard-brigade",
+          "fig15-middle-guard-brigade",
+          "fig15-young-guard-brigade"
+        ],
+        "min": 3
+      },
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "fig15-guard-lancer",
+            "fig15-chasseurs-a-cheval"
+          ],
+          "group": "size",
+          "size": "large"
+        }
       ]
     },
     {
       "id": "fig15-guards-artillery",
       "name": "Guards Artillery Support",
       "min": 0,
-      "max": 8,
+      "max": 20,
       "slots": [
         {
           "label": "Battery",
@@ -454,15 +569,22 @@
             "fig15-foot-marine-arty"
           ],
           "min": 1,
-          "max": 1
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "fig15-horse-arty",
+              "armyMax": 2
+            }
+          ]
         }
-      ]
+      ],
+      "note": "Up to 2 Horse batteries (1 per 2 cavalry regiments) and 1 Foot/Marine battery per 4 infantry battalions"
     },
     {
       "id": "fig15-heavy-artillery",
       "name": "Guards Heavy Artillery",
       "min": 0,
-      "max": 2,
+      "max": 20,
       "slots": [
         {
           "label": "Heavy Battery",
@@ -472,19 +594,79 @@
           "min": 1,
           "max": 1
         }
-      ]
+      ],
+      "note": "1 per 6 infantry battalions"
     }
   ],
   "notes": [
-    "Maximums and minimums are per 1,000 points unless otherwise stated.",
-    "The Old and Middle Guard formed their own Division of the Hundred Days campaign; each brigade fields two battalions of either Old or Middle Guard, but not mixed.",
-    "0 to 1 Marines of the Guard battalion (Tiny) may substitute for the Small version if desired."
+    "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 125). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "Historically each Old or Middle Guard brigade had two battalions of one kind, not mixed; the list allows 2-4 for flexibility.",
+    "Marines of the Guard can also be fielded as two Tiny units, or as an engineer upgrade (p. 78).",
+    "The chapter (pp. 63-65) gives the Young Guard 6/4/3/3, Reliable, and the Guard Heavy and Marine batteries Stamina 3; the list's table (p. 124) is followed."
   ],
   "alliesRules": [
     {
       "maxPercent": 25,
-      "nationIds": ["french-army-corps"],
+      "nationIds": [
+        "french-army-corps"
+      ],
       "note": "any minimums from that list apply to the points spent here (e.g. taking a Guard Heavy Cavalry Brigade needs three Corps infantry brigades first)"
     }
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "fig15-horse-arty"
+      ],
+      "perUnitIds": [
+        "fig15-grenadier-guards-a-cheval",
+        "fig15-empress-dragoons",
+        "fig15-gendarmes-tiny",
+        "fig15-chasseurs-a-cheval",
+        "fig15-guard-lancer"
+      ],
+      "ratio": 2,
+      "label": "Guards Horse batteries"
+    },
+    {
+      "capUnitIds": [
+        "fig15-foot-marine-arty"
+      ],
+      "perUnitIds": [
+        "fig15-old-guard-grenadiers",
+        "fig15-old-guard-chasseurs",
+        "fig15-middle-guard-grenadiers",
+        "fig15-middle-guard-chasseurs",
+        "fig15-yg-voltigeurs",
+        "fig15-yg-tirailleurs",
+        "fig15-marines-small",
+        "fig15-marines-tiny"
+      ],
+      "ratio": 4,
+      "label": "Guards Foot/Marine batteries"
+    },
+    {
+      "capUnitIds": [
+        "fig15-heavy-arty"
+      ],
+      "perUnitIds": [
+        "fig15-old-guard-grenadiers",
+        "fig15-old-guard-chasseurs",
+        "fig15-middle-guard-grenadiers",
+        "fig15-middle-guard-chasseurs",
+        "fig15-yg-voltigeurs",
+        "fig15-yg-tirailleurs",
+        "fig15-marines-small",
+        "fig15-marines-tiny"
+      ],
+      "ratio": 6,
+      "label": "Guards Heavy batteries"
+    }
+  ],
+  "upgradesModelled": true,
+  "specialRules": [
+    "A Marshal's baton in every knapsack: the Divisional Commander has it, and Brigade Commanders can buy it. Roll for aggression, decisiveness and independence (Black Powder p. 94) on 1 Low, 2-4 Normal, 5-6 High.",
+    "Guard infantry: Pas de Charge (in Attack Column they're Reliable, and a commander adds +1 ordering them in Attack Column), Must Form Square, Mixed Order, and can form skirmish order in terrain they couldn't normally enter.",
+    "Guard cavalry can use the Cavalry Column of Attack (see the Army Corps list)."
   ]
 }

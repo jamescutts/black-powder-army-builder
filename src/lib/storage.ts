@@ -1,6 +1,7 @@
-import type { Nation } from "@/data/types";
+import type { Nation, UnitOption } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { newKey } from "@/lib/id";
+import { unitOptionsOf } from "@/lib/options";
 
 // Saved army lists, kept in this browser's localStorage. Each list has its own id, so a nation can
 // have as many as you like (an 1812 corps and a smaller club-night force, say). The My armies page
@@ -159,6 +160,18 @@ function currentVariant(nation: Nation, line: RosterUnitLine): RosterUnitLine {
   return match ? { ...line, variantLabel: match.label } : line;
 }
 
+/**
+ * A brigade commander as the brigade now has it. When a brigade gets a commander of its own (the Young
+ * Guard's, who can't be Staff Rating 9), an old save's commander moves to it, keeping his Staff Rating
+ * where it's still offered and taking the first one otherwise.
+ */
+function ownCommander(nation: Nation, commanderUnitId: string, line: RosterUnitLine): RosterUnitLine {
+  if (line.unitId === commanderUnitId) return line;
+  const variants = nation.units.find((u) => u.id === commanderUnitId)?.variants ?? [];
+  const kept = variants.find((v) => v.label === line.variantLabel) ?? variants[0];
+  return { ...line, unitId: commanderUnitId, variantLabel: kept?.label };
+}
+
 function tidy(nation: Nation, saved: RosterState): RosterState | null {
   const unitIds = new Set(nation.units.map((u) => u.id));
   const keepLines = (lines: RosterUnitLine[] | undefined) =>
@@ -180,11 +193,23 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
         // A unit that's no longer offered where it was saved moves to the first slot that takes it, as
         // when the Prussian Cavalry Brigade's Horse Artillery joined its regiments' slot
         const flat = bt.slots.map((): RosterUnitLine[] => []);
+        const slotFor = (unitId: string, i: number) =>
+          bt.slots[i] && !bt.slots[i].regiment && bt.slots[i].unitIds.includes(unitId)
+            ? i
+            : bt.slots.findIndex((s) => !s.regiment && s.unitIds.includes(unitId));
         (bi.slotLines ?? []).forEach((lines, i) => {
-          for (const line of keepLines(lines)) {
-            const target = bt.slots[i] && !bt.slots[i].regiment && bt.slots[i].unitIds.includes(line.unitId)
-              ? i
-              : bt.slots.findIndex((s) => !s.regiment && s.unitIds.includes(line.unitId));
+          for (const saved of keepLines(lines)) {
+            let line = saved;
+            // A unit that's now an upgrade of another (a Highland battalion picked directly, before it was
+            // an upgrade of a Line battalion) goes back to that unit, with the upgrade taken
+            if (slotFor(line.unitId, i) < 0) {
+              const swapFrom = (o: UnitOption) =>
+                Object.entries(o.swapTo ?? {}).find(([from, to]) => to === line.unitId && slotFor(from, i) >= 0)?.[0];
+              const via = unitOptionsOf(bt).find((o) => swapFrom(o));
+              const from = via && swapFrom(via);
+              if (via && from) line = { ...line, unitId: from, options: [...(line.options ?? []), via.id] };
+            }
+            const target = slotFor(line.unitId, i);
             if (target >= 0) flat[target].push(line);
           }
         });
@@ -196,7 +221,7 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
             // Only a brigade type that has a commander keeps one (otherwise it would be charged but not shown)
             commanderLine:
               bt.commanderUnitId && bi.commanderLine && unitIds.has(bi.commanderLine.unitId)
-                ? { ...currentVariant(nation, bi.commanderLine), name: cleanName(bi.commanderLine.name) }
+                ? { ...ownCommander(nation, bt.commanderUnitId, currentVariant(nation, bi.commanderLine)), name: cleanName(bi.commanderLine.name) }
                 : null,
             slotLines: flat.map((lines) => splitLines(lines, known)),
             regimentSlots: bt.slots.map((slot, i) =>
