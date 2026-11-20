@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
+import { Badge, Divider, Group, List, Paper, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
 import { IconAlertTriangle, IconCircleCheck, IconListCheck } from "@tabler/icons-react";
 import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
@@ -120,8 +120,7 @@ function IssueBlock({
           {title}
         </Text>
       </Group>
-      <ScrollArea.Autosize mah={150}>
-        <List size="xs" spacing={2} className="roster-status-list">
+      <List size="xs" spacing={2} className="roster-status-list">
           {army.map((i, idx) => (
             <List.Item key={idx}>{i.message}</List.Item>
           ))}
@@ -136,8 +135,7 @@ function IssueBlock({
               </UnstyledButton>
             </List.Item>
           ))}
-        </List>
-      </ScrollArea.Autosize>
+      </List>
     </div>
   );
 }
@@ -255,8 +253,8 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
           </Badge>
         </Group>
 
-        {/* Capped to the window, so the whole sticky card, with its issues and buttons, stays on screen */}
-        <ScrollArea.Autosize mah="min(420px, max(140px, calc(100vh - 500px)))">
+        {/* Shown in full; the page keeps a long card's foot on screen as you scroll (see the builder page) */}
+        <div>
           <Stack gap="sm">
             {roster.commandItems.length > 0 && (
               <div>
@@ -335,7 +333,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
               </Text>
             )}
           </Stack>
-        </ScrollArea.Autosize>
+        </div>
 
         <Divider my="sm" />
         <Group justify="space-between">

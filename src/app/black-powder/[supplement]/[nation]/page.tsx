@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import {
@@ -129,6 +129,25 @@ function BuilderContent({ nationId }: { nationId: string }) {
     if (!listId || roster.nationId !== nationId) return;
     saveList(listId, roster);
   }, [roster, listId, nationId]);
+
+  // The roster card follows you down the page, shown in full. While it fits the window it sticks 16px
+  // from the top; once it's taller, it sticks by its foot instead (a negative top), so it scrolls with the
+  // page until its status and buttons reach the bottom of the window, and stays there.
+  const stickyRef = useRef<HTMLDivElement>(null);
+  const [stickyTop, setStickyTop] = useState(16);
+  useEffect(() => {
+    const el = stickyRef.current;
+    if (!el) return;
+    const fit = () => setStickyTop(Math.min(16, window.innerHeight - el.offsetHeight - 16));
+    // Called once on observing, then whenever the card grows or shrinks
+    const observer = new ResizeObserver(fit);
+    observer.observe(el);
+    window.addEventListener("resize", fit);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", fit);
+    };
+  }, [listId]);
 
   const supplement = useMemo(
     () => getSupplement(nation.supplementId) ?? supplements[0],
@@ -357,7 +376,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
                 </Title>
               </div>
               {/* Only the roster follows you down the page; the reference notes sit below the builder */}
-              <div style={{ position: "sticky", top: 16 }}>
+              <div ref={stickyRef} style={{ position: "sticky", top: stickyTop }}>
                 <RosterPanel
                   nation={nation}
                   roster={roster}
