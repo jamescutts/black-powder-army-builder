@@ -19,11 +19,12 @@ import {
   UnstyledButton,
 } from "@mantine/core";
 import { IconAlertTriangle, IconChevronDown, IconCopy, IconPencil, IconPlus, IconTrash } from "@tabler/icons-react";
-import type { Nation } from "@/data/types";
+import type { Nation, RegimentDef } from "@/data/types";
 import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
+import { regimentBlockedReason, slotLockedReason, unitBlockedInRegimentSlot, unitBlockedInSlot } from "@/lib/availability";
 import {
   attachTargets,
   batteriesIn,
@@ -99,16 +100,18 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
       else next.add(key);
       return next;
     });
-  // Each brigade's own problems, shown on its card (the roster panel links here)
-  const issuesByBrigade = new Map<string, string[]>();
+  // Each brigade's own problems, shown on its card (the roster panel links here): what breaks the rules
+  // in red, and what it still needs calmly, leaving out needs its slot badges already show
+  const issuesByBrigade = new Map<string, { errors: string[]; todos: { text: string; onSlot: boolean }[] }>();
   for (const issue of validateRoster(nation, roster)) {
     if (!issue.brigadeKey) continue;
     const bi = roster.brigadeInstances.find((b) => b.key === issue.brigadeKey);
     const name = nation.brigades.find((b) => b.id === bi?.brigadeTypeId)?.name ?? "";
-    issuesByBrigade.set(issue.brigadeKey, [
-      ...(issuesByBrigade.get(issue.brigadeKey) ?? []),
-      brigadeIssueText(issue.message, name),
-    ]);
+    const entry = issuesByBrigade.get(issue.brigadeKey) ?? { errors: [], todos: [] };
+    const text = brigadeIssueText(issue.message, name);
+    if (issue.level === "error") entry.errors.push(text);
+    else entry.todos.push({ text, onSlot: !!issue.shownOnSlot });
+    issuesByBrigade.set(issue.brigadeKey, entry);
   }
 
   // The roster's "fix this" links open the brigade if it's folded, then bring it into view
@@ -340,13 +343,24 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     });
   }
 
-  function handleAddRegiment(instanceKey: string, slotIndex: number, subSlotCount: number) {
+  // A new regiment starts with the battalions it must have (e.g. 1 Musketeer), as an empty one is
+  // never legal; more are added, or swapped, from there
+  function handleAddRegiment(instanceKey: string, slotIndex: number, regDef: RegimentDef) {
     const bi = roster.brigadeInstances.find((b) => b.key === instanceKey);
     if (!bi) return;
     const current = bi.regimentSlots[slotIndex] ?? [];
     const newReg: RosterRegimentInstance = {
       key: newKey("regiment"),
-      slotLines: Array.from({ length: subSlotCount }, () => []),
+      slotLines: regDef.slots.map((sub) => {
+        const unit = nation.units.find((u) => u.id === sub.unitIds[0]);
+        if (!unit || sub.min <= 0) return [];
+        return Array.from({ length: sub.min }, () => ({
+          key: newKey("line"),
+          unitId: unit.id,
+          variantLabel: defaultVariantLabel(unit),
+          qty: 1,
+        }));
+      }),
     };
     handleRegimentSlotsChange(instanceKey, slotIndex, [...current, newReg]);
   }
@@ -457,7 +471,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
               id={`brigade-${instance.key}`}
               tabIndex={-1}
               data-collapsed={collapsed.has(instance.key) || undefined}
-              data-issues={issuesByBrigade.has(instance.key) || undefined}
+              data-issues={(issuesByBrigade.get(instance.key)?.errors.length ?? 0) > 0 || undefined}
             >
               <Group justify="space-between" wrap="nowrap">
                 {renamingKey === instance.key ? (
@@ -525,17 +539,29 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                   </Tooltip>
                 </Group>
               </Group>
-              {/* What's wrong with this brigade, shown whether it's open or folded */}
-              {issuesByBrigade.has(instance.key) && (
+              {/* What breaks the rules in this brigade, shown whether it's open or folded */}
+              {(issuesByBrigade.get(instance.key)?.errors.length ?? 0) > 0 && (
                 <div className="brigade-issues">
                   <IconAlertTriangle size={15} aria-hidden className="brigade-issues-icon" />
                   <ul>
-                    {issuesByBrigade.get(instance.key)!.map((text, i) => (
+                    {issuesByBrigade.get(instance.key)!.errors.map((text, i) => (
                       <li key={i}>{text}</li>
                     ))}
                   </ul>
                 </div>
               )}
+              {/* What it still needs: only what no slot badge shows while it's open, everything when folded */}
+              {(() => {
+                const folded = collapsed.has(instance.key);
+                const todos = (issuesByBrigade.get(instance.key)?.todos ?? []).filter((t) => folded || !t.onSlot);
+                if (todos.length === 0) return null;
+                return (
+                  <div className="brigade-todos">
+                    <span className="brigade-todos-label">Still to add:</span>{" "}
+                    {todos.map((t) => t.text.replace(/^Needs at least /, "")).join("; ")}
+                  </div>
+                );
+              })()}
 
               {collapsed.has(instance.key) &&
                 (() => {
@@ -613,16 +639,30 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                               {regimentBadge.label}
                             </Badge>
                           </Group>
-                          {regiments.length < regDef.max && (
-                            <Button
-                              size="compact-xs"
-                              variant="light"
-                              leftSection={<IconPlus size={12} />}
-                              onClick={() => handleAddRegiment(instance.key, slotIndex, regDef.slots.length)}
-                            >
-                              Add {regDef.label}
-                            </Button>
-                          )}
+                          {regiments.length < regDef.max &&
+                            (() => {
+                              // Greyed out, with the reason, when another rule (the brigade's 3 regiments,
+                              // 1 Light Regiment per division) says no
+                              const why = regimentBlockedReason({ nation, roster, bt, instance, slotIndex });
+                              const button = (
+                                <Button
+                                  size="compact-xs"
+                                  variant="light"
+                                  leftSection={<IconPlus size={12} />}
+                                  disabled={!!why}
+                                  onClick={() => handleAddRegiment(instance.key, slotIndex, regDef)}
+                                >
+                                  Add {regDef.label}
+                                </Button>
+                              );
+                              return why ? (
+                                <Tooltip label={why} withArrow>
+                                  <span tabIndex={0} className="unit-option-blocked">{button}</span>
+                                </Tooltip>
+                              ) : (
+                                button
+                              );
+                            })()}
                         </Group>
 
                         {/* Regiment instances */}
@@ -714,6 +754,14 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                                     }
                                     brigade={{ nation, bt, instance, regimentOptions: reg.options }}
                                     grouped
+                                    unitBlocked={(unitId) =>
+                                      unitBlockedInRegimentSlot(
+                                        { nation, roster, bt, instance, slotIndex },
+                                        subSlot,
+                                        reg.slotLines[subSlotIdx] ?? [],
+                                        unitId
+                                      )
+                                    }
                                   />
                                 );
                               })}
@@ -743,6 +791,15 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                       onChange={(lines) => handleSlotChange(instance.key, slotIndex, lines)}
                       brigade={{ nation, bt, instance }}
                       extraInfo={attachPicker(instance, slotIndex, bt)}
+                      lockedReason={slotLockedReason({ nation, roster, bt, instance, slotIndex }, slot)}
+                      unitBlocked={(unitId) =>
+                        unitBlockedInSlot(
+                          { nation, roster, bt, instance, slotIndex },
+                          slot,
+                          instance.slotLines[slotIndex] ?? [],
+                          unitId
+                        )
+                      }
                     />
                   );
                 })}

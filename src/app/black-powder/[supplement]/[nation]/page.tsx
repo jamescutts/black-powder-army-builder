@@ -21,7 +21,7 @@ import { supplements, getSupplement, getNation, getNationsForSupplement } from "
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
 import { BrigadeBoard } from "@/components/BrigadeBoard";
-import { RosterPanel } from "@/components/RosterPanel";
+import { RosterBar, RosterPanel } from "@/components/RosterPanel";
 import { ForceOrgNotes } from "@/components/ForceOrgNotes";
 import {
   deleteList,
@@ -369,6 +369,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
           <div className="list-notes-wrap">
             <ForceOrgNotes nation={nation} />
           </div>
+          <RosterBar nation={nation} roster={roster} />
         </Container>
       )}
     </>

@@ -39,6 +39,13 @@ interface Props {
   grouped?: boolean;
   /** Anything more to show under a unit's name, e.g. which brigade an army battery is attached to */
   extraInfo?: (line: RosterUnitLine) => ReactNode;
+  /**
+   * Why one more of a unit can't be added here right now (a per-unit, army-wide or ratio limit), or
+   * null if it can. Units it names stay in the picker, greyed out with the reason.
+   */
+  unitBlocked?: (unitId: string) => string | null;
+  /** Why nothing can be added to the slot yet (e.g. it needs 6 battalions first), or null */
+  lockedReason?: string | null;
 }
 
 export function UnitLineEditor({
@@ -54,12 +61,21 @@ export function UnitLineEditor({
   brigade,
   grouped,
   extraInfo,
+  unitBlocked,
+  lockedReason,
 }: Props) {
   const [pickedUnitId, setPickedUnitId] = useState<string | null>(eligibleUnits[0]?.id ?? null);
-  const pickedUnit = eligibleUnits.find((u) => u.id === pickedUnitId);
   const [pickedVariant, setPickedVariant] = useState<string | undefined>(
-    pickedUnit ? defaultVariantLabel(pickedUnit) : undefined
+    eligibleUnits[0] ? defaultVariantLabel(eligibleUnits[0]) : undefined
   );
+  const blockedReason = (id: string) => unitBlocked?.(id) ?? null;
+  // A picked unit that's since become unavailable gives way to the first one that isn't
+  const firstAvailable = eligibleUnits.find((u) => !blockedReason(u.id));
+  const chosen = eligibleUnits.find((u) => u.id === pickedUnitId);
+  const pickedUnit = chosen && !blockedReason(chosen.id) ? chosen : firstAvailable;
+  // The option picked for it (weapon, battery size), or its first when the fallback unit is showing
+  const variant =
+    pickedUnit && pickedUnit.id === pickedUnitId ? pickedVariant : pickedUnit ? defaultVariantLabel(pickedUnit) : undefined;
 
   const total = lines.reduce((s, l) => s + l.qty, 0);
   const effectiveMaxValue = computeMax ? computeMax(lines) : max;
@@ -80,7 +96,14 @@ export function UnitLineEditor({
   // Every unit gets a line of its own, so each can take its own upgrades
   function handleAdd() {
     if (!pickedUnit) return;
-    onChange([...lines, { key: newKey("line"), unitId: pickedUnit.id, variantLabel: pickedVariant, qty: 1 }]);
+    onChange([...lines, { key: newKey("line"), unitId: pickedUnit.id, variantLabel: variant, qty: 1 }]);
+  }
+
+  // Swapping the army commander for another (a Divisional Commander for Marshal Davout, say)
+  function handleSwapUnit(key: string, unitId: string) {
+    const u = eligibleUnits.find((x) => x.id === unitId);
+    if (!u) return;
+    onChange(lines.map((l) => (l.key === key ? { ...l, unitId, variantLabel: defaultVariantLabel(u), options: undefined } : l)));
   }
 
   function handleVariant(key: string, variantLabel: string) {
@@ -128,7 +151,7 @@ export function UnitLineEditor({
             const name = resolved?.unit.name ?? unit.name;
 
             const chips = brigade && options.length > 0 && (
-              <Group gap={6} className="unit-row-chips" role="group" aria-label={`${name} upgrades`}>
+              <Group gap={4} wrap="nowrap" className="unit-row-chips" role="group" aria-label={`${name} upgrades`}>
                 {options.map((o) => {
                   const active = !!line.options?.includes(o.id);
                   const blocked = unitOptionBlocked(
@@ -167,22 +190,37 @@ export function UnitLineEditor({
               </Group>
             );
 
-            // The unit and its rules on the left; its points, remove and upgrades on the right (the
-            // upgrades drop under the name when the card is narrow)
+            // One line per unit: its name and rules, then its upgrades, points and remove. In a narrow
+            // card the upgrades drop to a line of their own under the name.
             const row = (
               <div className={highlightLabel ? "unit-row unit-row-plain" : "unit-row"}>
                 <div className="unit-row-info">
-                  <Text size="sm">
-                    {name}
-                    {showVariantInName ? ` (${line.variantLabel})` : ""}
-                  </Text>
+                  {maxTotal !== undefined && eligibleUnits.length > 1 ? (
+                    // A single-choice slot (the army commander) changes its pick in place
+                    <Select
+                      size="xs"
+                      maw={260}
+                      aria-label={highlightLabel ?? "Unit"}
+                      data={eligibleUnits.map((u) => ({ value: u.id, label: u.name }))}
+                      value={line.unitId}
+                      onChange={(v) => v && handleSwapUnit(line.key, v)}
+                      allowDeselect={false}
+                      searchable
+                    />
+                  ) : (
+                    <Text size="sm" span>
+                      {name}
+                      {showVariantInName ? ` (${line.variantLabel})` : ""}
+                    </Text>
+                  )}
                   {special.length > 0 && (
-                    <Text size="xs" c="dimmed" fs="italic" style={{ lineHeight: 1.4 }}>
+                    <Text size="xs" c="dimmed" fs="italic" span className="unit-row-special">
                       {special.join(" \u2022 ")}
                     </Text>
                   )}
                   {extraInfo?.(line)}
                 </div>
+                {chips}
                 <Group gap={4} wrap="nowrap" className="unit-row-meta">
                   {maxTotal !== undefined && (unit.variants?.length ?? 0) > 0 && (
                     <Select
@@ -208,7 +246,6 @@ export function UnitLineEditor({
                     <IconTrash size={14} />
                   </ActionIcon>
                 </Group>
-                {chips}
               </div>
             );
 
@@ -227,7 +264,13 @@ export function UnitLineEditor({
         </Stack>
       )}
 
-      {!atMaxTotal && !isFull && (
+      {!atMaxTotal && !isFull && lockedReason && (
+        <Text size="xs" c="dimmed" className="slot-locked">
+          {lockedReason}
+        </Text>
+      )}
+
+      {!atMaxTotal && !isFull && !lockedReason && (
         <>
           <Group gap={6} wrap="nowrap">
             {onlyUnit ? (
@@ -237,7 +280,7 @@ export function UnitLineEditor({
                   w={170}
                   aria-label={`${onlyUnit.name} option`}
                   data={onlyUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
-                  value={pickedVariant}
+                  value={variant}
                   onChange={(v) => v && setPickedVariant(v)}
                   allowDeselect={false}
                 />
@@ -249,8 +292,11 @@ export function UnitLineEditor({
                   style={{ flex: 1 }}
                   placeholder="Choose unit"
                   aria-label={label ? `${label}: unit` : "Unit"}
-                  data={eligibleUnits.map((u) => ({ value: u.id, label: u.name }))}
-                  value={pickedUnitId}
+                  data={eligibleUnits.map((u) => {
+                    const why = blockedReason(u.id);
+                    return { value: u.id, label: why ? `${u.name} (${why})` : u.name, disabled: !!why };
+                  })}
+                  value={pickedUnit?.id ?? null}
                   onChange={handlePickUnit}
                   searchable
                   allowDeselect={false}
@@ -261,8 +307,13 @@ export function UnitLineEditor({
                     w={150}
                     aria-label={`${pickedUnit.name} option`}
                     data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
-                    value={pickedVariant}
-                    onChange={(v) => v && setPickedVariant(v)}
+                    value={variant}
+                    onChange={(v) => {
+                      if (!v) return;
+                      // Choosing an option for the fallback unit makes it the picked one
+                      setPickedUnitId(pickedUnit.id);
+                      setPickedVariant(v);
+                    }}
                     allowDeselect={false}
                   />
                 )}
@@ -279,6 +330,12 @@ export function UnitLineEditor({
               {onlyUnit ? <span className="add-unit-label">Add {onlyUnit.name}</span> : "Add"}
             </Button>
           </Group>
+          {/* Why the only unit, or every unit, can't be added right now */}
+          {!pickedUnit && (onlyUnit || eligibleUnits.length > 0) && (
+            <Text size="xs" c="dimmed" className="slot-locked">
+              {onlyUnit ? blockedReason(onlyUnit.id) : "Nothing more can be added here right now"}
+            </Text>
+          )}
           {/* The picked unit's rules, unless they're already shown on a line above */}
           {pickedUnit?.special && pickedUnit.special.length > 0 && !lines.some((l) => l.unitId === pickedUnit.id) && (
             <Text size="xs" c="dimmed" fs="italic" style={{ lineHeight: 1.4 }}>

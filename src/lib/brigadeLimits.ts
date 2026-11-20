@@ -202,8 +202,10 @@ export function effectiveSlotMax(
   };
 
   if (presentIds.length === 0) {
-    // Nothing picked yet: if every eligible unit shares the same dynamic/limit we could show it,
-    // but generally fall back to the static slot max.
+    // Nothing picked yet: a slot whose units scale with the brigade (regimental artillery "1 per 2
+    // battalions") allows as many as its most generous unit would, which is none until there are
+    // battalions to support it. Other slots offer their static max.
+    if (slot.dynamicUnitLimits?.length) return Math.min(slot.max, Math.max(...slot.unitIds.map(capForUnit)));
     return slot.max;
   }
   // For singleUnitType slots (one present id) or slots with dynamic ratios, the effective max is

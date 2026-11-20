@@ -366,6 +366,21 @@ body {
   line-height: 1.45;
 }
 
+/* What a brigade still needs: calm, as an unfinished brigade isn't a mistake */
+.brigade-todos {
+  margin: 6px 0 2px;
+  padding: 6px 10px;
+  border-radius: var(--mantine-radius-sm);
+  background: rgba(107, 61, 23, 0.07);
+  color: var(--mantine-color-brown-8);
+  font-size: var(--mantine-font-size-xs);
+  line-height: 1.45;
+}
+
+.brigade-todos-label {
+  font-weight: 600;
+}
+
 .brigade-issues-icon {
   flex-shrink: 0;
   margin-top: 1px;
@@ -455,13 +470,12 @@ body {
 
 .unit-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-areas:
-    "info meta"
-    "info chips";
-  column-gap: 12px;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas: "info chips meta";
+  align-items: center;
+  column-gap: 10px;
   row-gap: 4px;
-  padding: 6px 0;
+  padding: 4px 0;
 }
 
 .unit-rows > * + * .unit-row {
@@ -475,6 +489,12 @@ body {
 .unit-row-info {
   grid-area: info;
   min-width: 0;
+  line-height: 1.35;
+}
+
+/* The unit's rules follow its name on the same line, wrapping only when they run long */
+.unit-row-special {
+  margin-left: 8px;
 }
 
 .unit-row-meta {
@@ -487,9 +507,10 @@ body {
   justify-content: flex-end;
 }
 
-/* In a narrow card the upgrades drop under the unit's name, rather than squeezing it */
-@container (max-width: 480px) {
+/* In a narrow card the upgrades drop to their own line under the name, rather than squeezing it */
+@container (max-width: 560px) {
   .unit-row {
+    grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
       "info meta"
       "chips chips";
@@ -497,7 +518,14 @@ body {
 
   .unit-row-chips {
     justify-content: flex-start;
+    flex-wrap: wrap;
   }
+}
+
+/* Why a slot or unit can't be added to yet, where its picker would be */
+.slot-locked {
+  font-style: italic;
+  padding: 2px 0;
 }
 
 /* A group of battalions within a regiment (its Musketeers, its Fusiliers): a thinner bar of its own,
@@ -593,25 +621,36 @@ body {
   border-color: rgba(138, 79, 28, 0.7);
 }
 
-/* Roster legality, at the foot of the roster card: a solid red panel while there's anything to fix,
-   a quiet green line once the list is legal */
+/* Roster legality, at the foot of the roster card: a solid red panel for what breaks the rules, a calm
+   parchment one for what the list still needs, and a quiet green line once it's done */
 .roster-status {
   margin-top: var(--mantine-spacing-sm);
   padding: 10px 12px;
   border-radius: var(--mantine-radius-sm);
+}
+
+.roster-status[data-state="error"] {
   background: var(--mantine-color-red-6);
   color: #fff;
 }
 
-.roster-status[data-ok] {
+.roster-status[data-state="error"] .roster-status-list {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.roster-status[data-state="todo"] {
+  background: rgba(107, 61, 23, 0.07);
+  border-left: 3px solid var(--mantine-color-brown-5);
+  border-radius: 0 var(--mantine-radius-sm) var(--mantine-radius-sm) 0;
+  color: var(--mantine-color-brown-9);
+}
+
+.roster-status[data-state="ok"] {
   padding: 8px 10px;
   background: rgba(63, 90, 30, 0.08);
   border-left: 3px solid var(--mantine-color-green-7);
+  border-radius: 0 var(--mantine-radius-sm) var(--mantine-radius-sm) 0;
   color: var(--mantine-color-green-9);
-}
-
-.roster-status-list {
-  color: rgba(255, 255, 255, 0.92);
 }
 
 .roster-status-link {
@@ -619,16 +658,16 @@ body {
   color: inherit;
   text-align: left;
   text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.5);
+  text-decoration-color: currentColor;
   text-underline-offset: 2px;
 }
 
 .roster-status-link:hover {
-  text-decoration-color: #fff;
+  text-decoration-thickness: 2px;
 }
 
 .roster-status-link:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid currentColor;
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -1315,4 +1354,83 @@ body {
     linear-gradient(135deg, rgba(180, 130, 60, 0.18) 0%, rgba(120, 70, 20, 0.22) 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
+}
+
+/* Phones: a bar along the foot of the screen with the army's points and state, and a way to the roster,
+   which otherwise sits below the whole builder. In the site header's ink, so it reads as page chrome. */
+.roster-bar,
+.roster-bar-spacer {
+  display: none;
+}
+
+@media (max-width: 61.99em) {
+  .roster-bar-spacer {
+    display: block;
+    height: 64px;
+  }
+
+  .roster-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: #33200f;
+    color: #f2ecd6;
+    box-shadow: 0 -2px 10px rgba(30, 18, 6, 0.25);
+  }
+
+  .roster-bar-text {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    min-width: 0;
+  }
+
+  .roster-bar-points {
+    font-family: var(--font-heading), Georgia, serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    white-space: nowrap;
+  }
+
+  .roster-bar-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--mantine-font-size-xs);
+    opacity: 0.85;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .roster-bar[data-state="error"] .roster-bar-status {
+    color: #ffb4bd;
+    opacity: 1;
+  }
+
+  .roster-bar-button {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    border: 1px solid rgba(242, 236, 214, 0.45);
+    border-radius: var(--mantine-radius-sm);
+    color: inherit;
+    font-size: var(--mantine-font-size-sm);
+  }
+
+  .roster-bar-button:focus-visible {
+    outline: 2px solid #f2ecd6;
+    outline-offset: 2px;
+  }
+
+  /* The undo notice sits above the bar rather than over it */
+  .undo-toast {
+    bottom: calc(76px + env(safe-area-inset-bottom));
+  }
 }

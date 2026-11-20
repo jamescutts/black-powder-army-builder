@@ -1,12 +1,12 @@
 "use client";
 
 import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
-import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
+import { IconAlertTriangle, IconCircleCheck, IconListCheck } from "@tabler/icons-react";
 import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { brigadeTotal, commandTotal as armyCommandTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { resolveLine, type LineContext } from "@/lib/options";
-import { attachedText, brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
+import { attachedText, brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster, type ValidationIssue } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 import { InstallCard } from "@/components/InstallCard";
 
@@ -87,6 +87,95 @@ export function regimentTags(bt: BrigadeType, options: string[] | undefined): st
   return labels.length ? ` \u00b7 ${labels.join(", ")}` : "";
 }
 
+/**
+ * One status block: army-wide issues in full, then a line per brigade that takes you to its card, where
+ * its own issues are listed
+ */
+function IssueBlock({
+  nation,
+  roster,
+  issues,
+  state,
+  title,
+}: {
+  nation: Nation;
+  roster: RosterState;
+  issues: ValidationIssue[];
+  state: "error" | "todo";
+  title: string;
+}) {
+  const army = issues.filter((i) => !i.brigadeKey);
+  const byBrigade = roster.brigadeInstances
+    .map((bi) => ({ key: bi.key, count: issues.filter((i) => i.brigadeKey === bi.key).length }))
+    .filter((b) => b.count > 0);
+  const noun = state === "error" ? "to fix" : "to add";
+  return (
+    <div className="roster-status" data-state={state}>
+      <Group gap={6} wrap="nowrap" mb={4}>
+        {state === "error" ? <IconAlertTriangle size={16} aria-hidden /> : <IconListCheck size={16} aria-hidden />}
+        <Text size="sm" fw={600}>
+          {title}
+        </Text>
+      </Group>
+      <ScrollArea.Autosize mah={150}>
+        <List size="xs" spacing={2} className="roster-status-list">
+          {army.map((i, idx) => (
+            <List.Item key={idx}>{i.message}</List.Item>
+          ))}
+          {byBrigade.map(({ key, count }) => (
+            <List.Item key={key}>
+              <UnstyledButton
+                className="roster-status-link"
+                onClick={() => window.dispatchEvent(new CustomEvent(REVEAL_BRIGADE_EVENT, { detail: key }))}
+              >
+                {brigadeDisplayName(nation, roster, key)}: {count === 1 ? "1 thing" : `${count} things`} {noun}
+                <span aria-hidden> →</span>
+              </UnstyledButton>
+            </List.Item>
+          ))}
+        </List>
+      </ScrollArea.Autosize>
+    </div>
+  );
+}
+
+/**
+ * On a phone the roster sits below the whole builder, so a bar along the foot of the screen keeps the
+ * points and the list's state in view while you build, and takes you to the roster. Hidden on wider
+ * screens, where the roster card follows you down the page.
+ */
+export function RosterBar({ nation, roster }: { nation: Nation; roster: RosterState }) {
+  const issues = validateRoster(nation, roster);
+  const errors = issues.filter((i) => i.level === "error").length;
+  const todos = issues.length - errors;
+  const status =
+    errors > 0
+      ? errors === 1 ? "1 to fix" : `${errors} to fix`
+      : todos > 0
+        ? todos === 1 ? "1 still to add" : `${todos} still to add`
+        : "Within limits";
+  return (
+    <>
+      <div className="roster-bar-spacer" aria-hidden />
+      <div className="roster-bar" data-state={errors > 0 ? "error" : todos > 0 ? "todo" : "ok"}>
+        <div className="roster-bar-text">
+          <span className="roster-bar-points">{rosterTotal(nation, roster)} pts</span>
+          <span className="roster-bar-status">
+            {errors > 0 ? <IconAlertTriangle size={14} aria-hidden /> : todos === 0 ? <IconCircleCheck size={14} aria-hidden /> : null}
+            {status}
+          </span>
+        </div>
+        <UnstyledButton
+          className="roster-bar-button"
+          onClick={() => document.getElementById("roster-panel")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+        >
+          Roster <span aria-hidden>↓</span>
+        </UnstyledButton>
+      </div>
+    </>
+  );
+}
+
 export function RosterPanel({ nation, roster, onRename }: Props) {
   const commandTotal = armyCommandTotal(nation, roster);
 
@@ -98,16 +187,12 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
   const grandTotal = rosterTotal(nation, roster);
 
   const issues = validateRoster(nation, roster);
-  // Army-wide problems are listed in full; a brigade's own problems are on its card, so here each
-  // brigade gets one line that takes you there
-  const armyIssues = issues.filter((i) => !i.brigadeKey);
-  const brigadeIssueCounts = roster.brigadeInstances
-    .map((bi) => ({ key: bi.key, count: issues.filter((i) => i.brigadeKey === bi.key).length }))
-    .filter((b) => b.count > 0);
+  const errors = issues.filter((i) => i.level === "error");
+  const todos = issues.filter((i) => i.level === "todo");
 
   return (
     <Stack gap="md">
-      <Paper withBorder p="md" radius="md">
+      <Paper withBorder p="md" radius="md" id="roster-panel" style={{ scrollMarginTop: 16 }}>
         <Group justify="space-between" align="flex-start" wrap="nowrap" mb="sm">
           <Group gap="sm" align="center" wrap="nowrap" style={{ minWidth: 0 }}>
             {(nation.flagFile ?? nation.flagFiles?.[0]) && (
@@ -247,42 +332,28 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
           <Text fw={700}>{grandTotal} pts total</Text>
         </Group>
 
-        {/* Whether the list is legal, inside the card rather than as a loud box of its own */}
-        <div className="roster-status" data-ok={issues.length === 0 || undefined}>
-          {issues.length === 0 ? (
+        {/* Whether the list is legal, inside the card: what breaks the rules in red, what it still needs
+            calmly (an unfinished list isn't a mistake), and a quiet green line once it's done */}
+        {issues.length === 0 && (
+          <div className="roster-status" data-state="ok">
             <Group gap={6} wrap="nowrap">
               <IconCircleCheck size={16} aria-hidden />
               <Text size="sm">Within every brigade&apos;s limits</Text>
             </Group>
-          ) : (
-            <>
-              <Group gap={6} wrap="nowrap" mb={4}>
-                <IconAlertTriangle size={16} aria-hidden />
-                <Text size="sm" fw={600}>
-                  {issues.length === 1 ? "1 thing to fix" : `${issues.length} things to fix`}
-                </Text>
-              </Group>
-              <ScrollArea.Autosize mah={150}>
-                <List size="xs" spacing={2} className="roster-status-list">
-                  {armyIssues.map((i, idx) => (
-                    <List.Item key={idx}>{i.message}</List.Item>
-                  ))}
-                  {brigadeIssueCounts.map(({ key, count }) => (
-                    <List.Item key={key}>
-                      <UnstyledButton
-                        className="roster-status-link"
-                        onClick={() => window.dispatchEvent(new CustomEvent(REVEAL_BRIGADE_EVENT, { detail: key }))}
-                      >
-                        {brigadeDisplayName(nation, roster, key)}: {count === 1 ? "1 thing" : `${count} things`} to fix
-                        <span aria-hidden> →</span>
-                      </UnstyledButton>
-                    </List.Item>
-                  ))}
-                </List>
-              </ScrollArea.Autosize>
-            </>
-          )}
-        </div>
+          </div>
+        )}
+        {errors.length > 0 && (
+          <IssueBlock
+            nation={nation}
+            roster={roster}
+            issues={errors}
+            state="error"
+            title={errors.length === 1 ? "1 thing to fix" : `${errors.length} things to fix`}
+          />
+        )}
+        {todos.length > 0 && (
+          <IssueBlock nation={nation} roster={roster} issues={todos} state="todo" title="Still to add" />
+        )}
       </Paper>
 
       <RosterViewModal nation={nation} roster={roster} />

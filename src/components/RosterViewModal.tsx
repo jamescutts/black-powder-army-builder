@@ -141,16 +141,31 @@ function RosterContent({ nation, roster }: Props) {
       </Group>
 
       {(() => {
+        // What breaks the rules in red; what the list still needs in a calmer box of its own
         const issues = validateRoster(nation, roster);
-        if (issues.length === 0) return null;
+        const errors = issues.filter((i) => i.level === "error");
+        const todos = issues.filter((i) => i.level === "todo");
         return (
-          <Alert color="red" variant="filled" icon={<IconAlertTriangle />} title="Roster issues">
-            <List size="sm" spacing={4}>
-              {issues.map((issue, idx) => (
-                <List.Item key={idx}>{issue.message}</List.Item>
-              ))}
-            </List>
-          </Alert>
+          <>
+            {errors.length > 0 && (
+              <Alert color="red" variant="filled" icon={<IconAlertTriangle />} title="Roster issues">
+                <List size="sm" spacing={4}>
+                  {errors.map((issue, idx) => (
+                    <List.Item key={idx}>{issue.message}</List.Item>
+                  ))}
+                </List>
+              </Alert>
+            )}
+            {todos.length > 0 && (
+              <Alert color="brown" variant="light" title="Still to add">
+                <List size="sm" spacing={4}>
+                  {todos.map((issue, idx) => (
+                    <List.Item key={idx}>{issue.message}</List.Item>
+                  ))}
+                </List>
+              </Alert>
+            )}
+          </>
         );
       })()}
 

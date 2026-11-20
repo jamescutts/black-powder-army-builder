@@ -26,7 +26,14 @@ import {
 } from "@/lib/brigadeLimits";
 
 export interface ValidationIssue {
-  level: "error";
+  /**
+   * "error": something breaks the list's rules (too many, not allowed, can't be combined). "todo":
+   * something the list still needs (a commander, a brigade's minimum), the normal state of a list
+   * that's still being built, so it's shown calmly rather than as a mistake.
+   */
+  level: "error" | "todo";
+  /** A todo the slot's own badge already shows ("needs 1–2"), so the brigade card needn't repeat it */
+  shownOnSlot?: boolean;
   message: string;
   /** The brigade instance this issue is about, when it's about one brigade rather than the whole army */
   brigadeKey?: string;
@@ -46,7 +53,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
   const commandTotal = roster.commandItems.reduce((s, l) => s + l.qty, 0);
   if (hasArmyCommandUnits && commandTotal === 0) {
     issues.push({
-      level: "error",
+      level: "todo",
       message: "Army Command: an army commander is required",
     });
   }
@@ -64,7 +71,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
     const count = countByType(roster.brigadeInstances, bt.id);
     if (count < bt.min) {
       issues.push({
-        level: "error",
+        level: "todo",
         message: `${bt.name}: needs at least ${bt.min} (have ${count})`,
       });
     }
@@ -73,7 +80,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
       const requiredByPoints = Math.ceil(armyTotalPoints / bt.minPerPoints.perPoints);
       if (count < requiredByPoints) {
         issues.push({
-          level: "error",
+          level: "todo",
           message: `${bt.name}: needs at least ${requiredByPoints} for a ${armyTotalPoints}-point army (1 per ${bt.minPerPoints.perPoints} points; have ${count})`,
         });
       }
@@ -108,7 +115,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
       const missing = instances.filter((bi) => !bi.commanderLine).length;
       if (missing > 0) {
         issues.push({
-          level: "error",
+          level: "todo",
           message: `${bt.name}: ${missing} brigade${missing === 1 ? "" : "s"} missing a Brigade Commander`,
         });
       }
@@ -149,7 +156,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         const regMin = bt.maxRegimentsTotal.min;
         if (regMin !== undefined && regTotal < regMin) {
           issues.push({
-            level: "error",
+            level: "todo",
             brigadeKey: bi.key,
             message: `${bt.name}: needs at least ${regMin} regiment${regMin === 1 ? "" : "s"} per brigade (have ${regTotal})`,
           });
@@ -182,7 +189,8 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           // Check regiment count
           if (regiments.length < regDef.min) {
             issues.push({
-              level: "error",
+              level: "todo",
+              shownOnSlot: true,
               brigadeKey: bi.key,
               message: `${bt.name} → ${slot.label}: needs at least ${regDef.min} ${regDef.label}${regDef.min > 1 ? "s" : ""} (have ${regiments.length})`,
             });
@@ -201,7 +209,8 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
               const total = lines.reduce((s, l) => s + l.qty, 0);
               if (total < subSlot.min) {
                 issues.push({
-                  level: "error",
+                  level: "todo",
+                  shownOnSlot: true,
                   brigadeKey: bi.key,
                   message: `${bt.name} → ${regDef.label} #${regIdx + 1} → ${subSlot.label}: needs at least ${subSlot.min} (have ${total})`,
                 });
@@ -254,7 +263,8 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
         const total = lines.reduce((s, l) => s + l.qty, 0);
         if (total < slot.min) {
           issues.push({
-            level: "error",
+            level: "todo",
+            shownOnSlot: true,
             brigadeKey: bi.key,
             message: `${bt.name} → ${slot.label}: needs at least ${slot.min} (have ${total})`,
           });

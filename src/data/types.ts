@@ -56,9 +56,9 @@ export interface RegimentDef {
   /** Maximum number of regiments allowed in this slot per brigade instance */
   max: number;
   /**
-   * Maximum number of these regiments across the WHOLE army (all brigade instances of this type
-   * and, when this slot appears in multiple brigade types, all of them). Used for rules like
-   * "max 1 Light Regiment per division". Omit for no army-wide cap.
+   * Maximum number of these regiments across the whole army, counted over every brigade of this type
+   * (not other brigade types that happen to have a similar slot). Used for rules like "max 1 Light
+   * Regiment per division". Omit for no army-wide cap.
    */
   armyMax?: number;
   /** Internal composition of each regiment instance */
