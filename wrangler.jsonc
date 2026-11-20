@@ -15,6 +15,15 @@
       "service": "army-builder"
     }
   ],
+  // Keep the *.workers.dev address too, which otherwise switches off once there are routes
+  "workers_dev": true,
+  // The site's address. Cloudflare creates the DNS record and certificate for a custom domain.
+  "routes": [
+    {
+      "pattern": "builder.shakosandsprues.com",
+      "custom_domain": true
+    }
+  ],
   "observability": {
     "enabled": true
   }
