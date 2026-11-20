@@ -42,6 +42,8 @@ interface Props {
     regimentOptions?: string[];
     /** Every brigade in the army, for limits counted army-wide */
     army?: RosterBrigadeInstance[];
+    /** The army's free lines, with the points each is credited */
+    free?: ReadonlyMap<string, number>;
   };
   /** Marks the slot as one group within a regiment, with a bar of its own down its left side */
   grouped?: boolean;
@@ -156,7 +158,9 @@ export function UnitLineEditor({
             const resolved = brigade
               ? resolveLine(brigade.nation, line, { bt: brigade.bt, regimentOptions: brigade.regimentOptions })
               : null;
-            const cost = (resolved?.cost ?? unitCost(unit, line.variantLabel)) * line.qty;
+            const credit = brigade?.free?.get(line.key) ?? 0;
+            const fullCost = (resolved?.cost ?? unitCost(unit, line.variantLabel)) * line.qty;
+            const cost = credit ? Math.max(0, fullCost - credit) : fullCost;
             const special = resolved?.special ?? unit.special ?? [];
             const options = brigade ? optionsForUnit(brigade.bt, unit.id) : [];
             const showVariantInName = line.variantLabel && !(maxTotal !== undefined && (unit.variants?.length ?? 0) > 0);
@@ -263,7 +267,16 @@ export function UnitLineEditor({
                     />
                   )}
                   <Text size="xs" c="dimmed" w={48} ta="right">
-                    {cost} pts
+                    {credit > 0 ? (
+                      <Tooltip
+                        label={`${brigade?.nation.freeUnits?.label ?? "Free unit"}: the unit is free${cost > 0 ? "; its upgrades are paid for" : ""}`}
+                        withArrow
+                      >
+                        <span className="unit-free">{cost > 0 ? `${cost} pts` : "Free"}</span>
+                      </Tooltip>
+                    ) : (
+                      `${cost} pts`
+                    )}
                   </Text>
                   <ActionIcon
                     color="red"

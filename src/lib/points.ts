@@ -1,12 +1,16 @@
 import type { Nation } from "@/data/types";
 import type { RosterBrigadeInstance, RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost } from "@/lib/units";
-import { brigadeUnitLines, resolveLine, type LineContext } from "@/lib/options";
+import { brigadeUnitLines, freeLines, resolveLine, type LineContext } from "@/lib/options";
 
-/** Points for one line of the roster (a unit with its options, times how many) */
+/** Points for one line of the roster (a unit with its options, times how many), less any free credit */
 export function lineTotal(nation: Nation, line: RosterUnitLine, ctx: LineContext = {}): number {
   const resolved = resolveLine(nation, line, ctx);
-  return resolved ? resolved.cost * line.qty : 0;
+  if (!resolved) return 0;
+  const cost = resolved.cost * line.qty;
+  // A free unit costs nothing, never less: a downgrade on it doesn't take points off the rest of the army
+  const credit = ctx.free?.get(line.key) ?? 0;
+  return credit ? Math.max(0, cost - credit) : cost;
 }
 
 /** Points for a commander line (commanders take no options) */
@@ -23,12 +27,13 @@ function brigadeLines(instance: RosterBrigadeInstance): RosterUnitLine[] {
   ];
 }
 
-export function brigadeTotal(nation: Nation, instance: RosterBrigadeInstance): number {
+/** A brigade's points. Pass the army's `freeLines` so a free unit in it isn't charged. */
+export function brigadeTotal(nation: Nation, instance: RosterBrigadeInstance, free?: ReadonlyMap<string, number>): number {
   const bt = nation.brigades.find((b) => b.id === instance.brigadeTypeId);
   return (
     (instance.commanderLine ? commanderTotal(nation, instance.commanderLine) : 0) +
     brigadeUnitLines(instance).reduce(
-      (s, { line, regiment }) => s + lineTotal(nation, line, { bt, regimentOptions: regiment?.options }),
+      (s, { line, regiment }) => s + lineTotal(nation, line, { bt, regimentOptions: regiment?.options, free }),
       0
     )
   );
@@ -39,7 +44,8 @@ export function commandTotal(nation: Nation, roster: RosterState): number {
 }
 
 export function rosterTotal(nation: Nation, roster: RosterState): number {
-  return commandTotal(nation, roster) + roster.brigadeInstances.reduce((s, b) => s + brigadeTotal(nation, b), 0);
+  const free = freeLines(nation, roster);
+  return commandTotal(nation, roster) + roster.brigadeInstances.reduce((s, b) => s + brigadeTotal(nation, b, free), 0);
 }
 
 /** How many unit lines the army has, command included */

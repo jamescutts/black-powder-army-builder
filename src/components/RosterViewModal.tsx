@@ -8,7 +8,7 @@ import type { AlliesRule, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitStatLine } from "@/lib/units";
 import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
-import { resolveLine, type LineContext } from "@/lib/options";
+import { freeLines, resolveLine, type LineContext } from "@/lib/options";
 import { regimentTags } from "@/components/RosterPanel";
 import { getNation, getSupplement } from "@/data";
 import { attachedText, validateRoster } from "@/lib/validate";
@@ -62,6 +62,7 @@ function UnitRow({
     stamina: resolved.stamina,
   });
   const cost = lineTotal(nation, line, ctx);
+  const isFree = !!ctx?.free?.has(line.key);
 
   return (
     <Table.Tr>
@@ -94,16 +95,17 @@ function UnitRow({
       <Table.Td>{unit.type}</Table.Td>
       <Table.Td>{stats || "\u2014"}</Table.Td>
       <Table.Td>{resolved.special.join(", ") || "\u2014"}</Table.Td>
-      <Table.Td style={{ textAlign: "right" }}>{cost}</Table.Td>
+      <Table.Td style={{ textAlign: "right" }}>{isFree && cost === 0 ? "free" : cost}</Table.Td>
     </Table.Tr>
   );
 }
 
 function RosterContent({ nation, roster }: Props) {
+  const free = freeLines(nation, roster);
   const brigadeTotals = roster.brigadeInstances.map((instance) => ({
     instance,
     bt: nation.brigades.find((b) => b.id === instance.brigadeTypeId),
-    total: brigadeTotal(nation, instance),
+    total: brigadeTotal(nation, instance, free),
   }));
 
   const grandTotal = rosterTotal(nation, roster);
@@ -325,7 +327,7 @@ function RosterContent({ nation, roster }: Props) {
                           </Table.Td>
                         </Table.Tr>
                         {regLines.map((line) => (
-                          <UnitRow key={line.key} nation={nation} line={line} ctx={{ bt, regimentOptions: reg.options }} />
+                          <UnitRow key={line.key} nation={nation} line={line} ctx={{ bt, regimentOptions: reg.options, free }} />
                         ))}
                       </Fragment>
                     );
@@ -337,7 +339,7 @@ function RosterContent({ nation, roster }: Props) {
                     key={line.key}
                     nation={nation}
                     line={line}
-                    ctx={{ bt }}
+                    ctx={{ bt, free }}
                     attached={attachedText(nation, roster, line.attachedTo)}
                   />
                 ))}

@@ -385,6 +385,19 @@ export interface Nation {
    */
   brigadeCommanderRating?: { maxRating: number; maxShareAbove: number; label: string };
   /**
+   * Units the army gets for free, e.g. Russia's "one irregular Cossack regiment for free, attached to any
+   * cavalry brigade" (and Platov's one more). The first `count` units in the army from `unitIds` (in
+   * `brigadeTypeIds`, when given) cost nothing; upgrades bought for them are still paid for. Each entry
+   * in `perCommander` adds `count` more while one of its commanders leads the army.
+   */
+  freeUnits?: {
+    unitIds: string[];
+    brigadeTypeIds?: string[];
+    count: number;
+    perCommander?: { unitIds: string[]; count: number }[];
+    label: string;
+  };
+  /**
    * Freeform bullet-point summary of the brigade / force-organisation rules for reference
    * (min/max counts, ratios, per-points scaling, unimplemented upgrades/downgrades, etc.) —
    * not in-game special rules or allied-contingent allowances. See `specialRules` and

@@ -6,6 +6,7 @@ import {
   attachTargets,
   batteriesIn,
   brigadeUnitLines,
+  freeLines,
   limitText,
   optionAllowance,
   optionTaken,
@@ -523,7 +524,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
 
     const cappedTotal = roster.brigadeInstances
       .filter((bi) => cap.brigadeTypeIds.includes(bi.brigadeTypeId))
-      .reduce((sum, bi) => sum + brigadeTotal(nation, bi), 0);
+      .reduce((sum, bi) => sum + brigadeTotal(nation, bi, freeLines(nation, roster)), 0);
     if (cappedTotal === 0) continue;
 
     const percent = (cappedTotal / armyTotalPoints) * 100;

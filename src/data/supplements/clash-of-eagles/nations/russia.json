@@ -1799,7 +1799,6 @@
   ],
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 150). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "The free Cossack regiment isn't taken off the points total; deduct it yourself.",
     "Some prices differ between the stat table and the brigade boxes: Mounted Cossacks 39 (table), 37 (Light Cavalry) or 34 (Cossack Brigade); Irregular Cossacks 37 (table) or 32; the Life Guard Hussar 47 (table) or 48. The Jäger Brigade's Grenadier regiment is printed at 90 points per battalion, against 48 in the table. The builder uses the stat table throughout.",
     "The chapter's Unicorn battery (p. 47: 2/4-2-2/4/3) differs from the army list's (1/2-2-2/4/2); the builder uses the army list.",
     "Infantry Brigades go up to 3, one for each of the list's \"1-3 Infantry Brigade Commanders\" (p. 150)."
@@ -1814,10 +1813,31 @@
     "Russian musketeer and grenadier infantry get no +1 at close range when firing and suffer -1 at any other range; their stamina bonus is already in their stat lines.",
     "Most Russian infantry and artillery are Tough Fighters. Militia follow p. 102 of this supplement.",
     "Cossacks can't charge the front of an enemy formation that isn't shaken or disordered, though they can charge its flanks or rear. Irregular Cossacks can skirmish; a Cossack regiment armed with bows (Shooting 2) loses Lancer.",
-    "The Little Father: the army may take one irregular Cossack regiment for free, attached to any cavalry brigade, for each division in the army.",
+    "The Little Father: the army may take one irregular Cossack regiment for free, attached to any cavalry brigade, for each division in the army. The builder makes the first Cossack regiment in a cavalry brigade free (two with General Platov); its upgrades are still paid for.",
     "Russian cavalry can use Deep Formation (+1 to the ordering commander's Staff Rating roll, +1 combat result, -1 Hand-to-Hand, artillery +1 to hit at medium and long range) and Cavalry Mixed Formation.",
     "Russian artillery: a battery with an enemy unit within 12\" at the start of its turn rolls a D6; on a 1 it limbers and makes a full move to its rear, unless it's in earthworks. If earthworks are present, at least one battery must be placed in them; remaining batteries must be placed on hills in the deployment zone while there are hills left.",
     "Unicorn batteries: a 20-pdr has a range of 48\", a 10-pdr 36\".",
     "A Standard-size Russian light cavalry regiment can be replaced by up to two Small units, paying the appropriate cost."
-  ]
+  ],
+  "freeUnits": {
+    "unitIds": [
+      "ru-irregular-mounted-cossack",
+      "ru-mounted-cossack"
+    ],
+    "brigadeTypeIds": [
+      "ru-light-cavalry-brigade",
+      "ru-heavy-cavalry-brigade",
+      "ru-cossack-brigade"
+    ],
+    "count": 1,
+    "perCommander": [
+      {
+        "unitIds": [
+          "ru-cmd-platov"
+        ],
+        "count": 1
+      }
+    ],
+    "label": "The Little Father"
+  }
 }

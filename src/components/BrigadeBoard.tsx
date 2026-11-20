@@ -30,6 +30,7 @@ import { regimentBlockedReason, slotLockedReason, unitBlockedInRegimentSlot, uni
 import {
   attachTargets,
   batteriesIn,
+  freeLines,
   optionsForRegiment,
   regimentOptionBlocked,
   regimentOptionCost,
@@ -68,7 +69,9 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
   );
 
   // Total army points, used for points-scaled slot maximums (e.g. Earthworks "1 per 500 pts").
-  const brigadePoints = (bi: RosterBrigadeInstance) => brigadeTotal(nation, bi);
+  // Units the army gets for free (Russia's Cossack regiment), taken off their brigade's points
+  const free = freeLines(nation, roster);
+  const brigadePoints = (bi: RosterBrigadeInstance) => brigadeTotal(nation, bi, free);
   const armyTotalPoints = rosterTotal(nation, roster);
 
   // Brigade types that can't be added right now (at their limit, or waiting on another brigade type)
@@ -741,7 +744,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                                 })}
                                 <Text size="xs" c="dimmed" ta="right" style={{ whiteSpace: "nowrap" }}>
                                   {reg.slotLines.flat().reduce(
-                                    (s, l) => s + lineTotal(nation, l, { bt, regimentOptions: reg.options }),
+                                    (s, l) => s + lineTotal(nation, l, { bt, regimentOptions: reg.options, free }),
                                     0
                                   )}{" "}
                                   pts
@@ -786,7 +789,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                                     onChange={(lines) =>
                                       handleRegimentSubSlotChange(instance.key, slotIndex, reg.key, subSlotIdx, lines)
                                     }
-                                    brigade={{ nation, bt, instance, regimentOptions: reg.options, army: roster.brigadeInstances }}
+                                    brigade={{ nation, bt, instance, regimentOptions: reg.options, army: roster.brigadeInstances, free }}
                                     grouped
                                     unitBlocked={(unitId) =>
                                       unitBlockedInRegimentSlot(
@@ -845,7 +848,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                       eligibleUnits={eligibleUnits}
                       lines={instance.slotLines[slotIndex] ?? []}
                       onChange={(lines) => handleSlotChange(instance.key, slotIndex, lines)}
-                      brigade={{ nation, bt, instance, army: roster.brigadeInstances }}
+                      brigade={{ nation, bt, instance, army: roster.brigadeInstances, free }}
                       extraInfo={attachPicker(instance, slotIndex, bt)}
                       lockedReason={slotLockedReason({ nation, roster, bt, instance, slotIndex }, slot)}
                       unitBlocked={(unitId) =>

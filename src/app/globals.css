@@ -1568,3 +1568,10 @@ button.add-row:focus-visible {
     display: none;
   }
 }
+
+/* A unit the army gets for free (Russia's Cossack regiment) */
+.unit-free {
+  color: var(--mantine-color-green-8);
+  font-weight: 600;
+  cursor: help;
+}

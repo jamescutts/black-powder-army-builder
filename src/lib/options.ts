@@ -1,5 +1,5 @@
 import type { BrigadeType, Nation, UnitEntry, UnitOption } from "@/data/types";
-import type { RosterBrigadeInstance, RosterRegimentInstance, RosterUnitLine } from "@/types/army";
+import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost } from "@/lib/units";
 
 /** Where a unit line sits, which decides which options it can have and which apply to it */
@@ -7,6 +7,8 @@ export interface LineContext {
   bt?: BrigadeType;
   /** The options its regiment has taken, when it's in one */
   regimentOptions?: string[];
+  /** The army's free lines and the points each is credited (see `freeLines`) */
+  free?: ReadonlyMap<string, number>;
 }
 
 /** A unit as fielded: after its options, with the name, points, rules and stats to show for it */
@@ -336,4 +338,34 @@ export function batteriesIn(nation: Nation, brigades: RosterBrigadeInstance[], k
 /** Brigades a battery can be attached to: every brigade whose own type doesn't attach its batteries out */
 export function attachTargets(nation: Nation, brigades: RosterBrigadeInstance[]): RosterBrigadeInstance[] {
   return brigades.filter((b) => !nation.brigades.find((t) => t.id === b.brigadeTypeId)?.attachBatteries);
+}
+
+// ─── Units the army gets for free (Russia's free Cossack regiment) ───────────
+
+/**
+ * The lines that are free, each with the points it's credited: the base cost of the unit (its upgrades
+ * are still paid for). The first lines that qualify, in brigade order, take the free places.
+ */
+export function freeLines(nation: Nation, roster: RosterState): Map<string, number> {
+  const rule = nation.freeUnits;
+  const free = new Map<string, number>();
+  if (!rule) return free;
+  let places =
+    rule.count +
+    (rule.perCommander ?? []).reduce(
+      (n, extra) => n + (roster.commandItems.some((l) => extra.unitIds.includes(l.unitId)) ? extra.count : 0),
+      0
+    );
+  for (const bi of roster.brigadeInstances) {
+    if (rule.brigadeTypeIds && !rule.brigadeTypeIds.includes(bi.brigadeTypeId)) continue;
+    for (const { line } of brigadeUnitLines(bi)) {
+      if (places <= 0) return free;
+      if (!rule.unitIds.includes(line.unitId)) continue;
+      const unit = nation.units.find((u) => u.id === line.unitId);
+      if (!unit) continue;
+      free.set(line.key, unitCost(unit, line.variantLabel));
+      places -= 1;
+    }
+  }
+  return free;
 }

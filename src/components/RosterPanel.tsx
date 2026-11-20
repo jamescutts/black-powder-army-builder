@@ -5,7 +5,7 @@ import { IconAlertTriangle, IconCircleCheck, IconListCheck } from "@tabler/icons
 import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { brigadeTotal, commandTotal as armyCommandTotal, lineTotal, rosterTotal } from "@/lib/points";
-import { resolveLine, type LineContext } from "@/lib/options";
+import { freeLines, resolveLine, type LineContext } from "@/lib/options";
 import { attachedText, brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster, type ValidationIssue } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 import { InstallCard } from "@/components/InstallCard";
@@ -55,7 +55,7 @@ function LineList({
         const name = own ? `${own} \u00b7 ${type}` : type;
         const attached = roster ? attachedText(nation, roster, line.attachedTo) : null;
         return (
-          <Group key={line.key} justify="space-between" wrap="nowrap">
+          <Group key={line.key} justify="space-between" wrap="nowrap" data-free={ctx?.free?.has(line.key) || undefined}>
             <Text
               size="xs"
               c={commander ? "brown.6" : undefined}
@@ -75,7 +75,7 @@ function LineList({
               )}
             </Text>
             <Text size="xs" c="dimmed">
-              {commander ? lineTotal(nation, line) : lineTotal(nation, line, ctx)}
+              {commander ? lineTotal(nation, line) : ctx?.free?.has(line.key) && lineTotal(nation, line, ctx) === 0 ? "free" : lineTotal(nation, line, ctx)}
             </Text>
           </Group>
         );
@@ -180,10 +180,11 @@ export function RosterBar({ nation, roster }: { nation: Nation; roster: RosterSt
 export function RosterPanel({ nation, roster, onRename }: Props) {
   const commandTotal = armyCommandTotal(nation, roster);
 
+  const free = freeLines(nation, roster);
   const brigadeTotals = roster.brigadeInstances.map((instance) => ({
     instance,
     bt: nation.brigades.find((b) => b.id === instance.brigadeTypeId),
-    total: brigadeTotal(nation, instance),
+    total: brigadeTotal(nation, instance, free),
   }));
   const grandTotal = rosterTotal(nation, roster);
 
@@ -309,14 +310,14 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
                               : `${slot.regiment!.label} #${regIdx + 1}`}
                             {regimentTags(bt, reg.options)}
                           </Text>
-                          <LineList nation={nation} lines={regLines} ctx={{ bt, regimentOptions: reg.options }} />
+                          <LineList nation={nation} lines={regLines} ctx={{ bt, regimentOptions: reg.options, free }} />
                         </div>
                       );
                     });
                   })}
                   {/* Flat slot lines */}
                   {flatLines.length > 0 && (
-                    <LineList nation={nation} lines={flatLines} ctx={{ bt }} roster={roster} />
+                    <LineList nation={nation} lines={flatLines} ctx={{ bt, free }} roster={roster} />
                   )}
                   {flatLines.length === 0 && (instance.regimentSlots ?? []).every((r) => !r || r.length === 0) && (
                     <Text size="xs" c="dimmed" fs="italic">
