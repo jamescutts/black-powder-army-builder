@@ -811,6 +811,18 @@ body {
   border-bottom-color: #f2ecd6;
 }
 
+/* "Install the app" is a button that looks like the footer's other links */
+.site-footer-button {
+  background: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
 .topnav-link:focus-visible,
 .site-brand:focus-visible,
 .site-footer-link:focus-visible {
