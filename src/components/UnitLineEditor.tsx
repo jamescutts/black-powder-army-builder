@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ActionIcon, Badge, Button, Group, NumberInput, Paper, Select, Stack, Text, ThemeIcon } from "@mantine/core";
-import { IconPlus, IconTrash, IconCrown } from "@tabler/icons-react";
+import { ActionIcon, Badge, Button, Group, NumberInput, Select, Stack, Text } from "@mantine/core";
+import { IconPlus, IconTrash } from "@tabler/icons-react";
 import type { UnitEntry } from "@/data/types";
 import type { RosterUnitLine } from "@/types/army";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
@@ -170,19 +170,13 @@ export function UnitLineEditor({
             if (!highlightLabel) return <div key={line.key}>{row}</div>;
 
             return (
-              <Paper key={line.key} withBorder p="xs" radius="sm" bg="var(--mantine-color-brown-0)">
-                <Stack gap={4}>
-                  <Group gap="xs" wrap="nowrap">
-                    <ThemeIcon size="sm" variant="light" color="brown">
-                      <IconCrown size={14} />
-                    </ThemeIcon>
-                    <Text size="sm" fw={600}>
-                      {highlightLabel}
-                    </Text>
-                  </Group>
-                  {row}
-                </Stack>
-              </Paper>
+              // Labelled like the brigade commanders' rows, without a box of its own inside the card
+              <Stack key={line.key} gap={4}>
+                <Text size="sm" fw={600}>
+                  {highlightLabel}
+                </Text>
+                {row}
+              </Stack>
             );
           })}
         </Stack>

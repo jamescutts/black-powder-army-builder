@@ -76,8 +76,9 @@ export const theme = createTheme({
   primaryColor: "brown",
   primaryShade: 6,
   colors: { brown, gray: warmGray, red, yellow, green },
-  // Mantine derives the light-mode page/surface background from `white` and body text from `black`.
-  white: "#f2ecd6",
+  // Cream for cards, inputs and menus, lighter than the parchment page behind them (globals.css),
+  // so cards stand clear of the page as Fleet's do. Body text comes from `black`.
+  white: "#f6efdc",
   black: "#2b1f14",
   fontFamily: "var(--font-body), Georgia, 'Times New Roman', serif",
   fontFamilyMonospace: "ui-monospace, SFMono-Regular, monospace",

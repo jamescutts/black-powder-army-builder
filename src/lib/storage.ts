@@ -37,7 +37,8 @@ export function loadRoster(nation: Nation): RosterState | null {
   try {
     return {
       nationId: nation.id,
-      armyName: saved.armyName ?? "My Army",
+      // "My Army" was the old placeholder rather than a name anyone chose
+      armyName: saved.armyName && saved.armyName !== "My Army" ? saved.armyName : "",
       commandItems: keepLines(saved.commandItems),
       brigadeInstances: (saved.brigadeInstances ?? []).flatMap((bi) => {
         const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
@@ -45,6 +46,7 @@ export function loadRoster(nation: Nation): RosterState | null {
         return [
           {
             ...bi,
+            name: typeof bi.name === "string" && bi.name.trim() ? bi.name : undefined,
             commanderLine: bi.commanderLine && unitIds.has(bi.commanderLine.unitId) ? bi.commanderLine : null,
             slotLines: bt.slots.map((_, i) => keepLines(bi.slotLines?.[i])),
             regimentSlots: bt.slots.map((slot, i) =>
@@ -64,12 +66,12 @@ export function loadRoster(nation: Nation): RosterState | null {
   }
 }
 
-/** Saves the army under its nation; an empty army clears the save instead of storing nothing. */
+/** Saves the army under its nation; an empty, unnamed army clears the save instead of storing nothing. */
 export function saveRoster(roster: RosterState) {
   if (typeof window === "undefined") return;
   try {
     const key = keyFor(roster.nationId);
-    if (roster.commandItems.length === 0 && roster.brigadeInstances.length === 0) {
+    if (roster.commandItems.length === 0 && roster.brigadeInstances.length === 0 && !roster.armyName.trim()) {
       window.localStorage.removeItem(key);
     } else {
       window.localStorage.setItem(key, JSON.stringify(roster));

@@ -12,19 +12,19 @@ import {
   Select,
   Stack,
   Text,
-  ThemeIcon,
+  TextInput,
   Title,
   Tooltip,
   UnstyledButton,
 } from "@mantine/core";
-import { IconAlertTriangle, IconChevronDown, IconCopy, IconPlus, IconTrash, IconSword } from "@tabler/icons-react";
+import { IconAlertTriangle, IconChevronDown, IconCopy, IconPencil, IconPlus, IconTrash } from "@tabler/icons-react";
 import type { Nation } from "@/data/types";
 import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
 import { limitBadge } from "@/lib/limitBadge";
-import { brigadeIssueText, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
+import { brigadeIssueText, brigadeLabel, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { countByType, effectiveMax, effectiveSlotMax, requirementLabel, requirementMet } from "@/lib/brigadeLimits";
 
 interface Props {
@@ -203,11 +203,24 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     onChange({ ...roster, brigadeInstances: [...roster.brigadeInstances, instance] });
   }
 
+  // The brigade whose name is being edited in its title, if any
+  const [renamingKey, setRenamingKey] = useState<string | null>(null);
+
+  function handleRenameBrigade(key: string, name: string) {
+    setRenamingKey(null);
+    onChange({
+      ...roster,
+      brigadeInstances: roster.brigadeInstances.map((bi) =>
+        bi.key === key ? { ...bi, name: name.trim() || undefined } : bi
+      ),
+    });
+  }
+
   function handleRemoveBrigade(key: string) {
     const index = roster.brigadeInstances.findIndex((bi) => bi.key === key);
     if (index < 0) return;
     const removed = roster.brigadeInstances[index];
-    const name = nation.brigades.find((b) => b.id === removed.brigadeTypeId)?.name ?? "Brigade";
+    const name = brigadeLabel(removed, nation.brigades.find((b) => b.id === removed.brigadeTypeId)?.name ?? "Brigade");
     onChange({
       ...roster,
       brigadeInstances: roster.brigadeInstances.filter((bi) => bi.key !== key),
@@ -228,6 +241,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     const clone: RosterBrigadeInstance = {
       ...source,
       key: newKey("brigade"),
+      // A copy gets the same units but not the same name
+      name: undefined,
       commanderLine: source.commanderLine
         ? { ...source.commanderLine, key: newKey("cmd") }
         : null,
@@ -401,33 +416,66 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
               data-issues={issuesByBrigade.has(instance.key) || undefined}
             >
               <Group justify="space-between" wrap="nowrap">
-                {/* The title is the fold toggle; the heading wraps the button so it stays a heading */}
-                <Title order={3} className="brigade-card-title">
-                  <UnstyledButton
-                    className="brigade-toggle"
-                    onClick={() => toggleCollapsed(instance.key)}
-                    aria-expanded={!collapsed.has(instance.key)}
-                    aria-controls={`brigade-body-${instance.key}`}
-                  >
-                    <IconChevronDown size={18} className="brigade-chevron" aria-hidden />
-                    <span>
-                      {bt.name}{" "}
-                      <Text span c="dimmed" fz="sm" ff="body" fw={400}>
-                        {brigadePoints(instance)} pts
-                      </Text>
-                    </span>
-                  </UnstyledButton>
-                </Title>
-                <Group gap={4}>
+                {renamingKey === instance.key ? (
+                  // Renaming: the title becomes a field. Enter or leaving it saves, Escape cancels, and
+                  // an empty name goes back to the brigade's type.
+                  <TextInput
+                    className="brigade-name-input"
+                    aria-label={`Name for this ${bt.name}`}
+                    placeholder={bt.name}
+                    defaultValue={instance.name ?? ""}
+                    maxLength={60}
+                    autoFocus
+                    onFocus={(e) => e.currentTarget.select()}
+                    onBlur={(e) => handleRenameBrigade(instance.key, e.currentTarget.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") e.currentTarget.blur();
+                      if (e.key === "Escape") setRenamingKey(null);
+                    }}
+                    description={`${bt.name} · leave empty to use the type`}
+                    style={{ flex: 1, minWidth: 0 }}
+                  />
+                ) : (
+                  /* The title is the fold toggle; the heading wraps the button so it stays a heading */
+                  <Title order={3} className="brigade-card-title">
+                    <UnstyledButton
+                      className="brigade-toggle"
+                      onClick={() => toggleCollapsed(instance.key)}
+                      aria-expanded={!collapsed.has(instance.key)}
+                      aria-controls={`brigade-body-${instance.key}`}
+                    >
+                      <IconChevronDown size={18} className="brigade-chevron" aria-hidden />
+                      <span>
+                        {brigadeLabel(instance, bt.name)}{" "}
+                        <Text span c="dimmed" fz="sm" ff="body" fw={400}>
+                          {/* A named brigade still says what type it is */}
+                          {instance.name?.trim() ? `${bt.name} · ` : ""}
+                          {brigadePoints(instance)} pts
+                        </Text>
+                      </span>
+                    </UnstyledButton>
+                  </Title>
+                )}
+                <Group gap={4} wrap="nowrap">
+                  <Tooltip label="Rename this brigade">
+                    <ActionIcon
+                      color="brown"
+                      variant="subtle"
+                      aria-label={`Rename ${brigadeLabel(instance, bt.name)}`}
+                      onClick={() => setRenamingKey(instance.key)}
+                    >
+                      <IconPencil size={16} />
+                    </ActionIcon>
+                  </Tooltip>
                   {effectiveMax(bt, roster.brigadeInstances) > countByType(roster.brigadeInstances, bt.id) && (
                     <Tooltip label="Clone this brigade">
-                      <ActionIcon color="brown" variant="subtle" aria-label={`Clone ${bt.name}`} onClick={() => handleCloneBrigade(instance.key)}>
+                      <ActionIcon color="brown" variant="subtle" aria-label={`Clone ${brigadeLabel(instance, bt.name)}`} onClick={() => handleCloneBrigade(instance.key)}>
                         <IconCopy size={16} />
                       </ActionIcon>
                     </Tooltip>
                   )}
                   <Tooltip label="Remove this brigade">
-                    <ActionIcon color="red" variant="subtle" aria-label={`Remove ${bt.name}`} onClick={() => handleRemoveBrigade(instance.key)}>
+                    <ActionIcon color="red" variant="subtle" aria-label={`Remove ${brigadeLabel(instance, bt.name)}`} onClick={() => handleRemoveBrigade(instance.key)}>
                       <IconTrash size={16} />
                     </ActionIcon>
                   </Tooltip>
@@ -471,16 +519,12 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
               )}
 
               {commanderUnit && instance.commanderLine && (
-                <Paper withBorder p="xs" radius="sm" mb="sm" bg="var(--mantine-color-brown-0)">
+                // A plain row between rules, rather than a box within the card
+                <div className="commander-row">
                   <Group justify="space-between" wrap="nowrap">
-                    <Group gap="xs" wrap="nowrap">
-                      <ThemeIcon size="sm" variant="light" color="brown">
-                        <IconSword size={14} />
-                      </ThemeIcon>
-                      <Text size="sm" fw={600}>
-                        Brigade Commander
-                      </Text>
-                    </Group>
+                    <Text size="sm" fw={600}>
+                      Brigade Commander
+                    </Text>
                     <Group gap={6} wrap="nowrap">
                       {(commanderUnit.variants?.length ?? 0) > 0 ? (
                         <Select
@@ -499,13 +543,13 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                         <Text size="xs">{commanderUnit.name}</Text>
                       )}
                       {unitCost(commanderUnit, instance.commanderLine.variantLabel) > 0 && (
-                        <Badge size="sm" variant="filled" color="brown">
+                        <Text size="xs" c="dimmed" w={56} ta="right">
                           {unitCost(commanderUnit, instance.commanderLine.variantLabel)} pts
-                        </Badge>
+                        </Text>
                       )}
                     </Group>
                   </Group>
-                </Paper>
+                </div>
               )}
 
               <Stack gap="sm">
@@ -539,7 +583,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
 
                         {/* Regiment instances */}
                         {regiments.map((reg, regIdx) => (
-                          <Paper key={reg.key} withBorder p="sm" radius="sm">
+                          // A rule down the left side, as Fleet marks a group within a section, not a box
+                        <div key={reg.key} className="regiment-block">
                             <Group justify="space-between" mb="xs">
                               <Text size="sm" fw={500}>{regDef.label} #{regIdx + 1}</Text>
                               <ActionIcon
@@ -583,7 +628,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                                 );
                               })}
                             </Stack>
-                          </Paper>
+                          </div>
                         ))}
                       </Stack>
                     );

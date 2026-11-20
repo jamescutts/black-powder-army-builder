@@ -118,8 +118,9 @@ function RosterContent({ nation, roster }: Props) {
             </div>
           )}
           <Stack gap={0} style={{ minWidth: 0 }}>
-            <Title order={3}>{nation.name}</Title>
+            <Title order={3}>{roster.armyName.trim() || nation.name}</Title>
             <Text size="sm" c="dimmed">
+              {roster.armyName.trim() ? `${nation.name} \u2014 ` : ""}
               {supplement?.name ? `${supplement.name} \u2014 ` : ""}
               {roster.brigadeInstances.length} brigade
               {roster.brigadeInstances.length === 1 ? "" : "s"}
@@ -204,7 +205,14 @@ function RosterContent({ nation, roster }: Props) {
           <div key={instance.key}>
             <Group justify="space-between" align="baseline" mt="sm">
               <Title order={4} c="brown.7" style={{ fontFamily: "var(--font-heading), serif" }}>
-                {bt.name}
+                {instance.name?.trim() || bt.name}
+                {/* A named brigade still says what type it is */}
+                {instance.name?.trim() && (
+                  <Text span size="sm" c="dimmed" fw={400} ff="body">
+                    {" "}
+                    · {bt.name}
+                  </Text>
+                )}
               </Title>
               <Text size="sm" c="dimmed">{total} pts</Text>
             </Group>
@@ -446,7 +454,7 @@ export function RosterViewModal({ nation, roster }: Props) {
         pdf.addImage(pageImgData, "PNG", margin, margin, imgWidth, pageImgHeight);
       }
 
-      pdf.save(`${nation.name.replace(/[^a-zA-Z0-9]/g, "-")}-roster.pdf`);
+      pdf.save(`${(roster.armyName.trim() || nation.name).replace(/[^a-zA-Z0-9]/g, "-")}-roster.pdf`);
     } catch (err) {
       console.error("PDF generation failed:", err);
     } finally {

@@ -5,8 +5,10 @@ body {
   color: #2b1f14;
 }
 
+/* A textured parchment page, a shade deeper than the solid cream cards on it (theme.ts), so the
+   cards stand clear of it. Mantine paints cards with its body colour, so the page sets its own here. */
 body {
-  background-color: #f2ecd6;
+  background-color: #e8dec4;
   background-image:
     radial-gradient(ellipse 700px 500px at 8% 5%, rgba(120, 78, 42, 0.13), transparent 60%),
     radial-gradient(ellipse 600px 500px at 95% 0%, rgba(120, 78, 42, 0.10), transparent 55%),
@@ -18,9 +20,9 @@ body {
   background-attachment: fixed;
 }
 
-/* Thicker borders on all Paper cards */
+/* Card borders: one warm hairline, as on Fleet */
 .mantine-Paper-root[data-with-border] {
-  --paper-border-width: 2px;
+  border-color: #d6c8a8;
 }
 
 /*
@@ -307,7 +309,7 @@ body {
   line-height: 1.25;
 }
 
-.brigade-card {
+.brigade-card.brigade-card {
   border-top: 4px solid var(--mantine-color-brown-6);
 }
 
@@ -318,7 +320,7 @@ body {
 }
 
 /* A brigade with something to fix: its top rule turns red, and the problems sit under its title */
-.brigade-card[data-issues] {
+.brigade-card.brigade-card[data-issues] {
   border-top-color: var(--mantine-color-red-6);
 }
 
@@ -352,6 +354,27 @@ body {
 
 .brigade-issues li + li {
   margin-top: 2px;
+}
+
+/* Brigade commander: a plain row between hairlines inside the brigade card */
+.commander-row {
+  padding: 8px 0;
+  margin-bottom: var(--mantine-spacing-sm);
+  border-top: 1px solid rgba(107, 61, 23, 0.14);
+  border-bottom: 1px solid rgba(107, 61, 23, 0.14);
+}
+
+/* A regiment within a brigade: a brown rule down its left side, like Fleet's allied groups */
+.regiment-block {
+  padding: 6px 0 6px var(--mantine-spacing-sm);
+  border-left: 3px solid rgba(138, 79, 28, 0.35);
+}
+
+/* Renaming a brigade: the field takes the title's place, in the heading font */
+.brigade-name-input input {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
 }
 
 /* The brigade title folds the card: a chevron that turns when it's closed */
@@ -413,6 +436,32 @@ body {
 .roster-title.roster-title {
   font-size: 1.25rem;
   line-height: 1.2;
+}
+
+/* The army's name, typed into the roster card's heading: reads as a heading, with a dashed line
+   under it on hover and focus to show it can be edited */
+.army-name-input .mantine-TextInput-input,
+.army-name-input input {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  height: auto;
+  min-height: 0;
+  padding: 0 0 2px;
+  color: var(--mantine-color-text);
+  border-bottom: 1px dashed transparent;
+  border-radius: 0;
+}
+
+.army-name-input input::placeholder {
+  color: var(--mantine-color-brown-6);
+  opacity: 0.75;
+}
+
+.army-name-input input:hover,
+.army-name-input input:focus {
+  border-bottom-color: var(--mantine-color-brown-4);
 }
 
 /* Roster legality, at the foot of the roster card: a solid red panel while there's anything to fix,
@@ -540,10 +589,40 @@ body {
   }
 }
 
-.page-band {
-  padding: var(--mantine-spacing-lg) 0;
-  background: rgba(107, 61, 23, 0.1);
-  border-bottom: 1px solid rgba(107, 61, 23, 0.18);
+/* Army builder page head: a flag beside the army's name, like Fleet's page titles */
+.army-title.army-title {
+  font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.1rem);
+  line-height: 1.15;
+  color: var(--mantine-color-brown-7);
+}
+
+.army-flag {
+  position: relative;
+  flex-shrink: 0;
+  width: 60px;
+  height: 40px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid #d6c8a8;
+}
+
+.army-flag img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* The same aged-cloth tint the other flags get */
+.army-flag::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at center, transparent 40%, rgba(60, 30, 5, 0.35) 100%),
+    linear-gradient(135deg, rgba(180, 130, 60, 0.18) 0%, rgba(120, 70, 20, 0.22) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 /* Support band: a tinted parchment strip to stand apart from the page above it */

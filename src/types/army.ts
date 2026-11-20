@@ -15,6 +15,8 @@ export interface RosterRegimentInstance {
 export interface RosterBrigadeInstance {
   key: string;
   brigadeTypeId: string;
+  /** The player's own name for this brigade, e.g. "Friant's Brigade"; its type is shown alongside */
+  name?: string;
   /** The brigade's own commander, required whenever the brigade type declares a `commanderUnitId` */
   commanderLine: RosterUnitLine | null;
   /** One array of lines per slot, indexed the same as the brigade type's `slots` array */
@@ -29,6 +31,7 @@ export interface RosterBrigadeInstance {
 
 export interface RosterState {
   nationId: string;
+  /** The player's own name for the list, e.g. "Davout's I Corps"; empty until they give it one */
   armyName: string;
   /** Free-standing Command category units (Divisional/Brigade Commanders) */
   commandItems: RosterUnitLine[];
@@ -36,5 +39,5 @@ export interface RosterState {
 }
 
 export function emptyRoster(nationId: string): RosterState {
-  return { nationId, armyName: "My Army", commandItems: [], brigadeInstances: [] };
+  return { nationId, armyName: "", commandItems: [], brigadeInstances: [] };
 }

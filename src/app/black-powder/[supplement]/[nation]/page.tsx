@@ -2,9 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import {
-  ActionIcon,
   Anchor,
+  Breadcrumbs,
   Container,
   Grid,
   Group,
@@ -12,9 +13,7 @@ import {
   Stack,
   Text,
   Title,
-  Tooltip,
 } from "@mantine/core";
-import { IconTrash } from "@tabler/icons-react";
 import { supplements, getSupplement, getNation, getNationsForSupplement } from "@/data";
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
@@ -23,8 +22,6 @@ import { RosterPanel } from "@/components/RosterPanel";
 import { ForceOrgNotes } from "@/components/ForceOrgNotes";
 import { loadRoster, saveRoster, clearRoster } from "@/lib/storage";
 import { ConfirmModal } from "@/components/ConfirmModal";
-
-const SUPPLEMENT_OPTIONS = supplements.map((s) => ({ value: s.id, label: s.name }));
 
 function FlagIcon({ src, alt }: { src: string; alt: string }) {
   return (
@@ -117,21 +114,16 @@ function BuilderContent({ nationId }: { nationId: string }) {
   const hasUnits = roster.commandItems.length > 0 || roster.brigadeInstances.length > 0;
   const [confirmingClear, setConfirmingClear] = useState(false);
 
-  function handleSupplementChange(value: string | null) {
-    if (!value) return;
-    const firstNation = getNationsForSupplement(value)[0];
-    if (!firstNation) return;
-    router.replace(`/black-powder/${value}/${firstNation.id}`, { scroll: false });
-  }
-
   function handleNationChange(value: string | null) {
     if (!value) return;
     router.replace(`/black-powder/${supplement.id}/${value}`, { scroll: false });
   }
 
+  // Clearing empties the list but keeps its name
   function handleClear() {
-    setRoster(emptyRoster(nationId));
-    clearRoster(nationId);
+    const cleared = { ...emptyRoster(nationId), armyName: roster.armyName };
+    setRoster(cleared);
+    if (!cleared.armyName.trim()) clearRoster(nationId);
     setConfirmingClear(false);
   }
 
@@ -146,89 +138,79 @@ function BuilderContent({ nationId }: { nationId: string }) {
       >
         This removes every unit and brigade from the army you&apos;ve built for {nation.name}. It can&apos;t be undone.
       </ConfirmModal>
-      {/* The army being built, in a tinted band under the site header, like the support band in the footer */}
-      <div className="page-band">
-        <Container size="xl">
-          <Stack gap="sm">
-            {/* The army being built on the left, with the pickers to change it centred beside it */}
-            <Group justify="space-between" align="center" wrap="wrap">
-              {/* Grows to fill the row, so a long nation name wraps beside the pickers instead of pushing them down */}
-              <Stack gap={0} style={{ flex: "1 1 320px", minWidth: 0, userSelect: "none" }}>
-                {/* Cinzel, the content heading font; the script is kept for the site name in the header */}
-                <Title order={1} fz={{ base: 22, sm: 26 }} fw={600} c="brown.7" lh={1.2}>
+      {/* Fleet-style page head: breadcrumbs, then the army's flag and name as the page title, with only its
+          own description under it. Supplement and rule set are in the breadcrumbs, which link back. */}
+      <Container size="xl" pt="lg" pb="sm">
+        <Stack gap="sm">
+          <Breadcrumbs separator="›" className="army-crumbs">
+            <Anchor component={Link} href="/black-powder" size="sm" c="brown.7">
+              Black Powder
+            </Anchor>
+            <Anchor component={Link} href={`/black-powder/${supplement.id}`} size="sm" c="brown.7">
+              {supplement.name}
+            </Anchor>
+            <Text size="sm" c="dimmed">
+              {nation.name}
+            </Text>
+          </Breadcrumbs>
+
+          <Group justify="space-between" align="flex-end" wrap="wrap" gap="md">
+            <Group gap="md" wrap="nowrap" align="center" style={{ flex: "1 1 360px", minWidth: 0 }}>
+              {(nation.flagFile ?? nation.flagFiles?.[0]) && (
+                <span className="army-flag">
+                  <img src={(nation.flagFile ?? nation.flagFiles?.[0])} alt="" />
+                </span>
+              )}
+              <Stack gap={2} style={{ minWidth: 0 }}>
+                <Title order={1} className="army-title">
                   {nation.name}
                 </Title>
-                {/* The book it comes from: italic and brown, like a title, rather than grey small print */}
-                <Text fz="md" fs="italic" c="brown.6" mt={2}>
-                  {supplement.name}
+                <Text size="sm" c="dimmed">
+                  {nation.blurb}
+                  {nation.attribution && (
+                    <>
+                      {" "}
+                      (Community list by{" "}
+                      {nation.attribution.sourceUrl ? (
+                        <Anchor href={nation.attribution.sourceUrl} target="_blank" rel="noreferrer" c="brown.7" inherit>
+                          {nation.attribution.author}
+                        </Anchor>
+                      ) : (
+                        nation.attribution.author
+                      )}
+                      )
+                    </>
+                  )}
                 </Text>
               </Stack>
-              <Group align="flex-end" wrap="wrap">
-                <Select
-                  label="Supplement"
-                  data={SUPPLEMENT_OPTIONS}
-                  value={supplement.id}
-                  onChange={handleSupplementChange}
-                  w={200}
-                  allowDeselect={false}
-                />
-                <Select
-                  label="Nation"
-                  data={nationOptionsForSupplement}
-                  value={nation.id}
-                  onChange={handleNationChange}
-                  w={260}
-                  allowDeselect={false}
-                  leftSection={
-                    nation.flagFile || nation.flagFiles?.[0] ? (
-                      <FlagIcon src={(nation.flagFile ?? nation.flagFiles?.[0])!} alt="" />
-                    ) : undefined
-                  }
-                  renderOption={({ option }) => {
-                    const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
-                    return (
-                      <Group gap="xs" wrap="nowrap">
-                        {flag && <FlagIcon src={flag} alt="" />}
-                        <span>{option.label}</span>
-                      </Group>
-                    );
-                  }}
-                />
-                <Tooltip label="Clear army">
-                  <ActionIcon
-                    color="red"
-                    variant="filled"
-                    size="lg"
-                    onClick={() => setConfirmingClear(true)}
-                    disabled={!hasUnits}
-                    aria-label="Clear army"
-                  >
-                    <IconTrash size={18} />
-                  </ActionIcon>
-                </Tooltip>
-              </Group>
             </Group>
-
-            <Text size="sm" c="dimmed">
-              {supplement.blurb} — {nation.blurb}
-              {nation.attribution && (
-                <>
-                  {" "}
-                  (Community list by{" "}
-                  {nation.attribution.sourceUrl ? (
-                    <Anchor href={nation.attribution.sourceUrl} target="_blank" rel="noreferrer" c="brown.7">
-                      {nation.attribution.author}
-                    </Anchor>
-                  ) : (
-                    nation.attribution.author
-                  )}
-                  )
-                </>
-              )}
-            </Text>
-          </Stack>
-        </Container>
-      </div>
+            {/* Other armies from the same book; a different book is a breadcrumb away */}
+            <Select
+              label="Switch army"
+              size="sm"
+              data={nationOptionsForSupplement}
+              value={nation.id}
+              onChange={handleNationChange}
+              w={250}
+              allowDeselect={false}
+              leftSection={
+                nation.flagFile || nation.flagFiles?.[0] ? (
+                  <FlagIcon src={(nation.flagFile ?? nation.flagFiles?.[0])!} alt="" />
+                ) : undefined
+              }
+              renderOption={({ option }) => {
+                const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
+                return (
+                  <Group gap="xs" wrap="nowrap">
+                    {flag && <FlagIcon src={flag} alt="" />}
+                    <span>{option.label}</span>
+                  </Group>
+                );
+              }}
+            />
+          </Group>
+        </Stack>
+      </Container>
 
       {/* Held back until the saved army is read, so it doesn't flash up empty first */}
       {loadedFor === nationId && (
@@ -240,7 +222,12 @@ function BuilderContent({ nationId }: { nationId: string }) {
             <Grid.Col span={{ base: 12, md: 5 }}>
               {/* Only the roster follows you down the page; the reference notes sit below the builder */}
               <div style={{ position: "sticky", top: 16 }}>
-                <RosterPanel nation={nation} roster={roster} />
+                <RosterPanel
+                  nation={nation}
+                  roster={roster}
+                  onClear={hasUnits ? () => setConfirmingClear(true) : undefined}
+                  onRename={(armyName) => setRoster({ ...roster, armyName })}
+                />
               </div>
             </Grid.Col>
           </Grid>

@@ -486,6 +486,8 @@ export function brigadeDisplayName(nation: Nation, roster: RosterState, brigadeK
   const bi = roster.brigadeInstances.find((b) => b.key === brigadeKey);
   const name = nation.brigades.find((b) => b.id === bi?.brigadeTypeId)?.name ?? "Brigade";
   if (!bi) return name;
+  // A brigade the player has named goes by that name, with its type after it
+  if (bi.name?.trim()) return `${bi.name.trim()} (${name})`;
   const sameType = roster.brigadeInstances.filter((b) => b.brigadeTypeId === bi.brigadeTypeId);
   if (sameType.length < 2) return name;
   const n = sameType.indexOf(bi) + 1;
@@ -505,3 +507,8 @@ export function brigadeIssueText(message: string, brigadeName: string): string {
 
 /** Asks the builder to open a brigade's card and scroll to it, e.g. from the roster's issue list */
 export const REVEAL_BRIGADE_EVENT = "army-builder:reveal-brigade";
+
+/** A brigade's own name if the player has given it one, otherwise its type, e.g. "Infantry Brigade" */
+export function brigadeLabel(bi: { name?: string }, typeName: string): string {
+  return bi.name?.trim() || typeName;
+}

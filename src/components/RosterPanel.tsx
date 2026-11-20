@@ -1,7 +1,7 @@
 "use client";
 
-import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, Title, UnstyledButton } from "@mantine/core";
-import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
+import { Badge, Button, Divider, Group, List, Paper, ScrollArea, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
+import { IconAlertTriangle, IconCircleCheck, IconTrash } from "@tabler/icons-react";
 import type { Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost } from "@/lib/units";
@@ -11,6 +11,10 @@ import { RosterViewModal } from "@/components/RosterViewModal";
 interface Props {
   nation: Nation;
   roster: RosterState;
+  /** Clears the army (after asking); left out while there's nothing to clear */
+  onClear?: () => void;
+  /** Renames the list */
+  onRename?: (name: string) => void;
 }
 
 function lineTotal(nation: Nation, line: RosterUnitLine): number {
@@ -69,7 +73,7 @@ function LineList({
   );
 }
 
-export function RosterPanel({ nation, roster }: Props) {
+export function RosterPanel({ nation, roster, onClear, onRename }: Props) {
   const commandTotal = roster.commandItems.reduce((s, l) => s + lineTotal(nation, l), 0);
 
   const brigadeTotals = roster.brigadeInstances.map((instance) => {
@@ -129,9 +133,17 @@ export function RosterPanel({ nation, roster }: Props) {
               </div>
             )}
             <Stack gap={0} style={{ minWidth: 0 }}>
-              <Title order={2} className="roster-title">
-                Roster
-              </Title>
+              {/* The list's own name, typed straight into the heading, with "Name your army" until it has one */}
+              <TextInput
+                variant="unstyled"
+                className="army-name-input"
+                aria-label="Army name"
+                placeholder="Name your army"
+                maxLength={60}
+                value={roster.armyName}
+                onChange={(e) => onRename?.(e.currentTarget.value)}
+                readOnly={!onRename}
+              />
               <Text size="xs" c="dimmed">
                 {nation.name}
               </Text>
@@ -164,9 +176,16 @@ export function RosterPanel({ nation, roster }: Props) {
               if (!bt) return null;
               return (
                 <div key={instance.key}>
-                  <Group justify="space-between">
-                    <Text size="sm" fw={600}>
-                      {bt.name}
+                  <Group justify="space-between" wrap="nowrap">
+                    <Text size="sm" fw={600} style={{ minWidth: 0 }}>
+                      {instance.name?.trim() || bt.name}
+                      {/* A named brigade still says what type it is */}
+                      {instance.name?.trim() && (
+                        <Text span size="xs" c="dimmed" fw={400}>
+                          {" "}
+                          · {bt.name}
+                        </Text>
+                      )}
                     </Text>
                     <Text size="xs" c="dimmed">
                       {total} pts
@@ -258,6 +277,14 @@ export function RosterPanel({ nation, roster }: Props) {
             </>
           )}
         </div>
+
+        {onClear && (
+          <Group justify="flex-end" mt="xs">
+            <Button variant="subtle" color="red" size="compact-xs" leftSection={<IconTrash size={13} />} onClick={onClear}>
+              Clear army
+            </Button>
+          </Group>
+        )}
       </Paper>
 
       <RosterViewModal nation={nation} roster={roster} />
