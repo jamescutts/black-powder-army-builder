@@ -1,7 +1,7 @@
 {
   "id": "confederation-of-the-rhine",
-  "name": "Other Confederation States & Rheinbund",
-  "blurb": "The minor German states of Napoleon's Confederation of the Rhine, 1812.",
+  "name": "Confederation of the Rhine 1812",
+  "blurb": "The lesser states of Napoleon's Confederation of the Rhine: Baden, Hesse-Darmstadt and Berg, with the Rheinbund regiments.",
   "flagFiles": [
     "/flags/baden.svg",
     "/flags/hesse.svg"
