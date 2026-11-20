@@ -258,7 +258,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
         <div>
           <Stack gap="sm">
             {roster.commandItems.length > 0 && (
-              <div>
+              <div className="roster-group">
                 <Group justify="space-between">
                   <Text size="sm" fw={600}>
                     Command
@@ -275,7 +275,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
               const flatLines = instance.slotLines.flat();
               if (!bt) return null;
               return (
-                <div key={instance.key}>
+                <div key={instance.key} className="roster-group">
                   <Group justify="space-between" wrap="nowrap">
                     <Text size="sm" fw={600} style={{ minWidth: 0 }}>
                       {instance.name?.trim() || bt.name}
@@ -303,7 +303,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
                       const regLines = reg.slotLines.flat();
                       if (regLines.length === 0) return null;
                       return (
-                        <div key={reg.key} style={{ marginLeft: 8 }}>
+                        <div key={reg.key} className="roster-regiment">
                           <Text size="xs" fw={600} c="dimmed">
                             {reg.name?.trim()
                               ? `${reg.name.trim()} \u00b7 ${slot.regiment!.label} #${regIdx + 1}`

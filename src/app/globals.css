@@ -614,6 +614,19 @@ button.add-row:focus-visible {
   border-left: 3px solid var(--mantine-color-brown-3);
 }
 
+/* The summary card's command and brigades, each a block on the same bar as the builder's groups, with
+   a brigade's regiments on a thinner, paler one inside it */
+.roster-group {
+  padding-left: 10px;
+  border-left: 3px solid var(--mantine-color-brown-3);
+}
+
+.roster-regiment {
+  margin-top: 4px;
+  padding-left: 8px;
+  border-left: 2px solid var(--mantine-color-brown-2);
+}
+
 /* "Attached to" over an army battery's brigade picker: small, like the row's other details */
 .attach-label {
   font-size: var(--mantine-font-size-xs);
