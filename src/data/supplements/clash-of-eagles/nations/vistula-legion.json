@@ -93,6 +93,56 @@
       "morale": "4",
       "stamina": "2",
       "cost": 19
+    },
+    {
+      "id": "fig-og-horse-arty",
+      "name": "Old Guard Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "3",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 4+",
+        "Marauder"
+      ],
+      "cost": 42
+    },
+    {
+      "id": "fig-yg-horse-arty",
+      "name": "Young Guard Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Reliable",
+        "Elite 5+",
+        "Marauder"
+      ],
+      "cost": 38
+    },
+    {
+      "id": "fig-og-heavy-foot-arty",
+      "name": "Old Guard Heavy Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "3",
+      "stamina": "2",
+      "special": [
+        "Reliable",
+        "Elite 4+"
+      ],
+      "cost": 43
     }
   ],
   "brigades": [
@@ -156,6 +206,52 @@
       ],
       "commanderUnitId": "vl-brig-cmd",
       "note": "1-2 Infantry Regiments (1-3 battalions each). Regimental Artillery: 1 section per 2 Vistula Infantry battalions, OR 1 battery per infantry regiment of 3+ battalions — one type only."
+    },
+    {
+      "id": "vl-guard-artillery-reserve",
+      "name": "Imperial Guard Artillery Reserve",
+      "min": 0,
+      "max": 1,
+      "slots": [
+        {
+          "label": "Guard Horse Artillery (0-5 Old Guard OR 0-4 Young Guard batteries, 1 per 4 infantry battalions)",
+          "unitIds": [
+            "fig-og-horse-arty",
+            "fig-yg-horse-arty"
+          ],
+          "min": 0,
+          "max": 5,
+          "singleUnitType": true,
+          "unitLimits": [
+            {
+              "unitId": "fig-yg-horse-arty",
+              "max": 4
+            }
+          ]
+        },
+        {
+          "label": "Old Guard Heavy Foot Battery (0-1, if 8 battalions of infantry are taken)",
+          "unitIds": [
+            "fig-og-heavy-foot-arty"
+          ],
+          "min": 0,
+          "max": 1,
+          "requiresArmyUnitCount": {
+            "unitIds": [
+              "vl-infantry"
+            ],
+            "min": 8
+          }
+        }
+      ],
+      "attachBatteries": {
+        "batteryUnitIds": [
+          "fig-og-horse-arty",
+          "fig-yg-horse-arty",
+          "fig-og-heavy-foot-arty"
+        ]
+      },
+      "note": "The stand-alone Vistula Legion list takes its artillery from the Imperial Guard Artillery Reserve (pp. 164-165): attach each battery to any brigade (pick it on the battery)."
     }
   ],
   "notes": [
@@ -174,5 +270,21 @@
   "specialRules": [
     "Vistula Legion infantry also have Lie Down, Must Form Square, Column of Companies, Mixed Formation and Skirmish (p. 63).",
     "Regimental guns follow the rules for regimental guns on p. 54."
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "fig-og-horse-arty",
+        "fig-yg-horse-arty"
+      ],
+      "brigadeTypeIds": [
+        "vl-guard-artillery-reserve"
+      ],
+      "perUnitIds": [
+        "vl-infantry"
+      ],
+      "ratio": 4,
+      "label": "Guard Horse Artillery batteries"
+    }
   ]
 }

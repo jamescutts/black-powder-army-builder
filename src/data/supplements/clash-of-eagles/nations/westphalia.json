@@ -70,6 +70,20 @@
       ]
     },
     {
+      "id": "fr-cmd-tharreau",
+      "name": "General de Division Tharreau",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 100,
+      "special": [
+        "+2 combat attacks",
+        "Headstrong",
+        "Commanded the Westphalian 23rd Division in 1812."
+      ],
+      "staffRating": 8
+    },
+    {
       "id": "wp-line-infantry",
       "name": "Westphalian Line Infantry",
       "category": "Infantry",
@@ -718,7 +732,8 @@
   "notes": [
     "Stats follow the army list's table (pp. 168-169). The Westphalia chapter (pp. 86-88) gives some differently: Cuirassier Hand-to-Hand 8, Morale 4, Reliable; Garde du Corps Hand-to-Hand 3, Morale 4, Heavy Cavalry D1; Guard Chevauleger without Marauder; Line infantry with Mixed Formation rather than Poor Mixed Formation. Agree with your opponent which to use.",
     "The Confederation of the Rhine list's maximums and minimums are per every 1,000 points unless otherwise stated (p. 172). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "A Divisional commander must take brigades of his own nationality; the Rheinbund brigade is the exception."
+    "A Divisional commander must take brigades of his own nationality; the Rheinbund brigade is the exception.",
+    "The book's table of French generals (p. 121) doesn't say which army each can lead; the builder also offers General de Division Tharreau here, as he commanded the Westphalian 23rd Division in 1812."
   ],
   "specialRules": [
     "Westphalian infantry follows the French infantry special rules, but does not have Pas de Charge.",
@@ -726,7 +741,8 @@
     "Line infantry: Lie Down, Must Form Square, Column of Companies, Close Column and Poor Mixed Formation. Light infantry and the Guard Jäger also have Light Infantry Mixed Formation; the Jäger-Karabiniers have Rifle Mixed Formation and Light Infantry Mixed Formation.",
     "Westphalian cavalry can use Deep Formation and Cavalry Mixed Formation.",
     "Guard Chevauleger: two of the six dice it rolls in hand-to-hand can count as lance attacks.",
-    "The Guard Grenadiers' regimental guns use the regimental artillery profile, with smoothbore foot artillery in place of battalion artillery."
+    "The Guard Grenadiers' regimental guns use the regimental artillery profile, with smoothbore foot artillery in place of battalion artillery.",
+    "Rheinbund infantry follow the French infantry special rules without Pas de Charge, and are Lacking Initiative. They get no +1 for shooting at short range, suffer -1 at medium and long range, and get no bonus for being skirmishers when shooting."
   ],
   "alliesRules": [
     {

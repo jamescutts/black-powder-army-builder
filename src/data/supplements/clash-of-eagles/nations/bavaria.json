@@ -112,7 +112,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Light Artillery",
       "handToHand": "1",
-      "shooting": "2/1/1",
+      "shooting": "2-1-1",
       "morale": "4",
       "stamina": "1",
       "special": [
@@ -128,7 +128,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "2",
       "cost": 27
@@ -152,7 +152,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Siege Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "2",
       "cost": 31
@@ -605,7 +605,8 @@
   "specialRules": [
     "Bavarian infantry follow the French infantry special rules.",
     "Lacking Initiative (Line infantry): can't make initiative moves except to change formation or facing, or to charge the nearest enemy to their front.",
-    "Bavarian cavalry can use Deep Formation and Cavalry Mixed Formation."
+    "Bavarian cavalry can use Deep Formation and Cavalry Mixed Formation.",
+    "Rheinbund infantry follow the French infantry special rules without Pas de Charge, and are Lacking Initiative. They get no +1 for shooting at short range, suffer -1 at medium and long range, and get no bonus for being skirmishers when shooting."
   ],
   "alliesRules": [
     {

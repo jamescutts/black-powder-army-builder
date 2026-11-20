@@ -57,6 +57,20 @@
       ]
     },
     {
+      "id": "fr-cmd-marchand",
+      "name": "General de Division Marchand",
+      "category": "Command",
+      "type": "Named Commander",
+      "armament": "-",
+      "cost": 125,
+      "special": [
+        "+2 combat attacks",
+        "Decisive",
+        "Commanded the Württemberg 25th Division in 1812."
+      ],
+      "staffRating": 9
+    },
+    {
       "id": "wt-line-infantry",
       "name": "Württemberg Line Infantry",
       "category": "Infantry",
@@ -710,11 +724,13 @@
     "The Confederation of the Rhine list's maximums and minimums are per every 1,000 points unless otherwise stated (p. 172). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
     "A Divisional commander must take brigades of his own nationality; the Rheinbund brigade is the exception.",
     "The Heavy Artillery battery is 31 points, as in the Divisional Artillery box (p. 172). The stat table (p. 170) prints 28, but its own half Heavy battery is 23 (31 less 8), as is every other nation's Heavy battery at 31, so 28 looks like a misprint.",
-    "The Divisional Artillery box offers the half-battery downgrade twice, both times for \"a foot battery\"; the stat table gives half batteries for the Light, Horse and Heavy batteries, so the builder offers it on all three."
+    "The Divisional Artillery box offers the half-battery downgrade twice, both times for \"a foot battery\"; the stat table gives half batteries for the Light, Horse and Heavy batteries, so the builder offers it on all three.",
+    "The book's table of French generals (p. 121) doesn't say which army each can lead; the builder also offers General de Division Marchand here, as he commanded the Württemberg 25th Division in 1812."
   ],
   "specialRules": [
     "Württemberg infantry follow all the French infantry special rules, but do not have Pas de Charge.",
-    "Württemberg cavalry can use Deep Formation and Cavalry Mixed Formation."
+    "Württemberg cavalry can use Deep Formation and Cavalry Mixed Formation.",
+    "Rheinbund infantry follow the French infantry special rules without Pas de Charge, and are Lacking Initiative. They get no +1 for shooting at short range, suffer -1 at medium and long range, and get no bonus for being skirmishers when shooting."
   ],
   "alliesRules": [
     {

@@ -905,7 +905,8 @@
   "specialRules": [
     "Saxon infantry follows the French infantry special rules, but does not have Pas de Charge.",
     "Saxon Line infantry, Light infantry and artillery are Unreliable unless the Saxon army is fighting alongside a French army as allies.",
-    "Saxon Line and Light infantry are Lacking Initiative."
+    "Saxon Line and Light infantry are Lacking Initiative.",
+    "Rheinbund infantry follow the French infantry special rules without Pas de Charge, and are Lacking Initiative. They get no +1 for shooting at short range, suffer -1 at medium and long range, and get no bonus for being skirmishers when shooting."
   ],
   "alliesRules": [
     {
