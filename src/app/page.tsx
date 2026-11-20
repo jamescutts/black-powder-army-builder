@@ -5,7 +5,16 @@ import { SITE_DESCRIPTION, pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({ description: SITE_DESCRIPTION, path: "/" });
 
-const FEATURED_ARMIES = ["france", "russia", "peninsular-british", "prussians-1815"];
+const FEATURED_ARMIES = [
+  "france",
+  "russia",
+  "austria",
+  "prussia",
+  "peninsular-british",
+  "peninsular-french",
+  "anglo-netherlands-british",
+  "prussians-1815",
+];
 
 // Counts and supplement summaries are worked out here, on the server, so the home page
 // doesn't send every army list to the browser.
