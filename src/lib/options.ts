@@ -1,0 +1,283 @@
+import type { BrigadeType, Nation, UnitEntry, UnitOption } from "@/data/types";
+import type { RosterBrigadeInstance, RosterRegimentInstance, RosterUnitLine } from "@/types/army";
+import { unitCost } from "@/lib/units";
+
+/** Where a unit line sits, which decides which options it can have and which apply to it */
+export interface LineContext {
+  bt?: BrigadeType;
+  /** The options its regiment has taken, when it's in one */
+  regimentOptions?: string[];
+}
+
+/** A unit as fielded: after its options, with the name, points, rules and stats to show for it */
+export interface ResolvedUnit {
+  /** The unit picked in the slot */
+  base: UnitEntry;
+  /** The unit it is once swaps apply (e.g. Guard Musketeer for a Musketeer in a Guard regiment) */
+  unit: UnitEntry;
+  /** Points for one of it, options included */
+  cost: number;
+  /** Labels of the options that don't swap the unit, e.g. ["Veteran", "Large"] */
+  tags: string[];
+  /** "Guard Musketeer (Veteran, Large)" */
+  name: string;
+  special: string[];
+  handToHand?: string;
+  shooting?: string;
+}
+
+export const unitOptionsOf = (bt: BrigadeType | undefined) => (bt?.options ?? []).filter((o) => o.scope !== "regiment");
+export const regimentOptionsOf = (bt: BrigadeType | undefined) => (bt?.options ?? []).filter((o) => o.scope === "regiment");
+
+/** The unit-scope options a unit can be offered in this brigade */
+export function optionsForUnit(bt: BrigadeType | undefined, unitId: string): UnitOption[] {
+  return unitOptionsOf(bt).filter((o) => o.appliesTo.includes(unitId));
+}
+
+/** The regiment-scope options a regiment can take, given the units its slots accept */
+export function optionsForRegiment(bt: BrigadeType | undefined, unitIds: string[]): UnitOption[] {
+  return regimentOptionsOf(bt).filter((o) => o.appliesTo.some((id) => unitIds.includes(id)));
+}
+
+function addToStat(stat: string | undefined, bonus: number | undefined): string | undefined {
+  if (!bonus || stat === undefined || !/^\d+$/.test(stat)) return stat;
+  return String(Number(stat) + bonus);
+}
+
+/** What a line's unit is once its own and its regiment's options apply */
+export function resolveLine(nation: Nation, line: RosterUnitLine, ctx: LineContext = {}): ResolvedUnit | null {
+  const base = nation.units.find((u) => u.id === line.unitId);
+  if (!base) return null;
+
+  // Regiment options first (Guard), then the unit's own (Veteran, Half battery), each only where it applies
+  const regimentOpts = regimentOptionsOf(ctx.bt).filter(
+    (o) => ctx.regimentOptions?.includes(o.id) && o.appliesTo.includes(base.id)
+  );
+  const unitOpts = optionsForUnit(ctx.bt, base.id).filter((o) => line.options?.includes(o.id));
+  const applied = [...regimentOpts, ...unitOpts];
+
+  let unit = base;
+  for (const o of applied) {
+    const to = o.swapTo?.[unit.id] ?? o.swapTo?.[base.id];
+    const swapped = to ? nation.units.find((u) => u.id === to) : undefined;
+    if (swapped) unit = swapped;
+  }
+
+  const modifiers = applied.filter((o) => !o.swapTo);
+  const cost =
+    unitCost(unit, unit === base ? line.variantLabel : undefined) + modifiers.reduce((s, o) => s + (o.cost ?? 0), 0);
+  const tags = unitOpts.filter((o) => !o.swapTo).map((o) => o.label);
+  const special = [...new Set([...(unit.special ?? []), ...modifiers.flatMap((o) => o.addSpecial ?? [])])];
+  const bonus = (key: "handToHand" | "shooting") => modifiers.reduce((s, o) => s + (o.statBonus?.[key] ?? 0), 0);
+
+  return {
+    base,
+    unit,
+    cost,
+    tags,
+    name: tags.length ? `${unit.name} (${tags.join(", ")})` : unit.name,
+    special,
+    handToHand: addToStat(unit.handToHand, bonus("handToHand")),
+    shooting: addToStat(unit.shooting, bonus("shooting")),
+  };
+}
+
+/** Every unit line in a brigade, each with the context it sits in (commander excluded) */
+export function brigadeUnitLines(
+  instance: RosterBrigadeInstance
+): { line: RosterUnitLine; regiment?: RosterRegimentInstance }[] {
+  return [
+    ...instance.slotLines.flat().map((line) => ({ line })),
+    ...(instance.regimentSlots ?? []).flatMap((slot) =>
+      (slot ?? []).flatMap((regiment) => regiment.slotLines.flat().map((line) => ({ line, regiment })))
+    ),
+  ];
+}
+
+/** How many of a unit option the brigade may have; Infinity when it isn't limited */
+export function optionAllowance(o: UnitOption, instance: RosterBrigadeInstance): number {
+  let allowed = o.limit?.max ?? Infinity;
+  if (o.limit?.per) {
+    const ids = new Set(o.limit.per.unitIds);
+    const count = brigadeUnitLines(instance)
+      .filter(({ line }) => ids.has(line.unitId))
+      .reduce((s, { line }) => s + line.qty, 0);
+    allowed = Math.min(allowed, Math.floor(count / o.limit.per.ratio));
+  }
+  return allowed;
+}
+
+/** How many units (or, for a regiment option, regiments) in the brigade have taken an option */
+export function optionTaken(o: UnitOption, instance: RosterBrigadeInstance): number {
+  if (o.scope === "regiment") {
+    return (instance.regimentSlots ?? []).reduce(
+      (n, slot) => n + (slot ?? []).filter((r) => r.options?.includes(o.id)).length,
+      0
+    );
+  }
+  return brigadeUnitLines(instance)
+    .filter(({ line }) => line.options?.includes(o.id))
+    .reduce((s, { line }) => s + line.qty, 0);
+}
+
+/** What an option adds to one of a unit's cost: its own cost, or the difference its swap makes */
+export function optionDelta(nation: Nation, o: UnitOption, base: UnitEntry): number {
+  const to = o.swapTo?.[base.id] ? nation.units.find((u) => u.id === o.swapTo![base.id]) : undefined;
+  return to ? unitCost(to) - unitCost(base) : (o.cost ?? 0);
+}
+
+/** "+8", "−8", or "" when it's free */
+export function signedPoints(n: number): string {
+  if (n === 0) return "";
+  return n > 0 ? `+${n}` : `\u2212${Math.abs(n)}`;
+}
+
+/** A regiment option's cost per battalion, e.g. "+11/bn", when it's the same for each unit it covers */
+export function regimentOptionCost(nation: Nation, o: UnitOption): string {
+  const deltas = new Set(
+    o.appliesTo.flatMap((id) => {
+      const base = nation.units.find((u) => u.id === id);
+      return base ? [optionDelta(nation, o, base)] : [];
+    })
+  );
+  if (deltas.size !== 1) return "";
+  const text = signedPoints([...deltas][0]);
+  return text ? `${text}/bn` : "";
+}
+
+const NOUNS: Record<string, [string, string]> = {
+  Infantry: ["battalion", "battalions"],
+  Cavalry: ["regiment", "regiments"],
+  Artillery: ["battery", "batteries"],
+};
+
+/**
+ * What the book calls these units: "battalion(s)" for infantry, "regiment(s)" for cavalry, "battery"
+ * or "batteries" for artillery, and "unit(s)" when they're a mix.
+ */
+export function unitNoun(nation: Nation, unitIds: string[], count: number): string {
+  const categories = new Set(unitIds.map((id) => nation.units.find((u) => u.id === id)?.category));
+  const [one, many] = (categories.size === 1 && NOUNS[[...categories][0] ?? ""]) || ["unit", "units"];
+  return count === 1 ? one : many;
+}
+
+/** A short limit for a toggle's tooltip, e.g. "1 per 4 battalions" or "1 per brigade" */
+export function limitText(nation: Nation, o: UnitOption): string | null {
+  if (o.limit?.per) return `1 per ${o.limit.per.ratio} ${unitNoun(nation, o.limit.per.unitIds, o.limit.per.ratio)}`;
+  if (o.limit?.max !== undefined) return `${o.limit.max} per brigade`;
+  return null;
+}
+
+/**
+ * Why a unit can't take an option right now, or null if it can (or already has it). Options in the same
+ * group as one it has are fine: taking one swaps out the other.
+ */
+export function unitOptionBlocked(
+  nation: Nation,
+  bt: BrigadeType,
+  o: UnitOption,
+  line: RosterUnitLine,
+  instance: RosterBrigadeInstance,
+  regimentOptions: string[] = []
+): string | null {
+  if (line.options?.includes(o.id)) return null;
+  const others = [...(line.options ?? []), ...regimentOptions];
+  const clash = (bt.options ?? []).find(
+    (other) => others.includes(other.id) && (o.excludes?.includes(other.id) || other.excludes?.includes(o.id))
+  );
+  if (clash) return o.excludesReason ?? clash.excludesReason ?? `Can't be combined with ${clash.label}`;
+  const allowed = optionAllowance(o, instance);
+  if (optionTaken(o, instance) >= allowed) {
+    const limit = limitText(nation, o);
+    return allowed === 0 && o.limit?.per
+      ? `Needs ${o.limit.per.ratio} ${unitNoun(nation, o.limit.per.unitIds, o.limit.per.ratio)} in the brigade (${limit})`
+      : `Limit reached${limit ? ` (${limit})` : ""}`;
+  }
+  return null;
+}
+
+/** Why a regiment can't take an option right now, or null if it can (or already has it) */
+export function regimentOptionBlocked(o: UnitOption, regiment: RosterRegimentInstance, instance: RosterBrigadeInstance): string | null {
+  if (regiment.options?.includes(o.id)) return null;
+  if (optionTaken(o, instance) >= optionAllowance(o, instance)) {
+    return `Only ${o.limit?.max ?? 0} regiment${o.limit?.max === 1 ? "" : "s"} per brigade`;
+  }
+  return null;
+}
+
+/**
+ * A line with an option turned on or off. Turning one on drops any other from the same group (Large
+ * replaces Small).
+ */
+export function toggleLineOption(bt: BrigadeType, line: RosterUnitLine, optionId: string): RosterUnitLine {
+  const current = line.options ?? [];
+  if (current.includes(optionId)) {
+    const options = current.filter((id) => id !== optionId);
+    return { ...line, options: options.length ? options : undefined };
+  }
+  const o = bt.options?.find((x) => x.id === optionId);
+  const sameGroup = new Set(
+    o?.group ? (bt.options ?? []).filter((x) => x.group === o.group).map((x) => x.id) : []
+  );
+  return { ...line, options: [...current.filter((id) => !sameGroup.has(id)), optionId] };
+}
+
+/**
+ * A regiment with an option turned on or off. Turning one on also drops its units' options it can't be
+ * combined with (Veteran comes off a regiment made Guard).
+ */
+export function toggleRegimentOption(bt: BrigadeType, regiment: RosterRegimentInstance, optionId: string): RosterRegimentInstance {
+  const current = regiment.options ?? [];
+  if (current.includes(optionId)) {
+    const options = current.filter((id) => id !== optionId);
+    return { ...regiment, options: options.length ? options : undefined };
+  }
+  const o = bt.options?.find((x) => x.id === optionId);
+  const clashes = new Set(
+    (bt.options ?? [])
+      .filter((x) => o?.excludes?.includes(x.id) || x.excludes?.includes(optionId))
+      .map((x) => x.id)
+  );
+  return {
+    ...regiment,
+    options: [...current, optionId],
+    slotLines: regiment.slotLines.map((lines) =>
+      lines.map((l) => {
+        const kept = (l.options ?? []).filter((id) => !clashes.has(id));
+        return { ...l, options: kept.length ? kept : undefined };
+      })
+    ),
+  };
+}
+
+// ─── Batteries attached to other brigades (e.g. Prussian Army Artillery) ─────
+
+/** The army's attachment rule, from whichever brigade type's batteries can be attached */
+export function attachRule(nation: Nation) {
+  return nation.brigades.find((b) => b.attachBatteries)?.attachBatteries;
+}
+
+/**
+ * How many batteries a brigade has: its own (any unit the attachment rule counts as a battery) plus
+ * those attached to it from other brigades.
+ */
+export function batteriesIn(nation: Nation, brigades: RosterBrigadeInstance[], key: string): number {
+  const rule = attachRule(nation);
+  if (!rule) return 0;
+  const ids = new Set(rule.batteryUnitIds);
+  const target = brigades.find((b) => b.key === key);
+  if (!target) return 0;
+  const own = brigadeUnitLines(target)
+    .filter(({ line }) => ids.has(line.unitId) && !line.attachedTo)
+    .reduce((s, { line }) => s + line.qty, 0);
+  const attached = brigades
+    .flatMap((b) => brigadeUnitLines(b))
+    .filter(({ line }) => line.attachedTo === key)
+    .reduce((s, { line }) => s + line.qty, 0);
+  return own + attached;
+}
+
+/** Brigades a battery can be attached to: every brigade whose own type doesn't attach its batteries out */
+export function attachTargets(nation: Nation, brigades: RosterBrigadeInstance[]): RosterBrigadeInstance[] {
+  return brigades.filter((b) => !nation.brigades.find((t) => t.id === b.brigadeTypeId)?.attachBatteries);
+}

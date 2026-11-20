@@ -171,9 +171,63 @@ export interface BrigadeSlot {
   }[];
 }
 
+/**
+ * An upgrade or downgrade from a brigade's "Options" box in the book, e.g. "Upgrade any infantry battalion
+ * to veteran status (Reliable, Elite 5+)... 8 points per battalion". Each unit (or, for `scope: "regiment"`,
+ * each regiment) picks its own.
+ */
+export interface UnitOption {
+  /** Unique within its brigade type, e.g. "veteran-infantry" */
+  id: string;
+  /** Short name shown on the toggle and after the unit's name, e.g. "Veteran" or "Half battery" */
+  label: string;
+  /**
+   * Points per unit, negative for a downgrade. Leave it out for a `swapTo` option: the unit then costs
+   * what the unit it becomes costs, e.g. Guard Musketeer 47 in place of Musketeer 36.
+   */
+  cost?: number;
+  /** Unit ids (as picked in the slot, before any swap) this option can be taken on */
+  appliesTo: string[];
+  /**
+   * "unit" (default): each unit takes it on its own. "regiment": the whole regiment takes it, applying to
+   * every unit in it that's in `appliesTo`, e.g. "Upgrade 1 Infantry Regiment to Guard Status".
+   */
+  scope?: "unit" | "regiment";
+  /** Options sharing a group can't be combined on one unit, e.g. "size" for Large and Small */
+  group?: string;
+  /**
+   * How many may take it within one brigade: at most `max`, and/or one per `ratio` of the listed units
+   * in the brigade, e.g. Large "1 per 4 battalions". For a regiment option this counts regiments.
+   */
+  limit?: { max?: number; per?: { unitIds: string[]; ratio: number } };
+  /** Special rules the unit gains, e.g. ["Reliable", "Elite 5+"] */
+  addSpecial?: string[];
+  /** Added to the unit's stats, e.g. veteran cavalry's "+1 Hand-to-Hand" → { handToHand: 1 } */
+  statBonus?: { handToHand?: number; shooting?: number };
+  /**
+   * The unit becomes another entry from the nation's units, with that entry's own stats, rules and
+   * points, e.g. a half battery { "pr-foot-arty": "pr-foot-arty-half" }.
+   */
+  swapTo?: Record<string, string>;
+  /** Option ids (unit or regiment) this can't be combined with, e.g. Veteran on a Guard regiment */
+  excludes?: string[];
+  /** Why `excludes` applies, shown on the greyed-out toggle, e.g. "Guard are already Reliable, Elite 4+" */
+  excludesReason?: string;
+}
+
 export interface BrigadeType {
   id: string;
   name: string;
+  /** Upgrades and downgrades from this brigade's Options box */
+  options?: UnitOption[];
+  /**
+   * This brigade's batteries can each be attached to another brigade in the army, which may then hold at
+   * most `maxPerBrigade` batteries, its own included. `batteryUnitIds` says which units count as a
+   * battery (half batteries are picked as their full battery, so the full ids are enough).
+   * e.g. Prussian Army Artillery: "Batteries can be attached to any brigade although a Brigade can have
+   * no more than 2 batteries."
+   */
+  attachBatteries?: { maxPerBrigade: number; batteryUnitIds: string[] };
   /** Minimum number of this brigade type required in the army */
   min: number;
   /** Absolute maximum number of this brigade type allowed in the army */

@@ -2,12 +2,25 @@ export interface RosterUnitLine {
   key: string;
   unitId: string;
   variantLabel?: string;
+  /**
+   * How many of this unit the line holds. Lists are now one line per unit (so each can take its own
+   * upgrades) and new lines are always 1; older saves are split into single lines when they load.
+   */
   qty: number;
+  /** Ids of the unit-scope options (from the brigade type's `options`) this unit has taken */
+  options?: string[];
+  /**
+   * For a battery whose brigade type has `attachBatteries`: the key of the brigade instance it's
+   * attached to, if any
+   */
+  attachedTo?: string;
 }
 
 /** A single regiment instance within a regiment-type slot */
 export interface RosterRegimentInstance {
   key: string;
+  /** Ids of the regiment-scope options (e.g. Guard status) this regiment has taken */
+  options?: string[];
   /** One array of unit lines per regiment sub-slot, indexed same as RegimentDef.slots */
   slotLines: RosterUnitLine[][];
 }

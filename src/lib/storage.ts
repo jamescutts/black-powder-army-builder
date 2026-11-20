@@ -1,5 +1,6 @@
 import type { Nation } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
+import { newKey } from "@/lib/id";
 
 // Saved army lists, kept in this browser's localStorage. Each list has its own id, so a nation can
 // have as many as you like (an 1812 corps and a smaller club-night force, say). The My armies page
@@ -118,13 +119,36 @@ export function loadList(nation: Nation, id: string): RosterState | null {
   return tidy(nation, saved);
 }
 
+/** Only the option ids that still exist, or undefined for none */
+function knownOptions(ids: unknown, known: Set<string>): string[] | undefined {
+  const kept = Array.isArray(ids) ? ids.filter((id): id is string => typeof id === "string" && known.has(id)) : [];
+  return kept.length ? [...new Set(kept)] : undefined;
+}
+
+/**
+ * Lines as they're kept now: one per unit, so each can take its own upgrades. A line of "3× Musketeer"
+ * from an older save becomes three lines, each with the same options.
+ */
+function splitLines(lines: RosterUnitLine[], known: Set<string>): RosterUnitLine[] {
+  return lines.flatMap((l) => {
+    const options = knownOptions(l.options, known);
+    const n = Math.max(1, Math.floor(l.qty));
+    return Array.from({ length: n }, (_, i) => ({
+      ...l,
+      key: i === 0 ? l.key : newKey("line"),
+      qty: 1,
+      options,
+    }));
+  });
+}
+
 function tidy(nation: Nation, saved: RosterState): RosterState | null {
   const unitIds = new Set(nation.units.map((u) => u.id));
   const keepLines = (lines: RosterUnitLine[] | undefined) =>
     (Array.isArray(lines) ? lines : []).filter((l) => unitIds.has(l.unitId) && l.qty > 0);
 
   try {
-    return {
+    const tidied: RosterState = {
       nationId: nation.id,
       // "My Army" was the old placeholder rather than a name anyone chose
       armyName: saved.armyName && saved.armyName !== "My Army" ? saved.armyName : "",
@@ -132,24 +156,62 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
       brigadeInstances: (saved.brigadeInstances ?? []).flatMap((bi) => {
         const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
         if (!bt) return [];
+        const known = new Set((bt.options ?? []).map((o) => o.id));
+
+        // A unit that's no longer offered where it was saved moves to the first slot that takes it, as
+        // when the Prussian Cavalry Brigade's Horse Artillery joined its regiments' slot
+        const flat = bt.slots.map((): RosterUnitLine[] => []);
+        (bi.slotLines ?? []).forEach((lines, i) => {
+          for (const line of keepLines(lines)) {
+            const target = bt.slots[i] && !bt.slots[i].regiment && bt.slots[i].unitIds.includes(line.unitId)
+              ? i
+              : bt.slots.findIndex((s) => !s.regiment && s.unitIds.includes(line.unitId));
+            if (target >= 0) flat[target].push(line);
+          }
+        });
+
         return [
           {
             ...bi,
             name: typeof bi.name === "string" && bi.name.trim() ? bi.name : undefined,
             commanderLine: bi.commanderLine && unitIds.has(bi.commanderLine.unitId) ? bi.commanderLine : null,
-            slotLines: bt.slots.map((_, i) => keepLines(bi.slotLines?.[i])),
+            slotLines: flat.map((lines) => splitLines(lines, known)),
             regimentSlots: bt.slots.map((slot, i) =>
               slot.regiment
-                ? (bi.regimentSlots?.[i] ?? []).map((reg) => ({
-                    ...reg,
-                    slotLines: slot.regiment!.slots.map((_, j) => keepLines(reg.slotLines?.[j])),
-                  }))
+                ? (bi.regimentSlots?.[i] ?? []).map((reg) => {
+                    const options = new Set(knownOptions(reg.options, known) ?? []);
+                    const slotLines = slot.regiment!.slots.map((sub, j) =>
+                      splitLines(
+                        keepLines(reg.slotLines?.[j]).flatMap((line) => {
+                          if (sub.unitIds.includes(line.unitId)) return [line];
+                          // A unit that's now a regiment upgrade (a Guard Musketeer picked directly, before
+                          // Guard status was an option) goes back to its base unit, with the regiment upgraded
+                          const via = (bt.options ?? []).find(
+                            (o) =>
+                              o.scope === "regiment" &&
+                              Object.entries(o.swapTo ?? {}).some(([from, to]) => to === line.unitId && sub.unitIds.includes(from))
+                          );
+                          const from = via && Object.entries(via.swapTo!).find(([, to]) => to === line.unitId)![0];
+                          if (!via || !from) return [];
+                          options.add(via.id);
+                          return [{ ...line, unitId: from }];
+                        }),
+                        known
+                      )
+                    );
+                    return { ...reg, options: options.size ? [...options] : undefined, slotLines };
+                  })
                 : null
             ),
           },
         ];
       }),
     };
+    // A battery attached to a brigade that's since gone is simply unattached
+    const keys = new Set(tidied.brigadeInstances.map((b) => b.key));
+    const unattach = (l: RosterUnitLine) => (l.attachedTo && !keys.has(l.attachedTo) ? { ...l, attachedTo: undefined } : l);
+    tidied.brigadeInstances = tidied.brigadeInstances.map((b) => ({ ...b, slotLines: b.slotLines.map((ls) => ls.map(unattach)) }));
+    return tidied;
   } catch {
     return null;
   }

@@ -1,13 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import { ActionIcon, Badge, Button, Group, NumberInput, Select, Stack, Text } from "@mantine/core";
+import { useState, type ReactNode } from "react";
+import { ActionIcon, Badge, Button, Chip, Group, Select, Stack, Text, Tooltip } from "@mantine/core";
 import { IconPlus, IconTrash } from "@tabler/icons-react";
-import type { UnitEntry } from "@/data/types";
-import type { RosterUnitLine } from "@/types/army";
+import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
+import type { RosterBrigadeInstance, RosterUnitLine } from "@/types/army";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
 import { limitBadge } from "@/lib/limitBadge";
+import { optionDelta, optionsForUnit, resolveLine, signedPoints, toggleLineOption, unitOptionBlocked } from "@/lib/options";
 
 interface Props {
   eligibleUnits: UnitEntry[];
@@ -29,6 +30,15 @@ interface Props {
   /** When set (implies maxTotal), the picked line is shown in a highlighted card with this label,
    * matching the Brigade Commander box style, instead of a plain row. */
   highlightLabel?: string;
+  /**
+   * The brigade the slot belongs to, so each unit can take that brigade's upgrades and downgrades.
+   * Without it (the army command slot) units are shown without options.
+   */
+  brigade?: { nation: Nation; bt: BrigadeType; instance: RosterBrigadeInstance; regimentOptions?: string[] };
+  /** Marks the slot as one group within a regiment, with a bar of its own down its left side */
+  grouped?: boolean;
+  /** Anything more to show under a unit's name, e.g. which brigade an army battery is attached to */
+  extraInfo?: (line: RosterUnitLine) => ReactNode;
 }
 
 export function UnitLineEditor({
@@ -41,6 +51,9 @@ export function UnitLineEditor({
   computeMax,
   maxTotal,
   highlightLabel,
+  brigade,
+  grouped,
+  extraInfo,
 }: Props) {
   const [pickedUnitId, setPickedUnitId] = useState<string | null>(eligibleUnits[0]?.id ?? null);
   const pickedUnit = eligibleUnits.find((u) => u.id === pickedUnitId);
@@ -64,29 +77,10 @@ export function UnitLineEditor({
     setPickedVariant(u ? defaultVariantLabel(u) : undefined);
   }
 
+  // Every unit gets a line of its own, so each can take its own upgrades
   function handleAdd() {
     if (!pickedUnit) return;
-    const existing = lines.find(
-      (l) => l.unitId === pickedUnit.id && l.variantLabel === pickedVariant
-    );
-    if (existing) {
-      onChange(
-        lines.map((l) => (l.key === existing.key ? { ...l, qty: l.qty + 1 } : l))
-      );
-    } else {
-      onChange([
-        ...lines,
-        { key: newKey("line"), unitId: pickedUnit.id, variantLabel: pickedVariant, qty: 1 },
-      ]);
-    }
-  }
-
-  function handleQty(key: string, qty: number) {
-    if (qty <= 0) {
-      onChange(lines.filter((l) => l.key !== key));
-      return;
-    }
-    onChange(lines.map((l) => (l.key === key ? { ...l, qty } : l)));
+    onChange([...lines, { key: newKey("line"), unitId: pickedUnit.id, variantLabel: pickedVariant, qty: 1 }]);
   }
 
   function handleVariant(key: string, variantLabel: string) {
@@ -97,8 +91,13 @@ export function UnitLineEditor({
     onChange(lines.filter((l) => l.key !== key));
   }
 
+  function handleToggleOption(key: string, optionId: string) {
+    if (!brigade) return;
+    onChange(lines.map((l) => (l.key === key ? toggleLineOption(brigade.bt, l, optionId) : l)));
+  }
+
   return (
-    <Stack gap={6}>
+    <Stack gap={6} className={grouped ? "slot-group" : undefined}>
       {(label || hasConstraint) && (
         <Group gap="xs">
           {label && (
@@ -115,56 +114,102 @@ export function UnitLineEditor({
       )}
 
       {lines.length > 0 && (
-        <Stack gap={8}>
+        <Stack gap={0} className="unit-rows">
           {lines.map((line) => {
             const unit = eligibleUnits.find((u) => u.id === line.unitId);
             if (!unit) return null;
-            const cost = unitCost(unit, line.variantLabel);
+            const resolved = brigade
+              ? resolveLine(brigade.nation, line, { bt: brigade.bt, regimentOptions: brigade.regimentOptions })
+              : null;
+            const cost = (resolved?.cost ?? unitCost(unit, line.variantLabel)) * line.qty;
+            const special = resolved?.special ?? unit.special ?? [];
+            const options = brigade ? optionsForUnit(brigade.bt, unit.id) : [];
+            const showVariantInName = line.variantLabel && !(maxTotal !== undefined && (unit.variants?.length ?? 0) > 0);
+            const name = resolved?.unit.name ?? unit.name;
+
+            const chips = brigade && options.length > 0 && (
+              <Group gap={6} className="unit-row-chips" role="group" aria-label={`${name} upgrades`}>
+                {options.map((o) => {
+                  const active = !!line.options?.includes(o.id);
+                  const blocked = unitOptionBlocked(
+                    brigade.nation,
+                    brigade.bt,
+                    o,
+                    line,
+                    brigade.instance,
+                    brigade.regimentOptions
+                  );
+                  const delta = signedPoints(optionDelta(brigade.nation, o, unit));
+                  const chip = (
+                    <Chip
+                      size="xs"
+                      variant="outline"
+                      color="brown"
+                      checked={active}
+                      disabled={!!blocked}
+                      onChange={() => handleToggleOption(line.key, o.id)}
+                    >
+                      {o.label}
+                      {delta && <span className="unit-option-cost"> {delta}</span>}
+                    </Chip>
+                  );
+                  return blocked ? (
+                    <Tooltip key={o.id} label={blocked} withArrow multiline maw={240}>
+                      {/* A disabled control fires no hover, so the reason hangs on a wrapper */}
+                      <span tabIndex={0} className="unit-option-blocked">
+                        {chip}
+                      </span>
+                    </Tooltip>
+                  ) : (
+                    <span key={o.id}>{chip}</span>
+                  );
+                })}
+              </Group>
+            );
+
+            // The unit and its rules on the left; its points, remove and upgrades on the right (the
+            // upgrades drop under the name when the card is narrow)
             const row = (
-              <Stack gap={2}>
-                <Group justify="space-between" wrap="nowrap">
-                  <Text size="sm" style={{ flex: 1, minWidth: 0 }} truncate>
-                    {unit.name}
-                    {line.variantLabel && !(maxTotal !== undefined && (unit.variants?.length ?? 0) > 0)
-                      ? ` (${line.variantLabel})`
-                      : ""}
+              <div className={highlightLabel ? "unit-row unit-row-plain" : "unit-row"}>
+                <div className="unit-row-info">
+                  <Text size="sm">
+                    {name}
+                    {showVariantInName ? ` (${line.variantLabel})` : ""}
                   </Text>
-                  <Group gap={4} wrap="nowrap">
-                    {maxTotal !== undefined ? (
-                      (unit.variants?.length ?? 0) > 0 && (
-                        <Select
-                          size="xs"
-                          w={150}
-                          data={unit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
-                          value={line.variantLabel}
-                          onChange={(v) => v && handleVariant(line.key, v)}
-                          allowDeselect={false}
-                        />
-                      )
-                    ) : (
-                      <NumberInput
-                        size="xs"
-                        w={60}
-                        min={1}
-                        max={99}
-                        value={line.qty}
-                        onChange={(v) => handleQty(line.key, Number(v) || 1)}
-                      />
-                    )}
-                    <Text size="xs" c="dimmed" w={56} ta="right">
-                      {cost} pts
+                  {special.length > 0 && (
+                    <Text size="xs" c="dimmed" fs="italic" style={{ lineHeight: 1.4 }}>
+                      {special.join(" \u2022 ")}
                     </Text>
-                    <ActionIcon color="red" variant="subtle" size="sm" onClick={() => handleRemove(line.key)}>
-                      <IconTrash size={14} />
-                    </ActionIcon>
-                  </Group>
-                </Group>
-                {unit.special && unit.special.length > 0 && (
-                  <Text size="xs" c="dimmed" fs="italic" style={{ lineHeight: 1.4 }}>
-                    {unit.special.join(" • ")}
+                  )}
+                  {extraInfo?.(line)}
+                </div>
+                <Group gap={4} wrap="nowrap" className="unit-row-meta">
+                  {maxTotal !== undefined && (unit.variants?.length ?? 0) > 0 && (
+                    <Select
+                      size="xs"
+                      w={150}
+                      aria-label={`${unit.name} option`}
+                      data={unit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
+                      value={line.variantLabel}
+                      onChange={(v) => v && handleVariant(line.key, v)}
+                      allowDeselect={false}
+                    />
+                  )}
+                  <Text size="xs" c="dimmed" w={48} ta="right">
+                    {cost} pts
                   </Text>
-                )}
-              </Stack>
+                  <ActionIcon
+                    color="red"
+                    variant="subtle"
+                    size="sm"
+                    aria-label={`Remove ${name}`}
+                    onClick={() => handleRemove(line.key)}
+                  >
+                    <IconTrash size={14} />
+                  </ActionIcon>
+                </Group>
+                {chips}
+              </div>
             );
 
             if (!highlightLabel) return <div key={line.key}>{row}</div>;
@@ -191,7 +236,7 @@ export function UnitLineEditor({
                   size="xs"
                   w={170}
                   aria-label={`${onlyUnit.name} option`}
-                  data={onlyUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost})` }))}
+                  data={onlyUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
                   value={pickedVariant}
                   onChange={(v) => v && setPickedVariant(v)}
                   allowDeselect={false}
@@ -215,7 +260,7 @@ export function UnitLineEditor({
                     size="xs"
                     w={150}
                     aria-label={`${pickedUnit.name} option`}
-                    data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost})` }))}
+                    data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
                     value={pickedVariant}
                     onChange={(v) => v && setPickedVariant(v)}
                     allowDeselect={false}

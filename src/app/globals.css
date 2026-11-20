@@ -391,8 +391,10 @@ body {
 
 /* A regiment within a brigade: a brown rule down its left side, like Fleet's allied groups */
 .regiment-block {
-  padding: 6px 0 6px var(--mantine-spacing-sm);
-  border-left: 3px solid rgba(138, 79, 28, 0.35);
+  padding: 8px 10px 10px var(--mantine-spacing-sm);
+  border-left: 3px solid var(--mantine-color-brown-6);
+  background: rgba(107, 61, 23, 0.04);
+  border-radius: 0 var(--mantine-radius-sm) var(--mantine-radius-sm) 0;
 }
 
 /* Renaming a brigade: the field takes the title's place, in the heading font */
@@ -443,6 +445,98 @@ body {
   .brigade-chevron {
     transition: none;
   }
+}
+
+/* One row per unit, hairlines between them. The unit and its rules sit on the left; its points, remove
+   and upgrades stack on the right, so each row reads as one item with its controls in one place. */
+.unit-rows {
+  container-type: inline-size;
+}
+
+.unit-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "info meta"
+    "info chips";
+  column-gap: 12px;
+  row-gap: 4px;
+  padding: 6px 0;
+}
+
+.unit-rows > * + * .unit-row {
+  border-top: 1px solid rgba(107, 61, 23, 0.1);
+}
+
+.unit-row-plain {
+  padding: 0;
+}
+
+.unit-row-info {
+  grid-area: info;
+  min-width: 0;
+}
+
+.unit-row-meta {
+  grid-area: meta;
+  justify-content: flex-end;
+}
+
+.unit-row-chips {
+  grid-area: chips;
+  justify-content: flex-end;
+}
+
+/* In a narrow card the upgrades drop under the unit's name, rather than squeezing it */
+@container (max-width: 480px) {
+  .unit-row {
+    grid-template-areas:
+      "info meta"
+      "chips chips";
+  }
+
+  .unit-row-chips {
+    justify-content: flex-start;
+  }
+}
+
+/* A group of battalions within a regiment (its Musketeers, its Fusiliers): a thinner bar of its own,
+   in a lighter colour than the regiment's, so the regiment and its groups read as two levels */
+.slot-group {
+  padding-left: 10px;
+  border-left: 2px solid var(--mantine-color-brown-3);
+}
+
+/* "Attached to" over an army battery's brigade picker: small, like the row's other details */
+.attach-label {
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+/* The points an upgrade adds, quieter than its name */
+.unit-option-cost {
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+
+.unit-option-blocked {
+  display: inline-flex;
+  border-radius: 999px;
+}
+
+/* An upgrade that can't be taken right now: a dashed outline, lighter than one that can, with the
+   reason in its tooltip */
+.unit-option-blocked .mantine-Chip-label[data-disabled] {
+  background: transparent;
+  border: 1px dashed var(--mantine-color-gray-4);
+  color: var(--mantine-color-gray-6);
+  cursor: help;
+}
+
+.unit-option-blocked:focus-visible {
+  outline: 2px solid var(--mantine-color-brown-6);
+  outline-offset: 2px;
 }
 
 /* "Add French Line Infantry": long unit names shorten rather than widen the card */

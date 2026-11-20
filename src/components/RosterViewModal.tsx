@@ -6,9 +6,12 @@ import { IconAlertTriangle, IconDownload, IconEye, IconPrinter } from "@tabler/i
 import { useDisclosure } from "@mantine/hooks";
 import type { AlliesRule, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
-import { unitCost, unitStatLine } from "@/lib/units";
+import { unitStatLine } from "@/lib/units";
+import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
+import { resolveLine, type LineContext } from "@/lib/options";
+import { regimentTags } from "@/components/RosterPanel";
 import { getNation, getSupplement } from "@/data";
-import { validateRoster } from "@/lib/validate";
+import { attachedText, validateRoster } from "@/lib/validate";
 import { loadPdfLibs } from "@/lib/pdfLibs";
 
 function formatAllyRule(rule: AlliesRule): string {
@@ -34,18 +37,25 @@ function getStaffRating(unit: UnitEntry, variantLabel?: string): number | undefi
   return undefined;
 }
 
-function lineTotal(nation: Nation, line: RosterUnitLine): number {
-  const unit = nation.units.find((u) => u.id === line.unitId);
-  if (!unit) return 0;
-  return unitCost(unit, line.variantLabel) * line.qty;
-}
-
-function UnitRow({ nation, line }: { nation: Nation; line: RosterUnitLine }) {
-  const unit = nation.units.find((u) => u.id === line.unitId);
-  if (!unit) return null;
+function UnitRow({
+  nation,
+  line,
+  ctx,
+  attached,
+}: {
+  nation: Nation;
+  line: RosterUnitLine;
+  ctx?: LineContext;
+  /** "attached to 2nd Infantry Brigade", for an army battery */
+  attached?: string | null;
+}) {
+  const resolved = resolveLine(nation, line, ctx);
+  if (!resolved) return null;
+  const { unit } = resolved;
   const sr = unit.category === "Command" ? getStaffRating(unit, line.variantLabel) : undefined;
-  const stats = unitStatLine(unit);
-  const cost = lineTotal(nation, line);
+  // Stats and rules as upgraded, e.g. a veteran Dragoon's Hand-to-Hand 9 and Reliable
+  const stats = unitStatLine({ ...unit, handToHand: resolved.handToHand, shooting: resolved.shooting });
+  const cost = lineTotal(nation, line, ctx);
 
   return (
     <Table.Tr>
@@ -53,7 +63,13 @@ function UnitRow({ nation, line }: { nation: Nation; line: RosterUnitLine }) {
         <Group gap={6} wrap="nowrap" align="center">
           <span>
             {line.qty > 1 ? `${line.qty}× ` : ""}
-            {unit.name}
+            {resolved.name}
+            {attached && (
+              <Text span size="xs" c="dimmed" fs="italic">
+                {" "}
+                ({attached})
+              </Text>
+            )}
           </span>
           {sr !== undefined && (
             <Badge size="sm" variant="light" color="brown">Staff Rating {sr}</Badge>
@@ -62,29 +78,20 @@ function UnitRow({ nation, line }: { nation: Nation; line: RosterUnitLine }) {
       </Table.Td>
       <Table.Td>{unit.type}</Table.Td>
       <Table.Td>{stats || "\u2014"}</Table.Td>
-      <Table.Td>{unit.special?.join(", ") || "\u2014"}</Table.Td>
+      <Table.Td>{resolved.special.join(", ") || "\u2014"}</Table.Td>
       <Table.Td style={{ textAlign: "right" }}>{cost}</Table.Td>
     </Table.Tr>
   );
 }
 
 function RosterContent({ nation, roster }: Props) {
-  const commandTotal = roster.commandItems.reduce((s, l) => s + lineTotal(nation, l), 0);
+  const brigadeTotals = roster.brigadeInstances.map((instance) => ({
+    instance,
+    bt: nation.brigades.find((b) => b.id === instance.brigadeTypeId),
+    total: brigadeTotal(nation, instance),
+  }));
 
-  const brigadeTotals = roster.brigadeInstances.map((instance) => {
-    const bt = nation.brigades.find((b) => b.id === instance.brigadeTypeId);
-    const commanderCost = instance.commanderLine ? lineTotal(nation, instance.commanderLine) : 0;
-    const flatSlotCost = instance.slotLines.flat().reduce((s, l) => s + lineTotal(nation, l), 0);
-    const regimentCost = (instance.regimentSlots ?? []).reduce((sum, regSlot) => {
-      if (!regSlot) return sum;
-      return sum + regSlot.reduce((rSum, reg) =>
-        rSum + reg.slotLines.flat().reduce((lSum, l) => lSum + lineTotal(nation, l), 0), 0);
-    }, 0);
-    const total = commanderCost + flatSlotCost + regimentCost;
-    return { instance, bt, total };
-  });
-
-  const grandTotal = commandTotal + brigadeTotals.reduce((s, b) => s + b.total, 0);
+  const grandTotal = rosterTotal(nation, roster);
   const supplement = getSupplement(nation.supplementId);
 
   return (
@@ -273,11 +280,14 @@ function RosterContent({ nation, roster }: Props) {
                       <Fragment key={reg.key}>
                         <Table.Tr>
                           <Table.Td colSpan={5} style={{ paddingTop: 8 }}>
-                            <Text size="xs" fw={600} c="dimmed">{slot.regiment!.label} #{regIdx + 1}</Text>
+                            <Text size="xs" fw={600} c="dimmed">
+                              {slot.regiment!.label} #{regIdx + 1}
+                              {regimentTags(bt, reg.options)}
+                            </Text>
                           </Table.Td>
                         </Table.Tr>
                         {regLines.map((line) => (
-                          <UnitRow key={line.key} nation={nation} line={line} />
+                          <UnitRow key={line.key} nation={nation} line={line} ctx={{ bt, regimentOptions: reg.options }} />
                         ))}
                       </Fragment>
                     );
@@ -285,7 +295,13 @@ function RosterContent({ nation, roster }: Props) {
                 })}
                 {/* Flat slot units */}
                 {unitLines.map((line) => (
-                  <UnitRow key={line.key} nation={nation} line={line} />
+                  <UnitRow
+                    key={line.key}
+                    nation={nation}
+                    line={line}
+                    ctx={{ bt }}
+                    attached={attachedText(nation, roster, line.attachedTo)}
+                  />
                 ))}
               </Table.Tbody>
             </Table>

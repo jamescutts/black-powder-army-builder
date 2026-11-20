@@ -1,6 +1,16 @@
 import type { Nation } from "@/data/types";
-import type { RosterBrigadeInstance, RosterState } from "@/types/army";
-import { unitCost } from "@/lib/units";
+import type { RosterState } from "@/types/army";
+import { brigadeTotal, rosterTotal } from "@/lib/points";
+import {
+  attachRule,
+  attachTargets,
+  batteriesIn,
+  brigadeUnitLines,
+  limitText,
+  optionAllowance,
+  optionTaken,
+  unitNoun,
+} from "@/lib/options";
 import {
   countByType,
   effectiveMax,
@@ -14,30 +24,6 @@ import {
   armyUnitCountRequirementMet,
   countUnitsInArmy,
 } from "@/lib/brigadeLimits";
-
-/** Total points for a single brigade instance (commander + flat slots + regiment sub-slots). */
-function brigadeInstancePoints(nation: Nation, bi: RosterBrigadeInstance): number {
-  const unitLinePoints = (unitId: string, variantLabel: string | undefined, qty: number) => {
-    const unit = nation.units.find((u) => u.id === unitId);
-    return unit ? unitCost(unit, variantLabel) * qty : 0;
-  };
-  let total = 0;
-  if (bi.commanderLine) {
-    total += unitLinePoints(bi.commanderLine.unitId, bi.commanderLine.variantLabel, bi.commanderLine.qty);
-  }
-  for (const lines of bi.slotLines) {
-    for (const l of lines) total += unitLinePoints(l.unitId, l.variantLabel, l.qty);
-  }
-  for (const regSlot of bi.regimentSlots ?? []) {
-    if (!regSlot) continue;
-    for (const reg of regSlot) {
-      for (const lines of reg.slotLines) {
-        for (const l of lines) total += unitLinePoints(l.unitId, l.variantLabel, l.qty);
-      }
-    }
-  }
-  return total;
-}
 
 export interface ValidationIssue {
   level: "error";
@@ -72,12 +58,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
   }
 
   // Army total points (used for per-points caps like Earthworks "1 per 500 points")
-  const armyTotalPoints =
-    roster.commandItems.reduce((sum, l) => {
-      const unit = nation.units.find((u) => u.id === l.unitId);
-      return sum + (unit ? unitCost(unit, l.variantLabel) * l.qty : 0);
-    }, 0) +
-    roster.brigadeInstances.reduce((sum, bi) => sum + brigadeInstancePoints(nation, bi), 0);
+  const armyTotalPoints = rosterTotal(nation, roster);
 
   for (const bt of nation.brigades) {
     const count = countByType(roster.brigadeInstances, bt.id);
@@ -444,13 +425,70 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
     });
   }
 
+  // ─── Upgrades and downgrades: limits, and ones that can't be combined ──────
+  for (const bi of roster.brigadeInstances) {
+    const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
+    if (!bt?.options?.length) continue;
+
+    for (const o of bt.options) {
+      const taken = optionTaken(o, bi);
+      const allowed = optionAllowance(o, bi);
+      if (taken > allowed) {
+        const noun =
+          o.scope === "regiment" ? (taken === 1 ? "regiment" : "regiments") : unitNoun(nation, o.appliesTo, taken);
+        const limit = o.scope === "regiment" ? null : limitText(nation, o);
+        issues.push({
+          level: "error",
+          brigadeKey: bi.key,
+          message: `${bt.name}: ${o.label} on ${taken} ${noun}, only ${allowed} allowed${limit ? ` (${limit})` : ""}`,
+        });
+      }
+    }
+
+    for (const { line, regiment } of brigadeUnitLines(bi)) {
+      const mine = (bt.options ?? []).filter((o) => line.options?.includes(o.id) || regiment?.options?.includes(o.id));
+      const unitName = nation.units.find((u) => u.id === line.unitId)?.name ?? line.unitId;
+      const clashes = new Set<string>();
+      for (const a of mine) {
+        for (const b of mine) {
+          if (a === b) continue;
+          const sameGroup = !!a.group && a.group === b.group && a.scope !== "regiment" && b.scope !== "regiment";
+          if (sameGroup || a.excludes?.includes(b.id)) clashes.add([a.label, b.label].sort().join(" and "));
+        }
+      }
+      for (const pair of clashes) {
+        issues.push({
+          level: "error",
+          brigadeKey: bi.key,
+          message: `${bt.name}: a ${unitName} can't be both ${pair}`,
+        });
+      }
+    }
+  }
+
+  // ─── Batteries per brigade, counting army batteries attached to it ─────────
+  const attach = attachRule(nation);
+  if (attach) {
+    for (const bi of attachTargets(nation, roster.brigadeInstances)) {
+      const count = batteriesIn(nation, roster.brigadeInstances, bi.key);
+      if (count > attach.maxPerBrigade) {
+        const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
+        issues.push({
+          level: "error",
+          brigadeKey: bi.key,
+          message: `${bt?.name ?? "Brigade"}: ${count} batteries, attached ones included; a brigade can have no more than ${attach.maxPerBrigade}`,
+        });
+      }
+    }
+  }
+
   // ─── Army-wide points-percentage caps (e.g. Imperial Guard ≤ 25% of army) ──
   for (const cap of nation.pointsCaps ?? []) {
     if (armyTotalPoints === 0) continue;
 
     const cappedTotal = roster.brigadeInstances
       .filter((bi) => cap.brigadeTypeIds.includes(bi.brigadeTypeId))
-      .reduce((sum, bi) => sum + brigadeInstancePoints(nation, bi), 0);
+      .reduce((sum, bi) => sum + brigadeTotal(nation, bi), 0);
     if (cappedTotal === 0) continue;
 
     const percent = (cappedTotal / armyTotalPoints) * 100;
@@ -493,6 +531,12 @@ export function brigadeDisplayName(nation: Nation, roster: RosterState, brigadeK
   const n = sameType.indexOf(bi) + 1;
   const suffix = n % 10 === 1 && n % 100 !== 11 ? "st" : n % 10 === 2 && n % 100 !== 12 ? "nd" : n % 10 === 3 && n % 100 !== 13 ? "rd" : "th";
   return `${n}${suffix} ${name}`;
+}
+
+/** "attached to 2nd Infantry Brigade", for a battery attached to a brigade still in the army */
+export function attachedText(nation: Nation, roster: RosterState, attachedTo: string | undefined): string | null {
+  if (!attachedTo || !roster.brigadeInstances.some((b) => b.key === attachedTo)) return null;
+  return `attached to ${brigadeDisplayName(nation, roster, attachedTo)}`;
 }
 
 /** An issue's message without the brigade name in front, for showing on that brigade's own card */

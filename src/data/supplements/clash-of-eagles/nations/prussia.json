@@ -204,6 +204,18 @@
       "cost": 27
     },
     {
+      "id": "pr-foot-arty-half",
+      "name": "Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
       "id": "pr-horse-arty",
       "name": "Horse Artillery",
       "category": "Artillery",
@@ -219,6 +231,21 @@
       "cost": 30
     },
     {
+      "id": "pr-horse-arty-half",
+      "name": "Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 22
+    },
+    {
       "id": "pr-heavy-arty",
       "name": "Heavy Artillery",
       "category": "Artillery",
@@ -229,6 +256,18 @@
       "morale": "4",
       "stamina": "2",
       "cost": 31
+    },
+    {
+      "id": "pr-heavy-arty-half",
+      "name": "Heavy Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Smoothbore Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
     }
   ],
   "brigades": [
@@ -258,13 +297,17 @@
             "slots": [
               {
                 "label": "Musketeer Battalion",
-                "unitIds": ["pr-musketeer", "pr-guard-musketeer"],
+                "unitIds": [
+                  "pr-musketeer"
+                ],
                 "min": 1,
                 "max": 2
               },
               {
                 "label": "Fusilier Battalion",
-                "unitIds": ["pr-fusilier", "pr-guard-fusilier"],
+                "unitIds": [
+                  "pr-fusilier"
+                ],
                 "min": 0,
                 "max": 1
               }
@@ -311,7 +354,121 @@
         }
       ],
       "commanderUnitId": "pr-brig-cmd",
-      "note": "1-2 Infantry Regiments (1-2 Musketeer + 0-1 Fusilier each). Brigade Support: one choice of Jäger, Dragoon, or Hussar. Dragoon/Hussar limited to 1 per army."
+      "note": "1-2 Infantry Regiments (1-2 Musketeer + 0-1 Fusilier each); one regiment may be upgraded to Guard. Brigade Support: one choice of Jäger, Dragoon, or Hussar. Dragoon/Hussar limited to 1 per army. Large: 1 per 4 battalions in the brigade.",
+      "options": [
+        {
+          "id": "guard",
+          "label": "Guard status",
+          "scope": "regiment",
+          "appliesTo": [
+            "pr-musketeer",
+            "pr-fusilier"
+          ],
+          "swapTo": {
+            "pr-musketeer": "pr-guard-musketeer",
+            "pr-fusilier": "pr-guard-fusilier"
+          },
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "pr-musketeer",
+            "pr-fusilier",
+            "pr-jager"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "excludes": [
+            "guard"
+          ],
+          "excludesReason": "Guard are already Reliable, Elite 4+"
+        },
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pr-musketeer",
+            "pr-fusilier"
+          ],
+          "group": "size",
+          "limit": {
+            "per": {
+              "unitIds": [
+                "pr-musketeer",
+                "pr-fusilier",
+                "pr-jager"
+              ],
+              "ratio": 4
+            }
+          }
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pr-musketeer",
+            "pr-fusilier",
+            "pr-jager"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "pr-dragoon",
+            "pr-hussars"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pr-dragoon",
+            "pr-hussars"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "pr-foot-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "pr-foot-arty"
+          ],
+          "swapTo": {
+            "pr-foot-arty": "pr-foot-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "pr-cavalry-brigade",
@@ -320,35 +477,87 @@
       "max": 2,
       "slots": [
         {
-          "label": "Dragoon or Hussar Regiment (2-4 choices: up to 2 Dragoon, up to 2 Hussar)",
+          "label": "Cavalry Brigade choices (2-4: up to 2 Dragoon, up to 2 Hussar, up to 1 Horse Artillery battery)",
           "unitIds": [
             "pr-dragoon",
-            "pr-hussars"
+            "pr-hussars",
+            "pr-horse-arty"
           ],
           "min": 2,
           "max": 4,
           "unitLimits": [
-            { "unitId": "pr-dragoon", "max": 2 },
-            { "unitId": "pr-hussars", "max": 2 }
+            {
+              "unitId": "pr-dragoon",
+              "max": 2
+            },
+            {
+              "unitId": "pr-hussars",
+              "max": 2
+            },
+            {
+              "unitId": "pr-horse-arty",
+              "max": 1
+            }
           ]
-        },
-        {
-          "label": "Horse Artillery Battery (optional, max 1)",
-          "unitIds": [
-            "pr-horse-arty"
-          ],
-          "min": 0,
-          "max": 1
         }
       ],
-      "note": "2-4 choices per brigade (up to 2 Dragoon regiments, up to 2 Hussar regiments, up to 1 Horse Artillery battery). 1 Cavalry Brigade per Infantry Brigade in the army.",
+      "note": "2-4 choices per brigade, the Horse Artillery battery counting as one of them (up to 2 Dragoon regiments, up to 2 Hussar regiments, up to 1 Horse Artillery battery). 1 Cavalry Brigade per Infantry Brigade in the army.",
       "commanderUnitId": "pr-cav-brig-cmd",
       "maxRatio": {
         "brigadeTypeIds": [
           "pr-infantry-brigade"
         ],
         "ratio": 1
-      }
+      },
+      "options": [
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "pr-dragoon",
+            "pr-hussars"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pr-dragoon",
+            "pr-hussars"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "pr-horse-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "pr-horse-arty"
+          ],
+          "swapTo": {
+            "pr-horse-arty": "pr-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "pr-army-artillery",
@@ -367,7 +576,13 @@
             {
               "unitId": "pr-heavy-arty",
               "armyMax": 1,
-              "requiresBrigades": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "min": 3 }
+              "requiresBrigades": {
+                "brigadeTypeIds": [
+                  "pr-infantry-brigade",
+                  "pr-cavalry-brigade"
+                ],
+                "min": 3
+              }
             }
           ]
         },
@@ -382,7 +597,13 @@
             {
               "unitId": "pr-foot-arty",
               "armyMax": 2,
-              "maxRatio": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "ratio": 2 }
+              "maxRatio": {
+                "brigadeTypeIds": [
+                  "pr-infantry-brigade",
+                  "pr-cavalry-brigade"
+                ],
+                "ratio": 2
+              }
             }
           ]
         },
@@ -397,19 +618,65 @@
             {
               "unitId": "pr-horse-arty",
               "armyMax": 1,
-              "requiresBrigades": { "brigadeTypeIds": ["pr-infantry-brigade", "pr-cavalry-brigade"], "min": 3 }
+              "requiresBrigades": {
+                "brigadeTypeIds": [
+                  "pr-infantry-brigade",
+                  "pr-cavalry-brigade"
+                ],
+                "min": 3
+              }
             }
           ]
         }
       ],
-      "note": "Batteries can be attached to any brigade although a brigade can have no more than 2 batteries."
+      "note": "Batteries can be attached to any brigade (pick it on the battery), although a brigade can have no more than 2 batteries, its own included.",
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "pr-foot-arty",
+            "pr-horse-arty",
+            "pr-heavy-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "pr-foot-arty",
+            "pr-horse-arty",
+            "pr-heavy-arty"
+          ],
+          "swapTo": {
+            "pr-foot-arty": "pr-foot-arty-half",
+            "pr-horse-arty": "pr-horse-arty-half",
+            "pr-heavy-arty": "pr-heavy-arty-half"
+          }
+        }
+      ],
+      "attachBatteries": {
+        "maxPerBrigade": 2,
+        "batteryUnitIds": [
+          "pr-foot-arty",
+          "pr-horse-arty",
+          "pr-heavy-arty"
+        ]
+      }
     }
   ],
   "notes": [
-    "A Divisional (army) Commander leads the army (Staff Rating 7-9). Not itemised in the supplement's Prussian list, but included here as the standard army-level commander.",
-    "Army Artillery batteries can be attached to any brigade, although a brigade can carry no more than 2."
+    "A Divisional (army) Commander leads the army (Staff Rating 7-9). Not itemised in the supplement's Prussian list, but included here as the standard army-level commander."
   ],
   "alliesRules": [
-    { "maxPercent": 25, "note": "any one allied list" }
+    {
+      "maxPercent": 25,
+      "note": "any one allied list"
+    }
   ]
 }

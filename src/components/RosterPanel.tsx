@@ -2,10 +2,11 @@
 
 import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
 import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
-import type { Nation, UnitEntry } from "@/data/types";
+import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
-import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
-import { brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
+import { brigadeTotal, commandTotal as armyCommandTotal, lineTotal, rosterTotal } from "@/lib/points";
+import { resolveLine, type LineContext } from "@/lib/options";
+import { attachedText, brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 import { InstallCard } from "@/components/InstallCard";
 
@@ -31,10 +32,16 @@ function LineList({
   nation,
   lines,
   commander = false,
+  ctx,
+  roster,
 }: {
   nation: Nation;
   lines: RosterUnitLine[];
   commander?: boolean;
+  /** The brigade (and regiment) the lines are in, so their upgrades show */
+  ctx?: LineContext;
+  /** The whole army, to name the brigade a battery is attached to */
+  roster?: RosterState;
 }) {
   return (
     <Stack gap={2}>
@@ -42,6 +49,8 @@ function LineList({
         const unit = nation.units.find((u) => u.id === line.unitId);
         if (!unit) return null;
         const sr = unit.category === "Command" ? getStaffRating(unit, line.variantLabel) : undefined;
+        const name = commander ? unit.name : (resolveLine(nation, line, ctx)?.name ?? unit.name);
+        const attached = roster ? attachedText(nation, roster, line.attachedTo) : null;
         return (
           <Group key={line.key} justify="space-between" wrap="nowrap">
             <Text
@@ -53,11 +62,17 @@ function LineList({
             >
               {commander ? "★ " : ""}
               {line.qty > 1 ? `${line.qty}× ` : ""}
-              {unit.name}
+              {name}
               {sr !== undefined ? ` (Staff Rating ${sr})` : ""}
+              {attached && (
+                <Text span size="xs" c="dimmed" fs="italic">
+                  {" "}
+                  · {attached}
+                </Text>
+              )}
             </Text>
             <Text size="xs" c="dimmed">
-              {lineTotal(nation, line)}
+              {commander ? lineTotal(nation, line) : lineTotal(nation, line, ctx)}
             </Text>
           </Group>
         );
@@ -66,8 +81,14 @@ function LineList({
   );
 }
 
+/** " · Guard status" for a regiment that's taken regiment upgrades */
+export function regimentTags(bt: BrigadeType, options: string[] | undefined): string {
+  const labels = (bt.options ?? []).filter((o) => options?.includes(o.id)).map((o) => o.label);
+  return labels.length ? ` \u00b7 ${labels.join(", ")}` : "";
+}
+
 export function RosterPanel({ nation, roster, onRename }: Props) {
-  const commandTotal = roster.commandItems.reduce((s, l) => s + lineTotal(nation, l), 0);
+  const commandTotal = armyCommandTotal(nation, roster);
 
   const brigadeTotals = roster.brigadeInstances.map((instance) => ({
     instance,
@@ -190,15 +211,16 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
                         <div key={reg.key} style={{ marginLeft: 8 }}>
                           <Text size="xs" fw={600} c="dimmed">
                             {slot.regiment!.label} #{regIdx + 1}
+                            {regimentTags(bt, reg.options)}
                           </Text>
-                          <LineList nation={nation} lines={regLines} />
+                          <LineList nation={nation} lines={regLines} ctx={{ bt, regimentOptions: reg.options }} />
                         </div>
                       );
                     });
                   })}
                   {/* Flat slot lines */}
                   {flatLines.length > 0 && (
-                    <LineList nation={nation} lines={flatLines} />
+                    <LineList nation={nation} lines={flatLines} ctx={{ bt }} roster={roster} />
                   )}
                   {flatLines.length === 0 && (instance.regimentSlots ?? []).every((r) => !r || r.length === 0) && (
                     <Text size="xs" c="dimmed" fs="italic">

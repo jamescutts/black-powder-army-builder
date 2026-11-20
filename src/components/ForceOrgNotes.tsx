@@ -62,8 +62,12 @@ function NoteCard({ tone, icon, title, children }: { tone: Tone; icon: ReactNode
 export function ForceOrgNotes({ nation }: { nation: Nation }) {
   const hasSpecial = !!nation.specialRules?.length;
   const hasAllies = !!nation.alliesRules?.length;
+  // Lists whose brigades carry their Options boxes have upgrades built in; the rest are still to come
+  const hasUpgrades = nation.brigades.some((b) => b.options?.length);
   const notModelled = [
-    "unit upgrades and downgrades (Veteran, Tough Fighters, Large and Small units, half batteries and so on)",
+    ...(hasUpgrades
+      ? []
+      : ["unit upgrades and downgrades (Veteran, Tough Fighters, Large and Small units, half batteries and so on)"]),
     ...(nation.supplementId === "albion-triumphant-1"
       ? ["the Early, Middle and Late campaign periods"]
       : []),
@@ -80,12 +84,14 @@ export function ForceOrgNotes({ nation }: { nation: Nation }) {
         About this army list
       </Title>
 
-      <aside className="builder-wip">
-        <Text size="sm">
-          <strong>Not modelled yet:</strong> {notModelled.join(", or ")}. Apply
-          these from the book when you finalise your list.
-        </Text>
-      </aside>
+      {notModelled.length > 0 && (
+        <aside className="builder-wip">
+          <Text size="sm">
+            <strong>Not modelled yet:</strong> {notModelled.join(", or ")}. Apply
+            these from the book when you finalise your list.
+          </Text>
+        </aside>
+      )}
 
       <Grid gap="xl">
         <Grid.Col span={{ base: 12, md: hasSpecial || hasAllies ? 7 : 12 }}>

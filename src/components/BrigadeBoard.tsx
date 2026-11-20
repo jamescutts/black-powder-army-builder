@@ -5,6 +5,7 @@ import {
   ActionIcon,
   Badge,
   Button,
+  Chip,
   Collapse,
   Group,
   Notification,
@@ -22,9 +23,20 @@ import type { Nation } from "@/data/types";
 import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
+import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
+import {
+  attachTargets,
+  batteriesIn,
+  brigadeUnitLines,
+  optionsForRegiment,
+  regimentOptionBlocked,
+  regimentOptionCost,
+  resolveLine,
+  toggleRegimentOption,
+} from "@/lib/options";
 import { newKey } from "@/lib/id";
 import { limitBadge } from "@/lib/limitBadge";
-import { brigadeIssueText, brigadeLabel, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
+import { brigadeDisplayName, brigadeIssueText, brigadeLabel, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { countByType, effectiveMax, effectiveSlotMax, requirementLabel, requirementMet } from "@/lib/brigadeLimits";
 
 interface Props {
@@ -54,24 +66,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
   );
 
   // Total army points, used for points-scaled slot maximums (e.g. Earthworks "1 per 500 pts").
-  const lineCost = (unitId: string, variantLabel: string | undefined, qty: number) => {
-    const unit = nation.units.find((u) => u.id === unitId);
-    return unit ? unitCost(unit, variantLabel) * qty : 0;
-  };
-  const brigadePoints = (bi: RosterBrigadeInstance) => {
-    let t = bi.commanderLine
-      ? lineCost(bi.commanderLine.unitId, bi.commanderLine.variantLabel, bi.commanderLine.qty)
-      : 0;
-    for (const lines of bi.slotLines) for (const l of lines) t += lineCost(l.unitId, l.variantLabel, l.qty);
-    for (const regSlot of bi.regimentSlots ?? []) {
-      if (!regSlot) continue;
-      for (const reg of regSlot) for (const lines of reg.slotLines) for (const l of lines) t += lineCost(l.unitId, l.variantLabel, l.qty);
-    }
-    return t;
-  };
-  const armyTotalPoints =
-    roster.commandItems.reduce((s, l) => s + lineCost(l.unitId, l.variantLabel, l.qty), 0) +
-    roster.brigadeInstances.reduce((sum, bi) => sum + brigadePoints(bi), 0);
+  const brigadePoints = (bi: RosterBrigadeInstance) => brigadeTotal(nation, bi);
+  const armyTotalPoints = rosterTotal(nation, roster);
 
   // Brigade types that can't be added right now (at their limit, or waiting on another brigade type)
   // stay in the picker, greyed out with the reason, so the list still shows everything the army can take.
@@ -148,15 +144,12 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
       ? `${commanderUnit.name}${bi.commanderLine!.variantLabel ? ` (${bi.commanderLine!.variantLabel})` : ""}`
       : null;
 
-    const lines = [
-      ...bi.slotLines.flat(),
-      ...(bi.regimentSlots ?? []).flatMap((r) => (r ?? []).flatMap((reg) => reg.slotLines.flat())),
-    ];
+    const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
     const counts = new Map<string, number>();
-    for (const l of lines) {
-      const unit = nation.units.find((u) => u.id === l.unitId);
-      if (!unit) continue;
-      const name = l.variantLabel ? `${unit.name} (${l.variantLabel})` : unit.name;
+    for (const { line: l, regiment } of brigadeUnitLines(bi)) {
+      const resolved = resolveLine(nation, l, { bt, regimentOptions: regiment?.options });
+      if (!resolved) continue;
+      const name = l.variantLabel && resolved.unit === resolved.base ? `${resolved.name} (${l.variantLabel})` : resolved.name;
       counts.set(name, (counts.get(name) ?? 0) + l.qty);
     }
     const units = [...counts].map(([name, qty]) => `${qty}× ${name}`).join(" · ");
@@ -253,6 +246,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         regSlot
           ? regSlot.map((reg) => ({
               key: newKey("regiment"),
+              options: reg.options,
               slotLines: reg.slotLines.map((lines) =>
                 lines.map((line) => ({ ...line, key: newKey("unit") }))
               ),
@@ -272,6 +266,54 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
           : bi
       ),
     });
+  }
+
+  /**
+   * The "Attached to" picker under a battery whose brigade attaches its batteries to others (Prussian
+   * Army Artillery). Brigades already holding their limit are listed but can't be picked.
+   */
+  function attachPicker(instance: RosterBrigadeInstance, slotIndex: number, bt: (typeof nation.brigades)[number]) {
+    const rule = bt.attachBatteries;
+    if (!rule) return undefined;
+    const targets = attachTargets(nation, roster.brigadeInstances);
+    return function BatteryAttachPicker(line: RosterBrigadeInstance["slotLines"][number][number]) {
+      if (!rule.batteryUnitIds.includes(line.unitId)) return null;
+      const data = [
+        { value: "none", label: "Not attached" },
+        ...targets.map((t) => {
+          const count = batteriesIn(nation, roster.brigadeInstances, t.key);
+          const full = count >= rule.maxPerBrigade && line.attachedTo !== t.key;
+          return {
+            value: t.key,
+            label: `${brigadeDisplayName(nation, roster, t.key)}${full ? ` (has ${count} batteries)` : ""}`,
+            disabled: full,
+          };
+        }),
+      ];
+      return (
+        <Select
+          size="xs"
+          mt={6}
+          maw={280}
+          label="Attached to"
+          aria-label="Brigade this battery is attached to"
+          data={data}
+          value={line.attachedTo && targets.some((t) => t.key === line.attachedTo) ? line.attachedTo : "none"}
+          onChange={(v) =>
+            handleSlotChange(
+              instance.key,
+              slotIndex,
+              (instance.slotLines[slotIndex] ?? []).map((l) =>
+                l.key === line.key ? { ...l, attachedTo: v && v !== "none" ? v : undefined } : l
+              )
+            )
+          }
+          allowDeselect={false}
+          comboboxProps={{ withinPortal: true }}
+          classNames={{ label: "attach-label" }}
+        />
+      );
+    };
   }
 
   function handleSlotChange(instanceKey: string, slotIndex: number, lines: RosterBrigadeInstance["slotLines"][number]) {
@@ -584,20 +626,64 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                         </Group>
 
                         {/* Regiment instances */}
-                        {regiments.map((reg, regIdx) => (
+                        {regiments.map((reg, regIdx) => {
+                          const regimentOptions = optionsForRegiment(bt, regDef.slots.flatMap((s) => s.unitIds));
+                          return (
                           // A rule down the left side, as Fleet marks a group within a section, not a box
                         <div key={reg.key} className="regiment-block">
-                            <Group justify="space-between" mb="xs">
-                              <Text size="sm" fw={500}>{regDef.label} #{regIdx + 1}</Text>
-                              <ActionIcon
-                                color="red"
-                                variant="subtle"
-                                size="sm"
-                                aria-label={`Remove ${regDef.label} ${regIdx + 1}`}
-                                onClick={() => handleRemoveRegiment(instance.key, slotIndex, reg.key, regDef.label)}
-                              >
-                                <IconTrash size={14} />
-                              </ActionIcon>
+                            {/* The regiment's name on the left; its points, upgrades (Guard status) and remove on the right,
+                                as on each battalion's row */}
+                            <Group justify="space-between" align="center" wrap="nowrap" gap="xs" mb="xs">
+                              <Text size="sm" fw={600}>{regDef.label} #{regIdx + 1}</Text>
+                              <Group gap={6} wrap="wrap" justify="flex-end" className="regiment-options" role="group" aria-label={`${regDef.label} ${regIdx + 1} upgrades`}>
+                                {regimentOptions.map((o) => {
+                                  const blocked = regimentOptionBlocked(o, reg, instance);
+                                  const chip = (
+                                    <Chip
+                                      size="xs"
+                                      variant="outline"
+                                      color="brown"
+                                      checked={!!reg.options?.includes(o.id)}
+                                      disabled={!!blocked}
+                                      onChange={() =>
+                                        handleRegimentSlotsChange(
+                                          instance.key,
+                                          slotIndex,
+                                          regiments.map((r) => (r.key === reg.key ? toggleRegimentOption(bt, r, o.id) : r))
+                                        )
+                                      }
+                                    >
+                                      {o.label}
+                                      {regimentOptionCost(nation, o) && (
+                                        <span className="unit-option-cost"> {regimentOptionCost(nation, o)}</span>
+                                      )}
+                                    </Chip>
+                                  );
+                                  return blocked ? (
+                                    <Tooltip key={o.id} label={blocked} withArrow>
+                                      <span tabIndex={0} className="unit-option-blocked">{chip}</span>
+                                    </Tooltip>
+                                  ) : (
+                                    <span key={o.id}>{chip}</span>
+                                  );
+                                })}
+                                <Text size="xs" c="dimmed" ta="right" style={{ whiteSpace: "nowrap" }}>
+                                  {reg.slotLines.flat().reduce(
+                                    (s, l) => s + lineTotal(nation, l, { bt, regimentOptions: reg.options }),
+                                    0
+                                  )}{" "}
+                                  pts
+                                </Text>
+                                <ActionIcon
+                                  color="red"
+                                  variant="subtle"
+                                  size="sm"
+                                  aria-label={`Remove ${regDef.label} ${regIdx + 1}`}
+                                  onClick={() => handleRemoveRegiment(instance.key, slotIndex, reg.key, regDef.label)}
+                                >
+                                  <IconTrash size={14} />
+                                </ActionIcon>
+                              </Group>
                             </Group>
                             <Stack gap="sm">
                               {regDef.slots.map((subSlot, subSlotIdx) => {
@@ -626,12 +712,15 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                                     onChange={(lines) =>
                                       handleRegimentSubSlotChange(instance.key, slotIndex, reg.key, subSlotIdx, lines)
                                     }
+                                    brigade={{ nation, bt, instance, regimentOptions: reg.options }}
+                                    grouped
                                   />
                                 );
                               })}
                             </Stack>
                           </div>
-                        ))}
+                          );
+                        })}
                       </Stack>
                     );
                   }
@@ -652,6 +741,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                       eligibleUnits={eligibleUnits}
                       lines={instance.slotLines[slotIndex] ?? []}
                       onChange={(lines) => handleSlotChange(instance.key, slotIndex, lines)}
+                      brigade={{ nation, bt, instance }}
+                      extraInfo={attachPicker(instance, slotIndex, bt)}
                     />
                   );
                 })}
