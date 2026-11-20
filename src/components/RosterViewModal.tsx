@@ -9,6 +9,7 @@ import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost, unitStatLine } from "@/lib/units";
 import { getNation, getSupplement } from "@/data";
 import { validateRoster } from "@/lib/validate";
+import { loadPdfLibs } from "@/lib/pdfLibs";
 
 function formatAllyRule(rule: AlliesRule): string {
   const names = (rule.nationIds ?? [])
@@ -374,8 +375,7 @@ export function RosterViewModal({ nation, roster }: Props) {
     }
 
     try {
-      const html2canvas = (await import("html2canvas-pro")).default;
-      const { jsPDF } = await import("jspdf");
+      const { html2canvas, jsPDF } = await loadPdfLibs();
 
       // Convert SVG img elements to inline data URIs so html2canvas can render them
       const images = el.querySelectorAll("img");

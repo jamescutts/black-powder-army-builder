@@ -298,6 +298,26 @@ body {
   border-bottom-color: #f2ecd6;
 }
 
+/* My armies sits apart at the end of the menu: your own lists, not a part of the site to browse */
+.topnav .topnav-end {
+  margin-left: auto;
+  gap: 6px;
+  /* Its label lines up with the search box's right edge above */
+  margin-right: calc(-1 * var(--mantine-spacing-sm));
+}
+
+.topnav-count {
+  min-width: 18px;
+  padding: 1px 6px;
+  border-radius: 9px;
+  background: rgba(242, 236, 214, 0.16);
+  color: #f2ecd6;
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+}
+
 .site-footer {
   margin-top: calc(var(--mantine-spacing-xl) * 3);
 }
@@ -811,6 +831,18 @@ body {
   border-bottom-color: #f2ecd6;
 }
 
+/* "Install the app" is a button that looks like the footer's other links */
+.site-footer-button {
+  background: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
 .topnav-link:focus-visible,
 .site-brand:focus-visible,
 .site-footer-link:focus-visible {
@@ -977,6 +1009,67 @@ body {
 
 .home-hero-primary.home-hero-primary:hover {
   background: #e0bf74;
+}
+
+/* My armies: each saved list's card opens it, through the name's link stretched over the whole card;
+   its menu sits above that link */
+.saved-list-card {
+  position: relative;
+}
+
+.saved-list-link {
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.saved-list-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.saved-list-link:focus-visible {
+  outline: none;
+}
+
+.saved-list-card:has(.saved-list-link:focus-visible) {
+  outline: 2px solid var(--mantine-color-brown-6);
+  outline-offset: 2px;
+}
+
+.saved-list-menu {
+  position: relative;
+  z-index: 1;
+}
+
+.saved-list-flag.saved-list-flag {
+  width: 48px;
+  height: 32px;
+  margin-top: 2px;
+}
+
+/* "Install the app" beside it: cream outline on the painting, quieter than the main button */
+.home-hero-secondary.home-hero-secondary {
+  color: #fbf6e9;
+  border-color: rgba(251, 246, 233, 0.6);
+  background: rgba(30, 18, 8, 0.25);
+}
+
+.home-hero-secondary.home-hero-secondary:hover {
+  border-color: #fbf6e9;
+  background: rgba(30, 18, 8, 0.45);
+}
+
+.home-hero-note {
+  color: rgba(247, 241, 225, 0.75);
+  margin-top: -6px;
+}
+
+/* The builder's "Take it to the table" card, under the roster */
+.install-card {
+  background: #f6efd9;
+  border-color: #d9c287;
 }
 
 .home-hero-stats {
