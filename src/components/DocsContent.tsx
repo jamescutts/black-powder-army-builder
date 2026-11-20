@@ -282,8 +282,8 @@ src/data/supplements/
                 <Table.Td>Yes (array, can be empty)</Table.Td>
                 <Table.Td>
                   Freeform bullet points reminding the player of <em>force-organisation</em> rules
-                  that aren&apos;t (or can&apos;t be) structurally enforced — ratios, per-points scaling,
-                  unimplemented upgrades/downgrades. Not for in-game special rules or allied
+                  that aren&apos;t (or can&apos;t be) structurally enforced, such as per-points scaling or
+                  book misprints. Upgrades and downgrades belong in each brigade&apos;s <Code>options</Code>. Not for in-game special rules or allied
                   contingents — see <Code>specialRules</Code> and <Code>alliesRules</Code> below.
                 </Table.Td>
               </Table.Tr>
@@ -320,7 +320,7 @@ src/data/supplements/
             <List.Item>
               <Code>notes</Code> is for <strong>force-organisation</strong> reminders — things
               about how the army list is built (min/max counts, &quot;1 per N points&quot;, allied
-              percentages, periods, upgrades this builder doesn&apos;t model yet). It&apos;s shown under a
+              percentages, periods, book misprints). It&apos;s shown under a
               &quot;Force organisation reference&quot; disclaimer, because none of it is structurally
               checked.
             </List.Item>

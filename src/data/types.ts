@@ -427,6 +427,11 @@ export interface Nation {
    */
   armyCommandOptional?: boolean;
   /**
+   * The list's upgrades and downgrades are in, including a list whose book has none to add (the Vistula
+   * Legion), so its notes don't say they're still to come
+   */
+  upgradesModelled?: boolean;
+  /**
    * Units the army gets for free, e.g. Russia's "one irregular Cossack regiment for free, attached to any
    * cavalry brigade" (and Platov's one more). The first `count` units in the army from `unitIds` (in
    * `brigadeTypeIds`, when given) cost nothing; upgrades bought for them are still paid for. Each entry

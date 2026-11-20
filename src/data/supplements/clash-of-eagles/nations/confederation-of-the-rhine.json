@@ -640,5 +640,6 @@
     "Confederation States infantry (Baden, Hesse, Berg) follow the French infantry special rules, but do not have Pas de Charge.",
     "Line and Guard infantry: Lie Down, Must Form Square, Column of Companies, Close Column and Mixed Formation. Baden Jägers add Rifle Mixed Formation, Light Infantry Mixed Formation, Skirmish and Sharpshooter.",
     "Rheinbund infantry follow the French infantry special rules without Pas de Charge, and are Lacking Initiative. They get no +1 for shooting at short range, suffer -1 at medium and long range, and get no bonus for being skirmishers when shooting."
-  ]
+  ],
+  "upgradesModelled": true
 }

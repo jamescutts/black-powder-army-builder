@@ -62,8 +62,9 @@ function NoteCard({ tone, icon, title, children }: { tone: Tone; icon: ReactNode
 export function ForceOrgNotes({ nation }: { nation: Nation }) {
   const hasSpecial = !!nation.specialRules?.length;
   const hasAllies = !!nation.alliesRules?.length;
-  // Lists whose brigades carry their Options boxes have upgrades built in; the rest are still to come
-  const hasUpgrades = nation.brigades.some((b) => b.options?.length);
+  // Lists whose brigades carry their Options boxes have upgrades built in (as does a list whose book has
+  // no Options box at all); the rest are still to come
+  const hasUpgrades = nation.upgradesModelled || nation.brigades.some((b) => b.options?.length);
   const notModelled = [
     ...(hasUpgrades
       ? []

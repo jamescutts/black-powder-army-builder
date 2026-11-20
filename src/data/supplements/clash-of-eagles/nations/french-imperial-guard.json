@@ -1189,5 +1189,6 @@
       "ratio": 4,
       "label": "Guard Horse Artillery batteries"
     }
-  ]
+  ],
+  "upgradesModelled": true
 }

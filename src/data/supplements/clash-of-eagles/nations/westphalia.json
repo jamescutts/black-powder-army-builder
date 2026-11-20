@@ -749,5 +749,6 @@
       "maxPercent": 25,
       "note": "any one allied list (Confederation of the Rhine)"
     }
-  ]
+  ],
+  "upgradesModelled": true
 }

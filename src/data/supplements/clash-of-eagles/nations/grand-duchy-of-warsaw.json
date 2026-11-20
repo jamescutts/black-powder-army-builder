@@ -606,5 +606,6 @@
     "Grand Duchy infantry follow the French infantry special rules, and do have Pas de Charge.",
     "Grand Duchy cavalry can use Deep Formation and Cavalry Mixed Formation.",
     "Regimental guns follow the rules for regimental guns on p. 54; the 'batteries' of 4-pdrs can be deployed whole or split into sections of two guns (p. 103)."
-  ]
+  ],
+  "upgradesModelled": true
 }

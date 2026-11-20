@@ -314,8 +314,9 @@ export function HomeView({
             <span className="home-wip-mark" aria-hidden>
               *
             </span>{" "}
-            Army Builder is a work in progress. Not every supplement or army list is in yet, and some book rules,
-            such as unit upgrades and downgrades, aren&apos;t modelled yet.
+            Army Builder is a work in progress. Not every supplement or army list is in yet. Unit upgrades and
+            downgrades are in for A Clash of Eagles and the 1815 Prussians, with the other lists to follow, and
+            allied contingents can&apos;t be built yet.
           </Text>
         </Container>
       </Box>

@@ -842,5 +842,6 @@
   "specialRules": [
     "Italian infantry, the Royal Guard included, follow the French infantry special rules and do have Pas de Charge.",
     "Italian cavalry can use Deep Formation and Cavalry Mixed Formation."
-  ]
+  ],
+  "upgradesModelled": true
 }

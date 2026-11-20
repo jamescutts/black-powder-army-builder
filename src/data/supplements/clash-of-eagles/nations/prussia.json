@@ -690,5 +690,6 @@
     "Prussian infantry can use Column of Companies, Attack Column (Column of Divisions), Line and Mixed Formation; Fusiliers and Jägers can also use Light Infantry Mixed Formation.",
     "Must Form Closed Square: an unengaged battalion with Must Form Square in closed column, attack column or column of companies must form a closed square when charged by cavalry, even if disordered (see p. 83 for the closed square rules).",
     "Prussian cavalry can use Deep Formation and Cavalry Mixed Formation."
-  ]
+  ],
+  "upgradesModelled": true
 }

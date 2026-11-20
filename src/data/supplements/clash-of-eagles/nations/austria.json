@@ -1631,5 +1631,6 @@
       ],
       "label": "You can't have more Hungarian than German regiments"
     }
-  ]
+  ],
+  "upgradesModelled": true
 }

@@ -975,5 +975,6 @@
     "Angriffskolonne and Zug Column: Assault Column represents the Angriffskolonne, and Column of Companies the Zug column.",
     "'No prisoners! No pity!': against a French army, all Prussian infantry battalions and cavalry regiments count as Tough Fighters."
   ],
-  "armyCommandOptional": true
+  "armyCommandOptional": true,
+  "upgradesModelled": true
 }

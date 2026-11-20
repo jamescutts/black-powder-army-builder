@@ -1452,5 +1452,6 @@
     "French infantry have Pas de Charge (they're Reliable in Attack Column) and can use Close Column and Column of Companies; light battalions use Skirmish and Light Infantry Mixed Formation.",
     "French cavalry can use Deep Formation and Cavalry Mixed Formation.",
     "Corps and Army Support (Reserve Artillery, the Heavy Cavalry Brigade and the Artillery Brigade) may take up to 50% of the army's points."
-  ]
+  ],
+  "upgradesModelled": true
 }

@@ -434,5 +434,6 @@
     "Neapolitan infantry follows the French infantry special rules, but does not have Pas de Charge.",
     "Neapolitan infantry is Lacking Initiative: it can't make initiative moves except to change formation or facing; any other move must be by orders.",
     "Neapolitan cavalry can use Deep Formation and Cavalry Mixed Formation."
-  ]
+  ],
+  "upgradesModelled": true
 }
