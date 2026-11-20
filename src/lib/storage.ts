@@ -180,8 +180,9 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
           {
             ...bi,
             name: typeof bi.name === "string" && bi.name.trim() ? bi.name : undefined,
+            // Only a brigade type that has a commander keeps one (otherwise it would be charged but not shown)
             commanderLine:
-              bi.commanderLine && unitIds.has(bi.commanderLine.unitId)
+              bt.commanderUnitId && bi.commanderLine && unitIds.has(bi.commanderLine.unitId)
                 ? { ...bi.commanderLine, name: cleanName(bi.commanderLine.name) }
                 : null,
             slotLines: flat.map((lines) => splitLines(lines, known)),

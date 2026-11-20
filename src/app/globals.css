@@ -480,7 +480,9 @@ body {
 
 .unit-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  /* The name keeps at least a readable width; a long run of upgrades wraps onto more lines rather than
+     squeezing it or spilling out of the card */
+  grid-template-columns: minmax(9rem, 1fr) minmax(0, max-content) auto;
   grid-template-areas: "info chips meta";
   align-items: center;
   column-gap: 10px;
@@ -515,6 +517,7 @@ body {
 .unit-row-chips {
   grid-area: chips;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 /* In a narrow card the upgrades drop to their own line under the name, rather than squeezing it */

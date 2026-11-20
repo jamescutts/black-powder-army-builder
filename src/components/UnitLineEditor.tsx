@@ -167,7 +167,7 @@ export function UnitLineEditor({
             const name = resolved?.unit.name ?? unit.name;
 
             const chips = brigade && options.length > 0 && (
-              <Group gap={4} wrap="nowrap" className="unit-row-chips" role="group" aria-label={`${name} upgrades`}>
+              <Group gap={4} wrap="wrap" className="unit-row-chips" role="group" aria-label={`${name} upgrades`}>
                 {options.map((o) => {
                   const active = !!line.options?.includes(o.id);
                   const blocked = unitOptionBlocked(

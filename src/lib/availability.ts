@@ -100,7 +100,13 @@ export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: Ro
     if (dyn.perBattalions) {
       const battalions = dyn.perBattalions.countSlotIndices.reduce((s, i) => s + slotUnitCount(instance, i), 0);
       if (have >= Math.floor(battalions / dyn.perBattalions.ratio)) {
-        return `1 per ${dyn.perBattalions.ratio} battalions (${battalions} in the brigade)`;
+        // Named for what's counted: battalions, or batteries (an Artillery Brigade's Heavies, "up to half")
+        const counted = dyn.perBattalions.countSlotIndices.flatMap((i) => [
+          ...(bt.slots[i]?.unitIds ?? []),
+          ...(bt.slots[i]?.regiment?.slots.flatMap((sub) => sub.unitIds) ?? []),
+        ]);
+        const noun = unitNoun(nation, counted, 2);
+        return `1 per ${dyn.perBattalions.ratio} ${noun} (${battalions} in the brigade)`;
       }
     }
     if (dyn.perQualifyingRegiment) {
