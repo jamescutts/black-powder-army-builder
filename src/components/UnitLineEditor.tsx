@@ -248,7 +248,13 @@ export function UnitLineEditor({
                   )}
                   {special.length > 0 && (
                     <Text size="xs" c="dimmed" fs="italic" span className="unit-row-special">
-                      {special.join(" \u2022 ")}
+                      {/* Each rule stays whole when a long list wraps */}
+                      {special.map((rule, i) => (
+                        <span key={rule}>
+                          {i > 0 && " \u2022 "}
+                          <span className="unit-row-rule">{rule}</span>
+                        </span>
+                      ))}
                     </Text>
                   )}
                   {extraInfo?.(line)}

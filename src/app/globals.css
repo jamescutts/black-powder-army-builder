@@ -504,9 +504,13 @@ body {
   line-height: 1.35;
 }
 
-/* The unit's rules follow its name on the same line, wrapping only when they run long */
+/* The unit's rules sit on their own line under its name, so a rule never breaks across two lines */
 .unit-row-special {
-  margin-left: 8px;
+  display: block;
+}
+
+.unit-row-rule {
+  white-space: nowrap;
 }
 
 .unit-row-meta {
