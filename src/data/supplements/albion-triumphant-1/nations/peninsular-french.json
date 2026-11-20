@@ -20,6 +20,11 @@
           "label": "Staff rating 8",
           "cost": 25,
           "staffRating": 8
+        },
+        {
+          "label": "Staff rating 9",
+          "cost": 50,
+          "staffRating": 9
         }
       ]
     },
@@ -272,6 +277,18 @@
       "cost": 27
     },
     {
+      "id": "pf-foot-arty-half",
+      "name": "Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 14
+    },
+    {
       "id": "pf-horse-arty",
       "name": "Horse Artillery",
       "category": "Artillery",
@@ -282,6 +299,18 @@
       "morale": "4",
       "stamina": "1",
       "cost": 21
+    },
+    {
+      "id": "pf-horse-arty-half",
+      "name": "Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Light Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 11
     },
     {
       "id": "pf-cmd-junot",
@@ -330,18 +359,135 @@
       "id": "pf-infantry-brigade",
       "name": "Infantry Brigade",
       "min": 1,
-      "max": 6,
+      "max": 20,
       "commanderUnitId": "pf-brig-cmd",
       "slots": [
         {
-          "label": "Line Infantry Battalion (1-3 regiments of 1-4 battalions)",
-          "unitIds": [
-            "pf-line",
-            "pf-conscript",
-            "pf-light"
+          "label": "Line Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Line Infantry Regiment",
+            "min": 1,
+            "max": 3,
+            "slots": [
+              {
+                "label": "Line Infantry Battalion",
+                "unitIds": [
+                  "pf-line"
+                ],
+                "min": 1,
+                "max": 4
+              }
+            ]
+          }
+        }
+      ],
+      "options": [
+        {
+          "id": "light",
+          "label": "Light",
+          "scope": "regiment",
+          "appliesTo": [
+            "pf-line"
           ],
-          "min": 1,
-          "max": 12
+          "swapTo": {
+            "pf-line": "pf-light"
+          },
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "veteran-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 6,
+          "appliesTo": [
+            "pf-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+ (Middle)",
+          "cost": 8,
+          "appliesTo": [
+            "pf-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "pf-line"
+              ],
+              "ratio": 2
+            }
+          }
+        },
+        {
+          "id": "tough-fighters",
+          "label": "Tough Fighters",
+          "cost": 1,
+          "appliesTo": [
+            "pf-line"
+          ],
+          "addSpecial": [
+            "Tough Fighters"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "pf-line"
+              ],
+              "ratio": 2
+            }
+          }
+        },
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pf-line"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pf-line"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "unreliable",
+          "label": "Unreliable",
+          "cost": -3,
+          "appliesTo": [
+            "pf-line"
+          ],
+          "addSpecial": [
+            "Unreliable"
+          ],
+          "limit": {
+            "max": 2
+          }
         }
       ]
     },
@@ -353,14 +499,55 @@
       "commanderUnitId": "pf-brig-cmd",
       "slots": [
         {
-          "label": "Combined Grenadier or Conscript Line Battalion",
+          "label": "Combined Grenadier, or Conscript Line (Middle, Late), Battalion",
           "unitIds": [
             "pf-combined-grenadier",
-            "pf-conscript",
-            "pf-combined-voltigeurs"
+            "pf-conscript"
           ],
           "min": 2,
-          "max": 4
+          "max": 4,
+          "mutuallyExclusiveGroups": [
+            {
+              "unitIds": [
+                "pf-combined-grenadier"
+              ],
+              "label": "Combined Grenadiers"
+            },
+            {
+              "unitIds": [
+                "pf-conscript"
+              ],
+              "label": "Conscripts"
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "veteran",
+          "label": "Veteran, Elite 4+",
+          "cost": 6,
+          "appliesTo": [
+            "pf-combined-grenadier"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "removeSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pf-combined-grenadier",
+            "pf-conscript"
+          ],
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -386,7 +573,19 @@
           "pf-infantry-brigade"
         ],
         "min": 3
-      }
+      },
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pf-young-guard"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "pf-cavalry-brigade",
@@ -394,17 +593,29 @@
       "min": 0,
       "max": 3,
       "commanderUnitId": "pf-brig-cmd",
-      "note": "0 to 1 (Early), up to 1 per 2 Infantry Brigades (Middle/Late)",
+      "note": "Up to 1 per 2 Infantry Brigades (one in the Early period)",
       "slots": [
         {
-          "label": "Dragoon, Chasseur à Cheval or Vistula Lancer Regiment",
+          "label": "Dragoon, Hussar or Chasseur à Cheval, or Vistula Lancer Regiment",
           "unitIds": [
             "pf-dragoon",
             "pf-line-light-cav",
             "pf-vistula-lancer"
           ],
           "min": 2,
-          "max": 4
+          "max": 4,
+          "unitLimits": [
+            {
+              "unitId": "pf-vistula-lancer",
+              "max": 1
+            }
+          ],
+          "unitCaps": [
+            {
+              "unitId": "pf-vistula-lancer",
+              "armyMax": 1
+            }
+          ]
         }
       ],
       "maxRatio": {
@@ -412,7 +623,49 @@
           "pf-infantry-brigade"
         ],
         "ratio": 2
-      }
+      },
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pf-dragoon",
+            "pf-line-light-cav",
+            "pf-vistula-lancer"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pf-dragoon",
+            "pf-line-light-cav",
+            "pf-vistula-lancer"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "veteran",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "pf-dragoon",
+            "pf-line-light-cav",
+            "pf-vistula-lancer"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        }
+      ]
     },
     {
       "id": "pf-guard-cavalry-brigade",
@@ -420,7 +673,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "pf-brig-cmd",
-      "note": "Middle period, if at least 3 infantry brigades and 1 cavalry brigade are chosen",
+      "note": "Middle period, if at least 3 infantry brigades and 1 cavalry brigade are taken",
       "slots": [
         {
           "label": "Guard Cavalry Regiment",
@@ -428,11 +681,28 @@
             "pf-guard-lancer",
             "pf-guard-light",
             "pf-guard-grenadier-a-cheval",
-            "pf-gendarme-elite",
             "pf-empress-dragoon"
           ],
           "min": 1,
-          "max": 3
+          "max": 3,
+          "unitLimits": [
+            {
+              "unitId": "pf-guard-lancer",
+              "max": 1
+            },
+            {
+              "unitId": "pf-guard-light",
+              "max": 1
+            },
+            {
+              "unitId": "pf-guard-grenadier-a-cheval",
+              "max": 1
+            },
+            {
+              "unitId": "pf-empress-dragoon",
+              "max": 1
+            }
+          ]
         }
       ],
       "requires": {
@@ -440,13 +710,28 @@
           "pf-infantry-brigade"
         ],
         "min": 3
-      }
+      },
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pf-guard-lancer",
+            "pf-guard-light",
+            "pf-guard-grenadier-a-cheval",
+            "pf-empress-dragoon"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "pf-army-artillery",
       "name": "Army Artillery (Divisional/Corps assets)",
       "min": 0,
-      "max": 6,
+      "max": 20,
       "slots": [
         {
           "label": "Battery",
@@ -457,13 +742,93 @@
           "min": 1,
           "max": 1
         }
+      ],
+      "note": "Foot batteries up to one per 6 infantry battalions, Horse batteries up to one per 3 cavalry regiments",
+      "options": [
+        {
+          "id": "veteran",
+          "label": "Veteran, Elite 4+",
+          "cost": 10,
+          "appliesTo": [
+            "pf-foot-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "pf-foot-arty",
+            "pf-horse-arty"
+          ],
+          "swapTo": {
+            "pf-foot-arty": "pf-foot-arty-half",
+            "pf-horse-arty": "pf-horse-arty-half"
+          }
+        }
       ]
     }
   ],
   "notes": [
-    "Periods: Early 1807-1808, Middle 1809-1811, Late 1812-1814.",
-    "Combined Grenadiers/Voltigeurs: the Grenadier/Carabinier or Voltigeur companies from Line and Light battalions in a brigade can be pooled into a separate Combined battalion, addable to any Infantry Brigade.",
-    "Foreign Formations: upgrades and downgrades in the Infantry Brigade selection can represent the Swiss, Irish, Hanoverian, Nassau, Baden, Hesse-Darmstadt and Legion de Midi troop types.",
-    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
+    "The book divides the list into Early (1807-1808), Middle (1809-1811) and Late (1812-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name.",
+    "Period limits that differ: Veteran (Elite 5+) is open to any battalion in the Middle period but up to half in the Early and Late, where Elite 4+ isn't offered; in the Middle period take one or the other. In the Early period any battalion can be Large and any regiment Light (rather than one per brigade).",
+    "The Cavalry Brigade takes 2-3 Dragoons with up to one Chasseur regiment (Early), or 2-4 Hussars or Chasseurs with up to one Dragoon regiment (Middle, Late), plus up to one Vistula Lancer regiment in the army (Early, Middle); the builder checks the Vistula Lancers but not the Dragoon and light mix.",
+    "The Guard Cavalry Brigade also needs a Cavalry Brigade; the builder checks the 3 infantry brigades.",
+    "Combined Grenadiers and Voltigeurs: a brigade's battalions can lose their Grenadier/Carabinier companies (and 1 Hand-to-Hand) or Voltigeur companies (and Mixed Formation). Two battalions' companies make a Tiny unit, three a Small unit, four a standard one; a battalion that loses both becomes Small. Not built here, beyond the Reserve brigade's Combined Grenadier battalions.",
+    "Foreign formations: upgrades and downgrades in the Infantry Brigade can stand for Swiss, Irish, Hanoverian, Nassau, Baden, Hesse-Darmstadt and Legion du Midi troops. Italians use the French stat lines without Pas de Charge.",
+    "Dismounted Dragoons (p. 68): a Dragoon regiment can start the game dismounted, as a Small infantry unit (4/2/4/3, Skirmish). Not built here.",
+    "The chapter gives Combined Grenadiers Shooting 4 (p. 66) and Vistula Lancers Reliable (p. 71); the list's table (p. 106) is followed.",
+    "Half batteries cost half points, rounded up (Foot 14, Horse 11), with the half battery stat line on p. 107 (2-1-1, Stamina 1).",
+    "Named commanders have no official points cost in this supplement; they're priced here at the Divisional Commander cost for their Staff Rating, so adjust as you agree."
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "pf-foot-arty"
+      ],
+      "brigadeTypeIds": [
+        "pf-army-artillery"
+      ],
+      "perUnitIds": [
+        "pf-line",
+        "pf-conscript",
+        "pf-combined-grenadier",
+        "pf-combined-voltigeurs",
+        "pf-young-guard"
+      ],
+      "ratio": 6,
+      "label": "Foot batteries"
+    },
+    {
+      "capUnitIds": [
+        "pf-horse-arty"
+      ],
+      "brigadeTypeIds": [
+        "pf-army-artillery"
+      ],
+      "perUnitIds": [
+        "pf-dragoon",
+        "pf-line-light-cav",
+        "pf-vistula-lancer",
+        "pf-guard-lancer",
+        "pf-guard-light",
+        "pf-guard-grenadier-a-cheval",
+        "pf-empress-dragoon"
+      ],
+      "ratio": 3,
+      "label": "Horse batteries"
+    }
+  ],
+  "upgradesModelled": true,
+  "specialRules": [
+    "Pas de Charge: French infantry are Reliable (+1 Command) in Attack Column, or a mixed formation Attack Column with skirmishers.",
+    "Sharpshooters: Light infantry can re-roll one missed shot per turn.",
+    "Skirmish: only Light infantry can adopt skirmish formation; other troops only to enter terrain they couldn't otherwise, or as part of a mixed formation.",
+    "Marauders: French Chasseurs à Cheval ignore the distance penalty when given orders.",
+    "Heavy Cavalry D1: Dragoons add one to any combat result, rather than between one and three.",
+    "All French infantry: Pas de Charge, Must Form Square, Mixed Formation, and can form skirmish order in terrain they couldn't normally enter."
   ]
 }

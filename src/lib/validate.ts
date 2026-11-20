@@ -442,6 +442,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
   // ─── Upgrades and downgrades: limits, and ones that can't be combined ──────
   const armyWideReported = new Set<string>();
   const armyMaxReported = new Set<string>();
+  const sharedReported = new Set<string>();
   for (const bi of roster.brigadeInstances) {
     const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
     if (!bt?.options?.length) continue;
@@ -454,7 +455,11 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
       }
       const taken = optionTaken(o, bi, roster.brigadeInstances);
       const allowed = optionAllowance(o, bi, roster.brigadeInstances);
-      if (taken > allowed) {
+      // Options sharing a limit (Highlanders, with or without Ferocious Charge) report it once
+      const shared = [o.id, ...(o.limit?.sharedWith ?? [])].sort().join("+");
+      const sharedKey = `${o.limit?.armyWide ? "army" : bi.key}:${shared}`;
+      if (taken > allowed && !sharedReported.has(sharedKey)) {
+        sharedReported.add(sharedKey);
         const noun =
           o.scope === "regiment" ? (taken === 1 ? "regiment" : "regiments") : unitNoun(nation, o.appliesTo, taken);
         const limit = o.scope === "regiment" ? null : limitText(nation, o);

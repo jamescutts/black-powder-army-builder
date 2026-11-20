@@ -1,7 +1,7 @@
-import type { Nation, UnitOption } from "@/data/types";
-import type { RosterState, RosterUnitLine } from "@/types/army";
+import type { BrigadeType, Nation, UnitOption } from "@/data/types";
+import type { RosterRegimentInstance, RosterState, RosterUnitLine } from "@/types/army";
 import { newKey } from "@/lib/id";
-import { unitOptionsOf } from "@/lib/options";
+import { regimentOptionsOf, unitOptionsOf } from "@/lib/options";
 
 // Saved army lists, kept in this browser's localStorage. Each list has its own id, so a nation can
 // have as many as you like (an 1812 corps and a smaller club-night force, say). The My armies page
@@ -156,8 +156,20 @@ function splitLines(lines: RosterUnitLine[], known: Set<string>): RosterUnitLine
 function currentVariant(nation: Nation, line: RosterUnitLine): RosterUnitLine {
   const variants = nation.units.find((u) => u.id === line.unitId)?.variants;
   if (!variants?.length || !line.variantLabel || variants.some((v) => v.label === line.variantLabel)) return line;
-  const match = variants.find((v) => v.label.startsWith(line.variantLabel!));
-  return match ? { ...line, variantLabel: match.label } : line;
+  // One that's no longer offered at all (the Peninsular army commander's Staff Rating 7) takes the first
+  const match = variants.find((v) => v.label.startsWith(line.variantLabel!)) ?? variants[0];
+  return { ...line, variantLabel: match.label };
+}
+
+/**
+ * A line whose unit's choices became upgrades: "KGL (Ferocious Charge)" on a Light Dragoon, or a "Small"
+ * Household Cavalry, takes the brigade's upgrade of that name ("KGL", "Small") instead.
+ */
+function variantAsOption(nation: Nation, bt: BrigadeType, line: RosterUnitLine): RosterUnitLine {
+  if (!line.variantLabel || nation.units.find((u) => u.id === line.unitId)?.variants?.length) return line;
+  const name = line.variantLabel.split(" (")[0];
+  const o = unitOptionsOf(bt).find((x) => x.label === name && x.appliesTo.includes(line.unitId));
+  return { ...line, variantLabel: undefined, options: o ? [...(line.options ?? []), o.id] : line.options };
 }
 
 /**
@@ -197,9 +209,29 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
           bt.slots[i] && !bt.slots[i].regiment && bt.slots[i].unitIds.includes(unitId)
             ? i
             : bt.slots.findIndex((s) => !s.regiment && s.unitIds.includes(unitId));
+        // Battalions saved before their slot became regiments (the Peninsular French Infantry Brigade) are
+        // grouped into new regiments, as many to a regiment as it takes; a Light battalion goes into a
+        // regiment made Light
+        const orphans = new Map<string, RosterUnitLine[]>();
+        const regroup = (line: RosterUnitLine) => {
+          for (const [k, slot] of bt.slots.entries()) {
+            for (const [j, sub] of (slot.regiment?.slots ?? []).entries()) {
+              const via = sub.unitIds.includes(line.unitId)
+                ? null
+                : regimentOptionsOf(bt).find((o) =>
+                    Object.entries(o.swapTo ?? {}).some(([from, to]) => to === line.unitId && sub.unitIds.includes(from))
+                  );
+              if (via === undefined) continue;
+              const unitId = via ? Object.entries(via.swapTo!).find(([, to]) => to === line.unitId)![0] : line.unitId;
+              const group = `${k}:${j}:${via?.id ?? ""}`;
+              orphans.set(group, [...(orphans.get(group) ?? []), ...splitLines([{ ...line, unitId }], known)]);
+              return;
+            }
+          }
+        };
         (bi.slotLines ?? []).forEach((lines, i) => {
           for (const saved of keepLines(lines)) {
-            let line = saved;
+            let line = variantAsOption(nation, bt, saved);
             // A unit that's now an upgrade of another (a Highland battalion picked directly, before it was
             // an upgrade of a Line battalion) goes back to that unit, with the upgrade taken
             if (slotFor(line.unitId, i) < 0) {
@@ -211,8 +243,22 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
             }
             const target = slotFor(line.unitId, i);
             if (target >= 0) flat[target].push(line);
+            else regroup(line);
           }
         });
+
+        const regrouped = (k: number): RosterRegimentInstance[] =>
+          [...orphans].flatMap(([group, lines]) => {
+            const [slot, sub, optionId] = group.split(":");
+            if (Number(slot) !== k) return [];
+            const def = bt.slots[k].regiment!;
+            const per = Math.max(1, def.slots[Number(sub)].max);
+            return Array.from({ length: Math.ceil(lines.length / per) }, (_, n) => ({
+              key: newKey("regiment"),
+              options: optionId ? [optionId] : undefined,
+              slotLines: def.slots.map((_, j) => (j === Number(sub) ? lines.slice(n * per, n * per + per) : [])),
+            }));
+          });
 
         return [
           {
@@ -226,7 +272,7 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
             slotLines: flat.map((lines) => splitLines(lines, known)),
             regimentSlots: bt.slots.map((slot, i) =>
               slot.regiment
-                ? (bi.regimentSlots?.[i] ?? []).map((reg) => {
+                ? [...(bi.regimentSlots?.[i] ?? []), ...regrouped(i)].map((reg) => {
                     const options = new Set(knownOptions(reg.options, known) ?? []);
                     const slotLines = slot.regiment!.slots.map((sub, j) =>
                       splitLines(

@@ -315,8 +315,8 @@ export function HomeView({
               *
             </span>{" "}
             Army Builder is a work in progress. Not every supplement or army list is in yet. Unit upgrades and
-            downgrades are in for A Clash of Eagles and Albion Triumphant 2, with the Peninsular lists to follow,
-            and allied contingents can&apos;t be built yet.
+            downgrades are in for every official list, though the Peninsular lists&apos; Early, Middle and Late
+            periods aren&apos;t enforced, and allied contingents can&apos;t be built yet.
           </Text>
         </Container>
       </Box>

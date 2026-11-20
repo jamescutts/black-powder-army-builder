@@ -43,6 +43,20 @@
       ]
     },
     {
+      "id": "sp-brig-cmd-7",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        }
+      ]
+    },
+    {
       "id": "sp-line",
       "name": "Line Infantry",
       "category": "Infantry",
@@ -259,21 +273,69 @@
       "commanderUnitId": "sp-brig-cmd",
       "slots": [
         {
-          "label": "Light Infantry Battalion (Early)",
+          "label": "Battalion: 2-3 Light (Early), or 1-2 Light or Militia (Middle, Late)",
           "unitIds": [
-            "sp-light"
-          ],
-          "min": 2,
-          "max": 3
-        },
-        {
-          "label": "Additional Battalion (Middle/Late)",
-          "unitIds": [
+            "sp-light",
             "sp-light-half",
             "sp-militia"
           ],
-          "min": 0,
-          "max": 2
+          "min": 1,
+          "max": 3,
+          "unitLimits": [
+            {
+              "unitId": "sp-militia",
+              "max": 1
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "large",
+          "label": "Large (Early)",
+          "cost": 8,
+          "appliesTo": [
+            "sp-light",
+            "sp-militia"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "steady",
+          "label": "Not Wavering (Middle, Late)",
+          "cost": 6,
+          "appliesTo": [
+            "sp-light",
+            "sp-militia",
+            "sp-light-half"
+          ],
+          "removeSpecial": [
+            "Wavering"
+          ]
+        },
+        {
+          "id": "reliable",
+          "label": "Not Unreliable (Late)",
+          "cost": 3,
+          "appliesTo": [
+            "sp-light",
+            "sp-light-half"
+          ],
+          "removeSpecial": [
+            "Unreliable"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small (Middle, Late)",
+          "cost": -8,
+          "appliesTo": [
+            "sp-light",
+            "sp-militia"
+          ],
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -281,16 +343,29 @@
       "id": "sp-infantry-brigade",
       "name": "Infantry Brigade",
       "min": 1,
-      "max": 6,
-      "commanderUnitId": "sp-brig-cmd",
+      "max": 20,
+      "commanderUnitId": "sp-brig-cmd-7",
       "slots": [
         {
-          "label": "Spanish Line Infantry Battalion (1-3 regiments)",
-          "unitIds": [
-            "sp-line"
-          ],
-          "min": 1,
-          "max": 9
+          "label": "Spanish Line Infantry Regiments",
+          "unitIds": [],
+          "min": 0,
+          "max": 0,
+          "regiment": {
+            "label": "Line Infantry Regiment",
+            "min": 0,
+            "max": 3,
+            "slots": [
+              {
+                "label": "Line Infantry Battalion",
+                "unitIds": [
+                  "sp-line"
+                ],
+                "min": 1,
+                "max": 3
+              }
+            ]
+          }
         },
         {
           "label": "Grenadier Battalion (optional, max 4 in army)",
@@ -298,10 +373,16 @@
             "sp-grenadier"
           ],
           "min": 0,
-          "max": 4
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "sp-grenadier",
+              "armyMax": 4
+            }
+          ]
         },
         {
-          "label": "Militia Battalion (optional)",
+          "label": "Militia Battalions (optional, two in the Early period, one in the Middle)",
           "unitIds": [
             "sp-militia"
           ],
@@ -309,12 +390,65 @@
           "max": 2
         },
         {
-          "label": "Light Battalion (optional)",
+          "label": "Light Battalions (optional, one in the Early period, two in the Middle)",
           "unitIds": [
             "sp-light"
           ],
           "min": 0,
           "max": 2
+        }
+      ],
+      "note": "1-3 Line regiments; a Middle or Late period commander can have one brigade of just the additional battalions",
+      "options": [
+        {
+          "id": "hand-to-hand",
+          "label": "+1 Hand-to-Hand",
+          "cost": 2,
+          "appliesTo": [
+            "sp-grenadier",
+            "sp-line",
+            "sp-light"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "steady",
+          "label": "Not Wavering (Middle, Late)",
+          "cost": 6,
+          "appliesTo": [
+            "sp-line",
+            "sp-militia"
+          ],
+          "removeSpecial": [
+            "Wavering"
+          ]
+        },
+        {
+          "id": "reliable",
+          "label": "Not Unreliable (Late)",
+          "cost": 3,
+          "appliesTo": [
+            "sp-line",
+            "sp-grenadier"
+          ],
+          "removeSpecial": [
+            "Unreliable"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small (Middle, Late)",
+          "cost": -8,
+          "appliesTo": [
+            "sp-line",
+            "sp-grenadier",
+            "sp-militia",
+            "sp-light"
+          ],
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -323,7 +457,7 @@
       "name": "Guard Infantry Brigade",
       "min": 0,
       "max": 1,
-      "commanderUnitId": "sp-brig-cmd",
+      "commanderUnitId": "sp-brig-cmd-7",
       "note": "Early/Middle periods",
       "slots": [
         {
@@ -335,7 +469,7 @@
           "max": 2
         },
         {
-          "label": "Line Infantry Battalion (optional)",
+          "label": "Line Infantry Battalion (optional, Middle, Late)",
           "unitIds": [
             "sp-line"
           ],
@@ -343,7 +477,7 @@
           "max": 2
         },
         {
-          "label": "Militia Battalion (optional)",
+          "label": "Militia Battalion (optional, Middle, Late)",
           "unitIds": [
             "sp-militia"
           ],
@@ -357,20 +491,28 @@
       "name": "Cavalry Brigade",
       "min": 0,
       "max": 3,
-      "commanderUnitId": "sp-brig-cmd",
+      "commanderUnitId": "sp-brig-cmd-7",
       "note": "Up to 1 per 3 Infantry Brigades",
       "slots": [
         {
-          "label": "Cavalry Regiment",
+          "label": "Cavalry Regiment: up to 2 Light, 2-4 Heavy, up to 1 Lancer",
           "unitIds": [
             "sp-light-cav",
             "sp-heavy",
-            "sp-lancer",
-            "sp-guard-light",
-            "sp-guard-heavy"
+            "sp-lancer"
           ],
           "min": 2,
-          "max": 4
+          "max": 4,
+          "unitLimits": [
+            {
+              "unitId": "sp-light-cav",
+              "max": 2
+            },
+            {
+              "unitId": "sp-lancer",
+              "max": 1
+            }
+          ]
         }
       ],
       "maxRatio": {
@@ -378,7 +520,53 @@
           "sp-infantry-brigade"
         ],
         "ratio": 3
-      }
+      },
+      "options": [
+        {
+          "id": "guard-light",
+          "label": "Guard",
+          "appliesTo": [
+            "sp-light-cav"
+          ],
+          "swapTo": {
+            "sp-light-cav": "sp-guard-light"
+          },
+          "limit": {
+            "max": 2,
+            "sharedWith": [
+              "guard-heavy"
+            ]
+          }
+        },
+        {
+          "id": "guard-heavy",
+          "label": "Guard",
+          "appliesTo": [
+            "sp-heavy"
+          ],
+          "swapTo": {
+            "sp-heavy": "sp-guard-heavy"
+          },
+          "limit": {
+            "max": 2,
+            "sharedWith": [
+              "guard-light"
+            ]
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "sp-light-cav",
+            "sp-heavy",
+            "sp-lancer"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "sp-artillery-support",
@@ -393,16 +581,61 @@
             "sp-horse-artillery"
           ],
           "min": 1,
-          "max": 1
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "sp-artillery",
+              "armyMax": 2
+            },
+            {
+              "unitId": "sp-horse-artillery",
+              "armyMax": 1
+            }
+          ]
         }
-      ]
+      ],
+      "note": "Up to two batteries (one per 6 infantry battalions) and one Horse battery (one per 6 cavalry regiments)"
     }
   ],
   "notes": [
-    "Periods: Early 1807-1809, Middle 1810-1812, Late 1813-1814."
+    "The book divides the list into Early (1807-1809), Middle (1810-1812) and Late (1813-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name.",
+    "Each full Light battalion a Vanguard Brigade can take may instead be two Small half-battalions (17 points each).",
+    "A Cavalry Brigade's 2-4 regiments include two to four Heavy; the builder checks the Light and Lancer maximums. Up to two regiments can be upgraded to Guard.",
+    "The chapter makes Light Infantry Shooting 2 (p. 56) and Guard Light Cavalry 6/-/4/3 without Elite 5+ (p. 57), and adds Guerrillas, which the list doesn't offer; the list's table (p. 110) is followed."
   ],
   "specialRules": [
-    "A la Muerte: Spanish artillery batteries that break due to shooting casualties only break on a roll of 4 or less.",
-    "Personal Qualities of Commanders: for aggression/independence/decisiveness, Spanish commanders roll 1-3 = Low, 4-5 = Normal, 6 = High."
-  ]
+    "A la Muerte: Spanish batteries that take a break test from shooting casualties only break on a 4 or less.",
+    "Spanish commanders roll for aggression, independence and decisiveness (Black Powder p. 94) on 1-3 Low, 4-5 Normal, 6 High.",
+    "All Spanish infantry: Must Form Square, Mixed Formation, and can form skirmish order in terrain they couldn't normally enter."
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "sp-artillery"
+      ],
+      "perUnitIds": [
+        "sp-line",
+        "sp-light",
+        "sp-light-half",
+        "sp-militia",
+        "sp-grenadier",
+        "sp-guard-infantry"
+      ],
+      "ratio": 6,
+      "label": "Artillery batteries"
+    },
+    {
+      "capUnitIds": [
+        "sp-horse-artillery"
+      ],
+      "perUnitIds": [
+        "sp-light-cav",
+        "sp-heavy",
+        "sp-lancer"
+      ],
+      "ratio": 6,
+      "label": "Horse Artillery batteries"
+    }
+  ],
+  "upgradesModelled": true
 }

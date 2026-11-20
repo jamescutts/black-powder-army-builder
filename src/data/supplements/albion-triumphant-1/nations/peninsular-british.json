@@ -12,11 +12,6 @@
       "armament": "-",
       "variants": [
         {
-          "label": "Staff rating 7",
-          "cost": 0,
-          "staffRating": 7
-        },
-        {
           "label": "Staff rating 8",
           "cost": 25,
           "staffRating": 8
@@ -49,6 +44,25 @@
           "label": "Staff rating 9 (Late)",
           "cost": 50,
           "staffRating": 9
+        }
+      ]
+    },
+    {
+      "id": "pb-brig-cmd-8",
+      "name": "Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        },
+        {
+          "label": "Staff rating 8",
+          "cost": 25,
+          "staffRating": 8
         }
       ]
     },
@@ -142,6 +156,22 @@
       "cost": 50
     },
     {
+      "id": "pb-chasseurs-plain",
+      "name": "Chasseurs Britannique (no Sharpshooter or Steady Line)",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "8",
+      "shooting": "4",
+      "morale": "4",
+      "stamina": "4",
+      "special": [
+        "First Fire",
+        "Skirmish"
+      ],
+      "cost": 44
+    },
+    {
       "id": "pb-highland",
       "name": "Highland Infantry",
       "category": "Infantry",
@@ -157,6 +187,24 @@
         "First Fire"
       ],
       "cost": 40
+    },
+    {
+      "id": "pb-highland-fc",
+      "name": "Highland Infantry, Ferocious Charge",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Tough Fighter",
+        "Steady Line",
+        "First Fire",
+        "Ferocious Charge"
+      ],
+      "cost": 43
     },
     {
       "id": "pb-rifle-coy",
@@ -230,6 +278,22 @@
       "special": [
         "Steady Line",
         "First Fire"
+      ],
+      "cost": 35
+    },
+    {
+      "id": "pb-brunswick-light",
+      "name": "Brunswick Light Infantry",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "6",
+      "shooting": "3",
+      "morale": "5",
+      "stamina": "3",
+      "special": [
+        "Skirmish",
+        "Sharpshooter"
       ],
       "cost": 35
     },
@@ -329,18 +393,10 @@
       "morale": "4",
       "stamina": "3",
       "special": [
-        "Heavy Cavalry D1"
+        "Heavy Cavalry D1",
+        "Gallop at Anything"
       ],
-      "variants": [
-        {
-          "label": "British (Gallop at Anything)",
-          "cost": 47
-        },
-        {
-          "label": "KGL (Ferocious Charge)",
-          "cost": 49
-        }
-      ]
+      "cost": 47
     },
     {
       "id": "pb-light-dragoon-hussar",
@@ -352,18 +408,27 @@
       "morale": "4",
       "stamina": "3",
       "special": [
-        "Marauder"
+        "Marauder",
+        "Gallop at Anything"
       ],
-      "variants": [
-        {
-          "label": "British (Gallop at Anything)",
-          "cost": 44
-        },
-        {
-          "label": "KGL (Ferocious Charge)",
-          "cost": 46
-        }
-      ]
+      "cost": 44
+    },
+    {
+      "id": "pb-light-dragoon-small",
+      "name": "Small Light Dragoon Regiment",
+      "category": "Cavalry",
+      "type": "Regular Cavalry",
+      "armament": "Sabre",
+      "handToHand": "4",
+      "shooting": "-",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Marauder",
+        "Gallop at Anything",
+        "Small"
+      ],
+      "cost": 36
     },
     {
       "id": "pb-household-cavalry",
@@ -377,16 +442,8 @@
         "Reliable",
         "Heavy Cavalry D3"
       ],
-      "variants": [
-        {
-          "label": "Standard",
-          "cost": 56
-        },
-        {
-          "label": "Small",
-          "cost": 48
-        }
-      ]
+      "cost": 56,
+      "stamina": "3"
     },
     {
       "id": "pb-portuguese-cavalry",
@@ -419,6 +476,22 @@
       "cost": 31
     },
     {
+      "id": "pb-royal-arty-half",
+      "name": "Royal and KGL Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Cannon",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 15,
+      "special": [
+        "Reliable",
+        "Shrapnel"
+      ]
+    },
+    {
       "id": "pb-royal-horse-arty",
       "name": "Royal Horse and KGL Horse Artillery",
       "category": "Artillery",
@@ -436,6 +509,23 @@
       "cost": 30
     },
     {
+      "id": "pb-royal-horse-arty-half",
+      "name": "Royal Horse and KGL Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Cannon",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 16,
+      "special": [
+        "Reliable",
+        "Marauder",
+        "Shrapnel"
+      ]
+    },
+    {
       "id": "pb-portuguese-arty",
       "name": "Portuguese Artillery",
       "category": "Artillery",
@@ -446,6 +536,18 @@
       "morale": "4",
       "stamina": "2",
       "cost": 27
+    },
+    {
+      "id": "pb-portuguese-arty-half",
+      "name": "Portuguese Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 13
     },
     {
       "id": "pb-cmd-wellington",
@@ -496,16 +598,13 @@
       "id": "pb-infantry-brigade",
       "name": "Infantry Brigade",
       "min": 1,
-      "max": 6,
+      "max": 20,
       "commanderUnitId": "pb-brig-cmd",
       "slots": [
         {
           "label": "Line Infantry Battalion",
           "unitIds": [
-            "pb-line",
-            "pb-chasseurs-brit",
-            "pb-highland",
-            "pb-detachments"
+            "pb-line"
           ],
           "min": 2,
           "max": 4
@@ -525,7 +624,7 @@
           ]
         },
         {
-          "label": "Attached Tiny Company - Rifle or Brunswick Oels (optional, 1 per army)",
+          "label": "Attached Tiny Company: Rifle, or Brunswick Oels (optional, 1 per army)",
           "unitIds": [
             "pb-rifle-coy",
             "pb-brunswick-oels-coy"
@@ -544,12 +643,210 @@
           ]
         },
         {
+          "label": "Brunswick Light Infantry Battalion (optional, 1 per army)",
+          "unitIds": [
+            "pb-brunswick-light"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pb-brunswick-light",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
+          "label": "Attached Small Light Dragoon Regiment (optional, Early, 1 per army)",
+          "unitIds": [
+            "pb-light-dragoon-small"
+          ],
+          "min": 0,
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pb-light-dragoon-small",
+              "armyMax": 1
+            }
+          ]
+        },
+        {
           "label": "Attached Portuguese Line Battalion (optional, Early)",
           "unitIds": [
             "pb-portuguese-line"
           ],
           "min": 0,
           "max": 1
+        }
+      ],
+      "options": [
+        {
+          "id": "light-infantry",
+          "label": "Light infantry",
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "pb-line": "pb-light-inf"
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "pb-line"
+              ],
+              "ratio": 4
+            },
+            "sharedWith": [
+              "chasseurs",
+              "chasseurs-plain"
+            ]
+          }
+        },
+        {
+          "id": "chasseurs",
+          "label": "Chasseurs Britannique",
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "pb-line": "pb-chasseurs-brit"
+          },
+          "limit": {
+            "max": 1,
+            "armyWide": true,
+            "sharedWith": [
+              "chasseurs-plain"
+            ]
+          }
+        },
+        {
+          "id": "chasseurs-plain",
+          "label": "Chasseurs Britannique, no Sharpshooter or Steady Line",
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "pb-line": "pb-chasseurs-plain"
+          },
+          "limit": {
+            "max": 1,
+            "armyWide": true,
+            "sharedWith": [
+              "chasseurs"
+            ]
+          }
+        },
+        {
+          "id": "highlanders",
+          "label": "Highlanders",
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "pb-line": "pb-highland"
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "pb-line"
+              ],
+              "ratio": 4
+            },
+            "sharedWith": [
+              "highlanders-fc"
+            ]
+          }
+        },
+        {
+          "id": "highlanders-fc",
+          "label": "Highlanders, Ferocious Charge",
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "pb-line": "pb-highland-fc"
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "pb-line"
+              ],
+              "ratio": 4
+            },
+            "sharedWith": [
+              "highlanders"
+            ]
+          }
+        },
+        {
+          "id": "detachments",
+          "label": "Battalion of Detachments (Middle)",
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "type",
+          "swapTo": {
+            "pb-line": "pb-detachments"
+          },
+          "limit": {
+            "max": 1,
+            "armyMax": 2
+          }
+        },
+        {
+          "id": "veteran-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 8,
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+ (Late)",
+          "cost": 10,
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pb-line"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-line",
+            "pb-brunswick-light"
+          ],
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -558,7 +855,7 @@
       "name": "Guards Brigade",
       "min": 0,
       "max": 1,
-      "commanderUnitId": "pb-brig-cmd",
+      "commanderUnitId": "pb-brig-cmd-8",
       "note": "If at least 2 other British brigades are taken (Middle/Late)",
       "slots": [
         {
@@ -583,14 +880,36 @@
           "pb-infantry-brigade"
         ],
         "min": 2
-      }
+      },
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pb-foot-guard"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-foot-guard"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "pb-light-brigade",
       "name": "Light Brigade",
       "min": 0,
       "max": 1,
-      "commanderUnitId": "pb-brig-cmd",
+      "commanderUnitId": "pb-brig-cmd-8",
       "note": "Middle/Late campaign periods",
       "slots": [
         {
@@ -610,15 +929,111 @@
           "max": 1
         },
         {
-          "label": "Additional Battalion (optional)",
+          "label": "Further units: Rifle Battalion, Small Rifle Companies, or Portuguese Line (Late) (one in the Middle period, up to two in the Late)",
           "unitIds": [
             "pb-rifle-bn",
             "pb-rifle-coys",
-            "pb-portuguese-line",
-            "pb-brunswick-oels-coys"
+            "pb-portuguese-line"
           ],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "unitLimits": [
+            {
+              "unitId": "pb-rifle-bn",
+              "max": 1
+            },
+            {
+              "unitId": "pb-portuguese-line",
+              "max": 1
+            }
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pb-light-inf",
+            "pb-cacadores",
+            "pb-rifle-bn",
+            "pb-portuguese-line"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "cacadores-elite-4",
+          "label": "Veteran, Elite 4+ (Late)",
+          "cost": 2,
+          "appliesTo": [
+            "pb-cacadores"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Elite 4+"
+          ],
+          "removeSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "cacadores-green",
+          "label": "Not Reliable or Elite (Early, Middle)",
+          "cost": -8,
+          "appliesTo": [
+            "pb-cacadores"
+          ],
+          "group": "veteran",
+          "removeSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-5",
+          "label": "Veteran, Elite 5+ (Middle)",
+          "cost": 8,
+          "appliesTo": [
+            "pb-light-inf",
+            "pb-portuguese-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+ (Late)",
+          "cost": 10,
+          "appliesTo": [
+            "pb-light-inf",
+            "pb-portuguese-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-light-inf",
+            "pb-cacadores",
+            "pb-rifle-bn",
+            "pb-portuguese-line"
+          ],
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -626,9 +1041,9 @@
       "id": "pb-portuguese-infantry-brigade",
       "name": "Portuguese Infantry Brigade",
       "min": 0,
-      "max": 3,
-      "commanderUnitId": "pb-brig-cmd",
-      "note": "0 to 1 (Early), 0 to 1 per 2 British Brigades (Middle/Late)",
+      "max": 20,
+      "commanderUnitId": "pb-brig-cmd-8",
+      "note": "One per 2 British brigades (one in the Early period)",
       "slots": [
         {
           "label": "Portuguese Line Infantry Regiment",
@@ -639,16 +1054,9 @@
           "max": 2
         },
         {
-          "label": "Caçadores Battalion (optional)",
+          "label": "Caçadores Battalion, or Loyal Lusitanian Legion (Early, Middle) (optional)",
           "unitIds": [
-            "pb-cacadores"
-          ],
-          "min": 0,
-          "max": 1
-        },
-        {
-          "label": "Loyal Lusitanian Legion (if no Caçadores chosen)",
-          "unitIds": [
+            "pb-cacadores",
             "pb-loyal-lusitanian"
           ],
           "min": 0,
@@ -657,18 +1065,89 @@
       ],
       "maxRatio": {
         "brigadeTypeIds": [
-          "pb-infantry-brigade"
+          "pb-infantry-brigade",
+          "pb-guards-brigade",
+          "pb-light-brigade",
+          "pb-kgl-brigade",
+          "pb-kgl-light-brigade"
         ],
         "ratio": 2
-      }
+      },
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pb-portuguese-line",
+            "pb-cacadores",
+            "pb-loyal-lusitanian"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "veteran-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 8,
+          "appliesTo": [
+            "pb-portuguese-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+ (Late)",
+          "cost": 10,
+          "appliesTo": [
+            "pb-portuguese-line"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "cacadores-green",
+          "label": "Not Reliable or Elite (Early)",
+          "cost": -8,
+          "appliesTo": [
+            "pb-cacadores"
+          ],
+          "removeSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-portuguese-line",
+            "pb-cacadores",
+            "pb-loyal-lusitanian"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "pb-kgl-brigade",
       "name": "King's German Legion Brigade",
       "min": 0,
       "max": 1,
-      "commanderUnitId": "pb-brig-cmd",
-      "note": "Middle/Late campaign periods",
+      "commanderUnitId": "pb-brig-cmd-8",
+      "note": "Middle and Late periods; or a KGL Light Brigade instead",
       "slots": [
         {
           "label": "KGL Line Battalion",
@@ -686,15 +1165,154 @@
           "min": 0,
           "max": 2
         }
+      ],
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pb-line",
+            "pb-kgl-light"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "veteran-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 8,
+          "appliesTo": [
+            "pb-line",
+            "pb-kgl-light"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+ (Late)",
+          "cost": 10,
+          "appliesTo": [
+            "pb-line",
+            "pb-kgl-light"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-line",
+            "pb-kgl-light"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
+    },
+    {
+      "id": "pb-kgl-light-brigade",
+      "name": "King's German Legion Light Brigade",
+      "min": 0,
+      "max": 1,
+      "commanderUnitId": "pb-brig-cmd-8",
+      "note": "Middle period; instead of a KGL Brigade",
+      "excludesBrigadeTypes": [
+        "pb-kgl-brigade"
+      ],
+      "slots": [
+        {
+          "label": "KGL Light Battalion",
+          "unitIds": [
+            "pb-kgl-light"
+          ],
+          "min": 1,
+          "max": 2
+        },
+        {
+          "label": "Brunswick Light Infantry Battalion (optional, 1 per army)",
+          "unitIds": [
+            "pb-brunswick-light"
+          ],
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "pb-kgl-light",
+            "pb-brunswick-light"
+          ],
+          "group": "size",
+          "size": "large",
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "veteran-5",
+          "label": "Veteran, Elite 5+",
+          "cost": 8,
+          "appliesTo": [
+            "pb-kgl-light",
+            "pb-brunswick-light"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-4",
+          "label": "Veteran, Elite 4+ (Late)",
+          "cost": 10,
+          "appliesTo": [
+            "pb-kgl-light",
+            "pb-brunswick-light"
+          ],
+          "group": "veteran",
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-kgl-light",
+            "pb-brunswick-light"
+          ],
+          "group": "size",
+          "size": "small"
+        }
       ]
     },
     {
       "id": "pb-light-cavalry-brigade",
       "name": "Light Cavalry Brigade",
       "min": 0,
-      "max": 3,
-      "commanderUnitId": "pb-brig-cmd",
-      "note": "0 to 1 (Early), 1 per 3 Infantry Brigades (Middle/Late)",
+      "max": 20,
+      "commanderUnitId": "pb-brig-cmd-8",
+      "note": "1 per 3 Infantry Brigades (one in the Early period)",
       "slots": [
         {
           "label": "Light Dragoon or Hussar Regiment",
@@ -710,15 +1328,77 @@
           "pb-infantry-brigade"
         ],
         "ratio": 3
-      }
+      },
+      "options": [
+        {
+          "id": "kgl",
+          "label": "KGL",
+          "cost": 2,
+          "appliesTo": [
+            "pb-light-dragoon-hussar"
+          ],
+          "group": "charge",
+          "addSpecial": [
+            "Ferocious Charge"
+          ],
+          "removeSpecial": [
+            "Gallop at Anything"
+          ],
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "ferocious-charge",
+          "label": "Ferocious Charge (Late)",
+          "cost": 2,
+          "appliesTo": [
+            "pb-light-dragoon-hussar"
+          ],
+          "group": "charge",
+          "addSpecial": [
+            "Ferocious Charge"
+          ],
+          "removeSpecial": [
+            "Gallop at Anything"
+          ]
+        },
+        {
+          "id": "veteran",
+          "label": "Veteran (KGL Hussars, Late)",
+          "cost": 6,
+          "appliesTo": [
+            "pb-light-dragoon-hussar"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          },
+          "limit": {
+            "max": 1
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-light-dragoon-hussar"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "pb-heavy-cavalry-brigade",
       "name": "Heavy Cavalry Brigade",
       "min": 0,
-      "max": 3,
-      "commanderUnitId": "pb-brig-cmd",
-      "note": "1 per 3 Infantry Brigades (Middle/Late)",
+      "max": 20,
+      "commanderUnitId": "pb-brig-cmd-8",
+      "note": "1 per 3 Infantry Brigades (Middle and Late)",
       "slots": [
         {
           "label": "Dragoon Regiment",
@@ -727,6 +1407,14 @@
           ],
           "min": 2,
           "max": 3
+        },
+        {
+          "label": "Light Dragoon Regiment (optional, Middle)",
+          "unitIds": [
+            "pb-light-dragoon-hussar"
+          ],
+          "min": 0,
+          "max": 1
         },
         {
           "label": "Household Cavalry (optional)",
@@ -742,14 +1430,46 @@
           "pb-infantry-brigade"
         ],
         "ratio": 3
-      }
+      },
+      "options": [
+        {
+          "id": "kgl",
+          "label": "KGL",
+          "cost": 2,
+          "appliesTo": [
+            "pb-dragoon-guards"
+          ],
+          "group": "charge",
+          "addSpecial": [
+            "Ferocious Charge"
+          ],
+          "removeSpecial": [
+            "Gallop at Anything"
+          ],
+          "limit": {
+            "max": 2
+          }
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-dragoon-guards",
+            "pb-light-dragoon-hussar",
+            "pb-household-cavalry"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "pb-portuguese-cavalry-brigade",
       "name": "Portuguese Cavalry Brigade",
       "min": 0,
       "max": 1,
-      "commanderUnitId": "pb-brig-cmd",
+      "commanderUnitId": "pb-brig-cmd-8",
       "slots": [
         {
           "label": "Portuguese Cavalry Regiment",
@@ -759,13 +1479,36 @@
           "min": 1,
           "max": 3
         }
+      ],
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "pb-portuguese-cavalry"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "steady",
+          "label": "Not Wavering",
+          "cost": 6,
+          "appliesTo": [
+            "pb-portuguese-cavalry"
+          ],
+          "removeSpecial": [
+            "Wavering"
+          ]
+        }
       ]
     },
     {
       "id": "pb-divisional-artillery",
       "name": "Divisional Artillery",
       "min": 0,
-      "max": 6,
+      "max": 20,
       "slots": [
         {
           "label": "Battery",
@@ -776,13 +1519,51 @@
           "min": 1,
           "max": 1
         }
+      ],
+      "note": "One battery per 6 infantry battalions in the army (5 in the Late period): Royal batteries go with a British brigade, Portuguese ones with a Portuguese brigade",
+      "options": [
+        {
+          "id": "veteran-portuguese",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "pb-portuguese-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "veteran-royal",
+          "label": "Veteran, Elite 5+",
+          "cost": 4,
+          "appliesTo": [
+            "pb-royal-arty"
+          ],
+          "addSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "pb-royal-arty",
+            "pb-portuguese-arty"
+          ],
+          "swapTo": {
+            "pb-royal-arty": "pb-royal-arty-half",
+            "pb-portuguese-arty": "pb-portuguese-arty-half"
+          }
+        }
       ]
     },
     {
       "id": "pb-horse-artillery",
       "name": "Horse Artillery Batteries",
       "min": 0,
-      "max": 4,
+      "max": 20,
       "slots": [
         {
           "label": "Battery",
@@ -792,15 +1573,80 @@
           "min": 1,
           "max": 1
         }
+      ],
+      "note": "One battery per 4 cavalry regiments in the army, attached to a cavalry brigade",
+      "options": [
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "pb-royal-horse-arty"
+          ],
+          "swapTo": {
+            "pb-royal-horse-arty": "pb-royal-horse-arty-half"
+          }
+        }
       ]
     }
   ],
   "notes": [
-    "Periods: Early 1806-1808, Middle 1809-1812, Late 1813-1814.",
-    "Detached Elite Companies: a brigade's battalions may lose their Light and/or Grenadier companies to form combined Tiny/Small/Standard-sized detachment units, addable to any Infantry Brigade — see p.101 of the book for the full conversion table.",
-    "Household Cavalry (1st/2nd Life Guards, Royal Horse Guards) saw little Peninsular action; include 1 to 3 at the listed cost if desired.",
-    "Half battery: pay half points (rounded up) to field an artillery battery at half strength.",
-    "Allies: not specified beyond the Portuguese integration above.",
-    "Named commanders have no official points cost in this supplement — priced here at the generic Divisional Commander cost for their Staff Rating; adjust freely."
+    "The book divides the list into Early (1806-1808), Middle (1809-1812) and Late (1813-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name, and the limits are the Middle and Late ones.",
+    "Early-period limits that differ: up to two battalions in the army can be Light infantry and one Highlanders (rather than one in four), and up to two battalions per brigade Large (rather than one).",
+    "The Light Brigade takes one further unit in the Middle period, up to two in the Late.",
+    "Detached Elite Companies: a brigade's Line battalions can lose their Light companies (and Mixed Formation) and/or Grenadier companies (and 1 Hand-to-Hand). Two battalions' companies make a Tiny unit, three a Small unit, four a standard one, for any infantry brigade; a battalion that loses both becomes Small. Not built here.",
+    "Household Cavalry saw little Peninsular action, so the book leaves them out of the lists, but you can take one to three at the listed cost.",
+    "Brunswick Light Infantry is one unit per army, whether in an Infantry Brigade or the KGL Light Brigade; the builder checks each brigade type separately.",
+    "The chapter (p. 48) makes KGL Light Infantry Reliable, Elite 4+; the list's table (p. 99) is followed.",
+    "Half batteries cost what the Options boxes take off (Royal 15, Horse 16, Portuguese 13), with the half battery stat line on p. 101 (2-1-1, Stamina 1).",
+    "Named commanders have no official points cost in this supplement; they're priced here at the Divisional Commander cost for their Staff Rating, so adjust as you agree."
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "pb-royal-arty",
+        "pb-portuguese-arty"
+      ],
+      "brigadeTypeIds": [
+        "pb-divisional-artillery"
+      ],
+      "perUnitIds": [
+        "pb-line",
+        "pb-foot-guard",
+        "pb-light-inf",
+        "pb-kgl-light",
+        "pb-cacadores",
+        "pb-portuguese-line",
+        "pb-loyal-lusitanian",
+        "pb-rifle-bn",
+        "pb-brunswick-light"
+      ],
+      "ratio": 6,
+      "label": "Divisional Artillery batteries"
+    },
+    {
+      "capUnitIds": [
+        "pb-royal-horse-arty"
+      ],
+      "brigadeTypeIds": [
+        "pb-horse-artillery"
+      ],
+      "perUnitIds": [
+        "pb-dragoon-guards",
+        "pb-light-dragoon-hussar",
+        "pb-light-dragoon-small",
+        "pb-household-cavalry",
+        "pb-portuguese-cavalry"
+      ],
+      "ratio": 4,
+      "label": "Horse Artillery batteries"
+    }
+  ],
+  "upgradesModelled": true,
+  "specialRules": [
+    "All British, Portuguese and Brunswick infantry: Steady Line, First Fire, Cannot Form Attack Column, Mixed Formation, Must Form Square, and can form skirmish order in terrain they couldn't normally enter.",
+    "Skirmish: only the Riflemen, Light infantry and Caçadores can adopt skirmish formation; other troops only to enter terrain they couldn't otherwise, or as part of a mixed formation.",
+    "Gallop at Anything: +1 to Charge orders and Ferocious Charge, but the unit must make a breakthrough move if allowed, even off the table; British cavalry suffer +2 to their Command roll when they leave the table like this.",
+    "Heavy Cavalry D1: Dragoons add one to any combat result, rather than between one and three.",
+    "Shrapnel: British guns can fire at medium range with 3 dice, but need 5s to hit."
   ]
 }
