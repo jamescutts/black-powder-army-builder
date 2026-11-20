@@ -54,7 +54,7 @@ function UnitRow({
   const { unit } = resolved;
   const sr = unit.category === "Command" ? getStaffRating(unit, line.variantLabel) : undefined;
   // Stats and rules as upgraded, e.g. a veteran Dragoon's Hand-to-Hand 9 and Reliable
-  const stats = unitStatLine({ ...unit, handToHand: resolved.handToHand, shooting: resolved.shooting });
+  const stats = unitStatLine({ ...unit, handToHand: resolved.handToHand, shooting: resolved.shooting, morale: resolved.morale });
   const cost = lineTotal(nation, line, ctx);
 
   return (

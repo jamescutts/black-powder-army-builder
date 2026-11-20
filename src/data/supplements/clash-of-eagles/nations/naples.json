@@ -173,6 +173,22 @@
         "Wavering"
       ],
       "cost": 21
+    },
+    {
+      "id": "np-horse-arty-half",
+      "name": "Neapolitan Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Unreliable",
+        "Wavering"
+      ],
+      "cost": 13
     }
   ],
   "brigades": [
@@ -194,7 +210,9 @@
             "slots": [
               {
                 "label": "Line Infantry Battalion",
-                "unitIds": ["np-line-infantry"],
+                "unitIds": [
+                  "np-line-infantry"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -213,7 +231,9 @@
             "slots": [
               {
                 "label": "Light Infantry Battalion",
-                "unitIds": ["np-light-infantry"],
+                "unitIds": [
+                  "np-light-infantry"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -222,7 +242,55 @@
         }
       ],
       "commanderUnitId": "np-brig-cmd",
-      "note": "0-3 Line Infantry Regiments (1-2 battalions each), plus up to 2 Light Infantry Regiments (1-2 battalions each)."
+      "note": "0-3 Line Infantry Regiments (1-2 battalions each), plus up to 2 Light Infantry Regiments (1-2 battalions each).",
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "np-line-infantry",
+            "np-light-infantry"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "steady",
+          "label": "Not Unreliable or Wavering",
+          "cost": 9,
+          "appliesTo": [
+            "np-line-infantry",
+            "np-light-infantry"
+          ],
+          "removeSpecial": [
+            "Unreliable",
+            "Wavering"
+          ]
+        },
+        {
+          "id": "better-drilled",
+          "label": "+1 Hand-to-Hand and Shooting",
+          "cost": 3,
+          "appliesTo": [
+            "np-line-infantry",
+            "np-light-infantry"
+          ],
+          "statBonus": {
+            "handToHand": 1,
+            "shooting": 1
+          }
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "np-line-infantry",
+            "np-light-infantry"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "np-guard-infantry-brigade",
@@ -242,7 +310,9 @@
             "slots": [
               {
                 "label": "Guard Infantry Battalion",
-                "unitIds": ["np-guard-infantry"],
+                "unitIds": [
+                  "np-guard-infantry"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -251,13 +321,29 @@
         },
         {
           "label": "Guard Marine Battalion (optional, Small)",
-          "unitIds": ["np-marines"],
+          "unitIds": [
+            "np-marines"
+          ],
           "min": 0,
           "max": 1
         }
       ],
       "commanderUnitId": "np-brig-cmd",
-      "note": "1 Guard Infantry Regiment (1-2 battalions), plus up to 1 Small Guard Marine battalion."
+      "note": "1 Guard Infantry Regiment (1-2 battalions), plus up to 1 Small Guard Marine battalion.",
+      "options": [
+        {
+          "id": "remove-unreliable",
+          "label": "Not Unreliable",
+          "cost": 3,
+          "appliesTo": [
+            "np-guard-infantry",
+            "np-marines"
+          ],
+          "removeSpecial": [
+            "Unreliable"
+          ]
+        }
+      ]
     },
     {
       "id": "np-guard-cavalry-brigade",
@@ -274,8 +360,14 @@
           "min": 1,
           "max": 2,
           "unitLimits": [
-            { "unitId": "np-guard-light-cavalry", "max": 1 },
-            { "unitId": "np-guard-heavy-cavalry", "max": 1 }
+            {
+              "unitId": "np-guard-light-cavalry",
+              "max": 1
+            },
+            {
+              "unitId": "np-guard-heavy-cavalry",
+              "max": 1
+            }
           ]
         },
         {
@@ -287,17 +379,57 @@
           "max": 1
         }
       ],
-      "commanderUnitId": "np-cav-brig-cmd"
+      "commanderUnitId": "np-cav-brig-cmd",
+      "options": [
+        {
+          "id": "steady",
+          "label": "Not Unreliable or Wavering",
+          "cost": 9,
+          "appliesTo": [
+            "np-guard-light-cavalry",
+            "np-guard-heavy-cavalry"
+          ],
+          "removeSpecial": [
+            "Unreliable",
+            "Wavering"
+          ]
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "np-guard-light-cavalry",
+            "np-guard-heavy-cavalry"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "np-horse-arty"
+          ],
+          "swapTo": {
+            "np-horse-arty": "np-horse-arty-half"
+          }
+        }
+      ]
     }
   ],
   "notes": [
-    "Divisional Commander plus Infantry and Guard Cavalry Brigade Commanders.",
-    "Up to 1 Infantry Brigade: 0-3 Line Infantry regiments (1-2 battalions), plus up to 2 Light Infantry regiments (1-2 battalions).",
-    "Up to 1 Guard Infantry Brigade: 1 Guard Infantry Regiment (1-2 battalions), plus an optional Small Guard Marine battalion.",
-    "Up to 1 Guard Cavalry Brigade: up to 1 Guard Light Cavalry and up to 1 Guard Heavy Cavalry regiment (1-2 total), plus an optional Horse Artillery battery.",
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade any battalion to Large (+8 pts/battalion); upgrade any battalion by removing Unreliable and Wavering (-9 pts/battalion); upgrade any battalion by increasing Hand-to-Hand and Shooting values by 1 (+3 pts); downgrade any battalion to Small (-8 pts/battalion). Guard Infantry: upgrade any battalion by removing Unreliable (-3 pts). Guard Cavalry: upgrade any regiment by removing Unreliable and Wavering (+9 pts/regiment); downgrade any regiment to Small (-8 pts/regiment); downgrade the Horse Artillery battery to a half battery (-8 pts)."
+    "Removing Unreliable and Wavering is printed as -9 points in the Infantry Brigade box but +9 in the Guard Cavalry box, and removing the Guard's Unreliable as -3; as upgrades, the builder charges +9 and +3.",
+    "The book gives no Neapolitan half-battery stat line, so the half Horse battery uses the French one (p. 154), at 13 points (21 less 8)."
   ],
   "alliesRules": [
-    { "maxPercent": 25, "note": "any allied list" }
+    {
+      "maxPercent": 25,
+      "note": "any allied list"
+    }
+  ],
+  "specialRules": [
+    "Neapolitan infantry follows the French infantry special rules, but does not have Pas de Charge.",
+    "Neapolitan infantry is Lacking Initiative: it can't make initiative moves except to change formation or facing; any other move must be by orders.",
+    "Neapolitan cavalry can use Deep Formation and Cavalry Mixed Formation."
   ]
 }

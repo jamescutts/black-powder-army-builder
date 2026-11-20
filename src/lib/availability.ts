@@ -133,7 +133,11 @@ export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: Ro
 
   for (const rc of nation.unitRatioCaps ?? []) {
     if (!rc.capUnitIds.includes(unitId)) continue;
-    const have = countUnitsInArmy(roster.brigadeInstances, rc.capUnitIds);
+    if (rc.brigadeTypeIds && !rc.brigadeTypeIds.includes(bt.id)) continue;
+    const have = countUnitsInArmy(
+      roster.brigadeInstances.filter((bi) => !rc.brigadeTypeIds || rc.brigadeTypeIds.includes(bi.brigadeTypeId)),
+      rc.capUnitIds
+    );
     const per = countUnitsInArmy(roster.brigadeInstances, rc.perUnitIds);
     if (have >= Math.floor(per / rc.ratio)) {
       return `1 per ${rc.ratio} ${unitNoun(nation, rc.perUnitIds, rc.ratio)} in the army (has ${per})`;

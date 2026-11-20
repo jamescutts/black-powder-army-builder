@@ -43,6 +43,20 @@
       ]
     },
     {
+      "id": "rb-brig-cmd",
+      "name": "Rheinbund Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        }
+      ]
+    },
+    {
       "id": "bav-line-infantry",
       "name": "Bavarian Line Infantry",
       "category": "Infantry",
@@ -120,6 +134,18 @@
       "cost": 27
     },
     {
+      "id": "bav-foot-arty-half",
+      "name": "Bavarian Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
       "id": "bav-position-battery",
       "name": "Bavarian Position Battery",
       "category": "Artillery",
@@ -130,6 +156,18 @@
       "morale": "4",
       "stamina": "2",
       "cost": 31
+    },
+    {
+      "id": "bav-position-battery-half",
+      "name": "Bavarian Position Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Siege Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
     },
     {
       "id": "rb-line-infantry",
@@ -208,7 +246,91 @@
         }
       ],
       "commanderUnitId": "bav-brig-cmd",
-      "note": "1-2 regiments of 1-2 Line Infantry battalions each, plus an optional Light Infantry battalion and Chevauleger regiment."
+      "note": "1-2 regiments of 1-2 Line Infantry battalions each, plus an optional Light Infantry battalion and Chevauleger regiment.",
+      "options": [
+        {
+          "id": "large",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "bav-line-infantry",
+            "bav-light-infantry"
+          ],
+          "group": "size",
+          "limit": {
+            "max": 2,
+            "armyWide": true
+          }
+        },
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "bav-line-infantry",
+            "bav-light-infantry"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "bav-line-infantry",
+                "bav-light-infantry"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true
+          }
+        },
+        {
+          "id": "tough-fighters",
+          "label": "Tough Fighters",
+          "cost": 1,
+          "appliesTo": [
+            "bav-line-infantry",
+            "bav-light-infantry"
+          ],
+          "addSpecial": [
+            "Tough Fighters"
+          ]
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "bav-line-infantry",
+            "bav-light-infantry"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "veteran-attached-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "bav-chevau-leger"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "bav-chevau-leger"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "bav-cavalry-brigade",
@@ -239,14 +361,75 @@
           }
         }
       ],
-      "note": "1 per Infantry Brigade, if no Chevauleger regiment already attached there.",
+      "note": "1 per Infantry Brigade that has no Chevauleger regiment attached. Up to 2 Chevauleger regiments, plus a Light battery if 2 regiments are taken.",
       "commanderUnitId": "bav-brig-cmd",
       "maxRatio": {
         "brigadeTypeIds": [
           "bav-infantry-brigade"
         ],
-        "ratio": 1
-      }
+        "ratio": 1,
+        "onlyWithout": [
+          "bav-chevau-leger"
+        ]
+      },
+      "options": [
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "bav-chevau-leger"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          },
+          "limit": {
+            "per": {
+              "unitIds": [
+                "bav-chevau-leger"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true
+          }
+        },
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "bav-light-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "bav-chevau-leger"
+          ],
+          "group": "size",
+          "limit": {
+            "max": 2
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "bav-chevau-leger"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "bav-divisional-artillery",
@@ -306,7 +489,50 @@
           }
         }
       ],
-      "note": "Attach to any brigade. Light Artillery is 1 per 5 infantry battalions in the army (max 2)."
+      "note": "Attach each battery to any brigade (pick it on the battery). Light batteries are 1 per 5 infantry battalions in the army (max 2).",
+      "attachBatteries": {
+        "batteryUnitIds": [
+          "bav-light-arty",
+          "bav-foot-arty",
+          "bav-position-battery"
+        ]
+      },
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "bav-light-arty",
+            "bav-foot-arty",
+            "bav-position-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "bav-foot-arty",
+            "bav-position-battery"
+          ],
+          "swapTo": {
+            "bav-foot-arty": "bav-foot-arty-half",
+            "bav-position-battery": "bav-position-battery-half"
+          }
+        },
+        {
+          "id": "half-light-battery",
+          "label": "Half battery",
+          "cost": -8,
+          "appliesTo": [
+            "bav-light-arty"
+          ]
+        }
+      ]
     },
     {
       "id": "rb-infantry-brigade",
@@ -331,17 +557,55 @@
                   "rb-light-infantry"
                 ],
                 "min": 1,
-                "max": 2
+                "max": 2,
+                "unitLimits": [
+                  {
+                    "unitId": "rb-light-infantry",
+                    "max": 1
+                  }
+                ]
               }
             ]
           }
         }
       ],
-      "commanderUnitId": "bav-brig-cmd",
-      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each (Line or Light Infantry, same cost). Can be taken by any Divisional commander regardless of nationality."
+      "commanderUnitId": "rb-brig-cmd",
+      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each; 1 battalion in a regiment may be a Rheinbund Light Infantry battalion instead. Can be taken by any Divisional commander regardless of nationality."
     }
   ],
   "notes": [
-    "A Cavalry Brigade's cap of 1 per Infantry Brigade is not reduced when that Infantry Brigade already has its own Chevauleger regiment attached — verify this manually per the book."
+    "The Confederation of the Rhine list's maximums and minimums are per every 1,000 points unless otherwise stated (p. 172). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "A Divisional commander must take brigades of his own nationality; the Rheinbund brigade is the exception.",
+    "Line infantry cost 37 points in the stat table (p. 171) but 36 in the Infantry Brigade box (p. 173); the builder uses the stat table.",
+    "The book gives no stat line for a half Light battery: the downgrade takes 8 points off but leaves its stats as they are."
+  ],
+  "unitRatioCaps": [
+    {
+      "capUnitIds": [
+        "bav-light-arty"
+      ],
+      "brigadeTypeIds": [
+        "bav-divisional-artillery"
+      ],
+      "perUnitIds": [
+        "bav-line-infantry",
+        "bav-light-infantry",
+        "rb-line-infantry",
+        "rb-light-infantry"
+      ],
+      "ratio": 5,
+      "label": "Divisional Light batteries"
+    }
+  ],
+  "specialRules": [
+    "Bavarian infantry follow the French infantry special rules.",
+    "Lacking Initiative (Line infantry): can't make initiative moves except to change formation or facing, or to charge the nearest enemy to their front.",
+    "Bavarian cavalry can use Deep Formation and Cavalry Mixed Formation."
+  ],
+  "alliesRules": [
+    {
+      "maxPercent": 25,
+      "note": "any one allied list (Confederation of the Rhine)"
+    }
   ]
 }

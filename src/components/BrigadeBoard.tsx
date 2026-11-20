@@ -25,6 +25,7 @@ import { UnitLineEditor } from "./UnitLineEditor";
 import { InlineName } from "./InlineName";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
+import { newBrigadeInstance } from "@/lib/newRoster";
 import { regimentBlockedReason, slotLockedReason, unitBlockedInRegimentSlot, unitBlockedInSlot } from "@/lib/availability";
 import {
   attachTargets,
@@ -84,7 +85,11 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
       ? requirementLabel(bt, nation.brigades)?.replace(/^Requires/, "needs")
       : atMax
         ? ratioCapped
-          ? `1 per ${bt.maxRatio!.ratio} × ${ratioNames}`
+          ? bt.maxRatio!.onlyWithout
+            ? `1 per ${ratioNames} without ${bt.maxRatio!.onlyWithout
+                .map((id) => nation.units.find((u) => u.id === id)?.name ?? id)
+                .join(" or ")} attached`
+            : `1 per ${bt.maxRatio!.ratio} × ${ratioNames}`
           : `limit of ${max} reached`
         : null;
     return { value: bt.id, label: reason ? `${bt.name} (${reason})` : bt.name, disabled: !!reason };
@@ -196,24 +201,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
   function handleAddBrigade() {
     const bt = nation.brigades.find((b) => b.id === pickedBrigadeTypeId);
     if (!bt || !pickedIsAvailable) return;
-    const commanderUnit = bt.commanderUnitId
-      ? nation.units.find((u) => u.id === bt.commanderUnitId)
-      : undefined;
-    const instance: RosterBrigadeInstance = {
-      key: newKey("brigade"),
-      brigadeTypeId: bt.id,
-      commanderLine: commanderUnit
-        ? {
-            key: newKey("cmd"),
-            unitId: commanderUnit.id,
-            variantLabel: defaultVariantLabel(commanderUnit),
-            qty: 1,
-          }
-        : null,
-      slotLines: bt.slots.map(() => []),
-      regimentSlots: bt.slots.map((slot) => slot.regiment ? [] : null),
-    };
-    onChange({ ...roster, brigadeInstances: [...roster.brigadeInstances, instance] });
+    onChange({ ...roster, brigadeInstances: [...roster.brigadeInstances, newBrigadeInstance(nation, bt)] });
   }
 
   // The brigade whose name is being edited in its title, if any
@@ -312,7 +300,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         { value: "none", label: "Not attached" },
         ...targets.map((t) => {
           const count = batteriesIn(nation, roster.brigadeInstances, t.key);
-          const full = count >= rule.maxPerBrigade && line.attachedTo !== t.key;
+          const full = rule.maxPerBrigade !== undefined && count >= rule.maxPerBrigade && line.attachedTo !== t.key;
           return {
             value: t.key,
             label: `${brigadeDisplayName(nation, roster, t.key)}${full ? ` (has ${count} batteries)` : ""}`,
@@ -721,7 +709,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                               </Text>
                               <Group gap={6} wrap="wrap" justify="flex-end" className="regiment-options" role="group" aria-label={`${regDef.label} ${regIdx + 1} upgrades`}>
                                 {regimentOptions.map((o) => {
-                                  const blocked = regimentOptionBlocked(o, reg, instance);
+                                  const blocked = regimentOptionBlocked(o, reg, instance, roster.brigadeInstances);
                                   const chip = (
                                     <Chip
                                       size="xs"
@@ -772,7 +760,9 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                             <Stack gap="sm">
                               {regDef.slots.map((subSlot, subSlotIdx) => {
                                 const eligibleUnits = nation.units.filter((u) => subSlot.unitIds.includes(u.id));
-                                const subComputeMax = subSlot.unitLimits
+                                // Per-unit limits only shrink the slot when it takes one type of unit (a Foreign
+                                // regiment of Rhinbund drops to 1); otherwise they cap that unit, not the slot
+                                const subComputeMax = subSlot.unitLimits && subSlot.singleUnitType
                                   ? (subLines: typeof reg.slotLines[number]) => {
                                       const presentIds = [...new Set(subLines.filter((l) => l.qty > 0).map((l) => l.unitId))];
                                       if (presentIds.length === 0) return subSlot.max;
@@ -796,7 +786,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                                     onChange={(lines) =>
                                       handleRegimentSubSlotChange(instance.key, slotIndex, reg.key, subSlotIdx, lines)
                                     }
-                                    brigade={{ nation, bt, instance, regimentOptions: reg.options }}
+                                    brigade={{ nation, bt, instance, regimentOptions: reg.options, army: roster.brigadeInstances }}
                                     grouped
                                     unitBlocked={(unitId) =>
                                       unitBlockedInRegimentSlot(
@@ -855,7 +845,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                       eligibleUnits={eligibleUnits}
                       lines={instance.slotLines[slotIndex] ?? []}
                       onChange={(lines) => handleSlotChange(instance.key, slotIndex, lines)}
-                      brigade={{ nation, bt, instance }}
+                      brigade={{ nation, bt, instance, army: roster.brigadeInstances }}
                       extraInfo={attachPicker(instance, slotIndex, bt)}
                       lockedReason={slotLockedReason({ nation, roster, bt, instance, slotIndex }, slot)}
                       unitBlocked={(unitId) =>

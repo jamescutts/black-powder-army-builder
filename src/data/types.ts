@@ -199,11 +199,22 @@ export interface UnitOption {
    * How many may take it within one brigade: at most `max`, and/or one per `ratio` of the listed units
    * in the brigade, e.g. Large "1 per 4 battalions". For a regiment option this counts regiments.
    */
-  limit?: { max?: number; per?: { unitIds: string[]; ratio: number } };
+  limit?: {
+    max?: number;
+    per?: { unitIds: string[]; ratio: number };
+    /**
+     * Count across the whole army rather than the one brigade, e.g. Bavaria's "Upgrade 2 battalions in
+     * the Army to Large" or "Upgrade up to half of all Infantry battalions to Veteran". Brigade types
+     * that share the option (by id) share the count.
+     */
+    armyWide?: boolean;
+  };
   /** Special rules the unit gains, e.g. ["Reliable", "Elite 5+"] */
   addSpecial?: string[];
+  /** Special rules the unit loses, e.g. ["Large"] when the Westphalian Guard is downgraded to standard size */
+  removeSpecial?: string[];
   /** Added to the unit's stats, e.g. veteran cavalry's "+1 Hand-to-Hand" → { handToHand: 1 } */
-  statBonus?: { handToHand?: number; shooting?: number };
+  statBonus?: { handToHand?: number; shooting?: number; morale?: number };
   /**
    * The unit becomes another entry from the nation's units, with that entry's own stats, rules and
    * points, e.g. a half battery { "pr-foot-arty": "pr-foot-arty-half" }.
@@ -227,7 +238,7 @@ export interface BrigadeType {
    * e.g. Prussian Army Artillery: "Batteries can be attached to any brigade although a Brigade can have
    * no more than 2 batteries."
    */
-  attachBatteries?: { maxPerBrigade: number; batteryUnitIds: string[] };
+  attachBatteries?: { maxPerBrigade?: number; batteryUnitIds: string[] };
   /** Minimum number of this brigade type required in the army */
   min: number;
   /** Absolute maximum number of this brigade type allowed in the army */
@@ -238,7 +249,15 @@ export interface BrigadeType {
    * { brigadeTypeIds: ["fr-infantry-brigade"], ratio: 2 }. Effective max is
    * min(max, floor(sum(count(brigadeTypeIds)) / ratio)).
    */
-  maxRatio?: { brigadeTypeIds: string[]; ratio: number };
+  maxRatio?: {
+    brigadeTypeIds: string[];
+    ratio: number;
+    /**
+     * Linked brigades holding any of these units don't count, e.g. Bavaria's "1 cavalry brigade per
+     * infantry brigade, if no cavalry is attached to infantry brigades" → ["bav-chevau-leger"].
+     */
+    onlyWithout?: string[];
+  };
   /**
    * Requires a minimum number of this brigade type that scales with the army's total points:
    * required = ceil(armyPoints / perPoints), i.e. at least one brigade for every `perPoints`
@@ -341,6 +360,8 @@ export interface Nation {
    */
   unitRatioCaps?: {
     capUnitIds: string[];
+    /** Count `capUnitIds` only in these brigade types (e.g. the Divisional Artillery, not a cavalry brigade's own battery) */
+    brigadeTypeIds?: string[];
     perUnitIds: string[];
     ratio: number;
     label?: string;

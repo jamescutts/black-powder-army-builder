@@ -56,6 +56,20 @@
       "staffRating": 7
     },
     {
+      "id": "rb-brig-cmd",
+      "name": "Rheinbund Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        }
+      ]
+    },
+    {
       "id": "wp-line-infantry",
       "name": "Westphalian Line Infantry",
       "category": "Infantry",
@@ -168,13 +182,13 @@
       "type": "Regular Cavalry",
       "armament": "Sabre",
       "handToHand": "6",
-      "shooting": "0",
       "morale": "4",
       "stamina": "3",
       "special": [
         "Marauder"
       ],
-      "cost": 41
+      "cost": 41,
+      "shooting": "0"
     },
     {
       "id": "wp-cuirassier",
@@ -183,13 +197,13 @@
       "type": "Regular Cavalry",
       "armament": "Sabre",
       "handToHand": "9",
-      "shooting": "0",
       "morale": "3",
       "stamina": "3",
       "special": [
         "Heavy Cavalry D3"
       ],
-      "cost": 54
+      "cost": 54,
+      "shooting": "0"
     },
     {
       "id": "wp-guard-chevau-leger",
@@ -228,9 +242,9 @@
       "name": "Westphalian Regimental Artillery",
       "category": "Artillery",
       "type": "Regular Artillery",
-      "armament": "Smoothbore Regimental Artillery",
+      "armament": "Smoothbore Battalion Artillery",
       "handToHand": "1",
-      "shooting": "1/1/1",
+      "shooting": "1-1-1",
       "morale": "4",
       "stamina": "1",
       "cost": 11
@@ -242,7 +256,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "2",
       "cost": 27
@@ -254,7 +268,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "1",
       "special": [
@@ -263,13 +277,28 @@
       "cost": 30
     },
     {
+      "id": "wp-horse-arty-half",
+      "name": "Westphalian Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 22
+    },
+    {
       "id": "wp-heavy-arty",
       "name": "Westphalian Heavy Artillery",
       "category": "Artillery",
       "type": "Regular Artillery",
       "armament": "Siege Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "2",
       "cost": 31
@@ -322,9 +351,18 @@
           "min": 1,
           "max": 3,
           "unitLimits": [
-            { "unitId": "wp-guard-grenadier", "max": 1 },
-            { "unitId": "wp-guard-jager", "max": 1 },
-            { "unitId": "wp-jager-karabinier", "max": 1 }
+            {
+              "unitId": "wp-guard-grenadier",
+              "max": 1
+            },
+            {
+              "unitId": "wp-guard-jager",
+              "max": 1
+            },
+            {
+              "unitId": "wp-jager-karabinier",
+              "max": 1
+            }
           ]
         },
         {
@@ -343,7 +381,44 @@
         }
       ],
       "commanderUnitId": "wp-brig-cmd",
-      "note": "Up to 1 each of Grenadier Guard, Guard Jäger and Jäger-Karabiniers battalions."
+      "note": "Up to 1 each of Grenadier Guard, Guard Jäger and Jäger-Karabiniers battalions. The Grenadier Guard and Guard Jäger are Large; downgrading one to Small takes it through standard size (-16 in all).",
+      "options": [
+        {
+          "id": "standard-size",
+          "label": "Standard size",
+          "cost": -8,
+          "appliesTo": [
+            "wp-guard-grenadier",
+            "wp-guard-jager"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-guard",
+          "label": "Small",
+          "cost": -16,
+          "appliesTo": [
+            "wp-guard-grenadier",
+            "wp-guard-jager"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "wp-jager-karabinier"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "wp-infantry-brigade",
@@ -391,7 +466,13 @@
           "dynamicUnitLimits": [
             {
               "unitId": "wp-regimental-arty",
-              "perBattalions": { "countSlotIndices": [0, 1], "ratio": 2 }
+              "perBattalions": {
+                "countSlotIndices": [
+                  0,
+                  1
+                ],
+                "ratio": 2
+              }
             }
           ]
         },
@@ -405,8 +486,27 @@
         }
       ],
       "commanderUnitId": "wp-brig-cmd",
-      "maxBattalions": { "max": 7, "countSlotIndices": [0, 1] },
-      "note": "1-3 Line Infantry regiments of 1-3 battalions each, plus an optional Light Infantry or Jäger battalion (max 7 battalions per brigade)."
+      "maxBattalions": {
+        "max": 7,
+        "countSlotIndices": [
+          0,
+          1
+        ]
+      },
+      "note": "1-3 Line Infantry regiments of 1-3 battalions each, plus an optional Light Infantry or Jäger battalion (max 7 battalions per brigade).",
+      "options": [
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "wp-line-infantry",
+            "wp-light-infantry",
+            "wp-jager"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "wp-cavalry-brigade",
@@ -424,9 +524,18 @@
           "min": 1,
           "max": 2,
           "unitLimits": [
-            { "unitId": "wp-hussar", "max": 2 },
-            { "unitId": "wp-guard-chevau-leger", "max": 1 },
-            { "unitId": "wp-garde-du-corps", "max": 1 }
+            {
+              "unitId": "wp-hussar",
+              "max": 2
+            },
+            {
+              "unitId": "wp-guard-chevau-leger",
+              "max": 1
+            },
+            {
+              "unitId": "wp-garde-du-corps",
+              "max": 1
+            }
           ]
         },
         {
@@ -454,7 +563,29 @@
           "wp-guard-infantry-brigade"
         ],
         "ratio": 1
-      }
+      },
+      "options": [
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "wp-hussar",
+            "wp-guard-chevau-leger"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "wp-horse-arty"
+          ],
+          "swapTo": {
+            "wp-horse-arty": "wp-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "wp-cavalry-reserve",
@@ -493,7 +624,28 @@
           "wp-guard-infantry-brigade"
         ],
         "min": 2
-      }
+      },
+      "options": [
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "wp-cuirassier"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "wp-horse-arty"
+          ],
+          "swapTo": {
+            "wp-horse-arty": "wp-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "wp-artillery-reserve",
@@ -547,15 +699,39 @@
                   "rb-light-infantry"
                 ],
                 "min": 1,
-                "max": 2
+                "max": 2,
+                "unitLimits": [
+                  {
+                    "unitId": "rb-light-infantry",
+                    "max": 1
+                  }
+                ]
               }
             ]
           }
         }
       ],
-      "commanderUnitId": "wp-brig-cmd",
-      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each (Line or Light Infantry, same cost). Can be taken by any Divisional commander regardless of nationality."
+      "commanderUnitId": "rb-brig-cmd",
+      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each; 1 battalion in a regiment may be a Rheinbund Light Infantry battalion instead. Can be taken by any Divisional commander regardless of nationality."
     }
   ],
-  "notes": []
+  "notes": [
+    "Stats follow the army list's table (pp. 168-169). The Westphalia chapter (pp. 86-88) gives some differently: Cuirassier Hand-to-Hand 8, Morale 4, Reliable; Garde du Corps Hand-to-Hand 3, Morale 4, Heavy Cavalry D1; Guard Chevauleger without Marauder; Line infantry with Mixed Formation rather than Poor Mixed Formation. Agree with your opponent which to use.",
+    "The Confederation of the Rhine list's maximums and minimums are per every 1,000 points unless otherwise stated (p. 172). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "A Divisional commander must take brigades of his own nationality; the Rheinbund brigade is the exception."
+  ],
+  "specialRules": [
+    "Westphalian infantry follows the French infantry special rules, but does not have Pas de Charge.",
+    "Lacking Initiative (Line and Light infantry): a unit lacking initiative can't make initiative moves except to change formation or facing; any other move must be by orders.",
+    "Line infantry: Lie Down, Must Form Square, Column of Companies, Close Column and Poor Mixed Formation. Light infantry and the Guard Jäger also have Light Infantry Mixed Formation; the Jäger-Karabiniers have Rifle Mixed Formation and Light Infantry Mixed Formation.",
+    "Westphalian cavalry can use Deep Formation and Cavalry Mixed Formation.",
+    "Guard Chevauleger: two of the six dice it rolls in hand-to-hand can count as lance attacks.",
+    "The Guard Grenadiers' regimental guns use the regimental artillery profile, with smoothbore foot artillery in place of battalion artillery."
+  ],
+  "alliesRules": [
+    {
+      "maxPercent": 25,
+      "note": "any one allied list (Confederation of the Rhine)"
+    }
+  ]
 }

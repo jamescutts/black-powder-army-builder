@@ -12,7 +12,10 @@ function countByTypes(instances: RosterBrigadeInstance[], brigadeTypeIds: string
 /** The effective maximum for this brigade type given how many of its ratio-linked brigade types are in the army. */
 export function effectiveMax(bt: BrigadeType, instances: RosterBrigadeInstance[]): number {
   if (!bt.maxRatio) return bt.max;
-  const linkedCount = countByTypes(instances, bt.maxRatio.brigadeTypeIds);
+  const { brigadeTypeIds, onlyWithout } = bt.maxRatio;
+  const linkedCount = instances.filter(
+    (bi) => brigadeTypeIds.includes(bi.brigadeTypeId) && !(onlyWithout && countUnitsInInstance(bi, onlyWithout) > 0)
+  ).length;
   const ratioMax = Math.floor(linkedCount / bt.maxRatio.ratio);
   return Math.min(bt.max, ratioMax);
 }

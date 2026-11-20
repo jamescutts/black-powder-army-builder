@@ -436,21 +436,27 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
   }
 
   // ─── Upgrades and downgrades: limits, and ones that can't be combined ──────
+  const armyWideReported = new Set<string>();
   for (const bi of roster.brigadeInstances) {
     const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
     if (!bt?.options?.length) continue;
 
     for (const o of bt.options) {
-      const taken = optionTaken(o, bi);
-      const allowed = optionAllowance(o, bi);
+      // An army-wide limit is reported once, for the army, not on every brigade
+      if (o.limit?.armyWide) {
+        if (armyWideReported.has(o.id)) continue;
+        armyWideReported.add(o.id);
+      }
+      const taken = optionTaken(o, bi, roster.brigadeInstances);
+      const allowed = optionAllowance(o, bi, roster.brigadeInstances);
       if (taken > allowed) {
         const noun =
           o.scope === "regiment" ? (taken === 1 ? "regiment" : "regiments") : unitNoun(nation, o.appliesTo, taken);
         const limit = o.scope === "regiment" ? null : limitText(nation, o);
         issues.push({
           level: "error",
-          brigadeKey: bi.key,
-          message: `${bt.name}: ${o.label} on ${taken} ${noun}, only ${allowed} allowed${limit ? ` (${limit})` : ""}`,
+          brigadeKey: o.limit?.armyWide ? undefined : bi.key,
+          message: `${o.limit?.armyWide ? "Army" : bt.name}: ${o.label} on ${taken} ${noun}, only ${allowed} allowed${limit ? ` (${limit})` : ""}`,
         });
       }
     }
@@ -481,7 +487,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
   if (attach) {
     for (const bi of attachTargets(nation, roster.brigadeInstances)) {
       const count = batteriesIn(nation, roster.brigadeInstances, bi.key);
-      if (count > attach.maxPerBrigade) {
+      if (attach.maxPerBrigade !== undefined && count > attach.maxPerBrigade) {
         const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
         issues.push({
           level: "error",
@@ -513,7 +519,10 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
 
   // ─── Army-wide unit ratio caps (e.g. 1 Light battery per 6 battalions) ─────
   for (const cap of nation.unitRatioCaps ?? []) {
-    const capCount = countUnitsInArmy(roster.brigadeInstances, cap.capUnitIds);
+    const capCount = countUnitsInArmy(
+      roster.brigadeInstances.filter((bi) => !cap.brigadeTypeIds || cap.brigadeTypeIds.includes(bi.brigadeTypeId)),
+      cap.capUnitIds
+    );
     if (capCount === 0) continue;
     const perCount = countUnitsInArmy(roster.brigadeInstances, cap.perUnitIds);
     const allowed = Math.floor(perCount / cap.ratio);

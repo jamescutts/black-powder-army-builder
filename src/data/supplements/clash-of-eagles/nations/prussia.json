@@ -671,12 +671,20 @@
     }
   ],
   "notes": [
-    "A Divisional (army) Commander leads the army (Staff Rating 7-9). Not itemised in the supplement's Prussian list, but included here as the standard army-level commander."
+    "A Divisional (army) Commander leads the army (Staff Rating 7-9). Not itemised in the supplement's Prussian list, but included here as the standard army-level commander.",
+    "The Prussian chapter (p. 84) gives Jägers Reliable, Elite 5+; the army list's stat table (p. 187) doesn't, and the builder follows the army list. Agree with your opponent which to use."
   ],
   "alliesRules": [
     {
       "maxPercent": 25,
       "note": "any one allied list"
     }
+  ],
+  "specialRules": [
+    "Prussian commanders roll Decisiveness on their own table: 1-3 Normal, 4-6 High. A commander who rolls High Independence adds +1 to his Staff Rating; a Prussian commander can't have Low Independence (treat it as Normal).",
+    "Sub-commanders: a brigade commander can give orders through his sub-commander to any unit in the brigade, measuring from the sub-commander but using the brigade commander's Staff Rating. If an order through the sub-commander is a blunder, the brigade commander can't use the sub-commander again that turn.",
+    "Prussian infantry can use Column of Companies, Attack Column (Column of Divisions), Line and Mixed Formation; Fusiliers and Jägers can also use Light Infantry Mixed Formation.",
+    "Must Form Closed Square: an unengaged battalion with Must Form Square in closed column, attack column or column of companies must form a closed square when charged by cavalry, even if disordered (see p. 83 for the closed square rules).",
+    "Prussian cavalry can use Deep Formation and Cavalry Mixed Formation."
   ]
 }

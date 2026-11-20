@@ -49,6 +49,20 @@
       ]
     },
     {
+      "id": "rb-brig-cmd",
+      "name": "Rheinbund Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        }
+      ]
+    },
+    {
       "id": "ocs-line-infantry",
       "name": "Other Confederation States Line Infantry",
       "category": "Infantry",
@@ -149,10 +163,22 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "2",
       "cost": 27
+    },
+    {
+      "id": "ocs-foot-arty-half",
+      "name": "Other Confederation Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
     },
     {
       "id": "ocs-horse-arty",
@@ -161,13 +187,28 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "1",
       "special": [
         "Marauder"
       ],
       "cost": 30
+    },
+    {
+      "id": "ocs-horse-arty-half",
+      "name": "Other Confederation Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 22
     },
     {
       "id": "rb-line-infantry",
@@ -254,7 +295,47 @@
         }
       ],
       "commanderUnitId": "cotr-brig-cmd",
-      "note": "1-3 regiments of 1-2 Line Infantry battalions each, plus an optional Baden Jäger battalion."
+      "note": "1-3 regiments of 1-2 Line Infantry battalions each, plus an optional Baden Jäger battalion.",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "ocs-line-infantry",
+            "ocs-baden-jager",
+            "ocs-hessian-guard-fusilier"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ocs-line-infantry",
+            "ocs-baden-jager",
+            "ocs-hessian-guard-fusilier",
+            "ocs-hessian-guard"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "ocs-foot-arty",
+            "ocs-horse-arty"
+          ],
+          "swapTo": {
+            "ocs-foot-arty": "ocs-foot-arty-half",
+            "ocs-horse-arty": "ocs-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "ocs-hessian-infantry-brigade",
@@ -322,7 +403,47 @@
         }
       ],
       "commanderUnitId": "cotr-brig-cmd",
-      "note": "1-2 Guard regiments, plus 1 Guard Fusilier regiment (1-2 battalions each)."
+      "note": "1-2 Guard regiments, plus 1 Guard Fusilier regiment (1-2 battalions each).",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "ocs-line-infantry",
+            "ocs-baden-jager",
+            "ocs-hessian-guard-fusilier"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ocs-line-infantry",
+            "ocs-baden-jager",
+            "ocs-hessian-guard-fusilier",
+            "ocs-hessian-guard"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "ocs-foot-arty",
+            "ocs-horse-arty"
+          ],
+          "swapTo": {
+            "ocs-foot-arty": "ocs-foot-arty-half",
+            "ocs-horse-arty": "ocs-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "ocs-berg-infantry-brigade",
@@ -369,7 +490,47 @@
         }
       ],
       "commanderUnitId": "cotr-brig-cmd",
-      "note": "1-4 regiments of 1-2 Line Infantry battalions each."
+      "note": "1-4 regiments of 1-2 Line Infantry battalions each.",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "ocs-line-infantry",
+            "ocs-baden-jager",
+            "ocs-hessian-guard-fusilier"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ocs-line-infantry",
+            "ocs-baden-jager",
+            "ocs-hessian-guard-fusilier",
+            "ocs-hessian-guard"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "ocs-foot-arty",
+            "ocs-horse-arty"
+          ],
+          "swapTo": {
+            "ocs-foot-arty": "ocs-foot-arty-half",
+            "ocs-horse-arty": "ocs-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "ocs-cavalry-brigade",
@@ -386,8 +547,14 @@
           "min": 1,
           "max": 2,
           "unitLimits": [
-            { "unitId": "ocs-hussar", "max": 1 },
-            { "unitId": "ocs-uhlan", "max": 1 }
+            {
+              "unitId": "ocs-hussar",
+              "max": 1
+            },
+            {
+              "unitId": "ocs-uhlan",
+              "max": 1
+            }
           ]
         }
       ],
@@ -400,7 +567,19 @@
           "ocs-berg-infantry-brigade"
         ],
         "ratio": 1
-      }
+      },
+      "options": [
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ocs-hussar",
+            "ocs-uhlan"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "rb-infantry-brigade",
@@ -425,21 +604,33 @@
                   "rb-light-infantry"
                 ],
                 "min": 1,
-                "max": 2
+                "max": 2,
+                "unitLimits": [
+                  {
+                    "unitId": "rb-light-infantry",
+                    "max": 1
+                  }
+                ]
               }
             ]
           }
         }
       ],
-      "commanderUnitId": "cotr-brig-cmd",
-      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each (Line or Light Infantry, same cost). Can be taken by any Divisional commander regardless of nationality."
+      "commanderUnitId": "rb-brig-cmd",
+      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each; 1 battalion in a regiment may be a Rheinbund Light Infantry battalion instead. Can be taken by any Divisional commander regardless of nationality."
     }
   ],
   "notes": [
     "A Divisional Commander must select brigades from a single nationality (Baden, Hessian or Berg) — e.g. a Baden Divisional commander can only select Baden Brigades. Rheinbund is the exception: it can be taken by any Divisional commander regardless of nationality.",
-    "Württemberg, Bavaria, Saxony and Westphalia now have their own army lists — see the separate Württemberg 1812, Bavaria 1812, Saxony 1812 and Westphalia 1812 nation entries."
+    "Württemberg, Bavaria, Saxony and Westphalia now have their own army lists — see the separate Württemberg 1812, Bavaria 1812, Saxony 1812 and Westphalia 1812 nation entries.",
+    "The Confederation of the Rhine list's maximums and minimums are per every 1,000 points unless otherwise stated (p. 172). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "The stat table (p. 170) prints the Hessian Guard and Guard Fusilier in one row: the builder gives the Guard Reliable, Elite 5+ and the Fusiliers Skirmish, Sharpshooter and Light Infantry Mixed Formation, as the two cells read. The Fusiliers may well share the Guard's Reliable, Elite 5+ too.",
+    "The book gives no half-battery stat lines here, so the half batteries use the French ones (p. 154)."
   ],
   "alliesRules": [
-    { "maxPercent": 25, "note": "any one allied list" }
+    {
+      "maxPercent": 25,
+      "note": "any one allied list"
+    }
   ]
 }

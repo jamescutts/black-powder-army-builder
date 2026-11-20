@@ -87,6 +87,20 @@
       "staffRating": 8
     },
     {
+      "id": "rb-brig-cmd",
+      "name": "Rheinbund Brigade Commander",
+      "category": "Command",
+      "type": "Command",
+      "armament": "-",
+      "variants": [
+        {
+          "label": "Staff rating 7",
+          "cost": 0,
+          "staffRating": 7
+        }
+      ]
+    },
+    {
       "id": "sax-musketeer",
       "name": "Saxon Musketeer",
       "category": "Infantry",
@@ -198,7 +212,8 @@
       "morale": "4",
       "stamina": "3",
       "special": [
-        "Reliable Lancer",
+        "Reliable",
+        "Lancer",
         "Marauder"
       ],
       "cost": 52
@@ -240,7 +255,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Regimental Artillery",
       "handToHand": "1",
-      "shooting": "2/1/1",
+      "shooting": "2-1-1",
       "morale": "4",
       "stamina": "1",
       "cost": 13
@@ -252,10 +267,22 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "2",
       "cost": 27
+    },
+    {
+      "id": "sax-foot-arty-half",
+      "name": "Saxon Foot Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
     },
     {
       "id": "sax-horse-arty",
@@ -264,7 +291,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "1",
       "special": [
@@ -274,16 +301,44 @@
       "cost": 28
     },
     {
+      "id": "sax-horse-arty-half",
+      "name": "Saxon Horse Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder",
+        "Moves as Austrian Cavalry Artillery"
+      ],
+      "cost": 20
+    },
+    {
       "id": "sax-heavy-arty",
       "name": "Saxon Heavy Artillery",
       "category": "Artillery",
       "type": "Regular Artillery",
       "armament": "Smoothbore Siege Artillery",
       "handToHand": "1",
-      "shooting": "3/2/1",
+      "shooting": "3-2-1",
       "morale": "4",
       "stamina": "2",
       "cost": 31
+    },
+    {
+      "id": "sax-heavy-arty-half",
+      "name": "Saxon Heavy Artillery Half Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Siege Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
     },
     {
       "id": "rb-line-infantry",
@@ -383,7 +438,14 @@
           "dynamicUnitLimits": [
             {
               "unitId": "sax-regimental-arty",
-              "perBattalions": { "countSlotIndices": [0, 1, 2], "ratio": 2 }
+              "perBattalions": {
+                "countSlotIndices": [
+                  0,
+                  1,
+                  2
+                ],
+                "ratio": 2
+              }
             }
           ]
         },
@@ -423,7 +485,58 @@
         }
       ],
       "commanderUnitId": "sax-brig-cmd",
-      "note": "1-2 Line Infantry regiments of 1-2 battalions each, plus an optional Grenadier battalion and Light Infantry regiment (1-2 battalions)."
+      "note": "1-2 Line Infantry regiments of 1-2 battalions each, plus an optional Grenadier battalion and Light Infantry regiment (1-2 battalions).",
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "sax-regimental-arty",
+            "sax-foot-arty",
+            "sax-heavy-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "remove-unreliable",
+          "label": "Not Unreliable",
+          "cost": 3,
+          "appliesTo": [
+            "sax-musketeer",
+            "sax-light-infantry"
+          ],
+          "removeSpecial": [
+            "Unreliable"
+          ]
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "sax-musketeer",
+            "sax-light-infantry",
+            "sax-grenadier"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "sax-foot-arty",
+            "sax-heavy-arty"
+          ],
+          "swapTo": {
+            "sax-foot-arty": "sax-foot-arty-half",
+            "sax-heavy-arty": "sax-heavy-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "sax-grenadier-brigade",
@@ -495,7 +608,44 @@
         }
       ],
       "commanderUnitId": "sax-brig-cmd",
-      "note": "Up to 2 Grenadier battalions, plus an optional Light Infantry regiment (1-2 battalions)."
+      "note": "Up to 2 Grenadier battalions, plus an optional Light Infantry regiment (1-2 battalions).",
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "sax-foot-arty",
+            "sax-heavy-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "sax-grenadier",
+            "sax-light-infantry"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "sax-foot-arty",
+            "sax-heavy-arty"
+          ],
+          "swapTo": {
+            "sax-foot-arty": "sax-foot-arty-half",
+            "sax-heavy-arty": "sax-heavy-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "sax-cavalry-brigade",
@@ -513,9 +663,18 @@
           "min": 1,
           "max": 3,
           "unitLimits": [
-            { "unitId": "sax-chevauleger", "max": 2 },
-            { "unitId": "sax-hussar", "max": 1 },
-            { "unitId": "sax-uhlan", "max": 1 }
+            {
+              "unitId": "sax-chevauleger",
+              "max": 2
+            },
+            {
+              "unitId": "sax-hussar",
+              "max": 1
+            },
+            {
+              "unitId": "sax-uhlan",
+              "max": 1
+            }
           ]
         },
         {
@@ -542,7 +701,56 @@
           "sax-infantry-brigade"
         ],
         "ratio": 1
-      }
+      },
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "sax-horse-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "sax-chevauleger",
+            "sax-hussar",
+            "sax-uhlan"
+          ],
+          "group": "size",
+          "limit": {
+            "max": 2
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "sax-chevauleger",
+            "sax-hussar",
+            "sax-uhlan"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "sax-horse-arty"
+          ],
+          "swapTo": {
+            "sax-horse-arty": "sax-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "sax-cavalry-reserve",
@@ -558,18 +766,90 @@
             "sax-polish-cuirassier"
           ],
           "min": 1,
-          "max": 3
+          "max": 3,
+          "unitLimits": [
+            {
+              "unitId": "sax-garde-du-corps",
+              "max": 1
+            },
+            {
+              "unitId": "sax-cuirassier",
+              "max": 1
+            },
+            {
+              "unitId": "sax-polish-cuirassier",
+              "max": 1
+            }
+          ]
         },
         {
-          "label": "Horse Artillery (optional)",
+          "label": "Horse Artillery (optional, if 2 regiments taken)",
           "unitIds": [
             "sax-horse-arty"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "requiresBrigadeCount": {
+            "unitIds": [
+              "sax-garde-du-corps",
+              "sax-cuirassier",
+              "sax-polish-cuirassier"
+            ],
+            "min": 2
+          }
         }
       ],
-      "commanderUnitId": "sax-brig-cmd"
+      "commanderUnitId": "sax-brig-cmd",
+      "note": "Up to 3 regiments: up to 1 each of the Garde du Corps, Cuirassier and Polish Cuirassier regiments, plus a Horse Artillery battery if 2 regiments are taken.",
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "sax-horse-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "sax-garde-du-corps",
+            "sax-cuirassier",
+            "sax-polish-cuirassier"
+          ],
+          "group": "size",
+          "limit": {
+            "max": 2
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "sax-garde-du-corps",
+            "sax-cuirassier",
+            "sax-polish-cuirassier"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "sax-horse-arty"
+          ],
+          "swapTo": {
+            "sax-horse-arty": "sax-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "rb-infantry-brigade",
@@ -594,17 +874,37 @@
                   "rb-light-infantry"
                 ],
                 "min": 1,
-                "max": 2
+                "max": 2,
+                "unitLimits": [
+                  {
+                    "unitId": "rb-light-infantry",
+                    "max": 1
+                  }
+                ]
               }
             ]
           }
         }
       ],
-      "commanderUnitId": "sax-brig-cmd",
-      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each (Line or Light Infantry, same cost). Can be taken by any Divisional commander regardless of nationality."
+      "commanderUnitId": "rb-brig-cmd",
+      "note": "1-3 regiments of 1-2 Rheinbund Infantry battalions each; 1 battalion in a regiment may be a Rheinbund Light Infantry battalion instead. Can be taken by any Divisional commander regardless of nationality."
     }
   ],
   "notes": [
-    "The book also allows a Regimental Artillery Battery per infantry regiment of 3+ battalions (e.g. a Line regiment with a Grenadier battalion attached) — not modelled here, apply manually."
+    "The book also allows a Regimental Artillery Battery per infantry regiment of 3+ battalions (e.g. a Line regiment with a Grenadier battalion attached) — not modelled here, apply manually.",
+    "The Confederation of the Rhine list's maximums and minimums are per every 1,000 points unless otherwise stated (p. 172). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "A Divisional commander must take brigades of his own nationality; the Rheinbund brigade is the exception.",
+    "The book gives no Saxon half-battery stat lines, so the half batteries use the French ones (p. 154)."
+  ],
+  "specialRules": [
+    "Saxon infantry follows the French infantry special rules, but does not have Pas de Charge.",
+    "Saxon Line infantry, Light infantry and artillery are Unreliable unless the Saxon army is fighting alongside a French army as allies.",
+    "Saxon Line and Light infantry are Lacking Initiative."
+  ],
+  "alliesRules": [
+    {
+      "maxPercent": 25,
+      "note": "any one allied list (Confederation of the Rhine)"
+    }
   ]
 }

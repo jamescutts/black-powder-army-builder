@@ -20,6 +20,7 @@ import { IconChevronDown, IconCopy, IconEraser, IconFolder, IconPlus, IconTrash 
 import { supplements, getSupplement, getNation, getNationsForSupplement } from "@/data";
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
+import { startingRoster } from "@/lib/newRoster";
 import { BrigadeBoard } from "@/components/BrigadeBoard";
 import { RosterBar, RosterPanel } from "@/components/RosterPanel";
 import { ForceOrgNotes } from "@/components/ForceOrgNotes";
@@ -104,6 +105,8 @@ function BuilderContent({ nationId }: { nationId: string }) {
   // Which saved list is open. Until one has been read back from the browser, nothing is saved, so the
   // empty starting army can't overwrite the real one.
   const [listId, setListId] = useState<string | null>(null);
+  // The starting army of a new list, until it's first changed: it isn't saved until then
+  const untouched = useRef<string | null>(null);
 
   // The list is driven by the address: the one it names, else this nation's most recently changed list,
   // else a new one. Read after mount, as localStorage isn't available while rendering on the server.
@@ -121,12 +124,21 @@ function BuilderContent({ nationId }: { nationId: string }) {
         return;
       }
     }
-    setRoster(loadList(nation, id) ?? emptyRoster(nation.id));
+    const saved = loadList(nation, id);
+    // A new list starts with the brigades the army must have. Until it's changed it isn't saved, so
+    // opening a nation and leaving doesn't leave a list behind.
+    const start = saved ?? startingRoster(nation);
+    untouched.current = saved ? null : JSON.stringify(start);
+    setRoster(start);
     setListId(id);
   }, [nation, listParam, router]);
 
   useEffect(() => {
     if (!listId || roster.nationId !== nationId) return;
+    if (untouched.current !== null) {
+      if (JSON.stringify(roster) === untouched.current) return;
+      untouched.current = null;
+    }
     saveList(listId, roster);
   }, [roster, listId, nationId]);
 
@@ -177,9 +189,9 @@ function BuilderContent({ nationId }: { nationId: string }) {
 
   const openList = (id: string) => router.push(listHref(supplement.id, nationId, id), { scroll: false });
 
-  // Clearing empties the list but keeps its name
+  // Clearing starts the list again as a new one would (with its required brigades), keeping its name
   function handleClear() {
-    setRoster({ ...emptyRoster(nationId), armyName: roster.armyName });
+    setRoster({ ...startingRoster(nation), armyName: roster.armyName });
     setConfirming(null);
   }
 
@@ -208,8 +220,8 @@ function BuilderContent({ nationId }: { nationId: string }) {
         onConfirm={handleClear}
         onCancel={() => setConfirming(null)}
       >
-        This removes every unit and brigade from {roster.armyName.trim() || "this army"}, keeping its name. It
-        can&apos;t be undone.
+        This removes every unit and brigade from {roster.armyName.trim() || "this army"}, keeping its name, and
+        starts it again as a new list does, with any brigades the army must have. It can&apos;t be undone.
       </ConfirmModal>
       <ConfirmModal
         opened={confirming === "delete"}

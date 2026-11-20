@@ -187,6 +187,18 @@
       "cost": 27
     },
     {
+      "id": "gdw-foot-arty-half",
+      "name": "Half Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
       "id": "gdw-heavy-foot-arty",
       "name": "Heavy Foot Artillery",
       "category": "Artillery",
@@ -197,6 +209,18 @@
       "morale": "4",
       "stamina": "2",
       "cost": 31
+    },
+    {
+      "id": "gdw-heavy-foot-arty-half",
+      "name": "Half Heavy Foot Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 23
     },
     {
       "id": "gdw-horse-arty",
@@ -212,6 +236,18 @@
         "Marauder"
       ],
       "cost": 30
+    },
+    {
+      "id": "gdw-horse-arty-half",
+      "name": "Half Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 22
     },
     {
       "id": "gdw-cmd-poniatowski",
@@ -246,7 +282,9 @@
             "slots": [
               {
                 "label": "Polish Infantry Battalion (1-4)",
-                "unitIds": ["gdw-polish-infantry"],
+                "unitIds": [
+                  "gdw-polish-infantry"
+                ],
                 "min": 1,
                 "max": 4
               }
@@ -273,17 +311,57 @@
           "dynamicUnitLimits": [
             {
               "unitId": "gdw-regimental-arty-section",
-              "perBattalions": { "countSlotIndices": [0], "ratio": 3 }
+              "perBattalions": {
+                "countSlotIndices": [
+                  0
+                ],
+                "ratio": 3
+              }
             },
             {
               "unitId": "gdw-regimental-battery",
-              "perQualifyingRegiment": { "regimentSlotIndices": [0], "minBattalions": 3 }
+              "perQualifyingRegiment": {
+                "regimentSlotIndices": [
+                  0
+                ],
+                "minBattalions": 3
+              }
             }
           ]
         }
       ],
       "commanderUnitId": "gdw-brig-cmd",
-      "note": "1-2 Polish Infantry Regiments (1-4 battalions each), plus 0-2 Chasseur/Jäger battalions. Regimental Artillery: 1 section per 3 battalions and/or 1 battery per regiment of 3+ battalions (types may be mixed)."
+      "note": "1-2 Polish Infantry Regiments (1-4 battalions each), plus 0-2 Chasseur/Jäger battalions. Regimental Artillery: 1 section per 3 battalions and/or 1 battery per regiment of 3+ battalions (types may be mixed).",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "gdw-polish-infantry",
+            "gdw-chasseur",
+            "gdw-jager"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "limit": {
+            "max": 2
+          }
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "gdw-polish-infantry",
+            "gdw-chasseur",
+            "gdw-jager"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "gdw-cavalry-brigade",
@@ -301,9 +379,18 @@
           "min": 1,
           "max": 2,
           "unitCaps": [
-            { "unitId": "gdw-hussar", "armyMax": 1 },
-            { "unitId": "gdw-uhlan", "armyMax": 6 },
-            { "unitId": "gdw-chasseur-a-cheval", "armyMax": 3 }
+            {
+              "unitId": "gdw-hussar",
+              "armyMax": 1
+            },
+            {
+              "unitId": "gdw-uhlan",
+              "armyMax": 6
+            },
+            {
+              "unitId": "gdw-chasseur-a-cheval",
+              "armyMax": 3
+            }
           ]
         }
       ],
@@ -314,7 +401,57 @@
           "gdw-infantry-brigade"
         ],
         "ratio": 2
-      }
+      },
+      "options": [
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "gdw-uhlan",
+            "gdw-hussar",
+            "gdw-chasseur-a-cheval"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "gdw-uhlan",
+            "gdw-hussar",
+            "gdw-chasseur-a-cheval"
+          ],
+          "group": "size",
+          "limit": {
+            "per": {
+              "unitIds": [
+                "gdw-uhlan",
+                "gdw-hussar",
+                "gdw-chasseur-a-cheval"
+              ],
+              "ratio": 2
+            }
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "gdw-uhlan",
+            "gdw-hussar",
+            "gdw-chasseur-a-cheval"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "gdw-divisional-artillery",
@@ -330,12 +467,40 @@
           "min": 1,
           "max": 1,
           "requiresArmyUnitCount": {
-            "unitIds": ["gdw-polish-infantry", "gdw-chasseur", "gdw-jager"],
+            "unitIds": [
+              "gdw-polish-infantry",
+              "gdw-chasseur",
+              "gdw-jager"
+            ],
             "min": 7
           }
         }
       ],
-      "note": "0 to 2 Foot Artillery batteries, 1 per 7 infantry battalions in the army. Attached to any brigade."
+      "note": "0 to 2 Foot Artillery batteries, 1 per 7 infantry battalions in the army. Attached to any brigade.",
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "gdw-foot-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "gdw-foot-arty"
+          ],
+          "swapTo": {
+            "gdw-foot-arty": "gdw-foot-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "gdw-reserve-artillery",
@@ -351,7 +516,11 @@
           "min": 0,
           "max": 1,
           "requiresArmyUnitCount": {
-            "unitIds": ["gdw-polish-infantry", "gdw-chasseur", "gdw-jager"],
+            "unitIds": [
+              "gdw-polish-infantry",
+              "gdw-chasseur",
+              "gdw-jager"
+            ],
             "min": 8
           }
         },
@@ -363,23 +532,66 @@
           "min": 0,
           "max": 1,
           "requiresArmyUnitCount": {
-            "unitIds": ["gdw-polish-infantry", "gdw-chasseur", "gdw-jager"],
+            "unitIds": [
+              "gdw-polish-infantry",
+              "gdw-chasseur",
+              "gdw-jager"
+            ],
             "min": 8
           }
         }
       ],
-      "note": "Up to 1 Horse battery and up to 1 Heavy Foot battery, each requiring 8+ infantry battalions in the army. Attached to any brigade."
+      "note": "Up to 1 Horse battery and up to 1 Heavy Foot battery, each if 8 infantry battalions are in the army; attach each to an Infantry Brigade (pick it on the battery).",
+      "attachBatteries": {
+        "batteryUnitIds": [
+          "gdw-horse-arty",
+          "gdw-heavy-foot-arty"
+        ]
+      },
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "gdw-horse-arty",
+            "gdw-heavy-foot-arty"
+          ],
+          "addSpecial": [
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "gdw-horse-arty",
+            "gdw-heavy-foot-arty"
+          ],
+          "swapTo": {
+            "gdw-horse-arty": "gdw-horse-arty-half",
+            "gdw-heavy-foot-arty": "gdw-heavy-foot-arty-half"
+          }
+        }
+      ]
     }
   ],
   "unitRatioCaps": [
     {
-      "capUnitIds": ["gdw-foot-arty"],
-      "perUnitIds": ["gdw-polish-infantry", "gdw-chasseur", "gdw-jager"],
+      "capUnitIds": [
+        "gdw-foot-arty"
+      ],
+      "perUnitIds": [
+        "gdw-polish-infantry",
+        "gdw-chasseur",
+        "gdw-jager"
+      ],
       "ratio": 7,
       "label": "Divisional Foot batteries (1 per 7 infantry battalions)"
     }
   ],
   "notes": [
+    "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 167). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
     "Can recreate formations that crossed into Russia, Lithuanian forces raised on liberation, and the 'Bug Division'.",
     "1 to 2 Infantry Brigades: 1 or 2 Regiments of Polish Infantry (1-4 battalions), plus 0 to 2 Chasseur/Jäger battalions (Lithuanians and Bug Division).",
     "Regimental Artillery: 1 section per 3 battalions and/or 1 battery per infantry regiment of 3+ battalions (section and battery may be mixed).",
@@ -388,6 +600,14 @@
     "Reserve Artillery: up to 1 Horse battery and up to 1 Heavy Foot battery (each if 8+ infantry battalions taken), attached to any brigade."
   ],
   "alliesRules": [
-    { "maxPercent": 25, "note": "any single allied list" }
+    {
+      "maxPercent": 25,
+      "note": "any single allied list"
+    }
+  ],
+  "specialRules": [
+    "Grand Duchy infantry follow the French infantry special rules, and do have Pas de Charge.",
+    "Grand Duchy cavalry can use Deep Formation and Cavalry Mixed Formation.",
+    "Regimental guns follow the rules for regimental guns on p. 54; the 'batteries' of 4-pdrs can be deployed whole or split into sections of two guns (p. 103)."
   ]
 }

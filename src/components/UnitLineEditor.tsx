@@ -35,7 +35,14 @@ interface Props {
    * The brigade the slot belongs to, so each unit can take that brigade's upgrades and downgrades.
    * Without it (the army command slot) units are shown without options.
    */
-  brigade?: { nation: Nation; bt: BrigadeType; instance: RosterBrigadeInstance; regimentOptions?: string[] };
+  brigade?: {
+    nation: Nation;
+    bt: BrigadeType;
+    instance: RosterBrigadeInstance;
+    regimentOptions?: string[];
+    /** Every brigade in the army, for limits counted army-wide */
+    army?: RosterBrigadeInstance[];
+  };
   /** Marks the slot as one group within a regiment, with a bar of its own down its left side */
   grouped?: boolean;
   /** Anything more to show under a unit's name, e.g. which brigade an army battery is attached to */
@@ -165,7 +172,8 @@ export function UnitLineEditor({
                     o,
                     line,
                     brigade.instance,
-                    brigade.regimentOptions
+                    brigade.regimentOptions,
+                    brigade.army
                   );
                   const delta = signedPoints(optionDelta(brigade.nation, o, unit));
                   const chip = (

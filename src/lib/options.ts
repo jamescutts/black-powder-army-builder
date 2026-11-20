@@ -24,6 +24,8 @@ export interface ResolvedUnit {
   special: string[];
   handToHand?: string;
   shooting?: string;
+  /** e.g. "5" for a battalion downgraded to Morale 5 */
+  morale?: string;
 }
 
 export const unitOptionsOf = (bt: BrigadeType | undefined) => (bt?.options ?? []).filter((o) => o.scope !== "regiment");
@@ -67,8 +69,11 @@ export function resolveLine(nation: Nation, line: RosterUnitLine, ctx: LineConte
   const cost =
     unitCost(unit, unit === base ? line.variantLabel : undefined) + modifiers.reduce((s, o) => s + (o.cost ?? 0), 0);
   const tags = unitOpts.filter((o) => !o.swapTo).map((o) => o.label);
-  const special = [...new Set([...(unit.special ?? []), ...modifiers.flatMap((o) => o.addSpecial ?? [])])];
-  const bonus = (key: "handToHand" | "shooting") => modifiers.reduce((s, o) => s + (o.statBonus?.[key] ?? 0), 0);
+  const removed = new Set(modifiers.flatMap((o) => o.removeSpecial ?? []));
+  const special = [...new Set([...(unit.special ?? []), ...modifiers.flatMap((o) => o.addSpecial ?? [])])].filter(
+    (rule) => !removed.has(rule)
+  );
+  const bonus = (key: "handToHand" | "shooting" | "morale") => modifiers.reduce((s, o) => s + (o.statBonus?.[key] ?? 0), 0);
 
   return {
     base,
@@ -79,6 +84,7 @@ export function resolveLine(nation: Nation, line: RosterUnitLine, ctx: LineConte
     special,
     handToHand: addToStat(unit.handToHand, bonus("handToHand")),
     shooting: addToStat(unit.shooting, bonus("shooting")),
+    morale: addToStat(unit.morale, bonus("morale")),
   };
 }
 
@@ -94,12 +100,18 @@ export function brigadeUnitLines(
   ];
 }
 
-/** How many of a unit option the brigade may have; Infinity when it isn't limited */
-export function optionAllowance(o: UnitOption, instance: RosterBrigadeInstance): number {
+/** The brigades an option's limit counts over: the whole army when it says so, else the one brigade */
+function limitScope(o: UnitOption, instance: RosterBrigadeInstance, army?: RosterBrigadeInstance[]) {
+  return o.limit?.armyWide && army ? army : [instance];
+}
+
+/** How many of a unit option the brigade (or army) may have; Infinity when it isn't limited */
+export function optionAllowance(o: UnitOption, instance: RosterBrigadeInstance, army?: RosterBrigadeInstance[]): number {
   let allowed = o.limit?.max ?? Infinity;
   if (o.limit?.per) {
     const ids = new Set(o.limit.per.unitIds);
-    const count = brigadeUnitLines(instance)
+    const count = limitScope(o, instance, army)
+      .flatMap((bi) => brigadeUnitLines(bi))
       .filter(({ line }) => ids.has(line.unitId))
       .reduce((s, { line }) => s + line.qty, 0);
     allowed = Math.min(allowed, Math.floor(count / o.limit.per.ratio));
@@ -107,15 +119,18 @@ export function optionAllowance(o: UnitOption, instance: RosterBrigadeInstance):
   return allowed;
 }
 
-/** How many units (or, for a regiment option, regiments) in the brigade have taken an option */
-export function optionTaken(o: UnitOption, instance: RosterBrigadeInstance): number {
+/** How many units (or, for a regiment option, regiments) in the brigade (or army) have taken an option */
+export function optionTaken(o: UnitOption, instance: RosterBrigadeInstance, army?: RosterBrigadeInstance[]): number {
+  const scope = limitScope(o, instance, army);
   if (o.scope === "regiment") {
-    return (instance.regimentSlots ?? []).reduce(
-      (n, slot) => n + (slot ?? []).filter((r) => r.options?.includes(o.id)).length,
+    return scope.reduce(
+      (n, bi) =>
+        n + (bi.regimentSlots ?? []).reduce((m, slot) => m + (slot ?? []).filter((r) => r.options?.includes(o.id)).length, 0),
       0
     );
   }
-  return brigadeUnitLines(instance)
+  return scope
+    .flatMap((bi) => brigadeUnitLines(bi))
     .filter(({ line }) => line.options?.includes(o.id))
     .reduce((s, { line }) => s + line.qty, 0);
 }
@@ -163,8 +178,15 @@ export function unitNoun(nation: Nation, unitIds: string[], count: number): stri
 
 /** A short limit for a toggle's tooltip, e.g. "1 per 4 battalions" or "1 per brigade" */
 export function limitText(nation: Nation, o: UnitOption): string | null {
-  if (o.limit?.per) return `1 per ${o.limit.per.ratio} ${unitNoun(nation, o.limit.per.unitIds, o.limit.per.ratio)}`;
-  if (o.limit?.max !== undefined) return `${o.limit.max} per brigade`;
+  const where = o.limit?.armyWide ? "in the army" : "per brigade";
+  if (o.limit?.per) {
+    const { ratio, unitIds } = o.limit.per;
+    const noun = unitNoun(nation, unitIds, ratio);
+    return ratio === 2
+      ? `up to half of the ${unitNoun(nation, unitIds, 2)}${o.limit.armyWide ? " in the army" : " in the brigade"}`
+      : `1 per ${ratio} ${noun}${o.limit.armyWide ? " in the army" : ""}`;
+  }
+  if (o.limit?.max !== undefined) return `${o.limit.max} ${where}`;
   return null;
 }
 
@@ -178,7 +200,8 @@ export function unitOptionBlocked(
   o: UnitOption,
   line: RosterUnitLine,
   instance: RosterBrigadeInstance,
-  regimentOptions: string[] = []
+  regimentOptions: string[] = [],
+  army?: RosterBrigadeInstance[]
 ): string | null {
   if (line.options?.includes(o.id)) return null;
   const others = [...(line.options ?? []), ...regimentOptions];
@@ -186,21 +209,26 @@ export function unitOptionBlocked(
     (other) => others.includes(other.id) && (o.excludes?.includes(other.id) || other.excludes?.includes(o.id))
   );
   if (clash) return o.excludesReason ?? clash.excludesReason ?? `Can't be combined with ${clash.label}`;
-  const allowed = optionAllowance(o, instance);
-  if (optionTaken(o, instance) >= allowed) {
+  const allowed = optionAllowance(o, instance, army);
+  if (optionTaken(o, instance, army) >= allowed) {
     const limit = limitText(nation, o);
     return allowed === 0 && o.limit?.per
-      ? `Needs ${o.limit.per.ratio} ${unitNoun(nation, o.limit.per.unitIds, o.limit.per.ratio)} in the brigade (${limit})`
+      ? `Needs ${o.limit.per.ratio} ${unitNoun(nation, o.limit.per.unitIds, o.limit.per.ratio)} in the ${o.limit.armyWide ? "army" : "brigade"} (${limit})`
       : `Limit reached${limit ? ` (${limit})` : ""}`;
   }
   return null;
 }
 
 /** Why a regiment can't take an option right now, or null if it can (or already has it) */
-export function regimentOptionBlocked(o: UnitOption, regiment: RosterRegimentInstance, instance: RosterBrigadeInstance): string | null {
+export function regimentOptionBlocked(
+  o: UnitOption,
+  regiment: RosterRegimentInstance,
+  instance: RosterBrigadeInstance,
+  army?: RosterBrigadeInstance[]
+): string | null {
   if (regiment.options?.includes(o.id)) return null;
-  if (optionTaken(o, instance) >= optionAllowance(o, instance)) {
-    return `Only ${o.limit?.max ?? 0} regiment${o.limit?.max === 1 ? "" : "s"} per brigade`;
+  if (optionTaken(o, instance, army) >= optionAllowance(o, instance, army)) {
+    return `Only ${o.limit?.max ?? 0} regiment${o.limit?.max === 1 ? "" : "s"} ${o.limit?.armyWide ? "in the army" : "per brigade"}`;
   }
   return null;
 }

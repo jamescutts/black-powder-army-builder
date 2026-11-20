@@ -87,7 +87,8 @@
       "stamina": "3",
       "special": [
         "Pas de Charge",
-        "Reliable Elite 4+"
+        "Reliable",
+        "Elite 4+"
       ],
       "cost": 49
     },
@@ -103,7 +104,8 @@
       "stamina": "3",
       "special": [
         "Pas de Charge",
-        "Reliable Elite 4+"
+        "Reliable",
+        "Elite 4+"
       ],
       "cost": 49
     },
@@ -119,7 +121,8 @@
       "stamina": "3",
       "special": [
         "Pas de Charge",
-        "Reliable Elite 5+"
+        "Reliable",
+        "Elite 5+"
       ],
       "cost": 47
     },
@@ -135,7 +138,8 @@
       "stamina": "3",
       "special": [
         "Pas de Charge",
-        "Reliable Elite 5+"
+        "Reliable",
+        "Elite 5+"
       ],
       "cost": 46
     },
@@ -183,6 +187,18 @@
       "cost": 11
     },
     {
+      "id": "it-regimental-battery",
+      "name": "Regimental Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Battalion Artillery",
+      "handToHand": "1",
+      "shooting": "3-2-1",
+      "morale": "4",
+      "stamina": "2",
+      "cost": 19
+    },
+    {
       "id": "it-foot-arty",
       "name": "Foot Artillery Battery",
       "category": "Artillery",
@@ -195,6 +211,18 @@
       "cost": 27
     },
     {
+      "id": "it-foot-arty-half",
+      "name": "Half Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
       "id": "it-heavy-foot-arty",
       "name": "Heavy Foot Artillery Battery",
       "category": "Artillery",
@@ -205,6 +233,18 @@
       "morale": "4",
       "stamina": "2",
       "cost": 31
+    },
+    {
+      "id": "it-heavy-foot-arty-half",
+      "name": "Half Heavy Foot Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery (Smoothbore Siege Artillery)",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
     },
     {
       "id": "it-horse-arty",
@@ -220,6 +260,21 @@
         "Marauder"
       ],
       "cost": 30
+    },
+    {
+      "id": "it-horse-arty-half",
+      "name": "Half Horse Artillery Battery",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 22
     }
   ],
   "brigades": [
@@ -241,7 +296,10 @@
             "slots": [
               {
                 "label": "Line or Light Infantry Battalion (one type per regiment)",
-                "unitIds": ["it-line-infantry", "it-light-infantry"],
+                "unitIds": [
+                  "it-line-infantry",
+                  "it-light-infantry"
+                ],
                 "min": 1,
                 "max": 4,
                 "singleUnitType": true
@@ -250,14 +308,127 @@
           }
         },
         {
-          "label": "Regimental Artillery (section per regiment, or battery per regiment of 3+)",
-          "unitIds": ["it-regimental-arty-section"],
+          "label": "Regimental Artillery (a section per regiment, OR a battery per regiment of 3+ battalions)",
+          "unitIds": [
+            "it-regimental-arty-section",
+            "it-regimental-battery"
+          ],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "singleUnitType": true,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "it-regimental-arty-section",
+              "perQualifyingRegiment": {
+                "regimentSlotIndices": [
+                  0
+                ],
+                "minBattalions": 1
+              }
+            },
+            {
+              "unitId": "it-regimental-battery",
+              "perQualifyingRegiment": {
+                "regimentSlotIndices": [
+                  0
+                ],
+                "minBattalions": 3
+              }
+            }
+          ]
         }
       ],
       "commanderUnitId": "it-brig-cmd",
-      "note": "1-2 Line Infantry regiments (1-4 battalions each). May replace a Line regiment with a Light Infantry regiment. Up to 1 Regimental Artillery section per regiment, or battery per regiment of 3+ battalions."
+      "note": "1-2 Line Infantry regiments (1-4 battalions each). May replace a Line regiment with a Light Infantry regiment. Up to 1 Regimental Artillery section per regiment, or battery per regiment of 3+ battalions.",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "it-line-infantry",
+            "it-light-infantry"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "limit": {
+            "max": 2
+          }
+        },
+        {
+          "id": "tough-fighters",
+          "label": "Tough Fighters",
+          "cost": 1,
+          "appliesTo": [
+            "it-line-infantry",
+            "it-light-infantry"
+          ],
+          "addSpecial": [
+            "Tough Fighters"
+          ]
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "it-line-infantry",
+            "it-light-infantry"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "wavering",
+          "label": "Wavering",
+          "cost": -6,
+          "appliesTo": [
+            "it-line-infantry",
+            "it-light-infantry"
+          ],
+          "addSpecial": [
+            "Wavering"
+          ]
+        },
+        {
+          "id": "morale-5",
+          "label": "Morale 5",
+          "cost": -4,
+          "appliesTo": [
+            "it-line-infantry",
+            "it-light-infantry"
+          ],
+          "statBonus": {
+            "morale": 1
+          }
+        },
+        {
+          "id": "unreliable",
+          "label": "Unreliable",
+          "cost": -3,
+          "appliesTo": [
+            "it-line-infantry",
+            "it-light-infantry"
+          ],
+          "addSpecial": [
+            "Unreliable"
+          ]
+        },
+        {
+          "id": "no-pas-de-charge",
+          "label": "No Pas de Charge",
+          "cost": -2,
+          "appliesTo": [
+            "it-line-infantry",
+            "it-light-infantry"
+          ],
+          "removeSpecial": [
+            "Pas de Charge",
+            "Pas de charge"
+          ]
+        }
+      ]
     },
     {
       "id": "it-cavalry-brigade",
@@ -281,7 +452,43 @@
           "it-infantry-brigade"
         ],
         "ratio": 2
-      }
+      },
+      "options": [
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "it-chasseurs-a-cheval"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "it-chasseurs-a-cheval"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "wavering",
+          "label": "Wavering",
+          "cost": -6,
+          "appliesTo": [
+            "it-chasseurs-a-cheval"
+          ],
+          "addSpecial": [
+            "Wavering"
+          ]
+        }
+      ]
     },
     {
       "id": "it-divisional-artillery",
@@ -291,26 +498,76 @@
       "slots": [
         {
           "label": "Foot Artillery Battery (0-1)",
-          "unitIds": ["it-foot-arty"],
+          "unitIds": [
+            "it-foot-arty"
+          ],
           "min": 0,
           "max": 1,
           "requiresArmyUnitCount": {
-            "unitIds": ["it-line-infantry", "it-light-infantry", "it-royal-guard-grenadiers", "it-royal-guard-chasseurs", "it-royal-velite-infantry", "it-guard-conscripts"],
+            "unitIds": [
+              "it-line-infantry",
+              "it-light-infantry",
+              "it-royal-guard-grenadiers",
+              "it-royal-guard-chasseurs",
+              "it-royal-velite-infantry",
+              "it-guard-conscripts"
+            ],
             "min": 8
           }
         },
         {
           "label": "Horse Artillery Battery (0-1)",
-          "unitIds": ["it-horse-arty"],
+          "unitIds": [
+            "it-horse-arty"
+          ],
           "min": 0,
           "max": 1,
           "requiresArmyUnitCount": {
-            "unitIds": ["it-line-infantry", "it-light-infantry", "it-royal-guard-grenadiers", "it-royal-guard-chasseurs", "it-royal-velite-infantry", "it-guard-conscripts"],
+            "unitIds": [
+              "it-line-infantry",
+              "it-light-infantry",
+              "it-royal-guard-grenadiers",
+              "it-royal-guard-chasseurs",
+              "it-royal-velite-infantry",
+              "it-guard-conscripts"
+            ],
             "min": 8
           }
         }
       ],
-      "note": "Requires 8+ infantry battalions in the army (from any brigade). Attached to any Infantry Brigade."
+      "note": "Up to 1 Foot and 1 Horse battery, each 1 per 8 infantry battalions in the army; attach each to an Infantry Brigade (pick it on the battery).",
+      "attachBatteries": {
+        "batteryUnitIds": [
+          "it-foot-arty",
+          "it-horse-arty"
+        ]
+      },
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "it-foot-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "it-foot-arty",
+            "it-horse-arty"
+          ],
+          "swapTo": {
+            "it-foot-arty": "it-foot-arty-half",
+            "it-horse-arty": "it-horse-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "it-guard-brigade",
@@ -330,7 +587,10 @@
             "slots": [
               {
                 "label": "Guard Grenadier or Chasseur Battalion",
-                "unitIds": ["it-royal-guard-grenadiers", "it-royal-guard-chasseurs"],
+                "unitIds": [
+                  "it-royal-guard-grenadiers",
+                  "it-royal-guard-chasseurs"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -349,7 +609,9 @@
             "slots": [
               {
                 "label": "Royal Velite Battalion",
-                "unitIds": ["it-royal-velite-infantry"],
+                "unitIds": [
+                  "it-royal-velite-infantry"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -368,7 +630,9 @@
             "slots": [
               {
                 "label": "Guard Conscript Battalion",
-                "unitIds": ["it-guard-conscripts"],
+                "unitIds": [
+                  "it-guard-conscripts"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -377,31 +641,114 @@
         },
         {
           "label": "Guard Dragoon Regiment (0-2)",
-          "unitIds": ["it-guard-dragoons"],
+          "unitIds": [
+            "it-guard-dragoons"
+          ],
           "min": 0,
           "max": 2
         },
         {
           "label": "Foot Artillery Battery (0-2)",
-          "unitIds": ["it-foot-arty"],
+          "unitIds": [
+            "it-foot-arty"
+          ],
           "min": 0,
           "max": 2
         },
         {
           "label": "Horse Artillery Battery (0-2)",
-          "unitIds": ["it-horse-arty"],
+          "unitIds": [
+            "it-horse-arty"
+          ],
           "min": 0,
           "max": 2
         },
         {
-          "label": "Regimental Artillery (section or battery, 0-1)",
-          "unitIds": ["it-regimental-arty-section"],
+          "label": "Regimental Artillery (a section per 2 battalions, OR a battery per regiment of 2+ battalions)",
+          "unitIds": [
+            "it-regimental-arty-section",
+            "it-regimental-battery"
+          ],
           "min": 0,
-          "max": 1
+          "max": 3,
+          "singleUnitType": true,
+          "dynamicUnitLimits": [
+            {
+              "unitId": "it-regimental-arty-section",
+              "perBattalions": {
+                "countSlotIndices": [
+                  0,
+                  1,
+                  2
+                ],
+                "ratio": 2
+              }
+            },
+            {
+              "unitId": "it-regimental-battery",
+              "perQualifyingRegiment": {
+                "regimentSlotIndices": [
+                  0,
+                  1,
+                  2
+                ],
+                "minBattalions": 2
+              }
+            }
+          ]
         }
       ],
       "commanderUnitId": "it-brig-cmd",
-      "note": "Up to 1 regiment each of Guard Infantry, Royal Velite, and Guard Conscripts (up to 2 battalions each). Plus up to 2 Guard Dragoons, artillery, and 1 Regimental Artillery section."
+      "note": "Up to 1 regiment each of Guard Infantry, Royal Velite and Guard Conscripts (up to 2 battalions each), plus up to 2 Guard Dragoon regiments, up to 2 Foot and 2 Horse batteries, and regimental artillery.",
+      "options": [
+        {
+          "id": "tough-fighters",
+          "label": "Tough Fighters",
+          "cost": 1,
+          "appliesTo": [
+            "it-royal-guard-grenadiers",
+            "it-royal-guard-chasseurs",
+            "it-royal-velite-infantry",
+            "it-guard-conscripts"
+          ],
+          "addSpecial": [
+            "Tough Fighters"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "it-foot-arty",
+            "it-horse-arty"
+          ],
+          "swapTo": {
+            "it-foot-arty": "it-foot-arty-half",
+            "it-horse-arty": "it-horse-arty-half"
+          }
+        },
+        {
+          "id": "small-infantry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "it-royal-guard-grenadiers",
+            "it-royal-guard-chasseurs",
+            "it-royal-velite-infantry",
+            "it-guard-conscripts"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "it-guard-dragoons"
+          ],
+          "group": "size"
+        }
+      ]
     },
     {
       "id": "it-reserve-artillery",
@@ -417,17 +764,54 @@
           "min": 0,
           "max": 2,
           "requiresArmyUnitCount": {
-            "unitIds": ["it-line-infantry", "it-light-infantry", "it-royal-guard-grenadiers", "it-royal-guard-chasseurs", "it-royal-velite-infantry", "it-guard-conscripts"],
+            "unitIds": [
+              "it-line-infantry",
+              "it-light-infantry",
+              "it-royal-guard-grenadiers",
+              "it-royal-guard-chasseurs",
+              "it-royal-velite-infantry",
+              "it-guard-conscripts"
+            ],
             "min": 10
           }
         }
       ],
-      "note": "Up to 2 Heavy Foot batteries. 1 per 10 infantry battalions."
+      "note": "Up to 2 Heavy Foot batteries, 1 per 10 infantry battalions in the army; attach each to an Infantry Brigade (pick it on the battery).",
+      "attachBatteries": {
+        "batteryUnitIds": [
+          "it-heavy-foot-arty"
+        ]
+      },
+      "options": [
+        {
+          "id": "veteran-artillery",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "it-heavy-foot-arty"
+          ],
+          "addSpecial": [
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "it-heavy-foot-arty"
+          ],
+          "swapTo": {
+            "it-heavy-foot-arty": "it-heavy-foot-arty-half"
+          }
+        }
+      ]
     }
   ],
   "unitRatioCaps": [
     {
-      "capUnitIds": ["it-heavy-foot-arty"],
+      "capUnitIds": [
+        "it-heavy-foot-arty"
+      ],
       "perUnitIds": [
         "it-line-infantry",
         "it-light-infantry",
@@ -441,14 +825,18 @@
     }
   ],
   "notes": [
-    "1 to 3 Infantry Brigades: 1 or 2 Infantry regiments of 1-4 battalions each (each regiment is all Line or all Light), plus Regimental Artillery.",
-    "0 to 1 Cavalry Brigade (1 per 2 Infantry Brigades): up to 2 Chasseur à Cheval regiments.",
-    "Divisional Artillery: up to 1 Foot and 1 Horse battery (1 per 8 infantry battalions), attached to any brigade.",
-    "0 to 1 Italian Guard Brigade: up to 1 regiment each of Guard Infantry, Royal Velite Infantry and Guard Conscript Infantry, plus up to 2 Guard Dragoon regiments and Guard artillery.",
-    "Reserve Artillery: up to 2 Heavy Foot Artillery batteries (1 per 10 infantry battalions), attached to any brigade.",
-    "This builder omits the book's point-modifier upgrades/downgrades — apply these manually per the book: upgrade up to 2 battalions per brigade to Veteran, Reliable + Elite 5+ (+8 pts/battalion); upgrade any or all battalions in a brigade to Tough Fighters (+1 pt/battalion); upgrade a cavalry regiment to Veteran, Reliable + 1 Hand-to-Hand (+6 pts/regiment); upgrade any artillery battery to Veteran (+8 pts/battery); downgrade a battalion to Small (-8 pts), to Wavering (-6 pts), to Morale 5 (-4 pts), to Unreliable (-3 pts), or by removing pas de charge (-2 pts); downgrade a cavalry regiment to Small (-8 pts) or to Wavering (-6 pts); downgrade any gun battery to a half battery."
+    "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 182). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "The Italian stat table has no regimental artillery battery, so it uses the French one (p. 154). The Infantry Brigade box prices it at 11 points, the Guard box at 19; the builder uses 19, as everywhere else in the book.",
+    "The book gives no Italian half-battery stat lines, so the half batteries use the French ones (p. 154), at the points the Italian list gives (Foot 19, Horse 22)."
   ],
   "alliesRules": [
-    { "maxPercent": 25, "note": "any one allied list" }
+    {
+      "maxPercent": 25,
+      "note": "any one allied list"
+    }
+  ],
+  "specialRules": [
+    "Italian infantry, the Royal Guard included, follow the French infantry special rules and do have Pas de Charge.",
+    "Italian cavalry can use Deep Formation and Cavalry Mixed Formation."
   ]
 }
