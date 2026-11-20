@@ -329,7 +329,7 @@
       "name": "Advanced Guard Independent Command",
       "min": 0,
       "max": 1,
-      "note": "Independently commanded by the Divisional Commander — no separate Brigade Commander cost",
+      "note": "Commanded directly by the Divisional Commander, with no Brigade Commander of its own",
       "slots": [
         {
           "label": "Vanguard Jäger/Light Company or Battalion",
@@ -429,7 +429,7 @@
       "name": "Divisional Artillery Support",
       "min": 0,
       "max": 1,
-      "note": "One Foot Battery (attached to any Infantry Brigade) and one Horse Artillery Battery (attached to a Cavalry Brigade), each max 1 per army.",
+      "note": "The Foot battery goes in an infantry brigade and the Horse battery with the cavalry brigade; one of each per army",
       "slots": [
         {
           "label": "Foot Battery (0-1, attached to any Infantry Brigade)",
@@ -484,8 +484,6 @@
   ],
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 113). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "The Advanced Guard is commanded directly by the Divisional Commander, with no Brigade Commander of its own: Vanguard Jäger and/or Light companies, or Vanguard Battalions.",
-    "The foot battery goes in an infantry brigade and the horse battery with the cavalry brigade; build them here and deploy them with those brigades.",
     "The brigade box prices Line Infantry at 22 points; the stat table's 33 is used. The chapter (p. 47) gives the Foot battery Stamina 2 and the Vanguard Battalion no Marauder; the list's table is followed.",
     "Half batteries cost half points, rounded up (Foot 14, Horse 15), with the usual half battery stat line (2-1-1, Stamina 1).",
     "The Uhlan regiment was historically Small: take the Uhlan Squadron, or a Small Uhlan regiment, which is the same."

@@ -368,7 +368,6 @@
       "min": 0,
       "max": 2,
       "commanderUnitId": "fig15-brig-cmd",
-      "note": "Each brigade has two battalions of either Old or Middle Guard, not mixed",
       "slots": [
         {
           "label": "Old Guard Battalion",
@@ -600,7 +599,7 @@
   ],
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 125). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "Historically each Old or Middle Guard brigade had two battalions of one kind, not mixed; the list allows 2-4 for flexibility.",
+    "Historically each Old or Middle Guard brigade had two battalions of one kind; the list relaxes this to 2-4 battalions for flexibility.",
     "Marines of the Guard can also be fielded as two Tiny units, or as an engineer upgrade (p. 78).",
     "The chapter (pp. 63-65) gives the Young Guard 6/4/3/3, Reliable, and the Guard Heavy and Marine batteries Stamina 3; the list's table (p. 124) is followed."
   ],

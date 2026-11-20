@@ -780,7 +780,7 @@
       "min": 0,
       "max": 3,
       "commanderUnitId": "pr15-cav-cmd",
-      "note": "1 per 2 Infantry Brigades taken You may take Cavalry Brigades or Landwehr Cavalry Brigades, not both.",
+      "note": "1 per 2 Infantry Brigades taken. You may take Cavalry Brigades or Landwehr Cavalry Brigades, not both.",
       "slots": [
         {
           "label": "Landwehr Cavalry Regiment",

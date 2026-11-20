@@ -529,7 +529,7 @@
       "min": 0,
       "max": 2,
       "commanderUnitId": "fac-brig-cmd",
-      "note": "1 per 2 Infantry Brigades. Army-wide: up to 2 Dragoon, up to 2 Hussar, up to 2 Chasseur-à-Cheval, up to 2 Chevaux Léger regiments.",
+      "note": "1 per 2 Infantry Brigades",
       "slots": [
         {
           "label": "Line Cavalry Regiment (regiments in a brigade must be the same class)",
@@ -555,24 +555,6 @@
                 "fac-chevau-legers-lancers"
               ],
               "label": "Light Cavalry"
-            }
-          ],
-          "unitCaps": [
-            {
-              "unitId": "fac-dragoon",
-              "armyMax": 2
-            },
-            {
-              "unitId": "fac-hussar",
-              "armyMax": 2
-            },
-            {
-              "unitId": "fac-chasseur-a-cheval",
-              "armyMax": 2
-            },
-            {
-              "unitId": "fac-chevau-legers-lancers",
-              "armyMax": 2
             }
           ]
         }
@@ -622,7 +604,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "fac-brig-cmd",
-      "note": "Corps/Army reserve, 1 per 2 Infantry Brigades. Army-wide (within this brigade): up to 2 Dragoon, up to 2 Hussar, up to 2 Chasseur-à-Cheval, up to 2 Chevaux Léger regiments.",
+      "note": "Corps and Army support, 1 per 2 Infantry Brigades",
       "slots": [
         {
           "label": "Cavalry Regiment (regiments in a brigade must be the same class)",
@@ -648,24 +630,6 @@
                 "fac-chevau-legers-lancers"
               ],
               "label": "Light Cavalry"
-            }
-          ],
-          "unitCaps": [
-            {
-              "unitId": "fac-dragoon",
-              "armyMax": 2
-            },
-            {
-              "unitId": "fac-hussar",
-              "armyMax": 2
-            },
-            {
-              "unitId": "fac-chasseur-a-cheval",
-              "armyMax": 2
-            },
-            {
-              "unitId": "fac-chevau-legers-lancers",
-              "armyMax": 2
             }
           ]
         }
@@ -715,40 +679,16 @@
       "min": 0,
       "max": 2,
       "commanderUnitId": "fac-brig-cmd",
-      "note": "Corps/Army reserve, 1 per 3 Infantry Brigades. Army-wide (within this brigade): up to 2 Cuirassier, up to 2 Carabinier regiments.",
+      "note": "Corps and Army support, 1 per 3 Infantry Brigades",
       "slots": [
         {
-          "label": "Cuirassier/Carabinier Regiment (regiments in a brigade must be the same type)",
+          "label": "Cuirassier or Carabinier Regiment",
           "unitIds": [
             "fac-cuirassier",
             "fac-carabinier"
           ],
           "min": 1,
-          "max": 2,
-          "mutuallyExclusiveGroups": [
-            {
-              "unitIds": [
-                "fac-cuirassier"
-              ],
-              "label": "Cuirassier"
-            },
-            {
-              "unitIds": [
-                "fac-carabinier"
-              ],
-              "label": "Carabinier"
-            }
-          ],
-          "unitCaps": [
-            {
-              "unitId": "fac-cuirassier",
-              "armyMax": 2
-            },
-            {
-              "unitId": "fac-carabinier",
-              "armyMax": 2
-            }
-          ]
+          "max": 2
         }
       ],
       "maxRatio": {
@@ -1008,7 +948,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "fac-arty-brig-cmd",
-      "note": "Corps/Army reserve, if at least 12 infantry battalions are taken. Batteries bought from Infantry Brigades, Cavalry Brigades and Corps Artillery can also attach here (max 6 total).",
+      "note": "Corps and Army support, if at least 12 infantry battalions are taken. Batteries from the infantry brigades, cavalry brigades and Corps Artillery can join it, up to six in all.",
       "slots": [
         {
           "label": "Foot Battery (2-4, if 12+ infantry battalions taken)",
@@ -1077,7 +1017,7 @@
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 121). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
     "Combined Grenadiers and Voltigeurs: the Grenadier (or Voltigeur) companies of a brigade's battalions can be massed. The parent battalions lose 1 Hand-to-Hand (or Mixed Formation); two battalions' companies make a Tiny unit, three or four a Small unit, six or more a standard one, for any infantry brigade. Not built here. The list's table makes them 7/3/4/3 (43 points) and 6/3/4/3 (45 points); the chapter (p. 56) makes them Small, 5/3/4/2.",
-    "Up to half of a Cavalry Brigade's regiments must be Line Light cavalry (Hussars, Chasseurs or Lancers), as the box puts it; regiments in a brigade must be the same class.",
+    "The Cavalry Brigade box also says up to half of a brigade's regiments must be Line Light cavalry, which its own same-class rule makes moot; the builder applies the same-class rule.",
     "An attached Horse battery costs 26 points in the brigade boxes, against 30 in the stat table. Half batteries cost half points, rounded up (Foot 14, Horse 13, Heavy 16), with the half battery stat line on p. 120 (2-1-1, Stamina 1).",
     "Named commanders have no official points cost in this supplement; they're priced here at the Divisional Commander cost for their Staff Rating, so adjust as you agree."
   ],
