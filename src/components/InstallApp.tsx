@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Button, Group, List, Modal, Text } from "@mantine/core";
 
 // The browser's install prompt, kept on window.__installPrompt by an inline script (lib/installPrompt.ts)
@@ -15,15 +15,23 @@ declare global {
   }
 }
 
-type Mode = "prompt" | "ios" | "mac-safari" | null;
+/**
+ * How this browser installs the site: "prompt" where it can with one click (Chrome, Edge, Samsung
+ * Internet and others), "ios" or "mac-safari" where it takes the menu steps, null where it can't (or
+ * already is the installed app).
+ */
+export type InstallMode = "prompt" | "ios" | "mac-safari" | null;
+
+/** The selling point, the same wherever the site offers to install */
+export const INSTALL_PITCH =
+  "Installed, Army Builder opens in its own window and works with no signal, so your armies are there at the club or a show.";
 
 /**
- * "Install the app", in the footer. Where the browser can install it with one click (Chrome, Edge,
- * Samsung Internet and others), it asks the browser. Apple's browsers have no such button, so there it
- * explains the menu steps instead. Hidden in the installed app itself and in browsers that can't install.
+ * Everything a call to install needs: whether to show it, what to do when it's pressed, and the help
+ * dialog for Apple's browsers (render `help` alongside the button).
  */
-export function InstallApp({ className }: { className?: string }) {
-  const [mode, setMode] = useState<Mode>(null);
+export function useInstallApp(): { mode: InstallMode; install: () => void; help: ReactNode } {
+  const [mode, setMode] = useState<InstallMode>(null);
   const [helpOpen, setHelpOpen] = useState(false);
 
   useEffect(() => {
@@ -36,23 +44,21 @@ export function InstallApp({ className }: { className?: string }) {
     const isIos = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
     const isMacSafari = /Macintosh/.test(ua) && /Safari\//.test(ua) && !/Chrome|Chromium|Edg|Firefox|OPR/.test(ua);
 
-    const fromPrompt = () => setMode(window.__installPrompt ? "prompt" : isIos ? "ios" : isMacSafari ? "mac-safari" : null);
+    const update = () => setMode(window.__installPrompt ? "prompt" : isIos ? "ios" : isMacSafari ? "mac-safari" : null);
     const installed = () => {
       window.__installPrompt = undefined;
       setMode(null);
     };
-    fromPrompt();
-    window.addEventListener("installpromptready", fromPrompt);
+    update();
+    window.addEventListener("installpromptready", update);
     window.addEventListener("appinstalled", installed);
     return () => {
-      window.removeEventListener("installpromptready", fromPrompt);
+      window.removeEventListener("installpromptready", update);
       window.removeEventListener("appinstalled", installed);
     };
   }, []);
 
-  if (!mode) return null;
-
-  const onClick = async () => {
+  const install = async () => {
     const prompt = window.__installPrompt;
     if (mode !== "prompt" || !prompt) {
       setHelpOpen(true);
@@ -62,61 +68,78 @@ export function InstallApp({ className }: { className?: string }) {
     const { outcome } = await prompt.userChoice;
     // The browser only offers each prompt once; it fires a fresh one if the site can still be installed
     window.__installPrompt = undefined;
-    if (outcome === "accepted") setMode(null);
+    window.dispatchEvent(new Event(outcome === "accepted" ? "appinstalled" : "installpromptready"));
   };
 
+  const help = (
+    <InstallHelp mode={mode} opened={helpOpen} onClose={() => setHelpOpen(false)} />
+  );
+
+  return { mode, install, help };
+}
+
+/** The menu steps, for Apple's browsers, which have no install button a page can press */
+function InstallHelp({ mode, opened, onClose }: { mode: InstallMode; opened: boolean; onClose: () => void }) {
+  return (
+    <Modal
+      opened={opened}
+      onClose={onClose}
+      title="Install Army Builder"
+      centered
+      size="sm"
+      styles={{ title: { fontFamily: "var(--font-heading), Georgia, serif", fontWeight: 600, fontSize: "1.15rem" } }}
+    >
+      <Text size="sm" mb="sm">
+        {INSTALL_PITCH}
+      </Text>
+      {mode === "ios" ? (
+        <List type="ordered" size="sm" spacing={4} mb="sm">
+          <List.Item>
+            Tap the <strong>Share</strong> button (a square with an arrow pointing up). If you can&apos;t see it,
+            tap the <strong>•••</strong> button first.
+          </List.Item>
+          <List.Item>
+            Scroll down and tap <strong>Add to Home Screen</strong>.
+          </List.Item>
+          <List.Item>
+            Tap <strong>Add</strong>.
+          </List.Item>
+        </List>
+      ) : (
+        <List type="ordered" size="sm" spacing={4} mb="sm">
+          <List.Item>
+            In Safari&apos;s menu bar, choose <strong>File</strong>, then <strong>Add to Dock</strong>.
+          </List.Item>
+          <List.Item>
+            Click <strong>Add</strong>.
+          </List.Item>
+        </List>
+      )}
+      {mode === "ios" && (
+        <Text size="xs" c="dimmed" mb="md">
+          The app keeps its own saved armies, separate from the browser&apos;s, so armies you saved in the browser
+          won&apos;t appear in it.
+        </Text>
+      )}
+      <Group justify="flex-end">
+        <Button variant="default" onClick={onClose} data-autofocus>
+          Done
+        </Button>
+      </Group>
+    </Modal>
+  );
+}
+
+/** "Install the app", as a link-like button (the footer). Hidden where the browser can't install. */
+export function InstallApp({ className, children = "Install the app" }: { className?: string; children?: ReactNode }) {
+  const { mode, install, help } = useInstallApp();
+  if (!mode) return null;
   return (
     <>
-      <button type="button" className={className} onClick={onClick}>
-        Install the app
+      <button type="button" className={className} onClick={install}>
+        {children}
       </button>
-      <Modal
-        opened={helpOpen}
-        onClose={() => setHelpOpen(false)}
-        title="Install Army Builder"
-        centered
-        size="sm"
-        styles={{ title: { fontFamily: "var(--font-heading), Georgia, serif", fontWeight: 600, fontSize: "1.15rem" } }}
-      >
-        <Text size="sm" mb="sm">
-          Installed, Army Builder opens in its own window and works without a connection, so you can build and
-          check an army at the club even with no signal.
-        </Text>
-        {mode === "ios" ? (
-          <List type="ordered" size="sm" spacing={4} mb="sm">
-            <List.Item>
-              Tap the <strong>Share</strong> button (a square with an arrow pointing up). If you can&apos;t see it,
-              tap the <strong>•••</strong> button first.
-            </List.Item>
-            <List.Item>
-              Scroll down and tap <strong>Add to Home Screen</strong>.
-            </List.Item>
-            <List.Item>
-              Tap <strong>Add</strong>.
-            </List.Item>
-          </List>
-        ) : (
-          <List type="ordered" size="sm" spacing={4} mb="sm">
-            <List.Item>
-              In Safari&apos;s menu bar, choose <strong>File</strong>, then <strong>Add to Dock</strong>.
-            </List.Item>
-            <List.Item>
-              Click <strong>Add</strong>.
-            </List.Item>
-          </List>
-        )}
-        {mode === "ios" && (
-          <Text size="xs" c="dimmed" mb="md">
-            The app keeps its own saved armies, separate from the browser&apos;s, so armies you saved in the browser
-            won&apos;t appear in it.
-          </Text>
-        )}
-        <Group justify="flex-end">
-          <Button variant="default" onClick={() => setHelpOpen(false)} data-autofocus>
-            Done
-          </Button>
-        </Group>
-      </Modal>
+      {help}
     </>
   );
 }

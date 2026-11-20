@@ -7,6 +7,7 @@ import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost } from "@/lib/units";
 import { brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
+import { InstallCard } from "@/components/InstallCard";
 
 interface Props {
   nation: Nation;
@@ -278,6 +279,8 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
       </Paper>
 
       <RosterViewModal nation={nation} roster={roster} />
+
+      <InstallCard roster={roster} />
     </Stack>
   );
 }

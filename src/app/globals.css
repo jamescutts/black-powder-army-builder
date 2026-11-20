@@ -991,6 +991,29 @@ body {
   background: #e0bf74;
 }
 
+/* "Install the app" beside it: cream outline on the painting, quieter than the main button */
+.home-hero-secondary.home-hero-secondary {
+  color: #fbf6e9;
+  border-color: rgba(251, 246, 233, 0.6);
+  background: rgba(30, 18, 8, 0.25);
+}
+
+.home-hero-secondary.home-hero-secondary:hover {
+  border-color: #fbf6e9;
+  background: rgba(30, 18, 8, 0.45);
+}
+
+.home-hero-note {
+  color: rgba(247, 241, 225, 0.75);
+  margin-top: -6px;
+}
+
+/* The builder's "Take it to the table" card, under the roster */
+.install-card {
+  background: #f6efd9;
+  border-color: #d9c287;
+}
+
 .home-hero-stats {
   margin-top: 40px;
   padding-top: 20px;
