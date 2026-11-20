@@ -241,6 +241,22 @@
       "cost": 44
     },
     {
+      "id": "ru-dragoon-on-foot",
+      "name": "Dragoon on foot",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Musket",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "2",
+      "special": [
+        "Skirmish",
+        "Small"
+      ],
+      "cost": 28
+    },
+    {
       "id": "ru-uhlan",
       "name": "Uhlan Regiment",
       "category": "Cavalry",
@@ -475,7 +491,7 @@
       "type": "Regular Artillery",
       "armament": "Smoothbore Artillery",
       "handToHand": "2",
-      "shooting": "4/2/2",
+      "shooting": "4-2-2",
       "morale": "3",
       "stamina": "3",
       "special": [
@@ -819,7 +835,7 @@
       "id": "ru-infantry-brigade",
       "name": "Infantry Brigade",
       "min": 1,
-      "max": 2,
+      "max": 3,
       "slots": [
         {
           "label": "Infantry Regiments",
@@ -833,45 +849,126 @@
             "slots": [
               {
                 "label": "Infantry Battalion (1-2)",
-                "unitIds": ["ru-inf-combined-grenadier"],
+                "unitIds": [
+                  "ru-inf-combined-grenadier"
+                ],
                 "min": 1,
                 "max": 2
               },
               {
-                "label": "Add one support battalion (optional)",
+                "label": "Add one of: a Combined Grenadier, Opolchenie, Opolchenie Jäger or Volunteer Jäger battalion, or a Jäger Regiment of 1-2 battalions (optional)",
                 "unitIds": [
+                  "ru-inf-combined-grenadier",
                   "ru-opolchenie",
                   "ru-opolchenie-jagers",
                   "ru-volunteer-jager",
                   "ru-jager"
                 ],
                 "min": 0,
-                "max": 1
+                "max": 2,
+                "singleUnitType": true,
+                "unitLimits": [
+                  {
+                    "unitId": "ru-inf-combined-grenadier",
+                    "max": 1
+                  },
+                  {
+                    "unitId": "ru-opolchenie",
+                    "max": 1
+                  },
+                  {
+                    "unitId": "ru-opolchenie-jagers",
+                    "max": 1
+                  },
+                  {
+                    "unitId": "ru-volunteer-jager",
+                    "max": 1
+                  },
+                  {
+                    "unitId": "ru-jager",
+                    "max": 2
+                  }
+                ]
               }
             ]
           }
         },
         {
           "label": "Light Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-light-arty-half", "ru-light-arty"],
+          "unitIds": [
+            "ru-light-arty-half",
+            "ru-light-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Position Battery (optional, 1 per 9 battalions in army)",
-          "unitIds": ["ru-position-arty-half", "ru-position-arty"],
+          "unitIds": [
+            "ru-position-arty-half",
+            "ru-position-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Unicorn Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-unicorn-10pdr", "ru-unicorn-20pdr"],
+          "unitIds": [
+            "ru-unicorn-10pdr",
+            "ru-unicorn-20pdr"
+          ],
           "min": 0,
           "max": 1
         }
       ],
       "commanderUnitId": "ru-brig-cmd",
-      "note": "1-2 Infantry Regiments, each 1-2 Infantry battalions plus optionally one of: Opolchenie, Opolchenie Jäger, Volunteer Jäger, or Jäger battalion. May attach batteries (army-wide ratios apply)."
+      "note": "1-2 Infantry Regiments, each 1-2 Infantry battalions plus optionally one of: a Combined Grenadier, Opolchenie, Opolchenie Jäger or Volunteer Jäger battalion, or a Jäger Regiment of 1-2 battalions. Batteries attach at army-wide ratios.",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "ru-inf-combined-grenadier",
+            "ru-opolchenie-jagers",
+            "ru-volunteer-jager",
+            "ru-jager"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "sharpshooter",
+          "label": "Sharpshooter",
+          "cost": 3,
+          "appliesTo": [
+            "ru-volunteer-jager"
+          ],
+          "addSpecial": [
+            "Sharpshooter"
+          ],
+          "removeSpecial": [
+            "Poor",
+            "Militia"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-inf-combined-grenadier",
+            "ru-opolchenie",
+            "ru-opolchenie-jagers",
+            "ru-volunteer-jager",
+            "ru-jager"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-jager-brigade",
@@ -891,7 +988,9 @@
             "slots": [
               {
                 "label": "Jäger Battalion (1-2)",
-                "unitIds": ["ru-jager"],
+                "unitIds": [
+                  "ru-jager"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -910,7 +1009,9 @@
             "slots": [
               {
                 "label": "Grenadier Battalion (1-2)",
-                "unitIds": ["ru-grenadier"],
+                "unitIds": [
+                  "ru-grenadier"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -919,25 +1020,58 @@
         },
         {
           "label": "Light Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-light-arty-half", "ru-light-arty"],
+          "unitIds": [
+            "ru-light-arty-half",
+            "ru-light-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Position Battery (optional, 1 per 9 battalions in army)",
-          "unitIds": ["ru-position-arty-half", "ru-position-arty"],
+          "unitIds": [
+            "ru-position-arty-half",
+            "ru-position-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Unicorn Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-unicorn-10pdr", "ru-unicorn-20pdr"],
+          "unitIds": [
+            "ru-unicorn-10pdr",
+            "ru-unicorn-20pdr"
+          ],
           "min": 0,
           "max": 1
         }
       ],
       "commanderUnitId": "ru-brig-cmd",
-      "note": "2-3 Jäger Regiments (1-2 battalions each), plus up to 1 Grenadier Regiment (1-2 battalions). May attach batteries (army-wide ratios apply)."
+      "note": "2-3 Jäger Regiments (1-2 battalions each), plus up to 1 Grenadier Regiment (1-2 battalions). May attach batteries (army-wide ratios apply).",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "ru-jager"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-jager"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-combined-grenadier-brigade",
@@ -955,24 +1089,57 @@
         },
         {
           "label": "Light Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-light-arty-half", "ru-light-arty"],
+          "unitIds": [
+            "ru-light-arty-half",
+            "ru-light-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Position Battery (optional, 1 per 9 battalions in army)",
-          "unitIds": ["ru-position-arty-half", "ru-position-arty"],
+          "unitIds": [
+            "ru-position-arty-half",
+            "ru-position-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Unicorn Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-unicorn-10pdr", "ru-unicorn-20pdr"],
+          "unitIds": [
+            "ru-unicorn-10pdr",
+            "ru-unicorn-20pdr"
+          ],
           "min": 0,
           "max": 1
         }
       ],
-      "commanderUnitId": "ru-brig-cmd"
+      "commanderUnitId": "ru-brig-cmd",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "ru-inf-combined-grenadier"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-inf-combined-grenadier"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-grenadier-brigade",
@@ -992,7 +1159,9 @@
             "slots": [
               {
                 "label": "Grenadier Battalion (1-2)",
-                "unitIds": ["ru-grenadier"],
+                "unitIds": [
+                  "ru-grenadier"
+                ],
                 "min": 1,
                 "max": 2
               }
@@ -1001,25 +1170,58 @@
         },
         {
           "label": "Light Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-light-arty-half", "ru-light-arty"],
+          "unitIds": [
+            "ru-light-arty-half",
+            "ru-light-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Position Battery (optional, 1 per 9 battalions in army)",
-          "unitIds": ["ru-position-arty-half", "ru-position-arty"],
+          "unitIds": [
+            "ru-position-arty-half",
+            "ru-position-arty"
+          ],
           "min": 0,
           "max": 1
         },
         {
           "label": "Unicorn Battery (optional, 1 per 6 battalions in army)",
-          "unitIds": ["ru-unicorn-10pdr", "ru-unicorn-20pdr"],
+          "unitIds": [
+            "ru-unicorn-10pdr",
+            "ru-unicorn-20pdr"
+          ],
           "min": 0,
           "max": 1
         }
       ],
       "commanderUnitId": "ru-brig-cmd",
-      "note": "1-2 Grenadier Regiments (1-2 battalions each). May attach batteries (army-wide ratios apply)."
+      "note": "1-2 Grenadier Regiments (1-2 battalions each). May attach batteries (army-wide ratios apply).",
+      "options": [
+        {
+          "id": "veteran-infantry",
+          "label": "Veteran",
+          "cost": 4,
+          "appliesTo": [
+            "ru-grenadier"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ]
+        },
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-grenadier"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-light-cavalry-brigade",
@@ -1028,7 +1230,7 @@
       "max": 1,
       "slots": [
         {
-          "label": "Cavalry Regiment (1-3: up to 2 Dragoon, 2 Hussar, 1 Uhlan, 2 Cossack)",
+          "label": "Cavalry Regiment (1-3: up to 2 Dragoon, 2 Hussar, 1 Uhlan, 2 Mounted or Irregular Cossack)",
           "unitIds": [
             "ru-dragoon",
             "ru-hussar",
@@ -1040,21 +1242,106 @@
           "min": 1,
           "max": 3,
           "unitLimits": [
-            { "unitId": "ru-dragoon", "max": 2 },
-            { "unitId": "ru-hussar", "max": 2 },
-            { "unitId": "ru-uhlan", "max": 1 },
-            { "unitId": "ru-mounted-cossack", "max": 2 },
-            { "unitId": "ru-irregular-mounted-cossack", "max": 2 }
+            {
+              "unitId": "ru-dragoon",
+              "max": 2
+            },
+            {
+              "unitId": "ru-hussar",
+              "max": 2
+            },
+            {
+              "unitId": "ru-uhlan",
+              "max": 1
+            },
+            {
+              "unitId": "ru-mounted-cossack",
+              "max": 2
+            },
+            {
+              "unitId": "ru-irregular-mounted-cossack",
+              "max": 2
+            }
+          ],
+          "unitGroupLimits": [
+            {
+              "unitIds": [
+                "ru-hussar",
+                "ru-mounted-jager"
+              ],
+              "max": 2,
+              "label": "Hussar or Mounted Jäger"
+            },
+            {
+              "unitIds": [
+                "ru-mounted-cossack",
+                "ru-irregular-mounted-cossack"
+              ],
+              "max": 2,
+              "label": "Mounted or Irregular Mounted Cossack"
+            }
           ]
         },
         {
           "label": "Horse Battery (optional, 1 per 4 cavalry regiments in army)",
-          "unitIds": ["ru-horse-arty-half", "ru-horse-arty"],
+          "unitIds": [
+            "ru-horse-arty-half",
+            "ru-horse-arty"
+          ],
           "min": 0,
           "max": 1
         }
       ],
-      "commanderUnitId": "ru-brig-cmd"
+      "commanderUnitId": "ru-brig-cmd",
+      "options": [
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "ru-dragoon",
+            "ru-hussar",
+            "ru-mounted-jager",
+            "ru-uhlan"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "ru-dragoon",
+            "ru-hussar",
+            "ru-mounted-jager",
+            "ru-uhlan",
+            "ru-mounted-cossack",
+            "ru-irregular-mounted-cossack"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-dragoon",
+            "ru-hussar",
+            "ru-mounted-jager",
+            "ru-uhlan",
+            "ru-mounted-cossack",
+            "ru-irregular-mounted-cossack"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-heavy-cavalry-brigade",
@@ -1072,18 +1359,82 @@
           "max": 3,
           "singleUnitType": true,
           "unitLimits": [
-            { "unitId": "ru-dragoon", "max": 3 },
-            { "unitId": "ru-cuirassier", "max": 2 }
+            {
+              "unitId": "ru-dragoon",
+              "max": 3
+            },
+            {
+              "unitId": "ru-cuirassier",
+              "max": 2
+            }
           ]
         },
         {
           "label": "Horse Battery (optional, 1 per 4 cavalry regiments in army)",
-          "unitIds": ["ru-horse-arty-half", "ru-horse-arty"],
+          "unitIds": [
+            "ru-horse-arty-half",
+            "ru-horse-arty"
+          ],
           "min": 0,
           "max": 1
         }
       ],
-      "commanderUnitId": "ru-brig-cmd"
+      "commanderUnitId": "ru-brig-cmd",
+      "options": [
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "ru-dragoon",
+            "ru-cuirassier"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "ru-dragoon",
+            "ru-cuirassier"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-dragoon",
+            "ru-cuirassier"
+          ],
+          "group": "size",
+          "size": "small"
+        },
+        {
+          "id": "on-foot",
+          "label": "On foot",
+          "appliesTo": [
+            "ru-dragoon"
+          ],
+          "swapTo": {
+            "ru-dragoon": "ru-dragoon-on-foot"
+          },
+          "excludes": [
+            "veteran-cavalry",
+            "large-cavalry",
+            "small-cavalry"
+          ],
+          "excludesReason": "Dragoons on foot have their own stat line"
+        }
+      ]
     },
     {
       "id": "ru-cossack-brigade",
@@ -1101,7 +1452,20 @@
           "max": 6
         }
       ],
-      "commanderUnitId": "ru-brig-cmd"
+      "commanderUnitId": "ru-brig-cmd",
+      "options": [
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-mounted-cossack",
+            "ru-irregular-mounted-cossack"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-guard-infantry-brigade",
@@ -1121,7 +1485,10 @@
             "slots": [
               {
                 "label": "Life Guard Infantry / Jäger Battalion (1-3)",
-                "unitIds": ["ru-life-guard-infantry", "ru-life-guard-jager"],
+                "unitIds": [
+                  "ru-life-guard-infantry",
+                  "ru-life-guard-jager"
+                ],
                 "min": 1,
                 "max": 3
               }
@@ -1157,7 +1524,20 @@
           "ru-grenadier-brigade"
         ],
         "min": 3
-      }
+      },
+      "options": [
+        {
+          "id": "small",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-life-guard-infantry",
+            "ru-life-guard-jager"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-guard-light-cavalry-brigade",
@@ -1176,11 +1556,24 @@
           "min": 1,
           "max": 2,
           "unitLimits": [
-            { "unitId": "ru-lg-hussar", "max": 1 },
-            { "unitId": "ru-lg-dragoon", "max": 1 }
+            {
+              "unitId": "ru-lg-hussar",
+              "max": 1
+            },
+            {
+              "unitId": "ru-lg-dragoon",
+              "max": 1
+            }
           ],
           "unitGroupLimits": [
-            { "unitIds": ["ru-life-guard-cossack", "ru-life-guard-uhlan"], "max": 1, "label": "Life Guard Cossack/Uhlan" }
+            {
+              "unitIds": [
+                "ru-life-guard-cossack",
+                "ru-life-guard-uhlan"
+              ],
+              "max": 1,
+              "label": "Life Guard Cossack/Uhlan"
+            }
           ]
         },
         {
@@ -1203,7 +1596,35 @@
           "ru-grenadier-brigade"
         ],
         "min": 4
-      }
+      },
+      "options": [
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "ru-life-guard-uhlan",
+            "ru-life-guard-cossack",
+            "ru-lg-hussar",
+            "ru-lg-dragoon"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-life-guard-uhlan",
+            "ru-life-guard-cossack",
+            "ru-lg-hussar",
+            "ru-lg-dragoon"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-guard-heavy-cavalry-brigade",
@@ -1241,7 +1662,33 @@
           "ru-grenadier-brigade"
         ],
         "min": 4
-      }
+      },
+      "options": [
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "ru-life-guard-cuirassier",
+            "ru-chevalier-guard",
+            "ru-life-guard-horse"
+          ],
+          "group": "size",
+          "size": "large"
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "ru-life-guard-cuirassier",
+            "ru-chevalier-guard",
+            "ru-life-guard-horse"
+          ],
+          "group": "size",
+          "size": "small"
+        }
+      ]
     },
     {
       "id": "ru-earthworks-brigade",
@@ -1258,7 +1705,9 @@
           ],
           "min": 1,
           "max": 1,
-          "maxPerPoints": { "perPoints": 500 }
+          "maxPerPoints": {
+            "perPoints": 500
+          }
         }
       ],
       "note": "0 to 1 per 500 points"
@@ -1277,7 +1726,10 @@
   ],
   "unitRatioCaps": [
     {
-      "capUnitIds": ["ru-light-arty-half", "ru-light-arty"],
+      "capUnitIds": [
+        "ru-light-arty-half",
+        "ru-light-arty"
+      ],
       "perUnitIds": [
         "ru-inf-combined-grenadier",
         "ru-grenadier",
@@ -1292,7 +1744,10 @@
       "label": "Light batteries"
     },
     {
-      "capUnitIds": ["ru-position-arty-half", "ru-position-arty"],
+      "capUnitIds": [
+        "ru-position-arty-half",
+        "ru-position-arty"
+      ],
       "perUnitIds": [
         "ru-inf-combined-grenadier",
         "ru-grenadier",
@@ -1307,7 +1762,10 @@
       "label": "Position batteries"
     },
     {
-      "capUnitIds": ["ru-unicorn-10pdr", "ru-unicorn-20pdr"],
+      "capUnitIds": [
+        "ru-unicorn-10pdr",
+        "ru-unicorn-20pdr"
+      ],
       "perUnitIds": [
         "ru-inf-combined-grenadier",
         "ru-grenadier",
@@ -1322,7 +1780,10 @@
       "label": "Unicorn batteries"
     },
     {
-      "capUnitIds": ["ru-horse-arty-half", "ru-horse-arty"],
+      "capUnitIds": [
+        "ru-horse-arty-half",
+        "ru-horse-arty"
+      ],
       "perUnitIds": [
         "ru-dragoon",
         "ru-cuirassier",
@@ -1337,16 +1798,26 @@
     }
   ],
   "notes": [
-    "Divisional Commander, plus 1-3 Infantry Brigade Commanders (half of all brigade commanders, rounding up, must be Staff Rating 7).",
-    "1 to 2 Infantry Regiments per brigade (Combined Grenadier / Opolchenie / Opolchenie Jäger / Volunteer Jäger / Jäger battalions), 41 pts each unless noted.",
-    "0 to 1 Jäger Brigade: 2 to 3 Jäger Regiments, plus up to 1 Grenadier regiment.",
-    "0 to 1 Combined Grenadier Brigade: 2 to 7 Combined Grenadier battalions.",
-    "0 to 1 Grenadier Brigade: 1 or 2 Grenadier regiments.",
-    "0 to 1 Light Cavalry Brigade: 1 to 3 regiments from Dragoons, Hussars, Uhlans, Mounted/Irregular Cossacks (first Cossack regiment free).",
-    "0 to 1 Heavy Cavalry Brigade: 1 to 3 regiments of Dragoons or Cuirassiers (cannot mix).",
-    "0 to 1 Cossack Brigade: 2 to 6 Cossack regiments.",
-    "Artillery batteries attach to brigades at set ratios (1 Light per 6 infantry battalions, 1 Horse per 4 cavalry regiments, 1 Position per 9 battalions, 1 Unicorn per 6 battalions).",
-    "Up to 25% of the army may be Imperial Guard brigades (Guard Infantry needs 3+ infantry brigades already taken; Guard Light/Heavy Cavalry need 4+ infantry brigades).",
-    "0 to 1 Earthworks per 500 points."
+    "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 150). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "The free Cossack regiment isn't taken off the points total; deduct it yourself.",
+    "Some prices differ between the stat table and the brigade boxes: Mounted Cossacks 39 (table), 37 (Light Cavalry) or 34 (Cossack Brigade); Irregular Cossacks 37 (table) or 32; the Life Guard Hussar 47 (table) or 48. The Jäger Brigade's Grenadier regiment is printed at 90 points per battalion, against 48 in the table. The builder uses the stat table throughout.",
+    "The chapter's Unicorn battery (p. 47: 2/4-2-2/4/3) differs from the army list's (1/2-2-2/4/2); the builder uses the army list.",
+    "Infantry Brigades go up to 3, one for each of the list's \"1-3 Infantry Brigade Commanders\" (p. 150)."
+  ],
+  "brigadeCommanderRating": {
+    "maxRating": 7,
+    "maxShareAbove": 0.5,
+    "label": "Brigade commanders"
+  },
+  "specialRules": [
+    "Martinets (Lacking Initiative): Russian infantry within initiative range of the enemy can't move on initiative and must be ordered, unless they charge the closest enemy to their front or change formation or facing.",
+    "Russian musketeer and grenadier infantry get no +1 at close range when firing and suffer -1 at any other range; their stamina bonus is already in their stat lines.",
+    "Most Russian infantry and artillery are Tough Fighters. Militia follow p. 102 of this supplement.",
+    "Cossacks can't charge the front of an enemy formation that isn't shaken or disordered, though they can charge its flanks or rear. Irregular Cossacks can skirmish; a Cossack regiment armed with bows (Shooting 2) loses Lancer.",
+    "The Little Father: the army may take one irregular Cossack regiment for free, attached to any cavalry brigade, for each division in the army.",
+    "Russian cavalry can use Deep Formation (+1 to the ordering commander's Staff Rating roll, +1 combat result, -1 Hand-to-Hand, artillery +1 to hit at medium and long range) and Cavalry Mixed Formation.",
+    "Russian artillery: a battery with an enemy unit within 12\" at the start of its turn rolls a D6; on a 1 it limbers and makes a full move to its rear, unless it's in earthworks. If earthworks are present, at least one battery must be placed in them; remaining batteries must be placed on hills in the deployment zone while there are hills left.",
+    "Unicorn batteries: a 20-pdr has a range of 48\", a 10-pdr 36\".",
+    "A Standard-size Russian light cavalry regiment can be replaced by up to two Small units, paying the appropriate cost."
   ]
 }

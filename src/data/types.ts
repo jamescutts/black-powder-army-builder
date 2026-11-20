@@ -379,6 +379,12 @@ export interface Nation {
     label?: string;
   }[];
   /**
+   * At most a share of the brigade commanders may be rated above `maxRating`, e.g. Russia's "Half of all
+   * Russian Brigade commanders, rounding up, must be Staff Rating 7" →
+   * { maxRating: 7, maxShareAbove: 0.5 } (so at most half, rounding down, may be rated 8).
+   */
+  brigadeCommanderRating?: { maxRating: number; maxShareAbove: number; label: string };
+  /**
    * Freeform bullet-point summary of the brigade / force-organisation rules for reference
    * (min/max counts, ratios, per-points scaling, unimplemented upgrades/downgrades, etc.) —
    * not in-game special rules or allied-contingent allowances. See `specialRules` and

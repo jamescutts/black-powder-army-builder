@@ -1554,8 +1554,7 @@
   ],
   "notes": [
     "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 179). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
-    "Minimum of one Line Infantry Brigade per 500 points. You can't have more Hungarian than German regiments (not checked by the builder).",
-    "A Line Infantry Brigade may take up to two of: 1-2 Grenadier battalions, up to 2 Large Grenz battalions (1 per 4 infantry battalions in the army), or a 6-pdr Brigade battery (1 per 6 infantry battalions). 'Infantry battalions' means Line infantry, not Grenadiers, Jägers or Grenz.",
+    "You can't have more Hungarian than German regiments (not checked by the builder).",
     "An Advanced Guard Brigade's infantry battalions must equal or exceed its cavalry regiments, and a Grenadier Brigade may take at most two of its three further choices (not checked by the builder).",
     "Grenz cost 43 points in the stat table (p. 178) but 40 in the Line Infantry Brigade box (p. 179); Cavalry Artillery has Stamina 1 in the stat table but 2 in the chapter (p. 73). The builder uses the stat table.",
     "Only the 25% reserves cap on Reserve Artillery is checked; the book doesn't say which other brigades count as 'Abteilung and Army Support'."

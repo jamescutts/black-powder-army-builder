@@ -498,6 +498,25 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
     }
   }
 
+  // ─── Brigade commanders' Staff Ratings (e.g. half of Russia's must be 7) ──
+  const ratingRule = nation.brigadeCommanderRating;
+  if (ratingRule) {
+    const ratings = roster.brigadeInstances.flatMap((bi) => {
+      const line = bi.commanderLine;
+      const unit = line && nation.units.find((u) => u.id === line.unitId);
+      const rating = unit?.staffRating ?? unit?.variants?.find((v) => v.label === line?.variantLabel)?.staffRating;
+      return rating === undefined ? [] : [rating];
+    });
+    const above = ratings.filter((r) => r > ratingRule.maxRating).length;
+    const allowed = Math.floor(ratings.length * ratingRule.maxShareAbove);
+    if (above > allowed) {
+      issues.push({
+        level: "error",
+        message: `${ratingRule.label}: ${above} of ${ratings.length} brigade commanders are rated above ${ratingRule.maxRating}, only ${allowed} may be`,
+      });
+    }
+  }
+
   // ─── Army-wide points-percentage caps (e.g. Imperial Guard ≤ 25% of army) ──
   for (const cap of nation.pointsCaps ?? []) {
     if (armyTotalPoints === 0) continue;
