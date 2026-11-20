@@ -377,7 +377,8 @@
             "it-line-infantry",
             "it-light-infantry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "wavering",
@@ -475,7 +476,8 @@
           "appliesTo": [
             "it-chasseurs-a-cheval"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "wavering",
@@ -737,7 +739,8 @@
             "it-royal-velite-infantry",
             "it-guard-conscripts"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "small-cavalry",
@@ -746,7 +749,8 @@
           "appliesTo": [
             "it-guard-dragoons"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },

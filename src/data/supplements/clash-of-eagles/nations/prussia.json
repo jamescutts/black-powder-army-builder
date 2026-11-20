@@ -399,6 +399,7 @@
             "pr-fusilier"
           ],
           "group": "size",
+          "size": "large",
           "limit": {
             "per": {
               "unitIds": [
@@ -419,7 +420,8 @@
             "pr-fusilier",
             "pr-jager"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "veteran-cavalry",
@@ -444,7 +446,8 @@
             "pr-dragoon",
             "pr-hussars"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "veteran-artillery",
@@ -533,7 +536,8 @@
             "pr-dragoon",
             "pr-hussars"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "veteran-artillery",

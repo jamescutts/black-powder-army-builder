@@ -329,7 +329,8 @@
           "appliesTo": [
             "wt-line-infantry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -426,7 +427,8 @@
             "wt-light-infantry",
             "wt-jagers"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "no-elite",
@@ -541,7 +543,8 @@
             "wt-hussar-chasseur",
             "wt-jager-cavalry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",

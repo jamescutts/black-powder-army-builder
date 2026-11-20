@@ -554,9 +554,7 @@
             "at-grenz"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "standard"
         },
         {
           "id": "small-line",
@@ -567,9 +565,7 @@
             "at-infantry-hungarian"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "small"
         },
         {
           "id": "small-grenadier",
@@ -578,7 +574,8 @@
           "appliesTo": [
             "at-grenadier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "remove-unreliable",
@@ -684,9 +681,7 @@
             "at-dragoon"
           ],
           "group": "size",
-          "addSpecial": [
-            "Large"
-          ]
+          "size": "large"
         },
         {
           "id": "veteran-cavalry",
@@ -715,9 +710,7 @@
             "at-uhlan"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "standard"
         },
         {
           "id": "small-cavalry",
@@ -729,9 +722,7 @@
             "at-uhlan"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "small"
         },
         {
           "id": "veteran-artillery-4",
@@ -964,9 +955,7 @@
             "at-grenz"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "standard"
         },
         {
           "id": "small-line",
@@ -977,9 +966,7 @@
             "at-infantry-hungarian"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "small"
         },
         {
           "id": "small-grenadier",
@@ -988,7 +975,8 @@
           "appliesTo": [
             "at-grenadier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "remove-unreliable",
@@ -1009,9 +997,7 @@
             "at-dragoon"
           ],
           "group": "size",
-          "addSpecial": [
-            "Large"
-          ]
+          "size": "large"
         },
         {
           "id": "veteran-cavalry",
@@ -1040,9 +1026,7 @@
             "at-uhlan"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "standard"
         },
         {
           "id": "small-cavalry",
@@ -1054,9 +1038,7 @@
             "at-uhlan"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "small"
         },
         {
           "id": "veteran-artillery-4",
@@ -1170,9 +1152,7 @@
             "at-grenadier"
           ],
           "group": "size",
-          "addSpecial": [
-            "Large"
-          ]
+          "size": "large"
         },
         {
           "id": "tough-fighters",
@@ -1194,7 +1174,8 @@
           "appliesTo": [
             "at-grenadier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "veteran-german",
@@ -1258,9 +1239,7 @@
             "at-infantry-hungarian"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "standard"
         },
         {
           "id": "small-line",
@@ -1271,9 +1250,7 @@
             "at-infantry-hungarian"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "small"
         },
         {
           "id": "veteran-cavalry",
@@ -1302,9 +1279,7 @@
             "at-uhlan"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "standard"
         },
         {
           "id": "small-cavalry",
@@ -1316,9 +1291,7 @@
             "at-uhlan"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "small"
         },
         {
           "id": "veteran-artillery-4",
@@ -1418,9 +1391,7 @@
             "at-cuirassier"
           ],
           "group": "size",
-          "addSpecial": [
-            "Large"
-          ]
+          "size": "large"
         },
         {
           "id": "veteran-cavalry",
@@ -1444,7 +1415,8 @@
             "at-dragoon",
             "at-cuirassier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "veteran-artillery-4",

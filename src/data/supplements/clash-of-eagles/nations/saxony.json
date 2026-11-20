@@ -522,7 +522,8 @@
             "sax-light-infantry",
             "sax-grenadier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
@@ -631,7 +632,8 @@
             "sax-grenadier",
             "sax-light-infantry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
@@ -725,6 +727,7 @@
             "sax-uhlan"
           ],
           "group": "size",
+          "size": "large",
           "limit": {
             "max": 2
           }
@@ -738,7 +741,8 @@
             "sax-hussar",
             "sax-uhlan"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
@@ -824,6 +828,7 @@
             "sax-polish-cuirassier"
           ],
           "group": "size",
+          "size": "large",
           "limit": {
             "max": 2
           }
@@ -837,7 +842,8 @@
             "sax-cuirassier",
             "sax-polish-cuirassier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",

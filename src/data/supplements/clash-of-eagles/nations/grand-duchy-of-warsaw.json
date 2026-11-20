@@ -359,7 +359,8 @@
             "gdw-chasseur",
             "gdw-jager"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -429,6 +430,7 @@
             "gdw-chasseur-a-cheval"
           ],
           "group": "size",
+          "size": "large",
           "limit": {
             "per": {
               "unitIds": [
@@ -449,7 +451,8 @@
             "gdw-hussar",
             "gdw-chasseur-a-cheval"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },

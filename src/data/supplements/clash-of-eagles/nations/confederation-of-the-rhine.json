@@ -321,7 +321,8 @@
             "ocs-hessian-guard-fusilier",
             "ocs-hessian-guard"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
@@ -429,7 +430,8 @@
             "ocs-hessian-guard-fusilier",
             "ocs-hessian-guard"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
@@ -516,7 +518,8 @@
             "ocs-hessian-guard-fusilier",
             "ocs-hessian-guard"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
@@ -577,7 +580,8 @@
             "ocs-hussar",
             "ocs-uhlan"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },

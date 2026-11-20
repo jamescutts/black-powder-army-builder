@@ -257,6 +257,7 @@
             "bav-light-infantry"
           ],
           "group": "size",
+          "size": "large",
           "limit": {
             "max": 2,
             "armyWide": true
@@ -305,7 +306,8 @@
             "bav-line-infantry",
             "bav-light-infantry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "veteran-attached-cavalry",
@@ -328,7 +330,8 @@
           "appliesTo": [
             "bav-chevau-leger"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -416,6 +419,7 @@
             "bav-chevau-leger"
           ],
           "group": "size",
+          "size": "large",
           "limit": {
             "max": 2
           }
@@ -427,7 +431,8 @@
           "appliesTo": [
             "bav-chevau-leger"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },

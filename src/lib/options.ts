@@ -26,6 +26,8 @@ export interface ResolvedUnit {
   shooting?: string;
   /** e.g. "5" for a battalion downgraded to Morale 5 */
   morale?: string;
+  /** Changed by size: a Large unit has one more than standard, a Small unit one fewer */
+  stamina?: string;
 }
 
 export const unitOptionsOf = (bt: BrigadeType | undefined) => (bt?.options ?? []).filter((o) => o.scope !== "regiment");
@@ -41,9 +43,19 @@ export function optionsForRegiment(bt: BrigadeType | undefined, unitIds: string[
   return regimentOptionsOf(bt).filter((o) => o.appliesTo.some((id) => unitIds.includes(id)));
 }
 
-function addToStat(stat: string | undefined, bonus: number | undefined): string | undefined {
+function addToStat(stat: string | undefined, bonus: number | undefined, floor = 0): string | undefined {
   if (!bonus || stat === undefined || !/^\d+$/.test(stat)) return stat;
-  return String(Number(stat) + bonus);
+  return String(Math.max(floor, Number(stat) + bonus));
+}
+
+const SIZE_RANK = { small: -1, standard: 0, large: 1 } as const;
+
+/** A unit's own size, read from its rules: Large, Small, or standard (Tiny units don't change size) */
+function sizeOf(special: string[] | undefined): keyof typeof SIZE_RANK | "tiny" {
+  if (special?.includes("Tiny")) return "tiny";
+  if (special?.includes("Large")) return "large";
+  if (special?.includes("Small")) return "small";
+  return "standard";
 }
 
 /** What a line's unit is once its own and its regiment's options apply */
@@ -75,6 +87,16 @@ export function resolveLine(nation: Nation, line: RosterUnitLine, ctx: LineConte
   );
   const bonus = (key: "handToHand" | "shooting" | "morale") => modifiers.reduce((s, o) => s + (o.statBonus?.[key] ?? 0), 0);
 
+  // A size option moves the unit from its own size to the new one, a step at a time
+  const resize = [...modifiers].reverse().find((o) => o.size);
+  const own = sizeOf(unit.special);
+  const steps = resize?.size && own !== "tiny" ? SIZE_RANK[resize.size] - SIZE_RANK[own] : 0;
+  if (steps !== 0) {
+    const sized = special.filter((rule) => rule !== "Large" && rule !== "Small");
+    if (resize!.size !== "standard") sized.push(resize!.size === "large" ? "Large" : "Small");
+    special.splice(0, special.length, ...sized);
+  }
+
   return {
     base,
     unit,
@@ -82,9 +104,10 @@ export function resolveLine(nation: Nation, line: RosterUnitLine, ctx: LineConte
     tags,
     name: tags.length ? `${unit.name} (${tags.join(", ")})` : unit.name,
     special,
-    handToHand: addToStat(unit.handToHand, bonus("handToHand")),
-    shooting: addToStat(unit.shooting, bonus("shooting")),
+    handToHand: addToStat(unit.handToHand, bonus("handToHand") + 2 * steps),
+    shooting: addToStat(unit.shooting, bonus("shooting") + (unit.shooting === "0" ? 0 : steps)),
     morale: addToStat(unit.morale, bonus("morale")),
+    stamina: addToStat(unit.stamina, steps, 1),
   };
 }
 

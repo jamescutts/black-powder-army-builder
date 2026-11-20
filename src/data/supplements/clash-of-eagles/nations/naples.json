@@ -252,7 +252,8 @@
             "np-line-infantry",
             "np-light-infantry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "large"
         },
         {
           "id": "steady",
@@ -288,7 +289,8 @@
             "np-line-infantry",
             "np-light-infantry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -402,7 +404,8 @@
             "np-guard-light-cavalry",
             "np-guard-heavy-cavalry"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",

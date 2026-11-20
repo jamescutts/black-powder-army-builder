@@ -214,6 +214,13 @@ export interface UnitOption {
      */
     sharedWith?: string[];
   };
+  /**
+   * The size the unit becomes. Each step from its own size (Small, standard, Large) changes Hand-to-Hand
+   * by 2 and Shooting and Stamina by 1, as the book's Large and Small stat lines are built (e.g. Austrian
+   * Large line 8/4/4/4 against a standard 6/3/4/3), and swaps the Large or Small rule to match. The
+   * points come from `cost` as usual.
+   */
+  size?: "large" | "standard" | "small";
   /** Special rules the unit gains, e.g. ["Reliable", "Elite 5+"] */
   addSpecial?: string[];
   /** Special rules the unit loses, e.g. ["Large"] when the Westphalian Guard is downgraded to standard size */

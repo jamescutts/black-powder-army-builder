@@ -392,9 +392,7 @@
             "wp-guard-jager"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "standard"
         },
         {
           "id": "small-guard",
@@ -405,9 +403,7 @@
             "wp-guard-jager"
           ],
           "group": "size",
-          "removeSpecial": [
-            "Large"
-          ]
+          "size": "small"
         },
         {
           "id": "small",
@@ -416,7 +412,8 @@
           "appliesTo": [
             "wp-jager-karabinier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -504,7 +501,8 @@
             "wp-light-infantry",
             "wp-jager"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         }
       ]
     },
@@ -573,7 +571,8 @@
             "wp-hussar",
             "wp-guard-chevau-leger"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
@@ -633,7 +632,8 @@
           "appliesTo": [
             "wp-cuirassier"
           ],
-          "group": "size"
+          "group": "size",
+          "size": "small"
         },
         {
           "id": "half-battery",
