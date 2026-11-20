@@ -93,6 +93,7 @@ export async function pageCard({ kicker, title, flags = [] }: { kicker: string; 
                 <img
                   key={src.slice(-24)}
                   src={src}
+                  alt=""
                   width={flagWidth}
                   height={(flagWidth * 2) / 3}
                   style={{ objectFit: "cover", borderRadius: 6, border: "2px solid rgba(242, 236, 214, 0.5)" }}

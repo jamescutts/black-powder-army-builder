@@ -128,8 +128,8 @@ export function DocsContent() {
           </Text>
           <Text size="sm">
             The app reads these files, builds the roster-building UI from them automatically, and
-            enforces the rules you describe (minimums, maximums, "one per X points", "requires 2
-            of these first", and so on) without any extra plumbing. Getting a new army list into
+            enforces the rules you describe (minimums, maximums, &quot;one per X points&quot;, &quot;requires 2
+            of these first&quot;, and so on) without any extra plumbing. Getting a new army list into
             the builder is a matter of writing the JSON correctly and pointing the app at it.
           </Text>
         </Section>
@@ -164,7 +164,7 @@ src/data/supplements/
 `}</CodeBlock>
           <Text size="sm">
             Which supplement a nation belongs to is determined <em>purely by which folder it sits
-            in</em> — a nation's own JSON file never states its supplement id. This is important:
+            in</em> — a nation&apos;s own JSON file never states its supplement id. This is important:
             renaming a supplement folder moves every nation inside it, and copying a nation file
             into a different supplement folder re-parents it.
           </Text>
@@ -186,7 +186,7 @@ src/data/supplements/
             <Table.Thead>
               <Table.Tr>
                 <Table.Th>Field</Table.Th>
-                <Table.Th>What it's for</Table.Th>
+                <Table.Th>What it&apos;s for</Table.Th>
               </Table.Tr>
             </Table.Thead>
             <Table.Tbody>
@@ -241,7 +241,7 @@ src/data/supplements/
               <Table.Tr>
                 <Table.Th>Field</Table.Th>
                 <Table.Th>Required?</Table.Th>
-                <Table.Th>What it's for</Table.Th>
+                <Table.Th>What it&apos;s for</Table.Th>
               </Table.Tr>
             </Table.Thead>
             <Table.Tbody>
@@ -258,7 +258,7 @@ src/data/supplements/
               <Table.Tr>
                 <Table.Td><Code>blurb</Code></Table.Td>
                 <Table.Td>Yes</Table.Td>
-                <Table.Td>Short description shown on the nation's card.</Table.Td>
+                <Table.Td>Short description shown on the nation&apos;s card.</Table.Td>
               </Table.Tr>
               <Table.Tr>
                 <Table.Td><Code>flagFile</Code> / <Code>flagFiles</Code></Table.Td>
@@ -282,7 +282,7 @@ src/data/supplements/
                 <Table.Td>Yes (array, can be empty)</Table.Td>
                 <Table.Td>
                   Freeform bullet points reminding the player of <em>force-organisation</em> rules
-                  that aren't (or can't be) structurally enforced — ratios, per-points scaling,
+                  that aren&apos;t (or can&apos;t be) structurally enforced — ratios, per-points scaling,
                   unimplemented upgrades/downgrades. Not for in-game special rules or allied
                   contingents — see <Code>specialRules</Code> and <Code>alliesRules</Code> below.
                 </Table.Td>
@@ -293,7 +293,7 @@ src/data/supplements/
                 <Table.Td>
                   National special rules with an actual <em>in-game effect</em> — special
                   formations, commander traits, unique unit interactions. Shown to the player in
-                  their own "Special Rules" section, separate from the force-org notes. See{" "}
+                  their own &quot;Special Rules&quot; section, separate from the force-org notes. See{" "}
                   <Anchor href="#special-rules" c="brown.7">Special rules vs. notes</Anchor>.
                 </Table.Td>
               </Table.Tr>
@@ -302,7 +302,7 @@ src/data/supplements/
                 <Table.Td>No</Table.Td>
                 <Table.Td>
                   Structured allied-contingent allowances (max % of points, which nations). Shown
-                  in its own "Allied Contingents" section. See{" "}
+                  in its own &quot;Allied Contingents&quot; section. See{" "}
                   <Anchor href="#allies" c="brown.7">Allied contingents</Anchor>.
                 </Table.Td>
               </Table.Tr>
@@ -312,22 +312,22 @@ src/data/supplements/
 
         <Section id="special-rules" title="Special rules vs. notes">
           <Text size="sm">
-            Both fields are freeform string arrays on the nation, but they're shown to the player
+            Both fields are freeform string arrays on the nation, but they&apos;re shown to the player
             in different places and mean different things — keep them separate rather than lumping
             everything into <Code>notes</Code>:
           </Text>
           <List size="sm" spacing={4}>
             <List.Item>
               <Code>notes</Code> is for <strong>force-organisation</strong> reminders — things
-              about how the army list is built (min/max counts, "1 per N points", allied
-              percentages, periods, upgrades this builder doesn't model yet). It's shown under a
-              "Force organisation reference" disclaimer, because none of it is structurally
+              about how the army list is built (min/max counts, &quot;1 per N points&quot;, allied
+              percentages, periods, upgrades this builder doesn&apos;t model yet). It&apos;s shown under a
+              &quot;Force organisation reference&quot; disclaimer, because none of it is structurally
               checked.
             </List.Item>
             <List.Item>
               <Code>specialRules</Code> is for <strong>battlefield</strong> rules — things that
-              change how a unit or the army plays once the game starts. It's shown under its own
-              "National special rules" heading.
+              change how a unit or the army plays once the game starts. It&apos;s shown under its own
+              &quot;National special rules&quot; heading.
             </List.Item>
           </List>
           <Text size="sm">Some real examples of what belongs in each:</Text>
@@ -342,49 +342,49 @@ src/data/supplements/
               <Table.Tr>
                 <Table.Td><Code>notes</Code></Table.Td>
                 <Table.Td>
-                  "0 to 1 Earthworks per 500 points." — a force-org scaling rule, already
+                  &quot;0 to 1 Earthworks per 500 points.&quot; — a force-org scaling rule, already
                   structurally enforced via <Code>maxPerPoints</Code> but restated for clarity.
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
                 <Table.Td><Code>specialRules</Code></Table.Td>
                 <Table.Td>
-                  "'No prisoners! No pity!': against a French army, all Prussian infantry and
-                  cavalry count as Tough Fighters." — a rule that changes how units fight.
+                  &quot;&apos;No prisoners! No pity!&apos;: against a French army, all Prussian infantry and
+                  cavalry count as Tough Fighters.&quot; — a rule that changes how units fight.
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
                 <Table.Td><Code>specialRules</Code></Table.Td>
                 <Table.Td>
-                  "Angriffskolonne (Assault Column) and Zug Column (Column of Companies) represent
-                  Prussian attack and manoeuvre formations." — special formations available on the
+                  &quot;Angriffskolonne (Assault Column) and Zug Column (Column of Companies) represent
+                  Prussian attack and manoeuvre formations.&quot; — special formations available on the
                   tabletop.
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
                 <Table.Td><Code>specialRules</Code></Table.Td>
                 <Table.Td>
-                  "The C-in-C may be the Sultan himself (+25 pts on top of Staff Rating), giving
-                  all commanders +1 to their C-in-C re-rolls. …" — a commander trait with a
+                  &quot;The C-in-C may be the Sultan himself (+25 pts on top of Staff Rating), giving
+                  all commanders +1 to their C-in-C re-rolls. …&quot; — a commander trait with a
                   gameplay effect, even though it also unlocks force-org options.
                 </Table.Td>
               </Table.Tr>
             </Table.Tbody>
           </Table>
           <Text size="sm">
-            When in doubt: if it changes what happens on the tabletop, it's a special rule; if
-            it's about which units you're allowed to buy and how many, it's a note.
+            When in doubt: if it changes what happens on the tabletop, it&apos;s a special rule; if
+            it&apos;s about which units you&apos;re allowed to buy and how many, it&apos;s a note.
           </Text>
         </Section>
 
         <Section id="allies" title="Allied contingents">
           <Text size="sm">
-            Rather than a freeform "Allies: up to 25%..." note, allied allowances are structured
+            Rather than a freeform &quot;Allies: up to 25%...&quot; note, allied allowances are structured
             as <Code>alliesRules</Code> — an array on the nation, since a nation can have more than
             one allowance (see France 1812 below, which gets a separate 25% for its Imperial Guard
-            and a further 25% for any other ally). Each entry has a max percentage of the army's
+            and a further 25% for any other ally). Each entry has a max percentage of the army&apos;s
             points, and either a list of specific allied nation ids or a freeform{" "}
-            <Code>note</Code> when the book doesn't name a specific list:
+            <Code>note</Code> when the book doesn&apos;t name a specific list:
           </Text>
           <CodeBlock>{`
 "alliesRules": [
@@ -393,12 +393,12 @@ src/data/supplements/
 ]
 `}</CodeBlock>
           <Text size="sm">
-            <Code>nationIds</Code> reference other nations' <Code>id</Code> fields in this same
-            data set (they don't have to be in the same supplement — Austria's allies span both{" "}
+            <Code>nationIds</Code> reference other nations&apos; <Code>id</Code> fields in this same
+            data set (they don&apos;t have to be in the same supplement — Austria&apos;s allies span both{" "}
             <Code>france</Code> and <Code>saxony</Code>, from two different supplements). The app
-            resolves these to clickable links to that nation's own list. Use <Code>note</Code>{" "}
-            alone, with no <Code>nationIds</Code>, for a generic grant like "any one allied list"
-            that isn't tied to a specific nation:
+            resolves these to clickable links to that nation&apos;s own list. Use <Code>note</Code>{" "}
+            alone, with no <Code>nationIds</Code>, for a generic grant like &quot;any one allied list&quot;
+            that isn&apos;t tied to a specific nation:
           </Text>
           <CodeBlock>{`
 "alliesRules": [
@@ -408,7 +408,7 @@ src/data/supplements/
           <Text size="sm">
             <Code>note</Code> can also carry extra conditions alongside specific{" "}
             <Code>nationIds</Code>, e.g. the French Army of the North Imperial Guard (1815), whose
-            allied Corps brigades still enforce that Corps list's own minimums:
+            allied Corps brigades still enforce that Corps list&apos;s own minimums:
           </Text>
           <CodeBlock>{`
 "alliesRules": [
@@ -420,9 +420,9 @@ src/data/supplements/
 ]
 `}</CodeBlock>
           <Text size="sm" c="dimmed">
-            The roster builder doesn't support actually adding allied brigades to a list yet —{" "}
-            <Code>alliesRules</Code> is reference information only, shown in its own "Allied
-            Contingents" section alongside the special rules and force-org notes.
+            The roster builder doesn&apos;t support actually adding allied brigades to a list yet —{" "}
+            <Code>alliesRules</Code> is reference information only, shown in its own &quot;Allied
+            Contingents&quot; section alongside the special rules and force-org notes.
           </Text>
         </Section>
 
@@ -453,11 +453,11 @@ src/data/supplements/
             slots a unit id can be listed in later. <Code>type</Code> and <Code>armament</Code>{" "}
             are free text shown on the stat line. <Code>handToHand</Code>, <Code>shooting</Code>,{" "}
             <Code>morale</Code>, <Code>stamina</Code>, and <Code>special</Code> are optional and
-            omitted where they don't apply (e.g. a support option with no combat stats).
+            omitted where they don&apos;t apply (e.g. a support option with no combat stats).
           </Text>
           <SubHeading>Units with priced options (variants)</SubHeading>
           <Text size="sm">
-            When a unit has several priced choices — a weapon option, a commander's staff rating,
+            When a unit has several priced choices — a weapon option, a commander&apos;s staff rating,
             half vs. full battery — use <Code>variants</Code> instead of a flat <Code>cost</Code>.
             Each variant is one choice the player picks from a dropdown:
           </Text>
@@ -476,10 +476,10 @@ src/data/supplements/
 }
 `}</CodeBlock>
           <Text size="sm">
-            A variant's <Code>label</Code> is what's shown in the picker; <Code>cost</Code> is
+            A variant&apos;s <Code>label</Code> is what&apos;s shown in the picker; <Code>cost</Code> is
             what that choice adds to the army total. <Code>staffRating</Code> is used for
             commanders. <Code>handToHand</Code>/<Code>shooting</Code> can also be overridden per
-            variant when a weapon option changes a unit's stat line.
+            variant when a weapon option changes a unit&apos;s stat line.
           </Text>
         </Section>
 
@@ -509,10 +509,10 @@ src/data/supplements/
 `}</CodeBlock>
           <Text size="sm">
             <Code>min</Code>/<Code>max</Code> on the brigade itself cap how many instances of this
-            brigade type the whole army can take (e.g. "1 to 6 Infantry Brigades"). If a brigade
+            brigade type the whole army can take (e.g. &quot;1 to 6 Infantry Brigades&quot;). If a brigade
             needs its own commander (most combat brigades do), set{" "}
             <Code>commanderUnitId</Code> to the id of a <Code>Command</Code>-category unit; leave
-            it out for pooled/attached support brigades (reserve artillery, earthworks) that don't
+            it out for pooled/attached support brigades (reserve artillery, earthworks) that don&apos;t
             carry their own commander.
           </Text>
         </Section>
@@ -525,7 +525,7 @@ src/data/supplements/
           <SubHeading>Per-unit limits</SubHeading>
           <Text size="sm">
             <Code>unitLimits</Code> caps how many of one specific unit id can fill the slot, on
-            top of the slot's overall min/max:
+            top of the slot&apos;s overall min/max:
           </Text>
           <CodeBlock>{`
 {
@@ -549,11 +549,11 @@ src/data/supplements/
 `}</CodeBlock>
           <Text size="sm">
             <Code>unitGroupLimits</Code> caps the <em>combined</em> quantity of several unit ids
-            together — here, Carabinier + Cuirassier together can't exceed 3, even though each
+            together — here, Carabinier + Cuirassier together can&apos;t exceed 3, even though each
             alone is allowed up to its own limit. <Code>mutuallyExclusiveGroups</Code> takes this
             further: it says only one of the listed groups may actually be used at all (you can
             take Carabinier/Cuirassier <em>or</em> Dragoon, never both in the same brigade). Set{" "}
-            <Code>maxGroups</Code> on the first group's entry to allow "up to N of the following"
+            <Code>maxGroups</Code> on the first group&apos;s entry to allow &quot;up to N of the following&quot;
             instead of strictly one — see the Austrian example below, which allows up to 2 of 3
             option groups:
           </Text>
@@ -578,17 +578,17 @@ src/data/supplements/
           <SubHeading>Requiring one unit type only</SubHeading>
           <Text size="sm">
             <Code>singleUnitType: true</Code> means every unit taken in the slot must be the{" "}
-            <em>same</em> id — you can fill a "Spanish, Portuguese, or Rhinbund" slot with
+            <em>same</em> id — you can fill a &quot;Spanish, Portuguese, or Rhinbund&quot; slot with
             Spanish battalions or Portuguese battalions, but not a mix of the two.
           </Text>
         </Section>
 
         <Section id="regiments" title="Regiments (nested slots)">
           <Text size="sm">
-            Some brigades (most Napoleonic infantry brigades) aren't just a flat list of
-            battalions — they're organised into regiments, and each regiment has its own
+            Some brigades (most Napoleonic infantry brigades) aren&apos;t just a flat list of
+            battalions — they&apos;re organised into regiments, and each regiment has its own
             battalion count. For this, a slot carries a <Code>regiment</Code> block instead of a
-            flat <Code>unitIds</Code>/<Code>min</Code>/<Code>max</Code>. The outer slot's own{" "}
+            flat <Code>unitIds</Code>/<Code>min</Code>/<Code>max</Code>. The outer slot&apos;s own{" "}
             <Code>unitIds</Code>/<Code>min</Code>/<Code>max</Code> are ignored once{" "}
             <Code>regiment</Code> is present — set them to <Code>[]</Code>/<Code>0</Code>/
             <Code>0</Code> as placeholders:
@@ -615,10 +615,10 @@ src/data/supplements/
 }
 `}</CodeBlock>
           <Text size="sm">
-            This reads as: "0 to 3 Line Infantry Regiments, each containing 1 to 5 Line Infantry
-            battalions." The regiment's own <Code>slots</Code> array uses the same shape as a
+            This reads as: &quot;0 to 3 Line Infantry Regiments, each containing 1 to 5 Line Infantry
+            battalions.&quot; The regiment&apos;s own <Code>slots</Code> array uses the same shape as a
             brigade slot (label/unitIds/min/max, plus <Code>singleUnitType</Code> and{" "}
-            <Code>unitLimits</Code> where needed) — this is how a "Foreign Infantry Regiment" can
+            <Code>unitLimits</Code> where needed) — this is how a &quot;Foreign Infantry Regiment&quot; can
             require one nationality only per regiment:
           </Text>
           <CodeBlock>{`
@@ -640,7 +640,7 @@ src/data/supplements/
 `}</CodeBlock>
           <Text size="sm">
             A regiment can also cap itself across the <em>whole army</em> (not just per brigade)
-            with <Code>armyMax</Code> — e.g. "max 1 Light Infantry Regiment in the entire army":
+            with <Code>armyMax</Code> — e.g. &quot;max 1 Light Infantry Regiment in the entire army&quot;:
           </Text>
           <CodeBlock>{`
 {
@@ -679,7 +679,7 @@ src/data/supplements/
   }
 }
 `}</CodeBlock>
-          <SubHeading>Unlocked by what's in the whole army</SubHeading>
+          <SubHeading>Unlocked by what&apos;s in the whole army</SubHeading>
           <Text size="sm">
             <Code>requiresArmyUnitCount</Code> works the same way but counts across every brigade
             in the army, not just this one — used for pooled/reserve artillery that only becomes
@@ -697,10 +697,10 @@ src/data/supplements/
   }
 }
 `}</CodeBlock>
-          <SubHeading>Scaling with the army's points total</SubHeading>
+          <SubHeading>Scaling with the army&apos;s points total</SubHeading>
           <Text size="sm">
-            <Code>maxPerPoints</Code> makes the slot's effective maximum grow with the army's
-            total points, e.g. earthworks at "1 per 500 points":
+            <Code>maxPerPoints</Code> makes the slot&apos;s effective maximum grow with the army&apos;s
+            total points, e.g. earthworks at &quot;1 per 500 points&quot;:
           </Text>
           <CodeBlock>{`
 {
@@ -741,8 +741,8 @@ src/data/supplements/
 `}</CodeBlock>
           <Text size="sm">
             The index arrays (<Code>countSlotIndices</Code>, <Code>regimentSlotIndices</Code>)
-            refer to the position of slots within this same brigade's <Code>slots</Code> array —
-            in this example, indices 0, 1, and 2 are the brigade's three infantry regiment slots.
+            refer to the position of slots within this same brigade&apos;s <Code>slots</Code> array —
+            in this example, indices 0, 1, and 2 are the brigade&apos;s three infantry regiment slots.
           </Text>
         </Section>
 
@@ -763,7 +763,7 @@ src/data/supplements/
                 <Table.Td><Code>maxBattalions</Code></Table.Td>
                 <Table.Td>
                   Caps the total unit count across all (or selected) slots in a single brigade
-                  instance, e.g. "max 10 battalions per Infantry Brigade" →{" "}
+                  instance, e.g. &quot;max 10 battalions per Infantry Brigade&quot; →{" "}
                   <Code>{`{ max: 10, countSlotIndices: [0,1,2] }`}</Code>.
                 </Table.Td>
               </Table.Tr>
@@ -771,14 +771,14 @@ src/data/supplements/
                 <Table.Td><Code>maxRegimentsTotal</Code></Table.Td>
                 <Table.Td>
                   Caps the combined number of regiments across several regiment slots, e.g.
-                  "1-3 Infantry Regiments total" across the Line/Light/Foreign slots →{" "}
+                  &quot;1-3 Infantry Regiments total&quot; across the Line/Light/Foreign slots →{" "}
                   <Code>{`{ slotIndices: [0,1,2], max: 3, min: 1 }`}</Code>.
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
                 <Table.Td><Code>requires</Code></Table.Td>
                 <Table.Td>
-                  This brigade type can't be added until other brigade types reach a combined
+                  This brigade type can&apos;t be added until other brigade types reach a combined
                   minimum count, e.g. Heavy Cavalry requiring 2 Infantry Brigades first →{" "}
                   <Code>{`{ brigadeTypeIds: ["fr-infantry-brigade"], min: 2 }`}</Code>.
                 </Table.Td>
@@ -787,7 +787,7 @@ src/data/supplements/
                 <Table.Td><Code>maxRatio</Code></Table.Td>
                 <Table.Td>
                   Caps how many of this brigade type you can take relative to other brigade
-                  types, e.g. "max 1 Light Cavalry Brigade per 2 Infantry Brigades" →{" "}
+                  types, e.g. &quot;max 1 Light Cavalry Brigade per 2 Infantry Brigades&quot; →{" "}
                   <Code>{`{ brigadeTypeIds: ["fr-infantry-brigade"], ratio: 2 }`}</Code>.
                 </Table.Td>
               </Table.Tr>
@@ -795,7 +795,7 @@ src/data/supplements/
                 <Table.Td><Code>minPerPoints</Code></Table.Td>
                 <Table.Td>
                   Requires at least one of this brigade type per N points in the army (in
-                  addition to <Code>min</Code>), e.g. "at least 1 Line Brigade per 500 points" →{" "}
+                  addition to <Code>min</Code>), e.g. &quot;at least 1 Line Brigade per 500 points&quot; →{" "}
                   <Code>{`{ perPoints: 500 }`}</Code>.
                 </Table.Td>
               </Table.Tr>
@@ -805,14 +805,14 @@ src/data/supplements/
                   Per-unit caps that apply across <em>every</em> instance of this brigade type in
                   the army (not just one brigade). Optional <Code>requiresBrigades</Code> gates the
                   unit behind another brigade type being taken first; optional{" "}
-                  <Code>maxRatio</Code> makes the army-wide cap scale with another brigade type's
+                  <Code>maxRatio</Code> makes the army-wide cap scale with another brigade type&apos;s
                   count.
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
                 <Table.Td><Code>note</Code></Table.Td>
                 <Table.Td>
-                  Freeform text for rules that aren't (or can't easily be) structurally enforced —
+                  Freeform text for rules that aren&apos;t (or can&apos;t easily be) structurally enforced —
                   shown to the player as a reminder.
                 </Table.Td>
               </Table.Tr>
@@ -840,7 +840,7 @@ src/data/supplements/
           </Text>
           <SubHeading>Points percentage caps</SubHeading>
           <Text size="sm">
-            <Code>pointsCaps</Code> limits a group of brigade types to a percentage of the army's
+            <Code>pointsCaps</Code> limits a group of brigade types to a percentage of the army&apos;s
             total points — e.g. Imperial Guard brigades capped at 25% of the army:
           </Text>
           <CodeBlock>{`
@@ -855,8 +855,8 @@ src/data/supplements/
           <SubHeading>Unit-to-unit ratio caps</SubHeading>
           <Text size="sm">
             <Code>unitRatioCaps</Code> limits the army-wide quantity of one group of units to a
-            ratio of another group, regardless of which brigades they're in — e.g. "1 Grenz
-            battalion per 4 line infantry battalions":
+            ratio of another group, regardless of which brigades they&apos;re in — e.g. &quot;1 Grenz
+            battalion per 4 line infantry battalions&quot;:
           </Text>
           <CodeBlock>{`
 "unitRatioCaps": [
@@ -872,7 +872,7 @@ src/data/supplements/
 
         <Section id="community-lists" title="Community lists">
           <Text size="sm">
-            Fan-created lists that aren't from an official Warlord Games supplement go in{" "}
+            Fan-created lists that aren&apos;t from an official Warlord Games supplement go in{" "}
             <Code>src/data/supplements/community-lists/nations/</Code>. The only difference from
             an official list is the <Code>attribution</Code> field, which credits the original
             author and links to their source:
@@ -889,7 +889,7 @@ src/data/supplements/
 }
 `}</CodeBlock>
           <Text size="sm">
-            This shows a "Community list by …" credit on the nation's card, linking out to{" "}
+            This shows a &quot;Community list by …&quot; credit on the nation&apos;s card, linking out to{" "}
             <Code>sourceUrl</Code> (a video, PDF, or forum post) when provided. Everything else —
             units, brigades, army-wide rules — works exactly the same as an official list.
           </Text>
@@ -898,13 +898,13 @@ src/data/supplements/
             <Code>NEXT_PUBLIC_SHOW_COMMUNITY_LISTS</Code> environment variable is set to{" "}
             <Code>true</Code> (see <Code>.env.example</Code>) — set it in whichever environments
             should show fan-made lists (e.g. a preview/staging deployment), and leave it unset in
-            production until you're ready to show them there too.
+            production until you&apos;re ready to show them there too.
           </Text>
         </Section>
 
         <Section id="registering" title="Registering your files">
           <Text size="sm">
-            JSON files aren't picked up automatically — they're imported explicitly in{" "}
+            JSON files aren&apos;t picked up automatically — they&apos;re imported explicitly in{" "}
             <Code>src/data/index.ts</Code>. To add a brand-new supplement:
           </Text>
           <List size="sm" spacing={4} type="ordered">
@@ -924,9 +924,9 @@ src/data/supplements/
             </List.Item>
           </List>
           <Text size="sm">
-            To add a new nation to an <em>existing</em> supplement, just add step 2 and 3's import
-            (drop the file into that supplement's <Code>nations/</Code> folder, import it in{" "}
-            <Code>index.ts</Code>, and add it to that supplement's <Code>withSupplement(...)</Code>{" "}
+            To add a new nation to an <em>existing</em> supplement, just add step 2 and 3&apos;s import
+            (drop the file into that supplement&apos;s <Code>nations/</Code> folder, import it in{" "}
+            <Code>index.ts</Code>, and add it to that supplement&apos;s <Code>withSupplement(...)</Code>{" "}
             list).
           </Text>
           <Text size="sm">
@@ -947,8 +947,8 @@ src/data/supplements/
             <List.Item>Add <Code>alliesRules</Code> for any allied-contingent allowances (see <Anchor href="#allies" c="brown.7">Allied contingents</Anchor>).</List.Item>
             <List.Item>Add a flag SVG to <Code>public/flags/</Code> (optional).</List.Item>
             <List.Item>
-              Save the file under the right supplement's <Code>nations/</Code> folder, import it
-              in <Code>src/data/index.ts</Code>, and add it to that supplement's list.
+              Save the file under the right supplement&apos;s <Code>nations/</Code> folder, import it
+              in <Code>src/data/index.ts</Code>, and add it to that supplement&apos;s list.
             </List.Item>
           </List>
           <SubHeading>Adding a brand-new supplement</SubHeading>
@@ -963,7 +963,7 @@ src/data/supplements/
           </List>
           <SubHeading>Adding a community list</SubHeading>
           <List size="sm" spacing={4}>
-            <List.Item>Same as "adding a nation", but under <Code>community-lists/nations/</Code>.</List.Item>
+            <List.Item>Same as &quot;adding a nation&quot;, but under <Code>community-lists/nations/</Code>.</List.Item>
             <List.Item>
               Include an <Code>attribution</Code> field crediting the original author, with a{" "}
               <Code>sourceUrl</Code> where possible.
