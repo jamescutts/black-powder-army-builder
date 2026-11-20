@@ -54,7 +54,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
   );
 
   const commandTotal = roster.commandItems.reduce((s, l) => s + l.qty, 0);
-  if (hasArmyCommandUnits && commandTotal === 0) {
+  if (hasArmyCommandUnits && commandTotal === 0 && !nation.armyCommandOptional) {
     issues.push({
       level: "todo",
       message: "Army Command: an army commander is required",
@@ -377,7 +377,7 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
               issues.push({
                 level: "error",
                 brigadeKey: bi.key,
-                message: `${bt.name} → ${slot.label}: maximum ${qualifying} ${uName} (1 per regiment of ${minBattalions}+ battalions, have ${uTotal})`,
+                message: `${bt.name} → ${slot.label}: maximum ${qualifying} ${uName} (1 per regiment${minBattalions > 1 ? ` of ${minBattalions}+ battalions` : ""}, have ${uTotal})`,
               });
             }
           }
@@ -498,6 +498,18 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           message: `${bt?.name ?? "Brigade"}: ${count} batteries, attached ones included; a brigade can have no more than ${attach.maxPerBrigade}`,
         });
       }
+    }
+  }
+
+  // ─── Brigade types that can't be taken together (Prussia 1815: Cavalry or Landwehr Cavalry) ──
+  for (const bt of nation.brigades) {
+    if (!bt.excludesBrigadeTypes || !roster.brigadeInstances.some((bi) => bi.brigadeTypeId === bt.id)) continue;
+    const clash = nation.brigades.find(
+      (other) => bt.excludesBrigadeTypes!.includes(other.id) && roster.brigadeInstances.some((bi) => bi.brigadeTypeId === other.id)
+    );
+    // Reported once for the pair
+    if (clash && bt.id < clash.id) {
+      issues.push({ level: "error", message: `${bt.name} and ${clash.name} can't be taken together; choose one or the other` });
     }
   }
 

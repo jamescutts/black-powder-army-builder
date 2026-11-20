@@ -139,7 +139,7 @@ export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: Ro
           if (reg.slotLines.flat().reduce((s, l) => s + l.qty, 0) >= minBattalions) qualifying += 1;
         }
       }
-      if (have >= qualifying) return `1 per regiment of ${minBattalions}+ battalions`;
+      if (have >= qualifying) return minBattalions > 1 ? `1 per regiment of ${minBattalions}+ battalions` : "1 per regiment";
     }
   }
 

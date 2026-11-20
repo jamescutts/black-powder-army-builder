@@ -79,12 +79,20 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
   const brigadeOptions = nation.brigades.map((bt) => {
     const max = effectiveMax(bt, roster.brigadeInstances);
     const atMax = countByType(roster.brigadeInstances, bt.id) >= max;
+    // A brigade type the army can't take alongside one it already has (Cavalry or Landwehr Cavalry)
+    const excludedBy = nation.brigades.find(
+      (other) =>
+        (bt.excludesBrigadeTypes?.includes(other.id) || other.excludesBrigadeTypes?.includes(bt.id)) &&
+        roster.brigadeInstances.some((bi) => bi.brigadeTypeId === other.id)
+    );
     const blocked = !requirementMet(bt, roster.brigadeInstances);
     const ratioCapped = bt.maxRatio && max < bt.max;
     const ratioNames = bt.maxRatio?.brigadeTypeIds
       .map((id) => nation.brigades.find((b) => b.id === id)?.name ?? id)
       .join("/");
-    const reason = blocked
+    const reason = excludedBy
+      ? `not with a ${excludedBy.name}`
+      : blocked
       ? requirementLabel(bt, nation.brigades)?.replace(/^Requires/, "needs")
       : atMax
         ? ratioCapped

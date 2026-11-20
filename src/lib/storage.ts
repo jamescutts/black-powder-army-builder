@@ -148,10 +148,23 @@ function splitLines(lines: RosterUnitLine[], known: Set<string>): RosterUnitLine
   });
 }
 
+/**
+ * A line's option label as the unit now has it. When a unit's options are renamed (a Corps Commander's
+ * "Staff rating 8" became "Staff rating 8 (4 re-rolls)"), an old save keeps the one it began with.
+ */
+function currentVariant(nation: Nation, line: RosterUnitLine): RosterUnitLine {
+  const variants = nation.units.find((u) => u.id === line.unitId)?.variants;
+  if (!variants?.length || !line.variantLabel || variants.some((v) => v.label === line.variantLabel)) return line;
+  const match = variants.find((v) => v.label.startsWith(line.variantLabel!));
+  return match ? { ...line, variantLabel: match.label } : line;
+}
+
 function tidy(nation: Nation, saved: RosterState): RosterState | null {
   const unitIds = new Set(nation.units.map((u) => u.id));
   const keepLines = (lines: RosterUnitLine[] | undefined) =>
-    (Array.isArray(lines) ? lines : []).filter((l) => unitIds.has(l.unitId) && l.qty > 0);
+    (Array.isArray(lines) ? lines : [])
+      .filter((l) => unitIds.has(l.unitId) && l.qty > 0)
+      .map((l) => currentVariant(nation, l));
 
   try {
     const tidied: RosterState = {
@@ -183,7 +196,7 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
             // Only a brigade type that has a commander keeps one (otherwise it would be charged but not shown)
             commanderLine:
               bt.commanderUnitId && bi.commanderLine && unitIds.has(bi.commanderLine.unitId)
-                ? { ...bi.commanderLine, name: cleanName(bi.commanderLine.name) }
+                ? { ...currentVariant(nation, bi.commanderLine), name: cleanName(bi.commanderLine.name) }
                 : null,
             slotLines: flat.map((lines) => splitLines(lines, known)),
             regimentSlots: bt.slots.map((slot, i) =>

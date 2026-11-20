@@ -259,6 +259,11 @@ export interface BrigadeType {
    */
   atLeastAsMany?: { unitIds: string[]; asUnitIds: string[]; label: string };
   /**
+   * Brigade types this one can't be taken alongside, e.g. Prussia 1815's "You may choose between
+   * Cavalry Brigades or Landwehr Cavalry Brigades"
+   */
+  excludesBrigadeTypes?: string[];
+  /**
    * At most `max` of these choices may be taken: a regiment slot is taken when it has a regiment, a
    * unit slot when it has any of `unitIds` (or any unit). e.g. Austria's Grenadier Brigade "can have a
    * maximum of two further choices" from a Line regiment, a Hussar regiment and a 6-pdr battery.
@@ -416,6 +421,11 @@ export interface Nation {
    * units, e.g. Austria's "You cannot have more Hungarian than German regiments"
    */
   regimentBalance?: { atMost: string[]; atLeastAs: string[]; label: string }[];
+  /**
+   * The army commander is optional: the book's list has none, but one can be added (e.g. Albion
+   * Triumphant's optional Corps Commander rule), so the builder doesn't ask for one
+   */
+  armyCommandOptional?: boolean;
   /**
    * Units the army gets for free, e.g. Russia's "one irregular Cossack regiment for free, attached to any
    * cavalry brigade" (and Platov's one more). The first `count` units in the army from `unitIds` (in
