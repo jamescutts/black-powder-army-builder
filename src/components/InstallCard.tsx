@@ -5,25 +5,12 @@ import { ActionIcon, Button, Group, Paper, Stack, Text } from "@mantine/core";
 import { IconDownload, IconX } from "@tabler/icons-react";
 import type { RosterState } from "@/types/army";
 import { useInstallApp } from "@/components/InstallApp";
+import { unitCount } from "@/lib/points";
 
 const DISMISSED_KEY = "ab-install-card-dismissed-at";
 
 // Offered once a list is under way, when keeping it for game day makes sense, rather than on arrival
 const MIN_UNITS = 3;
-
-function unitCount(roster: RosterState): number {
-  return (
-    roster.commandItems.length +
-    roster.brigadeInstances.reduce(
-      (sum, b) =>
-        sum +
-        (b.commanderLine ? 1 : 0) +
-        b.slotLines.flat().length +
-        (b.regimentSlots ?? []).reduce((r, slot) => r + (slot ?? []).reduce((s, reg) => s + reg.slotLines.flat().length, 0), 0),
-      0
-    )
-  );
-}
 
 /**
  * "Take it to the table": a small card under the roster, inviting you to install the site so the army is

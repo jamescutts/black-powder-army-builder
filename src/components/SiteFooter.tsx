@@ -32,6 +32,7 @@ function Support() {
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/black-powder", label: "Black Powder" },
+  { href: "/armies", label: "My armies" },
 ];
 
 /**

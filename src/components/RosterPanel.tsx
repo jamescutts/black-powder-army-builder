@@ -4,7 +4,7 @@ import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, TextInput,
 import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
 import type { Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
-import { unitCost } from "@/lib/units";
+import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 import { InstallCard } from "@/components/InstallCard";
@@ -14,12 +14,6 @@ interface Props {
   roster: RosterState;
   /** Renames the list */
   onRename?: (name: string) => void;
-}
-
-function lineTotal(nation: Nation, line: RosterUnitLine): number {
-  const unit = nation.units.find((u) => u.id === line.unitId);
-  if (!unit) return 0;
-  return unitCost(unit, line.variantLabel) * line.qty;
 }
 
 function getStaffRating(unit: UnitEntry, variantLabel?: string): number | undefined {
@@ -75,21 +69,12 @@ function LineList({
 export function RosterPanel({ nation, roster, onRename }: Props) {
   const commandTotal = roster.commandItems.reduce((s, l) => s + lineTotal(nation, l), 0);
 
-  const brigadeTotals = roster.brigadeInstances.map((instance) => {
-    const bt = nation.brigades.find((b) => b.id === instance.brigadeTypeId);
-    const commanderCost = instance.commanderLine ? lineTotal(nation, instance.commanderLine) : 0;
-    const flatSlotCost = instance.slotLines.flat().reduce((s, l) => s + lineTotal(nation, l), 0);
-    const regimentCost = (instance.regimentSlots ?? []).reduce((sum, regSlot) => {
-      if (!regSlot) return sum;
-      return sum + regSlot.reduce((rSum, reg) =>
-        rSum + reg.slotLines.flat().reduce((lSum, l) => lSum + lineTotal(nation, l), 0), 0);
-    }, 0);
-    const total = commanderCost + flatSlotCost + regimentCost;
-    return { instance, bt, total };
-  });
-
-  const grandTotal =
-    commandTotal + brigadeTotals.reduce((s, b) => s + b.total, 0);
+  const brigadeTotals = roster.brigadeInstances.map((instance) => ({
+    instance,
+    bt: nation.brigades.find((b) => b.id === instance.brigadeTypeId),
+    total: brigadeTotal(nation, instance),
+  }));
+  const grandTotal = rosterTotal(nation, roster);
 
   const issues = validateRoster(nation, roster);
   // Army-wide problems are listed in full; a brigade's own problems are on its card, so here each

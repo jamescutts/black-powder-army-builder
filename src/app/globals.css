@@ -298,6 +298,26 @@ body {
   border-bottom-color: #f2ecd6;
 }
 
+/* My armies sits apart at the end of the menu: your own lists, not a part of the site to browse */
+.topnav .topnav-end {
+  margin-left: auto;
+  gap: 6px;
+  /* Its label lines up with the search box's right edge above */
+  margin-right: calc(-1 * var(--mantine-spacing-sm));
+}
+
+.topnav-count {
+  min-width: 18px;
+  padding: 1px 6px;
+  border-radius: 9px;
+  background: rgba(242, 236, 214, 0.16);
+  color: #f2ecd6;
+  font-family: var(--font-body), Georgia, serif;
+  font-size: 11px;
+  line-height: 16px;
+  text-align: center;
+}
+
 .site-footer {
   margin-top: calc(var(--mantine-spacing-xl) * 3);
 }
@@ -989,6 +1009,44 @@ body {
 
 .home-hero-primary.home-hero-primary:hover {
   background: #e0bf74;
+}
+
+/* My armies: each saved list's card opens it, through the name's link stretched over the whole card;
+   its menu sits above that link */
+.saved-list-card {
+  position: relative;
+}
+
+.saved-list-link {
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.saved-list-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.saved-list-link:focus-visible {
+  outline: none;
+}
+
+.saved-list-card:has(.saved-list-link:focus-visible) {
+  outline: 2px solid var(--mantine-color-brown-6);
+  outline-offset: 2px;
+}
+
+.saved-list-menu {
+  position: relative;
+  z-index: 1;
+}
+
+.saved-list-flag.saved-list-flag {
+  width: 48px;
+  height: 32px;
+  margin-top: 2px;
 }
 
 /* "Install the app" beside it: cream outline on the painting, quieter than the main button */

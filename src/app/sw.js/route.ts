@@ -3,7 +3,7 @@
 // worker and browsers pick it up on their next visit.
 //
 // What it does:
-//  - On install, saves every page (home, Black Powder, each supplement and army list) and the files those
+//  - On install, saves every page (home, Black Powder, My armies, each supplement and army list) and the files those
 //    pages use: scripts, styles, fonts, flags and icons. Files the last version already saved are copied
 //    across rather than downloaded again.
 //  - Pages: from the network when it answers within a few seconds (saving the fresh copy), otherwise the
@@ -22,6 +22,7 @@ export const dynamic = "force-static";
 const PAGES = [
   "/",
   "/black-powder",
+  "/armies",
   ...supplements.map((s) => `/black-powder/${s.id}`),
   ...nations.map((n) => `/black-powder/${n.supplementId}/${n.id}`),
 ];
