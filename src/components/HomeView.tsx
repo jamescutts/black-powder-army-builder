@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Anchor, Box, Button, Card, Container, Grid, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core";
-import { IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight, IconDownload } from "@tabler/icons-react";
 import { ARTWORK } from "@/data/artwork";
+import { useInstallApp } from "@/components/InstallApp";
 
 export interface HomeCounts {
   rulesets: number;
@@ -51,6 +52,8 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
 
 function Hero({ counts }: { counts: HomeCounts }) {
   const [src, setSrc] = useState(HERO.large);
+  // Offered beside the main button only where the browser can install the site
+  const { mode: installMode, install, help: installHelp } = useInstallApp();
 
   return (
     <Box component="section" className="home-hero">
@@ -90,7 +93,24 @@ function Hero({ counts }: { counts: HomeCounts }) {
               {/* While Black Powder is the only rule set; "Choose a rule set" once there's a second */}
               Start a Black Powder army
             </Button>
+            {installMode && (
+              <Button
+                size="md"
+                variant="outline"
+                className="home-hero-secondary"
+                leftSection={<IconDownload size={18} />}
+                onClick={install}
+              >
+                Install the app
+              </Button>
+            )}
           </Group>
+          {installMode && (
+            <Text size="sm" className="home-hero-note">
+              Installed, it works with no signal, so your armies are there at the club or a show.
+            </Text>
+          )}
+          {installHelp}
         </Stack>
 
         <Group className="home-hero-stats" gap="xl" wrap="wrap">

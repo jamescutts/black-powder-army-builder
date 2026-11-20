@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import { getNation, getSupplement } from "@/data";
+import { getNation, getSupplement, nations } from "@/data";
 import { pageMeta } from "@/lib/meta";
+
+// Every army list is built ahead of time, so the installed app can save them all for use offline (app/sw.js)
+export function generateStaticParams() {
+  return nations.map((n) => ({ supplement: n.supplementId, nation: n.id }));
+}
 
 // The builder page runs in the browser, so its title and description are set here instead
 export async function generateMetadata({

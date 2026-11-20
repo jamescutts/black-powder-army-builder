@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SiteDisclaimer } from "./SiteDisclaimer";
+import { InstallApp } from "./InstallApp";
 
 const KOFI_URL = "https://ko-fi.com/shakosandsprues/tip";
 
@@ -31,6 +32,7 @@ function Support() {
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/black-powder", label: "Black Powder" },
+  { href: "/armies", label: "My armies" },
 ];
 
 /**
@@ -61,6 +63,7 @@ export function SiteFooter() {
                 {l.label}
               </Link>
             ))}
+            <InstallApp className="site-footer-link site-footer-button" />
           </div>
 
           <div className="site-footer-col">

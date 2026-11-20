@@ -21,6 +21,18 @@
         "8787"
       ],
       "port": 8787
+    },
+    {
+      "name": "black-powder-army-builder-production",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start",
+        "--",
+        "-p",
+        "3100"
+      ],
+      "port": 3100
     }
   ]
 }

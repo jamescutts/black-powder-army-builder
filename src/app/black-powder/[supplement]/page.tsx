@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getSupplement, getNationsForSupplement } from "@/data";
+import { getSupplement, getNationsForSupplement, supplements } from "@/data";
 import { pageMeta } from "@/lib/meta";
 import { SupplementNationPicker } from "@/components/SupplementNationPicker";
+
+// Built ahead of time, so the installed app can save every page for use offline (app/sw.js)
+export function generateStaticParams() {
+  return supplements.map((s) => ({ supplement: s.id }));
+}
 
 export async function generateMetadata({
   params,
