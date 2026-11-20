@@ -469,6 +469,16 @@ body {
   border-bottom-color: var(--mantine-color-brown-4);
 }
 
+/* Print and Download PDF under the roster: the same light brown fill, with a brown border so they
+   stand clear of the parchment page */
+.roster-secondary-button.roster-secondary-button {
+  border: 1px solid rgba(138, 79, 28, 0.45);
+}
+
+.roster-secondary-button.roster-secondary-button:hover {
+  border-color: rgba(138, 79, 28, 0.7);
+}
+
 /* Roster legality, at the foot of the roster card: a solid red panel while there's anything to fix,
    a quiet green line once the list is legal */
 .roster-status {

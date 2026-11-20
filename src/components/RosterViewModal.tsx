@@ -477,6 +477,7 @@ export function RosterViewModal({ nation, roster }: Props) {
           <Button
             color="brown"
             variant="light"
+            className="roster-secondary-button"
             leftSection={<IconPrinter size={16} />}
             onClick={handlePrint}
           >
@@ -485,6 +486,7 @@ export function RosterViewModal({ nation, roster }: Props) {
           <Button
             color="brown"
             variant="light"
+            className="roster-secondary-button"
             leftSection={<IconDownload size={16} />}
             onClick={handleDownloadPdf}
             loading={pdfLoading}
