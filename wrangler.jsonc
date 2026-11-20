@@ -8,6 +8,10 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  // Branch builds (pull requests) deploy with `wrangler preview`, which needs this block to run; empty keeps
+  // its defaults. Previews don't carry the service binding below over: see
+  // https://developers.cloudflare.com/workers/previews/limitations/
+  "previews": {},
   // OpenNext calls back into its own Worker; this must match "name" above
   "services": [
     {
