@@ -7,6 +7,7 @@ import type { UnitEntry } from "@/data/types";
 import type { RosterUnitLine } from "@/types/army";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
+import { limitBadge } from "@/lib/limitBadge";
 
 interface Props {
   eligibleUnits: UnitEntry[];
@@ -50,10 +51,12 @@ export function UnitLineEditor({
   const total = lines.reduce((s, l) => s + l.qty, 0);
   const effectiveMaxValue = computeMax ? computeMax(lines) : max;
   const hasConstraint = min !== undefined || effectiveMaxValue !== undefined;
-  const inRange =
-    (min === undefined || total >= min) &&
-    (effectiveMaxValue === undefined || total <= effectiveMaxValue);
   const atMaxTotal = maxTotal !== undefined && total >= maxTotal;
+  // Once the slot is full there's nothing more to add, so the picker goes away
+  const isFull = effectiveMaxValue !== undefined && total >= effectiveMaxValue;
+  const badge = limitBadge(total, min, effectiveMaxValue);
+  // A slot that takes only one kind of unit needs a button, not a one-item dropdown
+  const onlyUnit = eligibleUnits.length === 1 ? eligibleUnits[0] : undefined;
 
   function handlePickUnit(id: string | null) {
     setPickedUnitId(id);
@@ -104,11 +107,8 @@ export function UnitLineEditor({
             </Text>
           )}
           {hasConstraint && (
-            <Badge size="sm" color={inRange ? "green" : "red"} variant="light">
-              {total}
-              {min !== undefined || effectiveMaxValue !== undefined
-                ? ` / ${min ?? 0}${effectiveMaxValue !== undefined && effectiveMaxValue !== min ? `-${effectiveMaxValue}` : ""}`
-                : ""}
+            <Badge size="sm" color={badge.color} variant="light" tt="none">
+              {badge.label}
             </Badge>
           )}
         </Group>
@@ -188,34 +188,60 @@ export function UnitLineEditor({
         </Stack>
       )}
 
-      {!atMaxTotal && (
+      {!atMaxTotal && !isFull && (
         <>
           <Group gap={6} wrap="nowrap">
-            <Select
-              size="xs"
-              style={{ flex: 1 }}
-              placeholder="Choose unit"
-              data={eligibleUnits.map((u) => ({ value: u.id, label: u.name }))}
-              value={pickedUnitId}
-              onChange={handlePickUnit}
-              searchable
-              allowDeselect={false}
-            />
-            {pickedUnit && (pickedUnit.variants?.length ?? 0) > 0 && (
-              <Select
-                size="xs"
-                w={150}
-                data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost})` }))}
-                value={pickedVariant}
-                onChange={(v) => v && setPickedVariant(v)}
-                allowDeselect={false}
-              />
+            {onlyUnit ? (
+              (onlyUnit.variants?.length ?? 0) > 0 && (
+                <Select
+                  size="xs"
+                  w={170}
+                  aria-label={`${onlyUnit.name} option`}
+                  data={onlyUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost})` }))}
+                  value={pickedVariant}
+                  onChange={(v) => v && setPickedVariant(v)}
+                  allowDeselect={false}
+                />
+              )
+            ) : (
+              <>
+                <Select
+                  size="xs"
+                  style={{ flex: 1 }}
+                  placeholder="Choose unit"
+                  aria-label={label ? `${label}: unit` : "Unit"}
+                  data={eligibleUnits.map((u) => ({ value: u.id, label: u.name }))}
+                  value={pickedUnitId}
+                  onChange={handlePickUnit}
+                  searchable
+                  allowDeselect={false}
+                />
+                {pickedUnit && (pickedUnit.variants?.length ?? 0) > 0 && (
+                  <Select
+                    size="xs"
+                    w={150}
+                    aria-label={`${pickedUnit.name} option`}
+                    data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost})` }))}
+                    value={pickedVariant}
+                    onChange={(v) => v && setPickedVariant(v)}
+                    allowDeselect={false}
+                  />
+                )}
+              </>
             )}
-            <Button size="xs" leftSection={<IconPlus size={14} />} onClick={handleAdd} disabled={!pickedUnit}>
-              Add
+            <Button
+              size="xs"
+              variant={onlyUnit ? "light" : "filled"}
+              leftSection={<IconPlus size={14} />}
+              onClick={handleAdd}
+              disabled={!pickedUnit}
+              style={onlyUnit ? { minWidth: 0 } : undefined}
+            >
+              {onlyUnit ? <span className="add-unit-label">Add {onlyUnit.name}</span> : "Add"}
             </Button>
           </Group>
-          {pickedUnit && pickedUnit.special && pickedUnit.special.length > 0 && (
+          {/* The picked unit's rules, unless they're already shown on a line above */}
+          {pickedUnit?.special && pickedUnit.special.length > 0 && !lines.some((l) => l.unitId === pickedUnit.id) && (
             <Text size="xs" c="dimmed" fs="italic" style={{ lineHeight: 1.4 }}>
               {pickedUnit.special.join(" • ")}
             </Text>

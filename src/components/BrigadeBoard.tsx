@@ -21,6 +21,7 @@ import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from 
 import { UnitLineEditor } from "./UnitLineEditor";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
+import { limitBadge } from "@/lib/limitBadge";
 import { countByType, effectiveMax, effectiveSlotMax, requirementLabel, requirementMet } from "@/lib/brigadeLimits";
 
 interface Props {
@@ -370,14 +371,15 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                   if (slot.regiment) {
                     const regDef = slot.regiment;
                     const regiments = instance.regimentSlots?.[slotIndex] ?? [];
+                  const regimentBadge = limitBadge(regiments.length, regDef.min, regDef.max);
                     return (
                       <Stack key={slotIndex} gap="xs">
                         {/* Regiment header row */}
                         <Group justify="space-between">
                           <Group gap="xs">
                             <Text size="sm" fw={600}>{regDef.label}</Text>
-                            <Badge size="sm" variant="light" color={regiments.length >= regDef.min ? "green" : "red"}>
-                              {regiments.length} / {regDef.min}-{regDef.max}
+                            <Badge size="sm" variant="light" color={regimentBadge.color} tt="none">
+                              {regimentBadge.label}
                             </Badge>
                           </Group>
                           {regiments.length < regDef.max && (

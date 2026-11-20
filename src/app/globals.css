@@ -317,6 +317,13 @@ body {
   min-width: 0;
 }
 
+/* "Add French Line Infantry": long unit names shorten rather than widen the card */
+.add-unit-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* The add-brigade picker sits at the foot of the list, dashed like an empty slot waiting to be filled */
 .add-brigade {
   border: 1px dashed rgba(107, 61, 23, 0.45);
