@@ -265,7 +265,7 @@
         "Large",
         "Abteilung",
         "Marauder",
-        "Lance"
+        "Lancer"
       ],
       "cost": 56
     },
@@ -294,6 +294,18 @@
       "cost": 27
     },
     {
+      "id": "at-6pdr-brigade-battery-half",
+      "name": "6-pdr Brigade Battery (Half Battery)",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 19
+    },
+    {
       "id": "at-cavalry-arty",
       "name": "Cavalry Artillery",
       "category": "Artillery",
@@ -309,6 +321,21 @@
       "cost": 28
     },
     {
+      "id": "at-cavalry-arty-half",
+      "name": "Cavalry Artillery (Half Battery)",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "special": [
+        "Marauder"
+      ],
+      "cost": 20
+    },
+    {
       "id": "at-position-battery",
       "name": "Position Battery",
       "category": "Artillery",
@@ -319,6 +346,18 @@
       "morale": "4",
       "stamina": "2",
       "cost": 31
+    },
+    {
+      "id": "at-position-battery-half",
+      "name": "Position Battery (Half Battery)",
+      "category": "Artillery",
+      "type": "Regular Artillery",
+      "armament": "Smoothbore Heavy Artillery",
+      "handToHand": "1",
+      "shooting": "2-1-1",
+      "morale": "4",
+      "stamina": "1",
+      "cost": 23
     },
     {
       "id": "at-cmd-schwarzenberg",
@@ -363,7 +402,9 @@
       "name": "Line Infantry Brigade",
       "min": 1,
       "max": 6,
-      "minPerPoints": { "perPoints": 500 },
+      "minPerPoints": {
+        "perPoints": 500
+      },
       "slots": [
         {
           "label": "Line Infantry Regiments",
@@ -377,7 +418,10 @@
             "slots": [
               {
                 "label": "Large Line Infantry Battalion (one nationality per regiment)",
-                "unitIds": ["at-infantry-german", "at-infantry-hungarian"],
+                "unitIds": [
+                  "at-infantry-german",
+                  "at-infantry-hungarian"
+                ],
                 "min": 1,
                 "max": 2,
                 "singleUnitType": true
@@ -395,19 +439,195 @@
           "min": 0,
           "max": 4,
           "unitLimits": [
-            { "unitId": "at-grenadier", "max": 2 },
-            { "unitId": "at-grenz", "max": 2 },
-            { "unitId": "at-6pdr-brigade-battery", "max": 1 }
+            {
+              "unitId": "at-grenadier",
+              "max": 2
+            },
+            {
+              "unitId": "at-grenz",
+              "max": 2
+            },
+            {
+              "unitId": "at-6pdr-brigade-battery",
+              "max": 1
+            }
           ],
           "mutuallyExclusiveGroups": [
-            { "unitIds": ["at-grenadier"], "label": "Grenadier battalions", "maxGroups": 2 },
-            { "unitIds": ["at-grenz"], "label": "Large Grenz battalions" },
-            { "unitIds": ["at-6pdr-brigade-battery"], "label": "6-pdr Brigade battery" }
+            {
+              "unitIds": [
+                "at-grenadier"
+              ],
+              "label": "Grenadier battalions",
+              "maxGroups": 2
+            },
+            {
+              "unitIds": [
+                "at-grenz"
+              ],
+              "label": "Large Grenz battalions"
+            },
+            {
+              "unitIds": [
+                "at-6pdr-brigade-battery"
+              ],
+              "label": "6-pdr Brigade battery"
+            }
           ]
         }
       ],
       "note": "1-2 German or Hungarian regiments (up to 2 Large battalions each, one nationality per regiment). Cannot have more Hungarian than German regiments (not auto-enforced). Additional/Replacement: choose up to two of these options — 1-2 Grenadier battalions, up to 2 Large Grenz battalions (max 1 per 4 infantry battalions in army), or 1 6-pdr Battery (1 per 6 infantry battalions in army).",
-      "commanderUnitId": "at-brig-cmd"
+      "commanderUnitId": "at-brig-cmd",
+      "options": [
+        {
+          "id": "veteran-german",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "at-infantry-german"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "at-infantry-german",
+                "at-infantry-hungarian"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true,
+            "sharedWith": [
+              "veteran-hungarian"
+            ]
+          }
+        },
+        {
+          "id": "veteran-hungarian",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "at-infantry-hungarian"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "removeSpecial": [
+            "Elite 5+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "at-infantry-german",
+                "at-infantry-hungarian"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true,
+            "sharedWith": [
+              "veteran-german"
+            ]
+          }
+        },
+        {
+          "id": "tough-fighters",
+          "label": "Tough Fighters",
+          "cost": 1,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian",
+            "at-grenadier"
+          ],
+          "addSpecial": [
+            "Tough Fighters"
+          ]
+        },
+        {
+          "id": "standard-size",
+          "label": "Standard size",
+          "cost": -8,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian",
+            "at-grenz"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-line",
+          "label": "Small",
+          "cost": -16,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-grenadier",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "at-grenadier"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "remove-unreliable",
+          "label": "Not Unreliable",
+          "cost": 3,
+          "appliesTo": [
+            "at-grenz"
+          ],
+          "removeSpecial": [
+            "Unreliable"
+          ]
+        },
+        {
+          "id": "veteran-artillery-4",
+          "label": "Veteran (Elite 4+)",
+          "cost": 10,
+          "appliesTo": [
+            "at-6pdr-brigade-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "veteran-artillery-5",
+          "label": "Veteran (Elite 5+)",
+          "cost": 8,
+          "appliesTo": [
+            "at-6pdr-brigade-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "at-6pdr-brigade-battery"
+          ],
+          "swapTo": {
+            "at-6pdr-brigade-battery": "at-6pdr-brigade-battery-half"
+          }
+        }
+      ]
     },
     {
       "id": "at-light-cavalry-brigade",
@@ -442,13 +662,114 @@
           "dynamicUnitLimits": [
             {
               "unitId": "at-cavalry-arty",
-              "perBattalions": { "countSlotIndices": [0, 1], "ratio": 3 }
+              "perBattalions": {
+                "countSlotIndices": [
+                  0,
+                  1
+                ],
+                "ratio": 3
+              }
             }
           ]
         }
       ],
       "note": "1-2 Large Hussar or Large Chevauleger regiments, plus an optional Dragoon regiment and a Cavalry Battery (1 per 3 cavalry regiments in the brigade — needs all 3 cavalry regiments).",
-      "commanderUnitId": "at-cav-brig-cmd"
+      "commanderUnitId": "at-cav-brig-cmd",
+      "options": [
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "at-dragoon"
+          ],
+          "group": "size",
+          "addSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan",
+            "at-dragoon"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "standard-size-cavalry",
+          "label": "Standard size",
+          "cost": -8,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -16,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "veteran-artillery-4",
+          "label": "Veteran (Elite 4+)",
+          "cost": 10,
+          "appliesTo": [
+            "at-cavalry-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "veteran-artillery-5",
+          "label": "Veteran (Elite 5+)",
+          "cost": 8,
+          "appliesTo": [
+            "at-cavalry-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "at-cavalry-arty"
+          ],
+          "swapTo": {
+            "at-cavalry-arty": "at-cavalry-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "at-advanced-guard-brigade",
@@ -468,7 +789,10 @@
             "slots": [
               {
                 "label": "Large Line Infantry Battalion (one nationality per regiment)",
-                "unitIds": ["at-infantry-german", "at-infantry-hungarian"],
+                "unitIds": [
+                  "at-infantry-german",
+                  "at-infantry-hungarian"
+                ],
                 "min": 1,
                 "max": 2,
                 "singleUnitType": true
@@ -477,16 +801,22 @@
           }
         },
         {
-          "label": "Infantry (0-2 Jäger battalions, 0-1 Grenz Regiment)",
+          "label": "Infantry (0-2 Jäger battalions, 0-1 Grenz Regiment of up to 2 Large battalions)",
           "unitIds": [
             "at-jager",
             "at-grenz"
           ],
           "min": 0,
-          "max": 3,
+          "max": 4,
           "unitLimits": [
-            { "unitId": "at-jager", "max": 2 },
-            { "unitId": "at-grenz", "max": 1 }
+            {
+              "unitId": "at-jager",
+              "max": 2
+            },
+            {
+              "unitId": "at-grenz",
+              "max": 2
+            }
           ]
         },
         {
@@ -500,11 +830,24 @@
           "min": 0,
           "max": 3,
           "unitLimits": [
-            { "unitId": "at-hussar", "max": 1 },
-            { "unitId": "at-dragoon", "max": 1 }
+            {
+              "unitId": "at-hussar",
+              "max": 1
+            },
+            {
+              "unitId": "at-dragoon",
+              "max": 1
+            }
           ],
           "unitGroupLimits": [
-            { "unitIds": ["at-uhlan", "at-chevauleger"], "max": 1, "label": "Large Uhlan or Chevauleger regiment (0-1)" }
+            {
+              "unitIds": [
+                "at-uhlan",
+                "at-chevauleger"
+              ],
+              "max": 1,
+              "label": "Large Uhlan or Chevauleger regiment (0-1)"
+            }
           ]
         },
         {
@@ -517,16 +860,247 @@
           "min": 0,
           "max": 2,
           "unitLimits": [
-            { "unitId": "at-cavalry-arty", "max": 1 }
+            {
+              "unitId": "at-cavalry-arty",
+              "max": 1
+            }
           ],
           "unitGroupLimits": [
-            { "unitIds": ["at-3pdr-brigade-battery", "at-6pdr-brigade-battery"], "max": 1, "label": "3-pdr or 6-pdr Brigade Battery (0-1)" }
+            {
+              "unitIds": [
+                "at-3pdr-brigade-battery",
+                "at-6pdr-brigade-battery"
+              ],
+              "max": 1,
+              "label": "3-pdr or 6-pdr Brigade Battery (0-1)"
+            }
           ]
         }
       ],
-      "maxBattalions": { "max": 6, "countSlotIndices": [0, 1, 2] },
+      "maxBattalions": {
+        "max": 6,
+        "countSlotIndices": [
+          0,
+          1,
+          2
+        ]
+      },
       "note": "Up to 6 infantry battalions and/or cavalry regiments total (batteries do not count toward the 6), with infantry battalions equal to or exceeding cavalry regiments (not auto-enforced). Choose from: 0-1 Line Infantry Regiment (1-2 battalions, one nationality); 0-2 Jäger battalions; 0-1 Grenz Regiment; 0-1 Hussar Regiment; 0-1 Dragoon Regiment; 0-1 Large Uhlan or Chevauleger regiment; 0-1 Cavalry Battery; 0-1 3-pdr or 6-pdr Brigade Battery.",
-      "commanderUnitId": "at-adv-guard-cmd"
+      "commanderUnitId": "at-adv-guard-cmd",
+      "options": [
+        {
+          "id": "veteran-german",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "at-infantry-german"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "at-infantry-german",
+                "at-infantry-hungarian"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true,
+            "sharedWith": [
+              "veteran-hungarian"
+            ]
+          }
+        },
+        {
+          "id": "veteran-hungarian",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "at-infantry-hungarian"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "removeSpecial": [
+            "Elite 5+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "at-infantry-german",
+                "at-infantry-hungarian"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true,
+            "sharedWith": [
+              "veteran-german"
+            ]
+          }
+        },
+        {
+          "id": "tough-fighters",
+          "label": "Tough Fighters",
+          "cost": 1,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian",
+            "at-grenadier"
+          ],
+          "addSpecial": [
+            "Tough Fighters"
+          ]
+        },
+        {
+          "id": "standard-size",
+          "label": "Standard size",
+          "cost": -8,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian",
+            "at-grenz"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-line",
+          "label": "Small",
+          "cost": -16,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-grenadier",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "at-grenadier"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "remove-unreliable",
+          "label": "Not Unreliable",
+          "cost": 3,
+          "appliesTo": [
+            "at-grenz"
+          ],
+          "removeSpecial": [
+            "Unreliable"
+          ]
+        },
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "at-dragoon"
+          ],
+          "group": "size",
+          "addSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan",
+            "at-dragoon"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "standard-size-cavalry",
+          "label": "Standard size",
+          "cost": -8,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -16,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "veteran-artillery-4",
+          "label": "Veteran (Elite 4+)",
+          "cost": 10,
+          "appliesTo": [
+            "at-cavalry-arty",
+            "at-3pdr-brigade-battery",
+            "at-6pdr-brigade-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "veteran-artillery-5",
+          "label": "Veteran (Elite 5+)",
+          "cost": 8,
+          "appliesTo": [
+            "at-cavalry-arty",
+            "at-3pdr-brigade-battery",
+            "at-6pdr-brigade-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "at-cavalry-arty",
+            "at-6pdr-brigade-battery"
+          ],
+          "swapTo": {
+            "at-cavalry-arty": "at-cavalry-arty-half",
+            "at-6pdr-brigade-battery": "at-6pdr-brigade-battery-half"
+          }
+        }
+      ]
     },
     {
       "id": "at-grenadier-brigade",
@@ -554,7 +1128,10 @@
             "slots": [
               {
                 "label": "Large Line Infantry Battalion (one nationality per regiment)",
-                "unitIds": ["at-infantry-german", "at-infantry-hungarian"],
+                "unitIds": [
+                  "at-infantry-german",
+                  "at-infantry-hungarian"
+                ],
                 "min": 1,
                 "max": 2,
                 "singleUnitType": true
@@ -571,13 +1148,215 @@
           "min": 0,
           "max": 2,
           "unitLimits": [
-            { "unitId": "at-hussar", "max": 1 },
-            { "unitId": "at-6pdr-brigade-battery", "max": 1 }
+            {
+              "unitId": "at-hussar",
+              "max": 1
+            },
+            {
+              "unitId": "at-6pdr-brigade-battery",
+              "max": 1
+            }
           ]
         }
       ],
       "note": "Although not part of the campaign, included for completeness. 2-6 Grenadier battalions, plus a maximum of two further options: 0-1 Line Infantry Regiment (1-2 battalions, one nationality), 0-1 Hussar Regiment, 0-1 6-pdr Brigade Battery (do not take all three).",
-      "commanderUnitId": "at-grenadier-cmd"
+      "commanderUnitId": "at-grenadier-cmd",
+      "options": [
+        {
+          "id": "large-grenadier",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "at-grenadier"
+          ],
+          "group": "size",
+          "addSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "tough-fighters",
+          "label": "Tough Fighters",
+          "cost": 1,
+          "appliesTo": [
+            "at-grenadier",
+            "at-infantry-german",
+            "at-infantry-hungarian"
+          ],
+          "addSpecial": [
+            "Tough Fighters"
+          ]
+        },
+        {
+          "id": "small-grenadier",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "at-grenadier"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "veteran-german",
+          "label": "Veteran",
+          "cost": 8,
+          "appliesTo": [
+            "at-infantry-german"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "at-infantry-german",
+                "at-infantry-hungarian"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true,
+            "sharedWith": [
+              "veteran-hungarian"
+            ]
+          }
+        },
+        {
+          "id": "veteran-hungarian",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "at-infantry-hungarian"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "removeSpecial": [
+            "Elite 5+"
+          ],
+          "limit": {
+            "per": {
+              "unitIds": [
+                "at-infantry-german",
+                "at-infantry-hungarian"
+              ],
+              "ratio": 2
+            },
+            "armyWide": true,
+            "sharedWith": [
+              "veteran-german"
+            ]
+          }
+        },
+        {
+          "id": "standard-size",
+          "label": "Standard size",
+          "cost": -8,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-line",
+          "label": "Small",
+          "cost": -16,
+          "appliesTo": [
+            "at-infantry-german",
+            "at-infantry-hungarian"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan",
+            "at-dragoon"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "standard-size-cavalry",
+          "label": "Standard size",
+          "cost": -8,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -16,
+          "appliesTo": [
+            "at-hussar",
+            "at-chevauleger",
+            "at-uhlan"
+          ],
+          "group": "size",
+          "removeSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "veteran-artillery-4",
+          "label": "Veteran (Elite 4+)",
+          "cost": 10,
+          "appliesTo": [
+            "at-6pdr-brigade-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "veteran-artillery-5",
+          "label": "Veteran (Elite 5+)",
+          "cost": 8,
+          "appliesTo": [
+            "at-6pdr-brigade-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "at-6pdr-brigade-battery"
+          ],
+          "swapTo": {
+            "at-6pdr-brigade-battery": "at-6pdr-brigade-battery-half"
+          }
+        }
+      ]
     },
     {
       "id": "at-heavy-cavalry-brigade",
@@ -594,12 +1373,28 @@
           "min": 1,
           "max": 3,
           "unitLimits": [
-            { "unitId": "at-dragoon", "max": 3 },
-            { "unitId": "at-cuirassier", "max": 2 }
+            {
+              "unitId": "at-dragoon",
+              "max": 3
+            },
+            {
+              "unitId": "at-cuirassier",
+              "max": 2
+            }
           ],
           "mutuallyExclusiveGroups": [
-            { "unitIds": ["at-dragoon"], "label": "Dragoon" },
-            { "unitIds": ["at-cuirassier"], "label": "Cuirassier" }
+            {
+              "unitIds": [
+                "at-dragoon"
+              ],
+              "label": "Dragoon"
+            },
+            {
+              "unitIds": [
+                "at-cuirassier"
+              ],
+              "label": "Cuirassier"
+            }
           ]
         },
         {
@@ -612,7 +1407,82 @@
         }
       ],
       "note": "Although not part of the campaign, included for completeness. 1-3 cavalry regiments of any kind (1-3 Dragoon or 1-2 Cuirassier), plus an optional Cavalry Battery.",
-      "commanderUnitId": "at-cav-brig-cmd"
+      "commanderUnitId": "at-cav-brig-cmd",
+      "options": [
+        {
+          "id": "large-cavalry",
+          "label": "Large",
+          "cost": 8,
+          "appliesTo": [
+            "at-dragoon",
+            "at-cuirassier"
+          ],
+          "group": "size",
+          "addSpecial": [
+            "Large"
+          ]
+        },
+        {
+          "id": "veteran-cavalry",
+          "label": "Veteran",
+          "cost": 6,
+          "appliesTo": [
+            "at-dragoon"
+          ],
+          "addSpecial": [
+            "Reliable"
+          ],
+          "statBonus": {
+            "handToHand": 1
+          }
+        },
+        {
+          "id": "small-cavalry",
+          "label": "Small",
+          "cost": -8,
+          "appliesTo": [
+            "at-dragoon",
+            "at-cuirassier"
+          ],
+          "group": "size"
+        },
+        {
+          "id": "veteran-artillery-4",
+          "label": "Veteran (Elite 4+)",
+          "cost": 10,
+          "appliesTo": [
+            "at-cavalry-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "veteran-artillery-5",
+          "label": "Veteran (Elite 5+)",
+          "cost": 8,
+          "appliesTo": [
+            "at-cavalry-arty"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "at-cavalry-arty"
+          ],
+          "swapTo": {
+            "at-cavalry-arty": "at-cavalry-arty-half"
+          }
+        }
+      ]
     },
     {
       "id": "at-reserve-artillery",
@@ -629,41 +1499,121 @@
           "max": 1
         }
       ],
-      "note": "Reserve Artillery: 1 Position Battery per 9 line infantry battalions in the army, attached to any Line Infantry Brigade. Part of the up-to-25% Abteilung and Army Support from Reserves."
+      "note": "1 Position Battery per 9 line infantry battalions in the army, attached to a Line Infantry Brigade (pick it on the battery). Part of the Abteilung and Army Support from Reserves, which may take up to 25% of the army's points.",
+      "attachBatteries": {
+        "batteryUnitIds": [
+          "at-position-battery"
+        ]
+      },
+      "options": [
+        {
+          "id": "veteran-artillery-4",
+          "label": "Veteran (Elite 4+)",
+          "cost": 10,
+          "appliesTo": [
+            "at-position-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 4+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "veteran-artillery-5",
+          "label": "Veteran (Elite 5+)",
+          "cost": 8,
+          "appliesTo": [
+            "at-position-battery"
+          ],
+          "addSpecial": [
+            "Reliable",
+            "Elite 5+"
+          ],
+          "group": "artillery-veteran"
+        },
+        {
+          "id": "half-battery",
+          "label": "Half battery",
+          "appliesTo": [
+            "at-position-battery"
+          ],
+          "swapTo": {
+            "at-position-battery": "at-position-battery-half"
+          }
+        }
+      ]
     }
   ],
   "unitRatioCaps": [
     {
-      "capUnitIds": ["at-grenz"],
-      "perUnitIds": ["at-infantry-german", "at-infantry-hungarian"],
+      "capUnitIds": [
+        "at-grenz"
+      ],
+      "perUnitIds": [
+        "at-infantry-german",
+        "at-infantry-hungarian"
+      ],
       "ratio": 4,
       "label": "Grenz battalions (max 1 per 4 line infantry battalions)"
     },
     {
-      "capUnitIds": ["at-6pdr-brigade-battery"],
-      "perUnitIds": ["at-infantry-german", "at-infantry-hungarian"],
+      "capUnitIds": [
+        "at-6pdr-brigade-battery"
+      ],
+      "perUnitIds": [
+        "at-infantry-german",
+        "at-infantry-hungarian"
+      ],
       "ratio": 6,
       "label": "6-pdr Brigade batteries (1 per 6 line infantry battalions)"
     },
     {
-      "capUnitIds": ["at-position-battery"],
-      "perUnitIds": ["at-infantry-german", "at-infantry-hungarian"],
+      "capUnitIds": [
+        "at-position-battery"
+      ],
+      "perUnitIds": [
+        "at-infantry-german",
+        "at-infantry-hungarian"
+      ],
       "ratio": 9,
       "label": "Reserve Position batteries (1 per 9 line infantry battalions)"
     }
   ],
   "notes": [
-    "Minimum of one Line Infantry Brigade per 500 points. A brigade has 1-2 German or Hungarian Line Infantry Regiments of up to 2 Large battalions (cannot have more Hungarian than German regiments).",
-    "A Line Infantry Brigade may add up to two of: Grenadier battalions, Large Grenz battalions (max 1 per 4 infantry battalions), or a 6-pdr Brigade battery.",
-    "Up to 1 Light Cavalry Brigade: 1-2 Large Hussar/Chevauleger regiments, plus an optional Dragoon regiment and a cavalry battery (1 per 3 cavalry regiments).",
-    "Up to 1 Advanced Guard Brigade: up to 6 infantry battalions/cavalry regiments (Jäger, Line, Grenz, Hussar, Dragoon, Large Uhlan/Chevauleger, plus a battery) — infantry battalions must equal or exceed cavalry regiments.",
-    "Reserves: up to 25% of points on Abteilung and Army Support, including Reserve Artillery (1 Position battery per 9 line infantry battalions).",
-    "0 to 1 Grenadier Brigade and 0 to 1 Heavy Cavalry Brigade are included for completeness, although not part of the campaign."
+    "Maximums and minimums are per every 1,000 points unless otherwise stated (p. 179). The builder applies them as written, which is right for armies up to 1,000 points; scale them up yourself for larger armies.",
+    "Minimum of one Line Infantry Brigade per 500 points. You can't have more Hungarian than German regiments (not checked by the builder).",
+    "A Line Infantry Brigade may take up to two of: 1-2 Grenadier battalions, up to 2 Large Grenz battalions (1 per 4 infantry battalions in the army), or a 6-pdr Brigade battery (1 per 6 infantry battalions). 'Infantry battalions' means Line infantry, not Grenadiers, Jägers or Grenz.",
+    "An Advanced Guard Brigade's infantry battalions must equal or exceed its cavalry regiments, and a Grenadier Brigade may take at most two of its three further choices (not checked by the builder).",
+    "Grenz cost 43 points in the stat table (p. 178) but 40 in the Line Infantry Brigade box (p. 179); Cavalry Artillery has Stamina 1 in the stat table but 2 in the chapter (p. 73). The builder uses the stat table.",
+    "Only the 25% reserves cap on Reserve Artillery is checked; the book doesn't say which other brigades count as 'Abteilung and Army Support'."
   ],
   "specialRules": [
-    "Cavalry note: Austrian regiments fought as two-squadron Abteilungen — a regiment may be replaced by 2, 3 or 4 Small units at 8 points per squadron-sized reduction step (standard unit price)."
+    "Austrian commanders roll Personal Qualities on their own table: 1-2 Low, 4-5 Normal, 6 High (as printed; it doesn't give a 3).",
+    "Regimental Orders: an Austrian brigade commander can't order a whole brigade. He orders units individually, except infantry battalions of the same Infantry or Grenz Regiment, cavalry of the same Cavalry Regiment, or Grenadier battalions of the same brigade, each within 6\" of each other.",
+    "Austrian Divisional Commanders can order a brigade-sized formation, at -1 to their Staff Rating for each unit over the second in it.",
+    "Flintenkartasche: musket-armed infantry in close formation gain an extra shooting dice the first time they shoot at close range.",
+    "Line infantry: Lie Down, May Form Square or Battalion Mass/Divisional Mass, Column of Companies, Close Column and Poor Mixed Formation. Grenz add Rifle Mixed Formation, Light Infantry Mixed Formation, Skirmish and Flintenkartasche; Jäger have Light Infantry Mixed Formation and Skirmish.",
+    "Austrian cavalry can use Cavalry Deep Formation and Cavalry Mixed Formation.",
+    "Abteilung: any cavalry regiment can be replaced by 2, 3 or 4 Small units (Abteilungen) of the same regiment.",
+    "Cavalry Artillery moves by horse as on p. 33 of the Black Powder rulebook, but 15\" rather than 18\"."
   ],
   "alliesRules": [
-    { "maxPercent": 25, "nationIds": ["france", "saxony"] }
+    {
+      "maxPercent": 25,
+      "nationIds": [
+        "france",
+        "saxony"
+      ]
+    }
+  ],
+  "pointsCaps": [
+    {
+      "brigadeTypeIds": [
+        "at-reserve-artillery"
+      ],
+      "maxPercent": 25,
+      "label": "Abteilung and Army Support from Reserves"
+    }
   ]
 }

@@ -122,16 +122,21 @@ export function optionAllowance(o: UnitOption, instance: RosterBrigadeInstance, 
 /** How many units (or, for a regiment option, regiments) in the brigade (or army) have taken an option */
 export function optionTaken(o: UnitOption, instance: RosterBrigadeInstance, army?: RosterBrigadeInstance[]): number {
   const scope = limitScope(o, instance, army);
+  const ids = [o.id, ...(o.limit?.sharedWith ?? [])];
   if (o.scope === "regiment") {
     return scope.reduce(
       (n, bi) =>
-        n + (bi.regimentSlots ?? []).reduce((m, slot) => m + (slot ?? []).filter((r) => r.options?.includes(o.id)).length, 0),
+        n +
+        (bi.regimentSlots ?? []).reduce(
+          (m, slot) => m + (slot ?? []).filter((r) => ids.some((id) => r.options?.includes(id))).length,
+          0
+        ),
       0
     );
   }
   return scope
     .flatMap((bi) => brigadeUnitLines(bi))
-    .filter(({ line }) => line.options?.includes(o.id))
+    .filter(({ line }) => ids.some((id) => line.options?.includes(id)))
     .reduce((s, { line }) => s + line.qty, 0);
 }
 

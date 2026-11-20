@@ -208,6 +208,11 @@ export interface UnitOption {
      * that share the option (by id) share the count.
      */
     armyWide?: boolean;
+    /**
+     * Other options (by id) that count toward the same limit, e.g. Austria's German (+8) and Hungarian
+     * (+6) Veteran upgrades, which together may cover "up to half of all German or Hungarian battalions"
+     */
+    sharedWith?: string[];
   };
   /** Special rules the unit gains, e.g. ["Reliable", "Elite 5+"] */
   addSpecial?: string[];
