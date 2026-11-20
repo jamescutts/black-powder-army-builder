@@ -5,14 +5,15 @@ import { SITE_DESCRIPTION, pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({ description: SITE_DESCRIPTION, path: "/" });
 
+// Each from a different nation, so no flag shows twice
 const FEATURED_ARMIES = [
   "france",
   "russia",
   "austria",
-  "prussia",
+  "grand-duchy-of-warsaw",
   "peninsular-british",
-  "peninsular-french",
-  "anglo-netherlands-british",
+  "spanish",
+  "dutch-belgian-nassau",
   "prussians-1815",
 ];
 
