@@ -10,10 +10,10 @@ const FEATURED_ARMIES = [
   "france",
   "russia",
   "austria",
+  "bavaria",
   "grand-duchy-of-warsaw",
   "peninsular-british",
   "spanish",
-  "dutch-belgian-nassau",
   "prussians-1815",
 ];
 
