@@ -8,6 +8,7 @@ import { theme } from "@/theme";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, pageMeta } from "@/lib/meta";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { InstallNotice } from "@/components/InstallNotice";
 
 // Site-wide defaults; each page adds its own title, description and address (see pageMeta). No canonical
 // address or sharing URL here, or pages without their own (like the old /builder redirects) would claim
@@ -47,6 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main className="site-main">{children}</main>
             <SiteFooter />
           </div>
+          <InstallNotice />
         </MantineProvider>
       </body>
     </html>
