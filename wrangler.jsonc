@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "army-builder",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-18",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // OpenNext calls back into its own Worker; this must match "name" above
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "army-builder"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
