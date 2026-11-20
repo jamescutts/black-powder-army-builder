@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "army-builder",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-18",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // OpenNext calls back into its own Worker; this must match "name" above
+  "services": [
+    {
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "army-builder"
+    }
+  ],
+  // Keep the *.workers.dev address too, which otherwise switches off once there are routes
+  "workers_dev": true,
+  // The site's address. Cloudflare creates the DNS record and certificate for a custom domain.
+  "routes": [
+    {
+      "pattern": "builder.shakosandsprues.com",
+      "custom_domain": true
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

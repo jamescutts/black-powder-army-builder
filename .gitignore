@@ -5,3 +5,6 @@ out
 *.log
 .claude
 .env*.local
+.open-next
+.wrangler
+.dev.vars*

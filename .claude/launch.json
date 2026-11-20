@@ -12,6 +12,17 @@
       "autoPort": true
     },
     {
+      "name": "worker-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "wrangler",
+        "dev",
+        "--port",
+        "8787"
+      ],
+      "port": 8787
+    },
+    {
       "name": "black-powder-army-builder-production",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
