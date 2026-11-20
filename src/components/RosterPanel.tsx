@@ -49,7 +49,10 @@ function LineList({
         const unit = nation.units.find((u) => u.id === line.unitId);
         if (!unit) return null;
         const sr = unit.category === "Command" ? getStaffRating(unit, line.variantLabel) : undefined;
-        const name = commander ? unit.name : (resolveLine(nation, line, ctx)?.name ?? unit.name);
+        const type = commander ? unit.name : (resolveLine(nation, line, ctx)?.name ?? unit.name);
+        // A named unit or commander by its name, with its type after it
+        const own = line.name?.trim();
+        const name = own ? `${own} \u00b7 ${type}` : type;
         const attached = roster ? attachedText(nation, roster, line.attachedTo) : null;
         return (
           <Group key={line.key} justify="space-between" wrap="nowrap">
@@ -192,7 +195,15 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
 
   return (
     <Stack gap="md">
-      <Paper withBorder p="md" radius="md" id="roster-panel" style={{ scrollMarginTop: 16 }}>
+      <Paper
+        withBorder
+        p="md"
+        radius="md"
+        id="roster-panel"
+        className="roster-card"
+        data-issues={errors.length > 0 || undefined}
+        style={{ scrollMarginTop: 16 }}
+      >
         <Group justify="space-between" align="flex-start" wrap="nowrap" mb="sm">
           <Group gap="sm" align="center" wrap="nowrap" style={{ minWidth: 0 }}>
             {(nation.flagFile ?? nation.flagFiles?.[0]) && (
@@ -295,7 +306,9 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
                       return (
                         <div key={reg.key} style={{ marginLeft: 8 }}>
                           <Text size="xs" fw={600} c="dimmed">
-                            {slot.regiment!.label} #{regIdx + 1}
+                            {reg.name?.trim()
+                              ? `${reg.name.trim()} \u00b7 ${slot.regiment!.label} #${regIdx + 1}`
+                              : `${slot.regiment!.label} #${regIdx + 1}`}
                             {regimentTags(bt, reg.options)}
                           </Text>
                           <LineList nation={nation} lines={regLines} ctx={{ bt, regimentOptions: reg.options }} />

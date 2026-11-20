@@ -119,6 +119,11 @@ export function loadList(nation: Nation, id: string): RosterState | null {
   return tidy(nation, saved);
 }
 
+/** A name typed by the player, kept only when it's a non-empty string */
+function cleanName(name: unknown): string | undefined {
+  return typeof name === "string" && name.trim() ? name.slice(0, 60) : undefined;
+}
+
 /** Only the option ids that still exist, or undefined for none */
 function knownOptions(ids: unknown, known: Set<string>): string[] | undefined {
   const kept = Array.isArray(ids) ? ids.filter((id): id is string => typeof id === "string" && known.has(id)) : [];
@@ -138,6 +143,7 @@ function splitLines(lines: RosterUnitLine[], known: Set<string>): RosterUnitLine
       key: i === 0 ? l.key : newKey("line"),
       qty: 1,
       options,
+      name: cleanName(l.name),
     }));
   });
 }
@@ -174,7 +180,10 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
           {
             ...bi,
             name: typeof bi.name === "string" && bi.name.trim() ? bi.name : undefined,
-            commanderLine: bi.commanderLine && unitIds.has(bi.commanderLine.unitId) ? bi.commanderLine : null,
+            commanderLine:
+              bi.commanderLine && unitIds.has(bi.commanderLine.unitId)
+                ? { ...bi.commanderLine, name: cleanName(bi.commanderLine.name) }
+                : null,
             slotLines: flat.map((lines) => splitLines(lines, known)),
             regimentSlots: bt.slots.map((slot, i) =>
               slot.regiment
@@ -199,7 +208,7 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
                         known
                       )
                     );
-                    return { ...reg, options: options.size ? [...options] : undefined, slotLines };
+                    return { ...reg, name: cleanName(reg.name), options: options.size ? [...options] : undefined, slotLines };
                   })
                 : null
             ),

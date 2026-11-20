@@ -20,15 +20,15 @@ import {
 } from "@mantine/core";
 import { IconAlertTriangle, IconChevronDown, IconCopy, IconPencil, IconPlus, IconTrash } from "@tabler/icons-react";
 import type { Nation, RegimentDef } from "@/data/types";
-import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState } from "@/types/army";
+import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState, RosterUnitLine } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
+import { InlineName } from "./InlineName";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { regimentBlockedReason, slotLockedReason, unitBlockedInRegimentSlot, unitBlockedInSlot } from "@/lib/availability";
 import {
   attachTargets,
   batteriesIn,
-  brigadeUnitLines,
   optionsForRegiment,
   regimentOptionBlocked,
   regimentOptionCost,
@@ -37,7 +37,7 @@ import {
 } from "@/lib/options";
 import { newKey } from "@/lib/id";
 import { limitBadge } from "@/lib/limitBadge";
-import { brigadeDisplayName, brigadeIssueText, brigadeLabel, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
+import { attachedText, brigadeDisplayName, brigadeIssueText, brigadeLabel, REVEAL_BRIGADE_EVENT, validateRoster } from "@/lib/validate";
 import { countByType, effectiveMax, effectiveSlotMax, requirementLabel, requirementMet } from "@/lib/brigadeLimits";
 
 interface Props {
@@ -138,27 +138,44 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     roster.brigadeInstances.length > 0 && roster.brigadeInstances.every((bi) => collapsed.has(bi.key));
 
   /**
-   * What a folded brigade still shows: its commander, then its units totalled by type across every
-   * slot and regiment, e.g. "2 regiments: 6× French Line Infantry · 1× Foot Artillery Section".
+   * What a folded brigade still shows, broken down as the roster card is: its commander, a line per
+   * regiment, then a line for its other units (support, artillery), with matching units counted
+   * together, e.g. "Infantry Regiment #1 · Guard status: 2× Guard Musketeer (Large), Guard Fusilier".
    */
   const brigadeSummary = (bi: RosterBrigadeInstance) => {
+    const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
     const commanderUnit = bi.commanderLine ? nation.units.find((u) => u.id === bi.commanderLine!.unitId) : undefined;
+    const rating = bi.commanderLine?.variantLabel ? ` (${bi.commanderLine.variantLabel})` : "";
     const commander = commanderUnit
-      ? `${commanderUnit.name}${bi.commanderLine!.variantLabel ? ` (${bi.commanderLine!.variantLabel})` : ""}`
+      ? `${bi.commanderLine!.name?.trim() ? `${bi.commanderLine!.name.trim()} \u00b7 ` : ""}${commanderUnit.name}${rating}`
       : null;
 
-    const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
-    const counts = new Map<string, number>();
-    for (const { line: l, regiment } of brigadeUnitLines(bi)) {
-      const resolved = resolveLine(nation, l, { bt, regimentOptions: regiment?.options });
-      if (!resolved) continue;
-      const name = l.variantLabel && resolved.unit === resolved.base ? `${resolved.name} (${l.variantLabel})` : resolved.name;
-      counts.set(name, (counts.get(name) ?? 0) + l.qty);
-    }
-    const units = [...counts].map(([name, qty]) => `${qty}× ${name}`).join(" · ");
-    const regiments = (bi.regimentSlots ?? []).reduce((n, r) => n + (r?.length ?? 0), 0);
-    const regimentsLabel = regiments > 0 ? `${regiments} regiment${regiments === 1 ? "" : "s"}: ` : "";
-    return { commander, units: units ? regimentsLabel + units : "No units yet" };
+    // "2× Musketeer, Fusilier (Veteran)": units with the same type and upgrades counted together
+    const countUnits = (entries: { line: RosterUnitLine; regimentOptions?: string[] }[]) => {
+      const counts = new Map<string, number>();
+      for (const { line: l, regimentOptions } of entries) {
+        const resolved = resolveLine(nation, l, { bt, regimentOptions });
+        if (!resolved) continue;
+        let label = l.variantLabel && resolved.unit === resolved.base ? `${resolved.name} (${l.variantLabel})` : resolved.name;
+        const attached = attachedText(nation, roster, l.attachedTo);
+        if (attached) label += `, ${attached}`;
+        counts.set(label, (counts.get(label) ?? 0) + l.qty);
+      }
+      return [...counts].map(([label, qty]) => (qty > 1 ? `${qty}\u00d7 ${label}` : label)).join(", ");
+    };
+
+    const groups: { label: string; units: string }[] = [];
+    bt?.slots.forEach((slot, si) => {
+      if (!slot.regiment) return;
+      (bi.regimentSlots?.[si] ?? []).forEach((reg, ri) => {
+        const upgrades = (bt.options ?? []).filter((o) => reg.options?.includes(o.id)).map((o) => o.label);
+        const label = [reg.name?.trim() || `${slot.regiment!.label} #${ri + 1}`, ...upgrades].join(" \u00b7 ");
+        const units = countUnits(reg.slotLines.flat().map((line) => ({ line, regimentOptions: reg.options })));
+        groups.push({ label, units: units || "no battalions yet" });
+      });
+    });
+    const others = countUnits(bi.slotLines.flat().map((line) => ({ line })));
+    return { commander, groups, others, empty: groups.length === 0 && !others };
   };
 
   // After a brigade or regiment is removed, a notice offers to put it back. It re-inserts the removed
@@ -239,11 +256,12 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
       key: newKey("brigade"),
       // A copy gets the same units but not the same name
       name: undefined,
+      // ...nor do its commander, regiments and units
       commanderLine: source.commanderLine
-        ? { ...source.commanderLine, key: newKey("cmd") }
+        ? { ...source.commanderLine, key: newKey("cmd"), name: undefined }
         : null,
       slotLines: source.slotLines.map((slot) =>
-        slot.map((line) => ({ ...line, key: newKey("unit") }))
+        slot.map((line) => ({ ...line, key: newKey("unit"), name: undefined }))
       ),
       regimentSlots: source.regimentSlots.map((regSlot) =>
         regSlot
@@ -251,13 +269,22 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
               key: newKey("regiment"),
               options: reg.options,
               slotLines: reg.slotLines.map((lines) =>
-                lines.map((line) => ({ ...line, key: newKey("unit") }))
+                lines.map((line) => ({ ...line, key: newKey("unit"), name: undefined }))
               ),
             }))
           : null
       ),
     };
     onChange({ ...roster, brigadeInstances: [...roster.brigadeInstances, clone] });
+  }
+
+  function handleCommanderName(instanceKey: string, name: string | undefined) {
+    onChange({
+      ...roster,
+      brigadeInstances: roster.brigadeInstances.map((bi) =>
+        bi.key === instanceKey && bi.commanderLine ? { ...bi, commanderLine: { ...bi.commanderLine, name } } : bi
+      ),
+    });
   }
 
   function handleCommanderVariant(instanceKey: string, variantLabel: string) {
@@ -573,9 +600,20 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                           ★ {summary.commander}
                         </Text>
                       )}
-                      <Text size="xs" c={summary.units === "No units yet" ? "dimmed" : undefined}>
-                        {summary.units}
-                      </Text>
+                      {summary.groups.map((g, i) => (
+                        <Text size="xs" key={i}>
+                          <Text span size="xs" fw={600}>
+                            {g.label}:
+                          </Text>{" "}
+                          {g.units}
+                        </Text>
+                      ))}
+                      {summary.others && <Text size="xs">{summary.others}</Text>}
+                      {summary.empty && (
+                        <Text size="xs" c="dimmed">
+                          No units yet
+                        </Text>
+                      )}
                     </div>
                   );
                 })()}
@@ -592,8 +630,18 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                 // A plain row between rules, rather than a box within the card
                 <div className="commander-row">
                   <Group justify="space-between" wrap="nowrap">
-                    <Text size="sm" fw={600}>
-                      Brigade Commander
+                    {/* The commander's own name, typed in place, e.g. "Generalmajor v. Horn" */}
+                    <Text size="sm" style={{ minWidth: 0 }}>
+                      <Text span size="sm" fw={600}>
+                        Brigade Commander
+                      </Text>{" "}
+                      <InlineName
+                        value={instance.commanderLine.name}
+                        placeholder="Add a name"
+                        tone="hint"
+                        onChange={(name) => handleCommanderName(instance.key, name)}
+                        label={`Name of the ${brigadeLabel(instance, bt.name)} commander`}
+                      />
                     </Text>
                     <Group gap={6} wrap="nowrap">
                       {(commanderUnit.variants?.length ?? 0) > 0 ? (
@@ -639,30 +687,7 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                               {regimentBadge.label}
                             </Badge>
                           </Group>
-                          {regiments.length < regDef.max &&
-                            (() => {
-                              // Greyed out, with the reason, when another rule (the brigade's 3 regiments,
-                              // 1 Light Regiment per division) says no
-                              const why = regimentBlockedReason({ nation, roster, bt, instance, slotIndex });
-                              const button = (
-                                <Button
-                                  size="compact-xs"
-                                  variant="light"
-                                  leftSection={<IconPlus size={12} />}
-                                  disabled={!!why}
-                                  onClick={() => handleAddRegiment(instance.key, slotIndex, regDef)}
-                                >
-                                  Add {regDef.label}
-                                </Button>
-                              );
-                              return why ? (
-                                <Tooltip label={why} withArrow>
-                                  <span tabIndex={0} className="unit-option-blocked">{button}</span>
-                                </Tooltip>
-                              ) : (
-                                button
-                              );
-                            })()}
+
                         </Group>
 
                         {/* Regiment instances */}
@@ -674,7 +699,26 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                             {/* The regiment's name on the left; its points, upgrades (Guard status) and remove on the right,
                                 as on each battalion's row */}
                             <Group justify="space-between" align="center" wrap="nowrap" gap="xs" mb="xs">
-                              <Text size="sm" fw={600}>{regDef.label} #{regIdx + 1}</Text>
+                              <Text size="sm" fw={600} style={{ minWidth: 0 }}>
+                                <InlineName
+                                  value={reg.name}
+                                  placeholder={`${regDef.label} #${regIdx + 1}`}
+                                  onChange={(name) =>
+                                    handleRegimentSlotsChange(
+                                      instance.key,
+                                      slotIndex,
+                                      regiments.map((r) => (r.key === reg.key ? { ...r, name } : r))
+                                    )
+                                  }
+                                  label={`Name for ${regDef.label} ${regIdx + 1}`}
+                                />
+                                {/* A named regiment still says what it is, as a named brigade does */}
+                                {reg.name?.trim() && (
+                                  <Text span size="xs" c="dimmed" fw={400} className="unit-row-type">
+                                    {regDef.label} #{regIdx + 1}
+                                  </Text>
+                                )}
+                              </Text>
                               <Group gap={6} wrap="wrap" justify="flex-end" className="regiment-options" role="group" aria-label={`${regDef.label} ${regIdx + 1} upgrades`}>
                                 {regimentOptions.map((o) => {
                                   const blocked = regimentOptionBlocked(o, reg, instance);
@@ -769,6 +813,28 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                           </div>
                           );
                         })}
+
+                        {/* Another regiment: a dashed row after the last, greyed with the reason when another
+                            rule (the brigade's 3 regiments, 1 Light Regiment per division) says no */}
+                        {regiments.length < regDef.max &&
+                          (() => {
+                            const why = regimentBlockedReason({ nation, roster, bt, instance, slotIndex });
+                            return why ? (
+                              <div className="add-row" data-blocked>
+                                <IconPlus size={14} aria-hidden />
+                                <span>Add {regDef.label}</span>
+                                <span className="add-row-reason">{why}</span>
+                              </div>
+                            ) : (
+                              <UnstyledButton
+                                className="add-row"
+                                onClick={() => handleAddRegiment(instance.key, slotIndex, regDef)}
+                              >
+                                <IconPlus size={14} aria-hidden />
+                                <span>Add {regDef.label}</span>
+                              </UnstyledButton>
+                            );
+                          })()}
                       </Stack>
                     );
                   }

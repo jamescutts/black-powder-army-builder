@@ -349,6 +349,13 @@ function BuilderContent({ nationId }: { nationId: string }) {
               <BrigadeBoard key={listId} nation={nation} roster={roster} onChange={setRoster} />
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 5 }}>
+              {/* An invisible copy of the "Army command" heading, so on wide screens the roster card's top
+                  lines up with the command box beside it rather than with the heading */}
+              <div className="roster-align" aria-hidden>
+                <Title order={2} className="builder-heading">
+                  &nbsp;
+                </Title>
+              </div>
               {/* Only the roster follows you down the page; the reference notes sit below the builder */}
               <div style={{ position: "sticky", top: 16 }}>
                 <RosterPanel

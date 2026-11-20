@@ -63,7 +63,16 @@ function UnitRow({
         <Group gap={6} wrap="nowrap" align="center">
           <span>
             {line.qty > 1 ? `${line.qty}× ` : ""}
-            {resolved.name}
+            {line.name?.trim() ? (
+              <>
+                {line.name.trim()}{" "}
+                <Text span size="xs" c="dimmed">
+                  · {resolved.name}
+                </Text>
+              </>
+            ) : (
+              resolved.name
+            )}
             {attached && (
               <Text span size="xs" c="dimmed" fs="italic">
                 {" "}
@@ -257,7 +266,13 @@ function RosterContent({ nation, roster }: Props) {
                   </Group>
                 )}
                 <Text fw={600} size="sm" style={{ flex: 1, minWidth: 0 }}>
-                  {commanderUnit.name}
+                  {commanderLine.name?.trim() || commanderUnit.name}
+                  {commanderLine.name?.trim() && (
+                    <Text span size="xs" c="dimmed" fw={400}>
+                      {" "}
+                      · {commanderUnit.name}
+                    </Text>
+                  )}
                 </Text>
                 <Text fw={600} size="sm" c="dimmed" style={{ whiteSpace: "nowrap", flexShrink: 0 }}>
                   {commanderCost} pts
@@ -296,7 +311,9 @@ function RosterContent({ nation, roster }: Props) {
                         <Table.Tr>
                           <Table.Td colSpan={5} style={{ paddingTop: 8 }}>
                             <Text size="xs" fw={600} c="dimmed">
-                              {slot.regiment!.label} #{regIdx + 1}
+                              {reg.name?.trim()
+                                ? `${reg.name.trim()} \u00b7 ${slot.regiment!.label} #${regIdx + 1}`
+                                : `${slot.regiment!.label} #${regIdx + 1}`}
                               {regimentTags(bt, reg.options)}
                             </Text>
                           </Table.Td>

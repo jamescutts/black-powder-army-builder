@@ -10,6 +10,11 @@ export interface RosterUnitLine {
   /** Ids of the unit-scope options (from the brigade type's `options`) this unit has taken */
   options?: string[];
   /**
+   * The player's own name for this unit, e.g. "1st Bn, Leib Regiment", or for a commander line the
+   * commander's, e.g. "Generalmajor v. Horn". Its type is always shown alongside.
+   */
+  name?: string;
+  /**
    * For a battery whose brigade type has `attachBatteries`: the key of the brigade instance it's
    * attached to, if any
    */
@@ -19,6 +24,8 @@ export interface RosterUnitLine {
 /** A single regiment instance within a regiment-type slot */
 export interface RosterRegimentInstance {
   key: string;
+  /** The player's own name for this regiment, e.g. "Infantry Regiment No. 3"; its label and number otherwise */
+  name?: string;
   /** Ids of the regiment-scope options (e.g. Guard status) this regiment has taken */
   options?: string[];
   /** One array of unit lines per regiment sub-slot, indexed same as RegimentDef.slots */

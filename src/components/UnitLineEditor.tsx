@@ -1,12 +1,13 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import { ActionIcon, Badge, Button, Chip, Group, Select, Stack, Text, Tooltip } from "@mantine/core";
-import { IconPlus, IconTrash } from "@tabler/icons-react";
+import { ActionIcon, Badge, Button, Chip, Group, Select, Stack, Text, Tooltip, UnstyledButton } from "@mantine/core";
+import { IconLock, IconPlus, IconTrash } from "@tabler/icons-react";
 import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterBrigadeInstance, RosterUnitLine } from "@/types/army";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { newKey } from "@/lib/id";
+import { InlineName } from "@/components/InlineName";
 import { limitBadge } from "@/lib/limitBadge";
 import { optionDelta, optionsForUnit, resolveLine, signedPoints, toggleLineOption, unitOptionBlocked } from "@/lib/options";
 
@@ -104,6 +105,10 @@ export function UnitLineEditor({
     const u = eligibleUnits.find((x) => x.id === unitId);
     if (!u) return;
     onChange(lines.map((l) => (l.key === key ? { ...l, unitId, variantLabel: defaultVariantLabel(u), options: undefined } : l)));
+  }
+
+  function handleRename(key: string, name: string | undefined) {
+    onChange(lines.map((l) => (l.key === key ? { ...l, name } : l)));
   }
 
   function handleVariant(key: string, variantLabel: string) {
@@ -207,6 +212,22 @@ export function UnitLineEditor({
                       allowDeselect={false}
                       searchable
                     />
+                  ) : brigade ? (
+                    // The unit's own name, typed in place; once it has one, its type follows
+                    <Text size="sm" span>
+                      <InlineName
+                        value={line.name}
+                        placeholder={`${name}${showVariantInName ? ` (${line.variantLabel})` : ""}`}
+                        onChange={(n) => handleRename(line.key, n)}
+                        label={`Name for this ${name}`}
+                      />
+                      {line.name?.trim() && (
+                        <Text span size="xs" c="dimmed" className="unit-row-type">
+                          {name}
+                          {showVariantInName ? ` (${line.variantLabel})` : ""}
+                        </Text>
+                      )}
+                    </Text>
                   ) : (
                     <Text size="sm" span>
                       {name}
@@ -264,86 +285,106 @@ export function UnitLineEditor({
         </Stack>
       )}
 
-      {!atMaxTotal && !isFull && lockedReason && (
-        <Text size="xs" c="dimmed" className="slot-locked">
-          {lockedReason}
-        </Text>
-      )}
+      {/* Adding: a dashed row at the foot of the group, the same "space waiting to be filled" as the
+          Add another brigade box, smaller. When nothing can be added yet, the row stays, greyed, and
+          says why. */}
+      {!atMaxTotal && !isFull && (() => {
+        if (lockedReason) {
+          return (
+            <div className="add-row" data-blocked>
+              <IconLock size={13} aria-hidden />
+              <span>{lockedReason}</span>
+            </div>
+          );
+        }
+        const pickedRules =
+          pickedUnit?.special?.length && !lines.some((l) => l.unitId === pickedUnit.id)
+            ? pickedUnit.special.join(" \u2022 ")
+            : null;
 
-      {!atMaxTotal && !isFull && !lockedReason && (
-        <>
-          <Group gap={6} wrap="nowrap">
-            {onlyUnit ? (
-              (onlyUnit.variants?.length ?? 0) > 0 && (
-                <Select
-                  size="xs"
-                  w={170}
-                  aria-label={`${onlyUnit.name} option`}
-                  data={onlyUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
-                  value={variant}
-                  onChange={(v) => v && setPickedVariant(v)}
-                  allowDeselect={false}
-                />
-              )
-            ) : (
-              <>
-                <Select
-                  size="xs"
-                  style={{ flex: 1 }}
-                  placeholder="Choose unit"
-                  aria-label={label ? `${label}: unit` : "Unit"}
-                  data={eligibleUnits.map((u) => {
-                    const why = blockedReason(u.id);
-                    return { value: u.id, label: why ? `${u.name} (${why})` : u.name, disabled: !!why };
-                  })}
-                  value={pickedUnit?.id ?? null}
-                  onChange={handlePickUnit}
-                  searchable
-                  allowDeselect={false}
-                />
-                {pickedUnit && (pickedUnit.variants?.length ?? 0) > 0 && (
+        // One kind of unit with no options to choose: the whole row is the button
+        if (onlyUnit && !(onlyUnit.variants?.length ?? 0)) {
+          return pickedUnit ? (
+            <UnstyledButton className="add-row" onClick={handleAdd}>
+              <IconPlus size={14} aria-hidden />
+              <span className="add-unit-label">Add {onlyUnit.name}</span>
+              {pickedRules && <span className="add-row-rules">{pickedRules}</span>}
+            </UnstyledButton>
+          ) : (
+            <div className="add-row" data-blocked>
+              <IconPlus size={14} aria-hidden />
+              <span className="add-unit-label">Add {onlyUnit.name}</span>
+              <span className="add-row-reason">{blockedReason(onlyUnit.id)}</span>
+            </div>
+          );
+        }
+
+        return (
+          <div className="add-row add-row-picker">
+            <Group gap={6} wrap="nowrap" style={{ flex: 1, minWidth: 0 }}>
+              {onlyUnit ? (
+                <>
+                  <Text size="xs" fw={600} className="add-unit-label">
+                    {onlyUnit.name}
+                  </Text>
                   <Select
                     size="xs"
-                    w={150}
-                    aria-label={`${pickedUnit.name} option`}
-                    data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
+                    w={170}
+                    aria-label={`${onlyUnit.name} option`}
+                    data={onlyUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
                     value={variant}
-                    onChange={(v) => {
-                      if (!v) return;
-                      // Choosing an option for the fallback unit makes it the picked one
-                      setPickedUnitId(pickedUnit.id);
-                      setPickedVariant(v);
-                    }}
+                    onChange={(v) => v && setPickedVariant(v)}
                     allowDeselect={false}
                   />
-                )}
-              </>
+                </>
+              ) : (
+                <>
+                  <Select
+                    size="xs"
+                    style={{ flex: 1, minWidth: 0 }}
+                    placeholder="Choose unit"
+                    aria-label={label ? `${label}: unit` : "Unit"}
+                    data={eligibleUnits.map((u) => {
+                      const why = blockedReason(u.id);
+                      return { value: u.id, label: why ? `${u.name} (${why})` : u.name, disabled: !!why };
+                    })}
+                    value={pickedUnit?.id ?? null}
+                    onChange={handlePickUnit}
+                    searchable
+                    allowDeselect={false}
+                  />
+                  {pickedUnit && (pickedUnit.variants?.length ?? 0) > 0 && (
+                    <Select
+                      size="xs"
+                      w={150}
+                      aria-label={`${pickedUnit.name} option`}
+                      data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
+                      value={variant}
+                      onChange={(v) => {
+                        if (!v) return;
+                        // Choosing an option for the fallback unit makes it the picked one
+                        setPickedUnitId(pickedUnit.id);
+                        setPickedVariant(v);
+                      }}
+                      allowDeselect={false}
+                    />
+                  )}
+                </>
+              )}
+              <Button size="xs" variant="light" leftSection={<IconPlus size={14} />} onClick={handleAdd} disabled={!pickedUnit}>
+                Add
+              </Button>
+            </Group>
+            {!pickedUnit ? (
+              <span className="add-row-reason add-row-below">
+                {onlyUnit ? blockedReason(onlyUnit.id) : "Nothing more can be added here right now"}
+              </span>
+            ) : (
+              pickedRules && <span className="add-row-rules add-row-below">{pickedRules}</span>
             )}
-            <Button
-              size="xs"
-              variant={onlyUnit ? "light" : "filled"}
-              leftSection={<IconPlus size={14} />}
-              onClick={handleAdd}
-              disabled={!pickedUnit}
-              style={onlyUnit ? { minWidth: 0 } : undefined}
-            >
-              {onlyUnit ? <span className="add-unit-label">Add {onlyUnit.name}</span> : "Add"}
-            </Button>
-          </Group>
-          {/* Why the only unit, or every unit, can't be added right now */}
-          {!pickedUnit && (onlyUnit || eligibleUnits.length > 0) && (
-            <Text size="xs" c="dimmed" className="slot-locked">
-              {onlyUnit ? blockedReason(onlyUnit.id) : "Nothing more can be added here right now"}
-            </Text>
-          )}
-          {/* The picked unit's rules, unless they're already shown on a line above */}
-          {pickedUnit?.special && pickedUnit.special.length > 0 && !lines.some((l) => l.unitId === pickedUnit.id) && (
-            <Text size="xs" c="dimmed" fs="italic" style={{ lineHeight: 1.4 }}>
-              {pickedUnit.special.join(" • ")}
-            </Text>
-          )}
-        </>
-      )}
+          </div>
+        );
+      })()}
     </Stack>
   );
 }

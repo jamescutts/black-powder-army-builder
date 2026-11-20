@@ -349,6 +349,16 @@ body {
   border-top: 4px solid var(--mantine-color-brown-8);
 }
 
+/* The roster summary: the darkest rule of all, in the site header's ink, as it stands for the whole
+   army; red, like a brigade's, while there's something to fix */
+.roster-card.roster-card {
+  border-top: 4px solid #33200f;
+}
+
+.roster-card.roster-card[data-issues] {
+  border-top-color: var(--mantine-color-red-6);
+}
+
 .brigade-card:focus {
   outline: none;
 }
@@ -522,17 +532,79 @@ body {
   }
 }
 
-/* Why a slot or unit can't be added to yet, where its picker would be */
-.slot-locked {
-  font-style: italic;
-  padding: 2px 0;
+/* Adding a unit or regiment: a dashed row at the foot of its group, the same "space waiting to be
+   filled" as the Add another brigade box, a size smaller. A blocked one stays, greyed, saying why. */
+.add-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  padding: 5px 10px;
+  border: 1px dashed rgba(107, 61, 23, 0.4);
+  border-radius: var(--mantine-radius-sm);
+  background: rgba(107, 61, 23, 0.03);
+  color: var(--mantine-color-brown-7);
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.4;
+  text-align: left;
 }
 
-/* A group of battalions within a regiment (its Musketeers, its Fusiliers): a thinner bar of its own,
+button.add-row {
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+button.add-row:hover {
+  background: rgba(107, 61, 23, 0.08);
+  border-color: rgba(107, 61, 23, 0.65);
+}
+
+button.add-row:focus-visible {
+  outline: 2px solid var(--mantine-color-brown-6);
+  outline-offset: 2px;
+}
+
+.add-row[data-blocked] {
+  background: transparent;
+  border-color: var(--mantine-color-gray-3);
+  color: var(--mantine-color-gray-6);
+  font-size: var(--mantine-font-size-xs);
+  font-style: italic;
+}
+
+.add-row-picker {
+  padding: 4px 6px;
+}
+
+.add-row-rules,
+.add-row-reason {
+  font-size: var(--mantine-font-size-xs);
+  font-style: italic;
+  color: var(--mantine-color-gray-6);
+}
+
+.add-row-rules {
+  margin-left: 4px;
+}
+
+.add-row-below {
+  flex-basis: 100%;
+  padding-left: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.add-row {
+    transition: none;
+  }
+}
+
+/* A group of battalions within a regiment (its Musketeers, its Fusiliers): a bar of its own,
    in a lighter colour than the regiment's, so the regiment and its groups read as two levels */
 .slot-group {
   padding-left: 10px;
-  border-left: 2px solid var(--mantine-color-brown-3);
+  border-left: 3px solid var(--mantine-color-brown-3);
 }
 
 /* "Attached to" over an army battery's brigade picker: small, like the row's other details */
@@ -1432,5 +1504,67 @@ body {
   /* The undo notice sits above the bar rather than over it */
   .undo-toast {
     bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Names typed straight into the builder (units, regiments, commanders): plain text until hovered or
+   focused, when a dashed line shows they can be edited, as the army's name does in the roster card */
+.inline-name {
+  font: inherit;
+  color: inherit;
+  max-width: 100%;
+  min-width: 3ch;
+  field-sizing: content;
+  padding: 0 1px;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px dashed transparent;
+  border-radius: 0;
+  background: transparent;
+  outline: none;
+  transition: border-color 120ms ease;
+}
+
+.inline-name::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+.inline-name[data-tone="hint"]::placeholder {
+  color: var(--mantine-color-gray-6);
+  font-style: italic;
+}
+
+.inline-name:hover {
+  border-bottom-color: rgba(107, 61, 23, 0.45);
+}
+
+.inline-name:focus {
+  border-bottom-color: var(--mantine-color-brown-6);
+  background: rgba(107, 61, 23, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inline-name {
+    transition: none;
+  }
+}
+
+/* A named unit still says what it is, after its name */
+.unit-row-type {
+  margin-left: 6px;
+}
+
+/* Lines the roster card up with the army command box on wide screens: the height of the builder's
+   section heading plus the gap under it (as in BrigadeBoard's heading Stack). Not needed once the
+   roster stacks under the builder. */
+.roster-align {
+  visibility: hidden;
+  margin-bottom: var(--mantine-spacing-sm);
+}
+
+@media (max-width: 61.99em) {
+  .roster-align {
+    display: none;
   }
 }
