@@ -91,8 +91,18 @@ export function ForceOrgNotes({ nation }: { nation: Nation }) {
         <Grid.Col span={{ base: 12, md: hasSpecial || hasAllies ? 7 : 12 }}>
           <NoteCard tone="org" icon={<IconListDetails size={16} />} title="Force organisation">
             <Text size="sm" c="dimmed" mb="xs">
-              The builder checks brigade and slot limits as you go. These
-              conditions aren&rsquo;t checked, so confirm them against the book.
+              {nation.notes.length > 0 ? (
+                <>
+                  The builder checks brigade and slot limits as you go. These
+                  conditions aren&rsquo;t checked, so confirm them against the
+                  book.
+                </>
+              ) : (
+                <>
+                  The builder checks this list&rsquo;s brigade and slot limits
+                  as you go.
+                </>
+              )}
             </Text>
             {nation.notes.length > 0 && (
               <List size="sm" spacing={6}>

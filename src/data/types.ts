@@ -290,6 +290,13 @@ export interface Nation {
     perUnitIds: string[];
     ratio: number;
     label?: string;
+    /**
+     * Only count `capUnitIds` in brigades of these types, for when the same unit can also be
+     * bought elsewhere under its own rules, e.g. French Reserve Artillery foot batteries are
+     * 1 per 8 battalions but Divisional Artillery foot batteries are not. `perUnitIds` are
+     * still counted across the whole army.
+     */
+    brigadeTypeIds?: string[];
   }[];
   /**
    * Freeform bullet-point summary of the brigade / force-organisation rules for reference

@@ -9,6 +9,7 @@ import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, pageMeta } from "@/lib/meta";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { OfflineSupport } from "@/components/OfflineSupport";
+import { InstallNotice } from "@/components/InstallApp";
 import { CATCH_INSTALL_PROMPT } from "@/lib/installPrompt";
 
 // Site-wide defaults; each page adds its own title, description and address (see pageMeta). No canonical
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <SiteFooter />
           </div>
           <OfflineSupport />
+          <InstallNotice />
         </MantineProvider>
       </body>
     </html>
