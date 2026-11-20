@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
+  ActionIcon,
   Anchor,
   Breadcrumbs,
   Container,
@@ -13,7 +14,9 @@ import {
   Stack,
   Text,
   Title,
+  Tooltip,
 } from "@mantine/core";
+import { IconTrash } from "@tabler/icons-react";
 import { supplements, getSupplement, getNation, getNationsForSupplement } from "@/data";
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
@@ -184,30 +187,46 @@ function BuilderContent({ nationId }: { nationId: string }) {
                 </Text>
               </Stack>
             </Group>
-            {/* Other armies from the same book; a different book is a breadcrumb away */}
-            <Select
-              label="Switch army"
-              size="sm"
-              data={nationOptionsForSupplement}
-              value={nation.id}
-              onChange={handleNationChange}
-              w={250}
-              allowDeselect={false}
-              leftSection={
-                nation.flagFile || nation.flagFiles?.[0] ? (
-                  <FlagIcon src={(nation.flagFile ?? nation.flagFiles?.[0])!} alt="" />
-                ) : undefined
-              }
-              renderOption={({ option }) => {
-                const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
-                return (
-                  <Group gap="xs" wrap="nowrap">
-                    {flag && <FlagIcon src={flag} alt="" />}
-                    <span>{option.label}</span>
-                  </Group>
-                );
-              }}
-            />
+            {/* Switching and clearing sit together: both change which army you're working on */}
+            <Group gap="xs" align="flex-end" wrap="nowrap">
+              {/* Other armies from the same book; a different book is a breadcrumb away */}
+              <Select
+                label="Switch army"
+                size="sm"
+                data={nationOptionsForSupplement}
+                value={nation.id}
+                onChange={handleNationChange}
+                w={250}
+                allowDeselect={false}
+                leftSection={
+                  nation.flagFile || nation.flagFiles?.[0] ? (
+                    <FlagIcon src={(nation.flagFile ?? nation.flagFiles?.[0])!} alt="" />
+                  ) : undefined
+                }
+                renderOption={({ option }) => {
+                  const flag = (option as typeof nationOptionsForSupplement[number]).flagFile;
+                  return (
+                    <Group gap="xs" wrap="nowrap">
+                      {flag && <FlagIcon src={flag} alt="" />}
+                      <span>{option.label}</span>
+                    </Group>
+                  );
+                }}
+              />
+              {/* Just the bin, the picker's height, with its name in a tooltip */}
+              <Tooltip label="Clear army">
+                <ActionIcon
+                  variant="light"
+                  color="red"
+                  size={36}
+                  onClick={() => setConfirmingClear(true)}
+                  disabled={!hasUnits}
+                  aria-label="Clear army"
+                >
+                  <IconTrash size={18} />
+                </ActionIcon>
+              </Tooltip>
+            </Group>
           </Group>
         </Stack>
       </Container>
@@ -225,7 +244,6 @@ function BuilderContent({ nationId }: { nationId: string }) {
                 <RosterPanel
                   nation={nation}
                   roster={roster}
-                  onClear={hasUnits ? () => setConfirmingClear(true) : undefined}
                   onRename={(armyName) => setRoster({ ...roster, armyName })}
                 />
               </div>

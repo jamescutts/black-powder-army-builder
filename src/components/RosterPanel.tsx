@@ -1,7 +1,7 @@
 "use client";
 
-import { Badge, Button, Divider, Group, List, Paper, ScrollArea, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
-import { IconAlertTriangle, IconCircleCheck, IconTrash } from "@tabler/icons-react";
+import { Badge, Divider, Group, List, Paper, ScrollArea, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
+import { IconAlertTriangle, IconCircleCheck } from "@tabler/icons-react";
 import type { Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitCost } from "@/lib/units";
@@ -11,8 +11,6 @@ import { RosterViewModal } from "@/components/RosterViewModal";
 interface Props {
   nation: Nation;
   roster: RosterState;
-  /** Clears the army (after asking); left out while there's nothing to clear */
-  onClear?: () => void;
   /** Renames the list */
   onRename?: (name: string) => void;
 }
@@ -73,7 +71,7 @@ function LineList({
   );
 }
 
-export function RosterPanel({ nation, roster, onClear, onRename }: Props) {
+export function RosterPanel({ nation, roster, onRename }: Props) {
   const commandTotal = roster.commandItems.reduce((s, l) => s + lineTotal(nation, l), 0);
 
   const brigadeTotals = roster.brigadeInstances.map((instance) => {
@@ -277,14 +275,6 @@ export function RosterPanel({ nation, roster, onClear, onRename }: Props) {
             </>
           )}
         </div>
-
-        {onClear && (
-          <Group justify="flex-end" mt="xs">
-            <Button variant="subtle" color="red" size="compact-xs" leftSection={<IconTrash size={13} />} onClick={onClear}>
-              Clear army
-            </Button>
-          </Group>
-        )}
       </Paper>
 
       <RosterViewModal nation={nation} roster={roster} />

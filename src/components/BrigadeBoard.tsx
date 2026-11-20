@@ -358,7 +358,9 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         <Title order={2} className="builder-heading">
           Army command
         </Title>
-        <Paper withBorder p="md" radius="md">
+        {/* Topped with the brigades' rule, a shade darker as it outranks them. No inline warning here: a
+            missing commander is just the starting state, and the roster panel already lists it. */}
+        <Paper withBorder p="md" radius="md" className="command-card">
           {commandUnits.length > 0 ? (
             <UnitLineEditor
               eligibleUnits={commandUnits}

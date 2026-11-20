@@ -324,6 +324,11 @@ body {
   border-top-color: var(--mantine-color-red-6);
 }
 
+/* Army command: the brigades' top rule, a shade darker as the army commander outranks them */
+.command-card.command-card {
+  border-top: 4px solid var(--mantine-color-brown-8);
+}
+
 .brigade-card:focus {
   outline: none;
 }
