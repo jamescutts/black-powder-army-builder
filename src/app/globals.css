@@ -1865,6 +1865,17 @@ a.app-list-row:active {
   }
 }
 
+/* "Not in the app stores": under the callout's buttons, with a globe, and at the top of the pop-up */
+.app-callout-no-store {
+  line-height: 1.5;
+}
+
+.app-callout-no-store svg {
+  margin-right: 6px;
+  vertical-align: -3px;
+  color: var(--mantine-color-brown-6);
+}
+
 /* The note under every device's steps in the app callout's How to install pop-up */
 .app-callout-note {
   border-top: 1px solid #e6dcc4;

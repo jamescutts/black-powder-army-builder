@@ -2,9 +2,16 @@
 
 import { useState, type ReactNode } from "react";
 import { Anchor, Button, Grid, Group, Modal, Stack, Text, ThemeIcon, Title } from "@mantine/core";
-import { IconChevronRight, IconDeviceMobile, IconDownload, IconLayoutList, IconWifiOff } from "@tabler/icons-react";
+import {
+  IconChevronRight,
+  IconDeviceMobile,
+  IconDownload,
+  IconLayoutList,
+  IconWifiOff,
+  IconWorld,
+} from "@tabler/icons-react";
 import { useInstallApp } from "@/components/InstallApp";
-import { HERO } from "@/components/HomeView";
+import { HERO, type HomeArmy } from "@/components/HomeView";
 
 const FEATURES: { icon: ReactNode; title: string }[] = [
   { icon: <IconWifiOff size={18} />, title: "Works with no signal" },
@@ -22,6 +29,10 @@ const PLATFORMS: { name: string; how: string }[] = [
   { name: "Firefox", how: "On Android, Add to Home screen in the menu. Firefox on a computer can't install apps." },
 ];
 
+// People who decide to install often look in the app stores first, and find nothing
+const NO_STORE_NOTE =
+  "Army Builder isn't in the App Store or Google Play. It installs straight from your browser, free, in a few seconds.";
+
 const SEPARATE_ARMIES_NOTE =
   "On iPhone and iPad the app keeps its own armies, separate from Safari's, so armies you've saved in the browser won't appear in it.";
 
@@ -29,6 +40,9 @@ const SEPARATE_ARMIES_NOTE =
 function PlatformSteps() {
   return (
     <>
+      <Text size="sm" mb="md" className="app-callout-no-store">
+        {NO_STORE_NOTE}
+      </Text>
       <Stack gap="sm">
         {PLATFORMS.map((p) => (
           <div key={p.name}>
@@ -81,15 +95,18 @@ function InstallButton({ size = "md" }: { size?: "sm" | "md" }) {
   );
 }
 
-// A few armies for the phone preview's Your armies, as someone might have them
+// The phone preview's Your armies, as someone might have them, and its army tiles, by army list. Their
+// flags come from the army lists themselves (the home page's featured armies), so they follow any change.
 const PREVIEW_ARMIES = [
-  { flag: "/flags/france.svg", name: "Davout's I Corps", list: "The French 1812", points: 1250 },
-  { flag: "/flags/britain.svg", name: "Wellington at Talavera", list: "The Peninsular British", points: 980 },
+  { id: "france", name: "Davout's I Corps", list: "The French 1812", points: 1250 },
+  { id: "peninsular-british", name: "Wellington at Talavera", list: "The Peninsular British", points: 980 },
 ];
-const PREVIEW_FLAGS = ["/flags/russia.svg", "/flags/austria.svg", "/flags/prussia.svg", "/flags/bavaria.svg"];
+const PREVIEW_TILES = ["grand-duchy-of-warsaw", "austria", "prussians-1815", "bavaria"];
 
 /** A small drawing of the app's home page in a phone. Decorative. */
-function PhonePreview() {
+function PhonePreview({ armies }: { armies: HomeArmy[] }) {
+  const flagOf = (id: string) => armies.find((a) => a.href.endsWith(`/${id}`))?.flags[0];
+  const tiles = PREVIEW_TILES.map(flagOf).filter((f) => f !== undefined);
   return (
     <div className="app-phone" aria-hidden>
       <div className="app-phone-header">
@@ -104,7 +121,7 @@ function PhonePreview() {
         <div className="app-phone-list">
           {PREVIEW_ARMIES.map((a) => (
             <div key={a.name} className="app-phone-row">
-              <img src={a.flag} alt="" />
+              {flagOf(a.id) && <img src={flagOf(a.id)} alt="" />}
               <span className="app-phone-row-text">
                 <b>{a.name}</b>
                 <small>{a.list}</small>
@@ -118,7 +135,7 @@ function PhonePreview() {
         </div>
         <div className="app-phone-heading">All armies</div>
         <div className="app-phone-tiles">
-          {PREVIEW_FLAGS.map((f) => (
+          {tiles.map((f) => (
             <div key={f} className="app-phone-tile">
               <img src={f} alt="" />
             </div>
@@ -134,12 +151,12 @@ function PhonePreview() {
  * in it beside three short reasons to install, the install button (where the browser can install from
  * here) and a link to every device's steps.
  */
-export function AppCallout() {
+export function AppCallout({ armies }: { armies: HomeArmy[] }) {
   const [stepsOpen, setStepsOpen] = useState(false);
   return (
     <Grid gap="xl" align="center">
       <Grid.Col span={{ base: 12, sm: 5 }} order={{ base: 2, sm: 1 }}>
-        <PhonePreview />
+        <PhonePreview armies={armies} />
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 7 }} order={{ base: 1, sm: 2 }}>
         <Stack gap="md">
@@ -172,6 +189,10 @@ export function AppCallout() {
               How to install on your device
             </Anchor>
           </Group>
+          <Text size="sm" c="dimmed" maw="52ch" className="app-callout-no-store">
+            <IconWorld size={16} aria-hidden />
+            {NO_STORE_NOTE}
+          </Text>
         </Stack>
       </Grid.Col>
       <InstallStepsModal opened={stepsOpen} onClose={() => setStepsOpen(false)} />

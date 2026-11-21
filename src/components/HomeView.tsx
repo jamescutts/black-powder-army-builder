@@ -363,7 +363,7 @@ export function HomeView({
 
       {/* What the installed app gets you, and how to install it */}
       <Band tone="tint">
-        <AppCallout />
+        <AppCallout armies={armies} />
       </Band>
     </Stack>
   );
