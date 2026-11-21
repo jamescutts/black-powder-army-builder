@@ -549,3 +549,92 @@ export interface Nation {
    */
   alliesRules?: AlliesRule[];
 }
+
+/**
+ * A unit in a historical force, by the nation's unit id, as it fought, e.g.
+ * { "unit": "fac-line", "name": "I/13e Léger", "options": ["light-infantry"] }. It goes in the first slot
+ * of its brigade that takes that unit and still has room (or the first that takes it at all), unless
+ * `slot` names one.
+ */
+export interface ForceUnit {
+  unit: string;
+  name?: string;
+  /** For a unit with priced choices (a commander's Staff Rating), the variant's label; the first otherwise */
+  variant?: string;
+  /** Option ids from the brigade type's `options` */
+  options?: string[];
+  /** The index of the brigade type's slot it goes in, when the first that takes it isn't the right one */
+  slot?: number;
+}
+
+/** A regiment in a historical force's brigade, for brigade types built of regiments */
+export interface ForceRegiment {
+  name?: string;
+  /** Regiment-scope option ids, e.g. Guard status */
+  options?: string[];
+  /** The index of the brigade type's regiment slot it goes in; the first whose regiment takes its units otherwise */
+  slot?: number;
+  units: ForceUnit[];
+}
+
+export interface ForceBrigade {
+  /** The nation's brigade type id */
+  type: string;
+  name?: string;
+  /** The brigade commander's name, and his Staff Rating as the commander unit's variant label */
+  commander?: { name?: string; variant?: string };
+  units?: ForceUnit[];
+  regiments?: ForceRegiment[];
+}
+
+/**
+ * A prebuilt historical force at the game's divisional scale, e.g. Donzelot's division of d'Erlon's
+ * I Corps at Waterloo. Opening one starts an ordinary saved list from it, to change as you like.
+ * Forces follow the history, not the list's rules, so where they break a limit the builder shows it
+ * as a historical departure, explained in `notes`, rather than a mistake.
+ */
+export interface HistoricalForce {
+  /** Unique across every battle, e.g. "waterloo-donzelot" */
+  id: string;
+  /** The army list it's built from */
+  nationId: string;
+  /** e.g. "Donzelot's Division" */
+  name: string;
+  /** Where it stood in the army, e.g. "2nd Division, I Corps (d'Erlon)" */
+  formation?: string;
+  /** Which side of the battle, e.g. "French" or "Anglo-allied", to group opposing forces */
+  side: string;
+  /** The list's campaign period it's built in, for lists that have them */
+  period?: string;
+  /** A few sentences on what the force did, in our own words */
+  summary: string;
+  /** Where it departs from the history or the list's rules, and the choices made in building it */
+  notes?: string[];
+  command?: ForceUnit[];
+  brigades: ForceBrigade[];
+}
+
+/** A campaign, whose battles are listed under its heading, e.g. The Hundred Days */
+export interface HistoricalCampaign {
+  id: string;
+  /** e.g. "The Hundred Days" */
+  name: string;
+  /** e.g. "June 1815" */
+  dates: string;
+  summary: string;
+}
+
+/** A battle whose forces are grouped together under its heading, within its campaign */
+export interface HistoricalBattle {
+  id: string;
+  /** e.g. "Waterloo" */
+  name: string;
+  /** e.g. "18 June 1815" */
+  date: string;
+  /** The campaign's id, e.g. "hundred-days" */
+  campaign: string;
+  summary: string;
+  /** Orders of battle the forces were built from */
+  sources: { label: string; url?: string }[];
+  forces: HistoricalForce[];
+}

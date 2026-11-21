@@ -1,6 +1,7 @@
 import type { BrigadeType, Nation, UnitOption } from "@/data/types";
 import type { RosterRegimentInstance, RosterState, RosterUnitLine } from "@/types/army";
 import { newKey } from "@/lib/id";
+import { getForce } from "@/data/battles";
 import { regimentOptionsOf, unitOptionsOf } from "@/lib/options";
 
 // Saved army lists, kept in this browser's localStorage. Each list has its own id, so a nation can
@@ -198,6 +199,11 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
       armyName: saved.armyName && saved.armyName !== "My Army" ? saved.armyName : "",
       // A period the list's book still has; otherwise the list is for any period
       period: nation.periods?.some((p) => p.id === saved.period) ? saved.period : undefined,
+      // The historical force it was started from, while that force is still in the data
+      sourceForceId:
+        typeof saved.sourceForceId === "string" && getForce(saved.sourceForceId)?.nationId === nation.id
+          ? saved.sourceForceId
+          : undefined,
       commandItems: keepLines(saved.commandItems),
       brigadeInstances: (saved.brigadeInstances ?? []).flatMap((bi) => {
         const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);

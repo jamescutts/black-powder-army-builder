@@ -122,14 +122,18 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
     });
   // Each brigade's own problems, shown on its card (the roster panel links here): what breaks the rules
   // in red, and what it still needs calmly, leaving out needs its slot badges already show
-  const issuesByBrigade = new Map<string, { errors: string[]; todos: { text: string; onSlot: boolean }[] }>();
+  const issuesByBrigade = new Map<
+    string,
+    { errors: string[]; todos: { text: string; onSlot: boolean }[]; historical: string[] }
+  >();
   for (const issue of validateRoster(nation, roster)) {
     if (!issue.brigadeKey) continue;
     const bi = roster.brigadeInstances.find((b) => b.key === issue.brigadeKey);
     const name = nation.brigades.find((b) => b.id === bi?.brigadeTypeId)?.name ?? "";
-    const entry = issuesByBrigade.get(issue.brigadeKey) ?? { errors: [], todos: [] };
+    const entry = issuesByBrigade.get(issue.brigadeKey) ?? { errors: [], todos: [], historical: [] };
     const text = brigadeIssueText(issue.message, name);
     if (issue.level === "error") entry.errors.push(text);
+    else if (issue.level === "historical") entry.historical.push(text);
     else entry.todos.push({ text, onSlot: !!issue.shownOnSlot });
     issuesByBrigade.set(issue.brigadeKey, entry);
   }
@@ -593,6 +597,13 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                       <li key={i}>{text}</li>
                     ))}
                   </ul>
+                </div>
+              )}
+              {/* Where it breaks the rules just as the historical force it came from did: the history, not a mistake */}
+              {(issuesByBrigade.get(instance.key)?.historical.length ?? 0) > 0 && (
+                <div className="brigade-historical">
+                  <span className="brigade-todos-label">As it fought:</span>{" "}
+                  {issuesByBrigade.get(instance.key)!.historical.join("; ")}
                 </div>
               )}
               {/* What it still needs: only what no slot badge shows while it's open, everything when folded */}

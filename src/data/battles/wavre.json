@@ -1,0 +1,1006 @@
+{
+  "id": "wavre",
+  "name": "Wavre",
+  "date": "18–19 June 1815",
+  "campaign": "hundred-days",
+  "summary": "Sent after the Prussians with a third of the army, Grouchy caught Thielemann's corps holding the crossings of the Dyle at Wavre while the rest of Blücher's army marched to Waterloo. The French fought for the bridges into the night and won the field the next morning, too late and too far away to matter.",
+  "sources": [
+    {
+      "label": "Waterloo campaign order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Waterloo_campaign_order_of_battle"
+    }
+  ],
+  "forces": [
+    {
+      "id": "wavre-lefol",
+      "nationId": "french-army-corps",
+      "name": "Lefol's Division",
+      "formation": "8th Division, III Corps (Vandamme)",
+      "side": "French",
+      "summary": "Vandamme's leading division, sent straight at the bridges into Wavre town and thrown back again and again.",
+      "notes": [
+        "The 15e Léger brought three battalions, one more Light battalion than the list's one in four allows, which shows as a historical departure.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Lefol"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Billiard's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Billiard",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/15e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/15e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/15e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/23e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/23e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/23e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Corsin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Corsin",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/37e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/37e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/37e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/64e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/64e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "7/6e à Pied (Chauveau)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-habert",
+      "nationId": "french-army-corps",
+      "name": "Habert's Division",
+      "formation": "10th Division, III Corps (Vandamme)",
+      "side": "French",
+      "summary": "Attacked the bridges in Wavre itself; Habert was badly wounded leading his men across.",
+      "notes": [
+        "The 2e Régiment Étranger (Swiss) also served in Dupeyroux's brigade; the order of battle gives no battalion count, so it's left out.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Habert"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Gengoult's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gengoult",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/34e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/34e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/34e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/88e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/88e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/88e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Dupeyroux's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dupeyroux",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/22e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/22e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/22e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/70e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/70e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "18/2e à Pied (Guerin)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-berthezene",
+      "nationId": "french-army-corps",
+      "name": "Berthezène's Division",
+      "formation": "11th Division, III Corps (Vandamme)",
+      "side": "French",
+      "summary": "Part of Vandamme's attacks on Wavre town and its crossings through the afternoon.",
+      "notes": [
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Berthezène"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Dufour's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dufour",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/12e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/12e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/56e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/56e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Lagarde's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lagarde",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/33e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/33e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/86e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/86e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "17/2e à Pied (Guerin)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-pecheux",
+      "nationId": "french-army-corps",
+      "name": "Pécheux's Division",
+      "formation": "12th Division, IV Corps (Gérard)",
+      "side": "French",
+      "summary": "Gérard's corps came up to attack the mill at Bierges, upstream of Wavre, where Gérard himself was wounded.",
+      "notes": [
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Pécheux"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Rome's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rome",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/30e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/30e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/30e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/96e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/96e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/96e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Schoeffer's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Schoeffer",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/6e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/6e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/63e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/63e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/63e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "2/5e à Pied (Fenouillat)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-vichery",
+      "nationId": "french-army-corps",
+      "name": "Vichery's Division",
+      "formation": "13th Division, IV Corps (Gérard)",
+      "side": "French",
+      "summary": "With Gérard's corps, crossed the Dyle upstream at Limale in the evening to turn the Prussian flank.",
+      "notes": [
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Vichery"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Le Capitaine's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade le Capitaine",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/59e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/59e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/76e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/76e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Desprez's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Desprez",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/48e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/48e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/69e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/69e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "1/5e à Pied (Saint-Cyr)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-hulot",
+      "nationId": "french-army-corps",
+      "name": "Hulot's Division",
+      "formation": "14th Division, IV Corps (Gérard)",
+      "side": "French",
+      "summary": "Attacked the Bierges mill crossing with Gérard's corps before moving on to Limale.",
+      "notes": [
+        "Bourmont commanded the division until he deserted to the allies on 15 June; Hulot led it from then. The order of battle gives the division no battery of its own; one foot battery is shown.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Brigade Hulot"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Hulot's Brigade",
+          "commander": {
+            "name": "Col. Baume",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/9e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/9e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/111e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/111e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/111e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Toussaint's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Toussaint",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/44e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/44e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/50e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/50e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "Divisional Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-teste",
+      "nationId": "french-army-corps",
+      "name": "Teste's Division",
+      "formation": "21st Division, VI Corps (detached to Grouchy)",
+      "side": "French",
+      "summary": "Lobau's third division, detached to Grouchy, it fought for Wavre and covered his withdrawal on 20 June.",
+      "notes": [
+        "Teste's brigades were small: Lafitte had only the 8e Léger's two battalions, fewer than the list's three, and those are more Light battalions than one in four allows; both show as historical departures.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Teste"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Lafitte's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lafitte",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/8e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/8e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Penne's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Penne",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/65e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/75e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/75e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "3/8e à Pied (Duverrey)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-strolz",
+      "nationId": "french-army-corps",
+      "name": "Strolz's Dragoons",
+      "formation": "9th Cavalry Division, II Cavalry Corps (Exelmans)",
+      "side": "French",
+      "summary": "Exelmans' dragoons, who had followed the Prussians from Ligny, screening the French advance on the Dyle.",
+      "notes": [
+        "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Strolz"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-cavalry-brigade",
+          "name": "Burthe's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Burthe",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-dragoon",
+              "name": "5e Dragons"
+            },
+            {
+              "unit": "fac-dragoon",
+              "name": "13e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "fac-cavalry-brigade",
+          "name": "Vincent's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Vincent",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-dragoon",
+              "name": "15e Dragons"
+            },
+            {
+              "unit": "fac-dragoon",
+              "name": "20e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fac-horse-arty-attached",
+              "name": "4/1er à Cheval (Godet)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-prussian-9",
+      "nationId": "prussians-1815",
+      "name": "Borcke's Brigade",
+      "formation": "9th Brigade, III Corps (Thielemann)",
+      "side": "Prussian",
+      "summary": "Marched off towards Waterloo, then turned back to help at the crossings; part of it fought at Wavre and Limale.",
+      "notes": [
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
+        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "9th Brigade",
+          "commander": {
+            "name": "Gen-Maj von Borcke",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "8th (Leib) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/8th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/8th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/8th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "30th (1st Russo-German Legion) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/30th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/30th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/30th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "1st Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/1st Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/1st Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/1st Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-prussian-10",
+      "nationId": "prussians-1815",
+      "name": "Kemphen's Brigade",
+      "formation": "10th Brigade, III Corps (Thielemann)",
+      "side": "Prussian",
+      "summary": "Held Wavre town and its bridges against Vandamme's attacks.",
+      "notes": [
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
+        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "10th Brigade",
+          "commander": {
+            "name": "Col von Kemphen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "27th Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/27th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/27th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/27th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "2nd Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/2nd Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/2nd Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/2nd Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-prussian-11",
+      "nationId": "prussians-1815",
+      "name": "Luck's Brigade",
+      "formation": "11th Brigade, III Corps (Thielemann)",
+      "side": "Prussian",
+      "summary": "Defended the line of the Dyle, its Landwehr holding the crossings beside Wavre.",
+      "notes": [
+        "Luck's brigade was all Landwehr, two Kurmark regiments, where the list's brigade needs a Line regiment, which shows as a historical departure.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
+        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "11th Brigade",
+          "commander": {
+            "name": "Col von Luck",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "3rd Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/3rd Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/3rd Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/3rd Kurmark Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "4th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/4th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/4th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/4th Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wavre-prussian-12",
+      "nationId": "prussians-1815",
+      "name": "Stülpnagel's Brigade",
+      "formation": "12th Brigade, III Corps (Thielemann)",
+      "side": "Prussian",
+      "summary": "Held the upstream crossings at Bierges and Limale, and met Grouchy's flank attack on the 19th.",
+      "notes": [
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
+        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "12th Brigade",
+          "commander": {
+            "name": "Gen-Maj von Stülpnagel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "31st (2nd Russo-German Legion) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/31st Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/31st Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/31st Infantry"
+                }
+              ]
+            },
+            {
+              "name": "5th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/5th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/5th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/5th Kurmark Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "6th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/6th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/6th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/6th Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

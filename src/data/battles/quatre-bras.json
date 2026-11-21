@@ -1,0 +1,989 @@
+{
+  "id": "quatre-bras",
+  "name": "Quatre Bras",
+  "date": "16 June 1815",
+  "campaign": "hundred-days",
+  "summary": "While Napoleon fought the Prussians at Ligny, Ney attacked the crossroads of Quatre Bras, held at first only by Perponcher's Netherlanders. Through the afternoon Wellington's divisions arrived one after another to hold the farms, the Bossu wood and the road. By nightfall the allies held the field, but they could not march to help Blücher.",
+  "sources": [
+    {
+      "label": "Waterloo campaign order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Waterloo_campaign_order_of_battle"
+    }
+  ],
+  "forces": [
+    {
+      "id": "quatre-bras-bachelu",
+      "nationId": "french-army-corps",
+      "name": "Bachelu's Division",
+      "formation": "5th Division, II Corps (Reille)",
+      "side": "French",
+      "summary": "Ney's right-hand division, attacking across the fields east of the Charleroi road into Picton's newly arrived battalions.",
+      "notes": [
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Bachelu"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Husson's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Husson",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/2e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/2e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/61e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/61e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Campi's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Campi",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/72e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/72e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/108e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/108e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/108e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "18/6e à Pied (Deshaulles)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-foy",
+      "nationId": "french-army-corps",
+      "name": "Foy's Division",
+      "formation": "9th Division, II Corps (Reille)",
+      "side": "French",
+      "summary": "Pressed up the main road towards the crossroads, taking Gemioncourt farm and fighting for the ground beside it into the evening.",
+      "notes": [
+        "The 4e Léger brought three battalions, one more Light battalion than the list's one in four allows, which shows as a historical departure.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Foy"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Gauthier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gauthier",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/92e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/92e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/93e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/93e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Jamin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jamin",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/4e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/4e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/4e Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/100e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/100e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/100e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "1/6e à Pied (Tacon)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-jerome",
+      "nationId": "french-army-corps",
+      "name": "Prince Jérôme's Division",
+      "formation": "6th Division, II Corps (Reille)",
+      "side": "French",
+      "summary": "Fought its way into the Bossu wood on the French left, until Cooke's Guards cleared it again at dusk.",
+      "notes": [
+        "Prince Jérôme's Staff Rating of 8 is our judgement; Guilleminot, his chief of staff, did much of the work.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Prince Jérôme Bonaparte"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Bauduin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bauduin",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/1er Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/1er Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/1er Léger",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/3e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/3e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/3e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "IV/3e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-infantry-brigade",
+          "name": "Soye's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Soye",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-line",
+              "name": "I/1er de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/1er de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/1er de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "I/2e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "II/2e de Ligne"
+            },
+            {
+              "unit": "fac-line",
+              "name": "III/2e de Ligne"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fac-foot-arty",
+              "name": "2/2e à Pied (Meunier)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-pire",
+      "nationId": "french-army-corps",
+      "name": "Piré's Light Cavalry",
+      "formation": "2nd Cavalry Division, II Corps (Reille)",
+      "side": "French",
+      "summary": "Its lancers and chasseurs rode down allied battalions caught out of square, and in one charge came close to taking the crossroads.",
+      "notes": [
+        "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
+        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Gén. de Division Piré"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-cavalry-brigade",
+          "name": "Huber's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Huber",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-chasseur-a-cheval",
+              "name": "1er Chasseurs"
+            },
+            {
+              "unit": "fac-chasseur-a-cheval",
+              "name": "6e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "fac-cavalry-brigade",
+          "name": "Wathiez's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Wathiez",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-chevau-legers-lancers",
+              "name": "5e Lanciers"
+            },
+            {
+              "unit": "fac-chevau-legers-lancers",
+              "name": "6e Lanciers"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fac-horse-arty-attached",
+              "name": "2/4e à Cheval (Gronnier)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-guiton",
+      "nationId": "french-army-corps",
+      "name": "Kellermann's Cuirassiers",
+      "formation": "Guiton's Brigade, 11th Cavalry Division",
+      "side": "French",
+      "summary": "Kellermann led this one brigade straight up the road to the crossroads, riding over the 69th and taking its colour, before guns and musketry drove it back.",
+      "notes": [
+        "Only Guiton's brigade of Kellermann's corps reached the field; Kellermann led its charge himself, at Staff Rating 9.",
+        "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent."
+      ],
+      "command": [
+        {
+          "unit": "fac-div-cmd",
+          "variant": "Staff rating 9",
+          "name": "Gén. de Division Kellermann"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fac-heavy-cavalry-brigade",
+          "name": "Guiton's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Guiton",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "fac-cuirassier",
+              "name": "8e Cuirassiers"
+            },
+            {
+              "unit": "fac-cuirassier",
+              "name": "11e Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "fac-divisional-artillery",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fac-horse-arty-attached",
+              "name": "3/2e à Cheval (de Marcillac)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-perponcher",
+      "nationId": "dutch-belgian-nassau",
+      "name": "Perponcher's Division",
+      "formation": "2nd Netherlands Division, I Corps (Prince of Orange)",
+      "side": "Anglo-allied",
+      "summary": "Held the crossroads alone through the morning and early afternoon against Ney's whole corps, buying the time for Wellington's army to come up.",
+      "notes": [
+        "At Quatre Bras the division fought complete; it suffered heavily, which matters if it's used for Waterloo.",
+        "The order of battle gives Goedecke as the 2nd Brigade's commander; Saxe-Weimar led it after Goedecke was hurt before the campaign opened.",
+        "Staff Ratings are our judgement: Perponcher and Saxe-Weimar at 8, Bijlandt at 7."
+      ],
+      "command": [
+        {
+          "unit": "dbn-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Lt-Gen de Perponcher"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "dbn-dutch-belgian-infantry-brigade",
+          "name": "Bijlandt's Brigade",
+          "commander": {
+            "name": "Gen-Maj van Bijlandt",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "dbn-jager",
+              "name": "27th Jäger Bn"
+            },
+            {
+              "unit": "dbn-line",
+              "name": "7th Line Bn"
+            },
+            {
+              "unit": "dbn-militia",
+              "name": "5th Militia Bn"
+            },
+            {
+              "unit": "dbn-militia",
+              "name": "7th Militia Bn"
+            },
+            {
+              "unit": "dbn-militia",
+              "name": "8th Militia Bn"
+            }
+          ]
+        },
+        {
+          "type": "dbn-nassau-infantry-brigade",
+          "name": "Saxe-Weimar's Brigade",
+          "commander": {
+            "name": "Col Prince Bernhard of Saxe-Weimar",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "dbn-line",
+              "name": "I/2nd Nassau"
+            },
+            {
+              "unit": "dbn-line",
+              "name": "II/2nd Nassau"
+            },
+            {
+              "unit": "dbn-line",
+              "name": "III/2nd Nassau"
+            },
+            {
+              "unit": "dbn-line",
+              "name": "I/Orange-Nassau"
+            },
+            {
+              "unit": "dbn-line",
+              "name": "II/Orange-Nassau"
+            },
+            {
+              "unit": "dbn-nassau-jager-coy",
+              "name": "Volunteer Jäger Company"
+            }
+          ]
+        },
+        {
+          "type": "dbn-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "dbn-belgian-foot-battery",
+              "name": "Stevenart's Foot Battery"
+            },
+            {
+              "unit": "dbn-dutch-horse-battery",
+              "name": "Bijleveld's Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-picton",
+      "nationId": "anglo-netherlands-british",
+      "name": "Picton's Division",
+      "formation": "5th Division, Reserve",
+      "side": "Anglo-allied",
+      "summary": "Arrived in the afternoon to hold the Namur road east of the crossroads. Its squares stood against charge after charge of lancers and cuirassiers; Pack's Highlanders suffered terribly.",
+      "notes": [
+        "Pack's brigade had two Highland battalions, the 42nd and 92nd, where the list allows one Highland battalion in four, so it shows as a historical departure.",
+        "The 1/95th is the list's Rifle Battalion, taken as the Rifles upgrade on a Line battalion.",
+        "Staff Ratings are our judgement: Picton, Kempt and Pack at 8, the Hanoverian brigade's commander at 7. The named Kempt and Pack from the book can be added under Army command instead."
+      ],
+      "command": [
+        {
+          "unit": "anb-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Lt-Gen Sir Thomas Picton"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "anb-british-infantry-brigade",
+          "name": "Kempt's Brigade (8th British)",
+          "commander": {
+            "name": "Maj-Gen Sir James Kempt",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "anb-line",
+              "name": "1/28th (North Gloucestershire)"
+            },
+            {
+              "unit": "anb-line",
+              "name": "1/32nd (Cornwall)"
+            },
+            {
+              "unit": "anb-line",
+              "name": "1/79th (Cameron Highlanders)",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "anb-line",
+              "name": "1/95th Rifles",
+              "options": [
+                "rifles"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "anb-british-infantry-brigade",
+          "name": "Pack's Brigade (9th British)",
+          "commander": {
+            "name": "Maj-Gen Sir Denis Pack",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "anb-line",
+              "name": "3/1st (Royal Scots)"
+            },
+            {
+              "unit": "anb-line",
+              "name": "1/42nd (Royal Highland)",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "anb-line",
+              "name": "2/44th (East Essex)"
+            },
+            {
+              "unit": "anb-line",
+              "name": "1/92nd (Gordon Highlanders)",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "anb-hanoverian-brigade",
+          "name": "Best's Brigade (4th Hanoverian)",
+          "commander": {
+            "name": "Col Charles Best",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "anb-hanover-landwehr",
+              "name": "Landwehr Bn Lüneburg"
+            },
+            {
+              "unit": "anb-hanover-landwehr",
+              "name": "Landwehr Bn Münden"
+            },
+            {
+              "unit": "anb-hanover-landwehr",
+              "name": "Landwehr Bn Osterode"
+            },
+            {
+              "unit": "anb-hanover-landwehr",
+              "name": "Landwehr Bn Verden"
+            }
+          ]
+        },
+        {
+          "type": "anb-divisional-artillery",
+          "name": "Rogers' Battery RA",
+          "units": [
+            {
+              "unit": "anb-royal-arty",
+              "name": "Rogers' Battery RA"
+            }
+          ]
+        },
+        {
+          "type": "anb-divisional-artillery",
+          "name": "Braun's Hanoverian Battery",
+          "units": [
+            {
+              "unit": "anb-hanover-foot-arty",
+              "name": "Braun's Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-brunswick",
+      "nationId": "brunswick",
+      "name": "The Brunswick Corps",
+      "formation": "Reserve",
+      "side": "Anglo-allied",
+      "summary": "Came up in the afternoon to fill the gap beside the Bossu wood. The Duke of Brunswick was killed rallying his men against Piré's cavalry.",
+      "notes": [
+        "At Quatre Bras the Duke of Brunswick led the corps, and was killed there.",
+        "The order of battle's Guard Battalion is the list's Leib Light Battalion. Staff Ratings are our judgement: the corps' commander at 8, the others at 7."
+      ],
+      "command": [
+        {
+          "unit": "bw-div-cmd",
+          "variant": "Staff rating 8",
+          "name": "Duke of Brunswick"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bw-advanced-guard",
+          "name": "Advance Guard (Rauschenplatt)",
+          "units": [
+            {
+              "unit": "bw-vanguard-battalion",
+              "name": "Avantgarde Bn"
+            }
+          ]
+        },
+        {
+          "type": "bw-infantry-brigade",
+          "name": "Light Brigade (Butlar)",
+          "commander": {
+            "name": "Lt-Col von Butlar",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "bw-light",
+              "name": "1st Light Bn"
+            },
+            {
+              "unit": "bw-light",
+              "name": "2nd Light Bn"
+            },
+            {
+              "unit": "bw-light",
+              "name": "3rd Light Bn"
+            },
+            {
+              "unit": "bw-leib-light",
+              "name": "Leib (Guard) Bn"
+            }
+          ]
+        },
+        {
+          "type": "bw-infantry-brigade",
+          "name": "Line Brigade (Specht)",
+          "commander": {
+            "name": "Lt-Col von Specht",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "bw-line",
+              "name": "1st Line Bn"
+            },
+            {
+              "unit": "bw-line",
+              "name": "2nd Line Bn"
+            },
+            {
+              "unit": "bw-line",
+              "name": "3rd Line Bn"
+            }
+          ]
+        },
+        {
+          "type": "bw-cavalry-brigade",
+          "name": "Cavalry (Cramm)",
+          "commander": {
+            "name": "Maj von Cramm",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "bw-hussar",
+              "name": "2nd Hussars"
+            },
+            {
+              "unit": "bw-uhlan-squadron",
+              "name": "Uhlan Squadron"
+            }
+          ]
+        },
+        {
+          "type": "bw-divisional-artillery",
+          "name": "Artillery (Mahn)",
+          "units": [
+            {
+              "unit": "bw-foot-battery",
+              "name": "Moll's Foot Battery"
+            },
+            {
+              "unit": "bw-horse-battery",
+              "name": "Heinemann's Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-alten",
+      "nationId": "anglo-netherlands-british",
+      "name": "Alten's Division",
+      "formation": "3rd Division, I Corps (Prince of Orange)",
+      "side": "Anglo-allied",
+      "summary": "Came up late in the afternoon. Halkett's brigade was caught by Kellermann's cuirassiers before it could form square, and the 69th lost a colour.",
+      "notes": [
+        "Ompteda's brigade had two KGL Light battalions, where the list allows one in four, so it shows as a historical departure.",
+        "At Quatre Bras Ompteda's brigade arrived last and was little engaged; Alten's other brigades did the fighting.",
+        "Alten is the book's named commander. Brigade Staff Ratings are our judgement, all at 7.",
+        "Kielmansegge's Feldjäger (two companies) are the list's Jäger Companies."
+      ],
+      "command": [
+        {
+          "unit": "anb-cmd-alten"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "anb-british-infantry-brigade",
+          "name": "Halkett's Brigade (5th British)",
+          "commander": {
+            "name": "Maj-Gen Sir Colin Halkett",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "anb-line",
+              "name": "2/30th (Cambridgeshire)"
+            },
+            {
+              "unit": "anb-line",
+              "name": "33rd (1st Yorkshire West Riding)"
+            },
+            {
+              "unit": "anb-line",
+              "name": "2/69th (South Lincolnshire)"
+            },
+            {
+              "unit": "anb-line",
+              "name": "2/73rd"
+            }
+          ]
+        },
+        {
+          "type": "anb-kgl-infantry-brigade",
+          "name": "Ompteda's Brigade (2nd KGL)",
+          "commander": {
+            "name": "Col Christian von Ompteda",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "anb-kgl-line",
+              "name": "1st Light Bn KGL",
+              "options": [
+                "kgl-light-infantry"
+              ]
+            },
+            {
+              "unit": "anb-kgl-line",
+              "name": "2nd Light Bn KGL (Baring)",
+              "options": [
+                "kgl-light-infantry"
+              ]
+            },
+            {
+              "unit": "anb-kgl-line",
+              "name": "5th Line Bn KGL"
+            },
+            {
+              "unit": "anb-kgl-line",
+              "name": "8th Line Bn KGL"
+            }
+          ]
+        },
+        {
+          "type": "anb-hanoverian-brigade",
+          "name": "Kielmansegge's Brigade (1st Hanoverian)",
+          "commander": {
+            "name": "Maj-Gen Friedrich von Kielmansegge",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "anb-hanover-line",
+              "name": "Field Bn Bremen"
+            },
+            {
+              "unit": "anb-hanover-line",
+              "name": "Field Bn Verden"
+            },
+            {
+              "unit": "anb-hanover-line",
+              "name": "Field Bn Duke of York (Osnabrück)"
+            },
+            {
+              "unit": "anb-hanover-light",
+              "name": "Light Bn Lüneburg"
+            },
+            {
+              "unit": "anb-hanover-light",
+              "name": "Light Bn Grubenhagen"
+            },
+            {
+              "unit": "anb-hanover-jager",
+              "name": "Feldjäger (two companies)"
+            }
+          ]
+        },
+        {
+          "type": "anb-divisional-artillery",
+          "name": "Lloyd's Battery RA",
+          "units": [
+            {
+              "unit": "anb-royal-arty",
+              "name": "Lloyd's Battery RA"
+            }
+          ]
+        },
+        {
+          "type": "anb-divisional-artillery",
+          "name": "Cleeves' Battery KGL",
+          "units": [
+            {
+              "unit": "anb-royal-arty",
+              "name": "Cleeves' Foot Battery KGL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quatre-bras-cooke",
+      "nationId": "anglo-netherlands-british",
+      "name": "Cooke's Guards Division",
+      "formation": "1st Division, I Corps (Prince of Orange)",
+      "side": "Anglo-allied",
+      "summary": "Arrived after a long march in the evening and cleared Prince Jérôme's men out of the Bossu wood.",
+      "notes": [
+        "The division was two Guards brigades, with none of the British and Hanoverian brigades the list needs. The list allows one Guards Brigade, taken once two British or KGL brigades are, so these show as historical departures.",
+        "Support brigades like these can be at most half an army, and the list allows horse artillery by the cavalry taken, so Kuhlmann's KGL horse battery shows as a departure too.",
+        "Staff Ratings are our judgement, all at 7."
+      ],
+      "command": [
+        {
+          "unit": "anb-div-cmd",
+          "variant": "Staff rating 7",
+          "name": "Maj-Gen George Cooke"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "anb-guards-brigade",
+          "name": "Maitland's Brigade (1st Guards)",
+          "commander": {
+            "name": "Maj-Gen Peregrine Maitland",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "anb-foot-guard",
+              "name": "2/1st Foot Guards"
+            },
+            {
+              "unit": "anb-foot-guard",
+              "name": "3/1st Foot Guards"
+            }
+          ]
+        },
+        {
+          "type": "anb-guards-brigade",
+          "name": "Byng's Brigade (2nd Guards)",
+          "commander": {
+            "name": "Maj-Gen Sir John Byng",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "anb-foot-guard",
+              "name": "2/Coldstream Guards"
+            },
+            {
+              "unit": "anb-foot-guard",
+              "name": "2/3rd Foot Guards"
+            }
+          ]
+        },
+        {
+          "type": "anb-divisional-artillery",
+          "name": "Sandham's Battery RA",
+          "units": [
+            {
+              "unit": "anb-royal-arty",
+              "name": "Sandham's Battery RA"
+            }
+          ]
+        },
+        {
+          "type": "anb-horse-artillery",
+          "name": "Kuhlmann's Battery KGL",
+          "units": [
+            {
+              "unit": "anb-royal-horse-arty",
+              "name": "Kuhlmann's Horse Battery KGL"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -16,11 +16,23 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { IconChevronDown, IconChevronLeft, IconCopy, IconEraser, IconFolder, IconPlus, IconTrash } from "@tabler/icons-react";
+import {
+  IconBook2,
+  IconChevronDown,
+  IconChevronLeft,
+  IconCopy,
+  IconEraser,
+  IconFolder,
+  IconPlus,
+  IconTrash,
+} from "@tabler/icons-react";
 import { supplements, getSupplement, getNation, getNationsForSupplement } from "@/data";
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
 import { startingRoster } from "@/lib/newRoster";
+import { forceHref, rosterFromForce } from "@/lib/forces";
+import { battleOf, forcesFor, getForce } from "@/data/battles";
+import { ForceOrigin } from "@/components/ForceOrigin";
 import { nationForPeriod } from "@/lib/periods";
 import { BrigadeBoard } from "@/components/BrigadeBoard";
 import { RosterBar, RosterPanel } from "@/components/RosterPanel";
@@ -100,7 +112,12 @@ function BuilderContent({ nationId }: { nationId: string }) {
 
   const nation = useMemo(() => getNation(nationId)!, [nationId]);
 
-  const listParam = useSearchParams().get("list");
+  const searchParams = useSearchParams();
+  const listParam = searchParams.get("list");
+  // A historical force to start a new list from (?force=...), as the Historical forces page links
+  const forceParam = searchParams.get("force");
+  // The force a list was last started from here, so React running the effect twice makes only one
+  const startedFrom = useRef<string | null>(null);
 
   const [roster, setRoster] = useState<RosterState>(() => emptyRoster(nationId));
   // Which saved list is open. Until one has been read back from the browser, nothing is saved, so the
@@ -112,6 +129,16 @@ function BuilderContent({ nationId }: { nationId: string }) {
   // The list is driven by the address: the one it names, else this nation's most recently changed list,
   // else a new one. Read after mount, as localStorage isn't available while rendering on the server.
   useEffect(() => {
+    const force = forceParam ? getForce(forceParam) : undefined;
+    if (force && force.nationId === nation.id) {
+      if (startedFrom.current === force.id) return;
+      startedFrom.current = force.id;
+      // Saved straight away, so it's a list of its own even if it's never changed
+      const id = newListId();
+      saveList(id, rosterFromForce(nationForPeriod(nation, force.period), force).roster);
+      router.replace(listHref(nation.supplementId, nation.id, id), { scroll: false });
+      return;
+    }
     let id = listParam;
     if (!id) {
       id = listSavedFor(nation.id)[0]?.id ?? newListId();
@@ -132,7 +159,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
     untouched.current = saved ? null : JSON.stringify(start);
     setRoster(start);
     setListId(id);
-  }, [nation, listParam, router]);
+  }, [nation, listParam, forceParam, router]);
 
   useEffect(() => {
     if (!listId || roster.nationId !== nationId) return;
@@ -178,11 +205,16 @@ function BuilderContent({ nationId }: { nationId: string }) {
     [supplement.id]
   );
 
+  // The historical force the list was started from, and this army's forces to start another from
+  const sourceForce = roster.sourceForceId ? getForce(roster.sourceForceId) : undefined;
+  const sourceBattle = sourceForce && battleOf(sourceForce.id);
+  const nationForces = useMemo(() => forcesFor(nation.id), [nation.id]);
+
   // Clearing or deleting throws the army away, so both ask first. Switching nation doesn't need asking:
   // the list is saved, and is in the Lists menu and My armies.
   const hasUnits = roster.commandItems.length > 0 || roster.brigadeInstances.length > 0;
   const isSaved = hasUnits || !!roster.armyName.trim();
-  const [confirming, setConfirming] = useState<"clear" | "delete" | null>(null);
+  const [confirming, setConfirming] = useState<"clear" | "delete" | "reset" | null>(null);
   // This nation's other saved lists, for the Lists menu; read when it opens
   const [otherLists, setOtherLists] = useState<SavedList[]>([]);
 
@@ -196,6 +228,15 @@ function BuilderContent({ nationId }: { nationId: string }) {
   // Clearing starts the list again as a new one would (with its required brigades), keeping its name
   function handleClear() {
     setRoster({ ...startingRoster(nation), armyName: roster.armyName, period: roster.period });
+    setConfirming(null);
+  }
+
+  // Resetting puts the force back as it fought, keeping the list's name
+  function handleReset() {
+    if (sourceForce) {
+      const historical = rosterFromForce(nationForPeriod(nation, sourceForce.period), sourceForce).roster;
+      setRoster({ ...historical, armyName: roster.armyName });
+    }
     setConfirming(null);
   }
 
@@ -226,6 +267,16 @@ function BuilderContent({ nationId }: { nationId: string }) {
       >
         This removes every unit and brigade from {roster.armyName.trim() || "this army"}, keeping its name, and
         starts it again as a new list does, with any brigades the army must have. It can&apos;t be undone.
+      </ConfirmModal>
+      <ConfirmModal
+        opened={confirming === "reset"}
+        title="Reset to historical?"
+        confirmLabel="Reset"
+        onConfirm={handleReset}
+        onCancel={() => setConfirming(null)}
+      >
+        This puts {roster.armyName.trim() || "this army"} back as {sourceForce?.name ?? "the force"} fought at{" "}
+        {sourceBattle?.name ?? "the battle"}, undoing every change you&apos;ve made to it. It can&apos;t be undone.
       </ConfirmModal>
       <ConfirmModal
         opened={confirming === "delete"}
@@ -322,7 +373,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
               {/* Everything about the list itself: start another, open another, copy, clear or delete it */}
               <Menu
                 position="bottom-end"
-                width={260}
+                width={300}
                 shadow="md"
                 onOpen={() => setOtherLists(listSavedFor(nationId).filter((l) => l.id !== listId))}
               >
@@ -338,6 +389,34 @@ function BuilderContent({ nationId }: { nationId: string }) {
                   <Menu.Item leftSection={<IconCopy size={16} />} onClick={handleDuplicate} disabled={!isSaved}>
                     Duplicate this list
                   </Menu.Item>
+                  {nationForces.length > 0 && (
+                    <>
+                      <Menu.Divider />
+                      <Menu.Label>Start from a historical force</Menu.Label>
+                      {nationForces.slice(0, 6).map(({ battle, force }) => (
+                        <Menu.Item
+                          key={force.id}
+                          component={Link}
+                          href={forceHref(supplement.id, force)}
+                          leftSection={<IconBook2 size={16} />}
+                          rightSection={
+                            <Text size="xs" c="dimmed">
+                              {battle.name}
+                            </Text>
+                          }
+                        >
+                          <Text size="sm" truncate maw={150}>
+                            {force.name}
+                          </Text>
+                        </Menu.Item>
+                      ))}
+                      {nationForces.length > 6 && (
+                        <Menu.Item component={Link} href="/black-powder/battles">
+                          All historical forces
+                        </Menu.Item>
+                      )}
+                    </>
+                  )}
                   {otherLists.length > 0 && (
                     <>
                       <Menu.Divider />
@@ -390,6 +469,11 @@ function BuilderContent({ nationId }: { nationId: string }) {
       {/* Held back until the saved army is read, so it doesn't flash up empty first */}
       {listId && roster.nationId === nationId && (
         <Container size="xl" py="lg">
+          {sourceForce && sourceBattle && (
+            <div className="force-origin-wrap">
+              <ForceOrigin force={sourceForce} battle={sourceBattle} onReset={() => setConfirming("reset")} />
+            </div>
+          )}
           <Grid gap="lg">
             <Grid.Col span={{ base: 12, md: 7 }}>
               <BrigadeBoard key={listId} nation={periodNation} roster={roster} onChange={setRoster} />

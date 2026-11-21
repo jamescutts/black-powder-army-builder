@@ -1,13 +1,20 @@
 "use client";
 
 import { Badge, Divider, Group, List, Paper, Stack, Text, TextInput, UnstyledButton } from "@mantine/core";
-import { IconAlertTriangle, IconCircleCheck, IconListCheck } from "@tabler/icons-react";
+import { IconAlertTriangle, IconBook2, IconCircleCheck, IconListCheck } from "@tabler/icons-react";
 import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { brigadeTotal, commandTotal as armyCommandTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { freeLines, resolveLine, type LineContext } from "@/lib/options";
 import { periodText, rosterPeriod } from "@/lib/periods";
-import { attachedText, brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster, type ValidationIssue } from "@/lib/validate";
+import {
+  attachedText,
+  brigadeDisplayName,
+  brigadeIssueText,
+  REVEAL_BRIGADE_EVENT,
+  validateRoster,
+  type ValidationIssue,
+} from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 import { InstallCard } from "@/components/InstallCard";
 
@@ -105,7 +112,7 @@ function IssueBlock({
   nation: Nation;
   roster: RosterState;
   issues: ValidationIssue[];
-  state: "error" | "todo";
+  state: "error" | "todo" | "historical";
   title: string;
 }) {
   const army = issues.filter((i) => !i.brigadeKey);
@@ -113,6 +120,41 @@ function IssueBlock({
     .map((bi) => ({ key: bi.key, count: issues.filter((i) => i.brigadeKey === bi.key).length }))
     .filter((b) => b.count > 0);
   const noun = state === "error" ? "to fix" : "to add";
+  // Departures are few and are the point, so each is said in full rather than counted
+  if (state === "historical") {
+    return (
+      <div className="roster-status" data-state={state}>
+        <Group gap={6} wrap="nowrap" mb={4}>
+          <IconBook2 size={16} aria-hidden />
+          <Text size="sm" fw={600}>
+            {title}
+          </Text>
+        </Group>
+        <List size="xs" spacing={2} className="roster-status-list">
+          {issues.map((i, idx) => {
+            if (!i.brigadeKey) return <List.Item key={idx}>{i.message}</List.Item>;
+            const type = nation.brigades.find(
+              (b) => b.id === roster.brigadeInstances.find((bi) => bi.key === i.brigadeKey)?.brigadeTypeId
+            )?.name ?? "";
+            return (
+              <List.Item key={idx}>
+                <UnstyledButton
+                  className="roster-status-link"
+                  onClick={() => window.dispatchEvent(new CustomEvent(REVEAL_BRIGADE_EVENT, { detail: i.brigadeKey }))}
+                >
+                  {brigadeDisplayName(nation, roster, i.brigadeKey)}
+                </UnstyledButton>
+                : {brigadeIssueText(i.message, type)}
+              </List.Item>
+            );
+          })}
+        </List>
+        <Text size="xs" mt={4} c="dimmed">
+          The force breaks these of the list&apos;s rules as it fought. Agree them with your opponent.
+        </Text>
+      </div>
+    );
+  }
   return (
     <div className="roster-status" data-state={state}>
       <Group gap={6} wrap="nowrap" mb={4}>
@@ -149,13 +191,16 @@ function IssueBlock({
 export function RosterBar({ nation, roster }: { nation: Nation; roster: RosterState }) {
   const issues = validateRoster(nation, roster);
   const errors = issues.filter((i) => i.level === "error").length;
-  const todos = issues.length - errors;
+  const todos = issues.filter((i) => i.level === "todo").length;
+  const historical = issues.filter((i) => i.level === "historical").length;
   const status =
     errors > 0
       ? errors === 1 ? "1 to fix" : `${errors} to fix`
       : todos > 0
         ? todos === 1 ? "1 still to add" : `${todos} still to add`
-        : "Within limits";
+        : historical > 0
+          ? historical === 1 ? "As fought, 1 departure" : `As fought, ${historical} departures`
+          : "Within limits";
   return (
     <>
       <div className="roster-bar-spacer" aria-hidden />
@@ -193,6 +238,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
   const issues = validateRoster(nation, roster);
   const errors = issues.filter((i) => i.level === "error");
   const todos = issues.filter((i) => i.level === "todo");
+  const historical = issues.filter((i) => i.level === "historical");
 
   return (
     <Stack gap="md">
@@ -349,7 +395,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
 
         {/* Whether the list is legal, inside the card: what breaks the rules in red, what it still needs
             calmly (an unfinished list isn't a mistake), and a quiet green line once it's done */}
-        {issues.length === 0 && (
+        {errors.length === 0 && todos.length === 0 && historical.length === 0 && (
           <div className="roster-status" data-state="ok">
             <Group gap={6} wrap="nowrap">
               <IconCircleCheck size={16} aria-hidden />
@@ -368,6 +414,15 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
         )}
         {todos.length > 0 && (
           <IssueBlock nation={nation} roster={roster} issues={todos} state="todo" title="Still to add" />
+        )}
+        {historical.length > 0 && (
+          <IssueBlock
+            nation={nation}
+            roster={roster}
+            issues={historical}
+            state="historical"
+            title={historical.length === 1 ? "1 historical departure" : `${historical.length} historical departures`}
+          />
         )}
       </Paper>
 

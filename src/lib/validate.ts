@@ -1,4 +1,6 @@
 import type { Nation } from "@/data/types";
+import { getForce } from "@/data/battles";
+import { rosterFromForce } from "@/lib/forces";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitPeriodBlocked } from "@/lib/periods";
 import { brigadeTotal, rosterTotal } from "@/lib/points";
@@ -36,9 +38,11 @@ export interface ValidationIssue {
   /**
    * "error": something breaks the list's rules (too many, not allowed, can't be combined). "todo":
    * something the list still needs (a commander, a brigade's minimum), the normal state of a list
-   * that's still being built, so it's shown calmly rather than as a mistake.
+   * that's still being built, so it's shown calmly rather than as a mistake. "historical": a list started
+   * from a historical force breaks the rules here just as that force did, so it's shown as the history
+   * rather than a mistake (see `validateRoster`).
    */
-  level: "error" | "todo";
+  level: "error" | "todo" | "historical";
   /** A todo the slot's own badge already shows ("needs 1–2"), so the brigade card needn't repeat it */
   shownOnSlot?: boolean;
   message: string;
@@ -46,7 +50,29 @@ export interface ValidationIssue {
   brigadeKey?: string;
 }
 
+/**
+ * What breaks the list's rules, and what it still needs. A list started from a historical force
+ * (`sourceForceId`) has whatever that force itself breaks marked "historical" instead: the same issue,
+ * about the same brigade, in the force as it was built. Change it so the issue reads differently (more
+ * Light battalions than history had, say) and it's an ordinary issue again.
+ */
 export function validateRoster(nation: Nation, roster: RosterState): ValidationIssue[] {
+  const issues = rulesIssues(nation, roster);
+  const force = roster.sourceForceId ? getForce(roster.sourceForceId) : undefined;
+  if (!force || force.nationId !== nation.id || issues.length === 0) return issues;
+  // The force as built, with the list's own names and period, so renaming a brigade or choosing
+  // another period doesn't change how its issues read
+  const template = rosterFromForce(nation, force).roster;
+  const names = new Map(roster.brigadeInstances.map((b) => [b.key, b.name]));
+  template.armyName = roster.armyName;
+  template.period = roster.period;
+  template.brigadeInstances = template.brigadeInstances.map((b) => (names.has(b.key) ? { ...b, name: names.get(b.key) } : b));
+  const id = (i: ValidationIssue) => `${i.brigadeKey ?? ""}\u0000${i.message}`;
+  const historical = new Set(rulesIssues(nation, template).map(id));
+  return issues.map((i) => (historical.has(id(i)) ? { ...i, level: "historical" as const } : i));
+}
+
+function rulesIssues(nation: Nation, roster: RosterState): ValidationIssue[] {
   const issues: ValidationIssue[] = [];
 
   // Determine which Command units are army-level (not tied to a brigade as its required commander)

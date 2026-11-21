@@ -165,6 +165,7 @@ function RosterContent({ nation, roster }: Props) {
         const issues = validateRoster(nation, roster);
         const errors = issues.filter((i) => i.level === "error");
         const todos = issues.filter((i) => i.level === "todo");
+        const historical = issues.filter((i) => i.level === "historical");
         return (
           <>
             {errors.length > 0 && (
@@ -180,6 +181,15 @@ function RosterContent({ nation, roster }: Props) {
               <Alert color="brown" variant="light" title="Still to add">
                 <List size="sm" spacing={4}>
                   {todos.map((issue, idx) => (
+                    <List.Item key={idx}>{issue.message}</List.Item>
+                  ))}
+                </List>
+              </Alert>
+            )}
+            {historical.length > 0 && (
+              <Alert color="gray" variant="light" title="Historical departures (as the force fought)">
+                <List size="sm" spacing={4}>
+                  {historical.map((issue, idx) => (
                     <List.Item key={idx}>{issue.message}</List.Item>
                   ))}
                 </List>

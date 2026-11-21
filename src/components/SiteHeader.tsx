@@ -11,6 +11,7 @@ import { useSwipeNav } from "@/lib/useSwipeNav";
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/black-powder", label: "Black Powder" },
+  { href: "/black-powder/battles", label: "Historical forces" },
 ];
 
 /**
@@ -19,7 +20,11 @@ const NAV = [
  */
 export function SiteHeader() {
   const pathname = usePathname();
-  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
+  // The longest link the address starts with is where you are, so Historical forces isn't also Black Powder
+  const current = NAV.filter((i) => (i.href === "/" ? pathname === "/" : pathname.startsWith(i.href))).sort(
+    (a, b) => b.href.length - a.href.length
+  )[0]?.href;
+  const isActive = (href: string) => href === current;
   const savedCount = useSavedCount();
   // On touch screens, swiping sideways moves between these menu pages (lib/useSwipeNav.ts)
   useSwipeNav();

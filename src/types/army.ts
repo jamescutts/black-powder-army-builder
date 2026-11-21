@@ -58,6 +58,12 @@ export interface RosterState {
    * has them; unset for any period
    */
   period?: string;
+  /**
+   * The historical force (`HistoricalForce.id`) the list was started from, if any: the builder says so,
+   * can put it back as it was, and shows where that force breaks the list's rules as historical
+   * departures rather than mistakes
+   */
+  sourceForceId?: string;
   /** Free-standing Command category units (Divisional/Brigade Commanders) */
   commandItems: RosterUnitLine[];
   brigadeInstances: RosterBrigadeInstance[];
