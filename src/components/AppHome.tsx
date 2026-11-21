@@ -96,7 +96,7 @@ export function AppHome({ supplements, armies }: { supplements: HomeSupplement[]
             size="sm"
             mt="sm"
             rightSection={<IconArrowUpRight size={16} />}
-            className="app-fan-card-button"
+            className="app-fan-card-button needs-network"
           >
             Visit Warlord Games
           </Button>
@@ -113,12 +113,12 @@ export function AppHome({ supplements, armies }: { supplements: HomeSupplement[]
               Army Builder is free to use. If you&apos;ve found it useful, a tip on Ko-fi simply helps cover the costs
               of keeping the site running.
             </p>
-            <a href={KOFI_URL} target="_blank" rel="noopener" className="kofi-button">
+            <a href={KOFI_URL} target="_blank" rel="noopener" className="kofi-button needs-network">
               <img src="/kofi/support-me-on-kofi-beige.png" alt="Support me on Ko-fi" width={245} height={50} />
             </a>
           </div>
           <div className="app-list">
-            <a href="https://shakosandsprues.com" target="_blank" rel="noopener" className="app-list-row">
+            <a href="https://shakosandsprues.com" target="_blank" rel="noopener" className="app-list-row needs-network">
               <IconTool size={20} className="app-list-icon" aria-hidden />
               <span className="app-list-text">
                 <Text fw={600} lh={1.25} c="brown.8">

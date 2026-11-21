@@ -255,6 +255,25 @@ body {
 }
 
 /* ------------------------------------------------------------------------
+   No connection (lib/offline.ts). className="offline-only" shows an element only while offline;
+   "needs-network" quietens one that can't work then (links to other sites), so it's plainly out of
+   reach rather than failing when tapped. For other differences, @mixin offline { … } or @mixin online.
+   ------------------------------------------------------------------------ */
+.offline-only {
+  @mixin online {
+    display: none !important;
+  }
+}
+
+.needs-network {
+  @mixin offline {
+    opacity: 0.45;
+    filter: grayscale(0.5);
+    pointer-events: none;
+  }
+}
+
+/* ------------------------------------------------------------------------
    Site header and footer: dark ink bands framing the page top and bottom.
    ------------------------------------------------------------------------ */
 .site-shell {
@@ -422,10 +441,45 @@ body {
     }
   }
 
-  .site-header .site-search-button {
+  .site-header .site-search-button,
+  .site-header .offline-pill {
     @mixin app {
       order: 1;
     }
+  }
+}
+
+/* "Offline", in the header's title row beside search, while there's no connection */
+.offline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  height: 28px;
+  margin-left: auto;
+  padding: 0 10px;
+  border: 1px solid rgba(242, 236, 214, 0.3);
+  border-radius: 14px;
+  background: rgba(242, 236, 214, 0.12);
+  color: #f2ecd6;
+  font-size: var(--mantine-font-size-xs);
+  white-space: nowrap;
+}
+
+/* While the pill shows, the tagline gives up its room to it (trimming with an ellipsis), rather than
+   claiming its full width first and pushing search onto a line of its own */
+[data-offline] .site-header-tagline {
+  flex-basis: 0;
+}
+
+/* Search sits straight after the pill, rather than pushed to the end on its own */
+[data-offline] .site-header .offline-pill + .site-search-button {
+  margin-left: 0;
+}
+
+@media (max-width: 47.99em) {
+  .offline-pill-more {
+    display: none;
   }
 }
 

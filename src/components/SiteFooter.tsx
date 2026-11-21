@@ -20,7 +20,7 @@ function Support() {
           </p>
         </div>
         {/* Ko-fi's own button artwork */}
-        <a href={KOFI_URL} target="_blank" rel="noopener" className="kofi-button">
+        <a href={KOFI_URL} target="_blank" rel="noopener" className="kofi-button needs-network">
           <img src="/kofi/support-me-on-kofi-beige.png" alt="Support me on Ko-fi" width={245} height={50} />
         </a>
       </div>

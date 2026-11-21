@@ -6,6 +6,10 @@ module.exports = {
       mixins: {
         app: { "[data-app] &": { "@mixin-content": {} } },
         browser: { ":root:not([data-app]) &": { "@mixin-content": {} } },
+        // And for when there's no connection (`@mixin offline`) or there is (`@mixin online`), set by
+        // lib/offline.ts
+        offline: { "[data-offline] &": { "@mixin-content": {} } },
+        online: { ":root:not([data-offline]) &": { "@mixin-content": {} } },
       },
     },
     "postcss-simple-vars": {

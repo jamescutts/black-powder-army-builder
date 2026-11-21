@@ -12,6 +12,8 @@
 //    request on purpose. Next then falls back to loading the whole page, which comes from the saved copy.
 //  - Build files (/_next/static/...) never change once built, so they come from the cache first.
 //  - Home page paintings from Wikimedia are kept once seen.
+//  - It tells open pages when the network stops answering it (fails, or takes too long) and when it
+//    answers again, so they can show they're offline (lib/offline.ts).
 //
 // Rosters themselves live in the browser's localStorage (lib/storage.ts), which works offline already.
 
@@ -85,7 +87,16 @@ self.addEventListener("message", (event) => {
 
 async function statusMessage() {
   const warmed = !!(await (await caches.open(PAGE_CACHE)).match(WARMED));
-  return { type: "offline-status", version: VERSION, warmed };
+  return { type: "offline-status", version: VERSION, warmed, network: networkOk !== false };
+}
+
+// Whether the network last answered: null until something's been asked of it. Open pages are told when
+// it changes (and a page asking for the status hears it), so they can show they're offline.
+let networkOk = null;
+function report(ok) {
+  if (ok === networkOk) return;
+  networkOk = ok;
+  self.clients.matchAll({ type: "window" }).then((cs) => cs.forEach((c) => c.postMessage({ type: "network", ok })));
 }
 
 async function precache() {
@@ -162,22 +173,38 @@ async function page(event, url) {
   const cached = await cache.match(key);
 
   const network = fetch(event.request).then(async (res) => {
+    report(true);
     if (res.ok && res.type === "basic" && (res.headers.get("content-type") || "").includes("text/html")) {
       await cache.put(key, res.clone());
     }
     return res;
   });
-  event.waitUntil(network.catch(() => {}));
+  event.waitUntil(network.catch(() => report(false)));
 
   if (!cached) return network.catch(() => offlinePage());
-  return Promise.race([network.catch(() => cached), wait(NETWORK_WAIT_MS).then(() => cached)]);
+  return Promise.race([
+    network.catch(() => cached),
+    wait(NETWORK_WAIT_MS).then(() => {
+      report(false);
+      return cached;
+    }),
+  ]);
 }
 
 async function inApp(req, url) {
   const isSaved = !!(await (await caches.open(PAGE_CACHE)).match(pathKey(url)));
   if (!isSaved) return fetch(req);
-  if (self.navigator.onLine === false) return Response.error();
-  return Promise.race([fetch(req).catch(() => Response.error()), wait(NETWORK_WAIT_MS).then(() => Response.error())]);
+  if (self.navigator.onLine === false) {
+    report(false);
+    return Response.error();
+  }
+  return Promise.race([
+    fetch(req).then(
+      (res) => (report(true), res),
+      () => (report(false), Response.error())
+    ),
+    wait(NETWORK_WAIT_MS).then(() => (report(false), Response.error())),
+  ]);
 }
 
 async function cacheFirst(req, cacheName) {
@@ -193,9 +220,11 @@ async function cacheFirst(req, cacheName) {
 async function saved(req) {
   try {
     const res = await fetch(req);
+    report(true);
     if (res.ok) return res;
     return (await caches.match(req)) || res;
   } catch (err) {
+    report(false);
     const hit = await caches.match(req);
     if (hit) return hit;
     throw err;

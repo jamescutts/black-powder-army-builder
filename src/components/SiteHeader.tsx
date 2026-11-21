@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { IconWifiOff } from "@tabler/icons-react";
 import { SiteSearch } from "./SiteSearch";
 import { listSaved, LISTS_CHANGED_EVENT } from "@/lib/storage";
 
@@ -12,8 +13,8 @@ const NAV = [
 ];
 
 /**
- * A dark ink band across the top: the site name (the same on every page, in the script face), tagline and
- * search, then the main menu below, which shows where you are, with My armies at its far end.
+ * A dark ink band across the top: the site name (the same on every page, in the script face), tagline,
+ * an Offline pill while there's no connection, and search, then the main menu below, which shows where you are, with My armies at its far end.
  */
 export function SiteHeader() {
   const pathname = usePathname();
@@ -29,6 +30,11 @@ export function SiteHeader() {
           </Link>
           <span className="site-header-muted site-header-tagline">
             Points calculators for tabletop wargame army lists
+          </span>
+          {/* Only while there's no connection (lib/offline.ts): everything but links to other sites still works */}
+          <span className="offline-pill offline-only" role="status">
+            <IconWifiOff size={14} aria-hidden />
+            Offline<span className="offline-pill-more"> · your armies are saved on this device</span>
           </span>
           <SiteSearch />
         </div>
