@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 /** The main menu's pages, in its order, that a swipe moves between */
-const SECTIONS = ["/", "/black-powder", "/armies"];
+const SECTIONS = ["/", "/black-powder", "/black-powder/historical-forces", "/armies"];
 
 // A swipe: mostly sideways, far enough and quick enough to mean it, rather than a slow drag or a scroll
 const MIN_DISTANCE = 70;
@@ -14,12 +14,14 @@ const EDGE = 24;
 
 /**
  * Which menu page this is: Home, the Black Powder pages (its book pages too, but not the army builder,
- * whose page is for building), or My armies. Null elsewhere, where swiping does nothing.
+ * whose page is for building), Historical forces (its campaign pages too), or My armies. Null elsewhere,
+ * where swiping does nothing.
  */
 function sectionOf(pathname: string): number | null {
   if (pathname === "/") return 0;
-  if (pathname === "/armies") return 2;
+  if (pathname === "/armies") return 3;
   const parts = pathname.split("/").filter(Boolean);
+  if (parts[0] === "black-powder" && parts[1] === "historical-forces") return 2;
   if (parts[0] === "black-powder" && parts.length <= 2 && parts[1] !== "builder") return 1;
   return null;
 }
