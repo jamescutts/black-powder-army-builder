@@ -1,6 +1,8 @@
 import type { HistoricalBattle, HistoricalCampaign, HistoricalForce } from "../types";
 import { getNation } from "../index";
+import eckau from "./eckau.json";
 import ligny from "./ligny.json";
+import mesoten from "./mesoten.json";
 import quatreBras from "./quatre-bras.json";
 import waterloo from "./waterloo.json";
 import wavre from "./wavre.json";
@@ -13,6 +15,13 @@ import wavre from "./wavre.json";
  */
 export const campaigns: HistoricalCampaign[] = [
   {
+    id: "russia-1812",
+    name: "The Russian Campaign",
+    dates: "June–December 1812",
+    summary:
+      "Napoleon's invasion of Russia with the largest army Europe had seen. On its northern flank Macdonald's X Corps, with the Prussian Auxiliary Corps, marched on Riga, and spent the summer and autumn fighting its garrison and Steinheil's corps from Finland across Courland, until Yorck took the Prussians out of the war at Tauroggen.",
+  },
+  {
     id: "hundred-days",
     name: "The Hundred Days",
     dates: "June 1815",
@@ -21,7 +30,7 @@ export const campaigns: HistoricalCampaign[] = [
   },
 ];
 
-const allBattles: HistoricalBattle[] = [ligny, quatreBras, waterloo, wavre] as HistoricalBattle[];
+const allBattles: HistoricalBattle[] = [eckau, mesoten, ligny, quatreBras, waterloo, wavre] as HistoricalBattle[];
 
 // Only the forces whose army lists this build shows (community lists can be switched off)
 export const battles: HistoricalBattle[] = allBattles

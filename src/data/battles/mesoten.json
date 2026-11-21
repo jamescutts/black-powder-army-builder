@@ -1,0 +1,477 @@
+{
+  "id": "mesoten",
+  "name": "Mesoten",
+  "date": "29 September – 1 October 1812",
+  "campaign": "russia-1812",
+  "summary": "Reinforced by Steinheil's corps from Finland, the Russians came out of Riga in strength and pushed the Prussians back across Courland. Yorck turned on them: in three days of fighting along the Aa, at Mesoten, Gräfenthal, Lautschkrug and the Garosse, the Prussians threw the Finland Corps back with heavy losses in prisoners, and Steinheil withdrew to Riga.",
+  "sources": [
+    {
+      "label": "Königlich Preussisches Hülfscorps, Russian Campaign of 1812 (Weltseele)",
+      "url": "https://weltseele.miraheze.org/wiki/Orders_of_Campaign_and_Battle_(Prussia)/K%C3%B6niglich_Preussisches_H%C3%BClfscorps_(Russian_Campaign_of_1812)"
+    },
+    {
+      "label": "Preußischer Feldzug von 1812 (German Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Preu%C3%9Fischer_Feldzug_von_1812"
+    },
+    {
+      "label": "Order of battle of the Imperial Russian Army, 1812 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Order_of_battle_of_the_Imperial_Russian_Army_(1812)"
+    },
+    {
+      "label": "Siege of Riga, 1812 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Riga_(1812)"
+    },
+    {
+      "label": "Richard Riehn, Napoleon's Russian Campaign, ch. 14 (Summer and autumn in Latvia)"
+    },
+    {
+      "label": "The fight at Gross-Eckau, from Russkaya Starina, 1912 (Mark Conrad's translation)",
+      "url": "https://marksrussianmilitaryhistory.info/GrossEckau.htm"
+    }
+  ],
+  "forces": [
+    {
+      "id": "mesoten-prussian-corps",
+      "nationId": "prussia",
+      "name": "The Prussian Auxiliary Corps",
+      "formation": "27th Division, X Corps (Macdonald)",
+      "side": "Prussian",
+      "summary": "Yorck, now in command, gathered the corps and counter-attacked. On the 29th it crossed the Aa at Mesoten and drove Alexeyev's division back, while his 2nd and 3rd Brigades routed part of Rachmanov's at Gräfenthal; next day the cavalry caught Russian Jäger forming square at Lautschkrug, and on 1 October Jeanneret's advance guard pushed on over the Garosse.",
+      "notes": [
+        "Riehn gives the corps 12,000 men and 16 guns at Lautschkrug, and about 16,000 for the whole series of actions; the corps is shown complete.",
+        "Each combined regiment drew its three battalions from two parent regiments, as named; each combined cavalry regiment two squadrons from each of two. The 4th's third Leib battalion is taken as its Fusiliers.",
+        "The Leib Hussars (1st Combined Hussars) served with Grandjean's division rather than the corps, and the 2nd Combined Hussars and the Uhlans went to the main army, so they're left out.",
+        "Kleist commanded the corps' infantry and Massenbach its cavalry under the corps commander; add them as Subordinate Commanders if you like.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr-div-cmd",
+          "name": "Gen-Lt von Yorck",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr-infantry-brigade",
+          "name": "1st Brigade (Below)",
+          "commander": {
+            "name": "Col von Below",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr-foot-arty",
+              "name": "6-pdr Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/1st East Prussian"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "F/1st East Prussian"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/2nd East Prussian"
+                }
+              ]
+            },
+            {
+              "name": "2nd Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/3rd East Prussian"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/4th East Prussian"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "F/4th East Prussian"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr-infantry-brigade",
+          "name": "2nd Brigade (Horn)",
+          "commander": {
+            "name": "Lt-Col von Horn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr-foot-arty",
+              "name": "6-pdr Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "3rd Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/Colberg"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/Pomeranian"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "F/Pomeranian"
+                }
+              ]
+            },
+            {
+              "name": "4th Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/Leib Infantry"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/Leib Infantry"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "III/Leib Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr-infantry-brigade",
+          "name": "3rd Brigade (Raumer)",
+          "commander": {
+            "name": "Col von Raumer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr-jager",
+              "name": "East Prussian Jäger Bn"
+            },
+            {
+              "unit": "pr-foot-arty",
+              "name": "6-pdr Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "5th Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/1st West Prussian"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/2nd West Prussian"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "F/2nd West Prussian"
+                }
+              ]
+            },
+            {
+              "name": "6th Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/1st Silesian"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/2nd Silesian"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "F/2nd Silesian"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr-cavalry-brigade",
+          "name": "Jeanneret's Brigade",
+          "commander": {
+            "name": "Col von Jeanneret",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr-hussars",
+              "name": "3rd Combined Hussars (1st & 2nd Silesian)"
+            },
+            {
+              "unit": "pr-horse-arty",
+              "name": "6-pdr Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr-cavalry-brigade",
+          "name": "Hünerbein's Brigade",
+          "commander": {
+            "name": "Col von Hünerbein",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr-dragoon",
+              "name": "1st Combined Dragoons (Lithuanian, 2nd W. Prussian)"
+            },
+            {
+              "unit": "pr-dragoon",
+              "name": "2nd Combined Dragoons (1st W. Prussian, Brandenburg)"
+            }
+          ]
+        },
+        {
+          "type": "pr-army-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr-foot-arty",
+              "name": "6-pdr Foot Battery"
+            },
+            {
+              "unit": "pr-heavy-arty",
+              "name": "12-pdr Half Battery",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mesoten-alexeyev",
+      "nationId": "russia",
+      "name": "Alexeyev's Division",
+      "formation": "21st Infantry Division, Finland Corps (Steinheil)",
+      "side": "Russian",
+      "summary": "The larger of Steinheil's two divisions, which had pushed south from Riga along the Aa. Attacked at Mesoten on the 29th, it fought hard along the river before falling back, and was driven on over the following days.",
+      "notes": [
+        "The division's own 2nd Jäger is attached to the Petrovsk regiment, as the list takes a Jäger regiment; its other Jäger regiment, the 44th, was detached on Åland.",
+        "Battalion counts aren't certain: one account gives these regiments three battalions, the order of battle none. Two field battalions each are shown, the usual for 1812.",
+        "Riehn gives the division '9,000 infantry, only 200 cavalry and twelve guns' at Mesoten, so the Finland Dragoons (three squadrons) are Small.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Alexeyev",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "1st Brigade",
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "21st Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Petrovsk Infantry with 2nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Petrovsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Petrovsk"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 2nd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 2nd Jäger"
+                }
+              ]
+            },
+            {
+              "name": "Podolia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Podolia"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Podolia"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "2nd Brigade",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "40th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Neva Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Neva"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Neva"
+                }
+              ]
+            },
+            {
+              "name": "Lithuania Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Lithuania"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Lithuania"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Cavalry",
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Finland Dragoons",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Loshchilin's Cossacks"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mesoten-rachmanov",
+      "nationId": "russia",
+      "name": "Rachmanov's Division",
+      "formation": "6th Infantry Division, Finland Corps (Steinheil)",
+      "side": "Russian",
+      "summary": "Steinheil's second division. Part of it was caught and routed at Gräfenthal on the 29th, and at Lautschkrug next day its Jäger were ridden down by Prussian cavalry, losing two battalions as prisoners.",
+      "notes": [
+        "The Azov and Nizov regiments with the 3rd and 35th Jäger, each Jäger regiment taken as the list's attached Jäger. One account adds the Uglich regiment, the Russian order of battle the Bryansk, which was on Åland; neither is included.",
+        "Two field battalions per regiment are shown, the usual for 1812; the sources don't give counts. At Lautschkrug two battalions of the 3rd Jäger were caught forming square by Prussian cavalry and taken.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but the brigade commander at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Rachmanov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Azov and Nizov",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "11th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Azov Infantry with 3rd Jäger",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Azov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Azov"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 3rd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 3rd Jäger"
+                }
+              ]
+            },
+            {
+              "name": "Nizov Infantry with 35th Jäger",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Nizov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Nizov"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 35th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 35th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    }
+  ]
+}
