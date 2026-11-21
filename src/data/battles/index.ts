@@ -76,7 +76,7 @@ export const campaigns: HistoricalCampaign[] = [
       page: "https://commons.wikimedia.org/wiki/File:De_overtocht_over_de_Berezina.jpg",
     },
     summary:
-      "Napoleon's invasion of Russia with the largest army Europe had seen. On its northern flank Macdonald's X Corps, with the Prussian Auxiliary Corps, marched on Riga, and spent the summer and autumn fighting its garrison and Steinheil's corps from Finland across Courland, until Yorck took the Prussians out of the war at Tauroggen.",
+      "Napoleon crossed the Niemen in June with the largest army Europe had seen, drawn from France and half the continent. The Russian armies fell back before it, fighting rearguard actions from Mir and Ostrovno to Smolensk, until Kutuzov stood at Borodino. Napoleon took Moscow but not the peace he sought, and the retreat through the winter, harried at Maloyaroslavets, Vyazma and Krasnoi and across the Berezina, destroyed his army, while on the flanks Austrians, Saxons and Prussians fought campaigns of their own.",
   },
   {
     id: "hundred-days",
