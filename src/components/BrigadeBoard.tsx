@@ -25,6 +25,7 @@ import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState, Roster
 import { UnitLineEditor } from "./UnitLineEditor";
 import { InlineName } from "./InlineName";
 import { PeriodPicker } from "./PeriodPicker";
+import { unitPeriodBlocked } from "@/lib/periods";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { newBrigadeInstance } from "@/lib/newRoster";
@@ -78,7 +79,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
 
   // Brigade types that can't be added right now (at their limit, or waiting on another brigade type)
   // stay in the picker, greyed out with the reason, so the list still shows everything the army can take.
-  const brigadeOptions = nation.brigades.map((bt) => {
+  // Another campaign period's brigade types are left out of the picker altogether
+  const brigadeOptions = nation.brigades.filter((bt) => !bt.periodBlocked).map((bt) => {
     const max = effectiveMax(bt, roster.brigadeInstances);
     const atMax = countByType(roster.brigadeInstances, bt.id) >= max;
     // A brigade type the army can't take alongside one it already has (Cavalry or Landwehr Cavalry)
@@ -664,11 +666,14 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                         <Select
                           size="xs"
                           w={170}
-                          data={commanderUnit.variants!.map((v) => ({
-                            value: v.label,
-                            // A free commander just shows its rating; "(0 pts)" adds nothing
-                            label: v.cost ? `${v.label} (${v.cost} pts)` : v.label,
-                          }))}
+                          data={commanderUnit.variants!
+                            // Another period's ratings are left out, unless it's the one chosen (flagged)
+                            .filter((v) => !v.periodBlocked || v.label === instance.commanderLine!.variantLabel)
+                            .map((v) => {
+                              // A free commander just shows its rating; "(0 pts)" adds nothing
+                              const extra = [v.cost ? `${v.cost} pts` : "", v.periodBlocked ?? ""].filter(Boolean).join(", ");
+                              return { value: v.label, label: extra ? `${v.label} (${extra})` : v.label };
+                            })}
                           value={instance.commanderLine.variantLabel}
                           onChange={(v) => v && handleCommanderVariant(instance.key, v)}
                           allowDeselect={false}
@@ -692,6 +697,8 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                   if (slot.regiment) {
                     const regDef = slot.regiment;
                     const regiments = instance.regimentSlots?.[slotIndex] ?? [];
+                    // Another campaign period's slot is hidden, unless the brigade already has some (flagged)
+                    if (slot.periodBlocked && regiments.length === 0) return null;
                   const regimentBadge = limitBadge(regiments.length, regDef.min, regDef.max);
                     return (
                       <Stack key={slotIndex} gap="xs">
@@ -708,7 +715,10 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
 
                         {/* Regiment instances */}
                         {regiments.map((reg, regIdx) => {
-                          const regimentOptions = optionsForRegiment(bt, regDef.slots.flatMap((s) => s.unitIds));
+                          // Another campaign period's regiment upgrades are hidden, unless the regiment has one
+                          const regimentOptions = optionsForRegiment(bt, regDef.slots.flatMap((s) => s.unitIds)).filter(
+                            (o) => !o.periodBlocked || reg.options?.includes(o.id)
+                          );
                           return (
                           // A rule down the left side, as Fleet marks a group within a section, not a box
                         <div key={reg.key} className="regiment-block">
@@ -857,8 +867,15 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
                     );
                   }
 
-                  // Flat slot (no regiment)
-                  const eligibleUnits = nation.units.filter((u) => slot.unitIds.includes(u.id));
+                  // Flat slot (no regiment). Another campaign period's slot is hidden unless the brigade
+                  // already has some in it (flagged), as is a unit from another period in a slot that's open
+                  const slotLines = instance.slotLines[slotIndex] ?? [];
+                  if (slot.periodBlocked && slotLines.length === 0) return null;
+                  const eligibleUnits = nation.units.filter(
+                    (u) =>
+                      slot.unitIds.includes(u.id) &&
+                      (!unitPeriodBlocked(nation, slot, u.id, roster.period) || slotLines.some((l) => l.unitId === u.id))
+                  );
                   const slotMax = slot.maxPerPoints
                     ? Math.floor(armyTotalPoints / slot.maxPerPoints.perPoints)
                     : slot.max;

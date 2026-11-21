@@ -14,6 +14,7 @@ import {
   unitCapRequirementMet,
 } from "@/lib/brigadeLimits";
 import { unitNoun } from "@/lib/options";
+import { unitPeriodBlocked } from "@/lib/periods";
 
 // What the builder can still add, and why not when it can't: the same rules validate.ts checks, asked
 // before a unit is added rather than after, so the pickers can grey out what isn't allowed.
@@ -38,6 +39,7 @@ export interface SlotPlace {
  */
 export function slotLockedReason(place: SlotPlace, slot: BrigadeSlot): string | null {
   const { nation, roster, instance } = place;
+  if (slot.periodBlocked) return slot.periodBlocked;
   if (slot.requiresBrigadeCount && !brigadeCountRequirementMet(slot, instance)) {
     const { unitIds, min } = slot.requiresBrigadeCount;
     const have = countUnitsInInstance(instance, unitIds);
@@ -69,6 +71,9 @@ export function brigadeFullReason(place: SlotPlace, unitId?: string): string | n
  */
 export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: RosterUnitLine[], unitId: string): string | null {
   const { nation, roster, bt, instance, slotIndex } = place;
+
+  const out = unitPeriodBlocked(nation, slot, unitId, roster.period);
+  if (out) return out;
 
   const full = brigadeFullReason(place, unitId);
   if (full) return full;

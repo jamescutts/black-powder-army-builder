@@ -21,6 +21,7 @@ import { supplements, getSupplement, getNation, getNationsForSupplement } from "
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
 import { startingRoster } from "@/lib/newRoster";
+import { nationForPeriod } from "@/lib/periods";
 import { BrigadeBoard } from "@/components/BrigadeBoard";
 import { RosterBar, RosterPanel } from "@/components/RosterPanel";
 import { ForceOrgNotes } from "@/components/ForceOrgNotes";
@@ -161,6 +162,9 @@ function BuilderContent({ nationId }: { nationId: string }) {
     };
   }, [listId]);
 
+  // The list as it stands in its campaign period (Peninsular Early, Middle or Late): that period's limits,
+  // and what belongs to another period marked so the builder greys it out and the checks flag it
+  const periodNation = useMemo(() => nationForPeriod(nation, roster.period), [nation, roster.period]);
   const supplement = useMemo(
     () => getSupplement(nation.supplementId) ?? supplements[0],
     [nation.supplementId]
@@ -377,7 +381,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
         <Container size="xl" py="lg">
           <Grid gap="lg">
             <Grid.Col span={{ base: 12, md: 7 }}>
-              <BrigadeBoard key={listId} nation={nation} roster={roster} onChange={setRoster} />
+              <BrigadeBoard key={listId} nation={periodNation} roster={roster} onChange={setRoster} />
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 5 }}>
               {/* An invisible copy of the "Army command" heading, so on wide screens the roster card's top
@@ -390,7 +394,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
               {/* Only the roster follows you down the page; the reference notes sit below the builder */}
               <div ref={stickyRef} style={{ position: "sticky", top: stickyTop }}>
                 <RosterPanel
-                  nation={nation}
+                  nation={periodNation}
                   roster={roster}
                   onRename={(armyName) => setRoster({ ...roster, armyName })}
                 />
@@ -407,7 +411,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
           <div className="list-notes-wrap">
             <ForceOrgNotes nation={nation} />
           </div>
-          <RosterBar nation={nation} roster={roster} />
+          <RosterBar nation={periodNation} roster={roster} />
         </Container>
       )}
     </>

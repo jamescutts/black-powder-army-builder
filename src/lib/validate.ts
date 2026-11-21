@@ -1,5 +1,6 @@
 import type { Nation } from "@/data/types";
-import type { RosterState } from "@/types/army";
+import type { RosterState, RosterUnitLine } from "@/types/army";
+import { unitPeriodBlocked } from "@/lib/periods";
 import { brigadeTotal, rosterTotal } from "@/lib/points";
 import {
   attachRule,
@@ -69,6 +70,9 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
       message: `Army Command: only one army commander allowed (have ${commandTotal})`,
     });
   }
+
+  // ─── Choices from another campaign period than the list's (Peninsular Early, Middle, Late) ───
+  issues.push(...periodIssues(nation, roster));
 
   // Army total points (used for per-points caps like Earthworks "1 per 500 points")
   const armyTotalPoints = rosterTotal(nation, roster);
@@ -707,4 +711,54 @@ export const REVEAL_BRIGADE_EVENT = "army-builder:reveal-brigade";
 /** A brigade's own name if the player has given it one, otherwise its type, e.g. "Infantry Brigade" */
 export function brigadeLabel(bi: { name?: string }, typeName: string): string {
   return bi.name?.trim() || typeName;
+}
+
+/**
+ * What a list has from outside its campaign period, once one is chosen: a brigade, a slot's units, a unit
+ * in a slot, an upgrade or a commander's Staff Rating from another period. Uses the period view of the
+ * nation (`nationForPeriod`), which marks them.
+ */
+function periodIssues(nation: Nation, roster: RosterState): ValidationIssue[] {
+  const period = nation.periods?.find((p) => p.id === roster.period);
+  if (!period) return [];
+  const notIn = `not in the ${period.label} period`;
+  const issues: ValidationIssue[] = [];
+  const variantIssue = (line: RosterUnitLine | null | undefined, where: string, brigadeKey?: string) => {
+    if (!line) return;
+    const variant = nation.units.find((u) => u.id === line.unitId)?.variants?.find((v) => v.label === line.variantLabel);
+    if (variant?.periodBlocked) {
+      issues.push({ level: "error", brigadeKey, message: `${where}: ${variant.label}, ${notIn}` });
+    }
+  };
+  roster.commandItems.forEach((line) => variantIssue(line, "Army Command"));
+
+  for (const bi of roster.brigadeInstances) {
+    const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);
+    if (!bt) continue;
+    if (bt.periodBlocked) {
+      issues.push({ level: "error", brigadeKey: bi.key, message: `${bt.name}: ${notIn} (${bt.periodBlocked})` });
+    }
+    variantIssue(bi.commanderLine, bt.name, bi.key);
+    bt.slots.forEach((slot, i) => {
+      const lines = bi.slotLines[i] ?? [];
+      if (slot.periodBlocked && lines.length) {
+        issues.push({ level: "error", brigadeKey: bi.key, message: `${bt.name} → ${slot.label}: ${notIn} (${slot.periodBlocked})` });
+        return;
+      }
+      for (const unitId of new Set(lines.map((l) => l.unitId))) {
+        const why = unitPeriodBlocked(nation, slot, unitId, roster.period);
+        const name = nation.units.find((u) => u.id === unitId)?.name ?? unitId;
+        if (why) issues.push({ level: "error", brigadeKey: bi.key, message: `${bt.name}: ${name}, ${notIn} (${why})` });
+      }
+    });
+    const taken = new Set(
+      brigadeUnitLines(bi).flatMap(({ line, regiment }) => [...(line.options ?? []), ...(regiment?.options ?? [])])
+    );
+    for (const o of bt.options ?? []) {
+      if (o.periodBlocked && taken.has(o.id)) {
+        issues.push({ level: "error", brigadeKey: bi.key, message: `${bt.name}: ${o.label}, ${notIn}` });
+      }
+    }
+  }
+  return issues;
 }

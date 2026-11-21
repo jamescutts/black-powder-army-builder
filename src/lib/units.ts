@@ -20,3 +20,16 @@ export function unitStatLine(unit: UnitEntry): string {
   if (unit.stamina) parts.push(`St ${unit.stamina}`);
   return parts.join(" · ");
 }
+
+/**
+ * A unit's priced choices for a Select. One from another campaign period is left out, unless it's the
+ * one already chosen, which stays (and says why it doesn't fit) so the Select can still show it.
+ */
+export function variantSelectData(unit: UnitEntry, current?: string): { value: string; label: string }[] {
+  return (unit.variants ?? [])
+    .filter((v) => !v.periodBlocked || v.label === current)
+    .map((v) => ({
+      value: v.label,
+      label: v.periodBlocked ? `${v.label} (${v.cost} pts, ${v.periodBlocked})` : `${v.label} (${v.cost} pts)`,
+    }));
+}

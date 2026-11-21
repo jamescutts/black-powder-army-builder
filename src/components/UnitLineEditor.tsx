@@ -5,7 +5,7 @@ import { ActionIcon, Badge, Button, Chip, Group, Select, Stack, Text, Tooltip, U
 import { IconLock, IconPlus, IconTrash } from "@tabler/icons-react";
 import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterBrigadeInstance, RosterUnitLine } from "@/types/army";
-import { defaultVariantLabel, unitCost } from "@/lib/units";
+import { defaultVariantLabel, unitCost, variantSelectData } from "@/lib/units";
 import { newKey } from "@/lib/id";
 import { InlineName } from "@/components/InlineName";
 import { limitBadge } from "@/lib/limitBadge";
@@ -162,7 +162,10 @@ export function UnitLineEditor({
             const fullCost = (resolved?.cost ?? unitCost(unit, line.variantLabel)) * line.qty;
             const cost = credit ? Math.max(0, fullCost - credit) : fullCost;
             const special = resolved?.special ?? unit.special ?? [];
-            const options = brigade ? optionsForUnit(brigade.bt, unit.id) : [];
+            // Another campaign period's upgrades are hidden, unless this unit already has one (flagged)
+            const options = brigade
+              ? optionsForUnit(brigade.bt, unit.id).filter((o) => !o.periodBlocked || line.options?.includes(o.id))
+              : [];
             const showVariantInName = line.variantLabel && !(maxTotal !== undefined && (unit.variants?.length ?? 0) > 0);
             const name = resolved?.unit.name ?? unit.name;
 
@@ -266,7 +269,7 @@ export function UnitLineEditor({
                       size="xs"
                       w={150}
                       aria-label={`${unit.name} option`}
-                      data={unit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
+                      data={variantSelectData(unit, line.variantLabel)}
                       value={line.variantLabel}
                       onChange={(v) => v && handleVariant(line.key, v)}
                       allowDeselect={false}
@@ -358,7 +361,7 @@ export function UnitLineEditor({
                     size="xs"
                     w={170}
                     aria-label={`${onlyUnit.name} option`}
-                    data={onlyUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
+                    data={variantSelectData(onlyUnit)}
                     value={variant}
                     onChange={(v) => v && setPickedVariant(v)}
                     allowDeselect={false}
@@ -385,7 +388,7 @@ export function UnitLineEditor({
                       size="xs"
                       w={150}
                       aria-label={`${pickedUnit.name} option`}
-                      data={pickedUnit.variants!.map((v) => ({ value: v.label, label: `${v.label} (${v.cost} pts)` }))}
+                      data={variantSelectData(pickedUnit)}
                       value={variant}
                       onChange={(v) => {
                         if (!v) return;

@@ -246,6 +246,7 @@ export function unitOptionBlocked(
   army?: RosterBrigadeInstance[]
 ): string | null {
   if (line.options?.includes(o.id)) return null;
+  if (o.periodBlocked) return o.periodBlocked;
   const others = [...(line.options ?? []), ...regimentOptions];
   const clash = (bt.options ?? []).find(
     (other) => others.includes(other.id) && (o.excludes?.includes(other.id) || other.excludes?.includes(o.id))
@@ -272,6 +273,7 @@ export function regimentOptionBlocked(
   army?: RosterBrigadeInstance[]
 ): string | null {
   if (regiment.options?.includes(o.id)) return null;
+  if (o.periodBlocked) return o.periodBlocked;
   if (optionTaken(o, instance, army) >= optionAllowance(o, instance, army)) {
     return `Only ${o.limit?.max ?? 0} regiment${o.limit?.max === 1 ? "" : "s"} ${o.limit?.armyWide ? "in the army" : "per brigade"}`;
   }

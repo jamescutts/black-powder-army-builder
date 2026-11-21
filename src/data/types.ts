@@ -11,6 +11,8 @@ export interface UnitVariant {
   shooting?: string;
   /** The campaign periods (ids from the nation's `periods`) this choice belongs to; all when left out */
   periods?: string[];
+  /** Set by the builder (not in the data) when this is outside the list's period: why, e.g. "Late period only" */
+  periodBlocked?: string;
 }
 
 /**
@@ -152,6 +154,19 @@ export interface BrigadeSlot {
   /** The campaign periods this slot is offered in (ids from the nation's `periods`); all when left out */
   periods?: string[];
   /**
+   * Units in this slot offered only in some campaign periods, e.g. a Brunswick Oels company sharing the
+   * Tiny company slot with a Rifle company → { "pb-brunswick-oels-coy": ["middle", "late"] }
+   */
+  unitPeriods?: Record<string, string[]>;
+  /**
+   * Changes that apply in one campaign period, keyed by period id, e.g. an Early limit of "up to two in
+   * the army" in place of the usual "1 in 4" → { "early": { "limit": { "max": 2, "armyWide": true } } }.
+   * A null value removes the field in that period (e.g. "maxRatio": null for "0-1" with no ratio).
+   */
+  periodOverrides?: Record<string, Record<string, unknown>>;
+  /** Set by the builder (not in the data) when this is outside the list's period: why, e.g. "Late period only" */
+  periodBlocked?: string;
+  /**
    * Combined caps on a GROUP of unit ids within a single brigade instance (this slot only).
    * The summed qty of all listed unit ids must not exceed `max`.
    * e.g. Russian Guard Light Cavalry: "up to 1 Life Guard Cossack OR Uhlan" →
@@ -270,6 +285,14 @@ export interface UnitOption {
   excludesReason?: string;
   /** The campaign periods this upgrade is offered in (ids from the nation's `periods`); all when left out */
   periods?: string[];
+  /**
+   * Changes that apply in one campaign period, keyed by period id, e.g. an Early limit of "up to two in
+   * the army" in place of the usual "1 in 4" → { "early": { "limit": { "max": 2, "armyWide": true } } }.
+   * A null value removes the field in that period (e.g. "maxRatio": null for "0-1" with no ratio).
+   */
+  periodOverrides?: Record<string, Record<string, unknown>>;
+  /** Set by the builder (not in the data) when this is outside the list's period: why, e.g. "Late period only" */
+  periodBlocked?: string;
 }
 
 export interface BrigadeType {
@@ -277,6 +300,14 @@ export interface BrigadeType {
   name: string;
   /** The campaign periods this brigade can be taken in (ids from the nation's `periods`); all when left out */
   periods?: string[];
+  /**
+   * Changes that apply in one campaign period, keyed by period id, e.g. an Early limit of "up to two in
+   * the army" in place of the usual "1 in 4" → { "early": { "limit": { "max": 2, "armyWide": true } } }.
+   * A null value removes the field in that period (e.g. "maxRatio": null for "0-1" with no ratio).
+   */
+  periodOverrides?: Record<string, Record<string, unknown>>;
+  /** Set by the builder (not in the data) when this is outside the list's period: why, e.g. "Late period only" */
+  periodBlocked?: string;
   /** Upgrades and downgrades from this brigade's Options box */
   options?: UnitOption[];
   /**
@@ -461,6 +492,8 @@ export interface Nation {
     perUnitIds: string[];
     ratio: number;
     label?: string;
+    /** Changes in one campaign period, e.g. Late "one battery per 5 battalions" → { "late": { "ratio": 5 } } */
+    periodOverrides?: Record<string, Record<string, unknown>>;
   }[];
   /**
    * At most a share of the brigade commanders may be rated above `maxRating`, e.g. Russia's "Half of all

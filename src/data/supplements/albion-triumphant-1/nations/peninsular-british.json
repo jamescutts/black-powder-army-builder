@@ -43,7 +43,10 @@
         {
           "label": "Staff rating 9 (Late)",
           "cost": 50,
-          "staffRating": 9
+          "staffRating": 9,
+          "periods": [
+            "late"
+          ]
         }
       ]
     },
@@ -657,7 +660,13 @@
               "unitId": "pb-brunswick-oels-coy",
               "armyMax": 1
             }
-          ]
+          ],
+          "unitPeriods": {
+            "pb-brunswick-oels-coy": [
+              "middle",
+              "late"
+            ]
+          }
         },
         {
           "label": "Brunswick Light Infantry Battalion (optional, 1 per army)",
@@ -671,10 +680,14 @@
               "unitId": "pb-brunswick-light",
               "armyMax": 1
             }
+          ],
+          "periods": [
+            "middle",
+            "late"
           ]
         },
         {
-          "label": "Attached Small Light Dragoon Regiment (optional, Early, 1 per army)",
+          "label": "Attached Small Light Dragoon Regiment (optional, 1 per army)",
           "unitIds": [
             "pb-light-dragoon-small"
           ],
@@ -685,15 +698,21 @@
               "unitId": "pb-light-dragoon-small",
               "armyMax": 1
             }
+          ],
+          "periods": [
+            "early"
           ]
         },
         {
-          "label": "Attached Portuguese Line Battalion (optional, Early)",
+          "label": "Attached Portuguese Line Battalion (optional)",
           "unitIds": [
             "pb-portuguese-line"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "periods": [
+            "early"
+          ]
         }
       ],
       "options": [
@@ -718,6 +737,14 @@
               "chasseurs",
               "chasseurs-plain"
             ]
+          },
+          "periodOverrides": {
+            "early": {
+              "limit": {
+                "max": 2,
+                "armyWide": true
+              }
+            }
           }
         },
         {
@@ -736,7 +763,11 @@
             "sharedWith": [
               "chasseurs-plain"
             ]
-          }
+          },
+          "periods": [
+            "middle",
+            "late"
+          ]
         },
         {
           "id": "chasseurs-plain",
@@ -754,7 +785,11 @@
             "sharedWith": [
               "chasseurs"
             ]
-          }
+          },
+          "periods": [
+            "middle",
+            "late"
+          ]
         },
         {
           "id": "highlanders",
@@ -776,6 +811,17 @@
             "sharedWith": [
               "highlanders-fc"
             ]
+          },
+          "periodOverrides": {
+            "early": {
+              "limit": {
+                "max": 1,
+                "armyWide": true,
+                "sharedWith": [
+                  "highlanders-fc"
+                ]
+              }
+            }
           }
         },
         {
@@ -798,11 +844,22 @@
             "sharedWith": [
               "highlanders"
             ]
+          },
+          "periodOverrides": {
+            "early": {
+              "limit": {
+                "max": 1,
+                "armyWide": true,
+                "sharedWith": [
+                  "highlanders"
+                ]
+              }
+            }
           }
         },
         {
           "id": "detachments",
-          "label": "Battalion of Detachments (Middle)",
+          "label": "Battalion of Detachments",
           "appliesTo": [
             "pb-line"
           ],
@@ -813,7 +870,10 @@
           "limit": {
             "max": 1,
             "armyMax": 2
-          }
+          },
+          "periods": [
+            "middle"
+          ]
         },
         {
           "id": "veteran-5",
@@ -826,11 +886,15 @@
           "addSpecial": [
             "Reliable",
             "Elite 5+"
+          ],
+          "periods": [
+            "middle",
+            "late"
           ]
         },
         {
           "id": "veteran-4",
-          "label": "Veteran, Elite 4+ (Late)",
+          "label": "Veteran, Elite 4+",
           "cost": 10,
           "appliesTo": [
             "pb-line"
@@ -839,6 +903,9 @@
           "addSpecial": [
             "Reliable",
             "Elite 4+"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
@@ -852,6 +919,13 @@
           "size": "large",
           "limit": {
             "max": 1
+          },
+          "periodOverrides": {
+            "early": {
+              "limit": {
+                "max": 2
+              }
+            }
           }
         },
         {
@@ -922,6 +996,10 @@
           "group": "size",
           "size": "small"
         }
+      ],
+      "periods": [
+        "middle",
+        "late"
       ]
     },
     {
@@ -949,7 +1027,7 @@
           "max": 1
         },
         {
-          "label": "Further units: Rifle Battalion, Small Rifle Companies, or Portuguese Line (Late) (one in the Middle period, up to two in the Late)",
+          "label": "Further units: Rifle Battalion, Small Rifle Companies, or Portuguese Line",
           "unitIds": [
             "pb-rifle-bn",
             "pb-rifle-coys",
@@ -966,7 +1044,17 @@
               "unitId": "pb-portuguese-line",
               "max": 1
             }
-          ]
+          ],
+          "unitPeriods": {
+            "pb-portuguese-line": [
+              "late"
+            ]
+          },
+          "periodOverrides": {
+            "middle": {
+              "max": 1
+            }
+          }
         }
       ],
       "options": [
@@ -988,7 +1076,7 @@
         },
         {
           "id": "cacadores-elite-4",
-          "label": "Veteran, Elite 4+ (Late)",
+          "label": "Veteran, Elite 4+",
           "cost": 2,
           "appliesTo": [
             "pb-cacadores"
@@ -999,11 +1087,14 @@
           ],
           "removeSpecial": [
             "Elite 5+"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
           "id": "cacadores-green",
-          "label": "Not Reliable or Elite (Early, Middle)",
+          "label": "Not Reliable or Elite",
           "cost": -8,
           "appliesTo": [
             "pb-cacadores"
@@ -1012,11 +1103,14 @@
           "removeSpecial": [
             "Reliable",
             "Elite 5+"
+          ],
+          "periods": [
+            "middle"
           ]
         },
         {
           "id": "veteran-5",
-          "label": "Veteran, Elite 5+ (Middle)",
+          "label": "Veteran, Elite 5+",
           "cost": 8,
           "appliesTo": [
             "pb-light-inf",
@@ -1026,11 +1120,14 @@
           "addSpecial": [
             "Reliable",
             "Elite 5+"
+          ],
+          "periods": [
+            "middle"
           ]
         },
         {
           "id": "veteran-4",
-          "label": "Veteran, Elite 4+ (Late)",
+          "label": "Veteran, Elite 4+",
           "cost": 10,
           "appliesTo": [
             "pb-light-inf",
@@ -1040,6 +1137,9 @@
           "addSpecial": [
             "Reliable",
             "Elite 4+"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
@@ -1055,6 +1155,10 @@
           "group": "size",
           "size": "small"
         }
+      ],
+      "periods": [
+        "middle",
+        "late"
       ]
     },
     {
@@ -1074,13 +1178,19 @@
           "max": 2
         },
         {
-          "label": "Caçadores Battalion, or Loyal Lusitanian Legion (Early, Middle) (optional)",
+          "label": "Caçadores Battalion, or Loyal Lusitanian Legion (optional)",
           "unitIds": [
             "pb-cacadores",
             "pb-loyal-lusitanian"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "unitPeriods": {
+            "pb-loyal-lusitanian": [
+              "early",
+              "middle"
+            ]
+          }
         }
       ],
       "maxRatio": {
@@ -1120,11 +1230,15 @@
           "addSpecial": [
             "Reliable",
             "Elite 5+"
+          ],
+          "periods": [
+            "middle",
+            "late"
           ]
         },
         {
           "id": "veteran-4",
-          "label": "Veteran, Elite 4+ (Late)",
+          "label": "Veteran, Elite 4+",
           "cost": 10,
           "appliesTo": [
             "pb-portuguese-line"
@@ -1133,11 +1247,14 @@
           "addSpecial": [
             "Reliable",
             "Elite 4+"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
           "id": "cacadores-green",
-          "label": "Not Reliable or Elite (Early)",
+          "label": "Not Reliable or Elite",
           "cost": -8,
           "appliesTo": [
             "pb-cacadores"
@@ -1145,6 +1262,9 @@
           "removeSpecial": [
             "Reliable",
             "Elite 5+"
+          ],
+          "periods": [
+            "early"
           ]
         },
         {
@@ -1159,7 +1279,13 @@
           "group": "size",
           "size": "small"
         }
-      ]
+      ],
+      "periodOverrides": {
+        "early": {
+          "max": 1,
+          "maxRatio": null
+        }
+      }
     },
     {
       "id": "pb-kgl-brigade",
@@ -1167,7 +1293,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "pb-brig-cmd-8",
-      "note": "Middle and Late periods; or a KGL Light Brigade instead",
+      "note": "Or a KGL Light Brigade instead",
       "slots": [
         {
           "label": "KGL Line Battalion",
@@ -1178,12 +1304,15 @@
           "max": 3
         },
         {
-          "label": "KGL Light Battalion (optional, Late)",
+          "label": "KGL Light Battalion (optional)",
           "unitIds": [
             "pb-kgl-light"
           ],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "periods": [
+            "late"
+          ]
         }
       ],
       "options": [
@@ -1213,11 +1342,15 @@
           "addSpecial": [
             "Reliable",
             "Elite 5+"
+          ],
+          "periods": [
+            "middle",
+            "late"
           ]
         },
         {
           "id": "veteran-4",
-          "label": "Veteran, Elite 4+ (Late)",
+          "label": "Veteran, Elite 4+",
           "cost": 10,
           "appliesTo": [
             "pb-line",
@@ -1227,6 +1360,9 @@
           "addSpecial": [
             "Reliable",
             "Elite 4+"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
@@ -1240,6 +1376,10 @@
           "group": "size",
           "size": "small"
         }
+      ],
+      "periods": [
+        "middle",
+        "late"
       ]
     },
     {
@@ -1248,7 +1388,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "pb-brig-cmd-8",
-      "note": "Middle period; instead of a KGL Brigade",
+      "note": "Instead of a KGL Brigade",
       "excludesBrigadeTypes": [
         "pb-kgl-brigade"
       ],
@@ -1297,11 +1437,15 @@
           "addSpecial": [
             "Reliable",
             "Elite 5+"
+          ],
+          "periods": [
+            "middle",
+            "late"
           ]
         },
         {
           "id": "veteran-4",
-          "label": "Veteran, Elite 4+ (Late)",
+          "label": "Veteran, Elite 4+",
           "cost": 10,
           "appliesTo": [
             "pb-kgl-light",
@@ -1311,6 +1455,9 @@
           "addSpecial": [
             "Reliable",
             "Elite 4+"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
@@ -1324,6 +1471,9 @@
           "group": "size",
           "size": "small"
         }
+      ],
+      "periods": [
+        "middle"
       ]
     },
     {
@@ -1370,7 +1520,7 @@
         },
         {
           "id": "ferocious-charge",
-          "label": "Ferocious Charge (Late)",
+          "label": "Ferocious Charge",
           "cost": 2,
           "appliesTo": [
             "pb-light-dragoon-hussar"
@@ -1381,11 +1531,14 @@
           ],
           "removeSpecial": [
             "Gallop at Anything"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
           "id": "veteran",
-          "label": "Veteran (KGL Hussars, Late)",
+          "label": "Veteran (KGL Hussars)",
           "cost": 6,
           "appliesTo": [
             "pb-light-dragoon-hussar"
@@ -1398,7 +1551,10 @@
           },
           "limit": {
             "max": 1
-          }
+          },
+          "periods": [
+            "late"
+          ]
         },
         {
           "id": "small",
@@ -1410,7 +1566,13 @@
           "group": "size",
           "size": "small"
         }
-      ]
+      ],
+      "periodOverrides": {
+        "early": {
+          "max": 1,
+          "maxRatio": null
+        }
+      }
     },
     {
       "id": "pb-heavy-cavalry-brigade",
@@ -1418,7 +1580,7 @@
       "min": 0,
       "max": 20,
       "commanderUnitId": "pb-brig-cmd-8",
-      "note": "1 per 3 Infantry Brigades (Middle and Late)",
+      "note": "1 per 3 Infantry Brigades",
       "slots": [
         {
           "label": "Dragoon Regiment",
@@ -1429,12 +1591,15 @@
           "max": 3
         },
         {
-          "label": "Light Dragoon Regiment (optional, Middle)",
+          "label": "Light Dragoon Regiment (optional)",
           "unitIds": [
             "pb-light-dragoon-hussar"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "periods": [
+            "middle"
+          ]
         },
         {
           "label": "Household Cavalry (optional)",
@@ -1482,6 +1647,10 @@
           "group": "size",
           "size": "small"
         }
+      ],
+      "periods": [
+        "middle",
+        "late"
       ]
     },
     {
@@ -1622,9 +1791,7 @@
     }
   ],
   "notes": [
-    "The book divides the list into Early (1806-1808), Middle (1809-1812) and Late (1813-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name, and the limits are the Middle and Late ones.",
-    "Early-period limits that differ: up to two battalions in the army can be Light infantry and one Highlanders (rather than one in four), and up to two battalions per brigade Large (rather than one).",
-    "The Light Brigade takes one further unit in the Middle period, up to two in the Late.",
+    "Pick the list's campaign period (Early 1806-1808, Middle 1809-1812, Late 1813-1814) at the top of the builder: choices from other periods are greyed out, and each period's own limits apply. On Any, every period's choices are offered with their periods in their names, and the limits are the Middle and Late ones.",
     "Detached Elite Companies: a brigade's Line battalions can lose their Light companies (and Mixed Formation) and/or Grenadier companies (and 1 Hand-to-Hand). Two battalions' companies make a Tiny unit, three a Small unit, four a standard one, for any infantry brigade; a battalion that loses both becomes Small. Not built here.",
     "Household Cavalry saw little Peninsular action, so the book leaves them out of the lists, but you can take one to three at the listed cost.",
     "The chapter (p. 48) makes KGL Light Infantry Reliable, Elite 4+; the list's table (p. 99) is followed.",
@@ -1652,7 +1819,12 @@
         "pb-brunswick-light"
       ],
       "ratio": 6,
-      "label": "Divisional Artillery batteries"
+      "label": "Divisional Artillery batteries",
+      "periodOverrides": {
+        "late": {
+          "ratio": 5
+        }
+      }
     },
     {
       "capUnitIds": [
