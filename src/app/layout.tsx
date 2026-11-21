@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { OfflineSupport } from "@/components/OfflineSupport";
 import { CATCH_INSTALL_PROMPT } from "@/lib/installPrompt";
+import { MARK_APP_MODE } from "@/lib/appMode";
 
 // Site-wide defaults; each page adds its own title, description and address (see pageMeta). No canonical
 // address or sharing URL here, or pages without their own (like the old /builder redirects) would claim
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     >
       <head>
         <ColorSchemeScript defaultColorScheme="light" forceColorScheme="light" />
+        <script dangerouslySetInnerHTML={{ __html: MARK_APP_MODE }} />
         <script dangerouslySetInnerHTML={{ __html: CATCH_INSTALL_PROMPT }} />
       </head>
       <body>

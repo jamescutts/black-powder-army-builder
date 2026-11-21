@@ -81,6 +81,51 @@ body {
   }
 }
 
+/* The rule set's army picker (components/SupplementNationPicker.tsx) */
+.picker-page {
+  padding-block: 48px;
+
+  /* The app gets to the choices sooner */
+  @mixin app {
+    padding-block: var(--mantine-spacing-md) 32px;
+  }
+}
+
+.picker-stack {
+  @mixin app {
+    --stack-gap: 32px !important;
+  }
+}
+
+.picker-title.picker-title {
+  @mixin app {
+    font-size: 22px;
+  }
+}
+
+.picker-intro {
+  @mixin app {
+    font-size: var(--mantine-font-size-sm);
+  }
+}
+
+/* Where to look after a choice scrolls the page: a little clear of the window's top */
+.picker-section {
+  scroll-margin-top: var(--mantine-spacing-md);
+}
+
+/* "Build army" stays at the foot of the window until its own place in the page scrolls into view, so
+   it's in reach as soon as an army is picked, however far down the list */
+.picker-build {
+  position: sticky;
+  bottom: calc(var(--mantine-spacing-md) + env(safe-area-inset-bottom));
+  z-index: 2;
+}
+
+.picker-build .mantine-Button-root {
+  box-shadow: 0 6px 18px rgba(51, 32, 15, 0.28);
+}
+
 /* Army picker cards: buttons, so they work from the keyboard too */
 .picker-card.picker-card {
   width: 100%;
@@ -186,6 +231,25 @@ body {
 
   /* Hide the print/download buttons inside the modal when printing */
   .mantine-Modal-body > .mantine-Group-root:last-child {
+    display: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------------
+   Installed app or browser tab (lib/appMode.ts). Like Mantine's lightHidden / darkHidden: give any
+   element or Mantine component className="app-hidden" to leave it out of the app, or "app-only" to show
+   it only there. For other differences, use @mixin app { … } or @mixin browser { … } in a rule.
+   Important, as Mantine's hiddenFrom is, so it wins over a component's own display (style props are
+   inline styles).
+   ------------------------------------------------------------------------ */
+.app-hidden {
+  @mixin app {
+    display: none !important;
+  }
+}
+
+.app-only {
+  @mixin browser {
     display: none !important;
   }
 }
@@ -304,6 +368,65 @@ body {
   gap: 6px;
   /* Its label lines up with the search box's right edge above */
   margin-right: calc(-1 * var(--mantine-spacing-sm));
+}
+
+/* The installed app's header is shorter: a smaller title with no tagline and a lower menu, two rows
+   on a phone. Where there's room, it's one row: title, menu, then search at the end. The title row's
+   own box steps aside there (display: contents) so the menu can sit between its title and search. */
+.site-header-top {
+  @mixin app {
+    min-height: 48px;
+    padding-block: 4px;
+  }
+}
+
+.site-header .site-brand-script {
+  @mixin app {
+    font-size: 1.7rem;
+  }
+}
+
+.site-header-tagline {
+  @mixin app {
+    display: none;
+  }
+}
+
+.topnav {
+  @mixin app {
+    height: 40px;
+  }
+}
+
+@media (min-width: 48em) {
+  .site-header .site-inner {
+    @mixin app {
+      display: flex;
+      align-items: center;
+      gap: var(--mantine-spacing-lg);
+    }
+  }
+
+  .site-header-top {
+    @mixin app {
+      display: contents;
+    }
+  }
+
+  .topnav {
+    @mixin app {
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 56px;
+      margin-left: 0;
+    }
+  }
+
+  .site-header .site-search-button {
+    @mixin app {
+      order: 1;
+    }
+  }
 }
 
 .topnav-count {
@@ -875,6 +998,26 @@ button.add-row:focus-visible {
   font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.1rem);
   line-height: 1.15;
   color: var(--mantine-color-brown-7);
+
+  /* The app gets to the builder sooner: a smaller title, with no introduction under it */
+  @mixin app {
+    font-size: clamp(1.4rem, 1.15rem + 1vw, 1.8rem);
+  }
+}
+
+.army-head {
+  @mixin app {
+    padding-top: var(--mantine-spacing-sm);
+  }
+}
+
+/* The app's way back up to the book's armies, in place of the breadcrumbs (it has no back button) */
+.army-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: -4px;
+  align-self: flex-start;
 }
 
 .army-flag {
@@ -885,6 +1028,11 @@ button.add-row:focus-visible {
   border-radius: 3px;
   overflow: hidden;
   border: 1px solid #d6c8a8;
+
+  @mixin app {
+    width: 42px;
+    height: 28px;
+  }
 }
 
 .army-flag img {

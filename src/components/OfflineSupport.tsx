@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { loadPdfLibs } from "@/lib/pdfLibs";
+import { isAppMode } from "@/lib/appMode";
 
 const BUILD_VERSION = process.env.NEXT_PUBLIC_BUILD_VERSION;
 
@@ -47,7 +48,7 @@ export function OfflineSupport() {
 
     // Installed apps ask to keep their saved data, so the browser doesn't clear it to free up space.
     // Only once installed: some browsers ask the user, which would be odd on a first visit.
-    if (window.matchMedia("(display-mode: standalone)").matches) {
+    if (isAppMode()) {
       navigator.storage?.persist?.().catch(() => {});
     }
 

@@ -16,7 +16,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
-import { IconChevronDown, IconCopy, IconEraser, IconFolder, IconPlus, IconTrash } from "@tabler/icons-react";
+import { IconChevronDown, IconChevronLeft, IconCopy, IconEraser, IconFolder, IconPlus, IconTrash } from "@tabler/icons-react";
 import { supplements, getSupplement, getNation, getNationsForSupplement } from "@/data";
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
@@ -237,10 +237,21 @@ function BuilderContent({ nationId }: { nationId: string }) {
         This deletes {roster.armyName.trim() || "this army"} from this browser. It can&apos;t be undone.
       </ConfirmModal>
       {/* Fleet-style page head: breadcrumbs, then the army's flag and name as the page title, with only its
-          own description under it. Supplement and rule set are in the breadcrumbs, which link back. */}
-      <Container size="xl" pt="lg" pb="sm">
+          own description under it. Supplement and rule set are in the breadcrumbs, which link back. The
+          installed app has a back link to the book instead, and no description. */}
+      <Container size="xl" pt="lg" pb="sm" className="army-head">
         <Stack gap="sm">
-          <Breadcrumbs separator="›" className="army-crumbs">
+          <Anchor
+            component={Link}
+            href={`/black-powder/${supplement.id}`}
+            size="sm"
+            c="brown.7"
+            className="army-back app-only"
+          >
+            <IconChevronLeft size={18} aria-hidden />
+            {supplement.name}
+          </Anchor>
+          <Breadcrumbs separator="›" className="army-crumbs app-hidden">
             <Anchor component={Link} href="/black-powder" size="sm" c="brown.7">
               Black Powder
             </Anchor>
@@ -263,8 +274,8 @@ function BuilderContent({ nationId }: { nationId: string }) {
                 <Title order={1} className="army-title">
                   {nation.name}
                 </Title>
-                <Text size="sm" c="dimmed">
-                  {nation.blurb}
+                <Text size="sm" c="dimmed" className={nation.attribution ? undefined : "app-hidden"}>
+                  <span className="app-hidden">{nation.blurb}</span>
                   {nation.attribution && (
                     <>
                       {" "}

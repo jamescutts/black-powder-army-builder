@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import { useRouter } from "next/navigation";
 import {
   Box,
@@ -33,10 +34,17 @@ export function SupplementNationPicker({ initialSupplementId }: { initialSupplem
     ? getNationsForSupplement(selectedSupplement.id)
     : [];
 
+  // Choosing a book shows its armies below it, which on a phone are below the bottom of the window. So
+  // the page scrolls down to them, if they aren't already in view. It happens here, with the armies
+  // drawn at once (flushSync), as the new address then draws the page afresh, in the same place.
+  const nationsRef = useRef<HTMLDivElement>(null);
   function handleSupplementSelect(supplement: Supplement) {
     if (selectedSupplement?.id === supplement.id) return;
-    setSelectedSupplement(supplement);
-    setSelectedNation(null);
+    flushSync(() => {
+      setSelectedSupplement(supplement);
+      setSelectedNation(null);
+    });
+    revealSection(nationsRef.current);
     router.replace(`/black-powder/${supplement.id}`, { scroll: false });
   }
 
@@ -57,14 +65,14 @@ export function SupplementNationPicker({ initialSupplementId }: { initialSupplem
 
   return (
     <>
-      <Container size="lg" py={48}>
-        <Stack gap={48}>
+      <Container size="lg" className="picker-page">
+        <Stack gap={48} className="picker-stack">
           {/* The rule set's name and what this page is for, centred like the picker below */}
           <Stack gap={6} align="center" ta="center" maw={640} mx="auto">
-            <Title order={1} fz={{ base: 26, sm: 32 }} fw={600} c="brown.7" lh={1.2}>
+            <Title order={1} fz={{ base: 26, sm: 32 }} fw={600} c="brown.7" lh={1.2} className="picker-title">
               Black Powder
             </Title>
-            <Text c="dimmed" style={{ lineHeight: 1.6 }}>
+            <Text c="dimmed" style={{ lineHeight: 1.6 }} className="picker-intro">
               Warlord Games&apos; mass-battle rules for horse-and-musket warfare. Choose a supplement, then the army
               you want to build.
             </Text>
@@ -113,7 +121,7 @@ export function SupplementNationPicker({ initialSupplementId }: { initialSupplem
 
           {/* Nation selection — only shown once a supplement is picked */}
           {selectedSupplement && (
-            <Stack gap="md">
+            <Stack gap="md" ref={nationsRef} className="picker-section">
               <Title order={3} fz={18} fw={600} c="brown.8" ta="center">
                 Choose a nation
               </Title>
@@ -210,7 +218,7 @@ export function SupplementNationPicker({ initialSupplementId }: { initialSupplem
 
           {/* CTA */}
           {selectedNation && (
-            <Center>
+            <Center className="picker-build">
               <Box>
                 <Button
                   size="lg"
@@ -228,4 +236,15 @@ export function SupplementNationPicker({ initialSupplementId }: { initialSupplem
       </Container>
     </>
   );
+}
+
+/**
+ * Scrolls a section that's just appeared to the top of the window, unless its heading and the start of
+ * its contents are already in view. Smoothly, unless the device asks for less motion.
+ */
+function revealSection(el: HTMLElement | null) {
+  if (!el) return;
+  if (el.getBoundingClientRect().top + 160 <= window.innerHeight) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
 }

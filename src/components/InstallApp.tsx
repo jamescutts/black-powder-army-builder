@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { Button, Group, List, Modal, Text } from "@mantine/core";
+import { isAppMode } from "@/lib/appMode";
 
 // The browser's install prompt, kept on window.__installPrompt by an inline script (lib/installPrompt.ts)
 interface InstallPromptEvent extends Event {
@@ -35,10 +36,7 @@ export function useInstallApp(): { mode: InstallMode; install: () => void; help:
   const [helpOpen, setHelpOpen] = useState(false);
 
   useEffect(() => {
-    const standalone =
-      window.matchMedia("(display-mode: standalone)").matches ||
-      (navigator as Navigator & { standalone?: boolean }).standalone === true;
-    if (standalone) return;
+    if (isAppMode()) return;
 
     const ua = navigator.userAgent;
     const isIos = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);

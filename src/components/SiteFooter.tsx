@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteDisclaimer } from "./SiteDisclaimer";
 import { InstallApp } from "./InstallApp";
+import { SiteFooterShell } from "./SiteFooterShell";
 
 const KOFI_URL = "https://ko-fi.com/shakosandsprues/tip";
 
@@ -37,11 +38,12 @@ const LINKS = [
 
 /**
  * The disclaimer (on pages that need it), the support band, then a dark band across the full window
- * matching the header, with its content lined up to the page column.
+ * matching the header, with its content lined up to the page column. Only on the home page in the
+ * installed app (SiteFooterShell).
  */
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
+    <SiteFooterShell>
       <SiteDisclaimer />
       <Support />
       <div className="site-footer-main">
@@ -88,6 +90,6 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-    </footer>
+    </SiteFooterShell>
   );
 }
