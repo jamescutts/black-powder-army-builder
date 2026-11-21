@@ -116,8 +116,6 @@ function BuilderContent({ nationId }: { nationId: string }) {
   const listParam = searchParams.get("list");
   // A historical force to start a new list from (?force=...), as the Historical forces page links
   const forceParam = searchParams.get("force");
-  // The force a list was last started from here, so React running the effect twice makes only one
-  const startedFrom = useRef<string | null>(null);
 
   const [roster, setRoster] = useState<RosterState>(() => emptyRoster(nationId));
   // Which saved list is open. Until one has been read back from the browser, nothing is saved, so the
@@ -129,14 +127,14 @@ function BuilderContent({ nationId }: { nationId: string }) {
   // The list is driven by the address: the one it names, else this nation's most recently changed list,
   // else a new one. Read after mount, as localStorage isn't available while rendering on the server.
   useEffect(() => {
+    // A historical force opens as a new list, but like any new list it isn't saved (and so isn't in My
+    // armies) until it's changed; the address keeps naming the force until then
     const force = forceParam ? getForce(forceParam) : undefined;
     if (force && force.nationId === nation.id) {
-      if (startedFrom.current === force.id) return;
-      startedFrom.current = force.id;
-      // Saved straight away, so it's a list of its own even if it's never changed
-      const id = newListId();
-      saveList(id, rosterFromForce(nationForPeriod(nation, force.period), force).roster);
-      router.replace(listHref(nation.supplementId, nation.id, id), { scroll: false });
+      const start = rosterFromForce(nationForPeriod(nation, force.period), force).roster;
+      untouched.current = JSON.stringify(start);
+      setRoster(start);
+      setListId(newListId());
       return;
     }
     let id = listParam;
@@ -166,9 +164,15 @@ function BuilderContent({ nationId }: { nationId: string }) {
     if (untouched.current !== null) {
       if (JSON.stringify(roster) === untouched.current) return;
       untouched.current = null;
+      // A historical force, first changed: it's a list of its own now, so the address names it
+      if (forceParam) {
+        saveList(listId, roster);
+        router.replace(listHref(nation.supplementId, nation.id, listId), { scroll: false });
+        return;
+      }
     }
     saveList(listId, roster);
-  }, [roster, listId, nationId]);
+  }, [roster, listId, nationId, forceParam, nation, router]);
 
   // The roster card follows you down the page, shown in full. While it fits the window it sticks 16px
   // from the top; once it's taller, it sticks by its foot instead (a negative top), so it scrolls with the
