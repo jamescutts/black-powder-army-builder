@@ -68,7 +68,6 @@ export function DisclaimerModal() {
         <Text size="sm" c="dimmed" style={{ lineHeight: 1.6 }}>
           <em>Black Powder</em>, all supplement titles, army list content, and
           associated intellectual property are copyright &copy; Warlord Games.
-          All rights reserved.
         </Text>
         <Text size="sm" c="dimmed" style={{ lineHeight: 1.6 }}>
           The <em>Black Powder</em> rulebook and relevant supplements are

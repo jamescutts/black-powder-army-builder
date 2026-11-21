@@ -1203,9 +1203,7 @@ button.add-row:focus-visible {
   margin: 0;
   font-family: var(--font-heading), Georgia, serif;
   font-weight: 700;
-  font-size: var(--mantine-font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: var(--mantine-font-size-lg);
   color: #6b3d17;
 }
 

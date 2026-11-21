@@ -33,8 +33,8 @@ export function DisclaimerText() {
         Warlord Games
       </a>{" "}
       in any way. <em>Black Powder</em>, all supplement titles, army list content and associated intellectual property
-      are copyright &copy; Warlord Games. All rights reserved. You will need the relevant books to play; this tool only
-      helps you add up points.
+      are copyright &copy; Warlord Games. You&apos;ll still need the books to play: Army Builder only helps you build
+      your lists and add up their points.
     </>
   );
 }
