@@ -16,16 +16,25 @@ export function SiteDisclaimer() {
         <div className="site-disclaimer-row">
           <p className="site-disclaimer-label">Unofficial fan tool</p>
           <p className="site-disclaimer-text">
-            This site is not affiliated with, endorsed by, or associated with{" "}
-            <a href="https://www.warlordgames.com" target="_blank" rel="noreferrer">
-              Warlord Games
-            </a>{" "}
-            in any way. <em>Black Powder</em>, all supplement titles, army list content and associated intellectual
-            property are copyright &copy; Warlord Games. All rights reserved. You will need the relevant books to play;
-            this tool only helps you add up points.
+            <DisclaimerText />
           </p>
         </div>
       </div>
     </section>
+  );
+}
+
+/** The disclaimer's wording, shared with the app's home page (AppHome), which has no footer */
+export function DisclaimerText() {
+  return (
+    <>
+      Army Builder is not affiliated with, endorsed by, or associated with{" "}
+      <a href="https://www.warlordgames.com" target="_blank" rel="noreferrer">
+        Warlord Games
+      </a>{" "}
+      in any way. <em>Black Powder</em>, all supplement titles, army list content and associated intellectual property
+      are copyright &copy; Warlord Games. All rights reserved. You will need the relevant books to play; this tool only
+      helps you add up points.
+    </>
   );
 }

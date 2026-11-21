@@ -1,6 +1,9 @@
 import { supplements, nations, getNation, getNationsForSupplement, getSupplement } from "@/data";
 import { RULESETS } from "@/data/rulesets";
+import type { Nation } from "@/data/types";
 import { HomeView } from "@/components/HomeView";
+import { AppHome } from "@/components/AppHome";
+import { AppSwitch } from "@/components/AppSwitch";
 import { SITE_DESCRIPTION, pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({ description: SITE_DESCRIPTION, path: "/" });
@@ -39,16 +42,25 @@ export default function HomePage() {
     supplements: supplements.length,
     armies: nations.length,
   }));
+  const toHomeArmy = (n: Nation) => ({
+    name: n.name,
+    blurb: n.blurb,
+    supplement: getSupplement(n.supplementId)?.name ?? "",
+    flags: n.flagFiles ?? (n.flagFile ? [n.flagFile] : []),
+    href: `/black-powder/${n.supplementId}/${n.id}`,
+  });
   // A few well-known armies to link to directly, one from each book where possible
   const armies = FEATURED_ARMIES.map(getNation)
     .filter((n) => n !== undefined)
-    .map((n) => ({
-      name: n.name,
-      blurb: n.blurb,
-      supplement: getSupplement(n.supplementId)?.name ?? "",
-      flags: n.flagFiles ?? (n.flagFile ? [n.flagFile] : []),
-      href: `/black-powder/${n.supplementId}/${n.id}`,
-    }));
+    .map(toHomeArmy);
+  // The app lists every army, book by book, to scroll through
+  const allArmies = nations.map(toHomeArmy);
 
-  return <HomeView counts={counts} rulesets={rulesets} supplements={supplementSummaries} armies={armies} />;
+  // The installed app opens on its own home page, for getting back to an army; the browser's introduces the site
+  return (
+    <AppSwitch
+      app={<AppHome supplements={supplementSummaries} armies={allArmies} />}
+      browser={<HomeView counts={counts} rulesets={rulesets} supplements={supplementSummaries} armies={armies} />}
+    />
+  );
 }

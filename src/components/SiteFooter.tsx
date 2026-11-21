@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { SiteDisclaimer } from "./SiteDisclaimer";
 import { InstallApp } from "./InstallApp";
-import { SiteFooterShell } from "./SiteFooterShell";
-
-const KOFI_URL = "https://ko-fi.com/shakosandsprues/tip";
+import { KOFI_URL } from "@/lib/meta";
 
 /** The Ko-fi appeal, as a band of its own above the dark part of the footer */
 function Support() {
@@ -38,12 +36,12 @@ const LINKS = [
 
 /**
  * The disclaimer (on pages that need it), the support band, then a dark band across the full window
- * matching the header, with its content lined up to the page column. Only on the home page in the
- * installed app (SiteFooterShell).
+ * matching the header, with its content lined up to the page column. Not in the installed app: its
+ * home page has an About section instead (AppHome).
  */
 export function SiteFooter() {
   return (
-    <SiteFooterShell>
+    <footer className="site-footer app-hidden">
       <SiteDisclaimer />
       <Support />
       <div className="site-footer-main">
@@ -90,6 +88,6 @@ export function SiteFooter() {
           </div>
         </div>
       </div>
-    </SiteFooterShell>
+    </footer>
   );
 }

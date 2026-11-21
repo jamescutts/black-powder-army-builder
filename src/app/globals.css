@@ -1410,6 +1410,303 @@ button.add-row:focus-visible {
   background: #e0bf74;
 }
 
+/* ------------------------------------------------------------------------
+   The installed app's home page (components/AppHome.tsx): a short banner, then lists to tap through,
+   in the style of a phone's settings or contacts rather than the browser home page's bands.
+   ------------------------------------------------------------------------ */
+.app-home {
+  padding-block: var(--mantine-spacing-md) var(--mantine-spacing-xl);
+}
+
+.app-home-banner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--mantine-radius-md);
+  color: #f7f1e1;
+}
+
+/* The painting and its shade fill the banner above the note */
+.app-home-banner-image {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  height: 168px;
+  object-fit: cover;
+  object-position: 70% 45%;
+  z-index: -2;
+}
+
+/* Dark ink rising from the foot, behind the title and button */
+.app-home-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 168px;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(33, 20, 10, 0.88) 0%, rgba(33, 20, 10, 0.4) 62%, rgba(33, 20, 10, 0.15) 100%);
+}
+
+.app-home-banner-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 168px;
+  padding: var(--mantine-spacing-md);
+}
+
+/* The work-in-progress note, in the browser home page's strip colours, joined under the painting */
+.app-home-wip {
+  margin: 0;
+  padding: 10px var(--mantine-spacing-md);
+  background: #efe0b4;
+  border-top: 1px solid #d9c287;
+  color: #3b2a17;
+  font-size: var(--mantine-font-size-xs);
+  line-height: 1.5;
+}
+
+.app-home-title.app-home-title {
+  font-size: 24px;
+  line-height: 1.15;
+  color: #f7f1e1;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.app-home-heading.app-home-heading {
+  font-size: 18px;
+  color: var(--mantine-color-brown-8);
+}
+
+/* A card of rows, each a link across its full width */
+.app-list {
+  overflow: hidden;
+  border: 1px solid #d6c8a8;
+  border-radius: var(--mantine-radius-md);
+  background: var(--mantine-color-white);
+}
+
+.app-list-empty {
+  padding: var(--mantine-spacing-md);
+}
+
+.app-list-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 60px;
+  padding: 10px 12px 10px 14px;
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-list-row + .app-list-row {
+  border-top: 1px solid #e6dcc4;
+}
+
+a.app-list-row:hover,
+a.app-list-row:active {
+  background: #f6efdc;
+}
+
+.app-list-icon {
+  flex-shrink: 0;
+  color: var(--mantine-color-brown-6);
+}
+
+/* A list's closing link ("View my armies"): a shorter row in the heading face */
+.app-list-more {
+  min-height: 48px;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 600;
+  color: var(--mantine-color-brown-7);
+}
+
+.app-list-flag.app-list-flag {
+  width: 36px;
+  height: 24px;
+}
+
+.app-list-text {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.app-list-points {
+  flex-shrink: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 600;
+  color: var(--mantine-color-brown-7);
+  white-space: nowrap;
+}
+
+.app-list-chevron {
+  flex-shrink: 0;
+  color: #b49a72;
+}
+
+/* Every army as flag tiles in two rows, scrolling sideways: 2 columns in view on a phone and 4 where
+   there's room, each a little narrower than that so the next column peeks in to show there are more.
+   Tiles snap to the left edge. No scrollbar: touch swipes, and a mouse has the ‹ › buttons */
+.app-army-scroll {
+  --army-cols: 2.25;
+  --army-gap: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(2, auto);
+  grid-auto-columns: calc((100% - var(--army-gap) * (var(--army-cols) - 1)) / var(--army-cols));
+  gap: var(--army-gap);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.app-army-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* The ‹ › buttons, only for a mouse or trackpad (touch screens swipe) */
+.app-army-pager {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .app-army-pager {
+    display: flex;
+  }
+}
+
+@media (min-width: 48em) {
+  .app-army-scroll {
+    --army-cols: 4.25;
+  }
+}
+
+.app-army-scroll > * {
+  scroll-snap-align: start;
+}
+
+.app-army-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 10px 12px;
+  border: 1px solid #d6c8a8;
+  border-radius: var(--mantine-radius-md);
+  background: var(--mantine-color-white);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-army-tile:hover,
+.app-army-tile:active {
+  background: #f6efdc;
+}
+
+.app-army-tile-flags {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+}
+
+.app-army-tile-flag.app-army-tile-flag {
+  width: 48px;
+  height: 32px;
+}
+
+/* The fan-tool disclaimer: a card in the website band's colours, on the builder's left bar, so it
+   catches the eye before About */
+.app-fan-card {
+  padding: 14px 16px 16px;
+  border: 1px solid rgba(107, 61, 23, 0.3);
+  border-left: 4px solid #8a4f1c;
+  border-radius: var(--mantine-radius-md);
+  background: rgba(107, 61, 23, 0.12);
+  color: #2b1f14;
+}
+
+.app-fan-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  color: #6b3d17;
+}
+
+.app-fan-card-label {
+  margin: 0;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.app-fan-card-text {
+  margin: 0;
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.55;
+}
+
+.app-fan-card-text a {
+  color: #6b3d17;
+  font-weight: 600;
+}
+
+/* "Visit Warlord Games" in Warlord's own colours, from their shop's buttons: their orange with black
+   text, their yellow on hover */
+.app-fan-card .app-fan-card-button {
+  border: 1px solid #ffab2d;
+  background: #ffab2d;
+  color: #000;
+}
+
+.app-fan-card .app-fan-card-button:hover {
+  border-color: #232323;
+  background: #ffec64;
+}
+
+/* The Ko-fi appeal: a plain card, quieter than the disclaimer above it, led by Ko-fi's button */
+.app-support-card {
+  padding: 14px 16px 16px;
+  border: 1px solid #d6c8a8;
+  border-radius: var(--mantine-radius-md);
+  background: var(--mantine-color-white);
+}
+
+.app-support-card-title {
+  margin: 0 0 6px;
+  font-family: var(--font-heading), Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #4d2c11;
+}
+
+.app-support-card-text {
+  margin: 0 0 14px;
+  font-size: var(--mantine-font-size-sm);
+  line-height: 1.55;
+  color: var(--mantine-color-dimmed);
+}
+
+.app-support-card .kofi-button img {
+  height: 44px;
+}
+
+
 /* My armies: each saved list's card opens it, through the name's link stretched over the whole card;
    its menu sits above that link */
 .saved-list-card {

@@ -8,20 +8,9 @@ import { getNation, getSupplement } from "@/data";
 import { deleteList, duplicateList, listHref, listSaved, LISTS_CHANGED_EVENT, type SavedList } from "@/lib/storage";
 import { rosterTotal, unitCount } from "@/lib/points";
 import { ConfirmModal } from "@/components/ConfirmModal";
+import { edited } from "@/lib/edited";
 
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
-
-const relative = new Intl.RelativeTimeFormat("en-GB", { numeric: "auto" });
-function edited(ms: number): string {
-  const minutes = Math.round((ms - Date.now()) / 60000);
-  if (minutes > -1) return "Edited just now";
-  if (minutes > -60) return `Edited ${relative.format(minutes, "minute")}`;
-  const hours = Math.round(minutes / 60);
-  if (hours > -24) return `Edited ${relative.format(hours, "hour")}`;
-  const days = Math.round(hours / 24);
-  if (days > -30) return `Edited ${relative.format(days, "day")}`;
-  return `Edited ${new Date(ms).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}`;
-}
 
 /**
  * Every army list saved in this browser, most recently changed first, to open, copy or delete. Lists live

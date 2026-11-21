@@ -30,3 +30,6 @@ export function pageMeta({ title, description, path }: { title?: string; descrip
     twitter: { card: "summary_large_image", title: fullTitle, description },
   };
 }
+
+/** Where tips go, from the footer's support band and the app's About section */
+export const KOFI_URL = "https://ko-fi.com/shakosandsprues/tip";

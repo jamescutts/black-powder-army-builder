@@ -39,8 +39,9 @@ export interface HomeArmy {
   href: string;
 }
 
-// Wilhelm Camphausen's Blücher Crossing the Rhine at Kaub (1859), public domain; the 960px one is the fallback
-const HERO = {
+// Wilhelm Camphausen's Blücher Crossing the Rhine at Kaub (1859), public domain; the 960px one is the fallback.
+// The app's home page (AppHome) shows it too.
+export const HERO = {
   large:
     "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Wilhelm_Camphausen%2C_Bl%C3%BCchers_Rhein%C3%BCbergang_bei_Kaub.jpg/1920px-Wilhelm_Camphausen%2C_Bl%C3%BCchers_Rhein%C3%BCbergang_bei_Kaub.jpg",
   small:
