@@ -208,7 +208,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pierre_Joseph_Habert.JPG/250px-Pierre_Joseph_Habert.JPG",
+        "title": "Pierre-Joseph Habert",
+        "artist": "after Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:Pierre_Joseph_Habert.JPG",
+        "focus": "50% 22%"
+      }
     },
     {
       "id": "wavre-berthezene",
@@ -290,7 +297,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Le_L.ant_G.al_B.on_Berthez%C3%A8ne_%28BM_1901%2C1022.71%29.jpg/250px-Le_L.ant_G.al_B.on_Berthez%C3%A8ne_%28BM_1901%2C1022.71%29.jpg",
+        "title": "Pierre Berthezène",
+        "artist": "Étienne David",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_L.ant_G.al_B.on_Berthez%C3%A8ne_%28BM_1901%2C1022.71%29.jpg",
+        "focus": "50% 16%",
+        "date": "1840s"
+      }
     },
     {
       "id": "wavre-pecheux",
@@ -472,7 +487,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Louis_Joseph_Vichery.jpg/250px-Louis_Joseph_Vichery.jpg",
+        "title": "Louis Joseph Vichery",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Louis_Joseph_Vichery.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "wavre-hulot",
@@ -968,7 +990,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Johann_Adolf_Freiherr_von_Thielmann.jpg/250px-Johann_Adolf_Freiherr_von_Thielmann.jpg",
+        "title": "Johann von Thielmann",
+        "artist": "Anton Graff",
+        "page": "https://commons.wikimedia.org/wiki/File:Johann_Adolf_Freiherr_von_Thielmann.jpg",
+        "focus": "50% 14%"
+      }
     }
   ],
   "sides": {

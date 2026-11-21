@@ -143,7 +143,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg/250px-Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "title": "Sir Thomas Picton",
+        "artist": "Martin Archer Shee",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-alten",
@@ -355,7 +362,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Portrait_of_General_Sir_George_Cooke_%281768%E2%80%931837%29_%28by_Jan_Willem_Pieneman%29.jpg/250px-Portrait_of_General_Sir_George_Cooke_%281768%E2%80%931837%29_%28by_Jan_Willem_Pieneman%29.jpg",
+        "title": "Sir George Cooke",
+        "artist": "Jan Willem Pieneman",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_General_Sir_George_Cooke_%281768%E2%80%931837%29_%28by_Jan_Willem_Pieneman%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-clinton",
@@ -563,7 +577,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/John-lambert-waterloo.jpg/250px-John-lambert-waterloo.jpg",
+        "title": "Sir John Lambert",
+        "artist": "William Salter",
+        "page": "https://commons.wikimedia.org/wiki/File:John-lambert-waterloo.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-perponcher",
@@ -663,7 +684,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Graaf_de_Perponcher%2C_H.jpg/250px-Graaf_de_Perponcher%2C_H.jpg",
+        "title": "H.G. de Perponcher Sedlnitsky",
+        "artist": "P.H.K. van Schendel",
+        "page": "https://commons.wikimedia.org/wiki/File:Graaf_de_Perponcher%2C_H.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-chasse",
@@ -765,7 +793,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/General_D_H_Chass%C3%A9.jpg/250px-General_D_H_Chass%C3%A9.jpg",
+        "title": "David Hendrik Chassé",
+        "artist": "Jan Willem Pieneman",
+        "page": "https://commons.wikimedia.org/wiki/File:General_D_H_Chass%C3%A9.jpg",
+        "focus": "50% 20%",
+        "date": "1832"
+      }
     },
     {
       "id": "waterloo-kruse",
@@ -930,7 +966,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Herzog_von_Braunschweig-Oels.jpg/250px-Herzog_von_Braunschweig-Oels.jpg",
+        "title": "Friedrich Wilhelm, Duke of Brunswick-Oels",
+        "artist": "Johann Christian Ludwig Tunica",
+        "page": "https://commons.wikimedia.org/wiki/File:Herzog_von_Braunschweig-Oels.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-heavy-cavalry",
@@ -1000,7 +1043,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Uxbridge_%28BM_1867%2C1214.731%29.jpg/250px-Uxbridge_%28BM_1867%2C1214.731%29.jpg",
+        "title": "Henry Paget, Earl of Uxbridge",
+        "artist": "Francis William Wilkin",
+        "page": "https://commons.wikimedia.org/wiki/File:Uxbridge_%28BM_1867%2C1214.731%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "waterloo-vandeleur-vivian",
@@ -1531,7 +1581,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/J%C3%A9r%C3%B4me_Bonaparte_%28Kinson%29.jpg/250px-J%C3%A9r%C3%B4me_Bonaparte_%28Kinson%29.jpg",
+        "title": "Jérôme Bonaparte, King of Westphalia",
+        "artist": "after François Kinson",
+        "page": "https://commons.wikimedia.org/wiki/File:J%C3%A9r%C3%B4me_Bonaparte_%28Kinson%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "waterloo-foy",
@@ -1631,7 +1688,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Maximilien_Foy_1.jpg/250px-Maximilien_Foy_1.jpg",
+        "title": "Maximilien Sébastien Foy",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Maximilien_Foy_1.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-bachelu",
@@ -2024,7 +2088,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Jacques-Antoine-Adrien_Delort.jpg/250px-Jacques-Antoine-Adrien_Delort.jpg",
+        "title": "Jacques-Antoine-Adrien Delort",
+        "artist": "Joseph-Marcellin Combette",
+        "page": "https://commons.wikimedia.org/wiki/File:Jacques-Antoine-Adrien_Delort.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-lheritier",
@@ -2385,7 +2456,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "title": "Louis Friant",
+        "artist": "Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-young-guard",
@@ -2837,7 +2915,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Friedrich_Wilhelm_Freiherr_von_Bulow.jpg/250px-Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "title": "Friedrich Wilhelm Bülow von Dennewitz",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-prussian-i-corps",
@@ -3145,7 +3230,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/7/73/Zieten-by-Kruger.jpg",
+        "title": "Hans Ernst Karl von Zieten",
+        "artist": "Franz Krüger",
+        "page": "https://commons.wikimedia.org/wiki/File:Zieten-by-Kruger.jpg",
+        "focus": "50% 18%"
+      }
     }
   ],
   "sides": {
