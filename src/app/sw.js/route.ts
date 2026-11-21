@@ -12,8 +12,10 @@
 //    request on purpose. Next then falls back to loading the whole page, which comes from the saved copy.
 //  - Build files (/_next/static/...) never change once built, so they come from the cache first.
 //  - Home page paintings from Wikimedia are kept once seen.
-//  - It tells open pages when the network stops answering it (fails, or takes too long) and when it
-//    answers again, so they can show they're offline (lib/offline.ts).
+//  - It tells open pages when the network fails it and when it answers again, so they can show they're
+//    offline (lib/offline.ts). Only real failures count: not a request the page itself gave up on (a
+//    prefetch dropped as you moved on), nor a slow answer, which still gets the saved copy after a few
+//    seconds but isn't proof of no connection.
 //
 // Rosters themselves live in the browser's localStorage (lib/storage.ts), which works offline already.
 
@@ -93,6 +95,10 @@ async function statusMessage() {
 // Whether the network last answered: null until something's been asked of it. Open pages are told when
 // it changes (and a page asking for the status hears it), so they can show they're offline.
 let networkOk = null;
+// A request the page cancelled fails too, but says nothing about the connection
+const failed = (req) => {
+  if (!(req.signal && req.signal.aborted)) report(false);
+};
 function report(ok) {
   if (ok === networkOk) return;
   networkOk = ok;
@@ -179,16 +185,10 @@ async function page(event, url) {
     }
     return res;
   });
-  event.waitUntil(network.catch(() => report(false)));
+  event.waitUntil(network.catch(() => failed(event.request)));
 
   if (!cached) return network.catch(() => offlinePage());
-  return Promise.race([
-    network.catch(() => cached),
-    wait(NETWORK_WAIT_MS).then(() => {
-      report(false);
-      return cached;
-    }),
-  ]);
+  return Promise.race([network.catch(() => cached), wait(NETWORK_WAIT_MS).then(() => cached)]);
 }
 
 async function inApp(req, url) {
@@ -201,9 +201,9 @@ async function inApp(req, url) {
   return Promise.race([
     fetch(req).then(
       (res) => (report(true), res),
-      () => (report(false), Response.error())
+      () => (failed(req), Response.error())
     ),
-    wait(NETWORK_WAIT_MS).then(() => (report(false), Response.error())),
+    wait(NETWORK_WAIT_MS).then(() => Response.error()),
   ]);
 }
 
@@ -224,7 +224,7 @@ async function saved(req) {
     if (res.ok) return res;
     return (await caches.match(req)) || res;
   } catch (err) {
-    report(false);
+    failed(req);
     const hit = await caches.match(req);
     if (hit) return hit;
     throw err;

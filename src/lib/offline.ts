@@ -6,9 +6,10 @@
 //
 // Two signals. The browser's own flag is sure when it says offline (flight mode, no signal) but not when
 // it says online: one bar of signal, or club Wi-Fi with a sign-in page, still counts. So the service
-// worker also reports when the network fails it, or takes too long, and when it answers again
-// (reportNetwork, from components/OfflineSupport.tsx); either one marks the page offline. The browser
-// saying it's back online clears the worker's report too, until the worker says otherwise.
+// worker also reports when the network fails it, and when it answers again (reportNetwork, from
+// components/OfflineSupport.tsx); either one marks the page offline. A slow answer isn't reported, as
+// it isn't proof of no connection. The browser saying it's back online clears the worker's report too,
+// until the worker says otherwise.
 //
 // While developing, ?offline=1 on any address makes the tab act offline until ?offline=0, as the service
 // worker doesn't run then. Production builds leave this out.
