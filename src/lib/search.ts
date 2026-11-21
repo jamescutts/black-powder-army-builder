@@ -1,7 +1,7 @@
 // Site search: matching typed words against rule sets, supplements and army lists in the browser, and
 // the armies saved on this device.
 
-export type SearchKind = "army" | "rules" | "supplement" | "nation";
+export type SearchKind = "army" | "rules" | "supplement" | "nation" | "historical";
 
 /** One searchable page: kind, title, description, address and other words that should find it */
 export interface SearchEntry {
@@ -35,7 +35,7 @@ export function buildIndex(entries: SearchEntry[]): Indexed[] {
 
 // Your own armies first when they match equally well, as they're most likely what you're after; then rule
 // sets before supplements before army lists, as there are far fewer of them
-const KIND_ORDER: Record<SearchKind, number> = { army: 0, rules: 1, supplement: 2, nation: 3 };
+const KIND_ORDER: Record<SearchKind, number> = { army: 0, rules: 1, supplement: 2, nation: 3, historical: 4 };
 
 /** Entries where every typed word starts a word in the title or other words, best matches first */
 export function search(index: Indexed[], query: string, limit = 12): SearchEntry[] {

@@ -2317,22 +2317,7 @@ a.app-list-row:active {
   scroll-margin-top: 16px;
 }
 
-/* Historical forces: a campaign's heading, ruled off, with its battles to jump to */
-.campaign-head {
-  padding-bottom: var(--mantine-spacing-md);
-  border-bottom: 1px solid rgba(107, 61, 23, 0.25);
-}
-
-.campaign-title.campaign-title {
-  font-family: var(--font-heading), serif;
-  font-size: 1.75rem;
-  color: var(--mantine-color-brown-9);
-}
-
-.campaign-section {
-  scroll-margin-top: 16px;
-}
-
+/* Historical forces: a campaign page's battles, to jump to */
 .battle-jump.battle-jump {
   padding: 4px 10px;
   border: 1px solid rgba(107, 61, 23, 0.35);

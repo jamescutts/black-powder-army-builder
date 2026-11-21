@@ -2542,20 +2542,162 @@
       ]
     },
     {
-      "id": "waterloo-prussian-15",
+      "id": "waterloo-prussian-iv-corps",
       "nationId": "prussians-1815",
-      "name": "Losthin's Brigade",
-      "formation": "15th Brigade, IV Corps (Bülow)",
+      "name": "Bülow's IV Corps",
+      "formation": "IV Corps, Army of the Lower Rhine",
       "side": "Prussian",
-      "summary": "Led Bülow's corps out of the Bois de Paris onto the French right in the late afternoon, and fought for Plancenoit.",
+      "summary": "The first Prussian corps onto the field, untouched at Ligny. Losthin's and Hiller's brigades came out of the Bois de Paris onto the French right in the late afternoon, and with Hake's and Ryssel's behind them fought Lobau's corps and the Young Guard for Plancenoit until it fell in the evening.",
       "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Bülow commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 8; his brigade commanders at 8, the list's lowest. Our judgement."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "variant": "Staff rating 8 (4 re-rolls)",
+          "name": "Gen von Bülow"
+        }
       ],
       "brigades": [
         {
           "type": "pr15-infantry-brigade",
-          "name": "15th Brigade",
+          "name": "13th Brigade (Hake)",
+          "commander": {
+            "name": "Gen-Maj von Hake",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "13th Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "10th (1st Silesian) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/10th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/10th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/10th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "2nd Neumark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/2nd Neumark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/2nd Neumark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/2nd Neumark Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "3rd Neumark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/3rd Neumark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/3rd Neumark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/3rd Neumark Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "14th Brigade (Ryssel)",
+          "commander": {
+            "name": "Gen-Maj von Ryssel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "14th Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "11th (2nd Silesian) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/11th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/11th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/11th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "1st Pomeranian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/1st Pomeranian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/1st Pomeranian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/1st Pomeranian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "2nd Pomeranian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/2nd Pomeranian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/2nd Pomeranian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/2nd Pomeranian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "15th Brigade (Losthin)",
           "commander": {
             "name": "Gen-Maj von Losthin",
             "variant": "Staff rating 8"
@@ -2563,7 +2705,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "15th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -2619,24 +2761,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "waterloo-prussian-16",
-      "nationId": "prussians-1815",
-      "name": "Hiller's Brigade",
-      "formation": "16th Brigade, IV Corps (Bülow)",
-      "side": "Prussian",
-      "summary": "Stormed Plancenoit against Lobau's corps and the Young Guard, losing and retaking the village through the evening.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "16th Brigade",
+          "name": "16th Brigade (Hiller)",
           "commander": {
             "name": "Gen-Maj von Hiller",
             "variant": "Staff rating 8"
@@ -2644,7 +2772,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "16th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -2704,182 +2832,28 @@
       ]
     },
     {
-      "id": "waterloo-prussian-13",
+      "id": "waterloo-prussian-i-corps",
       "nationId": "prussians-1815",
-      "name": "Hake's Brigade",
-      "formation": "13th Brigade, IV Corps (Bülow)",
+      "name": "Zieten's I Corps",
+      "formation": "I Corps, Army of the Lower Rhine",
       "side": "Prussian",
-      "summary": "Came up behind Bülow's leading brigades to join the attacks on Plancenoit.",
+      "summary": "Marched across from Wavre to join Wellington's left. Steinmetz's brigade led it onto the field near Papelotte in the evening, and pushed into the French right as their line broke.",
       "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+        "The order of battle gives Pirch II's brigade four regiments, the 16th Infantry among them, where the list's brigade has at most two Line regiments and three in all, so these show as historical departures.",
+        "At Waterloo only Steinmetz's brigade, at the head of the column, was fully engaged; the rest of the corps was still coming up.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Zieten is the book's named commander. Brigade Staff Ratings are our judgement, at 8, the list's lowest."
       ],
-      "brigades": [
+      "command": [
         {
-          "type": "pr15-infantry-brigade",
-          "name": "13th Brigade",
-          "commander": {
-            "name": "Gen-Maj von Hake",
-            "variant": "Staff rating 8"
-          },
-          "units": [
-            {
-              "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
-            }
-          ],
-          "regiments": [
-            {
-              "name": "10th (1st Silesian) Infantry",
-              "units": [
-                {
-                  "unit": "pr15-musketeer",
-                  "name": "I/10th Infantry"
-                },
-                {
-                  "unit": "pr15-musketeer",
-                  "name": "II/10th Infantry"
-                },
-                {
-                  "unit": "pr15-fusilier",
-                  "name": "F/10th Infantry"
-                }
-              ]
-            },
-            {
-              "name": "2nd Neumark Landwehr",
-              "units": [
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "I/2nd Neumark Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "II/2nd Neumark Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "III/2nd Neumark Landwehr"
-                }
-              ]
-            },
-            {
-              "name": "3rd Neumark Landwehr",
-              "units": [
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "I/3rd Neumark Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "II/3rd Neumark Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "III/3rd Neumark Landwehr"
-                }
-              ]
-            }
-          ]
+          "unit": "pr15-cmd-zieten"
         }
-      ]
-    },
-    {
-      "id": "waterloo-prussian-14",
-      "nationId": "prussians-1815",
-      "name": "Ryssel's Brigade",
-      "formation": "14th Brigade, IV Corps (Bülow)",
-      "side": "Prussian",
-      "summary": "The last of Bülow's brigades onto the field, in the final assault that took Plancenoit.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
       ],
       "brigades": [
         {
           "type": "pr15-infantry-brigade",
-          "name": "14th Brigade",
-          "commander": {
-            "name": "Gen-Maj von Ryssel",
-            "variant": "Staff rating 8"
-          },
-          "units": [
-            {
-              "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
-            }
-          ],
-          "regiments": [
-            {
-              "name": "11th (2nd Silesian) Infantry",
-              "units": [
-                {
-                  "unit": "pr15-musketeer",
-                  "name": "I/11th Infantry"
-                },
-                {
-                  "unit": "pr15-musketeer",
-                  "name": "II/11th Infantry"
-                },
-                {
-                  "unit": "pr15-fusilier",
-                  "name": "F/11th Infantry"
-                }
-              ]
-            },
-            {
-              "name": "1st Pomeranian Landwehr",
-              "units": [
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "I/1st Pomeranian Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "II/1st Pomeranian Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "III/1st Pomeranian Landwehr"
-                }
-              ]
-            },
-            {
-              "name": "2nd Pomeranian Landwehr",
-              "units": [
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "I/2nd Pomeranian Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "II/2nd Pomeranian Landwehr"
-                },
-                {
-                  "unit": "pr15-landwehr",
-                  "name": "III/2nd Pomeranian Landwehr"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "waterloo-prussian-1",
-      "nationId": "prussians-1815",
-      "name": "Steinmetz's Brigade",
-      "formation": "1st Brigade, I Corps (Zieten)",
-      "side": "Prussian",
-      "summary": "Zieten's leading brigade, which reached the allied left around Papelotte in the evening and pushed on into the French right as the line broke.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
-        {
-          "type": "pr15-infantry-brigade",
-          "name": "1st Brigade",
+          "name": "1st Brigade (Steinmetz)",
           "commander": {
             "name": "Gen-Maj von Steinmetz",
             "variant": "Staff rating 8"
@@ -2887,7 +2861,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "1st Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -2939,6 +2913,224 @@
                 {
                   "unit": "pr15-landwehr",
                   "name": "III/1st Westphalian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "2nd Brigade (Pirch II)",
+          "commander": {
+            "name": "Gen-Maj von Pirch II",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "2nd Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "6th (1st West Prussian) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/6th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/6th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/6th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "28th (1st Berg) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/28th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/28th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/28th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "16th (3rd Westphalian) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/16th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/16th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/16th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "2nd Westphalian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/2nd Westphalian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/2nd Westphalian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/2nd Westphalian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "3rd Brigade (Jagow)",
+          "commander": {
+            "name": "Gen-Maj von Jagow",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "3rd Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "7th (2nd West Prussian) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/7th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/7th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/7th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "29th (2nd Berg) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/29th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/29th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/29th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "3rd Westphalian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/3rd Westphalian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/3rd Westphalian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/3rd Westphalian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "4th Brigade (Henckel von Donnersmarck)",
+          "commander": {
+            "name": "Gen-Maj Graf Henckel von Donnersmarck",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "4th Brigade Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "13th (1st Reserve) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/13th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/13th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/13th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "19th (7th Reserve) Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/19th Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/19th Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/19th Infantry"
+                }
+              ]
+            },
+            {
+              "name": "4th Westphalian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/4th Westphalian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/4th Westphalian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/4th Westphalian Landwehr"
                 }
               ]
             }

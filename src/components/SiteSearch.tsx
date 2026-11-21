@@ -7,7 +7,13 @@ import { buildIndex, search, type SearchEntry, type SearchKind } from "@/lib/sea
 import { listHref, listSaved, LISTS_CHANGED_EVENT, type SavedList } from "@/lib/storage";
 import { edited } from "@/lib/edited";
 
-const KIND_LABEL: Record<SearchKind, string> = { army: "Your army", rules: "Rules", supplement: "Supplement", nation: "Army list" };
+const KIND_LABEL: Record<SearchKind, string> = {
+  army: "Your army",
+  rules: "Rules",
+  supplement: "Supplement",
+  nation: "Army list",
+  historical: "Historical",
+};
 
 // Each kind of result in its own colour, so they're told apart at a glance: your own armies solid, the
 // rest light
@@ -16,6 +22,7 @@ const KIND_BADGE: Record<SearchKind, { variant: "filled" | "light"; color: strin
   nation: { variant: "light", color: "brown" },
   supplement: { variant: "light", color: "yellow" },
   rules: { variant: "light", color: "green" },
+  historical: { variant: "light", color: "blue" },
 };
 
 // Fetched once per visit, the first time search opens

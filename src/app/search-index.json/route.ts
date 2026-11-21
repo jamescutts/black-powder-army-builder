@@ -1,9 +1,12 @@
-// The site search's data: every rule set, supplement and army list, with where it lives. Built once at
-// build time and fetched by the search box the first time it opens, so the header doesn't carry every list.
+// The site search's data: every rule set, supplement, army list and historical campaign and battle, with
+// where it lives. Built once at build time and fetched by the search box the first time it opens, so the
+// header doesn't carry every list.
 
 import { supplements, nations, getSupplement, getNationsForSupplement } from "@/data";
 import { RULESETS } from "@/data/rulesets";
 import type { SearchEntry } from "@/lib/search";
+import { battlesIn, campaigns } from "@/data/battles";
+import { battleHref, campaignHref } from "@/lib/forces";
 
 export const dynamic = "force-static";
 
@@ -30,6 +33,21 @@ export function GET() {
         // Its book, description and author, so "Waterloo", "Wellington" or a list's author find it too
         x: [supplement?.name, n.blurb, n.attribution?.author].filter(Boolean).join(" "),
       };
+    }),
+    // Each campaign of historical forces, and each of its battles, with the forces' names and commanders so
+    // "Picton" or "Bülow" finds the battle they fought in
+    ...campaigns.flatMap((c): SearchEntry[] => {
+      const battles = battlesIn(c.id);
+      return [
+        { k: "historical", t: c.name, d: `Historical forces · ${c.dates}`, h: campaignHref(c.id), x: battles.map((b) => b.name).join(" ") },
+        ...battles.map((b): SearchEntry => ({
+          k: "historical",
+          t: b.name,
+          d: `${c.name} · ${b.date}`,
+          h: battleHref(b),
+          x: b.forces.map((f) => `${f.name} ${f.formation ?? ""}`).join(" "),
+        })),
+      ];
     }),
   ];
   return Response.json(entries);

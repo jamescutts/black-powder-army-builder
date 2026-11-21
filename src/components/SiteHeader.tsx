@@ -11,7 +11,7 @@ import { useSwipeNav } from "@/lib/useSwipeNav";
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/black-powder", label: "Black Powder" },
-  { href: "/black-powder/battles", label: "Historical forces" },
+  { href: "/black-powder/historical-forces", label: "Historical forces" },
 ];
 
 /**

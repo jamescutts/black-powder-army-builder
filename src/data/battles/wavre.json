@@ -712,20 +712,30 @@
       ]
     },
     {
-      "id": "wavre-prussian-9",
+      "id": "wavre-prussian-iii-corps",
       "nationId": "prussians-1815",
-      "name": "Borcke's Brigade",
-      "formation": "9th Brigade, III Corps (Thielemann)",
+      "name": "Thielemann's III Corps",
+      "formation": "III Corps, Army of the Lower Rhine",
       "side": "Prussian",
-      "summary": "Marched off towards Waterloo, then turned back to help at the crossings; part of it fought at Wavre and Limale.",
+      "summary": "Left behind as Blücher's rearguard while the rest of the army marched to Waterloo. Kemphen's brigade held Wavre's bridges against Vandamme, Luck's Landwehr the Dyle beside it, and Stülpnagel's the upstream crossings at Bierges and Limale, where Grouchy turned the flank on the 19th.",
       "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+        "Luck's brigade was all Landwehr, two Kurmark regiments, where the list's brigade needs a Line regiment, which shows as a historical departure.",
+        "Borcke's brigade had begun the march to Waterloo and only part of it came back to fight.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Thielemann commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 8; his brigade commanders at 8, the list's lowest. Our judgement."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "variant": "Staff rating 8 (4 re-rolls)",
+          "name": "Lt-Gen von Thielemann"
+        }
       ],
       "brigades": [
         {
           "type": "pr15-infantry-brigade",
-          "name": "9th Brigade",
+          "name": "9th Brigade (Borcke)",
           "commander": {
             "name": "Gen-Maj von Borcke",
             "variant": "Staff rating 8"
@@ -733,7 +743,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "9th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -789,24 +799,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "wavre-prussian-10",
-      "nationId": "prussians-1815",
-      "name": "Kemphen's Brigade",
-      "formation": "10th Brigade, III Corps (Thielemann)",
-      "side": "Prussian",
-      "summary": "Held Wavre town and its bridges against Vandamme's attacks.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "10th Brigade",
+          "name": "10th Brigade (Kemphen)",
           "commander": {
             "name": "Col von Kemphen",
             "variant": "Staff rating 8"
@@ -814,7 +810,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "10th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -853,25 +849,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "wavre-prussian-11",
-      "nationId": "prussians-1815",
-      "name": "Luck's Brigade",
-      "formation": "11th Brigade, III Corps (Thielemann)",
-      "side": "Prussian",
-      "summary": "Defended the line of the Dyle, its Landwehr holding the crossings beside Wavre.",
-      "notes": [
-        "Luck's brigade was all Landwehr, two Kurmark regiments, where the list's brigade needs a Line regiment, which shows as a historical departure.",
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "11th Brigade",
+          "name": "11th Brigade (Luck)",
           "commander": {
             "name": "Col von Luck",
             "variant": "Staff rating 8"
@@ -879,7 +860,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "11th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -918,24 +899,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "wavre-prussian-12",
-      "nationId": "prussians-1815",
-      "name": "Stülpnagel's Brigade",
-      "formation": "12th Brigade, III Corps (Thielemann)",
-      "side": "Prussian",
-      "summary": "Held the upstream crossings at Bierges and Limale, and met Grouchy's flank attack on the 19th.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "12th Brigade",
+          "name": "12th Brigade (Stülpnagel)",
           "commander": {
             "name": "Gen-Maj von Stülpnagel",
             "variant": "Staff rating 8"
@@ -943,7 +910,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "12th Brigade Foot Battery"
             }
           ],
           "regiments": [

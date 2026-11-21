@@ -811,20 +811,27 @@
       ]
     },
     {
-      "id": "ligny-prussian-1",
+      "id": "ligny-prussian-i-corps",
       "nationId": "prussians-1815",
-      "name": "Steinmetz's Brigade",
-      "formation": "1st Brigade, I Corps (Zieten)",
+      "name": "Zieten's I Corps",
+      "formation": "I Corps, Army of the Lower Rhine",
       "side": "Prussian",
-      "summary": "Held Saint-Amand at the start and fought for it all afternoon against Vandamme's divisions, losing heavily.",
+      "summary": "Held the line of the Ligny brook from Saint-Amand to Ligny itself, and bore the worst of the day: Steinmetz's brigade fought for Saint-Amand all afternoon, Jagow's and Henckel's held Ligny village house by house until the Guard broke through at dusk.",
       "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+        "The order of battle gives Pirch II's brigade four regiments, the 16th Infantry among them, where the list's brigade has at most two Line regiments and three in all, so these show as historical departures.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Zieten is the book's named commander. Brigade Staff Ratings are our judgement, at 8, the list's lowest."
+      ],
+      "command": [
+        {
+          "unit": "pr15-cmd-zieten"
+        }
       ],
       "brigades": [
         {
           "type": "pr15-infantry-brigade",
-          "name": "1st Brigade",
+          "name": "1st Brigade (Steinmetz)",
           "commander": {
             "name": "Gen-Maj von Steinmetz",
             "variant": "Staff rating 8"
@@ -832,7 +839,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "1st Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -888,25 +895,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-2",
-      "nationId": "prussians-1815",
-      "name": "Pirch II's Brigade",
-      "formation": "2nd Brigade, I Corps (Zieten)",
-      "side": "Prussian",
-      "summary": "Fed into the fight for Saint-Amand-la-Haye as Blücher tried to drive the French back on his right.",
-      "notes": [
-        "The order of battle gives Pirch II's brigade four regiments, the 16th Infantry among them, where the list's brigade has at most two Line regiments and three in all, so these show as historical departures.",
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "2nd Brigade",
+          "name": "2nd Brigade (Pirch II)",
           "commander": {
             "name": "Gen-Maj von Pirch II",
             "variant": "Staff rating 8"
@@ -914,7 +906,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "2nd Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -987,24 +979,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-3",
-      "nationId": "prussians-1815",
-      "name": "Jagow's Brigade",
-      "formation": "3rd Brigade, I Corps (Zieten)",
-      "side": "Prussian",
-      "summary": "Held Ligny village against Gérard's corps through the afternoon, house by house.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "3rd Brigade",
+          "name": "3rd Brigade (Jagow)",
           "commander": {
             "name": "Gen-Maj von Jagow",
             "variant": "Staff rating 8"
@@ -1012,7 +990,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "3rd Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1068,24 +1046,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-4",
-      "nationId": "prussians-1815",
-      "name": "Henckel von Donnersmarck's Brigade",
-      "formation": "4th Brigade, I Corps (Zieten)",
-      "side": "Prussian",
-      "summary": "Reinforced Ligny and the line beside it, until the Guard's attack broke through at dusk.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "4th Brigade",
+          "name": "4th Brigade (Henckel von Donnersmarck)",
           "commander": {
             "name": "Gen-Maj Graf Henckel von Donnersmarck",
             "variant": "Staff rating 8"
@@ -1093,7 +1057,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "4th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1153,20 +1117,28 @@
       ]
     },
     {
-      "id": "ligny-prussian-5",
+      "id": "ligny-prussian-ii-corps",
       "nationId": "prussians-1815",
-      "name": "Tippelskirch's Brigade",
-      "formation": "5th Brigade, II Corps (Pirch I)",
+      "name": "Pirch's II Corps",
+      "formation": "II Corps, Army of the Lower Rhine",
       "side": "Prussian",
-      "summary": "Part of Pirch's corps, sent into the fighting at Saint-Amand and Wagnelée on the Prussian right.",
+      "summary": "Blücher's reserve behind the line, fed in brigade by brigade: into Saint-Amand-la-Haye and Wagnelée to try to turn the French left, and into Ligny as the centre was worn down.",
       "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Pirch I commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 7; his brigade commanders at 8, the list's lowest. Our judgement."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "variant": "Staff rating 7 (2 re-rolls)",
+          "name": "Gen-Maj von Pirch I"
+        }
       ],
       "brigades": [
         {
           "type": "pr15-infantry-brigade",
-          "name": "5th Brigade",
+          "name": "5th Brigade (Tippelskirch)",
           "commander": {
             "name": "Gen-Maj von Tippelskirch",
             "variant": "Staff rating 8"
@@ -1174,7 +1146,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "5th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1230,24 +1202,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-6",
-      "nationId": "prussians-1815",
-      "name": "Krafft's Brigade",
-      "formation": "6th Brigade, II Corps (Pirch I)",
-      "side": "Prussian",
-      "summary": "Fed into the struggle for Ligny as the Prussian centre was worn down through the evening.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "6th Brigade",
+          "name": "6th Brigade (Krafft)",
           "commander": {
             "name": "Gen-Maj von Krafft",
             "variant": "Staff rating 8"
@@ -1255,7 +1213,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "6th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1311,24 +1269,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-7",
-      "nationId": "prussians-1815",
-      "name": "Brause's Brigade",
-      "formation": "7th Brigade, II Corps (Pirch I)",
-      "side": "Prussian",
-      "summary": "Committed around Saint-Amand-la-Haye in Blücher's attempt to turn the French left.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "7th Brigade",
+          "name": "7th Brigade (Brause)",
           "commander": {
             "name": "Gen-Maj von Brause",
             "variant": "Staff rating 8"
@@ -1336,7 +1280,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "7th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1392,24 +1336,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-8",
-      "nationId": "prussians-1815",
-      "name": "Bose's Brigade",
-      "formation": "8th Brigade, II Corps (Pirch I)",
-      "side": "Prussian",
-      "summary": "Thrown into Ligny late in the day, and among the troops driven back when the Guard broke through.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "8th Brigade",
+          "name": "8th Brigade (Bose)",
           "commander": {
             "name": "Gen-Maj von Bose",
             "variant": "Staff rating 8"
@@ -1417,7 +1347,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "8th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1477,20 +1407,29 @@
       ]
     },
     {
-      "id": "ligny-prussian-9",
+      "id": "ligny-prussian-iii-corps",
       "nationId": "prussians-1815",
-      "name": "Borcke's Brigade",
-      "formation": "9th Brigade, III Corps (Thielemann)",
+      "name": "Thielemann's III Corps",
+      "formation": "III Corps, Army of the Lower Rhine",
       "side": "Prussian",
-      "summary": "Thielemann's corps held the Prussian left at Sombreffe and Tongrinne, largely kept apart from the main fight by Grouchy's cavalry and Hulot's division.",
+      "summary": "Held the Prussian left around Sombreffe, Tongrinne and Boignée. Kept apart from the main fight by Grouchy's cavalry and Hulot's division, it came through the day the least hurt of Blücher's corps.",
       "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
+        "Luck's brigade was all Landwehr, two Kurmark regiments, where the list's brigade needs a Line regiment, which shows as a historical departure.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Thielemann commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 8; his brigade commanders at 8, the list's lowest. Our judgement."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "variant": "Staff rating 8 (4 re-rolls)",
+          "name": "Lt-Gen von Thielemann"
+        }
       ],
       "brigades": [
         {
           "type": "pr15-infantry-brigade",
-          "name": "9th Brigade",
+          "name": "9th Brigade (Borcke)",
           "commander": {
             "name": "Gen-Maj von Borcke",
             "variant": "Staff rating 8"
@@ -1498,7 +1437,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "9th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1554,24 +1493,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-10",
-      "nationId": "prussians-1815",
-      "name": "Kemphen's Brigade",
-      "formation": "10th Brigade, III Corps (Thielemann)",
-      "side": "Prussian",
-      "summary": "Held the villages on the Prussian left, around Tongrinne and Boignée.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "10th Brigade",
+          "name": "10th Brigade (Kemphen)",
           "commander": {
             "name": "Col von Kemphen",
             "variant": "Staff rating 8"
@@ -1579,7 +1504,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "10th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1618,25 +1543,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-11",
-      "nationId": "prussians-1815",
-      "name": "Luck's Brigade",
-      "formation": "11th Brigade, III Corps (Thielemann)",
-      "side": "Prussian",
-      "summary": "An all-Landwehr brigade on the far left of the Prussian line, at Boignée and Balâtre.",
-      "notes": [
-        "Luck's brigade was all Landwehr, two Kurmark regiments, where the list's brigade needs a Line regiment, which shows as a historical departure.",
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "11th Brigade",
+          "name": "11th Brigade (Luck)",
           "commander": {
             "name": "Col von Luck",
             "variant": "Staff rating 8"
@@ -1644,7 +1554,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "11th Brigade Foot Battery"
             }
           ],
           "regiments": [
@@ -1683,24 +1593,10 @@
               ]
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "ligny-prussian-12",
-      "nationId": "prussians-1815",
-      "name": "Stülpnagel's Brigade",
-      "formation": "12th Brigade, III Corps (Thielemann)",
-      "side": "Prussian",
-      "summary": "Held the Prussian left around Tongrinne, little troubled until the evening.",
-      "notes": [
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-        "Staff Ratings are our judgement: the brigade commander at 8, the list's lowest."
-      ],
-      "brigades": [
+        },
         {
           "type": "pr15-infantry-brigade",
-          "name": "12th Brigade",
+          "name": "12th Brigade (Stülpnagel)",
           "commander": {
             "name": "Gen-Maj von Stülpnagel",
             "variant": "Staff rating 8"
@@ -1708,7 +1604,7 @@
           "units": [
             {
               "unit": "pr15-foot-arty",
-              "name": "Brigade Foot Battery"
+              "name": "12th Brigade Foot Battery"
             }
           ],
           "regiments": [

@@ -537,15 +537,36 @@ def ordinal(n):
     return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
 
 
-def prussian(n, battle, summary):
-    commander, corps, irs, lws = PR_BRIGADES[n]
-    return force(f"{battle}-prussian-{n}", PR, f"{commander}'s Brigade", f"{ordinal(n)} Brigade, {corps}", "Prussian", summary,
-                 [bde("pr15-infantry-brigade", f"{ordinal(n)} Brigade", PR_COMMANDERS.get(n, f"Gen-Maj von {commander}"),
-                      units=[u("pr15-foot-arty", "Brigade Foot Battery")],
-                      regiments=[pr_ir(r) for r in irs] + [pr_lw(r) for r in lws], variant="Staff rating 8")],
-                 notes=[n_ for n_ in (PR_NOTES.get(n),) if n_] + [
-                     "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigade's foot battery.",
-                     PR_RATINGS])
+PR_CORPS = {
+    "I": ("Zieten's I Corps", [1, 2, 3, 4], {"unit": "pr15-cmd-zieten"}),
+    "II": ("Pirch's II Corps", [5, 6, 7, 8], cmd("pr15-corps-cmd", "Gen-Maj von Pirch I", "Staff rating 7 (2 re-rolls)")),
+    "III": ("Thielemann's III Corps", [9, 10, 11, 12], cmd("pr15-corps-cmd", "Lt-Gen von Thielemann", "Staff rating 8 (4 re-rolls)")),
+    "IV": ("Bülow's IV Corps", [13, 14, 15, 16], cmd("pr15-corps-cmd", "Gen von Bülow", "Staff rating 8 (4 re-rolls)")),
+}
+CORPS_RATINGS = {
+    "I": "Zieten is the book's named commander. Brigade Staff Ratings are our judgement, at 8, the list's lowest.",
+    "II": "Pirch I commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 7; his brigade commanders at 8, the list's lowest. Our judgement.",
+    "III": "Thielemann commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 8; his brigade commanders at 8, the list's lowest. Our judgement.",
+    "IV": "Bülow commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 8; his brigade commanders at 8, the list's lowest. Our judgement.",
+}
+
+
+def pr_brigade(n):
+    commander, _corps, irs, lws = PR_BRIGADES[n]
+    return bde("pr15-infantry-brigade", f"{ordinal(n)} Brigade ({commander})", PR_COMMANDERS.get(n, f"Gen-Maj von {commander}"),
+               units=[u("pr15-foot-arty", f"{ordinal(n)} Brigade Foot Battery")],
+               regiments=[pr_ir(r) for r in irs] + [pr_lw(r) for r in lws], variant="Staff rating 8")
+
+
+def prussian_corps(corps, battle, summary, notes=()):
+    """A Prussian corps as one force: its four brigades were each the size of another army's division"""
+    name, brigades, commander = PR_CORPS[corps]
+    return force(f"{battle}-prussian-{corps.lower()}-corps", PR, name, f"{corps} Corps, Army of the Lower Rhine", "Prussian", summary,
+                 [pr_brigade(n) for n in brigades], command=[commander],
+                 notes=[n_ for n_ in (PR_NOTES.get(n) for n in brigades) if n_] + list(notes) + [
+                     "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+                     "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+                     CORPS_RATINGS[corps]])
 
 
 # ---------------------------------------------------------------- Battles
@@ -571,20 +592,9 @@ LIGNY = battle(
         fr(HULOT, "ligny", "Led by Hulot after Bourmont deserted the day before, it held Gérard's right towards Tongrinne against Thielemann's corps."),
         middle_guard("ligny", "The Guard's grenadiers and chasseurs, sent in at dusk through Ligny village, broke the Prussian centre and decided the battle."),
         delort("ligny", "Milhaud's cuirassiers followed the Guard through the Prussian centre at dusk and caught Blücher's last counter-charge, in which the old marshal was unhorsed."),
-        *[prussian(n, "ligny", s) for n, s in [
-            (1, "Held Saint-Amand at the start and fought for it all afternoon against Vandamme's divisions, losing heavily."),
-            (2, "Fed into the fight for Saint-Amand-la-Haye as Blücher tried to drive the French back on his right."),
-            (3, "Held Ligny village against Gérard's corps through the afternoon, house by house."),
-            (4, "Reinforced Ligny and the line beside it, until the Guard's attack broke through at dusk."),
-            (5, "Part of Pirch's corps, sent into the fighting at Saint-Amand and Wagnelée on the Prussian right."),
-            (6, "Fed into the struggle for Ligny as the Prussian centre was worn down through the evening."),
-            (7, "Committed around Saint-Amand-la-Haye in Blücher's attempt to turn the French left."),
-            (8, "Thrown into Ligny late in the day, and among the troops driven back when the Guard broke through."),
-            (9, "Thielemann's corps held the Prussian left at Sombreffe and Tongrinne, largely kept apart from the main fight by Grouchy's cavalry and Hulot's division."),
-            (10, "Held the villages on the Prussian left, around Tongrinne and Boignée."),
-            (11, "An all-Landwehr brigade on the far left of the Prussian line, at Boignée and Balâtre."),
-            (12, "Held the Prussian left around Tongrinne, little troubled until the evening."),
-        ]],
+        prussian_corps("I", "ligny", "Held the line of the Ligny brook from Saint-Amand to Ligny itself, and bore the worst of the day: Steinmetz's brigade fought for Saint-Amand all afternoon, Jagow's and Henckel's held Ligny village house by house until the Guard broke through at dusk."),
+        prussian_corps("II", "ligny", "Blücher's reserve behind the line, fed in brigade by brigade: into Saint-Amand-la-Haye and Wagnelée to try to turn the French left, and into Ligny as the centre was worn down."),
+        prussian_corps("III", "ligny", "Held the Prussian left around Sombreffe, Tongrinne and Boignée. Kept apart from the main fight by Grouchy's cavalry and Hulot's division, it came through the day the least hurt of Blücher's corps."),
     ],
 )
 
@@ -648,11 +658,9 @@ def waterloo():
         guard_cavalry("waterloo", "Followed Milhaud and Kellermann into the great charges on the allied squares in the late afternoon."),
     ]
     prussians = [
-        prussian(15, "waterloo", "Led Bülow's corps out of the Bois de Paris onto the French right in the late afternoon, and fought for Plancenoit."),
-        prussian(16, "waterloo", "Stormed Plancenoit against Lobau's corps and the Young Guard, losing and retaking the village through the evening."),
-        prussian(13, "waterloo", "Came up behind Bülow's leading brigades to join the attacks on Plancenoit."),
-        prussian(14, "waterloo", "The last of Bülow's brigades onto the field, in the final assault that took Plancenoit."),
-        prussian(1, "waterloo", "Zieten's leading brigade, which reached the allied left around Papelotte in the evening and pushed on into the French right as the line broke."),
+        prussian_corps("IV", "waterloo", "The first Prussian corps onto the field, untouched at Ligny. Losthin's and Hiller's brigades came out of the Bois de Paris onto the French right in the late afternoon, and with Hake's and Ryssel's behind them fought Lobau's corps and the Young Guard for Plancenoit until it fell in the evening."),
+        prussian_corps("I", "waterloo", "Marched across from Wavre to join Wellington's left. Steinmetz's brigade led it onto the field near Papelotte in the evening, and pushed into the French right as their line broke.",
+                       ["At Waterloo only Steinmetz's brigade, at the head of the column, was fully engaged; the rest of the corps was still coming up."]),
     ]
     b = battle("waterloo", "Waterloo", "18 June 1815", existing["summary"], allied + french + prussians)
     return b
@@ -676,12 +684,8 @@ WAVRE = battle(
         fr(HULOT, "wavre", "Attacked the Bierges mill crossing with Gérard's corps before moving on to Limale."),
         fr(TESTE, "wavre", "Lobau's third division, detached to Grouchy, it fought for Wavre and covered his withdrawal on 20 June."),
         strolz("wavre", "Exelmans' dragoons, who had followed the Prussians from Ligny, screening the French advance on the Dyle."),
-        *[prussian(n, "wavre", s) for n, s in [
-            (9, "Marched off towards Waterloo, then turned back to help at the crossings; part of it fought at Wavre and Limale."),
-            (10, "Held Wavre town and its bridges against Vandamme's attacks."),
-            (11, "Defended the line of the Dyle, its Landwehr holding the crossings beside Wavre."),
-            (12, "Held the upstream crossings at Bierges and Limale, and met Grouchy's flank attack on the 19th."),
-        ]],
+        prussian_corps("III", "wavre", "Left behind as Blücher's rearguard while the rest of the army marched to Waterloo. Kemphen's brigade held Wavre's bridges against Vandamme, Luck's Landwehr the Dyle beside it, and Stülpnagel's the upstream crossings at Bierges and Limale, where Grouchy turned the flank on the 19th.",
+                       ["Borcke's brigade had begun the march to Waterloo and only part of it came back to fight."]),
     ],
 )
 

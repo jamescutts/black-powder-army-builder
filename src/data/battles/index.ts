@@ -28,6 +28,10 @@ export const battles: HistoricalBattle[] = allBattles
   .map((b) => ({ ...b, forces: b.forces.filter((f) => getNation(f.nationId)) }))
   .filter((b) => b.forces.length > 0);
 
+export function getCampaign(id: string): HistoricalCampaign | undefined {
+  return campaigns.find((c) => c.id === id);
+}
+
 /** A campaign's battles, in the order they were fought */
 export function battlesIn(campaignId: string): HistoricalBattle[] {
   return battles.filter((b) => b.campaign === campaignId);

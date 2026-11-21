@@ -20,6 +20,8 @@
 // Rosters themselves live in the browser's localStorage (lib/storage.ts), which works offline already.
 
 import { nations, supplements } from "@/data";
+import { campaigns } from "@/data/battles";
+import { campaignHref, HISTORICAL_FORCES_PATH } from "@/lib/forces";
 
 export const dynamic = "force-static";
 
@@ -29,6 +31,8 @@ const PAGES = [
   "/armies",
   ...supplements.map((s) => `/black-powder/${s.id}`),
   ...nations.map((n) => `/black-powder/${n.supplementId}/${n.id}`),
+  HISTORICAL_FORCES_PATH,
+  ...campaigns.map((c) => campaignHref(c.id)),
 ];
 
 // Saved alongside the pages: site search's data, the manifest and the installed app's icons

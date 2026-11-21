@@ -30,7 +30,7 @@ import { supplements, getSupplement, getNation, getNationsForSupplement } from "
 import type { RosterState } from "@/types/army";
 import { emptyRoster } from "@/types/army";
 import { startingRoster } from "@/lib/newRoster";
-import { forceHref, rosterFromForce } from "@/lib/forces";
+import { forceHref, HISTORICAL_FORCES_PATH, rosterFromForce } from "@/lib/forces";
 import { battleOf, forcesFor, getForce } from "@/data/battles";
 import { ForceOrigin } from "@/components/ForceOrigin";
 import { nationForPeriod } from "@/lib/periods";
@@ -411,7 +411,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
                         </Menu.Item>
                       ))}
                       {nationForces.length > 6 && (
-                        <Menu.Item component={Link} href="/black-powder/battles">
+                        <Menu.Item component={Link} href={HISTORICAL_FORCES_PATH}>
                           All historical forces
                         </Menu.Item>
                       )}

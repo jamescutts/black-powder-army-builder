@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Anchor, Button, Collapse, Group, List, Paper, Stack, Text, UnstyledButton } from "@mantine/core";
 import { IconBook2, IconChevronDown, IconRestore } from "@tabler/icons-react";
 import type { HistoricalBattle, HistoricalForce } from "@/data/types";
+import { battleHref } from "@/lib/forces";
 
 /**
  * Above a list started from a historical force: which force and battle, what it did, how it was built
@@ -28,7 +29,7 @@ export function ForceOrigin({
           <Stack gap={2} style={{ minWidth: 0 }}>
             <Text size="xs" tt="uppercase" fw={600} c="dimmed" lts={0.5}>
               Historical force ·{" "}
-              <Anchor component={Link} href={`/black-powder/battles#${battle.id}`} inherit c="brown.7">
+              <Anchor component={Link} href={battleHref(battle)} inherit c="brown.7">
                 {battle.name}, {battle.date}
               </Anchor>
             </Text>
