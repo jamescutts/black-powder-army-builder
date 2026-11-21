@@ -657,6 +657,11 @@ body {
   white-space: nowrap;
 }
 
+.unit-row-rule[data-long] {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
 .unit-row-meta {
   grid-area: meta;
   justify-content: flex-end;

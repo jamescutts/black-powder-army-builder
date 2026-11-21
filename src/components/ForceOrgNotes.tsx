@@ -35,6 +35,14 @@ function AllyRuleItem({ rule }: { rule: AlliesRule }) {
   );
 }
 
+/** Whether a list's choices are tagged with their campaign periods, so picking one changes what's offered */
+function periodsTagged(nation: Nation): boolean {
+  const tagged = (x: { periods?: string[]; periodOverrides?: object }) => !!(x.periods?.length || x.periodOverrides);
+  return nation.brigades.some(
+    (b) => tagged(b) || b.slots.some((s) => tagged(s) || s.unitPeriods) || (b.options ?? []).some(tagged)
+  );
+}
+
 type Tone = "org" | "rules" | "allies";
 
 /** A notes card whose heading sits on a strip tinted for its topic, so each one is easy to pick out */
@@ -69,7 +77,7 @@ export function ForceOrgNotes({ nation }: { nation: Nation }) {
     ...(hasUpgrades
       ? []
       : ["unit upgrades and downgrades (Veteran, Tough Fighters, Large and Small units, half batteries and so on)"]),
-    ...(nation.supplementId === "albion-triumphant-1"
+    ...(nation.periods?.length && !periodsTagged(nation)
       ? ["what each campaign period allows: pick the list's period at the top of the builder, and it's kept with the list and shown on the roster, but every period's choices are still offered"]
       : []),
   ];

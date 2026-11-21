@@ -251,11 +251,14 @@ export function UnitLineEditor({
                   )}
                   {special.length > 0 && (
                     <Text size="xs" c="dimmed" fs="italic" span className="unit-row-special">
-                      {/* Each rule stays whole when a long list wraps */}
+                      {/* Each short rule stays whole when a long list wraps; a sentence-long one (a named
+                          commander's, like Wellington's) wraps within itself rather than running off the card */}
                       {special.map((rule, i) => (
                         <span key={rule}>
                           {i > 0 && " \u2022 "}
-                          <span className="unit-row-rule">{rule}</span>
+                          <span className="unit-row-rule" data-long={rule.length > 32 || undefined}>
+                            {rule}
+                          </span>
                         </span>
                       ))}
                     </Text>
