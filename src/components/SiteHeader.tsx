@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { IconWifiOff } from "@tabler/icons-react";
 import { SiteSearch } from "./SiteSearch";
 import { listSaved, LISTS_CHANGED_EVENT } from "@/lib/storage";
+import { useSwipeNav } from "@/lib/useSwipeNav";
 
 const NAV = [
   { href: "/", label: "Home" },
@@ -20,6 +21,8 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const savedCount = useSavedCount();
+  // On touch screens, swiping sideways moves between these menu pages (lib/useSwipeNav.ts)
+  useSwipeNav();
 
   return (
     <header className="site-header">
