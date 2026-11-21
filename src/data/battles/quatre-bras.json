@@ -201,7 +201,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Maximilien_Foy_1.jpg/250px-Maximilien_Foy_1.jpg",
+        "title": "Maximilien Sébastien Foy",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Maximilien_Foy_1.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "quatre-bras-jerome",
@@ -313,7 +320,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/J%C3%A9r%C3%B4me_Bonaparte_%28Kinson%29.jpg/250px-J%C3%A9r%C3%B4me_Bonaparte_%28Kinson%29.jpg",
+        "title": "Jérôme Bonaparte, King of Westphalia",
+        "artist": "after François Kinson",
+        "page": "https://commons.wikimedia.org/wiki/File:J%C3%A9r%C3%B4me_Bonaparte_%28Kinson%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "quatre-bras-pire",
@@ -530,7 +544,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Graaf_de_Perponcher%2C_H.jpg/250px-Graaf_de_Perponcher%2C_H.jpg",
+        "title": "H.G. de Perponcher Sedlnitsky",
+        "artist": "P.H.K. van Schendel",
+        "page": "https://commons.wikimedia.org/wiki/File:Graaf_de_Perponcher%2C_H.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "quatre-bras-picton",
@@ -663,7 +684,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg/250px-Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "title": "Sir Thomas Picton",
+        "artist": "Martin Archer Shee",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "quatre-bras-brunswick",
@@ -775,7 +803,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Herzog_von_Braunschweig-Oels.jpg/250px-Herzog_von_Braunschweig-Oels.jpg",
+        "title": "Friedrich Wilhelm, Duke of Brunswick-Oels",
+        "artist": "Johann Christian Ludwig Tunica",
+        "page": "https://commons.wikimedia.org/wiki/File:Herzog_von_Braunschweig-Oels.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "quatre-bras-alten",
@@ -987,7 +1022,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Portrait_of_General_Sir_George_Cooke_%281768%E2%80%931837%29_%28by_Jan_Willem_Pieneman%29.jpg/250px-Portrait_of_General_Sir_George_Cooke_%281768%E2%80%931837%29_%28by_Jan_Willem_Pieneman%29.jpg",
+        "title": "Sir George Cooke",
+        "artist": "Jan Willem Pieneman",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_General_Sir_George_Cooke_%281768%E2%80%931837%29_%28by_Jan_Willem_Pieneman%29.jpg",
+        "focus": "50% 20%"
+      }
     }
   ],
   "sides": {

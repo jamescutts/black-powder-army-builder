@@ -65,7 +65,27 @@ PORTRAITS.update({
     "zieten": portrait("Zieten-by-Kruger.jpg", "Hans Ernst Karl von Zieten", "Franz Krüger", focus="50% 18%", small=True),
     "pirch": portrait("Georg Dubislav Ludwig von Pirch.png", "Georg von Pirch", "unknown artist", focus="50% 20%", small=True),
 })
-# No public-domain portrait found for Lefol, Pécheux or Hulot (Ligny), nor for Grawert, Steinheil or Löwis of Menar; their sides show the name alone
+# Quatre Bras, Waterloo and Wavre divisional / corps commanders
+PORTRAITS.update({
+    # French
+    "foy": portrait("Maximilien Foy 1.jpg", "Maximilien Sébastien Foy", "unknown artist", focus="50% 20%"),
+    "jerome": portrait("Jérôme Bonaparte (Kinson).jpg", "Jérôme Bonaparte, King of Westphalia", "after François Kinson", focus="50% 18%"),
+    "bulow": portrait("Friedrich Wilhelm Freiherr von Bulow.jpg", "Friedrich Wilhelm Bülow von Dennewitz", "unknown artist", focus="50% 20%"),
+    # British / King's German Legion
+    "picton": portrait("Sir Thomas Picton by Sir Martin Archer Shee.jpg", "Sir Thomas Picton", "Martin Archer Shee", focus="50% 20%"),
+    "uxbridge": portrait("Uxbridge (BM 1867,1214.731).jpg", "Henry Paget, Earl of Uxbridge", "Francis William Wilkin", focus="50% 18%"),
+    "cooke": portrait("Portrait of General Sir George Cooke (1768–1837) (by Jan Willem Pieneman).jpg", "Sir George Cooke", "Jan Willem Pieneman", focus="50% 20%"),
+    "lambert": portrait("John-lambert-waterloo.jpg", "Sir John Lambert", "William Salter", focus="50% 20%"),
+    # Dutch-Belgian
+    "perponcher": portrait("Graaf de Perponcher, H.jpg", "H.G. de Perponcher Sedlnitsky", "P.H.K. van Schendel", focus="50% 20%"),
+    "chasse": portrait("General D H Chassé.jpg", "David Hendrik Chassé", "Jan Willem Pieneman", "1832", "50% 20%"),
+    # Brunswick
+    "brunswick": portrait("Herzog von Braunschweig-Oels.jpg", "Friedrich Wilhelm, Duke of Brunswick-Oels", "Johann Christian Ludwig Tunica", focus="50% 20%"),
+})
+# No public-domain portrait found for: Bachelu, Lefol, Pécheux, Hulot, Strolz, Teste (Wavre/Ligny);
+# Donzelot, Marcognet, Quiot, Durutte, Simmer, Jeanin, Wathier, L'Héritier, Roussel d'Hurbal, Jacquinot (Waterloo French);
+# Alten, Clinton, Vandeleur, Vivian, Kruse (Waterloo Allied); Grawert, Steinheil, Löwis of Menar (1812 campaign).
+# Their force cards show the name only.
 EXTRA = {}
 
 COMMANDERS = {
@@ -86,11 +106,28 @@ COMMANDERS = {
 }
 
 
-# A force's own commander, by force id, for a portrait on its card (an experiment on Ligny first)
+# A force's own commander, by force id, for a portrait on its card
 FORCE_PORTRAITS: dict[str, str] = {
+    # Ligny
     "ligny-berthezene": "berthezene", "ligny-habert": "habert", "ligny-girard": "girard", "ligny-vichery": "vichery",
     "ligny-middle-guard": "friant", "ligny-delort": "delort",
     "ligny-prussian-i-corps": "zieten", "ligny-prussian-ii-corps": "pirch", "ligny-prussian-iii-corps": "thielmann",
+    # Quatre Bras
+    "quatre-bras-foy": "foy", "quatre-bras-jerome": "jerome",
+    "quatre-bras-picton": "picton", "quatre-bras-brunswick": "brunswick",
+    "quatre-bras-cooke": "cooke", "quatre-bras-perponcher": "perponcher",
+    # Waterloo — French
+    "waterloo-foy": "foy", "waterloo-jerome": "jerome",
+    "waterloo-delort": "delort", "waterloo-middle-guard": "friant",
+    # Waterloo — Allied
+    "waterloo-picton": "picton", "waterloo-cooke": "cooke",
+    "waterloo-lambert": "lambert", "waterloo-heavy-cavalry": "uxbridge",
+    "waterloo-perponcher": "perponcher", "waterloo-chasse": "chasse", "waterloo-brunswick": "brunswick",
+    "waterloo-prussian-iv-corps": "bulow", "waterloo-prussian-i-corps": "zieten",
+    # Wavre — French
+    "wavre-habert": "habert", "wavre-berthezene": "berthezene", "wavre-vichery": "vichery",
+    # Wavre — Prussian
+    "wavre-prussian-iii-corps": "thielmann",
 }
 
 
