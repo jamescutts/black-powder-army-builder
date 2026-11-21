@@ -381,6 +381,35 @@ body {
   border-bottom-color: #f2ecd6;
 }
 
+/* A long label's short form, for a phone; the full one everywhere else */
+.topnav-label-short {
+  display: none;
+}
+
+/* On a phone the four items need a little less room each: a shorter label where there is one, and
+   tighter padding, so My armies stays in view rather than off the end of the row */
+@media (max-width: 30em) {
+  .topnav-label-full {
+    display: none;
+  }
+
+  .topnav-label-short {
+    display: inline;
+  }
+
+  .topnav .topnav-link {
+    padding: 0 10px;
+  }
+
+  .topnav {
+    margin-left: -10px;
+  }
+
+  .topnav .topnav-link.topnav-end {
+    margin-right: -10px;
+  }
+}
+
 /* My armies sits apart at the end of the menu: your own lists, not a part of the site to browse */
 .topnav .topnav-end {
   margin-left: auto;

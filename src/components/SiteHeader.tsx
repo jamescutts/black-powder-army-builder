@@ -8,10 +8,11 @@ import { SiteSearch } from "./SiteSearch";
 import { listSaved, LISTS_CHANGED_EVENT } from "@/lib/storage";
 import { useSwipeNav } from "@/lib/useSwipeNav";
 
-const NAV = [
+// `short` is shown on a phone, where the menu's four items don't fit at full length
+const NAV: { href: string; label: string; short?: string }[] = [
   { href: "/", label: "Home" },
   { href: "/black-powder", label: "Black Powder" },
-  { href: "/black-powder/historical-forces", label: "Historical forces" },
+  { href: "/black-powder/historical-forces", label: "Historical forces", short: "Battles" },
 ];
 
 /**
@@ -55,8 +56,18 @@ export function SiteHeader() {
               className="topnav-link"
               data-active={isActive(item.href) || undefined}
               aria-current={pathname === item.href ? "page" : undefined}
+              aria-label={item.short ? item.label : undefined}
             >
-              {item.label}
+              {item.short ? (
+                <>
+                  <span className="topnav-label-full">{item.label}</span>
+                  <span className="topnav-label-short" aria-hidden>
+                    {item.short}
+                  </span>
+                </>
+              ) : (
+                item.label
+              )}
             </Link>
           ))}
           <Link
