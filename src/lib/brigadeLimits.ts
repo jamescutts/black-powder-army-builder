@@ -20,18 +20,56 @@ export function effectiveMax(bt: BrigadeType, instances: RosterBrigadeInstance[]
   return Math.min(bt.max, ratioMax);
 }
 
-/** Whether this brigade type's `requires` precondition (if any) is currently met. */
+/** A brigade type's prerequisites as a list: `requires` may be one or several, all of which must be met */
+export function requirementsOf(bt: BrigadeType): { brigadeTypeIds: string[]; min: number }[] {
+  if (!bt.requires) return [];
+  return Array.isArray(bt.requires) ? bt.requires : [bt.requires];
+}
+
+/** Whether this brigade type's `requires` preconditions (if any) are all currently met. */
 export function requirementMet(bt: BrigadeType, instances: RosterBrigadeInstance[]): boolean {
-  if (!bt.requires) return true;
-  return countByTypes(instances, bt.requires.brigadeTypeIds) >= bt.requires.min;
+  return requirementsOf(bt).every((r) => countByTypes(instances, r.brigadeTypeIds) >= r.min);
 }
 
 export function requirementLabel(bt: BrigadeType, nationBrigades: BrigadeType[]): string | null {
-  if (!bt.requires) return null;
-  const names = bt.requires.brigadeTypeIds.map(
-    (id) => nationBrigades.find((b) => b.id === id)?.name ?? id
+  const parts = requirementsOf(bt).map((r) => {
+    const names = r.brigadeTypeIds.map((id) => nationBrigades.find((b) => b.id === id)?.name ?? id);
+    return `at least ${r.min} × ${names.join("/")}`;
+  });
+  return parts.length ? `Requires ${parts.join(" and ")}` : null;
+}
+
+/**
+ * How many battalions a brigade counts toward its `maxBattalions`: every unit in the counted slots, each
+ * as one unless the rule weighs it otherwise (a Spanish Light half-battalion counts as half).
+ */
+export function battalionCount(bt: BrigadeType, instance: RosterBrigadeInstance): number {
+  const cap = bt.maxBattalions;
+  if (!cap) return 0;
+  const indices = cap.countSlotIndices ?? bt.slots.map((_, i) => i);
+  if (!cap.weights) return indices.reduce((s, i) => s + slotUnitCount(instance, i), 0);
+  return indices.reduce(
+    (s, i) =>
+      s +
+      [
+        ...(instance.slotLines[i] ?? []),
+        ...(instance.regimentSlots?.[i] ?? []).flatMap((reg) => reg.slotLines.flat()),
+      ].reduce((n, l) => n + l.qty * (cap.weights?.[l.unitId] ?? 1), 0),
+    0
   );
-  return `Requires at least ${bt.requires.min} × ${names.join("/")}`;
+}
+
+/**
+ * The share of a brigade's regiments outside its largest class, when a brigade type limits mixing
+ * (France's Peninsular cavalry: Dragoons or light cavalry, with up to one of the other)
+ */
+export function mixedOthers(bt: BrigadeType, instance: RosterBrigadeInstance, extraUnitId?: string): number {
+  const mix = bt.mixLimit;
+  if (!mix) return 0;
+  const counts = mix.groups.map(
+    (g) => countUnitsInInstance(instance, g.unitIds) + (extraUnitId && g.unitIds.includes(extraUnitId) ? 1 : 0)
+  );
+  return counts.reduce((a, b) => a + b, 0) - Math.max(0, ...counts);
 }
 
 // ─── Per-unit conditional cap helpers ────────────────────────────────────────

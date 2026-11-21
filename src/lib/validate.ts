@@ -16,6 +16,8 @@ import {
 import {
   countByType,
   effectiveMax,
+  battalionCount,
+  mixedOthers,
   requirementMet,
   requirementLabel,
   unitCapRequirementMet,
@@ -127,18 +129,36 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
 
     // ─── Per-instance: max total battalions across all slots ──────────────
     if (bt.maxBattalions) {
-      const includeIdx = bt.maxBattalions.countSlotIndices;
+      const cap = bt.maxBattalions;
+      const noun = cap.noun ?? "battalions";
       for (const bi of instances) {
-        let count = 0;
-        bt.slots.forEach((slot, si) => {
-          if (includeIdx && !includeIdx.includes(si)) return;
-          count += slotUnitCount(bi, si);
-        });
-        if (count > bt.maxBattalions.max) {
+        const count = battalionCount(bt, bi);
+        if (count > cap.max) {
           issues.push({
             level: "error",
             brigadeKey: bi.key,
-            message: `${bt.name}: maximum ${bt.maxBattalions.max} battalions per brigade (have ${count})`,
+            message: `${bt.name}: maximum ${cap.max} ${noun} per brigade (have ${count})`,
+          });
+        } else if (cap.min !== undefined && count < cap.min) {
+          issues.push({
+            level: "todo",
+            brigadeKey: bi.key,
+            message: `${bt.name}: needs at least ${cap.min} ${cap.min === 1 ? noun.replace(/s$/, "") : noun} (has ${count})`,
+          });
+        }
+      }
+    }
+
+    // ─── Per-instance: a brigade mostly of one class ───────────────────────
+    if (bt.mixLimit) {
+      for (const bi of instances) {
+        const others = mixedOthers(bt, bi);
+        if (others > bt.mixLimit.maxOthers) {
+          const labels = bt.mixLimit.groups.map((g) => g.label).join(" or all ");
+          issues.push({
+            level: "error",
+            brigadeKey: bi.key,
+            message: `${bt.name}: regiments should be all ${labels}, with up to ${bt.mixLimit.maxOthers} of the other (has ${others})`,
           });
         }
       }
@@ -416,10 +436,11 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
 
         // Check prerequisite brigade threshold
         if (!unitCapRequirementMet(cap, roster.brigadeInstances)) {
-          const reqMin = cap.requiresBrigades!.min;
+          const { brigadeTypeIds, min } = cap.requiresBrigades!;
+          const names = brigadeTypeIds.map((id) => nation.brigades.find((b) => b.id === id)?.name ?? id).join(" or ");
           issues.push({
             level: "error",
-            message: `${unitName}: requires ${reqMin} brigades taken before it can be fielded (have ${total})`,
+            message: `${unitName}: needs ${min === 1 ? `a ${names}` : `${min} × ${names}`} in the army`,
           });
           continue;
         }
@@ -622,6 +643,14 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
   }
 
   // ─── Army-wide unit ratio caps (e.g. 1 Light battery per 6 battalions) ─────
+  // ─── Units limited across the army, whichever brigade types they're in ───
+  for (const cap of nation.armyUnitCaps ?? []) {
+    const have = countUnitsInArmy(roster.brigadeInstances, cap.unitIds);
+    if (have > cap.max) {
+      issues.push({ level: "error", message: `Army: up to ${cap.max} ${cap.label} (have ${have})` });
+    }
+  }
+
   for (const cap of nation.unitRatioCaps ?? []) {
     const capCount = countUnitsInArmy(
       roster.brigadeInstances.filter((bi) => !cap.brigadeTypeIds || cap.brigadeTypeIds.includes(bi.brigadeTypeId)),

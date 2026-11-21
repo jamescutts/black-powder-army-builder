@@ -273,13 +273,12 @@
       "commanderUnitId": "sp-brig-cmd",
       "slots": [
         {
-          "label": "Battalion: 2-3 Light (Early), or 1-2 Light or Militia (Middle, Late)",
+          "label": "Light or Militia Battalion (up to one Militia, Middle and Late)",
           "unitIds": [
             "sp-light",
-            "sp-light-half",
             "sp-militia"
           ],
-          "min": 1,
+          "min": 0,
           "max": 3,
           "unitLimits": [
             {
@@ -287,6 +286,14 @@
               "max": 1
             }
           ]
+        },
+        {
+          "label": "Light Infantry Half-Battalions (two in place of each full Light battalion)",
+          "unitIds": [
+            "sp-light-half"
+          ],
+          "min": 0,
+          "max": 6
         }
       ],
       "options": [
@@ -337,7 +344,15 @@
           "group": "size",
           "size": "small"
         }
-      ]
+      ],
+      "maxBattalions": {
+        "max": 3,
+        "min": 1,
+        "weights": {
+          "sp-light-half": 0.5
+        }
+      },
+      "note": "2-3 Light battalions (Early), or 1-2 Light or Militia battalions (Middle, Late); each Light battalion can be two half-battalions"
     },
     {
       "id": "sp-infantry-brigade",
@@ -495,24 +510,28 @@
       "note": "Up to 1 per 3 Infantry Brigades",
       "slots": [
         {
-          "label": "Cavalry Regiment: up to 2 Light, 2-4 Heavy, up to 1 Lancer",
+          "label": "Light Cavalry Regiment (optional)",
           "unitIds": [
-            "sp-light-cav",
-            "sp-heavy",
-            "sp-lancer"
+            "sp-light-cav"
+          ],
+          "min": 0,
+          "max": 2
+        },
+        {
+          "label": "Heavy Cavalry Regiment",
+          "unitIds": [
+            "sp-heavy"
           ],
           "min": 2,
-          "max": 4,
-          "unitLimits": [
-            {
-              "unitId": "sp-light-cav",
-              "max": 2
-            },
-            {
-              "unitId": "sp-lancer",
-              "max": 1
-            }
-          ]
+          "max": 4
+        },
+        {
+          "label": "Lancer Regiment (optional)",
+          "unitIds": [
+            "sp-lancer"
+          ],
+          "min": 0,
+          "max": 1
         }
       ],
       "maxRatio": {
@@ -566,7 +585,11 @@
           "group": "size",
           "size": "small"
         }
-      ]
+      ],
+      "maxBattalions": {
+        "max": 4,
+        "noun": "regiments"
+      }
     },
     {
       "id": "sp-artillery-support",
@@ -599,8 +622,7 @@
   ],
   "notes": [
     "The book divides the list into Early (1807-1809), Middle (1810-1812) and Late (1813-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name.",
-    "Each full Light battalion a Vanguard Brigade can take may instead be two Small half-battalions (17 points each).",
-    "A Cavalry Brigade's 2-4 regiments include two to four Heavy; the builder checks the Light and Lancer maximums. Up to two regiments can be upgraded to Guard.",
+    "Up to two Cavalry Brigade regiments can be upgraded to Guard (Guard Light or Guard Heavy Cavalry).",
     "The chapter makes Light Infantry Shooting 2 (p. 56) and Guard Light Cavalry 6/-/4/3 without Elite 5+ (p. 57), and adds Guerrillas, which the list doesn't offer; the list's table (p. 110) is followed."
   ],
   "specialRules": [

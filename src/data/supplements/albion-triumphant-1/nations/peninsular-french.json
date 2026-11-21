@@ -251,6 +251,22 @@
       "cost": 44
     },
     {
+      "id": "pf-dismounted-dragoon",
+      "name": "Dismounted Dragoons",
+      "category": "Infantry",
+      "type": "Regular Infantry",
+      "armament": "Smoothbore Carbine",
+      "handToHand": "4",
+      "shooting": "2",
+      "morale": "4",
+      "stamina": "3",
+      "special": [
+        "Small",
+        "Skirmish"
+      ],
+      "cost": 44
+    },
+    {
       "id": "pf-line-light-cav",
       "name": "Line Light Cavalry",
       "category": "Cavalry",
@@ -488,6 +504,17 @@
           "limit": {
             "max": 2
           }
+        },
+        {
+          "id": "italian",
+          "label": "Italian, no Pas de Charge",
+          "cost": -2,
+          "appliesTo": [
+            "pf-line"
+          ],
+          "removeSpecial": [
+            "Pas de Charge"
+          ]
         }
       ]
     },
@@ -664,8 +691,35 @@
           "statBonus": {
             "handToHand": 1
           }
+        },
+        {
+          "id": "dismounted",
+          "label": "Dismounted",
+          "appliesTo": [
+            "pf-dragoon"
+          ],
+          "swapTo": {
+            "pf-dragoon": "pf-dismounted-dragoon"
+          }
         }
-      ]
+      ],
+      "mixLimit": {
+        "groups": [
+          {
+            "unitIds": [
+              "pf-dragoon"
+            ],
+            "label": "Dragoons"
+          },
+          {
+            "unitIds": [
+              "pf-line-light-cav"
+            ],
+            "label": "light cavalry"
+          }
+        ],
+        "maxOthers": 1
+      }
     },
     {
       "id": "pf-guard-cavalry-brigade",
@@ -705,12 +759,20 @@
           ]
         }
       ],
-      "requires": {
-        "brigadeTypeIds": [
-          "pf-infantry-brigade"
-        ],
-        "min": 3
-      },
+      "requires": [
+        {
+          "brigadeTypeIds": [
+            "pf-infantry-brigade"
+          ],
+          "min": 3
+        },
+        {
+          "brigadeTypeIds": [
+            "pf-cavalry-brigade"
+          ],
+          "min": 1
+        }
+      ],
       "options": [
         {
           "id": "small",
@@ -775,11 +837,10 @@
   "notes": [
     "The book divides the list into Early (1807-1808), Middle (1809-1811) and Late (1812-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name.",
     "Period limits that differ: Veteran (Elite 5+) is open to any battalion in the Middle period but up to half in the Early and Late, where Elite 4+ isn't offered; in the Middle period take one or the other. In the Early period any battalion can be Large and any regiment Light (rather than one per brigade).",
-    "The Cavalry Brigade takes 2-3 Dragoons with up to one Chasseur regiment (Early), or 2-4 Hussars or Chasseurs with up to one Dragoon regiment (Middle, Late), plus up to one Vistula Lancer regiment in the army (Early, Middle); the builder checks the Vistula Lancers but not the Dragoon and light mix.",
-    "The Guard Cavalry Brigade also needs a Cavalry Brigade; the builder checks the 3 infantry brigades.",
+    "The Cavalry Brigade is 2-3 Dragoons with up to one Chasseur regiment (Early), or 2-4 Hussars or Chasseurs with up to one Dragoon regiment (Middle, Late), plus up to one Vistula Lancer regiment in the army (Early, Middle). The builder checks the mix as Dragoons or light cavalry with up to one of the other.",
     "Combined Grenadiers and Voltigeurs: a brigade's battalions can lose their Grenadier/Carabinier companies (and 1 Hand-to-Hand) or Voltigeur companies (and Mixed Formation). Two battalions' companies make a Tiny unit, three a Small unit, four a standard one; a battalion that loses both becomes Small. Not built here, beyond the Reserve brigade's Combined Grenadier battalions.",
-    "Foreign formations: upgrades and downgrades in the Infantry Brigade can stand for Swiss, Irish, Hanoverian, Nassau, Baden, Hesse-Darmstadt and Legion du Midi troops. Italians use the French stat lines without Pas de Charge.",
-    "Dismounted Dragoons (p. 68): a Dragoon regiment can start the game dismounted, as a Small infantry unit (4/2/4/3, Skirmish). Not built here.",
+    "Foreign formations: upgrades and downgrades in the Infantry Brigade can stand for Swiss, Irish, Hanoverian, Nassau, Baden, Hesse-Darmstadt and Legion du Midi troops. Italians use the French stat lines without Pas de Charge, which the book prices at 2 points (p. 98).",
+    "Dismounted Dragoons (p. 68): a Dragoon regiment can start the game dismounted, as a Small infantry unit (4/2/4/3, Skirmish). The book gives no separate cost, so it keeps the Dragoons' points.",
     "The chapter gives Combined Grenadiers Shooting 4 (p. 66) and Vistula Lancers Reliable (p. 71); the list's table (p. 106) is followed.",
     "Half batteries cost half points, rounded up (Foot 14, Horse 11), with the half battery stat line on p. 107 (2-1-1, Stamina 1).",
     "Named commanders have no official points cost in this supplement; they're priced here at the Divisional Commander cost for their Staff Rating, so adjust as you agree."

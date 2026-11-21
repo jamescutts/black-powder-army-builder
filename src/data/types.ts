@@ -319,14 +319,29 @@ export interface BrigadeType {
    * This brigade type cannot be added until the summed count of `brigadeTypeIds` reaches `min`,
    * e.g. a Heavy Cavalry Brigade that needs "2 Infantry Brigades taken" first.
    */
-  requires?: { brigadeTypeIds: string[]; min: number };
+  requires?: { brigadeTypeIds: string[]; min: number } | { brigadeTypeIds: string[]; min: number }[];
+  /**
+   * A brigade mostly of one class, with at most `maxOthers` units from the rest, e.g. France's Peninsular
+   * Cavalry Brigade: "2-3 Dragoons with up to one Chasseur regiment, or 2-4 Hussars or Chasseurs with up
+   * to one Dragoon regiment". Units outside every group aren't counted.
+   */
+  mixLimit?: { groups: { unitIds: string[]; label: string }[]; maxOthers: number };
   /**
    * Maximum total units (battalions/regiments-worth) allowed across ALL slots in a single brigade
    * instance — counts flat slot lines and regiment sub-slot lines together.
    * e.g. French Infantry Brigade "max 10 battalions per brigade" → { maxBattalions: 10 }.
    * By default counts every unit; set `countSlotIndices` to only count specific slots.
    */
-  maxBattalions?: { max: number; countSlotIndices?: number[] };
+  maxBattalions?: {
+    max: number;
+    /** The fewest the brigade needs, counted the same way, e.g. a Spanish Vanguard's "1 to 2 battalions" */
+    min?: number;
+    countSlotIndices?: number[];
+    /** Units counted as other than one battalion, e.g. a Spanish Light half-battalion → 0.5 */
+    weights?: Record<string, number>;
+    /** What's counted, for messages, e.g. "battalions" (the default) or "regiments" */
+    noun?: string;
+  };
   /**
    * Maximum combined number of regiments across the listed regiment-slot indices in a single
    * brigade instance. e.g. French Infantry Brigade "1-3 Infantry Regiments total" across the
@@ -407,6 +422,12 @@ export interface Nation {
    * e.g. Russian Light batteries: "1 per 6 infantry battalions in the army" →
    * { capUnitIds: ["ru-light-arty-half", "ru-light-arty"], perUnitIds: [<all infantry battalions>], ratio: 6, label: "Light batteries" }
    */
+  /**
+   * Units that are limited across the whole army, whichever brigade types they're taken in, e.g. the
+   * Peninsular British "Brunswick Light Infantry (only unit such per army)", offered in both the Infantry
+   * Brigade and the KGL Light Brigade
+   */
+  armyUnitCaps?: { unitIds: string[]; max: number; label: string }[];
   unitRatioCaps?: {
     capUnitIds: string[];
     /** Count `capUnitIds` only in these brigade types (e.g. the Divisional Artillery, not a cavalry brigade's own battery) */

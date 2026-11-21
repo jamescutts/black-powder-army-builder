@@ -856,7 +856,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "pb-brig-cmd-8",
-      "note": "If at least 2 other British brigades are taken (Middle/Late)",
+      "note": "If at least 2 other British brigades are taken (Infantry, Light or KGL)",
       "slots": [
         {
           "label": "Foot Guard Battalion",
@@ -877,7 +877,10 @@
       ],
       "requires": {
         "brigadeTypeIds": [
-          "pb-infantry-brigade"
+          "pb-infantry-brigade",
+          "pb-light-brigade",
+          "pb-kgl-brigade",
+          "pb-kgl-light-brigade"
         ],
         "min": 2
       },
@@ -1517,10 +1520,22 @@
             "pb-portuguese-arty"
           ],
           "min": 1,
-          "max": 1
+          "max": 1,
+          "unitCaps": [
+            {
+              "unitId": "pb-portuguese-arty",
+              "armyMax": 99,
+              "requiresBrigades": {
+                "brigadeTypeIds": [
+                  "pb-portuguese-infantry-brigade"
+                ],
+                "min": 1
+              }
+            }
+          ]
         }
       ],
-      "note": "One battery per 6 infantry battalions in the army (5 in the Late period): Royal batteries go with a British brigade, Portuguese ones with a Portuguese brigade",
+      "note": "One battery per 6 infantry battalions in the army (5 in the Late period). Royal batteries go with a British brigade and Portuguese ones with a Portuguese brigade, so a Portuguese battery needs a Portuguese Infantry Brigade.",
       "options": [
         {
           "id": "veteran-portuguese",
@@ -1595,7 +1610,6 @@
     "The Light Brigade takes one further unit in the Middle period, up to two in the Late.",
     "Detached Elite Companies: a brigade's Line battalions can lose their Light companies (and Mixed Formation) and/or Grenadier companies (and 1 Hand-to-Hand). Two battalions' companies make a Tiny unit, three a Small unit, four a standard one, for any infantry brigade; a battalion that loses both becomes Small. Not built here.",
     "Household Cavalry saw little Peninsular action, so the book leaves them out of the lists, but you can take one to three at the listed cost.",
-    "Brunswick Light Infantry is one unit per army, whether in an Infantry Brigade or the KGL Light Brigade; the builder checks each brigade type separately.",
     "The chapter (p. 48) makes KGL Light Infantry Reliable, Elite 4+; the list's table (p. 99) is followed.",
     "Half batteries cost what the Options boxes take off (Royal 15, Horse 16, Portuguese 13), with the half battery stat line on p. 101 (2-1-1, Stamina 1).",
     "Named commanders have no official points cost in this supplement; they're priced here at the Divisional Commander cost for their Staff Rating, so adjust as you agree."
@@ -1648,5 +1662,14 @@
     "Gallop at Anything: +1 to Charge orders and Ferocious Charge, but the unit must make a breakthrough move if allowed, even off the table; British cavalry suffer +2 to their Command roll when they leave the table like this.",
     "Heavy Cavalry D1: Dragoons add one to any combat result, rather than between one and three.",
     "Shrapnel: British guns can fire at medium range with 3 dice, but need 5s to hit."
+  ],
+  "armyUnitCaps": [
+    {
+      "unitIds": [
+        "pb-brunswick-light"
+      ],
+      "max": 1,
+      "label": "Brunswick Light Infantry battalion"
+    }
   ]
 }

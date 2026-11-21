@@ -764,7 +764,10 @@ src/data/supplements/
                 <Table.Td>
                   Caps the total unit count across all (or selected) slots in a single brigade
                   instance, e.g. &quot;max 10 battalions per Infantry Brigade&quot; →{" "}
-                  <Code>{`{ max: 10, countSlotIndices: [0,1,2] }`}</Code>.
+                  <Code>{`{ max: 10, countSlotIndices: [0,1,2] }`}</Code>. Optional <Code>min</Code>{" "}
+                  asks for a fewest, <Code>weights</Code> counts some units as less than one (a
+                  half-battalion → <Code>{`{ "sp-light-half": 0.5 }`}</Code>) and <Code>noun</Code>{" "}
+                  names what&apos;s counted (&quot;regiments&quot;).
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
@@ -780,7 +783,17 @@ src/data/supplements/
                 <Table.Td>
                   This brigade type can&apos;t be added until other brigade types reach a combined
                   minimum count, e.g. Heavy Cavalry requiring 2 Infantry Brigades first →{" "}
-                  <Code>{`{ brigadeTypeIds: ["fr-infantry-brigade"], min: 2 }`}</Code>.
+                  <Code>{`{ brigadeTypeIds: ["fr-infantry-brigade"], min: 2 }`}</Code>. Give a list
+                  when several must all be met, e.g. 3 Infantry Brigades and a Cavalry Brigade.
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td><Code>mixLimit</Code></Table.Td>
+                <Table.Td>
+                  A brigade mostly of one class with only a few of another, e.g. &quot;Dragoons
+                  with up to one Chasseur regiment, or Chasseurs with up to one Dragoon
+                  regiment&quot; →{" "}
+                  <Code>{`{ groups: [{ unitIds: ["pf-dragoon"], label: "Dragoons" }, { unitIds: ["pf-line-light-cav"], label: "Chasseurs" }], maxOthers: 1 }`}</Code>.
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
@@ -850,6 +863,17 @@ src/data/supplements/
     "maxPercent": 25,
     "label": "Imperial Guard brigades"
   }
+]
+`}</CodeBlock>
+          <SubHeading>Units limited across the army</SubHeading>
+          <Text size="sm">
+            <Code>armyUnitCaps</Code> limits units across the whole army, whichever brigade
+            types they&apos;re taken in, e.g. &quot;Brunswick Light Infantry (only unit such per
+            army)&quot; offered in two brigade types:
+          </Text>
+          <CodeBlock>{`
+"armyUnitCaps": [
+  { "unitIds": ["pb-brunswick-light"], "max": 1, "label": "Brunswick Light Infantry battalion" }
 ]
 `}</CodeBlock>
           <SubHeading>Unit-to-unit ratio caps</SubHeading>

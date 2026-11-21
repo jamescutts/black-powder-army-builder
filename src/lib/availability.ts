@@ -4,10 +4,12 @@ import {
   armyUnitCountRequirementMet,
   brigadeCountRequirementMet,
   choiceTaken,
+  battalionCount,
   choicesTaken,
   countUnitsInArmy,
   countUnitsInInstance,
   effectiveUnitCapMax,
+  mixedOthers,
   slotUnitCount,
   unitCapRequirementMet,
 } from "@/lib/brigadeLimits";
@@ -49,14 +51,16 @@ export function slotLockedReason(place: SlotPlace, slot: BrigadeSlot): string | 
   return null;
 }
 
-/** Why the brigade can't take another unit in this slot because it's at its battalion limit, or null */
-export function brigadeFullReason(place: SlotPlace): string | null {
+/**
+ * Why the brigade can't take another unit in this slot because it's at its battalion limit, or null. A
+ * unit the rule weighs as less than one (a half-battalion) fits while there's room for its share.
+ */
+export function brigadeFullReason(place: SlotPlace, unitId?: string): string | null {
   const { bt, instance, slotIndex } = place;
   const cap = bt.maxBattalions;
   if (!cap || (cap.countSlotIndices && !cap.countSlotIndices.includes(slotIndex))) return null;
-  const indices = cap.countSlotIndices ?? bt.slots.map((_, i) => i);
-  const count = indices.reduce((s, i) => s + slotUnitCount(instance, i), 0);
-  return count >= cap.max ? `The brigade has its ${cap.max} battalions` : null;
+  const weight = unitId ? (cap.weights?.[unitId] ?? 1) : 1;
+  return battalionCount(bt, instance) + weight > cap.max ? `The brigade has its ${cap.max} ${cap.noun ?? "battalions"}` : null;
 }
 
 /**
@@ -66,8 +70,21 @@ export function brigadeFullReason(place: SlotPlace): string | null {
 export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: RosterUnitLine[], unitId: string): string | null {
   const { nation, roster, bt, instance, slotIndex } = place;
 
-  const full = brigadeFullReason(place);
+  const full = brigadeFullReason(place, unitId);
   if (full) return full;
+
+  // Units limited across the army whichever brigade they're in (the Peninsular Brunswick Light Infantry)
+  for (const cap of nation.armyUnitCaps ?? []) {
+    if (cap.unitIds.includes(unitId) && countUnitsInArmy(roster.brigadeInstances, cap.unitIds) >= cap.max) {
+      return `Up to ${cap.max} ${cap.label} in the army`;
+    }
+  }
+
+  // A brigade mostly of one class, with only so many of another (Peninsular French cavalry)
+  if (bt.mixLimit && mixedOthers(bt, instance, unitId) > bt.mixLimit.maxOthers) {
+    const n = bt.mixLimit.maxOthers;
+    return `Up to ${n} regiment${n === 1 ? "" : "s"} of another kind in the brigade`;
+  }
 
   // One kind can't outnumber another in the brigade (Austria's Advanced Guard: cavalry ≤ infantry)
   const balance = bt.atLeastAsMany;
@@ -146,7 +163,9 @@ export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: Ro
   const cap = slot.unitCaps?.find((c) => c.unitId === unitId);
   if (cap) {
     if (!unitCapRequirementMet(cap, roster.brigadeInstances)) {
-      return `Needs ${cap.requiresBrigades!.min} brigades first`;
+      const { brigadeTypeIds, min } = cap.requiresBrigades!;
+      const names = brigadeTypeIds.map((id) => nation.brigades.find((b) => b.id === id)?.name ?? id).join(" or ");
+      return min === 1 ? `Needs a ${names} first` : `Needs ${min} × ${names} first`;
     }
     const inArmy = roster.brigadeInstances
       .filter((bi) => bi.brigadeTypeId === bt.id)
@@ -195,7 +214,7 @@ export function unitBlockedInRegimentSlot(
   unitId: string
 ): string | null {
   const { nation } = place;
-  const full = brigadeFullReason(place);
+  const full = brigadeFullReason(place, unitId);
   if (full) return full;
   if (sub.singleUnitType) {
     const other = lines.find((l) => l.qty > 0 && l.unitId !== unitId);
@@ -246,10 +265,8 @@ export function regimentBlockedReason(place: SlotPlace): string | null {
 
   const cap = bt.maxBattalions;
   if (cap && (!cap.countSlotIndices || cap.countSlotIndices.includes(slotIndex))) {
-    const indices = cap.countSlotIndices ?? bt.slots.map((_, i) => i);
-    const count = indices.reduce((s, i) => s + slotUnitCount(instance, i), 0);
     const needs = regDef.slots.reduce((s, sub) => s + sub.min, 0);
-    if (count + needs > cap.max) return `The brigade has its ${cap.max} battalions`;
+    if (battalionCount(bt, instance) + needs > cap.max) return `The brigade has its ${cap.max} ${cap.noun ?? "battalions"}`;
   }
   return null;
 }
