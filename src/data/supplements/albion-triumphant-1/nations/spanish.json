@@ -389,7 +389,7 @@
           "sp-light-half": 0.5
         }
       },
-      "note": "2-3 Light battalions (Early), or 1-2 Light or Militia battalions (Middle, Late); each Light battalion can be two half-battalions",
+      "note": "Each full Light battalion can be two Small half-battalions instead",
       "periodOverrides": {
         "early": {
           "maxBattalions": {
@@ -747,8 +747,6 @@
   ],
   "notes": [
     "Pick the list's campaign period (Early 1807-1809, Middle 1810-1812, Late 1813-1814) at the top of the builder: choices from other periods are hidden, and each period's own limits apply. On Any, every period's choices are offered with their periods in their names.",
-    "Each full Light battalion a Vanguard Brigade can take can be two Small half-battalions instead.",
-    "Up to two Cavalry Brigade regiments can be upgraded to Guard (Guard Light or Guard Heavy Cavalry).",
     "The chapter makes Light Infantry Shooting 2 (p. 56) and Guard Light Cavalry 6/-/4/3 without Elite 5+ (p. 57), and adds Guerrillas, which the list doesn't offer; the list's table (p. 110) is followed."
   ],
   "specialRules": [

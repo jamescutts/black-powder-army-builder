@@ -1008,7 +1008,6 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "pb-brig-cmd-8",
-      "note": "Middle/Late campaign periods",
       "slots": [
         {
           "label": "Light Infantry Battalion",
@@ -1791,7 +1790,7 @@
     }
   ],
   "notes": [
-    "Pick the list's campaign period (Early 1806-1808, Middle 1809-1812, Late 1813-1814) at the top of the builder: choices from other periods are greyed out, and each period's own limits apply. On Any, every period's choices are offered with their periods in their names, and the limits are the Middle and Late ones.",
+    "Pick the list's campaign period (Early 1806-1808, Middle 1809-1812, Late 1813-1814) at the top of the builder: choices from other periods are hidden, and each period's own limits apply. On Any, every period's choices are offered with their periods in their names, and the limits are the Middle and Late ones.",
     "Detached Elite Companies: a brigade's Line battalions can lose their Light companies (and Mixed Formation) and/or Grenadier companies (and 1 Hand-to-Hand). Two battalions' companies make a Tiny unit, three a Small unit, four a standard one, for any infantry brigade; a battalion that loses both becomes Small. Not built here.",
     "Household Cavalry saw little Peninsular action, so the book leaves them out of the lists, but you can take one to three at the listed cost.",
     "The chapter (p. 48) makes KGL Light Infantry Reliable, Elite 4+; the list's table (p. 99) is followed.",
