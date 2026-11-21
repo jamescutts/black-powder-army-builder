@@ -2,7 +2,7 @@
   "id": "prussia",
   "name": "Prussia 1812",
   "blurb": "Prussia's Auxiliary Corps under Yorck, a reluctant ally serving alongside MacDonald's X Corps.",
-  "flagFile": "/flags/prussia.svg",
+  "flagFile": "/flags/prussia.png",
   "units": [
     {
       "id": "pr-div-cmd",

@@ -76,7 +76,16 @@ export function SiteFooter() {
               (James Cutts)
             </p>
             <p className="site-footer-muted">
-              Paintings from Wikimedia Commons, all public domain.
+              Paintings from Wikimedia Commons, all public domain. Prussian flag by{" "}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Flag_of_the_Kingdom_of_Prussia_(1803-1892).svg"
+                target="_blank"
+                rel="noreferrer"
+                className="site-footer-link"
+              >
+                David Liuzzo
+              </a>
+              .
             </p>
             <p className="site-footer-muted">
               An unofficial, fan-made tool. <em>Black Powder</em> and its supplements are &copy;{" "}

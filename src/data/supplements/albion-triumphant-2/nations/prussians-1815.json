@@ -2,7 +2,7 @@
   "id": "prussians-1815",
   "name": "The Prussians 1815",
   "blurb": "Prussia's rebuilt army of 1815, fielding regular, Reserve and Landwehr troops.",
-  "flagFile": "/flags/prussia.svg",
+  "flagFile": "/flags/prussia.png",
   "units": [
     {
       "id": "pr15-corps-cmd",

@@ -24,10 +24,11 @@ async function fonts() {
   ];
 }
 
-/** A flag from /public as a data address, so the image renderer can draw it */
+/** A flag from /public as a data address, so the image renderer can draw it (most are SVG; Prussia's is PNG) */
 export async function flagDataUrl(publicPath: string) {
-  const svg = await readFile(join(process.cwd(), "public", publicPath.replace(/^\//, "")));
-  return `data:image/svg+xml;base64,${svg.toString("base64")}`;
+  const file = await readFile(join(process.cwd(), "public", publicPath.replace(/^\//, "")));
+  const type = publicPath.endsWith(".png") ? "image/png" : "image/svg+xml";
+  return `data:${type};base64,${file.toString("base64")}`;
 }
 
 /** The site card: the name large in its script, the tagline and what's covered */
