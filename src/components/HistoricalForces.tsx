@@ -257,7 +257,16 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
         title={battle.name}
         dates={battle.date}
         summary={battle.summary}
-        stats={sides.map((side) => ({ value: battle.forces.filter((f) => f.side === side).length, label: side }))}
+        stats={sides.map((side) => {
+          const sideForces = battle.forces.filter((f) => f.side === side);
+          const units = sideForces.reduce((sum, force) => {
+            const base = getNation(force.nationId)!;
+            const nation = nationForPeriod(base, force.period);
+            const { roster } = rosterFromForce(nation, force);
+            return sum + unitCount(roster);
+          }, 0);
+          return { value: units, label: `${side} ${units === 1 ? "unit" : "units"}` };
+        })}
       />
     <Container size="xl" py="xl">
       <Stack gap="lg">
