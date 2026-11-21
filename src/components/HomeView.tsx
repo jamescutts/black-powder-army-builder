@@ -6,6 +6,7 @@ import { Anchor, Box, Button, Card, Container, Grid, Group, SimpleGrid, Stack, T
 import { IconArrowRight, IconDownload } from "@tabler/icons-react";
 import { ARTWORK } from "@/data/artwork";
 import { useInstallApp } from "@/components/InstallApp";
+import { AppCallout } from "@/components/AppCallout";
 
 export interface HomeCounts {
   rulesets: number;
@@ -359,6 +360,11 @@ export function HomeView({
           </Stack>
         </Band>
       )}
+
+      {/* What the installed app gets you, and how to install it */}
+      <Band tone="tint">
+        <AppCallout />
+      </Band>
     </Stack>
   );
 }
