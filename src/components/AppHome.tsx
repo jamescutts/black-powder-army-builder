@@ -139,8 +139,8 @@ export function AppHome({ supplements, armies }: { supplements: HomeSupplement[]
 
 /**
  * Every army as flag tiles, book by book, in two rows that scroll sideways: 2 columns in view on a phone
- * and 4 where there's room, with the next column peeking in to show there are more. No scrollbar; with a
- * mouse, which can't swipe, ‹ › buttons by the heading page through instead.
+ * and 4 where there's room, with the next column peeking in to show there are more. No scrollbar: ‹ ›
+ * buttons by the heading page through, for a mouse (which can't swipe) and as a plain signpost on a phone.
  */
 function AllArmies({ armies }: { armies: HomeArmy[] }) {
   const scroller = useRef<HTMLDivElement>(null);

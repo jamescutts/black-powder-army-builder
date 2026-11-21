@@ -1557,13 +1557,15 @@ a.app-list-row:active {
 
 /* Every army as flag tiles in two rows, scrolling sideways: 2 columns in view on a phone and 4 where
    there's room, each a little narrower than that so the next column peeks in to show there are more.
-   Tiles snap to the left edge. No scrollbar: touch swipes, and a mouse has the ‹ › buttons */
+   Tiles snap to the left edge. No scrollbar: ‹ › buttons by the heading page through, as well as
+   swiping */
 .app-army-scroll {
   --army-cols: 2.25;
   --army-gap: 10px;
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: repeat(2, auto);
+  /* Both rows as tall as the tallest tile, so the rows match */
+  grid-template-rows: repeat(2, 1fr);
   grid-auto-columns: calc((100% - var(--army-gap) * (var(--army-cols) - 1)) / var(--army-cols));
   gap: var(--army-gap);
   overflow-x: auto;
@@ -1574,17 +1576,6 @@ a.app-list-row:active {
 
 .app-army-scroll::-webkit-scrollbar {
   display: none;
-}
-
-/* The ‹ › buttons, only for a mouse or trackpad (touch screens swipe) */
-.app-army-pager {
-  display: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .app-army-pager {
-    display: flex;
-  }
 }
 
 @media (min-width: 48em) {
