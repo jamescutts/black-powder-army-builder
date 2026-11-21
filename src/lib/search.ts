@@ -1,6 +1,7 @@
-// Site search: matching typed words against rule sets, supplements and army lists in the browser.
+// Site search: matching typed words against rule sets, supplements and army lists in the browser, and
+// the armies saved on this device.
 
-export type SearchKind = "rules" | "supplement" | "nation";
+export type SearchKind = "army" | "rules" | "supplement" | "nation";
 
 /** One searchable page: kind, title, description, address and other words that should find it */
 export interface SearchEntry {
@@ -32,8 +33,9 @@ export function buildIndex(entries: SearchEntry[]): Indexed[] {
   });
 }
 
-// Rule sets before supplements before army lists when they match equally well: there are far fewer of them
-const KIND_ORDER: Record<SearchKind, number> = { rules: 0, supplement: 1, nation: 2 };
+// Your own armies first when they match equally well, as they're most likely what you're after; then rule
+// sets before supplements before army lists, as there are far fewer of them
+const KIND_ORDER: Record<SearchKind, number> = { army: 0, rules: 1, supplement: 2, nation: 3 };
 
 /** Entries where every typed word starts a word in the title or other words, best matches first */
 export function search(index: Indexed[], query: string, limit = 12): SearchEntry[] {
@@ -55,6 +57,12 @@ export function search(index: Indexed[], query: string, limit = 12): SearchEntry
             : 3;
     scored.push({ e, score });
   }
-  scored.sort((a, b) => a.score - b.score || KIND_ORDER[a.e.k] - KIND_ORDER[b.e.k] || a.e.t.length - b.e.t.length);
+  // Then shorter titles first, except your armies, which keep the order they came in (newest first)
+  scored.sort(
+    (a, b) =>
+      a.score - b.score ||
+      KIND_ORDER[a.e.k] - KIND_ORDER[b.e.k] ||
+      (a.e.k === "army" ? 0 : a.e.t.length - b.e.t.length)
+  );
   return scored.slice(0, limit).map((s) => s.e);
 }
