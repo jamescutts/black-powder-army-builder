@@ -36,6 +36,7 @@ export function OfflineSupport() {
       if (status?.type === "network") return reportNetwork(status.ok);
       if (status?.type !== "offline-status") return;
       if (status.network !== undefined) reportNetwork(status.network);
+      refreshIfOutdated(status.version);
       if (status.warmed || warming) return;
       // A worker from another build (this page is older or newer than it) would save the wrong files
       if (status.version !== BUILD_VERSION) return;
@@ -64,6 +65,35 @@ export function OfflineSupport() {
   }, []);
 
   return null;
+}
+
+const REFRESHED_KEY = "ab-refreshed-for-version";
+
+/**
+ * Refreshes the page when the worker now in charge is from a newer build than the page itself. That
+ * happens just after a deploy: the old worker answers first and, if the network is slow (a server
+ * waking up), shows its saved copy of the page; then the new worker takes over and drops the old
+ * version's saved files, so anything the old page still asks for that's since been renamed or removed
+ * (a flag that became a PNG) shows broken. Straight away if the page has only just loaded, otherwise the
+ * next time it's switched away from, so nothing changes under someone's fingers (armies are saved as
+ * they're changed anyway). Once per version, so it can't loop. Build versions are timestamps in base 36
+ * (next.config.mjs), so they compare as numbers.
+ */
+function refreshIfOutdated(workerVersion: string) {
+  if (!BUILD_VERSION || !(parseInt(workerVersion, 36) > parseInt(BUILD_VERSION, 36))) return;
+  try {
+    if (sessionStorage.getItem(REFRESHED_KEY) === workerVersion) return;
+    sessionStorage.setItem(REFRESHED_KEY, workerVersion);
+  } catch {
+    return;
+  }
+  if (performance.now() < 10_000) {
+    location.reload();
+    return;
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") location.reload();
+  });
 }
 
 function whenIdle(fn: () => void) {
