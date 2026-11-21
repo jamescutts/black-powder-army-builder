@@ -54,10 +54,6 @@ export const medinaDeRioseco = planned("medina-de-rioseco", "Medina de Rioseco",
   "Bessières routed the Spanish armies of Cuesta and Blake in Old Castile, opening the road to Madrid for King Joseph.");
 export const bailen = planned("bailen", "Bailén", "16–19 July 1808", P,
   "Castaños's Spanish army trapped Dupont's corps in the heat of Andalusia and forced it to surrender, the first great defeat of a French army in the field.");
-export const rolica = planned("rolica", "Roliça", "17 August 1808", P,
-  "Wellesley's first battle in Portugal, driving Delaborde's small force back from one hill position to the next.");
-export const vimeiro = planned("vimeiro", "Vimeiro", "21 August 1808", P,
-  "Junot attacked Wellesley's army on the ridges around Vimeiro and was beaten by the British line's firepower.");
 export const somosierra = planned("somosierra", "Somosierra", "30 November 1808", P,
   "The Polish light horse of the Guard charged up the mountain pass through the Spanish batteries, opening the way to Madrid.");
 // Battles still to come can have their painting already
@@ -78,8 +74,6 @@ export const bussaco = planned("bussaco", "Bussaco", "27 September 1810", P,
   "Masséna's corps climbed the long ridge of Bussaco against Wellington's Anglo-Portuguese line and were thrown back down it.");
 export const fuentesDeOnoro = planned("fuentes-de-onoro", "Fuentes de Oñoro", "3–5 May 1811", P,
   "Masséna's attempt to relieve Almeida, fought out in the village's streets and on the open plain to its south.");
-export const albuera = planned("albuera", "Albuera", "16 May 1811", P,
-  "Beresford's British, Portuguese and Spanish held Soult in one of the bloodiest battles of the war, after Polish lancers rode down Colborne's brigade.");
 export const salamanca = planned("salamanca", "Salamanca", "22 July 1812", P,
   "Wellington caught Marmont's army strung out on the march and broke it in an afternoon.");
 export const vitoria = planned("vitoria", "Vitoria", "21 June 1813", P,

@@ -1,0 +1,676 @@
+{
+  "id": "vimeiro",
+  "name": "Vimeiro",
+  "date": "21 August 1808",
+  "campaign": "peninsular-war",
+  "summary": "Junot came out of Lisbon to attack Wellesley's army around the village of Vimeiro. His columns were shot to pieces by the British line on Vimeiro hill and on the eastern ridge, and by midday the French were in retreat. Wellesley was stopped from pursuing by his newly arrived superiors, and the Convention of Cintra followed.",
+  "sources": [
+    {
+      "label": "Battle of Vimeiro order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro_order_of_battle"
+    },
+    {
+      "label": "Battle of Vimeiro (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vimeiro"
+    },
+    {
+      "label": "Ron McGuigan, The British Army in Portugal and Spain: its order of battle (Napoleon Series)",
+      "url": "https://www.napoleon-series.org/military-info/battles/1808/Peninsula/BritishArmy/c_britarmy2.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "vimeiro-hill",
+      "nationId": "peninsular-british",
+      "name": "Vimeiro Hill",
+      "formation": "Fane's and Anstruther's Brigades",
+      "side": "Anglo-Portuguese",
+      "summary": "Held the hill before the village against Delaborde's columns and Kellermann's grenadiers; the 20th Light Dragoons charged the broken French and were cut up in turn.",
+      "notes": [
+        "Fane's brigade had one Line battalion where the list's brigade takes two, and Anstruther's two Light battalions where it allows one in four; these show as historical departures.",
+        "The 20th Light Dragoons (240 men) are the list's attached Small Light Dragoon regiment.",
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Sir Arthur Wellesley, Duke of Wellington, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-wellington"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Fane's Brigade",
+          "commander": {
+            "name": "Brig-Gen Henry Fane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/50th Foot"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "5/60th Rifles"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "2/95th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Anstruther's Brigade",
+          "commander": {
+            "name": "Brig-Gen Robert Anstruther",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/9th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/43rd Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/52nd Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/97th Foot"
+            },
+            {
+              "unit": "pb-light-dragoon-small",
+              "name": "20th Light Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "vimeiro-eastern-ridge",
+      "nationId": "peninsular-british",
+      "name": "The Eastern Ridge",
+      "formation": "Ferguson's, Nightingall's, Bowes's and Acland's Brigades",
+      "side": "Anglo-Portuguese",
+      "summary": "Moved across to the ridge north-east of the village as Junot's flank march appeared, it broke Solignac's and then Brenier's columns at Ventosa and took their guns.",
+      "notes": [
+        "The 20th Foot had 401 men in seven and a half companies, so it's Small.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Ronald Ferguson",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Ferguson's Brigade",
+          "commander": {
+            "name": "Maj-Gen Ronald Ferguson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "36th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/40th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/71st Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Nightingall's Brigade",
+          "commander": {
+            "name": "Brig-Gen Miles Nightingall",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "29th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/82nd Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Bowes's Brigade",
+          "commander": {
+            "name": "Brig-Gen Barnard Bowes",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/6th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/32nd Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Acland's Brigade",
+          "commander": {
+            "name": "Brig-Gen Wroth Acland",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2nd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "20th Foot (7½ companies)",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "1/95th Rifles (two companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "vimeiro-reserve",
+      "nationId": "peninsular-british",
+      "name": "Hill, Craufurd and Trant",
+      "formation": "The western ridge and reserve",
+      "side": "Anglo-Portuguese",
+      "summary": "Wellesley's reserve on the western ridge behind the village, with Trant's Portuguese, little engaged as the fighting went to the hill and the eastern ridge.",
+      "notes": [
+        "Spencer, Wellesley's second in command, leads it. Trant had three Portuguese line regiments where the list's brigade takes two, which shows as a historical departure.",
+        "The Portuguese cavalry regiments had about a hundred men each, so they're Small; the Lisbon police cavalry (41) are left out. The Porto Caçadores are the list's untried early Caçadores.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Brent Spencer",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Hill's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rowland Hill",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/9th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/38th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Craufurd's Brigade",
+          "commander": {
+            "name": "Brig-Gen Catlin Craufurd",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "91st Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Trant's Brigade",
+          "commander": {
+            "name": "Lt-Col Nicholas Trant",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "12th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "21st Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "24th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "Porto Caçadores",
+              "options": [
+                "cacadores-green"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-cavalry-brigade",
+          "name": "Portuguese Cavalry",
+          "units": [
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "6th Cavalry",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "11th Cavalry",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "12th Cavalry",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Portuguese Battery (4th Artillery)",
+          "units": [
+            {
+              "unit": "pb-portuguese-arty",
+              "name": "Portuguese Battery (4th Artillery)"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "vimeiro-delaborde",
+      "nationId": "peninsular-french",
+      "name": "Delaborde's Division",
+      "formation": "Army of Portugal (Junot)",
+      "side": "French",
+      "summary": "Attacked Vimeiro hill head on in column; Thomières's and then Brenier's brigades were broken by the British line, Brenier later attacking again at Ventosa, where he was wounded and taken.",
+      "notes": [
+        "The two companies of the 4th Swiss are Small.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Delaborde",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Brenier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Brenier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "70e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/70e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "2e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "III/2e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "III/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Thomières's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thomières",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "86e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/86e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/86e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "4e Suisse",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "4e Suisse (two companies)",
+                  "options": [
+                    "small"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "vimeiro-loison",
+      "nationId": "peninsular-french",
+      "name": "Loison's Division",
+      "formation": "Army of Portugal (Junot)",
+      "side": "French",
+      "summary": "Half of it went straight at Vimeiro hill with Delaborde; Solignac's brigade marched round to the eastern ridge, where it was broken by Ferguson.",
+      "notes": [
+        "Each regiment's third battalion served, most of them over 1,000 strong; one battalion per brigade could be Large.",
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Loison",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Solignac's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Solignac",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "12e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "III/12e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "15e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "III/15e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "58e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "III/58e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Charlot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Charlot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "32e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "III/32e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "82e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "III/82e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "vimeiro-reserve-fr",
+      "nationId": "peninsular-french",
+      "name": "Junot's Reserve",
+      "formation": "Kellermann's grenadiers and Margaron's cavalry",
+      "side": "French",
+      "summary": "Junot's last throw: Kellermann's converged grenadiers went up Vimeiro hill and were thrown back like the rest, while Margaron's dragoons covered the retreat.",
+      "notes": [
+        "Junot is the book's named commander.",
+        "Without the army's infantry divisions there are no Infantry Brigades, which the list needs and which its cavalry is allowed by; these show as historical departures. The squadron of volunteer cavalry is left out.",
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named General Jean Andoche Junot, 1st Duc d'Abrantès, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pf-cmd-junot"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-reserve-infantry-brigade",
+          "name": "Kellermann's Grenadiers",
+          "commander": {
+            "name": "Gén. de Division Kellermann",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-combined-grenadier",
+              "name": "I/1st Reserve Grenadiers"
+            },
+            {
+              "unit": "pf-combined-grenadier",
+              "name": "II/1st Reserve Grenadiers"
+            },
+            {
+              "unit": "pf-combined-grenadier",
+              "name": "I/2nd Reserve Grenadiers"
+            },
+            {
+              "unit": "pf-combined-grenadier",
+              "name": "II/2nd Reserve Grenadiers"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Margaron's Cavalry",
+          "commander": {
+            "name": "Gén. de Brigade Margaron",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "3rd Provisional Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "4th Provisional Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "5th Provisional Dragons"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "1st Provisional Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    }
+  ],
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Batalha_do_Vimeiro.jpg/960px-Batalha_do_Vimeiro.jpg",
+    "title": "Batalha do Vimeiro",
+    "artist": "Domenico Schiopetta and J. Cardini",
+    "date": "1810–12",
+    "page": "https://commons.wikimedia.org/wiki/File:Batalha_do_Vimeiro.jpg",
+    "focus": "50% 45%"
+  }
+}

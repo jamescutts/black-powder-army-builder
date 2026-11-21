@@ -1,13 +1,15 @@
 import type { HistoricalBattle, HistoricalCampaign, HistoricalForce } from "../types";
 import { getNation } from "../index";
+import albuera from "./albuera.json";
 import eckau from "./eckau.json";
 import ligny from "./ligny.json";
 import mesoten from "./mesoten.json";
 import quatreBras from "./quatre-bras.json";
+import rolica from "./rolica.json";
+import vimeiro from "./vimeiro.json";
 import waterloo from "./waterloo.json";
 import wavre from "./wavre.json";
 import {
-  albuera,
   bailen,
   berezina,
   borodino,
@@ -27,7 +29,6 @@ import {
   ostrovno,
   polotsk,
   polotsk2,
-  rolica,
   salamanca,
   saltanovka,
   smolensk,
@@ -37,7 +38,6 @@ import {
   tarutino,
   toulouse,
   valutino,
-  vimeiro,
   vitoria,
   vyazma,
 } from "./planned";
@@ -55,11 +55,11 @@ export const campaigns: HistoricalCampaign[] = [
     name: "The Peninsular War",
     dates: "1808–1814",
     art: {
-      src: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Battle_of_Albuhera%2C_by_William_Barnes_Wollen.jpg",
-      title: "The Flag, Albuhera, 16 May 1811",
-      artist: "William Barnes Wollen",
-      date: "c. 1912",
-      page: "https://commons.wikimedia.org/wiki/File:Battle_of_Albuhera,_by_William_Barnes_Wollen.jpg",
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Louis-Fran%C3%A7ois_Lejeune_-_Battle_of_Somosierra%2C_November_30%2C_1808.jpg/960px-Louis-Fran%C3%A7ois_Lejeune_-_Battle_of_Somosierra%2C_November_30%2C_1808.jpg",
+      title: "The Battle of Somosierra",
+      artist: "Louis-François Lejeune",
+      date: "1810",
+      page: "https://commons.wikimedia.org/wiki/File:Louis-Fran%C3%A7ois_Lejeune_-_Battle_of_Somosierra,_November_30,_1808.jpg",
     },
     summary:
       "Six years of war in Spain and Portugal, as Wellington's British and Portuguese army, the Spanish and the guerrillas fought the French armies across the Peninsula, from Vimeiro and Talavera to Salamanca and Vitoria.",
@@ -98,15 +98,15 @@ const schedule: HistoricalBattle[] = [
   // The Peninsular War
   medinaDeRioseco,
   bailen,
-  rolica,
-  vimeiro,
+  rolica as HistoricalBattle,
+  vimeiro as HistoricalBattle,
   somosierra,
   corunna,
   talavera,
   ocana,
   bussaco,
   fuentesDeOnoro,
-  albuera,
+  albuera as HistoricalBattle,
   salamanca,
   vitoria,
   sorauren,

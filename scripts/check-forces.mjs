@@ -69,6 +69,8 @@ for (const battle of battles) {
           const opt = bt?.options?.find((x) => x.id === o);
           if (!opt) problems.push(`${bi.name}: ${bt?.name} has no option "${o}"`);
           else if (!opt.appliesTo.includes(l.unitId)) problems.push(`${bi.name}: "${o}" doesn't apply to ${l.unitId}`);
+          // A regiment's upgrade (the French Light, Prussian Guard status) goes on the regiment, not a unit
+          else if (opt.scope === "regiment") problems.push(`${bi.name}: "${o}" is the regiment's, not ${l.name ?? l.unitId}'s`);
         }
       }
     }

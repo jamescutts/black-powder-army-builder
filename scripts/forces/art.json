@@ -43,6 +43,21 @@
       "date": "1835",
       "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
       "focus": "50% 38%"
+    },
+    "vimeiro": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Batalha_do_Vimeiro.jpg/960px-Batalha_do_Vimeiro.jpg",
+      "title": "Batalha do Vimeiro",
+      "artist": "Domenico Schiopetta and J. Cardini",
+      "date": "1810–12",
+      "page": "https://commons.wikimedia.org/wiki/File:Batalha_do_Vimeiro.jpg",
+      "focus": "50% 45%"
+    },
+    "albuera": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Battle_of_Albuhera%2C_by_William_Barnes_Wollen.jpg",
+      "title": "The Flag, Albuhera, 16 May 1811",
+      "artist": "William Barnes Wollen",
+      "date": "c. 1912",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Albuhera,_by_William_Barnes_Wollen.jpg"
     }
   },
   "campaigns": {

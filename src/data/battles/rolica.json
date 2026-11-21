@@ -1,0 +1,423 @@
+{
+  "id": "rolica",
+  "name": "Roliça",
+  "date": "17 August 1808",
+  "campaign": "peninsular-war",
+  "summary": "Wellesley's first battle in the Peninsula. Delaborde held a string of hill positions with a small division to delay the British march on Lisbon; Wellesley turned him out of the first, then out of the steep gullies of the second, with Ferguson's column working round the French right, and Delaborde fell back in good order.",
+  "sources": [
+    {
+      "label": "Battle of Roliça (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Roli%C3%A7a"
+    },
+    {
+      "label": "Stuart Hadaway, Roliça: a most important affair (Napoleon Series)",
+      "url": "https://www.napoleon-series.org/military-info/battles/1808/c_rolica1.html"
+    },
+    {
+      "label": "Ron McGuigan, The British Army in Portugal and Spain: its order of battle (Napoleon Series)",
+      "url": "https://www.napoleon-series.org/military-info/battles/1808/Peninsula/BritishArmy/c_britarmy2.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "rolica-centre",
+      "nationId": "peninsular-british",
+      "name": "Wellesley's Centre",
+      "formation": "The main column",
+      "side": "Anglo-Portuguese",
+      "summary": "The bulk of Wellesley's army, which pinned Delaborde in front. The 29th, pushing too far up a gully, was caught and its colonel killed, but the attack carried the heights.",
+      "notes": [
+        "Fane's light brigade was riflemen only, the 5/60th and four companies of the 2/95th, with no Line battalions for the list's Infantry Brigade; that shows as a historical departure.",
+        "The 6th Caçadores were held in reserve and are left out. The centre had twelve guns, shown as two batteries.",
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Sir Arthur Wellesley, Duke of Wellington, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-wellington"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Hill's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rowland Hill",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/9th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/38th Foot"
+            },
+            {
+              "unit": "pb-light-dragoon-small",
+              "name": "20th Light Dragoons (detachment)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Nightingall's Brigade",
+          "commander": {
+            "name": "Brig-Gen Miles Nightingall",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "29th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/82nd Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Craufurd's Brigade",
+          "commander": {
+            "name": "Brig-Gen Catlin Craufurd",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/50th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/91st Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Fane's Brigade",
+          "commander": {
+            "name": "Brig-Gen Henry Fane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-rifle-coys",
+              "name": "5/60th Rifles"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "2/95th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-cavalry-brigade",
+          "name": "Portuguese Cavalry",
+          "units": [
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "6th (Bragança) Cavalry"
+            },
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "12th (Miranda) Cavalry"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Light 6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Light 6-pdr Battery"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Light 6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Light 6-pdr Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "rolica-ferguson",
+      "nationId": "peninsular-british",
+      "name": "Ferguson's Column",
+      "formation": "The left flank march",
+      "side": "Anglo-Portuguese",
+      "summary": "Sent wide round the French right to cut them off, Ferguson's column came in late; its threat helped force Delaborde back from his second position.",
+      "notes": [
+        "The column had three companies of riflemen and six guns.",
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Ronald Ferguson",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Ferguson's Brigade",
+          "commander": {
+            "name": "Maj-Gen Ronald Ferguson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "36th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/40th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/71st Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "Rifle companies"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Bowes's Brigade",
+          "commander": {
+            "name": "Brig-Gen Barnard Bowes",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/6th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/32nd Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Light 6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Light 6-pdr Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "rolica-trant",
+      "nationId": "peninsular-british",
+      "name": "Trant's Portuguese",
+      "formation": "The right flank march",
+      "side": "Anglo-Portuguese",
+      "summary": "Trant's Portuguese marched round the French left to threaten their line of retreat.",
+      "notes": [
+        "Three Portuguese line regiments where the list's brigade takes two, and no British brigades for the Portuguese one to go with; these show as historical departures.",
+        "The 11th Cavalry had about fifty men, so it's Small.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Col Nicholas Trant",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Trant's Brigade",
+          "commander": {
+            "name": "Lt-Col Nicholas Trant",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "12th (Chaves) Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "21st (Valença) Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "24th (Bragança) Line"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-cavalry-brigade",
+          "name": "Cavalry",
+          "units": [
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "11th (Almeida) Cavalry",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "rolica-delaborde",
+      "nationId": "peninsular-french",
+      "name": "Delaborde's Division",
+      "formation": "Detached from Junot's Army of Portugal",
+      "side": "French",
+      "summary": "Five battalions, a few squadrons and five guns, outnumbered three or four to one, which held two positions in turn and got away with the loss of three guns.",
+      "notes": [
+        "The sources give the battalions but not their brigades at Roliça; they're grouped as Brenier and Thomières had them at Vimeiro.",
+        "The 26th Chasseurs were a single regiment where the list's Cavalry Brigade takes two, which shows as a historical departure.",
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Delaborde",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Brenier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Brenier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "70e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/70e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "2e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Thomières's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thomières",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "4e Suisse",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Suisse"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Cavalry",
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "26e Chasseurs"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery (five guns)",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery (five guns)"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    }
+  ]
+}
