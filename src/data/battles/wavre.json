@@ -20,13 +20,13 @@
       "summary": "Vandamme's leading division, sent straight at the bridges into Wavre town and thrown back again and again.",
       "notes": [
         "The 15e Léger brought three battalions, one more Light battalion than the list's one in four allows, which shows as a historical departure.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Lefol"
+          "name": "Gén. de Division Lefol",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -35,7 +35,7 @@
           "name": "Billiard's Brigade",
           "commander": {
             "name": "Gén. de Brigade Billiard",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -78,7 +78,7 @@
           "name": "Corsin's Brigade",
           "commander": {
             "name": "Gén. de Brigade Corsin",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -124,13 +124,13 @@
       "summary": "Attacked the bridges in Wavre itself; Habert was badly wounded leading his men across.",
       "notes": [
         "The 2e Régiment Étranger (Swiss) also served in Dupeyroux's brigade; the order of battle gives no battalion count, so it's left out.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Habert"
+          "name": "Gén. de Division Habert",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -139,7 +139,7 @@
           "name": "Gengoult's Brigade",
           "commander": {
             "name": "Gén. de Brigade Gengoult",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -173,7 +173,7 @@
           "name": "Dupeyroux's Brigade",
           "commander": {
             "name": "Gén. de Brigade Dupeyroux",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -218,13 +218,13 @@
       "side": "French",
       "summary": "Part of Vandamme's attacks on Wavre town and its crossings through the afternoon.",
       "notes": [
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Berthezène"
+          "name": "Gén. de Division Berthezène",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -233,7 +233,7 @@
           "name": "Dufour's Brigade",
           "commander": {
             "name": "Gén. de Brigade Dufour",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -259,7 +259,7 @@
           "name": "Lagarde's Brigade",
           "commander": {
             "name": "Gén. de Brigade Lagarde",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -300,13 +300,13 @@
       "side": "French",
       "summary": "Gérard's corps came up to attack the mill at Bierges, upstream of Wavre, where Gérard himself was wounded.",
       "notes": [
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Pécheux"
+          "name": "Gén. de Division Pécheux",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -315,7 +315,7 @@
           "name": "Rome's Brigade",
           "commander": {
             "name": "Gén. de Brigade Rome",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -349,7 +349,7 @@
           "name": "Schoeffer's Brigade",
           "commander": {
             "name": "Gén. de Brigade Schoeffer",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -400,13 +400,13 @@
       "side": "French",
       "summary": "With Gérard's corps, crossed the Dyle upstream at Limale in the evening to turn the Prussian flank.",
       "notes": [
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Vichery"
+          "name": "Gén. de Division Vichery",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -415,7 +415,7 @@
           "name": "Le Capitaine's Brigade",
           "commander": {
             "name": "Gén. de Brigade le Capitaine",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -441,7 +441,7 @@
           "name": "Desprez's Brigade",
           "commander": {
             "name": "Gén. de Brigade Desprez",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -483,13 +483,13 @@
       "summary": "Attacked the Bierges mill crossing with Gérard's corps before moving on to Limale.",
       "notes": [
         "Bourmont commanded the division until he deserted to the allies on 15 June; Hulot led it from then. The order of battle gives the division no battery of its own; one foot battery is shown.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Brigade Hulot"
+          "name": "Gén. de Brigade Hulot",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -498,7 +498,7 @@
           "name": "Hulot's Brigade",
           "commander": {
             "name": "Col. Baume",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -534,7 +534,7 @@
           "name": "Toussaint's Brigade",
           "commander": {
             "name": "Gén. de Brigade Toussaint",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -576,13 +576,13 @@
       "summary": "Lobau's third division, detached to Grouchy, it fought for Wavre and covered his withdrawal on 20 June.",
       "notes": [
         "Teste's brigades were small: Lafitte had only the 8e Léger's two battalions, fewer than the list's three, and those are more Light battalions than one in four allows; both show as historical departures.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Teste"
+          "name": "Gén. de Division Teste",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -591,7 +591,7 @@
           "name": "Lafitte's Brigade",
           "commander": {
             "name": "Gén. de Brigade Lafitte",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -615,7 +615,7 @@
           "name": "Penne's Brigade",
           "commander": {
             "name": "Gén. de Brigade Penne",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -653,13 +653,13 @@
       "summary": "Exelmans' dragoons, who had followed the Prussians from Ligny, screening the French advance on the Dyle.",
       "notes": [
         "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Strolz"
+          "name": "Gén. de Division Strolz",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -668,7 +668,7 @@
           "name": "Burthe's Brigade",
           "commander": {
             "name": "Gén. de Brigade Burthe",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -686,7 +686,7 @@
           "name": "Vincent's Brigade",
           "commander": {
             "name": "Gén. de Brigade Vincent",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -723,13 +723,14 @@
         "Borcke's brigade had begun the march to Waterloo and only part of it came back to fight.",
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
         "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
-        "Thielemann commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 8; his brigade commanders at 8, the list's lowest. Our judgement."
+        "Thielemann commands as the optional Corps Commander (Albion Triumphant p. his brigade commanders at 8, the list's lowest.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "pr15-corps-cmd",
-          "variant": "Staff rating 8 (4 re-rolls)",
-          "name": "Lt-Gen von Thielemann"
+          "name": "Lt-Gen von Thielemann",
+          "variant": "Staff rating 8 (4 re-rolls)"
         }
       ],
       "brigades": [

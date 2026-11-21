@@ -8,3 +8,6 @@ out
 .open-next
 .wrangler
 .dev.vars*
+
+# Python, for the historical-forces generators in scripts/forces
+__pycache__/

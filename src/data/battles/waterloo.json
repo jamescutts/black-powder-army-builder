@@ -21,8 +21,9 @@
       "notes": [
         "Pack's brigade had two Highland battalions, the 42nd and 92nd, where the list allows one Highland battalion in four, so it shows as a historical departure.",
         "The 1/95th is the list's Rifle Battalion, taken as the Rifles upgrade on a Line battalion.",
-        "Staff Ratings are our judgement: Picton, Kempt and Pack at 8, Vincke at 7. The named Kempt and Pack from the book can be added under Army command instead.",
-        "Major Heise commanded the division's artillery; it's shown as Rogers' and Braun's batteries."
+        "The named Kempt and Pack from the book can be added under Army command instead.",
+        "Major Heise commanded the division's artillery; it's shown as Rogers' and Braun's batteries.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
@@ -101,7 +102,7 @@
           "name": "Vincke's Brigade (5th Hanoverian)",
           "commander": {
             "name": "Col Ernst von Vincke",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -153,9 +154,10 @@
       "summary": "British, King's German Legion and Hanoverian brigades in the allied centre, just west of the Brussels road behind La Haye Sainte. They stood in square through Ney's great cavalry charges; Ompteda's KGL held the farm until it fell in the evening, and Ompteda was killed leading a counter-attack. Alten was wounded and Kielmansegge took over the division.",
       "notes": [
         "Ompteda's brigade had two KGL Light battalions, where the list allows one in four, so it shows as a historical departure. Baring's 2nd Light garrisoned La Haye Sainte.",
-        "Alten is the book's named commander. Brigade Staff Ratings are our judgement, all at 7.",
+        "Alten is the book's named commander.",
         "Kielmansegge's Feldjäger (two companies) are the list's Jäger Companies.",
-        "Lloyd's and Cleeves' batteries are the two the order of battle gives under Lt-Col Williamson after Alten's brigades."
+        "Lloyd's and Cleeves' batteries are the two the order of battle gives under Lt-Col Williamson after Alten's brigades.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Lieutenant General Count Charles Alten, with his own rating."
       ],
       "command": [
         {
@@ -168,7 +170,7 @@
           "name": "Halkett's Brigade (5th British)",
           "commander": {
             "name": "Maj-Gen Sir Colin Halkett",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -194,7 +196,7 @@
           "name": "Ompteda's Brigade (2nd KGL)",
           "commander": {
             "name": "Col Christian von Ompteda",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -226,7 +228,7 @@
           "name": "Kielmansegge's Brigade (1st Hanoverian)",
           "commander": {
             "name": "Maj-Gen Friedrich von Kielmansegge",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -287,13 +289,13 @@
       "notes": [
         "The division was two Guards brigades, with none of the British and Hanoverian brigades the list needs. The list allows one Guards Brigade, taken once two British or KGL brigades are, so these show as historical departures.",
         "Support brigades like these can be at most half an army, and the list allows horse artillery by the cavalry taken, so Kuhlmann's KGL horse battery shows as a departure too.",
-        "Staff Ratings are our judgement, all at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "anb-div-cmd",
-          "variant": "Staff rating 7",
-          "name": "Maj-Gen George Cooke"
+          "name": "Maj-Gen George Cooke",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -302,7 +304,7 @@
           "name": "Maitland's Brigade (1st Guards)",
           "commander": {
             "name": "Maj-Gen Peregrine Maitland",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -320,7 +322,7 @@
           "name": "Byng's Brigade (2nd Guards)",
           "commander": {
             "name": "Maj-Gen Sir John Byng",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -365,13 +367,13 @@
       "notes": [
         "The 1/52nd, over a thousand strong, is Large, and the 1/71st Highlanders; the 2/95th is the list's Rifle Battalion and the two companies of the 3/95th its Rifle Company.",
         "Adam's brigade had only three battalions, too few for the list's one-in-four Highland and Large upgrades, and Sympher's KGL horse battery is more horse artillery than a division with no cavalry is allowed; these show as historical departures.",
-        "Staff Ratings are our judgement: Clinton and Adam at 8, the others at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "anb-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Lt-Gen Sir Henry Clinton"
+          "name": "Lt-Gen Sir Henry Clinton",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -415,7 +417,7 @@
           "name": "Du Plat's Brigade (1st KGL)",
           "commander": {
             "name": "Col Georg du Plat",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -441,7 +443,7 @@
           "name": "Halkett's Brigade (3rd Hanoverian)",
           "commander": {
             "name": "Col Hugh Halkett",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -493,22 +495,20 @@
       "summary": "Came up from Brussels to the allied left centre, and was sent forward to plug the line around La Haye Sainte in the late afternoon, suffering heavily.",
       "notes": [
         "Cole, the 6th Division's commander, wasn't there; Lambert led his brigade, with Best's Hanoverians, which the order of battle lists alongside it. The 2/81st was left in Brussels.",
-        "Sinclair's battery is the one the order of battle lists after the division. Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Sinclair's battery is the one the order of battle lists after the division.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "anb-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Maj-Gen Sir John Lambert"
+          "name": "Maj-Gen Sir John Lambert",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
         {
           "type": "anb-british-infantry-brigade",
           "name": "Lambert's Brigade (10th British)",
-          "commander": {
-            "variant": "Staff rating 7"
-          },
           "units": [
             {
               "unit": "anb-line",
@@ -522,14 +522,17 @@
               "unit": "anb-line",
               "name": "2/40th (2nd Somersetshire)"
             }
-          ]
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
         },
         {
           "type": "anb-hanoverian-brigade",
           "name": "Best's Brigade (4th Hanoverian)",
           "commander": {
             "name": "Col Charles Best",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -572,13 +575,13 @@
       "notes": [
         "Bijlandt's brigade had lost heavily at Quatre Bras; Small upgrades are a fair way to show it.",
         "The order of battle gives Goedecke as the 2nd Brigade's commander; Saxe-Weimar led it after Goedecke was hurt before the campaign opened.",
-        "Staff Ratings are our judgement: Perponcher and Saxe-Weimar at 8, Bijlandt at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "dbn-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Lt-Gen de Perponcher"
+          "name": "Lt-Gen de Perponcher",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -587,7 +590,7 @@
           "name": "Bijlandt's Brigade",
           "commander": {
             "name": "Gen-Maj van Bijlandt",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -671,7 +674,8 @@
       "summary": "In reserve on the far right until the evening, when Chassé brought it into the centre, where it helped turn back the last attack of the Imperial Guard.",
       "notes": [
         "Both brigades had six battalions where the list allows five, and Detmers had four Militia battalions where it allows three, so these show as historical departures.",
-        "Chassé is the book's named commander. Brigade Staff Ratings are our judgement, at 7."
+        "Chassé is the book's named commander.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Lieutenant General David Hendrik, Baron Chassé, with his own rating."
       ],
       "command": [
         {
@@ -684,7 +688,7 @@
           "name": "Detmers' Brigade",
           "commander": {
             "name": "Col Detmers",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -718,7 +722,7 @@
           "name": "d'Aubremé's Brigade",
           "commander": {
             "name": "Gen-Maj d'Aubremé",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -773,13 +777,13 @@
       "notes": [
         "The Nassau contingent was one big regiment of three battalions, each nearly a thousand strong, so all three are Large.",
         "On its own it has no Dutch/Belgian Infantry Brigade, which the list needs, so that shows as a historical departure.",
-        "Staff Ratings are our judgement, at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "dbn-div-cmd",
-          "variant": "Staff rating 7",
-          "name": "Gen-Maj von Kruse"
+          "name": "Gen-Maj von Kruse",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -788,7 +792,7 @@
           "name": "1st Nassau Regiment",
           "commander": {
             "name": "Col von Steuben",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -825,13 +829,14 @@
       "summary": "Stood in the centre-right through the great cavalry charges, then went forward to close the line beside Alten's division in the evening.",
       "notes": [
         "The Duke of Brunswick had been killed at Quatre Bras, so Olfermann commanded at Waterloo.",
-        "The order of battle's Guard Battalion is the list's Leib Light Battalion. Staff Ratings are our judgement: the corps' commander at 8, the others at 7."
+        "The order of battle's Guard Battalion is the list's Leib Light Battalion.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "bw-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Col Olfermann"
+          "name": "Col Olfermann",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -850,7 +855,7 @@
           "name": "Light Brigade (Butlar)",
           "commander": {
             "name": "Lt-Col von Butlar",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -876,7 +881,7 @@
           "name": "Line Brigade (Specht)",
           "commander": {
             "name": "Lt-Col von Specht",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -898,7 +903,7 @@
           "name": "Cavalry (Cramm)",
           "commander": {
             "name": "Maj von Cramm",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -936,13 +941,14 @@
       "summary": "Charged d'Erlon's broken columns in the early afternoon, scattering them and taking two eagles, then rode on into the French guns and were cut up by lancers and cuirassiers.",
       "notes": [
         "Two heavy brigades on their own: the list needs British and Hanoverian infantry brigades, and its heavy cavalry comes with them, and the Household Brigade had three Household regiments where it allows two, and support brigades can be at most half an army, so these show as historical departures.",
-        "Uxbridge, who led the charge in person, is rated 9; the brigadiers at 7. Our judgement."
+        "Uxbridge led the charge in person, as the army's cavalry commander.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "anb-div-cmd",
-          "variant": "Staff rating 9",
-          "name": "Lt-Gen the Earl of Uxbridge"
+          "name": "Lt-Gen the Earl of Uxbridge",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -951,7 +957,7 @@
           "name": "Ponsonby's Union Brigade",
           "commander": {
             "name": "Maj-Gen Sir William Ponsonby",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -973,7 +979,7 @@
           "name": "Somerset's Household Brigade",
           "commander": {
             "name": "Maj-Gen Lord Edward Somerset",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1005,13 +1011,14 @@
       "summary": "Guarded the allied left flank until the Prussians arrived, then moved to the centre in the evening and charged in the final general advance.",
       "notes": [
         "Two light brigades on their own: the list needs British and Hanoverian infantry brigades, its light cavalry comes with them, and support brigades can be at most half an army, so these show as historical departures.",
-        "Gardiner's troop is one of the horse artillery troops attached to the cavalry. Staff Ratings are our judgement: Uxbridge 9, Vivian 8, Vandeleur 7."
+        "Gardiner's troop is one of the horse artillery troops attached to the cavalry.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "anb-div-cmd",
-          "variant": "Staff rating 9",
-          "name": "Lt-Gen the Earl of Uxbridge"
+          "name": "Lt-Gen the Earl of Uxbridge",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1020,7 +1027,7 @@
           "name": "Vandeleur's Brigade (4th)",
           "commander": {
             "name": "Maj-Gen Sir John Vandeleur",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1080,7 +1087,7 @@
       "summary": "One of the four divisions of d'Erlon's corps that attacked the allied left centre in massed columns in the early afternoon, beside La Haye Sainte. Thrown back with the rest of the corps by Picton's infantry and the Union Brigade, it rallied and helped take the farm late in the day.",
       "notes": [
         "The 13e Léger brought all three battalions, where the list allows one Light battalion in four across the army, so the third shows as a historical departure.",
-        "Staff Ratings are our judgement: Donzelot at 8, his brigadiers at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
@@ -1095,7 +1102,7 @@
           "name": "Schmitz's Brigade",
           "commander": {
             "name": "Gén. de Brigade Schmitz",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1134,7 +1141,7 @@
           "name": "Aulard's Brigade",
           "commander": {
             "name": "Gén. de Brigade Aulard",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1176,7 +1183,7 @@
       "summary": "Advancing on d'Erlon's right-centre, its columns crested the ridge into Pack's brigade and were caught by the Scots Greys of the Union Brigade; the 45e lost its eagle. What was left rallied and fought on into the evening.",
       "notes": [
         "Every regiment fielded two battalions, so the division fits the list as it fought.",
-        "Staff Ratings are our judgement: Marcognet at 8, his brigadiers at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
@@ -1191,7 +1198,7 @@
           "name": "Noguès' Brigade",
           "commander": {
             "name": "Gén. de Brigade Noguès",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1217,7 +1224,7 @@
           "name": "Grenier's Brigade",
           "commander": {
             "name": "Gén. de Brigade Grenier",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1258,13 +1265,13 @@
       "side": "French",
       "summary": "The left-hand division of d'Erlon's great attack, part of it against La Haye Sainte and the rest up the slope towards Kempt's brigade, before the Union Brigade drove it back.",
       "notes": [
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Brigade Quiot"
+          "name": "Gén. de Brigade Quiot",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1273,7 +1280,7 @@
           "name": "Charlet's Brigade",
           "commander": {
             "name": "Col. Charlet",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1299,7 +1306,7 @@
           "name": "Bourgeois' Brigade",
           "commander": {
             "name": "Gén. de Brigade Bourgeois",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1340,13 +1347,13 @@
       "side": "French",
       "summary": "On d'Erlon's right, attacking towards Papelotte. It kept its order when the rest of the corps was broken, and fought on against the farms into the evening.",
       "notes": [
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Durutte"
+          "name": "Gén. de Division Durutte",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1355,7 +1362,7 @@
           "name": "Pégot's Brigade",
           "commander": {
             "name": "Gén. de Brigade Pégot",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1381,7 +1388,7 @@
           "name": "Brue's Brigade",
           "commander": {
             "name": "Gén. de Brigade Brue",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1422,14 +1429,14 @@
       "side": "French",
       "summary": "Opened the battle against Hougoumont and spent the whole day trying to take it, drawing in far more men than the allied garrison.",
       "notes": [
-        "Prince Jérôme's Staff Rating of 8 is our judgement; Guilleminot, his chief of staff, did much of the work.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Prince Jérôme commanded, though Guilleminot, his chief of staff, did much of the work.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Prince Jérôme Bonaparte"
+          "name": "Prince Jérôme Bonaparte",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1438,7 +1445,7 @@
           "name": "Bauduin's Brigade",
           "commander": {
             "name": "Gén. de Brigade Bauduin",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1485,7 +1492,7 @@
           "name": "Soye's Brigade",
           "commander": {
             "name": "Gén. de Brigade Soye",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1535,13 +1542,13 @@
       "summary": "Fed into the fighting around Hougoumont, then joined Bachelu's late infantry attack between the château and La Haye Sainte.",
       "notes": [
         "The 4e Léger brought three battalions, one more Light battalion than the list's one in four allows, which shows as a historical departure.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Foy"
+          "name": "Gén. de Division Foy",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1550,7 +1557,7 @@
           "name": "Gauthier's Brigade",
           "commander": {
             "name": "Gén. de Brigade Gauthier",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1576,7 +1583,7 @@
           "name": "Jamin's Brigade",
           "commander": {
             "name": "Gén. de Brigade Jamin",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1634,13 +1641,13 @@
       "side": "French",
       "summary": "Stood in reserve behind Hougoumont until the evening, when it and Foy's division made a last infantry attack after the great cavalry charges had failed.",
       "notes": [
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Bachelu"
+          "name": "Gén. de Division Bachelu",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1649,7 +1656,7 @@
           "name": "Husson's Brigade",
           "commander": {
             "name": "Gén. de Brigade Husson",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1681,7 +1688,7 @@
           "name": "Campi's Brigade",
           "commander": {
             "name": "Gén. de Brigade Campi",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1726,13 +1733,13 @@
       "side": "French",
       "summary": "Sent east with Lobau's corps to hold off the Prussians, it fought for Plancenoit through the late afternoon and evening.",
       "notes": [
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Simmer"
+          "name": "Gén. de Division Simmer",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1741,7 +1748,7 @@
           "name": "Bellair's Brigade",
           "commander": {
             "name": "Gén. de Brigade Julienne de Bellair",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1771,7 +1778,7 @@
           "name": "Thévenet's Brigade",
           "commander": {
             "name": "Gén. de Brigade Thévenet",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1813,13 +1820,13 @@
       "summary": "Lobau's second division, small after detachments, holding the ground in front of Plancenoit against Bülow's corps.",
       "notes": [
         "Tromelin's brigade had only the 107e's two battalions, fewer than the list's three for a brigade, and the 5e Léger's two battalions are one more Light battalion than one in four allows; both show as historical departures.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Jeanin"
+          "name": "Gén. de Division Jeanin",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1828,7 +1835,7 @@
           "name": "Bony's Brigade",
           "commander": {
             "name": "Gén. de Brigade Bony",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1860,7 +1867,7 @@
           "name": "Tromelin's Brigade",
           "commander": {
             "name": "Gén. de Brigade de Tromelin",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1894,13 +1901,13 @@
       "summary": "Led Ney's great cavalry charges against the allied squares between Hougoumont and La Haye Sainte through the middle of the afternoon.",
       "notes": [
         "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Wathier"
+          "name": "Gén. de Division Wathier",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1909,7 +1916,7 @@
           "name": "Dubois' Brigade",
           "commander": {
             "name": "Gén. de Brigade Dubois",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1927,7 +1934,7 @@
           "name": "Travers' Brigade",
           "commander": {
             "name": "Gén. de Brigade Travers",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1961,13 +1968,13 @@
       "summary": "Joined Milhaud's charges on the allied centre, riding round the squares again and again under the allied guns.",
       "notes": [
         "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Delort"
+          "name": "Gén. de Division Delort",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -1976,7 +1983,7 @@
           "name": "Farine's Brigade",
           "commander": {
             "name": "Gén. de Brigade Farine",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -1994,7 +2001,7 @@
           "name": "Vial's Brigade",
           "commander": {
             "name": "Gén. de Brigade Vial",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2028,13 +2035,13 @@
       "summary": "Kellermann's corps, sent in to join Milhaud's charges on the allied squares late in the afternoon.",
       "notes": [
         "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division L'Héritier"
+          "name": "Gén. de Division L'Héritier",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -2043,7 +2050,7 @@
           "name": "Picquet's Brigade",
           "commander": {
             "name": "Gén. de Brigade Picquet",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2061,7 +2068,7 @@
           "name": "Guiton's Brigade",
           "commander": {
             "name": "Gén. de Brigade Guiton",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2095,13 +2102,13 @@
       "summary": "The carabiniers and cuirassiers of Kellermann's second division, committed to the cavalry charges on the allied centre.",
       "notes": [
         "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Roussel d'Hurbal"
+          "name": "Gén. de Division Roussel d'Hurbal",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -2110,7 +2117,7 @@
           "name": "Blanchard's Brigade",
           "commander": {
             "name": "Gén. de Brigade Blanchard",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2128,7 +2135,7 @@
           "name": "Donop's Brigade",
           "commander": {
             "name": "Gén. de Brigade Donop",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2162,13 +2169,13 @@
       "summary": "Guarded d'Erlon's right flank, and its lancers fell on the Union Brigade when it charged too far.",
       "notes": [
         "A cavalry division on its own has no Infantry Brigade, which the list needs; its cavalry brigades are allowed by infantry brigades, and reserve cavalry can be at most half an army. So these show as historical departures. Play it alongside an infantry division, or agree it with your opponent.",
-        "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fac-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Jacquinot"
+          "name": "Gén. de Division Jacquinot",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -2177,7 +2184,7 @@
           "name": "Bruno's Brigade",
           "commander": {
             "name": "Gén. de Brigade Bruno",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2195,7 +2202,7 @@
           "name": "Gobrecht's Brigade",
           "commander": {
             "name": "Gén. de Brigade Gobrecht",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2228,13 +2235,13 @@
       "side": "French",
       "summary": "The Emperor's last reserve. Battalions went to retake Plancenoit from the Prussians; at the end, the 1st and 2nd Grenadiers and Chasseurs formed the squares that covered the retreat.",
       "notes": [
-        "Staff Ratings are our judgement: the Guard's division commanders at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fig15-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Morand"
+          "name": "Gén. de Division Morand",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -2243,7 +2250,7 @@
           "name": "Grenadiers à Pied",
           "commander": {
             "name": "Gén. Petit",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2269,7 +2276,7 @@
           "name": "Chasseurs à Pied",
           "commander": {
             "name": "Gén. Cambronne",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2310,13 +2317,13 @@
       "side": "French",
       "summary": "Made the last French attack of the day up the slope west of La Haye Sainte, and was broken by Maitland's Guards and Adam's brigade.",
       "notes": [
-        "Staff Ratings are our judgement: the Guard's division commanders at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fig15-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Friant"
+          "name": "Gén. de Division Friant",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -2325,7 +2332,7 @@
           "name": "Grenadiers à Pied",
           "commander": {
             "name": "Gén. Poret de Morvan",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2347,7 +2354,7 @@
           "name": "Chasseurs à Pied",
           "commander": {
             "name": "Gén. Michel",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2388,13 +2395,13 @@
       "side": "French",
       "summary": "Sent to hold Plancenoit against Bülow's Prussians, it fought in the village through the evening until driven out.",
       "notes": [
-        "Staff Ratings are our judgement: the Guard's division commanders at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fig15-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Duhesme"
+          "name": "Gén. de Division Duhesme",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -2403,7 +2410,7 @@
           "name": "Chartrand's Brigade",
           "commander": {
             "name": "Gén. Chartrand",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2429,7 +2436,7 @@
           "name": "Guye's Brigade",
           "commander": {
             "name": "Gén. Guye",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2472,13 +2479,13 @@
       "notes": [
         "The Guard cavalry rode without the three Guard infantry brigades the list asks for first, and the light division had two Lancer regiments where the list allows one; these show as historical departures.",
         "The Chasseurs à Cheval, over 1,200 strong, are Large.",
-        "Staff Ratings are our judgement: the Guard's division commanders at 8, brigade commanders at 7."
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "fig15-div-cmd",
-          "variant": "Staff rating 8",
-          "name": "Gén. de Division Lefebvre-Desnouettes"
+          "name": "Gén. de Division Lefebvre-Desnouettes",
+          "variant": "Staff rating 8"
         }
       ],
       "brigades": [
@@ -2487,7 +2494,7 @@
           "name": "Guyot's Heavy Cavalry",
           "commander": {
             "name": "Gén. Guyot",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2509,7 +2516,7 @@
           "name": "Lefebvre-Desnouettes' Light Cavalry",
           "commander": {
             "name": "Gén. Lallemand",
-            "variant": "Staff rating 7"
+            "variant": "Staff rating 8"
           },
           "units": [
             {
@@ -2551,13 +2558,14 @@
       "notes": [
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
         "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
-        "Bülow commands as the optional Corps Commander (Albion Triumphant p. 78), at Staff Rating 8; his brigade commanders at 8, the list's lowest. Our judgement."
+        "Bülow commands as the optional Corps Commander (Albion Triumphant p. his brigade commanders at 8, the list's lowest.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
         {
           "unit": "pr15-corps-cmd",
-          "variant": "Staff rating 8 (4 re-rolls)",
-          "name": "Gen von Bülow"
+          "name": "Gen von Bülow",
+          "variant": "Staff rating 8 (4 re-rolls)"
         }
       ],
       "brigades": [
@@ -2843,7 +2851,8 @@
         "At Waterloo only Steinmetz's brigade, at the head of the column, was fully engaged; the rest of the corps was still coming up.",
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
         "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
-        "Zieten is the book's named commander. Brigade Staff Ratings are our judgement, at 8, the list's lowest."
+        "Zieten is the book's named commander.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named General Hans Ernst Karl, Graf von Zieten, with his own rating."
       ],
       "command": [
         {

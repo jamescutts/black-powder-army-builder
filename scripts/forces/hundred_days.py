@@ -5,12 +5,14 @@ from the compact tables below, so each army's brigades are built the same way th
     python3 scripts/forces/hundred_days.py && npm run check:forces
 
 Orders of battle are from Wikipedia's "Waterloo campaign order of battle". Summaries are our own words.
-Staff Ratings aren't in any order of battle: division commanders are rated 8 and brigade commanders 7
-(Prussian brigade commanders 8, the list's lowest) unless a force says otherwise.
+Staff Ratings aren't in any order of battle, so ratings.py sets them as each battle is written: every
+commander at 8 unless he's one of the book's named commanders.
 """
 
 import json
 from pathlib import Path
+
+import ratings
 
 OUT = Path(__file__).resolve().parents[2] / "src" / "data" / "battles"
 ROMAN = ["I", "II", "III", "IV"]
@@ -28,17 +30,19 @@ def u(unit, name=None, **kw):
     return d
 
 
-def cmd(unit, name=None, variant="Staff rating 8"):
-    d = {"unit": unit, "variant": variant}
+def cmd(unit, name=None):
+    """An army or division commander; his Staff Rating is set by ratings.py"""
+    d = {"unit": unit}
     if name:
         d["name"] = name
     return d
 
 
-def bde(type_, name, commander=None, units=(), regiments=(), variant="Staff rating 7"):
+def bde(type_, name, commander=None, units=(), regiments=()):
+    """A brigade; its commander's Staff Rating is set by ratings.py"""
     b = {"type": type_, "name": name}
-    if commander is not None:
-        b["commander"] = {"name": commander, "variant": variant} if commander else {"variant": variant}
+    if commander:
+        b["commander"] = {"name": commander}
     if units:
         b["units"] = list(units)
     if regiments:
@@ -179,7 +183,7 @@ LIGHT_NOTE = {
 EXTRA_NOTE = {
     "habert": "The 2e Régiment Étranger (Swiss) also served in Dupeyroux's brigade; the order of battle gives no battalion count, so it's left out.",
     "hulot": "Bourmont commanded the division until he deserted to the allies on 15 June; Hulot led it from then. The order of battle gives the division no battery of its own; one foot battery is shown.",
-    "jerome": "Prince Jérôme's Staff Rating of 8 is our judgement; Guilleminot, his chief of staff, did much of the work.",
+    "jerome": "Prince Jérôme commanded, though Guilleminot, his chief of staff, did much of the work.",
 }
 
 
@@ -241,8 +245,8 @@ def guiton(battle, summary):
     return force(f"{battle}-guiton", FR, "Kellermann's Cuirassiers", "Guiton's Brigade, 11th Cavalry Division", "French", summary,
                  [fr_cav("fac-heavy-cavalry-brigade", "Guiton's Brigade", "Gén. de Brigade Guiton", [("8e", "Cuirassiers"), ("11e", "Cuirassiers")]),
                   fr_horse("3/2e à Cheval (de Marcillac)")],
-                 command=[cmd("fac-div-cmd", "Gén. de Division Kellermann", "Staff rating 9")],
-                 notes=["Only Guiton's brigade of Kellermann's corps reached the field; Kellermann led its charge himself, at Staff Rating 9.", CAV_ALONE])
+                 command=[cmd("fac-div-cmd", "Gén. de Division Kellermann")],
+                 notes=["Only Guiton's brigade of Kellermann's corps reached the field, and Kellermann led its charge himself.", CAV_ALONE])
 
 
 def strolz(battle, summary):
@@ -322,10 +326,10 @@ def picton(battle, summary, hanoverians, notes=()):
     return force(f"{battle}-picton", AN, "Picton's Division", "5th Division, Reserve", "Anglo-allied", summary,
                  [bde("anb-british-infantry-brigade", "Kempt's Brigade (8th British)", "Maj-Gen Sir James Kempt",
                       [br("1/28th (North Gloucestershire)"), br("1/32nd (Cornwall)"), br("1/79th (Cameron Highlanders)", options=["highlanders"]),
-                       br("1/95th Rifles", options=["rifles"])], variant="Staff rating 8"),
+                       br("1/95th Rifles", options=["rifles"])]),
                   bde("anb-british-infantry-brigade", "Pack's Brigade (9th British)", "Maj-Gen Sir Denis Pack",
                       [br("3/1st (Royal Scots)"), br("1/42nd (Royal Highland)", options=["highlanders"]), br("2/44th (East Essex)"),
-                       br("1/92nd (Gordon Highlanders)", options=["highlanders"])], variant="Staff rating 8"),
+                       br("1/92nd (Gordon Highlanders)", options=["highlanders"])]),
                   bde("anb-hanoverian-brigade", han_name, han_cmd, [u("anb-hanover-landwehr", f"Landwehr Bn {b}") for b in han_bns]),
                   bde("anb-divisional-artillery", "Rogers' Battery RA", units=[u("anb-royal-arty", "Rogers' Battery RA")]),
                   bde("anb-divisional-artillery", "Braun's Hanoverian Battery", units=[u("anb-hanover-foot-arty", "Braun's Foot Battery")])],
@@ -365,7 +369,7 @@ def cooke(battle, summary, notes=()):
                       [u("anb-foot-guard", "2/Coldstream Guards"), u("anb-foot-guard", "2/3rd Foot Guards")]),
                   bde("anb-divisional-artillery", "Sandham's Battery RA", units=[u("anb-royal-arty", "Sandham's Battery RA")]),
                   bde("anb-horse-artillery", "Kuhlmann's Battery KGL", units=[u("anb-royal-horse-arty", "Kuhlmann's Horse Battery KGL")])],
-                 command=[cmd("anb-div-cmd", "Maj-Gen George Cooke", "Staff rating 7")],
+                 command=[cmd("anb-div-cmd", "Maj-Gen George Cooke")],
                  notes=["The division was two Guards brigades, with none of the British and Hanoverian brigades the list needs. The list allows one Guards Brigade, taken once two British or KGL brigades are, so these show as historical departures.",
                         "Support brigades like these can be at most half an army, and the list allows horse artillery by the cavalry taken, so Kuhlmann's KGL horse battery shows as a departure too.",
                         *notes, "Staff Ratings are our judgement, all at 7."])
@@ -375,7 +379,7 @@ def clinton(battle, summary):
     return force(f"{battle}-clinton", AN, "Clinton's Division", "2nd Division, II Corps (Hill)", "Anglo-allied", summary,
                  [bde("anb-british-infantry-brigade", "Adam's Brigade (3rd British)", "Maj-Gen Frederick Adam",
                       [br("1/52nd (Oxfordshire)", options=["large"]), br("1/71st (Highland Light Infantry)", options=["highlanders"]),
-                       br("2/95th Rifles", options=["rifles"]), u("anb-rifle-coy", "3/95th Rifles (two companies)")], variant="Staff rating 8"),
+                       br("2/95th Rifles", options=["rifles"]), u("anb-rifle-coy", "3/95th Rifles (two companies)")]),
                   bde("anb-kgl-infantry-brigade", "Du Plat's Brigade (1st KGL)", "Col Georg du Plat",
                       [u("anb-kgl-line", f"{n} Line Bn KGL") for n in ("1st", "2nd", "3rd", "4th")]),
                   bde("anb-hanoverian-brigade", "Halkett's Brigade (3rd Hanoverian)", "Col Hugh Halkett",
@@ -408,9 +412,9 @@ def uxbridge_heavies(battle, summary):
                   bde("anb-household-brigade", "Somerset's Household Brigade", "Maj-Gen Lord Edward Somerset",
                       [u("anb-household-cav", "1st Life Guards"), u("anb-household-cav", "2nd Life Guards"),
                        u("anb-household-cav", "Royal Horse Guards (Blues)"), u("anb-dragoons-dragoon-guards", "1st King's Dragoon Guards")])],
-                 command=[cmd("anb-div-cmd", "Lt-Gen the Earl of Uxbridge", "Staff rating 9")],
+                 command=[cmd("anb-div-cmd", "Lt-Gen the Earl of Uxbridge")],
                  notes=["Two heavy brigades on their own: the list needs British and Hanoverian infantry brigades, and its heavy cavalry comes with them, and the Household Brigade had three Household regiments where it allows two, and support brigades can be at most half an army, so these show as historical departures.",
-                        "Uxbridge, who led the charge in person, is rated 9; the brigadiers at 7. Our judgement."])
+                        "Uxbridge led the charge in person, as the army's cavalry commander."])
 
 
 def light_cavalry(battle, summary):
@@ -419,9 +423,9 @@ def light_cavalry(battle, summary):
                  [bde("anb-light-cavalry-brigade", "Vandeleur's Brigade (4th)", "Maj-Gen Sir John Vandeleur",
                       [u(lc, "11th Light Dragoons"), u(lc, "12th Light Dragoons"), u(lc, "16th Light Dragoons")]),
                   bde("anb-light-cavalry-brigade", "Vivian's Brigade (6th)", "Maj-Gen Sir Hussey Vivian",
-                      [u(lc, "10th Hussars"), u(lc, "18th Hussars"), u(lc, "1st Hussars KGL")], variant="Staff rating 8"),
+                      [u(lc, "10th Hussars"), u(lc, "18th Hussars"), u(lc, "1st Hussars KGL")]),
                   bde("anb-horse-artillery", "Gardiner's Troop RHA", units=[u("anb-royal-horse-arty", "E Troop RHA (Gardiner)")])],
-                 command=[cmd("anb-div-cmd", "Lt-Gen the Earl of Uxbridge", "Staff rating 9")],
+                 command=[cmd("anb-div-cmd", "Lt-Gen the Earl of Uxbridge")],
                  notes=["Two light brigades on their own: the list needs British and Hanoverian infantry brigades, its light cavalry comes with them, and support brigades can be at most half an army, so these show as historical departures.",
                         "Gardiner's troop is one of the horse artillery troops attached to the cavalry. Staff Ratings are our judgement: Uxbridge 9, Vivian 8, Vandeleur 7."])
 
@@ -440,7 +444,7 @@ def perponcher(battle, summary, notes=()):
                   bde("dbn-nassau-infantry-brigade", "Saxe-Weimar's Brigade", "Col Prince Bernhard of Saxe-Weimar",
                       [u("dbn-line", "I/2nd Nassau"), u("dbn-line", "II/2nd Nassau"), u("dbn-line", "III/2nd Nassau"),
                        u("dbn-line", "I/Orange-Nassau"), u("dbn-line", "II/Orange-Nassau"),
-                       u("dbn-nassau-jager-coy", "Volunteer Jäger Company")], variant="Staff rating 8"),
+                       u("dbn-nassau-jager-coy", "Volunteer Jäger Company")]),
                   bde("dbn-divisional-artillery", "Divisional Artillery",
                       units=[u("dbn-belgian-foot-battery", "Stevenart's Foot Battery"), u("dbn-dutch-horse-battery", "Bijleveld's Horse Battery")])],
                  command=[cmd("dbn-div-cmd", "Lt-Gen de Perponcher")],
@@ -469,7 +473,7 @@ def kruse(battle, summary):
                  [bde("dbn-nassau-infantry-brigade", "1st Nassau Regiment", "Col von Steuben",
                       [u("dbn-line", "I/1st Nassau", options=["large"]), u("dbn-line", "II/1st Nassau", options=["large"]),
                        u("dbn-line", "III/1st Nassau", options=["large"])])],
-                 command=[cmd("dbn-div-cmd", "Gen-Maj von Kruse", "Staff rating 7")],
+                 command=[cmd("dbn-div-cmd", "Gen-Maj von Kruse")],
                  notes=["The Nassau contingent was one big regiment of three battalions, each nearly a thousand strong, so all three are Large.",
                         "On its own it has no Dutch/Belgian Infantry Brigade, which the list needs, so that shows as a historical departure.",
                         "Staff Ratings are our judgement, at 7."])
@@ -539,9 +543,9 @@ def ordinal(n):
 
 PR_CORPS = {
     "I": ("Zieten's I Corps", [1, 2, 3, 4], {"unit": "pr15-cmd-zieten"}),
-    "II": ("Pirch's II Corps", [5, 6, 7, 8], cmd("pr15-corps-cmd", "Gen-Maj von Pirch I", "Staff rating 7 (2 re-rolls)")),
-    "III": ("Thielemann's III Corps", [9, 10, 11, 12], cmd("pr15-corps-cmd", "Lt-Gen von Thielemann", "Staff rating 8 (4 re-rolls)")),
-    "IV": ("Bülow's IV Corps", [13, 14, 15, 16], cmd("pr15-corps-cmd", "Gen von Bülow", "Staff rating 8 (4 re-rolls)")),
+    "II": ("Pirch's II Corps", [5, 6, 7, 8], cmd("pr15-corps-cmd", "Gen-Maj von Pirch I")),
+    "III": ("Thielemann's III Corps", [9, 10, 11, 12], cmd("pr15-corps-cmd", "Lt-Gen von Thielemann")),
+    "IV": ("Bülow's IV Corps", [13, 14, 15, 16], cmd("pr15-corps-cmd", "Gen von Bülow")),
 }
 CORPS_RATINGS = {
     "I": "Zieten is the book's named commander. Brigade Staff Ratings are our judgement, at 8, the list's lowest.",
@@ -555,7 +559,7 @@ def pr_brigade(n):
     commander, _corps, irs, lws = PR_BRIGADES[n]
     return bde("pr15-infantry-brigade", f"{ordinal(n)} Brigade ({commander})", PR_COMMANDERS.get(n, f"Gen-Maj von {commander}"),
                units=[u("pr15-foot-arty", f"{ordinal(n)} Brigade Foot Battery")],
-               regiments=[pr_ir(r) for r in irs] + [pr_lw(r) for r in lws], variant="Staff rating 8")
+               regiments=[pr_ir(r) for r in irs] + [pr_lw(r) for r in lws])
 
 
 def prussian_corps(corps, battle, summary, notes=()):
@@ -576,6 +580,7 @@ def battle(id_, name, date, summary, forces):
 
 
 def write(b):
+    ratings.apply(b)
     (OUT / f"{b['id']}.json").write_text(json.dumps(b, ensure_ascii=False, indent=2) + "\n")
 
 
