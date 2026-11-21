@@ -9,6 +9,7 @@ import type { RosterState, RosterUnitLine } from "@/types/army";
 import { unitStatLine } from "@/lib/units";
 import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { freeLines, resolveLine, type LineContext } from "@/lib/options";
+import { periodText, rosterPeriod } from "@/lib/periods";
 import { regimentTags } from "@/components/RosterPanel";
 import { getNation, getSupplement } from "@/data";
 import { attachedText, validateRoster } from "@/lib/validate";
@@ -109,6 +110,7 @@ function RosterContent({ nation, roster }: Props) {
   }));
 
   const grandTotal = rosterTotal(nation, roster);
+  const period = rosterPeriod(nation, roster);
   const supplement = getSupplement(nation.supplementId);
 
   return (
@@ -147,6 +149,7 @@ function RosterContent({ nation, roster }: Props) {
             <Text size="sm" c="dimmed">
               {roster.armyName.trim() ? `${nation.name} \u2014 ` : ""}
               {supplement?.name ? `${supplement.name} \u2014 ` : ""}
+              {period ? `${periodText(period)} \u2014 ` : ""}
               {roster.brigadeInstances.length} brigade
               {roster.brigadeInstances.length === 1 ? "" : "s"}
             </Text>

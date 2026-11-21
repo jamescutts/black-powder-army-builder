@@ -7,6 +7,7 @@ import {
   Button,
   Chip,
   Collapse,
+  Divider,
   Group,
   Notification,
   Paper,
@@ -23,6 +24,7 @@ import type { Nation, RegimentDef } from "@/data/types";
 import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState, RosterUnitLine } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
 import { InlineName } from "./InlineName";
+import { PeriodPicker } from "./PeriodPicker";
 import { defaultVariantLabel, unitCost } from "@/lib/units";
 import { brigadeTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { newBrigadeInstance } from "@/lib/newRoster";
@@ -447,6 +449,17 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
         {/* Topped with the brigades' rule, a shade darker as it outranks them. No inline warning here: a
             missing commander is just the starting state, and the roster panel already lists it. */}
         <Paper withBorder p="md" radius="md" className="command-card">
+          {/* The period comes first: it decides what the commander and brigades below can take */}
+          {nation.periods?.length ? (
+            <>
+              <PeriodPicker
+                nation={nation}
+                period={roster.period}
+                onChange={(period) => onChange({ ...roster, period })}
+              />
+              <Divider my="md" />
+            </>
+          ) : null}
           {commandUnits.length > 0 ? (
             <UnitLineEditor
               eligibleUnits={commandUnits}

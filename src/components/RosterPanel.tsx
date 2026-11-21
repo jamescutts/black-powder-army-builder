@@ -6,6 +6,7 @@ import type { BrigadeType, Nation, UnitEntry } from "@/data/types";
 import type { RosterState, RosterUnitLine } from "@/types/army";
 import { brigadeTotal, commandTotal as armyCommandTotal, lineTotal, rosterTotal } from "@/lib/points";
 import { freeLines, resolveLine, type LineContext } from "@/lib/options";
+import { periodText, rosterPeriod } from "@/lib/periods";
 import { attachedText, brigadeDisplayName, REVEAL_BRIGADE_EVENT, validateRoster, type ValidationIssue } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 import { InstallCard } from "@/components/InstallCard";
@@ -187,6 +188,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
     total: brigadeTotal(nation, instance, free),
   }));
   const grandTotal = rosterTotal(nation, roster);
+  const period = rosterPeriod(nation, roster);
 
   const issues = validateRoster(nation, roster);
   const errors = issues.filter((i) => i.level === "error");
@@ -246,6 +248,7 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
               />
               <Text size="xs" c="dimmed">
                 {nation.name}
+                {period && <> &middot; {periodText(period)}</>}
               </Text>
             </Stack>
           </Group>

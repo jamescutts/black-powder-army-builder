@@ -9,6 +9,21 @@ export interface UnitVariant {
   /** Optional stat overrides for this variant, merged over the base unit stats */
   handToHand?: string;
   shooting?: string;
+  /** The campaign periods (ids from the nation's `periods`) this choice belongs to; all when left out */
+  periods?: string[];
+}
+
+/**
+ * One of a list's campaign periods, e.g. Albion Triumphant's Peninsular "Early (1806-1808)". The player
+ * picks one for their list, and choices tagged with other periods aren't offered.
+ */
+export interface CampaignPeriod {
+  /** Short id used to tag choices, e.g. "early" */
+  id: string;
+  /** e.g. "Early" */
+  label: string;
+  /** e.g. "1806-1808" */
+  years: string;
 }
 
 export interface UnitEntry {
@@ -134,6 +149,8 @@ export interface BrigadeSlot {
    * e.g. Russian Light Cavalry Brigade: "up to 2 Dragoon, up to 1 Uhlan" per brigade.
    */
   unitLimits?: { unitId: string; max: number }[];
+  /** The campaign periods this slot is offered in (ids from the nation's `periods`); all when left out */
+  periods?: string[];
   /**
    * Combined caps on a GROUP of unit ids within a single brigade instance (this slot only).
    * The summed qty of all listed unit ids must not exceed `max`.
@@ -251,11 +268,15 @@ export interface UnitOption {
   excludes?: string[];
   /** Why `excludes` applies, shown on the greyed-out toggle, e.g. "Guard are already Reliable, Elite 4+" */
   excludesReason?: string;
+  /** The campaign periods this upgrade is offered in (ids from the nation's `periods`); all when left out */
+  periods?: string[];
 }
 
 export interface BrigadeType {
   id: string;
   name: string;
+  /** The campaign periods this brigade can be taken in (ids from the nation's `periods`); all when left out */
+  periods?: string[];
   /** Upgrades and downgrades from this brigade's Options box */
   options?: UnitOption[];
   /**
@@ -408,6 +429,11 @@ export interface Nation {
   /** Set for fan/community-created lists (as opposed to an official Warlord Games supplement) to credit the author */
   attribution?: NationAttribution;
   units: UnitEntry[];
+  /**
+   * The list's campaign periods, in order, when its book divides it into them (Albion Triumphant's
+   * Peninsular lists: Early, Middle and Late). The player picks one, or none to see every choice.
+   */
+  periods?: CampaignPeriod[];
   /** Brigade types available to this nation. Infantry/Cavalry/Artillery units can only be added inside a brigade instance. */
   brigades: BrigadeType[];
   /**

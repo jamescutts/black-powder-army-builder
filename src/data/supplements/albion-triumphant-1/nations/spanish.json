@@ -264,6 +264,23 @@
       "cost": 19
     }
   ],
+  "periods": [
+    {
+      "id": "early",
+      "label": "Early",
+      "years": "1807-1809"
+    },
+    {
+      "id": "middle",
+      "label": "Middle",
+      "years": "1810-1812"
+    },
+    {
+      "id": "late",
+      "label": "Late",
+      "years": "1813-1814"
+    }
+  ],
   "brigades": [
     {
       "id": "sp-vanguard-brigade",

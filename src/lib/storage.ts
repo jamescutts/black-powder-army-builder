@@ -196,6 +196,8 @@ function tidy(nation: Nation, saved: RosterState): RosterState | null {
       nationId: nation.id,
       // "My Army" was the old placeholder rather than a name anyone chose
       armyName: saved.armyName && saved.armyName !== "My Army" ? saved.armyName : "",
+      // A period the list's book still has; otherwise the list is for any period
+      period: nation.periods?.some((p) => p.id === saved.period) ? saved.period : undefined,
       commandItems: keepLines(saved.commandItems),
       brigadeInstances: (saved.brigadeInstances ?? []).flatMap((bi) => {
         const bt = nation.brigades.find((b) => b.id === bi.brigadeTypeId);

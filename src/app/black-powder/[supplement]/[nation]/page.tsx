@@ -191,7 +191,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
 
   // Clearing starts the list again as a new one would (with its required brigades), keeping its name
   function handleClear() {
-    setRoster({ ...startingRoster(nation), armyName: roster.armyName });
+    setRoster({ ...startingRoster(nation), armyName: roster.armyName, period: roster.period });
     setConfirming(null);
   }
 

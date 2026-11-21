@@ -593,6 +593,23 @@
       "staffRating": 8
     }
   ],
+  "periods": [
+    {
+      "id": "early",
+      "label": "Early",
+      "years": "1806-1808"
+    },
+    {
+      "id": "middle",
+      "label": "Middle",
+      "years": "1809-1812"
+    },
+    {
+      "id": "late",
+      "label": "Late",
+      "years": "1813-1814"
+    }
+  ],
   "brigades": [
     {
       "id": "pb-infantry-brigade",

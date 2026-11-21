@@ -53,6 +53,11 @@ export interface RosterState {
   nationId: string;
   /** The player's own name for the list, e.g. "Davout's I Corps"; empty until they give it one */
   armyName: string;
+  /**
+   * The campaign period the list is built for (an id from the nation's `periods`), for lists whose book
+   * has them; unset for any period
+   */
+  period?: string;
   /** Free-standing Command category units (Divisional/Brigade Commanders) */
   commandItems: RosterUnitLine[];
   brigadeInstances: RosterBrigadeInstance[];

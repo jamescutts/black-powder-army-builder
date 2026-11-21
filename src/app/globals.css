@@ -349,6 +349,27 @@ body {
   border-top: 4px solid var(--mantine-color-brown-8);
 }
 
+/* The campaign period switch at the top of the Army command card: each choice its name over its years */
+.period-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.period-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+}
+
+/* Smaller and lighter than the name, but in its full colour: faded, it fell below 4.5:1 on both the
+   selected brown and the unselected ground */
+.period-years {
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 400;
+}
+
 /* The roster summary: the darkest rule of all, in the site header's ink, as it stands for the whole
    army; red, like a brigade's, while there's something to fix */
 .roster-card.roster-card {

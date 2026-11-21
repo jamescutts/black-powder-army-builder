@@ -70,7 +70,7 @@ export function ForceOrgNotes({ nation }: { nation: Nation }) {
       ? []
       : ["unit upgrades and downgrades (Veteran, Tough Fighters, Large and Small units, half batteries and so on)"]),
     ...(nation.supplementId === "albion-triumphant-1"
-      ? ["the Early, Middle and Late campaign periods"]
+      ? ["what each campaign period allows: pick the list's period at the top of the builder, and it's kept with the list and shown on the roster, but every period's choices are still offered"]
       : []),
   ];
 

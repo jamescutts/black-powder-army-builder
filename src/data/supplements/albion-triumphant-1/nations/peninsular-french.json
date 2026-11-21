@@ -370,6 +370,23 @@
       "staffRating": 8
     }
   ],
+  "periods": [
+    {
+      "id": "early",
+      "label": "Early",
+      "years": "1807-1808"
+    },
+    {
+      "id": "middle",
+      "label": "Middle",
+      "years": "1809-1811"
+    },
+    {
+      "id": "late",
+      "label": "Late",
+      "years": "1812-1814"
+    }
+  ],
   "brigades": [
     {
       "id": "pf-infantry-brigade",
