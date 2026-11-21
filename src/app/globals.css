@@ -1618,14 +1618,14 @@ a.app-list-row:active {
   height: 32px;
 }
 
-/* The fan-tool disclaimer: a card in the website band's colours, on the builder's left bar, so it
-   catches the eye before About */
+/* The fan-tool disclaimer: a card in a muted regimental red, on the builder's left bar, so it stands
+   apart from the brown and gold around it and catches the eye before About */
 .app-fan-card {
   padding: 14px 16px 16px;
-  border: 1px solid rgba(107, 61, 23, 0.3);
-  border-left: 4px solid #8a4f1c;
+  border: 1px solid rgba(139, 42, 31, 0.3);
+  border-left: 4px solid #8b2a1f;
   border-radius: var(--mantine-radius-md);
-  background: rgba(107, 61, 23, 0.12);
+  background: rgba(139, 42, 31, 0.08);
   color: #2b1f14;
 }
 
@@ -1634,16 +1634,14 @@ a.app-list-row:active {
   align-items: center;
   gap: 8px;
   margin-bottom: 6px;
-  color: #6b3d17;
+  color: #7a2318;
 }
 
 .app-fan-card-label {
   margin: 0;
   font-family: var(--font-heading), Georgia, serif;
-  font-size: var(--mantine-font-size-sm);
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 .app-fan-card-text {
@@ -1653,21 +1651,20 @@ a.app-list-row:active {
 }
 
 .app-fan-card-text a {
-  color: #6b3d17;
+  color: #7a2318;
   font-weight: 600;
 }
 
-/* "Visit Warlord Games" in Warlord's own colours, from their shop's buttons: their orange with black
-   text, their yellow on hover */
+/* "Visit Warlord Games" in the card's own red */
 .app-fan-card .app-fan-card-button {
-  border: 1px solid #ffab2d;
-  background: #ffab2d;
-  color: #000;
+  border: 1px solid #8b2a1f;
+  background: #8b2a1f;
+  color: #f7f1e1;
 }
 
 .app-fan-card .app-fan-card-button:hover {
-  border-color: #232323;
-  background: #ffec64;
+  border-color: #a3352a;
+  background: #a3352a;
 }
 
 /* The Ko-fi appeal: a plain card, quieter than the disclaimer above it, led by Ko-fi's button */
