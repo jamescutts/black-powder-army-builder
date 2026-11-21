@@ -24,7 +24,7 @@ async function fonts() {
   ];
 }
 
-/** A flag from /public as a data address, so the image renderer can draw it (most are SVG; Prussia's is PNG) */
+/** A flag from /public as a data address, so the image renderer can draw it (most are SVG; Prussia's and Italy's are PNG) */
 export async function flagDataUrl(publicPath: string) {
   const file = await readFile(join(process.cwd(), "public", publicPath.replace(/^\//, "")));
   const type = publicPath.endsWith(".png") ? "image/png" : "image/svg+xml";

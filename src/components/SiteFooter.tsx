@@ -85,6 +85,24 @@ export function SiteFooter() {
               >
                 David Liuzzo
               </a>
+              ; Italian flag by{" "}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Flag_of_the_Napoleonic_Kingdom_of_Italy.svg"
+                target="_blank"
+                rel="noreferrer"
+                className="site-footer-link"
+              >
+                Sodacan
+              </a>
+              ,{" "}
+              <a
+                href="https://creativecommons.org/licenses/by-sa/3.0/"
+                target="_blank"
+                rel="noreferrer"
+                className="site-footer-link"
+              >
+                CC BY-SA 3.0
+              </a>
               .
             </p>
             <p className="site-footer-muted">

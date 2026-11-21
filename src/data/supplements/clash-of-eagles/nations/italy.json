@@ -2,7 +2,7 @@
   "id": "italy",
   "name": "Italy 1812",
   "blurb": "The Kingdom of Italy's Royal Guard and line regiments.",
-  "flagFile": "/flags/italy-napoleonic.svg",
+  "flagFile": "/flags/italy-napoleonic.png",
   "units": [
     {
       "id": "it-div-cmd",
