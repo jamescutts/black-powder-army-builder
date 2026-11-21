@@ -162,7 +162,10 @@ export function validateRoster(nation: Nation, roster: RosterState): ValidationI
           issues.push({
             level: "error",
             brigadeKey: bi.key,
-            message: `${bt.name}: regiments should be all ${labels}, with up to ${bt.mixLimit.maxOthers} of the other (has ${others})`,
+            message:
+              bt.mixLimit.maxOthers === 0
+                ? `${bt.name}: regiments should be all ${labels} (has ${others} of the other)`
+                : `${bt.name}: regiments should be all ${labels}, with up to ${bt.mixLimit.maxOthers} of the other (has ${others})`,
           });
         }
       }

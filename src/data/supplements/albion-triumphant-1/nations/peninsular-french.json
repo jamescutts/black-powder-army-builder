@@ -430,6 +430,11 @@
           },
           "limit": {
             "max": 1
+          },
+          "periodOverrides": {
+            "early": {
+              "limit": null
+            }
           }
         },
         {
@@ -443,11 +448,33 @@
           "addSpecial": [
             "Reliable",
             "Elite 5+"
-          ]
+          ],
+          "periodOverrides": {
+            "early": {
+              "limit": {
+                "per": {
+                  "unitIds": [
+                    "pf-line"
+                  ],
+                  "ratio": 2
+                }
+              }
+            },
+            "late": {
+              "limit": {
+                "per": {
+                  "unitIds": [
+                    "pf-line"
+                  ],
+                  "ratio": 2
+                }
+              }
+            }
+          }
         },
         {
           "id": "veteran-4",
-          "label": "Veteran, Elite 4+ (Middle)",
+          "label": "Veteran, Elite 4+",
           "cost": 8,
           "appliesTo": [
             "pf-line"
@@ -464,7 +491,10 @@
               ],
               "ratio": 2
             }
-          }
+          },
+          "periods": [
+            "middle"
+          ]
         },
         {
           "id": "tough-fighters",
@@ -496,6 +526,15 @@
           "size": "large",
           "limit": {
             "max": 1
+          },
+          "periods": [
+            "early",
+            "middle"
+          ],
+          "periodOverrides": {
+            "early": {
+              "limit": null
+            }
           }
         },
         {
@@ -543,7 +582,7 @@
       "commanderUnitId": "pf-brig-cmd",
       "slots": [
         {
-          "label": "Combined Grenadier, or Conscript Line (Middle, Late), Battalion",
+          "label": "Combined Grenadier, or Conscript Line, Battalion",
           "unitIds": [
             "pf-combined-grenadier",
             "pf-conscript"
@@ -563,7 +602,13 @@
               ],
               "label": "Conscripts"
             }
-          ]
+          ],
+          "unitPeriods": {
+            "pf-conscript": [
+              "middle",
+              "late"
+            ]
+          }
         }
       ],
       "options": [
@@ -601,7 +646,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "pf-brig-cmd",
-      "note": "Middle period only, if at least 3 infantry brigades taken",
+      "note": "If at least 3 infantry brigades are taken",
       "slots": [
         {
           "label": "Young Guard Infantry Battalion",
@@ -629,6 +674,9 @@
           "group": "size",
           "size": "small"
         }
+      ],
+      "periods": [
+        "middle"
       ]
     },
     {
@@ -659,7 +707,13 @@
               "unitId": "pf-vistula-lancer",
               "armyMax": 1
             }
-          ]
+          ],
+          "unitPeriods": {
+            "pf-vistula-lancer": [
+              "early",
+              "middle"
+            ]
+          }
         }
       ],
       "maxRatio": {
@@ -736,6 +790,30 @@
           }
         ],
         "maxOthers": 1
+      },
+      "periodOverrides": {
+        "early": {
+          "max": 1
+        },
+        "late": {
+          "mixLimit": {
+            "groups": [
+              {
+                "unitIds": [
+                  "pf-dragoon"
+                ],
+                "label": "Dragoons"
+              },
+              {
+                "unitIds": [
+                  "pf-line-light-cav"
+                ],
+                "label": "light cavalry"
+              }
+            ],
+            "maxOthers": 0
+          }
+        }
       }
     },
     {
@@ -744,7 +822,7 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "pf-brig-cmd",
-      "note": "Middle period, if at least 3 infantry brigades and 1 cavalry brigade are taken",
+      "note": "If at least 3 infantry brigades and 1 cavalry brigade are taken",
       "slots": [
         {
           "label": "Guard Cavalry Regiment",
@@ -804,6 +882,9 @@
           "group": "size",
           "size": "small"
         }
+      ],
+      "periods": [
+        "middle"
       ]
     },
     {
@@ -852,9 +933,9 @@
     }
   ],
   "notes": [
-    "The book divides the list into Early (1807-1808), Middle (1809-1811) and Late (1812-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name.",
-    "Period limits that differ: Veteran (Elite 5+) is open to any battalion in the Middle period but up to half in the Early and Late, where Elite 4+ isn't offered; in the Middle period take one or the other. In the Early period any battalion can be Large and any regiment Light (rather than one per brigade).",
-    "The Cavalry Brigade is 2-3 Dragoons with up to one Chasseur regiment (Early), or 2-4 Hussars or Chasseurs with up to one Dragoon regiment (Middle, Late), plus up to one Vistula Lancer regiment in the army (Early, Middle). The builder checks the mix as Dragoons or light cavalry with up to one of the other.",
+    "Pick the list's campaign period (Early 1807-1808, Middle 1809-1811, Late 1812-1814) at the top of the builder: choices from other periods are hidden, and each period's own limits apply. On Any, every period's choices are offered with their periods in their names.",
+    "In the Middle period an Infantry Brigade takes Veteran Elite 5+ on any battalions, or Elite 4+ on up to half, not both; the builder doesn't stop you mixing them.",
+    "The Cavalry Brigade is 2-3 Dragoons with up to one Chasseur regiment (Early), or 2-4 Hussars or Chasseurs with up to one Dragoon regiment (Middle), or with none (Late), plus up to one Vistula Lancer regiment in the army (Early, Middle). The builder checks the mix, but in the Early period doesn't stop a brigade that's mostly light cavalry.",
     "Combined Grenadiers and Voltigeurs: a brigade's battalions can lose their Grenadier/Carabinier companies (and 1 Hand-to-Hand) or Voltigeur companies (and Mixed Formation). Two battalions' companies make a Tiny unit, three a Small unit, four a standard one; a battalion that loses both becomes Small. Not built here, beyond the Reserve brigade's Combined Grenadier battalions.",
     "Foreign formations: upgrades and downgrades in the Infantry Brigade can stand for Swiss, Irish, Hanoverian, Nassau, Baden, Hesse-Darmstadt and Legion du Midi troops. Italians use the French stat lines without Pas de Charge, which the book prices at 2 points (p. 98).",
     "Dismounted Dragoons (p. 68): a Dragoon regiment can start the game dismounted, as a Small infantry unit (4/2/4/3, Skirmish). The book gives no separate cost, so it keeps the Dragoons' points.",

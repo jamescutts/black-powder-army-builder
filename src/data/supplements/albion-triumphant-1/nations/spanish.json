@@ -290,7 +290,7 @@
       "commanderUnitId": "sp-brig-cmd",
       "slots": [
         {
-          "label": "Light or Militia Battalion (up to one Militia, Middle and Late)",
+          "label": "Light or Militia Battalion (up to one Militia)",
           "unitIds": [
             "sp-light",
             "sp-militia"
@@ -302,7 +302,13 @@
               "unitId": "sp-militia",
               "max": 1
             }
-          ]
+          ],
+          "unitPeriods": {
+            "sp-militia": [
+              "middle",
+              "late"
+            ]
+          }
         },
         {
           "label": "Light Infantry Half-Battalions (two in place of each full Light battalion)",
@@ -316,18 +322,21 @@
       "options": [
         {
           "id": "large",
-          "label": "Large (Early)",
+          "label": "Large",
           "cost": 8,
           "appliesTo": [
             "sp-light",
             "sp-militia"
           ],
           "group": "size",
-          "size": "large"
+          "size": "large",
+          "periods": [
+            "early"
+          ]
         },
         {
           "id": "steady",
-          "label": "Not Wavering (Middle, Late)",
+          "label": "Not Wavering",
           "cost": 6,
           "appliesTo": [
             "sp-light",
@@ -336,11 +345,15 @@
           ],
           "removeSpecial": [
             "Wavering"
+          ],
+          "periods": [
+            "middle",
+            "late"
           ]
         },
         {
           "id": "reliable",
-          "label": "Not Unreliable (Late)",
+          "label": "Not Unreliable",
           "cost": 3,
           "appliesTo": [
             "sp-light",
@@ -348,18 +361,25 @@
           ],
           "removeSpecial": [
             "Unreliable"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
           "id": "small",
-          "label": "Small (Middle, Late)",
+          "label": "Small",
           "cost": -8,
           "appliesTo": [
             "sp-light",
             "sp-militia"
           ],
           "group": "size",
-          "size": "small"
+          "size": "small",
+          "periods": [
+            "middle",
+            "late"
+          ]
         }
       ],
       "maxBattalions": {
@@ -369,7 +389,36 @@
           "sp-light-half": 0.5
         }
       },
-      "note": "2-3 Light battalions (Early), or 1-2 Light or Militia battalions (Middle, Late); each Light battalion can be two half-battalions"
+      "note": "2-3 Light battalions (Early), or 1-2 Light or Militia battalions (Middle, Late); each Light battalion can be two half-battalions",
+      "periodOverrides": {
+        "early": {
+          "maxBattalions": {
+            "max": 3,
+            "min": 2,
+            "weights": {
+              "sp-light-half": 0.5
+            }
+          }
+        },
+        "middle": {
+          "maxBattalions": {
+            "max": 2,
+            "min": 1,
+            "weights": {
+              "sp-light-half": 0.5
+            }
+          }
+        },
+        "late": {
+          "maxBattalions": {
+            "max": 2,
+            "min": 1,
+            "weights": {
+              "sp-light-half": 0.5
+            }
+          }
+        }
+      }
     },
     {
       "id": "sp-infantry-brigade",
@@ -397,6 +446,25 @@
                 "max": 3
               }
             ]
+          },
+          "periodOverrides": {
+            "early": {
+              "regiment": {
+                "label": "Line Infantry Regiment",
+                "min": 1,
+                "max": 3,
+                "slots": [
+                  {
+                    "label": "Line Infantry Battalion",
+                    "unitIds": [
+                      "sp-line"
+                    ],
+                    "min": 1,
+                    "max": 3
+                  }
+                ]
+              }
+            }
           }
         },
         {
@@ -414,20 +482,38 @@
           ]
         },
         {
-          "label": "Militia Battalions (optional, two in the Early period, one in the Middle)",
+          "label": "Militia Battalions (optional)",
           "unitIds": [
             "sp-militia"
           ],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "periods": [
+            "early",
+            "middle"
+          ],
+          "periodOverrides": {
+            "middle": {
+              "max": 1
+            }
+          }
         },
         {
-          "label": "Light Battalions (optional, one in the Early period, two in the Middle)",
+          "label": "Light Battalions (optional)",
           "unitIds": [
             "sp-light"
           ],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "periods": [
+            "early",
+            "middle"
+          ],
+          "periodOverrides": {
+            "early": {
+              "max": 1
+            }
+          }
         }
       ],
       "note": "1-3 Line regiments; a Middle or Late period commander can have one brigade of just the additional battalions",
@@ -447,7 +533,7 @@
         },
         {
           "id": "steady",
-          "label": "Not Wavering (Middle, Late)",
+          "label": "Not Wavering",
           "cost": 6,
           "appliesTo": [
             "sp-line",
@@ -455,11 +541,15 @@
           ],
           "removeSpecial": [
             "Wavering"
+          ],
+          "periods": [
+            "middle",
+            "late"
           ]
         },
         {
           "id": "reliable",
-          "label": "Not Unreliable (Late)",
+          "label": "Not Unreliable",
           "cost": 3,
           "appliesTo": [
             "sp-line",
@@ -467,11 +557,14 @@
           ],
           "removeSpecial": [
             "Unreliable"
+          ],
+          "periods": [
+            "late"
           ]
         },
         {
           "id": "small",
-          "label": "Small (Middle, Late)",
+          "label": "Small",
           "cost": -8,
           "appliesTo": [
             "sp-line",
@@ -480,7 +573,11 @@
             "sp-light"
           ],
           "group": "size",
-          "size": "small"
+          "size": "small",
+          "periods": [
+            "middle",
+            "late"
+          ]
         }
       ]
     },
@@ -490,7 +587,6 @@
       "min": 0,
       "max": 1,
       "commanderUnitId": "sp-brig-cmd-7",
-      "note": "Early/Middle periods",
       "slots": [
         {
           "label": "Guard Infantry Battalion",
@@ -501,21 +597,33 @@
           "max": 2
         },
         {
-          "label": "Line Infantry Battalion (optional, Middle, Late)",
+          "label": "Line Infantry Battalion (optional)",
           "unitIds": [
             "sp-line"
           ],
           "min": 0,
-          "max": 2
+          "max": 2,
+          "periods": [
+            "middle",
+            "late"
+          ]
         },
         {
-          "label": "Militia Battalion (optional, Middle, Late)",
+          "label": "Militia Battalion (optional)",
           "unitIds": [
             "sp-militia"
           ],
           "min": 0,
-          "max": 1
+          "max": 1,
+          "periods": [
+            "middle",
+            "late"
+          ]
         }
+      ],
+      "periods": [
+        "early",
+        "middle"
       ]
     },
     {
@@ -638,7 +746,8 @@
     }
   ],
   "notes": [
-    "The book divides the list into Early (1807-1809), Middle (1810-1812) and Late (1813-1814) periods. The builder doesn't enforce them: choices that belong to a period say so in their name.",
+    "Pick the list's campaign period (Early 1807-1809, Middle 1810-1812, Late 1813-1814) at the top of the builder: choices from other periods are hidden, and each period's own limits apply. On Any, every period's choices are offered with their periods in their names.",
+    "Each full Light battalion a Vanguard Brigade can take can be two Small half-battalions instead.",
     "Up to two Cavalry Brigade regiments can be upgraded to Guard (Guard Light or Guard Heavy Cavalry).",
     "The chapter makes Light Infantry Shooting 2 (p. 56) and Guard Light Cavalry 6/-/4/3 without Elite 5+ (p. 57), and adds Guerrillas, which the list doesn't offer; the list's table (p. 110) is followed."
   ],

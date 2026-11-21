@@ -88,6 +88,7 @@ export function unitBlockedInSlot(place: SlotPlace, slot: BrigadeSlot, lines: Ro
   // A brigade mostly of one class, with only so many of another (Peninsular French cavalry)
   if (bt.mixLimit && mixedOthers(bt, instance, unitId) > bt.mixLimit.maxOthers) {
     const n = bt.mixLimit.maxOthers;
+    if (n === 0) return `The brigade's regiments must all be one kind (${bt.mixLimit.groups.map((g) => g.label).join(" or ")})`;
     return `Up to ${n} regiment${n === 1 ? "" : "s"} of another kind in the brigade`;
   }
 
