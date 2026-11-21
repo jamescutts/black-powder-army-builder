@@ -20,8 +20,15 @@ def thumb(name: str, width: int = 250) -> str:
     return f"https://upload.wikimedia.org/wikipedia/commons/thumb/{h[0]}/{h[:2]}/{q}/{width}px-{q}{suffix}"
 
 
-def portrait(file, title, artist, date=None, focus="50% 20%"):
-    p = {"src": thumb(file), "title": title, "artist": artist,
+def original(name: str) -> str:
+    """A Commons file's original, for one narrower than the standard thumbnail"""
+    name = name.replace(" ", "_")
+    h = hashlib.md5(name.encode()).hexdigest()
+    return f"https://upload.wikimedia.org/wikipedia/commons/{h[0]}/{h[:2]}/{urllib.parse.quote(name)}"
+
+
+def portrait(file, title, artist, date=None, focus="50% 20%", small=False):
+    p = {"src": original(file) if small else thumb(file), "title": title, "artist": artist,
          "page": "https://commons.wikimedia.org/wiki/File:" + urllib.parse.quote(file.replace(" ", "_")), "focus": focus}
     if date:
         p["date"] = date
@@ -47,7 +54,18 @@ PORTRAITS.update({
     "marmont": portrait("Marmont.jpg", "Marshal Auguste de Marmont", "Jean-Baptiste Paulin Guérin", "1837", "50% 16%"),
     "joseph": portrait("Joseph-Bonaparte.jpg", "Joseph Bonaparte, King of Spain", "François Gérard", focus="50% 14%"),
 })
-# No public-domain portrait found for Grawert, Steinheil or Löwis of Menar; their sides show the name alone
+# The commanders of divisions and corps, for their forces' cards
+PORTRAITS.update({
+    "berthezene": portrait("Le L.ant G.al B.on Berthezène (BM 1901,1022.71).jpg", "Pierre Berthezène", "Étienne David", "1840s", "50% 16%"),
+    "habert": portrait("Pierre Joseph Habert.JPG", "Pierre-Joseph Habert", "after Ambroise Tardieu", focus="50% 22%"),
+    "girard": portrait("Le général Girard (Ecole française du XIXème siècle).jpg", "Jean-Baptiste Girard", "French School", focus="50% 20%"),
+    "vichery": portrait("Louis Joseph Vichery.jpg", "Louis Joseph Vichery", "unknown artist", focus="50% 20%"),
+    "friant": portrait("Général Louis Friant (2).jpg", "Louis Friant", "Ambroise Tardieu", focus="50% 20%"),
+    "delort": portrait("Jacques-Antoine-Adrien Delort.jpg", "Jacques-Antoine-Adrien Delort", "Joseph-Marcellin Combette", focus="50% 20%"),
+    "zieten": portrait("Zieten-by-Kruger.jpg", "Hans Ernst Karl von Zieten", "Franz Krüger", focus="50% 18%", small=True),
+    "pirch": portrait("Georg Dubislav Ludwig von Pirch.png", "Georg von Pirch", "unknown artist", focus="50% 20%", small=True),
+})
+# No public-domain portrait found for Lefol, Pécheux or Hulot (Ligny), nor for Grawert, Steinheil or Löwis of Menar; their sides show the name alone
 EXTRA = {}
 
 COMMANDERS = {
@@ -68,7 +86,19 @@ COMMANDERS = {
 }
 
 
+# A force's own commander, by force id, for a portrait on its card (an experiment on Ligny first)
+FORCE_PORTRAITS: dict[str, str] = {
+    "ligny-berthezene": "berthezene", "ligny-habert": "habert", "ligny-girard": "girard", "ligny-vichery": "vichery",
+    "ligny-middle-guard": "friant", "ligny-delort": "delort",
+    "ligny-prussian-i-corps": "zieten", "ligny-prussian-ii-corps": "pirch", "ligny-prussian-iii-corps": "thielmann",
+}
+
+
 def apply(battle: dict) -> dict:
+    for f in battle["forces"]:
+        key = FORCE_PORTRAITS.get(f["id"])
+        if key and (PORTRAITS.get(key) or EXTRA.get(key)):
+            f["portrait"] = PORTRAITS.get(key) or EXTRA.get(key)
     sides = COMMANDERS.get(battle["id"])
     if not sides:
         return battle

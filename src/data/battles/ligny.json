@@ -195,7 +195,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Le_L.ant_G.al_B.on_Berthez%C3%A8ne_%28BM_1901%2C1022.71%29.jpg/250px-Le_L.ant_G.al_B.on_Berthez%C3%A8ne_%28BM_1901%2C1022.71%29.jpg",
+        "title": "Pierre Berthezène",
+        "artist": "Étienne David",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_L.ant_G.al_B.on_Berthez%C3%A8ne_%28BM_1901%2C1022.71%29.jpg",
+        "focus": "50% 16%",
+        "date": "1840s"
+      }
     },
     {
       "id": "ligny-habert",
@@ -290,7 +298,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Pierre_Joseph_Habert.JPG/250px-Pierre_Joseph_Habert.JPG",
+        "title": "Pierre-Joseph Habert",
+        "artist": "after Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:Pierre_Joseph_Habert.JPG",
+        "focus": "50% 22%"
+      }
     },
     {
       "id": "ligny-girard",
@@ -388,7 +403,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg/250px-Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "title": "Jean-Baptiste Girard",
+        "artist": "French School",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "ligny-pecheux",
@@ -570,7 +592,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Louis_Joseph_Vichery.jpg/250px-Louis_Joseph_Vichery.jpg",
+        "title": "Louis Joseph Vichery",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Louis_Joseph_Vichery.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "ligny-hulot",
@@ -741,7 +770,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "title": "Louis Friant",
+        "artist": "Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "ligny-delort",
@@ -808,7 +844,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Jacques-Antoine-Adrien_Delort.jpg/250px-Jacques-Antoine-Adrien_Delort.jpg",
+        "title": "Jacques-Antoine-Adrien Delort",
+        "artist": "Joseph-Marcellin Combette",
+        "page": "https://commons.wikimedia.org/wiki/File:Jacques-Antoine-Adrien_Delort.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "ligny-prussian-i-corps",
@@ -1115,7 +1158,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/7/73/Zieten-by-Kruger.jpg",
+        "title": "Hans Ernst Karl von Zieten",
+        "artist": "Franz Krüger",
+        "page": "https://commons.wikimedia.org/wiki/File:Zieten-by-Kruger.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "ligny-prussian-ii-corps",
@@ -1406,7 +1456,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/4/48/Georg_Dubislav_Ludwig_von_Pirch.png",
+        "title": "Georg von Pirch",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Georg_Dubislav_Ludwig_von_Pirch.png",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "ligny-prussian-iii-corps",
@@ -1664,7 +1721,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Johann_Adolf_Freiherr_von_Thielmann.jpg/250px-Johann_Adolf_Freiherr_von_Thielmann.jpg",
+        "title": "Johann von Thielmann",
+        "artist": "Anton Graff",
+        "page": "https://commons.wikimedia.org/wiki/File:Johann_Adolf_Freiherr_von_Thielmann.jpg",
+        "focus": "50% 14%"
+      }
     }
   ],
   "sides": {

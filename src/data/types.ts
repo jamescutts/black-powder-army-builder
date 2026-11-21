@@ -606,6 +606,8 @@ export interface HistoricalForce {
   side: string;
   /** The list's campaign period it's built in, for lists that have them */
   period?: string;
+  /** A portrait of the force's commander, shown on its card with the army's flag */
+  portrait?: HistoricalArt;
   /** A few sentences on what the force did, in our own words */
   summary: string;
   /** Where it departs from the history or the list's rules, and the choices made in building it */

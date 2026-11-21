@@ -2427,3 +2427,42 @@ a.app-list-row:active {
   height: 100%;
   object-fit: cover;
 }
+
+/* A historical force's card: its commander's portrait, round, with the army's flag on its lower corner */
+.force-portrait {
+  position: relative;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  margin: 0 4px 4px 0;
+}
+
+.force-portrait > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #d9c287;
+  box-shadow: 0 1px 4px rgba(33, 20, 10, 0.25);
+  background: rgba(107, 61, 23, 0.12);
+}
+
+.force-portrait-flag {
+  position: absolute;
+  right: -6px;
+  bottom: -4px;
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1.5px solid #fbf6e9;
+  box-shadow: 0 1px 3px rgba(33, 20, 10, 0.35);
+}
+
+.force-portrait-flag img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -399,10 +399,28 @@ function ForceCard({ force }: { force: HistoricalForce }) {
   return (
     <Card withBorder radius="md" padding="md" className="picker-card saved-list-card">
       <Group gap="sm" wrap="nowrap" align="flex-start">
-        {flag && (
-          <span className="army-flag saved-list-flag">
-            <img src={flag} alt="" />
+        {/* The force's commander where there's a portrait of him, with the army's flag on its corner; the flag
+            alone otherwise */}
+        {force.portrait ? (
+          <span className="force-portrait" title={`${force.portrait.title}, ${force.portrait.artist}`}>
+            <img
+              src={force.portrait.src}
+              alt={`${force.portrait.title}, ${force.portrait.artist}`}
+              loading="lazy"
+              style={{ objectPosition: force.portrait.focus ?? "50% 20%" }}
+            />
+            {flag && (
+              <span className="force-portrait-flag">
+                <img src={flag} alt="" />
+              </span>
+            )}
           </span>
+        ) : (
+          flag && (
+            <span className="army-flag saved-list-flag">
+              <img src={flag} alt="" />
+            </span>
+          )
         )}
         <Stack gap={2} style={{ minWidth: 0 }}>
           {/* The card's link: it covers the whole card (see .saved-list-link) */}
