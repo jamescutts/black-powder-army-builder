@@ -970,5 +970,13 @@
         }
       ]
     }
-  ]
+  ],
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Emmanuel_de_Grouchy_2.jpg/960px-Emmanuel_de_Grouchy_2.jpg",
+    "title": "Marshal Grouchy",
+    "artist": "Jean-Sébastien Rouillard",
+    "date": "1835",
+    "page": "https://commons.wikimedia.org/wiki/File:Emmanuel_de_Grouchy_2.jpg",
+    "focus": "50% 12%"
+  }
 }

@@ -3147,5 +3147,12 @@
         }
       ]
     }
-  ]
+  ],
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Andrieux_-_La_bataille_de_Waterloo.jpg/960px-Andrieux_-_La_bataille_de_Waterloo.jpg",
+    "title": "The Battle of Waterloo",
+    "artist": "Clément-Auguste Andrieux",
+    "date": "1852",
+    "page": "https://commons.wikimedia.org/wiki/File:Andrieux_-_La_bataille_de_Waterloo.jpg"
+  }
 }

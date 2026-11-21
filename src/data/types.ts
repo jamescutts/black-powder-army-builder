@@ -614,9 +614,28 @@ export interface HistoricalForce {
   brigades: ForceBrigade[];
 }
 
+/** A public-domain painting from Wikimedia Commons, credited where it's shown */
+export interface HistoricalArt {
+  /** The image (a Commons copy about 960–1280px wide) */
+  src: string;
+  title: string;
+  artist: string;
+  /** e.g. "1875" */
+  date?: string;
+  /** The painting's Commons page */
+  page: string;
+  /**
+   * Where to keep in view when it's cropped to a wide band (CSS object-position), e.g. "50% 12%" for a
+   * full-length portrait's face; the middle when left out
+   */
+  focus?: string;
+}
+
 /** A campaign, whose battles are listed under its heading, e.g. The Hundred Days */
 export interface HistoricalCampaign {
   id: string;
+  /** A painting across the top of the campaign's card */
+  art?: HistoricalArt;
   /** e.g. "The Hundred Days" */
   name: string;
   /** e.g. "June 1815" */
@@ -633,6 +652,8 @@ export interface HistoricalBattle {
   date: string;
   /** The campaign's id, e.g. "hundred-days" */
   campaign: string;
+  /** A painting of the battle, as a banner at the head of its section */
+  art?: HistoricalArt;
   summary: string;
   /** Orders of battle the forces were built from */
   sources: { label: string; url?: string }[];

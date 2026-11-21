@@ -1666,5 +1666,12 @@
         }
       ]
     }
-  ]
+  ],
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Abraham_Cooper_%281787-1868%29_-_Marshal_Bl%C3%BCcher_at_the_Battle_of_Ligny%2C_16_June_1815_-_485150_-_National_Trust.jpg/960px-Abraham_Cooper_%281787-1868%29_-_Marshal_Bl%C3%BCcher_at_the_Battle_of_Ligny%2C_16_June_1815_-_485150_-_National_Trust.jpg",
+    "title": "Marshal Blücher at the Battle of Ligny",
+    "artist": "Abraham Cooper",
+    "date": "1815",
+    "page": "https://commons.wikimedia.org/wiki/File:Abraham_Cooper_(1787-1868)_-_Marshal_Bl%C3%BCcher_at_the_Battle_of_Ligny,_16_June_1815_-_485150_-_National_Trust.jpg"
+  }
 }

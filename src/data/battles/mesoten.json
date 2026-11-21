@@ -473,5 +473,13 @@
         }
       ]
     }
-  ]
+  ],
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/960px-Ludwig_Yorck_von_Wartenburg.jpg",
+    "title": "General Yorck",
+    "artist": "Ernst Gebauer",
+    "date": "1835",
+    "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+    "focus": "50% 38%"
+  }
 }

@@ -989,5 +989,12 @@
         }
       ]
     }
-  ]
+  ],
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Butler_Lady_Quatre_Bras_1815.jpg/960px-Butler_Lady_Quatre_Bras_1815.jpg",
+    "title": "The 28th Regiment at Quatre Bras",
+    "artist": "Elizabeth Thompson",
+    "date": "1875",
+    "page": "https://commons.wikimedia.org/wiki/File:Butler_Lady_Quatre_Bras_1815.jpg"
+  }
 }

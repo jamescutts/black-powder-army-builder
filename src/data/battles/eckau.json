@@ -369,5 +369,12 @@
         }
       ]
     }
-  ]
+  ],
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Siege_of_Riga%2C_houses_on_fire_%281812%29.jpg/960px-Siege_of_Riga%2C_houses_on_fire_%281812%29.jpg",
+    "title": "The siege of Riga: the suburbs burning",
+    "artist": "attributed to Carl Traugott Fechhelm",
+    "date": "1812",
+    "page": "https://commons.wikimedia.org/wiki/File:Siege_of_Riga,_houses_on_fire_(1812).jpg"
+  }
 }

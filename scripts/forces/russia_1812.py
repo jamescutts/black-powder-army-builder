@@ -171,5 +171,8 @@ MESOTEN = battle(
 if __name__ == "__main__":
     for b in (ECKAU, MESOTEN):
         ratings.apply(b)
+        art = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]
+        if b["id"] in art:
+            b["art"] = art[b["id"]]
         (OUT / f"{b['id']}.json").write_text(json.dumps(b, ensure_ascii=False, indent=2) + "\n")
         print(f"{b['name']}: {len(b['forces'])} forces")

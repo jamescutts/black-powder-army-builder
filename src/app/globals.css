@@ -2341,28 +2341,29 @@ a.app-list-row:active {
   text-underline-offset: 2px;
 }
 
-/* Historical forces: each battle's heading is a link target from a list's origin note */
-.battle-section {
-  scroll-margin-top: 16px;
+/* Historical forces: a battle's painting at the head of its section, with its credit beneath */
+.battle-art {
+  margin: 0;
 }
 
-/* Historical forces: a campaign page's battles, to jump to */
-.battle-jump.battle-jump {
-  padding: 4px 10px;
-  border: 1px solid rgba(107, 61, 23, 0.35);
-  border-radius: 999px;
-  background: rgba(255, 252, 244, 0.6);
-  color: var(--mantine-color-brown-9);
-  font-size: var(--mantine-font-size-sm);
-  font-weight: 600;
-  text-decoration: none;
+.battle-art img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  object-fit: cover;
+  border-radius: var(--mantine-radius-md);
+  border: 1px solid var(--mantine-color-default-border);
+  background: rgba(107, 61, 23, 0.12);
 }
 
-.battle-jump.battle-jump:hover {
-  background: rgba(255, 252, 244, 0.95);
-}
-
-.battle-jump-date {
-  font-weight: 400;
+.battle-art figcaption {
+  margin-top: 4px;
+  font-size: var(--mantine-font-size-xs);
   color: var(--mantine-color-brown-8);
+}
+
+@media (max-width: 48em) {
+  .battle-art img {
+    aspect-ratio: 2 / 1;
+  }
 }

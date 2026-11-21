@@ -126,9 +126,9 @@ export function campaignHref(campaignId: string): string {
   return `${HISTORICAL_FORCES_PATH}/${campaignId}`;
 }
 
-/** A battle's place on its campaign's page */
+/** A battle's page, listing its forces */
 export function battleHref(battle: { id: string; campaign: string }): string {
-  return `${campaignHref(battle.campaign)}#${battle.id}`;
+  return `${campaignHref(battle.campaign)}/${battle.id}`;
 }
 
 /** Where a historical force is opened from: the army's page, which starts a new list from it */

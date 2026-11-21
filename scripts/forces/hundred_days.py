@@ -579,8 +579,14 @@ def battle(id_, name, date, summary, forces):
     return {"id": id_, "name": name, "date": date, "campaign": "hundred-days", "summary": summary, "sources": SOURCES, "forces": forces}
 
 
+ART = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]
+
+
 def write(b):
+    """Writes a battle, with its Staff Ratings set and its painting (art.json) where it has one"""
     ratings.apply(b)
+    if b["id"] in ART:
+        b["art"] = ART[b["id"]]
     (OUT / f"{b['id']}.json").write_text(json.dumps(b, ensure_ascii=False, indent=2) + "\n")
 
 

@@ -1,0 +1,63 @@
+{
+  "battles": {
+    "quatre-bras": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Butler_Lady_Quatre_Bras_1815.jpg/960px-Butler_Lady_Quatre_Bras_1815.jpg",
+      "title": "The 28th Regiment at Quatre Bras",
+      "artist": "Elizabeth Thompson",
+      "date": "1875",
+      "page": "https://commons.wikimedia.org/wiki/File:Butler_Lady_Quatre_Bras_1815.jpg"
+    },
+    "ligny": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Abraham_Cooper_%281787-1868%29_-_Marshal_Bl%C3%BCcher_at_the_Battle_of_Ligny%2C_16_June_1815_-_485150_-_National_Trust.jpg/960px-Abraham_Cooper_%281787-1868%29_-_Marshal_Bl%C3%BCcher_at_the_Battle_of_Ligny%2C_16_June_1815_-_485150_-_National_Trust.jpg",
+      "title": "Marshal Blücher at the Battle of Ligny",
+      "artist": "Abraham Cooper",
+      "date": "1815",
+      "page": "https://commons.wikimedia.org/wiki/File:Abraham_Cooper_(1787-1868)_-_Marshal_Bl%C3%BCcher_at_the_Battle_of_Ligny,_16_June_1815_-_485150_-_National_Trust.jpg"
+    },
+    "waterloo": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bb/Andrieux_-_La_bataille_de_Waterloo.jpg/960px-Andrieux_-_La_bataille_de_Waterloo.jpg",
+      "title": "The Battle of Waterloo",
+      "artist": "Clément-Auguste Andrieux",
+      "date": "1852",
+      "page": "https://commons.wikimedia.org/wiki/File:Andrieux_-_La_bataille_de_Waterloo.jpg"
+    },
+    "eckau": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Siege_of_Riga%2C_houses_on_fire_%281812%29.jpg/960px-Siege_of_Riga%2C_houses_on_fire_%281812%29.jpg",
+      "title": "The siege of Riga: the suburbs burning",
+      "artist": "attributed to Carl Traugott Fechhelm",
+      "date": "1812",
+      "page": "https://commons.wikimedia.org/wiki/File:Siege_of_Riga,_houses_on_fire_(1812).jpg"
+    },
+    "wavre": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Emmanuel_de_Grouchy_2.jpg/960px-Emmanuel_de_Grouchy_2.jpg",
+      "title": "Marshal Grouchy",
+      "artist": "Jean-Sébastien Rouillard",
+      "date": "1835",
+      "page": "https://commons.wikimedia.org/wiki/File:Emmanuel_de_Grouchy_2.jpg",
+      "focus": "50% 12%"
+    },
+    "mesoten": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/960px-Ludwig_Yorck_von_Wartenburg.jpg",
+      "title": "General Yorck",
+      "artist": "Ernst Gebauer",
+      "date": "1835",
+      "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+      "focus": "50% 38%"
+    }
+  },
+  "campaigns": {
+    "hundred-days": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/1815-06-18_Adolph_Northen_oil_on_canvas_Die_Verteidigung_des_Meierhofes_La_Haye_Sainte_bei_Waterloo%2C_Historisches_Museum_Hannover.webp/960px-1815-06-18_Adolph_Northen_oil_on_canvas_Die_Verteidigung_des_Meierhofes_La_Haye_Sainte_bei_Waterloo%2C_Historisches_Museum_Hannover.webp",
+      "title": "The Defence of La Haye Sainte",
+      "artist": "Adolph Northen",
+      "page": "https://commons.wikimedia.org/wiki/File:1815-06-18_Adolph_Northen_oil_on_canvas_Die_Verteidigung_des_Meierhofes_La_Haye_Sainte_bei_Waterloo,_Historisches_Museum_Hannover.webp"
+    },
+    "russia-1812": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/De_overtocht_over_de_Berezina.jpg/960px-De_overtocht_over_de_Berezina.jpg",
+      "title": "The Crossing of the Berezina",
+      "artist": "Jan Hoynck van Papendrecht",
+      "date": "1908–09",
+      "page": "https://commons.wikimedia.org/wiki/File:De_overtocht_over_de_Berezina.jpg"
+    }
+  }
+}
