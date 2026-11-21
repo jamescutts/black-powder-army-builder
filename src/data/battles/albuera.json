@@ -1266,6 +1266,39 @@
       "period": "middle"
     }
   ],
+  "sides": {
+    "Anglo-Portuguese": {
+      "commander": "Marshal Beresford",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Thomas_Lawrence_%281769-1830%29_-_William_Carr_%281768%E2%80%931854%29%2C_Viscount_Beresford%2C_GCB_-_WM.1480-1948_-_Apsley_House.jpg/250px-Thomas_Lawrence_%281769-1830%29_-_William_Carr_%281768%E2%80%931854%29%2C_Viscount_Beresford%2C_GCB_-_WM.1480-1948_-_Apsley_House.jpg",
+        "title": "William Carr Beresford",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Thomas_Lawrence_%281769-1830%29_-_William_Carr_%281768%E2%80%931854%29%2C_Viscount_Beresford%2C_GCB_-_WM.1480-1948_-_Apsley_House.jpg",
+        "focus": "50% 16%",
+        "date": "1818"
+      }
+    },
+    "Spanish": {
+      "commander": "Gen. Joaquín Blake",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg/250px-El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg",
+        "title": "Joaquín Blake",
+        "artist": "Manuel Ojeda",
+        "page": "https://commons.wikimedia.org/wiki/File:El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "French": {
+      "commander": "Marshal Soult",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nicolas_Jean_de_Dieu_Soult.jpg/250px-Nicolas_Jean_de_Dieu_Soult.jpg",
+        "title": "Marshal Jean-de-Dieu Soult",
+        "artist": "after Louis-Henri de Rudder",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Jean_de_Dieu_Soult.jpg",
+        "focus": "50% 14%"
+      }
+    }
+  },
   "art": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Battle_of_Albuhera%2C_by_William_Barnes_Wollen.jpg",
     "title": "The Flag, Albuhera, 16 May 1811",

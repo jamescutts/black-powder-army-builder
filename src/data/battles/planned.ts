@@ -64,20 +64,12 @@ somosierra.art = {
   date: "1810",
   page: "https://commons.wikimedia.org/wiki/File:Louis-Fran%C3%A7ois_Lejeune_-_Battle_of_Somosierra,_November_30,_1808.jpg",
 };
-export const corunna = planned("corunna", "Corunna", "16 January 1809", P,
-  "At the end of its winter retreat Moore's army turned on Soult to cover its embarkation; Moore was killed in the moment of victory.");
-export const talavera = planned("talavera", "Talavera", "27–28 July 1809", P,
-  "Wellesley and Cuesta's Anglo-Spanish army held off King Joseph, Victor and Jourdan in two days of hard fighting.");
 export const ocana = planned("ocana", "Ocaña", "19 November 1809", P,
   "Areizaga's Spanish army was broken on the plain south of Aranjuez by Soult and Mortier, its largest defeat of the war.");
 export const bussaco = planned("bussaco", "Bussaco", "27 September 1810", P,
   "Masséna's corps climbed the long ridge of Bussaco against Wellington's Anglo-Portuguese line and were thrown back down it.");
 export const fuentesDeOnoro = planned("fuentes-de-onoro", "Fuentes de Oñoro", "3–5 May 1811", P,
   "Masséna's attempt to relieve Almeida, fought out in the village's streets and on the open plain to its south.");
-export const salamanca = planned("salamanca", "Salamanca", "22 July 1812", P,
-  "Wellington caught Marmont's army strung out on the march and broke it in an afternoon.");
-export const vitoria = planned("vitoria", "Vitoria", "21 June 1813", P,
-  "Wellington routed King Joseph's army in the Zadorra valley, taking its guns, its baggage and the King's carriage.");
 export const sorauren = planned("sorauren", "Sorauren", "28–30 July 1813", P,
   "Soult's drive through the Pyrenees to relieve Pamplona was stopped on the heights above Sorauren.");
 export const nivelle = planned("nivelle", "Nivelle", "10 November 1813", P,

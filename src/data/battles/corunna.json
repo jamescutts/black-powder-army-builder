@@ -1,0 +1,898 @@
+{
+  "id": "corunna",
+  "name": "Corunna",
+  "date": "16 January 1809",
+  "campaign": "peninsular-war",
+  "summary": "At the end of a terrible winter retreat across Galicia, Moore's army turned on the heights above Corunna to hold off Soult while the fleet waited to take it off. The French attacks on the village of Elviña and round the British right were beaten back, and the army embarked; Moore was killed by a round shot at the moment of victory.",
+  "sources": [
+    {
+      "label": "Battle of Corunna order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Corunna_order_of_battle"
+    },
+    {
+      "label": "Battle of Corunna (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Corunna"
+    },
+    {
+      "label": "Battle of Corunna (History of War)",
+      "url": "https://www.historyofwar.org/articles/battles_corunna.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "corunna-baird",
+      "nationId": "peninsular-british",
+      "name": "Baird's 1st Division",
+      "formation": "Moore's army",
+      "side": "British",
+      "summary": "Held the right of the British line around Elviña, where Bentinck's brigade, the 42nd and 50th among it, fought for the village all afternoon; Moore fell beside it.",
+      "notes": [
+        "The list allows one Highland or Light battalion in four, so a brigade of three may have none; where one had a Highland or Light regiment, that shows as a historical departure.",
+        "Truscott's and Wilmot's were the only guns kept ashore, nine in all; one battery goes to each of Baird's and Hope's divisions.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir David Baird",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-guards-brigade",
+          "name": "Warde's Guards Brigade",
+          "commander": {
+            "name": "Maj-Gen Henry Warde",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/1st Foot Guards"
+            },
+            {
+              "unit": "pb-foot-guard",
+              "name": "2/1st Foot Guards"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Bentinck's Brigade",
+          "commander": {
+            "name": "Maj-Gen Lord William Bentinck",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/4th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/42nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/50th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Manningham's Brigade",
+          "commander": {
+            "name": "Maj-Gen Coote Manningham",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/1st Foot (Royal Scots)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/26th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/81st Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Truscott's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Truscott's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "corunna-hope",
+      "nationId": "peninsular-british",
+      "name": "Hope's 2nd Division",
+      "formation": "Moore's army",
+      "side": "British",
+      "summary": "Held the left of the line above the Mero, facing Delaborde's half-hearted attack; Hope took command when Moore fell and Baird was wounded.",
+      "notes": [
+        "Craufurd's brigade had two Highland battalions, the 71st and 92nd, where the list allows one in four, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen the Hon John Hope",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Leith's Brigade",
+          "commander": {
+            "name": "Maj-Gen James Leith",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "51st Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/59th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/76th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Hill's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rowland Hill",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2nd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/14th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/32nd Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Craufurd's Brigade",
+          "commander": {
+            "name": "Brig-Gen Catlin Craufurd",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/36th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/71st Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/92nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Wilmot's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Wilmot's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "corunna-paget",
+      "nationId": "peninsular-british",
+      "name": "Paget's Reserve",
+      "formation": "Moore's army",
+      "side": "British",
+      "summary": "The army's rearguard through the retreat, it came forward round the British right to meet Mermet's flanking brigade and the French cavalry and drove them back.",
+      "notes": [
+        "The list allows one Highland or Light battalion in four, so a brigade of three may have none; where one had a Highland or Light regiment, that shows as a historical departure.",
+        "The 1/95th, worn down by the retreat, is the list's Small Rifle Companies.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen the Hon Edward Paget",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Anstruther's Brigade",
+          "commander": {
+            "name": "Brig-Gen Robert Anstruther",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "20th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/52nd Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "1/95th Rifles"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Disney's Brigade",
+          "commander": {
+            "name": "Brig-Gen Moore Disney",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/28th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/91st Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "corunna-fraser",
+      "nationId": "peninsular-british",
+      "name": "Fraser's 3rd Division",
+      "formation": "Moore's army",
+      "side": "British",
+      "summary": "Posted on the heights of Santa Lucia behind the right, covering the town and the way to the ships; it was hardly engaged.",
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Alexander Fraser",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Beresford's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Carr Beresford",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/6th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/9th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/23rd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/43rd Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Fane's Brigade",
+          "commander": {
+            "name": "Brig-Gen Henry Fane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/38th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/79th Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/82nd Foot"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "The list allows one Highland or Light battalion in four, so a brigade of three may have none; where one had a Highland or Light regiment, that shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "corunna-merle",
+      "nationId": "peninsular-french",
+      "name": "Merle's Division",
+      "formation": "1st Division, II Corps (Soult)",
+      "side": "French",
+      "summary": "In the French centre, its columns pressed the attack on Elviña and the heights beyond alongside Mermet's.",
+      "notes": [
+        "No source gives the battalions of each regiment; the corps' 39 battalions in thirteen regiments suggests three each, which is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Merle",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Reynaud's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Reynaud",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/2e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "36e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/36e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Sarrut's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sarrut",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Thomières's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thomières",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "15e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/15e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/15e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/15e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "corunna-mermet",
+      "nationId": "peninsular-french",
+      "name": "Mermet's Division",
+      "formation": "2nd Division, II Corps (Soult)",
+      "side": "French",
+      "summary": "Led the main French attack: two brigades stormed Elviña against Bentinck while the third swung round the British right. Gaulois was killed and Lefebvre wounded.",
+      "notes": [
+        "No source gives the battalions of each regiment; the corps' 39 battalions in thirteen regiments suggests three each, which is how they're shown.",
+        "The Swiss regiments may have had fewer battalions; the sources don't say.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Mermet",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Gaulois's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gaulois",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "122e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/122e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/122e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/122e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Jardon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jardon",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "31e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/31e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/31e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/31e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "47e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/47e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Lefebvre's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lefebvre",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2e Suisse",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2e Suisse"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/2e Suisse"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/2e Suisse"
+                }
+              ]
+            },
+            {
+              "name": "3e Suisse",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/3e Suisse"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/3e Suisse"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/3e Suisse"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "corunna-delaborde",
+      "nationId": "peninsular-french",
+      "name": "Delaborde's Division",
+      "formation": "3rd Division, II Corps (Soult)",
+      "side": "French",
+      "summary": "Still coming up as the battle began, it made only a weak attack on the British left late in the day.",
+      "notes": [
+        "No source gives the battalions of each regiment; the corps' 39 battalions in thirteen regiments suggests three each, which is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Delaborde",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Foy's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Foy",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "70e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/70e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "86e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/86e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/86e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/86e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Arnaud's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Arnaud",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "17e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/17e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/17e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/17e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "4e Suisse",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Suisse"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4e Suisse"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/4e Suisse"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "corunna-cavalry",
+      "nationId": "peninsular-french",
+      "name": "Soult's Cavalry",
+      "formation": "Lahoussaye's and Franceschi's divisions",
+      "side": "French",
+      "summary": "Sent round the British right with Mermet's flanking brigade, the dragoons and light horse were held off by Paget's reserve in the broken ground.",
+      "notes": [
+        "Cavalry without the infantry brigades it's allowed by shows as a historical departure. Lorge's dragoon division, also with the corps, is left out.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Lahoussaye",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Lahoussaye's Dragoons",
+          "commander": {
+            "name": "Gén. de Division Lahoussaye",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "17e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "18e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "19e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "27e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Franceschi's Light Cavalry",
+          "commander": {
+            "name": "Gén. de Division Franceschi",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "1er Hussards"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "22e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "Hanoverian Chasseurs"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "8e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    }
+  ],
+  "sides": {
+    "British": {
+      "commander": "Lt-Gen Sir John Moore",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Thomas_Lawrence_%281769-1830%29_-_Lieutenant-General_Sir_John_Moore_%281761%E2%80%931809%29%2C_KB_-_NAM._1966-07-22_-_National_Army_Museum.jpg/250px-Thomas_Lawrence_%281769-1830%29_-_Lieutenant-General_Sir_John_Moore_%281761%E2%80%931809%29%2C_KB_-_NAM._1966-07-22_-_National_Army_Museum.jpg",
+        "title": "Sir John Moore",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Thomas_Lawrence_%281769-1830%29_-_Lieutenant-General_Sir_John_Moore_%281761%E2%80%931809%29%2C_KB_-_NAM._1966-07-22_-_National_Army_Museum.jpg",
+        "focus": "50% 18%",
+        "date": "1805"
+      }
+    },
+    "French": {
+      "commander": "Marshal Soult",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nicolas_Jean_de_Dieu_Soult.jpg/250px-Nicolas_Jean_de_Dieu_Soult.jpg",
+        "title": "Marshal Jean-de-Dieu Soult",
+        "artist": "after Louis-Henri de Rudder",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Jean_de_Dieu_Soult.jpg",
+        "focus": "50% 14%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Combat_de_la_Corogne_16_janvier_1809_%28ca._1823%29_-_Lecomte%2C_Hippolyte.jpg/960px-Combat_de_la_Corogne_16_janvier_1809_%28ca._1823%29_-_Lecomte%2C_Hippolyte.jpg",
+    "title": "Combat de la Corogne",
+    "artist": "Hippolyte Lecomte",
+    "date": "c. 1823",
+    "page": "https://commons.wikimedia.org/wiki/File:Combat_de_la_Corogne_16_janvier_1809_%28ca._1823%29_-_Lecomte%2C_Hippolyte.jpg"
+  }
+}

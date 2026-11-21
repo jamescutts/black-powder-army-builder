@@ -665,12 +665,33 @@
       "period": "early"
     }
   ],
+  "sides": {
+    "Anglo-Portuguese": {
+      "commander": "Sir Arthur Wellesley",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "French": {
+      "commander": "Gén. Junot",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Junot%2C_par_Appiani.png/250px-Junot%2C_par_Appiani.png",
+        "title": "Jean-Andoche Junot",
+        "artist": "Andrea Appiani",
+        "page": "https://commons.wikimedia.org/wiki/File:Junot%2C_par_Appiani.png",
+        "focus": "50% 22%"
+      }
+    }
+  },
   "art": {
-    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Batalha_do_Vimeiro.jpg/960px-Batalha_do_Vimeiro.jpg",
-    "title": "Batalha do Vimeiro",
-    "artist": "Domenico Schiopetta and J. Cardini",
-    "date": "1810–12",
-    "page": "https://commons.wikimedia.org/wiki/File:Batalha_do_Vimeiro.jpg",
-    "focus": "50% 45%"
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg/960px-The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg",
+    "title": "The 20th Light Dragoons at the Battle of Vimeiro",
+    "artist": "Richard Simkin",
+    "date": "1890",
+    "page": "https://commons.wikimedia.org/wiki/File:The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg"
   }
 }

@@ -14,6 +14,7 @@ words. Staff Ratings are set by ratings.py: 8 unless a commander is one of the b
 import json
 from pathlib import Path
 
+import commanders
 import ratings
 from hundred_days import bde, cmd, force, u
 
@@ -171,6 +172,7 @@ MESOTEN = battle(
 if __name__ == "__main__":
     for b in (ECKAU, MESOTEN):
         ratings.apply(b)
+        commanders.apply(b)
         art = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]
         if b["id"] in art:
             b["art"] = art[b["id"]]

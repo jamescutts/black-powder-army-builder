@@ -652,8 +652,10 @@ export interface HistoricalBattle {
   date: string;
   /** The campaign's id, e.g. "hundred-days" */
   campaign: string;
-  /** A painting of the battle, as a banner at the head of its section */
+  /** A painting of the battle, across the head of its page */
   art?: HistoricalArt;
+  /** Each side's commander (by the side's name, as its forces give it), with a portrait where there is one */
+  sides?: Record<string, { commander: string; portrait?: HistoricalArt }>;
   summary: string;
   /** Orders of battle the forces were built from */
   sources: { label: string; url?: string }[];

@@ -1,0 +1,1255 @@
+{
+  "id": "talavera",
+  "name": "Talavera",
+  "date": "27–28 July 1809",
+  "campaign": "peninsular-war",
+  "summary": "Wellesley and Cuesta's Anglo-Spanish army held the line from Talavera to the Cerro de Medellín against King Joseph, Jourdan and Victor. A night attack on the Medellín was thrown back, and on the 28th the British line broke the French assaults, though the Guards pursued too far, and the 23rd Light Dragoons rode into a hidden ravine. The French withdrew; it won Wellesley his title.",
+  "sources": [
+    {
+      "label": "Battle of Talavera order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Talavera_order_of_battle"
+    },
+    {
+      "label": "Battle of Talavera (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Talavera"
+    },
+    {
+      "label": "Battle of Talavera (History of War)",
+      "url": "https://www.historyofwar.org/articles/battles_talavera.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "talavera-sherbrooke",
+      "nationId": "peninsular-british",
+      "name": "Sherbrooke's 1st Division",
+      "formation": "Wellesley's army",
+      "side": "British",
+      "summary": "Held the centre. On the 28th its Guards and King's German Legion threw back Lapisse's columns but followed them too far, and only the 48th's arrival stopped the counter-attack breaking the line; Langwerth was killed.",
+      "notes": [
+        "Two KGL brigades where the list takes one show as a historical departure. Two companies of the 1st KGL Light are left out.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen John Sherbrooke",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-guards-brigade",
+          "name": "Campbell's Guards Brigade",
+          "commander": {
+            "name": "Brig-Gen Henry Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/Coldstream Guards"
+            },
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/3rd Foot Guards"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Cameron's Brigade",
+          "commander": {
+            "name": "Brig-Gen Alan Cameron",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/61st Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/83rd Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-kgl-brigade",
+          "name": "Langwerth's KGL Brigade",
+          "commander": {
+            "name": "Brig-Gen von Langwerth",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1st Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Line Bn KGL"
+            }
+          ]
+        },
+        {
+          "type": "pb-kgl-brigade",
+          "name": "Löw's KGL Brigade",
+          "commander": {
+            "name": "Brig-Gen von Löw",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "5th Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "7th Line Bn KGL"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Sillery's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Sillery's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-hill",
+      "nationId": "peninsular-british",
+      "name": "Hill's 2nd Division",
+      "formation": "Wellesley's army",
+      "side": "British",
+      "summary": "Held the Cerro de Medellín, the key to the position, and threw Ruffin's night attack off it; next day it beat off Ruffin again, and the 1/48th came down to save the centre.",
+      "notes": [
+        "Wellesley directed the battle from the Medellín, so the book's named Wellington leads here; Hill commanded the division.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Sir Arthur Wellesley, Duke of Wellington, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-wellington"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Tilson's Brigade",
+          "commander": {
+            "name": "Maj-Gen Christopher Tilson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/3rd Foot (Buffs)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/48th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/66th Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Stewart's Brigade",
+          "commander": {
+            "name": "Brig-Gen Richard Stewart",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "29th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/48th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1st Bn of Detachments",
+              "options": [
+                "detachments"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Heise's Battery KGL",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Heise's Battery KGL"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-mackenzie",
+      "nationId": "peninsular-british",
+      "name": "Mackenzie's 3rd Division",
+      "formation": "Wellesley's army",
+      "side": "British",
+      "summary": "Caught by surprise at the Casa de Salinas the day before, it held the left centre on the 28th and fought off the attack on the redoubt; Mackenzie was killed.",
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen John Mackenzie",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Mackenzie's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Mackenzie",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/24th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/31st Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Donkin's Brigade",
+          "commander": {
+            "name": "Col Rufane Donkin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/87th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/88th Foot"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "5/60th Rifles (five companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Rettberg's Battery KGL",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Rettberg's Battery KGL"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-campbell",
+      "nationId": "peninsular-british",
+      "name": "Campbell's 4th Division",
+      "formation": "Wellesley's army",
+      "side": "British",
+      "summary": "Joined to the Spanish at the Pajar de Vergara redoubt, it threw back Leval's Germans and took their guns.",
+      "notes": [
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Lawson's battery had 3-pounders, lighter than the list's guns.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Brig-Gen Alexander Campbell",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Campbell's Brigade",
+          "commander": {
+            "name": "Brig-Gen Alexander Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/7th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/53rd Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Kemmis's Brigade",
+          "commander": {
+            "name": "Col James Kemmis",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/40th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "97th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Bn of Detachments",
+              "options": [
+                "detachments"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Lawson's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Lawson's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-payne",
+      "nationId": "peninsular-british",
+      "name": "Payne's Cavalry",
+      "formation": "Wellesley's army",
+      "side": "British",
+      "summary": "Held behind the line and in the northern valley; Anson's brigade charged the French there, and the 23rd Light Dragoons rode into a hidden ravine and on into the French, losing half their men.",
+      "notes": [
+        "Cavalry on its own has no infantry brigades for its brigades to go with, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen William Payne",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Fane's Brigade",
+          "commander": {
+            "name": "Brig-Gen Henry Fane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "3rd Dragoon Guards"
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "4th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Cotton's Brigade",
+          "commander": {
+            "name": "Maj-Gen Stapleton Cotton",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "14th Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "16th Light Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Anson's Brigade",
+          "commander": {
+            "name": "Brig-Gen George Anson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "23rd Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "1st Hussars KGL",
+              "options": [
+                "kgl"
+              ]
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-ruffin",
+      "nationId": "peninsular-french",
+      "name": "Ruffin's Division",
+      "formation": "1st Division, I Corps (Victor)",
+      "side": "French",
+      "summary": "Made the night attack on the Medellín on the 27th and attacked it again at dawn and in the evening of the 28th, each time thrown back by Hill.",
+      "notes": [
+        "The order of battle gives the regiments but not their brigades or battalions; three battalions each, the usual for Victor's corps, in two brigades.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Ruffin",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "First Brigade",
+          "regiments": [
+            {
+              "name": "9e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/9e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/9e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/9e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "24e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/24e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/24e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/24e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "96e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/96e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/96e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/96e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-lapisse",
+      "nationId": "peninsular-french",
+      "name": "Lapisse's Division",
+      "formation": "2nd Division, I Corps (Victor)",
+      "side": "French",
+      "summary": "Attacked Sherbrooke's centre on the 28th and was thrown back, then turned on the pursuing Guards and Germans; Lapisse was killed.",
+      "notes": [
+        "The order of battle gives the regiments but not their brigades or battalions; three battalions each, in two brigades.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Lapisse",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "First Brigade",
+          "regiments": [
+            {
+              "name": "16e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/16e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/16e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/16e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "8e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/8e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/8e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/8e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "45e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/45e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/45e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/45e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "54e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/54e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/54e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/54e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-villatte",
+      "nationId": "peninsular-french",
+      "name": "Villatte's Division",
+      "formation": "3rd Division, I Corps (Victor)",
+      "side": "French",
+      "summary": "Victor's reserve, sent into the northern valley at the end of the day, where it formed squares against Anson's charge.",
+      "notes": [
+        "The order of battle gives the regiments but not their brigades or battalions; three battalions each, in two brigades.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Villatte",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "First Brigade",
+          "regiments": [
+            {
+              "name": "27e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/27e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/27e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/27e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "63e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/63e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/63e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/63e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "94e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/94e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/94e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/94e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "95e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/95e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/95e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/95e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-sebastiani",
+      "nationId": "peninsular-french",
+      "name": "Sebastiani's Division",
+      "formation": "1st Division, IV Corps",
+      "side": "French",
+      "summary": "Attacked the British left centre and the junction with the Spanish, and was beaten back with heavy loss.",
+      "notes": [
+        "Liger-Belair led the division for Sebastiani, who commanded IV Corps; the book's named Sebastiani leads it here.",
+        "Its four regiments, three battalions each, are split into two brigades as the order of battle doesn't give them.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named General Horace François Bastien Sebastiani, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pf-cmd-sebastiani"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "First Brigade",
+          "regiments": [
+            {
+              "name": "28e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/28e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/28e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/28e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "32e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/32e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/32e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/32e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "58e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/58e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/58e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/58e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "75e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/75e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/75e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/75e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-leval",
+      "nationId": "peninsular-french",
+      "name": "Leval's and Valence's Divisions",
+      "formation": "IV Corps",
+      "side": "French",
+      "summary": "Leval's German and Dutch battalions attacked the Pajar de Vergara redoubt and were broken by Campbell's division, losing their guns; Valence's Poles were held in support.",
+      "notes": [
+        "The list has no German, Dutch or Polish allies, so they're the list's Line battalions.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Leval",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Nassau and Baden",
+          "regiments": [
+            {
+              "name": "Nassau Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Nassau Infantry"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Nassau Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Baden Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Baden Infantry"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Baden Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Hesse, Holland and Frankfurt",
+          "regiments": [
+            {
+              "name": "Hesse-Darmstadt Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Hesse-Darmstadt Infantry"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Hesse-Darmstadt Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Holland Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Holland Infantry"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Holland Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Frankfurt Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Frankfurt Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Valence's Poles",
+          "commander": {
+            "name": "Gén. de Division Valence",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4th Polish Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4th Polish Infantry"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4th Polish Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-dragoons",
+      "nationId": "peninsular-french",
+      "name": "Latour-Maubourg's and Milhaud's Dragoons",
+      "formation": "Reserve cavalry",
+      "side": "French",
+      "summary": "The French heavy cavalry, held behind the infantry through both days.",
+      "notes": [
+        "Four brigades where the list takes three, and no infantry for them to go with, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Latour-Maubourg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Latour-Maubourg's First Brigade",
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "1er Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "2e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "4e Dragons"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Latour-Maubourg's Second Brigade",
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "9e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "14e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "26e Dragons"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Milhaud's Brigade",
+          "commander": {
+            "name": "Gén. de Division Milhaud",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "5e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "12e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "16e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Milhaud's Second Brigade",
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "20e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "21e Dragons"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "3rd Dutch Hussards"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "talavera-light-cav",
+      "nationId": "peninsular-french",
+      "name": "Beaumont's and Merlin's Light Cavalry",
+      "formation": "I and IV Corps",
+      "side": "French",
+      "summary": "The corps' light horse, including the Polish lancers and Westphalian chevau-légers who met Anson's charge in the northern valley.",
+      "notes": [
+        "Cavalry without the infantry brigades it's allowed by shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Brigade Merlin",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Beaumont's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Beaumont",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "2e Hussards"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "5e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Merlin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Merlin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "10e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "26e Chasseurs"
+            },
+            {
+              "unit": "pf-vistula-lancer",
+              "name": "Polish Lanciers"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "Westphalian Chevau-légers Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    }
+  ],
+  "sides": {
+    "British": {
+      "commander": "Sir Arthur Wellesley",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "French": {
+      "commander": "King Joseph, with Marshal Jourdan",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Joseph-Bonaparte.jpg/250px-Joseph-Bonaparte.jpg",
+        "title": "Joseph Bonaparte, King of Spain",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Joseph-Bonaparte.jpg",
+        "focus": "50% 14%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/British_School_-_The_Duke_of_Wellington_with_His_Staff_at_Talavera%2C_1809_-_1219960_-_National_Trust.jpg/960px-British_School_-_The_Duke_of_Wellington_with_His_Staff_at_Talavera%2C_1809_-_1219960_-_National_Trust.jpg",
+    "title": "The Duke of Wellington with His Staff at Talavera",
+    "artist": "British School",
+    "page": "https://commons.wikimedia.org/wiki/File:British_School_-_The_Duke_of_Wellington_with_His_Staff_at_Talavera%2C_1809_-_1219960_-_National_Trust.jpg"
+  }
+}

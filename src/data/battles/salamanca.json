@@ -1,0 +1,1990 @@
+{
+  "id": "salamanca",
+  "name": "Salamanca",
+  "date": "22 July 1812",
+  "campaign": "peninsular-war",
+  "summary": "After weeks of manoeuvring side by side, Marmont stretched his army out to the west to cut Wellington off from Portugal. Wellington saw the gap open, sent Pakenham's 3rd Division into the head of the French column and Leith's 5th and Le Marchant's heavy dragoons after it, and broke the Army of Portugal in an afternoon; Clausel's counter-attack was stopped and the French were routed.",
+  "sources": [
+    {
+      "label": "Battle of Salamanca order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Salamanca_order_of_battle"
+    },
+    {
+      "label": "Battle of Salamanca (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Salamanca"
+    },
+    {
+      "label": "Battle of Salamanca (History of War)",
+      "url": "https://www.historyofwar.org/articles/battles_salamanca.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "salamanca-pakenham",
+      "nationId": "peninsular-british",
+      "name": "Pakenham's 3rd Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Sent by Wellington himself to cut across the head of the French column, it fell on Thomières's division on the march and broke it, opening the battle.",
+      "notes": [
+        "The list allows one Highland or Light battalion in four, so a brigade of three may have none; where one had a Highland or Light regiment, that shows as a historical departure.",
+        "Wellington gave Pakenham his orders in person, so the book's named Wellington leads it here; Pakenham commanded the division.",
+        "The order of battle gives the Portuguese regiments but not their battalions; each is one of the list's regiments.",
+        "Batteries are spread among the divisions; the order of battle lists them under the army's artillery without saying which served with which.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Sir Arthur Wellesley, Duke of Wellington, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-wellington"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Wallace's Brigade",
+          "commander": {
+            "name": "Lt-Col Alexander Wallace",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "74th Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/88th Connaught Rangers"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "5/60th Rifles (three companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Campbell's Brigade",
+          "commander": {
+            "name": "Lt-Col James Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/83rd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "94th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Power's Portuguese Brigade",
+          "commander": {
+            "name": "Col Manley Power",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "9th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "21st Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "12th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Douglas's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Douglas's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-leith",
+      "nationId": "peninsular-british",
+      "name": "Leith's 5th Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Advanced in two lines over the crest against Maucune's division, which had formed square against the cavalry, and broke it with a volley and the bayonet; Leith was wounded.",
+      "notes": [
+        "The order of battle gives the Portuguese regiments but not their battalions; each is one of the list's regiments.",
+        "Each brigade had a company of the Brunswick Oels; one is shown, the list allowing one in an army.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen James Leith",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Greville's Brigade",
+          "commander": {
+            "name": "Lt-Col James Greville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/1st Foot (Royal Scots)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/9th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/38th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/38th Foot"
+            },
+            {
+              "unit": "pb-brunswick-oels-coy",
+              "name": "Brunswick Oels (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Pringle's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Pringle",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/4th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/4th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/30th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/44th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Spry's Portuguese Brigade",
+          "commander": {
+            "name": "Brig-Gen William Spry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "3rd Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "15th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "8th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Lawson's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Lawson's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-cole",
+      "nationId": "peninsular-british",
+      "name": "Cole's 4th Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Attacked Clausel and Bonet in the centre and was thrown back by Clausel's counter-attack; Cole was wounded.",
+      "notes": [
+        "The order of battle gives the Portuguese regiments but not their battalions; each is one of the list's regiments.",
+        "Ellis's company of the Brunswick Oels is left out.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Lowry Cole",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Anson's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Anson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/27th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/40th Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Ellis's Brigade",
+          "commander": {
+            "name": "Lt-Col Henry Ellis",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/7th Fusiliers"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/23rd Royal Welch Fusiliers"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/48th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Stubbs's Portuguese Brigade",
+          "commander": {
+            "name": "Col George Stubbs",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "11th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "23rd Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "7th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Sympher's Battery KGL",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Sympher's Battery KGL"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-clinton",
+      "nationId": "peninsular-british",
+      "name": "Clinton's 6th Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Wellington's reserve, sent in to stop Clausel's counter-attack; it held, at heavy cost, and drove on against Ferey's rearguard as night fell.",
+      "notes": [
+        "The order of battle gives the Portuguese regiments but not their battalions; each is one of the list's regiments.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Sir Henry Clinton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Hulse's Brigade",
+          "commander": {
+            "name": "Maj-Gen Richard Hulse",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/11th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/53rd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/61st Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Hinde's Brigade",
+          "commander": {
+            "name": "Col Samuel Hinde",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2nd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/32nd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/36th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Rezende's Portuguese Brigade",
+          "commander": {
+            "name": "Brig-Gen Conde de Rezende",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "8th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "12th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "9th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Greene's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Greene's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-campbell",
+      "nationId": "peninsular-british",
+      "name": "Campbell's 1st Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Held the allied left near the Lesser Arapile and joined the pursuit late in the day.",
+      "notes": [
+        "Wheatley's brigade had two Highland battalions, the 42nd and 79th, where the list allows one in four, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Henry Campbell",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-guards-brigade",
+          "name": "Fermor's Guards Brigade",
+          "commander": {
+            "name": "Col Thomas Fermor",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/Coldstream Guards"
+            },
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/3rd Foot Guards"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Wheatley's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Wheatley",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/24th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/42nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/58th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/79th Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-kgl-brigade",
+          "name": "Löw's KGL Brigade",
+          "commander": {
+            "name": "Maj-Gen von Löw",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1st Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "5th Line Bn KGL"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Gardiner's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Gardiner's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-hope",
+      "nationId": "peninsular-british",
+      "name": "Hope's 7th Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "In reserve behind the allied left, with the King's German Legion and Brunswick light troops.",
+      "notes": [
+        "De Bernewitz's brigade had two Light battalions in three where the list allows one in four, which shows as a historical departure.",
+        "The order of battle gives the Portuguese regiments but not their battalions; each is one of the list's regiments.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen John Hope",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-kgl-light-brigade",
+          "name": "Halkett's Brigade",
+          "commander": {
+            "name": "Col Colin Halkett",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-kgl-light",
+              "name": "1st Light Bn KGL"
+            },
+            {
+              "unit": "pb-kgl-light",
+              "name": "2nd Light Bn KGL"
+            },
+            {
+              "unit": "pb-brunswick-light",
+              "name": "Brunswick Oels (seven companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "De Bernewitz's Brigade",
+          "commander": {
+            "name": "Maj-Gen de Bernewitz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "51st Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "68th Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "Chasseurs Britanniques",
+              "options": [
+                "chasseurs"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Collins's Portuguese Brigade",
+          "commander": {
+            "name": "Col Richard Collins",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "7th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "19th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "2nd Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "May's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "May's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-light",
+      "nationId": "peninsular-british",
+      "name": "The Light Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "On the far left, facing Foy, it pressed the French right as the army broke and harried the retreat.",
+      "notes": [
+        "The list allows horse artillery by the cavalry taken, so a horse troop with an infantry division shows as a historical departure.",
+        "Two Light Brigades where the list takes one show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Charles Alten",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-brigade",
+          "name": "Barnard's Brigade",
+          "commander": {
+            "name": "Lt-Col Andrew Barnard",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/43rd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "1st Caçadores"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "2/95th and 3/95th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-brigade",
+          "name": "Vandeleur's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Vandeleur",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/52nd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "3rd Caçadores"
+            },
+            {
+              "unit": "pb-rifle-bn",
+              "name": "1/95th Rifles"
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Ross's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Ross's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-portuguese",
+      "nationId": "peninsular-british",
+      "name": "Pack's and Bradford's Portuguese",
+      "formation": "Independent brigades",
+      "side": "Anglo-Portuguese",
+      "summary": "Pack's brigade stormed the Greater Arapile and was thrown off it by Bonet's men; Bradford's came in on the right with Leith.",
+      "notes": [
+        "The order of battle gives the Portuguese regiments but not their battalions; each is one of the list's regiments.",
+        "Without British brigades for the Portuguese ones to go with, the list's ratio shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Brig-Gen Denis Pack",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Pack's Brigade",
+          "commander": {
+            "name": "Brig-Gen Denis Pack",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "1st Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "16th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "4th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Bradford's Brigade",
+          "commander": {
+            "name": "Brig-Gen Thomas Bradford",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "13th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "24th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "5th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Arriaga's Portuguese Battery",
+          "units": [
+            {
+              "unit": "pb-portuguese-arty",
+              "name": "Arriaga's Portuguese Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-heavy",
+      "nationId": "peninsular-british",
+      "name": "Le Marchant's and Bock's Heavy Dragoons",
+      "formation": "Cotton's cavalry",
+      "side": "Anglo-Portuguese",
+      "summary": "Le Marchant's brigade rode into Maucune's and Brenier's broken battalions and destroyed eight of them in the most successful British cavalry charge of the war; Le Marchant was killed at its head.",
+      "notes": [
+        "Cavalry on its own has no infantry brigades for its brigades to go with, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Stapleton Cotton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Le Marchant's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Le Marchant",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "5th Dragoon Guards"
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "3rd Dragoons"
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "4th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Bock's Brigade",
+          "commander": {
+            "name": "Maj-Gen von Bock",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "1st Dragoons KGL",
+              "options": [
+                "kgl"
+              ]
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "2nd Dragoons KGL",
+              "options": [
+                "kgl"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Bull's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Bull's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-light-cav",
+      "nationId": "peninsular-british",
+      "name": "Anson's, Alten's and D'Urban's Cavalry",
+      "formation": "Cotton's cavalry",
+      "side": "Anglo-Portuguese",
+      "summary": "D'Urban's Portuguese and the 14th Light Dragoons led the attack on the head of the French column with Pakenham; Anson's light dragoons covered the left.",
+      "notes": [
+        "Cavalry on its own has no infantry brigades for its brigades to go with, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Stapleton Cotton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Anson's Brigade",
+          "commander": {
+            "name": "Maj-Gen George Anson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "11th Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "12th Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "16th Light Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Alten's Brigade",
+          "commander": {
+            "name": "Maj-Gen Victor von Alten",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "14th Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "1st Hussars KGL",
+              "options": [
+                "kgl"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-cavalry-brigade",
+          "name": "D'Urban's Portuguese",
+          "commander": {
+            "name": "Brig-Gen Benjamin D'Urban",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "1st Dragoons"
+            },
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "11th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "McDonald's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "McDonald's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "salamanca-thomieres",
+      "nationId": "peninsular-french",
+      "name": "Thomières's Division",
+      "formation": "7th Division, Army of Portugal",
+      "side": "French",
+      "summary": "Leading the French march west, it was caught strung out on the road by Pakenham and D'Urban and broken; Thomières was killed.",
+      "notes": [
+        "The 23rd Léger, its other regiment, was absent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Brigade Thomières",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Bonté's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bonté",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1er Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/1er Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/1er Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/1er Ligne"
+                }
+              ]
+            },
+            {
+              "name": "62e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/62e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/62e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "101e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/101e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/101e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/101e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-maucune",
+      "nationId": "peninsular-french",
+      "name": "Maucune's Division",
+      "formation": "5th Division, Army of Portugal",
+      "side": "French",
+      "summary": "Formed square against the British cavalry, it was broken by Leith's volley and then ridden down by Le Marchant's dragoons.",
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Maucune",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Arnaud's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Arnaud",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "15e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/15e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/15e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/15e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "66e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/66e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/66e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Montfort's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Montfort",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "82e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/82e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/82e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "86e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/86e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/86e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-brenier",
+      "nationId": "peninsular-french",
+      "name": "Brenier's Division",
+      "formation": "6th Division, Army of Portugal",
+      "side": "French",
+      "summary": "Coming up to support Maucune, it was caught by Le Marchant's charge as it formed and swept away.",
+      "notes": [
+        "The Régiment de Prusse, only remnants by then, is a Small battalion.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Brenier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Taupin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Taupin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "17e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/17e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/17e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "65e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/65e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/65e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/65e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "22e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/22e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/22e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/22e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "Régiment de Prusse",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "Régiment de Prusse (remnants)",
+                  "options": [
+                    "small"
+                  ]
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-clausel",
+      "nationId": "peninsular-french",
+      "name": "Clausel's Division",
+      "formation": "2nd Division, Army of Portugal",
+      "side": "French",
+      "summary": "Clausel took command of the army when Marmont and Bonet were wounded, and his division led the counter-attack that threw back Cole and Pack before Clinton's 6th Division stopped it.",
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Clausel",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Berlier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Berlier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "25e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/25e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/25e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/25e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "27e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/27e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/27e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Barbot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Barbot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "50e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/50e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/50e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/50e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "59e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/59e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/59e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-bonet",
+      "nationId": "peninsular-french",
+      "name": "Bonet's Division",
+      "formation": "8th Division, Army of Portugal",
+      "side": "French",
+      "summary": "Held the Greater Arapile, throwing Pack's Portuguese off it, and joined Clausel's counter-attack; Bonet was wounded.",
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Bonet",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Gautier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gautier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "118e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/118e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/118e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/118e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "119e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/119e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/119e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/119e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "120e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/120e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/120e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/120e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "122e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/122e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/122e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/122e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-ferey",
+      "nationId": "peninsular-french",
+      "name": "Ferey's Division",
+      "formation": "3rd Division, Army of Portugal",
+      "side": "French",
+      "summary": "Formed the rearguard as the army broke, standing in line against Clinton's division until nightfall to cover the retreat; Ferey was killed.",
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Ferey",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Menne's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Menne",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "31e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/31e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/31e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "26e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/26e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/26e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "47e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/47e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "70e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/70e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-sarrut",
+      "nationId": "peninsular-french",
+      "name": "Sarrut's Division",
+      "formation": "4th Division, Army of Portugal",
+      "side": "French",
+      "summary": "Following behind Thomières and Maucune, it came up too late to help them and joined the retreat.",
+      "notes": [
+        "The 130th Ligne, its other regiment, was absent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Sarrut",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Fririon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fririon",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/2e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "36e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/36e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-foy",
+      "nationId": "peninsular-french",
+      "name": "Foy's Division",
+      "formation": "1st Division, Army of Portugal",
+      "side": "French",
+      "summary": "On the French right facing the Light Division, it held together through the rout and covered the retreat to the Tormes.",
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Foy",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Chemineau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chemineau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/6e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/6e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "69e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/69e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/69e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Desgraviers's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Desgraviers-Berthelot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "39e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/39e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/39e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "76e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/76e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/76e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "notes": [
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "period": "late"
+    },
+    {
+      "id": "salamanca-cavalry",
+      "nationId": "peninsular-french",
+      "name": "Curto's and Boyer's Cavalry",
+      "formation": "Army of Portugal",
+      "side": "French",
+      "summary": "Curto's light horse was scattered with Thomières's division; Boyer's dragoons tried to cover the retreat.",
+      "notes": [
+        "Several of these regiments had only one or two squadrons; the 28th Chasseurs (one squadron) could be Small. Cavalry without the infantry brigades it's allowed by shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Brigade Boyer",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Curto's First Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Curto",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "3e Hussards"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "22e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "26e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "28e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Curto's Second Brigade",
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "13e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "14e Chasseurs"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Boyer's Dragoons",
+          "commander": {
+            "name": "Gén. de Brigade Boyer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "6e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "11e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "15e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "25e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    }
+  ],
+  "sides": {
+    "Anglo-Portuguese": {
+      "commander": "The Earl of Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "French": {
+      "commander": "Marshal Marmont",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Marmont.jpg/250px-Marmont.jpg",
+        "title": "Marshal Auguste de Marmont",
+        "artist": "Jean-Baptiste Paulin Guérin",
+        "page": "https://commons.wikimedia.org/wiki/File:Marmont.jpg",
+        "focus": "50% 16%",
+        "date": "1837"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/The_88th_Foot_at_the_Battle_of_Salamanca%2C_1812.jpg/960px-The_88th_Foot_at_the_Battle_of_Salamanca%2C_1812.jpg",
+    "title": "The 88th Foot at the Battle of Salamanca",
+    "artist": "Christopher Clark",
+    "date": "1904",
+    "page": "https://commons.wikimedia.org/wiki/File:The_88th_Foot_at_the_Battle_of_Salamanca%2C_1812.jpg"
+  }
+}

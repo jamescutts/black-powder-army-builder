@@ -45,12 +45,11 @@
       "focus": "50% 38%"
     },
     "vimeiro": {
-      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Batalha_do_Vimeiro.jpg/960px-Batalha_do_Vimeiro.jpg",
-      "title": "Batalha do Vimeiro",
-      "artist": "Domenico Schiopetta and J. Cardini",
-      "date": "1810–12",
-      "page": "https://commons.wikimedia.org/wiki/File:Batalha_do_Vimeiro.jpg",
-      "focus": "50% 45%"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg/960px-The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg",
+      "title": "The 20th Light Dragoons at the Battle of Vimeiro",
+      "artist": "Richard Simkin",
+      "date": "1890",
+      "page": "https://commons.wikimedia.org/wiki/File:The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg"
     },
     "albuera": {
       "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Battle_of_Albuhera%2C_by_William_Barnes_Wollen.jpg",
@@ -58,6 +57,32 @@
       "artist": "William Barnes Wollen",
       "date": "c. 1912",
       "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Albuhera,_by_William_Barnes_Wollen.jpg"
+    },
+    "corunna": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Combat_de_la_Corogne_16_janvier_1809_%28ca._1823%29_-_Lecomte%2C_Hippolyte.jpg/960px-Combat_de_la_Corogne_16_janvier_1809_%28ca._1823%29_-_Lecomte%2C_Hippolyte.jpg",
+      "title": "Combat de la Corogne",
+      "artist": "Hippolyte Lecomte",
+      "date": "c. 1823",
+      "page": "https://commons.wikimedia.org/wiki/File:Combat_de_la_Corogne_16_janvier_1809_%28ca._1823%29_-_Lecomte%2C_Hippolyte.jpg"
+    },
+    "talavera": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/British_School_-_The_Duke_of_Wellington_with_His_Staff_at_Talavera%2C_1809_-_1219960_-_National_Trust.jpg/960px-British_School_-_The_Duke_of_Wellington_with_His_Staff_at_Talavera%2C_1809_-_1219960_-_National_Trust.jpg",
+      "title": "The Duke of Wellington with His Staff at Talavera",
+      "artist": "British School",
+      "page": "https://commons.wikimedia.org/wiki/File:British_School_-_The_Duke_of_Wellington_with_His_Staff_at_Talavera%2C_1809_-_1219960_-_National_Trust.jpg"
+    },
+    "salamanca": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/The_88th_Foot_at_the_Battle_of_Salamanca%2C_1812.jpg/960px-The_88th_Foot_at_the_Battle_of_Salamanca%2C_1812.jpg",
+      "title": "The 88th Foot at the Battle of Salamanca",
+      "artist": "Christopher Clark",
+      "date": "1904",
+      "page": "https://commons.wikimedia.org/wiki/File:The_88th_Foot_at_the_Battle_of_Salamanca%2C_1812.jpg"
+    },
+    "vitoria": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/George_Jones_%281786-1869%29_-_The_Battle_of_Vitoria%2C_21_June_1813_-_485064_-_National_Trust.jpg/960px-George_Jones_%281786-1869%29_-_The_Battle_of_Vitoria%2C_21_June_1813_-_485064_-_National_Trust.jpg",
+      "title": "The Battle of Vitoria",
+      "artist": "George Jones",
+      "page": "https://commons.wikimedia.org/wiki/File:George_Jones_%281786-1869%29_-_The_Battle_of_Vitoria%2C_21_June_1813_-_485064_-_National_Trust.jpg"
     }
   },
   "campaigns": {

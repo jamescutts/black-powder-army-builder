@@ -990,6 +990,28 @@
       ]
     }
   ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Ney",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Marechal_Ney.jpg/250px-Marechal_Ney.jpg",
+        "title": "Marshal Michel Ney",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Marechal_Ney.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Anglo-allied": {
+      "commander": "The Duke of Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
   "art": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Butler_Lady_Quatre_Bras_1815.jpg/960px-Butler_Lady_Quatre_Bras_1815.jpg",
     "title": "The 28th Regiment at Quatre Bras",

@@ -2341,29 +2341,89 @@ a.app-list-row:active {
   text-underline-offset: 2px;
 }
 
-/* Historical forces: a battle's painting at the head of its section, with its credit beneath */
-.battle-art {
-  margin: 0;
+/* Historical forces: a campaign's or battle's page head, the home page's painted hero made shorter, as
+   on Fleet Ledger; a plain dark band where there's no painting yet */
+.history-hero.history-hero {
+  min-height: clamp(380px, 56vh, 600px);
+  padding: 56px 0 36px;
 }
 
-.battle-art img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 3 / 1;
-  object-fit: cover;
-  border-radius: var(--mantine-radius-md);
-  border: 1px solid var(--mantine-color-default-border);
+.history-hero[data-empty] .home-hero-shade {
+  background: linear-gradient(135deg, #4a2f17 0%, #21140a 100%);
+}
+
+.history-hero-crumbs .mantine-Breadcrumbs-separator {
+  color: rgba(247, 241, 225, 0.75);
+}
+
+.history-hero-crumb.history-hero-crumb {
+  color: rgba(247, 241, 225, 0.8);
+  text-shadow: 0 1px 8px rgba(33, 20, 10, 0.6);
+}
+
+.history-hero-crumb.history-hero-crumb:hover {
+  color: #fbf6e9;
+}
+
+.history-hero-title.history-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  margin-top: 4px;
+}
+
+.history-hero-dates {
+  color: #e0bf74;
+  text-shadow: 0 1px 8px rgba(33, 20, 10, 0.6);
+}
+
+/* The summary folds to four lines until "Read more" */
+.history-hero-lead:not([data-open]) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+.history-hero-more {
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #e0bf74;
+  font: inherit;
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.history-hero-stats.history-hero-stats {
+  margin-top: 28px;
+}
+
+.history-hero .home-hero-stat {
+  font-size: 1.6rem;
+}
+
+/* A battle page's side: its commander's portrait beside the side's name and his */
+.side-head {
+  margin-top: var(--mantine-spacing-xs);
+}
+
+.side-head-portrait {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #d9c287;
+  box-shadow: 0 1px 4px rgba(33, 20, 10, 0.25);
   background: rgba(107, 61, 23, 0.12);
 }
 
-.battle-art figcaption {
-  margin-top: 4px;
-  font-size: var(--mantine-font-size-xs);
-  color: var(--mantine-color-brown-8);
-}
-
-@media (max-width: 48em) {
-  .battle-art img {
-    aspect-ratio: 2 / 1;
-  }
+.side-head-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

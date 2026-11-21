@@ -1,0 +1,2441 @@
+{
+  "id": "vitoria",
+  "name": "Vitoria",
+  "date": "21 June 1813",
+  "campaign": "peninsular-war",
+  "summary": "Wellington caught King Joseph's three armies in the basin of Vitoria with their backs to the Pyrenees. Hill attacked over the La Puebla heights in the south, the centre columns crossed the Zadorra by its bridges, and Graham came down on the French line of retreat from the north. The French broke, abandoning their guns, their baggage and the treasure of a kingdom, and fled for France.",
+  "sources": [
+    {
+      "label": "Battle of Vitoria order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vitoria_order_of_battle"
+    },
+    {
+      "label": "Battle of Vitoria (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vitoria"
+    }
+  ],
+  "forces": [
+    {
+      "id": "vitoria-stewart",
+      "nationId": "peninsular-british",
+      "name": "Stewart's 2nd Division",
+      "formation": "Right Column (Hill)",
+      "side": "Anglo-Allied",
+      "summary": "Opened the battle on the right, storming the heights of La Puebla with Morillo's Spaniards and holding them against Gazan's counter-attacks.",
+      "notes": [
+        "Cadogan's brigade had two Highland battalions, the 71st and 92nd, where the list allows one in four, which shows as a historical departure. Cadogan was killed on the heights.",
+        "Each brigade had a company of the 5/60th; one is shown, the list allowing one in an army.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir William Stewart",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Cadogan's Brigade",
+          "commander": {
+            "name": "Col the Hon Henry Cadogan",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/50th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/71st Highland Light Infantry",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/92nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Byng's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Byng",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/3rd Foot (Buffs)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/57th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1st Provisional Bn (2/31st, 2/66th)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "O'Callaghan's Brigade",
+          "commander": {
+            "name": "Col the Hon Robert O'Callaghan",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/28th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/34th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/39th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Ashworth's Portuguese Brigade",
+          "commander": {
+            "name": "Brig-Gen Charles Ashworth",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "6th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "18th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "6th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Maxwell's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Maxwell's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-silveira",
+      "nationId": "peninsular-british",
+      "name": "Silveira's Portuguese Division",
+      "formation": "Right Column (Hill)",
+      "side": "Anglo-Allied",
+      "summary": "Hill's Portuguese division, following the 2nd Division along the Puebla heights and the valley below.",
+      "notes": [
+        "Without British brigades for its Portuguese ones to go with, the list's ratio shows as a historical departure. Tulloh's two Portuguese batteries are shown as one.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Francisco Silveira",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Da Costa's Brigade",
+          "commander": {
+            "name": "Brig-Gen Hippolita da Costa",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "2nd Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "14th Line"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Campbell's Brigade",
+          "commander": {
+            "name": "Brig-Gen Archibald Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "4th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "10th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "10th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Portuguese Battery",
+          "units": [
+            {
+              "unit": "pb-portuguese-arty",
+              "name": "Portuguese Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-morillo",
+      "nationId": "spanish",
+      "name": "Morillo's Spanish Division",
+      "formation": "Right Column (Hill)",
+      "side": "Spanish",
+      "summary": "Led the climb onto the heights of La Puebla and fought for them all morning; Morillo was wounded.",
+      "notes": [
+        "The order of battle lists the division's regiments without brigades or battalion counts; one battalion each, in two brigades.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but First Brigade at 7, the most the list allows; Second Brigade at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "sp-div-cmd",
+          "name": "Maj-Gen Pablo Morillo",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sp-infantry-brigade",
+          "name": "First Brigade",
+          "regiments": [
+            {
+              "name": "León",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "León"
+                }
+              ]
+            },
+            {
+              "name": "Unión",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Unión"
+                }
+              ]
+            },
+            {
+              "name": "Legión",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Legión"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "Bailén",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Bailén"
+                }
+              ]
+            },
+            {
+              "name": "Victoria",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Victoria"
+                }
+              ]
+            },
+            {
+              "name": "2nd Jaén",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "2nd Jaén"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-cole",
+      "nationId": "peninsular-british",
+      "name": "Cole's 4th Division",
+      "formation": "Right Centre Column (Cole)",
+      "side": "Anglo-Allied",
+      "summary": "Crossed the Zadorra at Nanclares and pushed into the French centre around Ariñez as the line gave way.",
+      "notes": [
+        "Skerrett's company of the Brunswick Oels is left out, the list allowing one such company in an army.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Lowry Cole",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Anson's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Anson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/27th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/40th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/48th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Provisional Bn (2nd, 2/53rd)"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Skerrett's Fusilier Brigade",
+          "commander": {
+            "name": "Maj-Gen John Skerrett",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/7th Fusiliers"
+            },
+            {
+              "unit": "pb-line",
+              "name": "20th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/23rd Royal Welch Fusiliers"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Stubbs's Portuguese Brigade",
+          "commander": {
+            "name": "Col George Stubbs",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "11th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "23rd Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "7th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Sympher's Battery KGL",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Sympher's Battery KGL"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-light",
+      "nationId": "peninsular-british",
+      "name": "The Light Division",
+      "formation": "Right Centre Column (Cole)",
+      "side": "Anglo-Allied",
+      "summary": "Guided over the unguarded bridge at Tres Puentes, it got across the Zadorra behind the French centre and opened the way for the rest.",
+      "notes": [
+        "The list allows horse artillery by the cavalry taken, so a horse troop with an infantry division shows as a historical departure.",
+        "Wellington rode with the centre, so the book's named Wellington leads it here; Alten commanded the division.",
+        "Two Light Brigades where the list takes one show as a historical departure. The order of battle names no commander for the 1st Brigade; Kempt led it at the bridge.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Sir Arthur Wellesley, Duke of Wellington, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-wellington"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-brigade",
+          "name": "Kempt's Brigade",
+          "commander": {
+            "name": "Maj-Gen James Kempt",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/43rd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "3rd Caçadores"
+            },
+            {
+              "unit": "pb-rifle-bn",
+              "name": "1/95th Rifles"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "3/95th Rifles (five companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-brigade",
+          "name": "Vandeleur's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Vandeleur",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/52nd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "1st Caçadores"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "2/95th Rifles (six companies)"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "17th Portuguese Line"
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Ross's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Ross's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-picton",
+      "nationId": "peninsular-british",
+      "name": "Picton's 3rd Division",
+      "formation": "Left Centre Column (Dalhousie)",
+      "side": "Anglo-Allied",
+      "summary": "Tired of waiting for Dalhousie, Picton led his division over the bridge of Mendoza and into the French centre, carrying the knoll of Ariñez.",
+      "notes": [
+        "The list allows one Highland or Light battalion in four, so a brigade of three may have none; where one had a Highland or Light regiment, that shows as a historical departure.",
+        "Picton is the book's named commander.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major-General Sir Thomas Picton, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-picton"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Brisbane's Brigade",
+          "commander": {
+            "name": "Maj-Gen Thomas Brisbane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "74th Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/88th Connaught Rangers"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "5/60th Rifles (three companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Colville's Brigade",
+          "commander": {
+            "name": "Maj-Gen Charles Colville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/83rd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/87th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "94th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Power's Portuguese Brigade",
+          "commander": {
+            "name": "Maj-Gen Manley Power",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "9th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "21st Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "11th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Douglas's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Douglas's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-dalhousie",
+      "nationId": "peninsular-british",
+      "name": "Dalhousie's 7th Division",
+      "formation": "Left Centre Column (Dalhousie)",
+      "side": "Anglo-Allied",
+      "summary": "Came up late through the hills and crossed the Zadorra behind Picton to join the attack on the French centre.",
+      "notes": [
+        "Grant's brigade had two Light battalions in four where the list allows one, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen the Earl of Dalhousie",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Barnes's Brigade",
+          "commander": {
+            "name": "Maj-Gen Edward Barnes",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/6th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "3rd Provisional Bn (2/24th, 2/58th)"
+            },
+            {
+              "unit": "pb-brunswick-light",
+              "name": "Brunswick Oels (seven companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Grant's Brigade",
+          "commander": {
+            "name": "Col William Grant",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "51st Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "68th Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/82nd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "Chasseurs Britanniques",
+              "options": [
+                "chasseurs"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Le Cor's Portuguese Brigade",
+          "commander": {
+            "name": "Maj-Gen Frederico Le Cor",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "7th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "19th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "2nd Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Cairnes's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Cairnes's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-howard",
+      "nationId": "peninsular-british",
+      "name": "Howard's 1st Division",
+      "formation": "Left Column (Graham)",
+      "side": "Anglo-Allied",
+      "summary": "With Graham's column, which came down on the French right and the Bayonne road, their line of retreat, around Gamarra.",
+      "notes": [
+        "The Guards Brigade comes with two British or KGL brigades in the list, and here there's one, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Kenneth Howard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-guards-brigade",
+          "name": "Stopford's Guards Brigade",
+          "commander": {
+            "name": "Maj-Gen the Hon Edward Stopford",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/Coldstream Guards"
+            },
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/3rd Foot Guards"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-kgl-brigade",
+          "name": "Halkett's KGL Brigade",
+          "commander": {
+            "name": "Col Colin Halkett",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1st Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "5th Line Bn KGL"
+            },
+            {
+              "unit": "pb-kgl-light",
+              "name": "1st Light Bn KGL"
+            },
+            {
+              "unit": "pb-kgl-light",
+              "name": "2nd Light Bn KGL"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Dubourdieu's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Dubourdieu's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-oswald",
+      "nationId": "peninsular-british",
+      "name": "Oswald's 5th Division",
+      "formation": "Left Column (Graham)",
+      "side": "Anglo-Allied",
+      "summary": "Stormed the village of Gamarra Mayor and fought for its bridge against Reille's Army of Portugal, closing the road to France.",
+      "notes": [
+        "Robinson's company of the Brunswick Oels is left out, the list allowing one such company in an army.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen John Oswald",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "First Brigade",
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/1st Foot (Royal Scots)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/9th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/38th Foot"
+            },
+            {
+              "unit": "pb-brunswick-oels-coy",
+              "name": "Brunswick Oels (company)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Robinson's Brigade",
+          "commander": {
+            "name": "Maj-Gen Frederick Robinson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/4th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/47th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/59th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Spry's Portuguese Brigade",
+          "commander": {
+            "name": "Brig-Gen William Spry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "3rd Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "15th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "8th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Lawson's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Lawson's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-portuguese",
+      "nationId": "peninsular-british",
+      "name": "Pack's and Bradford's Portuguese",
+      "formation": "Left Column (Graham)",
+      "side": "Anglo-Allied",
+      "summary": "Graham's two independent Portuguese brigades, which led the attack on the heights before Gamarra and Abechuco.",
+      "notes": [
+        "Without British brigades for the Portuguese ones to go with, the list's ratio shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Thomas Graham",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Pack's Brigade",
+          "commander": {
+            "name": "Maj-Gen Denis Pack",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "1st Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "16th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "4th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Bradford's Brigade",
+          "commander": {
+            "name": "Maj-Gen Thomas Bradford",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "13th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "24th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "5th Caçadores"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-longa",
+      "nationId": "spanish",
+      "name": "Longa's Spanish Division",
+      "formation": "Left Column (Graham)",
+      "side": "Spanish",
+      "summary": "Longa's Cantabrians seized the bridge at Durana on the Bayonne road, cutting the French off from their best line of retreat.",
+      "notes": [
+        "One battalion each, in two brigades; the Húsares de Iberia and Salcedo's guerrillas are left out.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but First Brigade at 7, the most the list allows; Second Brigade at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "sp-div-cmd",
+          "name": "Col Francisco de Longa",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sp-infantry-brigade",
+          "name": "First Brigade",
+          "regiments": [
+            {
+              "name": "1st Iberia",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "1st Iberia"
+                }
+              ]
+            },
+            {
+              "name": "2nd Iberia",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "2nd Iberia"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "3rd Iberia",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "3rd Iberia"
+                }
+              ]
+            },
+            {
+              "name": "4th Iberia",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "4th Iberia"
+                }
+              ]
+            },
+            {
+              "name": "Guardias Nacionales",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Guardias Nacionales"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-heavy",
+      "nationId": "peninsular-british",
+      "name": "The Heavy Cavalry",
+      "formation": "Hill's Household, Ponsonby's, Fane's and Bock's brigades",
+      "side": "Anglo-Allied",
+      "summary": "Waiting through the morning for the infantry to open the way, the heavy brigades crossed the Zadorra in the afternoon and pressed the French as they broke.",
+      "notes": [
+        "The Household brigade had no Dragoon regiments, which the list's heavy brigade needs, and cavalry alone has no infantry brigades for its brigades to go with; these show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Stapleton Cotton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Hill's Household Brigade",
+          "commander": {
+            "name": "Lt-Col Robert Hill",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-household-cavalry",
+              "name": "1st Life Guards"
+            },
+            {
+              "unit": "pb-household-cavalry",
+              "name": "2nd Life Guards"
+            },
+            {
+              "unit": "pb-household-cavalry",
+              "name": "Royal Horse Guards"
+            }
+          ]
+        },
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Ponsonby's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Ponsonby",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "5th Dragoon Guards"
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "3rd Dragoons"
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "4th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Fane's Brigade",
+          "commander": {
+            "name": "Maj-Gen Henry Fane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "3rd Dragoon Guards"
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "1st Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Bock's Brigade",
+          "commander": {
+            "name": "Maj-Gen von Bock",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "1st Dragoons KGL",
+              "options": [
+                "kgl"
+              ]
+            },
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "2nd Dragoons KGL",
+              "options": [
+                "kgl"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Ramsay's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Ramsay's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-light-cav",
+      "nationId": "peninsular-british",
+      "name": "The Light Cavalry",
+      "formation": "Grant's, Alten's, Anson's and D'Urban's brigades",
+      "side": "Anglo-Allied",
+      "summary": "Grant's hussars and the light dragoons pursued the broken French past Vitoria, where many stopped to plunder the abandoned baggage train.",
+      "notes": [
+        "Cavalry on its own has no infantry brigades for its brigades to go with, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Col Colquhoun Grant",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Grant's Hussar Brigade",
+          "commander": {
+            "name": "Col Colquhoun Grant",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "10th Hussars"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "15th Hussars"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "18th Hussars"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Alten's Brigade",
+          "commander": {
+            "name": "Maj-Gen Victor von Alten",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "14th Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "1st Hussars KGL",
+              "options": [
+                "kgl"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Anson's Brigade",
+          "commander": {
+            "name": "Maj-Gen George Anson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "12th Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "16th Light Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-cavalry-brigade",
+          "name": "D'Urban's Portuguese",
+          "commander": {
+            "name": "Brig-Gen Benjamin D'Urban",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "1st Dragoons"
+            },
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "11th Dragoons"
+            },
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "12th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Gardiner's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Gardiner's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-leval",
+      "nationId": "peninsular-french",
+      "name": "Leval's Division",
+      "formation": "1st Division, Army of the South (Gazan)",
+      "side": "French",
+      "summary": "Held the French front line south of the Zadorra until the centre was turned, and fell back with the Army of the South.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Leval",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Mocquery's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Mocquery",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "9e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/9e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/9e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "24e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/24e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/24e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Morgan's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Morgan",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "88e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/88e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/88e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "96e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/96e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/96e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-villatte",
+      "nationId": "peninsular-french",
+      "name": "Villatte's Division",
+      "formation": "3rd Division, Army of the South (Gazan)",
+      "side": "French",
+      "summary": "Fought Hill's corps for the heights of La Puebla through the morning, then covered the retreat.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Villatte",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Rignoux's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rignoux",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "27e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/27e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/27e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "63e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/63e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/63e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Lefol's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lefol",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "94e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/94e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/94e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "95e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/95e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/95e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-conroux",
+      "nationId": "peninsular-french",
+      "name": "Conroux's Division",
+      "formation": "4th Division, Army of the South (Gazan)",
+      "side": "French",
+      "summary": "Gazan's left, facing Hill along the road below the Puebla heights.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Conroux",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Rey's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rey",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "32e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/32e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/32e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "43e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/43e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/43e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Schwiter's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Schwiter",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "55e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/55e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/55e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "58e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/58e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/58e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-darricau",
+      "nationId": "peninsular-french",
+      "name": "Darricau's Division",
+      "formation": "6th Division, Army of the South (Gazan)",
+      "side": "French",
+      "summary": "Held the centre at Ariñez against the British crossing the Zadorra; Maransin's brigade, detached from the 5th Division, fought beside it at Subijana.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "Maransin's brigade, the 5th Division's only one present, is added as a third brigade.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Darricau",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Saint-Pol's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Saint-Pol",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "21e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/21e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/21e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "100e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/100e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/100e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Remond's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Remond",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "28e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/28e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/28e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "103e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/103e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/103e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Maransin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Maransin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "12e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/12e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/12e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "45e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/45e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/45e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-south-cav",
+      "nationId": "peninsular-french",
+      "name": "The Army of the South's Cavalry",
+      "formation": "Soult's, Tilly's and Digeon's divisions",
+      "side": "French",
+      "summary": "Gazan's cavalry, which covered the army's retreat as its infantry broke.",
+      "notes": [
+        "Each division's two brigades are shown as one. Cavalry without the infantry brigades it's allowed by shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Tilly",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Soult's Light Cavalry",
+          "commander": {
+            "name": "Gén. de Division Pierre Soult",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "2e Hussards"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "21e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "5e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "10e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Tilly's Dragoons",
+          "commander": {
+            "name": "Gén. de Division Tilly",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "2e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "4e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "14e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "26e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Digeon's Dragoons",
+          "commander": {
+            "name": "Gén. de Division Digeon",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "5e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "12e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "16e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "21e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-darmagnac",
+      "nationId": "peninsular-french",
+      "name": "Darmagnac's Division",
+      "formation": "1st Division, Army of the Centre (d'Erlon)",
+      "side": "French",
+      "summary": "Held the line of the Zadorra opposite Dalhousie's column and fell back across the plain when the centre broke.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "The list has no German allies, so the Nassau, Baden and Frankfurt battalions are the list's Line battalions.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Darmagnac",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Chassé's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chassé",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "28e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/28e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/28e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "75e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/75e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/75e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Neuenstein's German Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Neuenstein",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Nassau Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2nd Nassau Infantry"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/2nd Nassau Infantry"
+                }
+              ]
+            },
+            {
+              "name": "4th Baden Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4th Baden Infantry"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4th Baden Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Frankfurt Infantry",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Frankfurt Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-cassagne",
+      "nationId": "peninsular-french",
+      "name": "Cassagne's Division",
+      "formation": "2nd Division, Army of the Centre (d'Erlon)",
+      "side": "French",
+      "summary": "D'Erlon's second division, in the second line behind the centre.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Cassagne",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Braun's Brigade",
+          "commander": {
+            "name": "Col Joseph Braun",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/16e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/16e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "8e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/8e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/8e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Blondeau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Blondeau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "51e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/51e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/51e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "54e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/54e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/54e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-sarrut",
+      "nationId": "peninsular-french",
+      "name": "Sarrut's Division",
+      "formation": "4th Division, Army of Portugal (Reille)",
+      "side": "French",
+      "summary": "Fought Graham's column for the villages and bridges of the upper Zadorra, holding the road to France until the rest of the army had gone; Sarrut was mortally wounded.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Sarrut",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Fririon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fririon",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/2e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "36e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/36e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Menne's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Menne",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "65e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/65e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/65e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-lamartiniere",
+      "nationId": "peninsular-french",
+      "name": "Lamartinière's Division",
+      "formation": "6th Division, Army of Portugal (Reille)",
+      "side": "French",
+      "summary": "Defended Gamarra Mayor and its bridge against Oswald's 5th Division in some of the hardest fighting of the day.",
+      "notes": [
+        "No source gives the battalions of each French regiment in 1813; two each, as the divisions' strengths suggest, is how they're shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Lamartinière",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "First Brigade",
+          "regiments": [
+            {
+              "name": "118e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/118e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/118e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "119e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/119e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/119e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "120e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/120e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/120e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "122e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/122e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/122e Ligne"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "vitoria-reille-cav",
+      "nationId": "peninsular-french",
+      "name": "Reille's and d'Erlon's Cavalry",
+      "formation": "Armies of Portugal and the Centre",
+      "side": "French",
+      "summary": "The cavalry of the two northern armies, which covered Reille's withdrawal from the Zadorra.",
+      "notes": [
+        "Trelliard's and Avy's divisions of the Army of the Centre are left out. Cavalry without the infantry brigades it's allowed by shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Mermet",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Curto's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Curto",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "13e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "22e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Mermet's Second Brigade",
+          "commander": {
+            "name": "Gén. de Division Mermet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "3e Hussards"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "14e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "26e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Boyer's Dragoons",
+          "commander": {
+            "name": "Gén. de Brigade Boyer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "6e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "11e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "15e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "25e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    }
+  ],
+  "sides": {
+    "Anglo-Allied": {
+      "commander": "The Marquess of Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Spanish": {
+      "commander": "Under Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "French": {
+      "commander": "King Joseph, with Marshal Jourdan",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Joseph-Bonaparte.jpg/250px-Joseph-Bonaparte.jpg",
+        "title": "Joseph Bonaparte, King of Spain",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Joseph-Bonaparte.jpg",
+        "focus": "50% 14%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/George_Jones_%281786-1869%29_-_The_Battle_of_Vitoria%2C_21_June_1813_-_485064_-_National_Trust.jpg/960px-George_Jones_%281786-1869%29_-_The_Battle_of_Vitoria%2C_21_June_1813_-_485064_-_National_Trust.jpg",
+    "title": "The Battle of Vitoria",
+    "artist": "George Jones",
+    "page": "https://commons.wikimedia.org/wiki/File:George_Jones_%281786-1869%29_-_The_Battle_of_Vitoria%2C_21_June_1813_-_485064_-_National_Trust.jpg"
+  }
+}

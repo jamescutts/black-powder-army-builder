@@ -971,6 +971,29 @@
       ]
     }
   ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Grouchy",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Emmanuel_de_Grouchy_2.jpg/250px-Emmanuel_de_Grouchy_2.jpg",
+        "title": "Marshal Emmanuel de Grouchy",
+        "artist": "Jean-Sébastien Rouillard",
+        "page": "https://commons.wikimedia.org/wiki/File:Emmanuel_de_Grouchy_2.jpg",
+        "focus": "50% 10%",
+        "date": "1835"
+      }
+    },
+    "Prussian": {
+      "commander": "Lt-Gen von Thielmann",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Johann_Adolf_Freiherr_von_Thielmann.jpg/250px-Johann_Adolf_Freiherr_von_Thielmann.jpg",
+        "title": "Johann von Thielmann",
+        "artist": "Anton Graff",
+        "page": "https://commons.wikimedia.org/wiki/File:Johann_Adolf_Freiherr_von_Thielmann.jpg",
+        "focus": "50% 14%"
+      }
+    }
+  },
   "art": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Emmanuel_de_Grouchy_2.jpg/960px-Emmanuel_de_Grouchy_2.jpg",
     "title": "Marshal Grouchy",

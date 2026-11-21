@@ -14,6 +14,7 @@ ratings.py sets Staff Ratings as each battle is written.
 import json
 from pathlib import Path
 
+import commanders
 import ratings
 from hundred_days import bde, cmd, force, u
 
@@ -366,6 +367,7 @@ for f in ALBUERA["forces"]:
 if __name__ == "__main__":
     for b in (ROLICA, VIMEIRO, ALBUERA):
         ratings.apply(b)
+        commanders.apply(b)
         if b["id"] in ART:
             b["art"] = ART[b["id"]]
         (OUT / f"{b['id']}.json").write_text(json.dumps(b, ensure_ascii=False, indent=2) + "\n")

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { Anchor, Badge, Breadcrumbs, Card, Container, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { IconBook2, IconChevronLeft } from "@tabler/icons-react";
 import { getNation, getSupplement } from "@/data";
@@ -125,32 +126,6 @@ export function HistoricalCampaigns() {
   );
 }
 
-/** The way back up from a campaign or battle page: a back link in the app, breadcrumbs in the browser */
-function Crumbs({ trail, here }: { trail: { href: string; label: string }[]; here: string }) {
-  const up = trail[trail.length - 1];
-  return (
-    <>
-      <Anchor component={Link} href={up.href} size="sm" c="brown.7" className="army-back app-only">
-        <IconChevronLeft size={18} aria-hidden />
-        {up.label}
-      </Anchor>
-      <Breadcrumbs separator="›" className="army-crumbs app-hidden">
-        <Anchor component={Link} href="/black-powder" size="sm" c="brown.7">
-          Black Powder
-        </Anchor>
-        {trail.map((t) => (
-          <Anchor key={t.href} component={Link} href={t.href} size="sm" c="brown.7">
-            {t.label}
-          </Anchor>
-        ))}
-        <Text size="sm" c="brown.9">
-          {here}
-        </Text>
-      </Breadcrumbs>
-    </>
-  );
-}
-
 /**
  * One campaign's page: its battles in the order they were fought, each a card with its painting, date,
  * summary and forces by side, opening the battle's own page.
@@ -159,22 +134,26 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
   const campaign = getCampaign(campaignId)!;
   // Every battle in order, those still to come among them
   const battles = scheduleIn(campaign.id);
+  const fought = battles.filter((b) => !isPlanned(b));
+  const forces = fought.reduce((n, b) => n + b.forces.length, 0);
   return (
-    <Container size="xl" py="lg">
-      <Stack gap="xl">
-        <Stack gap={6}>
-          <Crumbs trail={[{ href: HISTORICAL_FORCES_PATH, label: "Historical forces" }]} here={campaign.name} />
-          <Title order={1} className="army-title">
-            {campaign.name}
-          </Title>
-          <Text size="sm" fw={600} c="brown.8">
-            {campaign.dates}
-          </Text>
-          <Text size="md" c="brown.9" maw={760} style={{ lineHeight: 1.55 }}>
-            {campaign.summary}
-          </Text>
-        </Stack>
-
+    <>
+      <HistoryHero
+        art={campaign.art}
+        trail={[{ href: HISTORICAL_FORCES_PATH, label: "Historical forces" }]}
+        title={campaign.name}
+        dates={campaign.dates}
+        summary={campaign.summary}
+        stats={[
+          { value: fought.length, label: fought.length === 1 ? "battle" : "battles" },
+          { value: forces, label: forces === 1 ? "force" : "forces" },
+        ]}
+      />
+    <Container size="xl" py="xl">
+      <Stack gap="lg">
+        <Title order={2} className="builder-heading">
+          Battles
+        </Title>
         <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
           {battles.map((battle) => {
             // A battle still to come: its card, without a link, saying so
@@ -254,6 +233,7 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
         </SimpleGrid>
       </Stack>
     </Container>
+    </>
   );
 }
 
@@ -267,32 +247,26 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
   // Sides in the order the battle lists their first force
   const sides = [...new Set(battle.forces.map((f) => f.side))];
   return (
-    <Container size="xl" py="lg">
-      <Stack gap="xl">
-        <Stack gap={6}>
-          <Crumbs
-            trail={[
-              { href: HISTORICAL_FORCES_PATH, label: "Historical forces" },
-              { href: campaignHref(campaign.id), label: campaign.name },
-            ]}
-            here={battle.name}
-          />
-          {battle.art && <BattleArt art={battle.art} />}
-          <Title order={1} className="army-title">
-            {battle.name}
-          </Title>
-          <Text size="sm" fw={600} c="brown.8">
-            {battle.date} · {campaign.name}
-          </Text>
-          <Text size="md" c="brown.9" maw={760} style={{ lineHeight: 1.55 }}>
-            {battle.summary}
-          </Text>
-        </Stack>
+    <>
+      <HistoryHero
+        art={battle.art}
+        trail={[
+          { href: HISTORICAL_FORCES_PATH, label: "Historical forces" },
+          { href: campaignHref(campaign.id), label: campaign.name },
+        ]}
+        title={battle.name}
+        dates={battle.date}
+        summary={battle.summary}
+        stats={sides.map((side) => ({ value: battle.forces.filter((f) => f.side === side).length, label: side }))}
+      />
+    <Container size="xl" py="xl">
+      <Stack gap="lg">
+        <Title order={2} className="builder-heading">
+          Forces
+        </Title>
         {sides.map((side) => (
-          <Stack gap="xs" key={side}>
-            <Text size="xs" tt="uppercase" fw={700} c="brown.8" lts={0.6}>
-              {side}
-            </Text>
+          <Stack gap="sm" key={side}>
+            <SideHead side={side} info={battle.sides?.[side]} />
             <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
               {battle.forces
                 .filter((f) => f.side === side)
@@ -304,21 +278,113 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
         ))}
       </Stack>
     </Container>
+    </>
   );
 }
 
-/** A battle's painting as a banner at the head of its section, credited and linked to its Commons page */
-function BattleArt({ art }: { art: HistoricalArt }) {
+/**
+ * A campaign's or battle's page head, as Fleet Ledger's: its painting across the full width, shaded from
+ * the left, with the way back, title, dates, summary (folded to a few lines, with "Read more") and a row
+ * of figures over it, and the painting's credit in the corner. Without a painting, a plain dark band.
+ */
+function HistoryHero({
+  art,
+  trail,
+  title,
+  dates,
+  summary,
+  stats,
+}: {
+  art?: HistoricalArt;
+  trail: { href: string; label: string }[];
+  title: string;
+  dates: string;
+  summary: string;
+  stats: { value: number; label: string }[];
+}) {
+  const [open, setOpen] = useState(false);
+  const up = trail[trail.length - 1];
   return (
-    <figure className="battle-art">
-      <img src={art.src} alt={`${art.title}, ${art.artist}`} loading="lazy" style={{ objectPosition: art.focus }} />
-      <figcaption>
-        <Anchor href={art.page} target="_blank" rel="noreferrer" inherit c="inherit">
-          <i>{art.title}</i>, {art.artist}
-          {art.date && `, ${art.date}`}
+    <section className="home-hero history-hero" data-empty={!art || undefined}>
+      {art && <img src={art.src} alt="" className="home-hero-image" style={{ objectPosition: art.focus ?? "50% 40%" }} />}
+      <div className="home-hero-shade" aria-hidden />
+      <Container size="xl" className="home-hero-inner">
+        <Stack className="home-hero-body" gap="sm">
+          <Anchor component={Link} href={up.href} size="sm" className="history-hero-crumb army-back app-only">
+            <IconChevronLeft size={18} aria-hidden />
+            {up.label}
+          </Anchor>
+          <Breadcrumbs separator="›" className="history-hero-crumbs app-hidden">
+            <Anchor component={Link} href="/black-powder" size="sm" className="history-hero-crumb">
+              Black Powder
+            </Anchor>
+            {trail.map((t) => (
+              <Anchor key={t.href} component={Link} href={t.href} size="sm" className="history-hero-crumb">
+                {t.label}
+              </Anchor>
+            ))}
+          </Breadcrumbs>
+          <Title order={1} className="home-hero-title history-hero-title">
+            {title}
+          </Title>
+          <Text fw={600} size="sm" className="history-hero-dates">
+            {dates}
+          </Text>
+          <div>
+            <Text className="home-hero-lead history-hero-lead" data-open={open || undefined}>
+              {summary}
+            </Text>
+            {summary.length > 240 && (
+              <button type="button" className="history-hero-more" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
+                {open ? "Show less" : "Read more"}
+              </button>
+            )}
+          </div>
+        </Stack>
+        <Group className="home-hero-stats history-hero-stats" gap="xl" wrap="wrap">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <Text className="home-hero-stat" ff="heading" fw={600} lh={1}>
+                {s.value}
+              </Text>
+              <Text size="sm" className="home-hero-stat-label">
+                {s.label}
+              </Text>
+            </div>
+          ))}
+        </Group>
+      </Container>
+      {art && (
+        <Anchor href={art.page} target="_blank" rel="noreferrer" className="home-hero-credit" size="xs">
+          {art.title} · {art.artist}
+          {art.date && `, ${art.date}`} · public domain
         </Anchor>
-      </figcaption>
-    </figure>
+      )}
+    </section>
+  );
+}
+
+/** A side's head on a battle page: its commander's portrait and name, over the side's forces */
+function SideHead({ side, info }: { side: string; info?: { commander: string; portrait?: HistoricalArt } }) {
+  const p = info?.portrait;
+  return (
+    <Group gap="sm" wrap="nowrap" className="side-head">
+      {p && (
+        <a href={p.page} target="_blank" rel="noreferrer" className="side-head-portrait" title={`${p.title}, ${p.artist}${p.date ? `, ${p.date}` : ""}`}>
+          <img src={p.src} alt={`${p.title}, ${p.artist}`} loading="lazy" style={{ objectPosition: p.focus ?? "50% 20%" }} />
+        </a>
+      )}
+      <div>
+        <Text size="xs" tt="uppercase" fw={700} c="brown.8" lts={0.6}>
+          {side}
+        </Text>
+        {info && (
+          <Text ff="heading" fw={600} fz="lg" lh={1.25} c="brown.9">
+            {info.commander}
+          </Text>
+        )}
+      </div>
+    </Group>
   );
 }
 

@@ -12,6 +12,7 @@ commander at 8 unless he's one of the book's named commanders.
 import json
 from pathlib import Path
 
+import commanders
 import ratings
 
 OUT = Path(__file__).resolve().parents[2] / "src" / "data" / "battles"
@@ -585,6 +586,7 @@ ART = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]
 def write(b):
     """Writes a battle, with its Staff Ratings set and its painting (art.json) where it has one"""
     ratings.apply(b)
+    commanders.apply(b)
     if b["id"] in ART:
         b["art"] = ART[b["id"]]
     (OUT / f"{b['id']}.json").write_text(json.dumps(b, ensure_ascii=False, indent=2) + "\n")

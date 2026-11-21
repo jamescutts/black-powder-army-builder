@@ -1,12 +1,16 @@
 import type { HistoricalBattle, HistoricalCampaign, HistoricalForce } from "../types";
 import { getNation } from "../index";
 import albuera from "./albuera.json";
+import corunna from "./corunna.json";
 import eckau from "./eckau.json";
 import ligny from "./ligny.json";
 import mesoten from "./mesoten.json";
 import quatreBras from "./quatre-bras.json";
 import rolica from "./rolica.json";
+import salamanca from "./salamanca.json";
+import talavera from "./talavera.json";
 import vimeiro from "./vimeiro.json";
+import vitoria from "./vitoria.json";
 import waterloo from "./waterloo.json";
 import wavre from "./wavre.json";
 import {
@@ -14,7 +18,6 @@ import {
   berezina,
   borodino,
   bussaco,
-  corunna,
   dahlenkirchen,
   fuentesDeOnoro,
   gorodechno,
@@ -29,16 +32,13 @@ import {
   ostrovno,
   polotsk,
   polotsk2,
-  salamanca,
   saltanovka,
   smolensk,
   somosierra,
   sorauren,
-  talavera,
   tarutino,
   toulouse,
   valutino,
-  vitoria,
   vyazma,
 } from "./planned";
 
@@ -101,14 +101,14 @@ const schedule: HistoricalBattle[] = [
   rolica as HistoricalBattle,
   vimeiro as HistoricalBattle,
   somosierra,
-  corunna,
-  talavera,
+  corunna as HistoricalBattle,
+  talavera as HistoricalBattle,
   ocana,
   bussaco,
   fuentesDeOnoro,
   albuera as HistoricalBattle,
-  salamanca,
-  vitoria,
+  salamanca as HistoricalBattle,
+  vitoria as HistoricalBattle,
   sorauren,
   nivelle,
   orthez,

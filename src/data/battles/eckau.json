@@ -370,6 +370,14 @@
       ]
     }
   ],
+  "sides": {
+    "Prussian": {
+      "commander": "Gen-Lt von Grawert"
+    },
+    "Russian": {
+      "commander": "Maj-Gen Löwis of Menar"
+    }
+  },
   "art": {
     "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Siege_of_Riga%2C_houses_on_fire_%281812%29.jpg/960px-Siege_of_Riga%2C_houses_on_fire_%281812%29.jpg",
     "title": "The siege of Riga: the suburbs burning",
