@@ -13,6 +13,8 @@ export interface BattlePlace {
   /** Roughly how many men of both sides were engaged, which sizes its mark against its campaign's others */
   engaged: number;
   label?: LabelSide;
+  /** A siege, marked with a star fort rather than sabres */
+  siege?: boolean;
   /** Pixels to move the label by, beyond its side, where battles are close together */
   nudge?: [number, number];
 }
@@ -121,16 +123,16 @@ export const battlePlaces: Record<string, BattlePlace> = {
   orthez: { at: [43.49, -0.77], engaged: 80000, label: "right" },
   toulouse: { at: [43.6, 1.44], engaged: 92000, label: "right" },
   // The sieges
-  saragossa: { at: [41.66, -0.93], engaged: 26000, label: "left" },
-  "saragossa-2": { at: [41.64, -0.83], engaged: 80000, label: "right" },
-  gerona: { at: [41.98, 2.82], engaged: 44000, label: "left" },
-  almeida: { at: [40.73, -6.9], engaged: 19000, label: "left" },
-  tarragona: { at: [41.12, 1.25], engaged: 38000, label: "left" },
-  "ciudad-rodrigo": { at: [40.6, -6.53], engaged: 40000, label: "bottom" },
-  badajoz: { at: [38.88, -6.97], engaged: 32000, label: "left" },
-  burgos: { at: [42.34, -3.7], engaged: 37000, label: "left" },
-  "san-sebastian": { at: [43.32, -1.98], engaged: 21000, label: "left" },
-  pamplona: { at: [42.81, -1.64], engaged: 14000, label: "bottom" },
+  saragossa: { at: [41.66, -0.93], engaged: 26000, siege: true, label: "left" },
+  "saragossa-2": { at: [41.64, -0.83], engaged: 80000, siege: true, label: "right" },
+  gerona: { at: [41.98, 2.82], engaged: 44000, siege: true, label: "left" },
+  almeida: { at: [40.73, -6.9], engaged: 19000, siege: true, label: "left" },
+  tarragona: { at: [41.12, 1.25], engaged: 38000, siege: true, label: "left" },
+  "ciudad-rodrigo": { at: [40.6, -6.53], engaged: 40000, siege: true, label: "bottom" },
+  badajoz: { at: [38.88, -6.97], engaged: 32000, siege: true, label: "left" },
+  burgos: { at: [42.34, -3.7], engaged: 37000, siege: true, label: "left" },
+  "san-sebastian": { at: [43.32, -1.98], engaged: 21000, siege: true, label: "left" },
+  pamplona: { at: [42.81, -1.64], engaged: 14000, siege: true, label: "bottom" },
 };
 
 const FRENCH_1812: MapSide = { id: "french", label: "Grande Armée", colour: "#2b4a7e" };
@@ -853,6 +855,51 @@ export const campaignMaps: Record<string, CampaignMap> = {
         ],
       },
       {
+        side: "french",
+        name: "The French march on Saragossa",
+        dates: "June 1808 – January 1809",
+        note: "Lefebvre-Desnouettes and then Verdier came down the Ebro by Tudela to besiege Saragossa in the summer of 1808; after Napoleon's victory at Tudela in November, Moncey and Lannes came back the same way for the second siege.",
+        path: [
+          [42.81, -1.64],
+          [42.06, -1.61],
+          [41.66, -0.93],
+        ],
+      },
+      {
+        side: "french",
+        name: "Saint-Cyr into Catalonia",
+        dates: "November 1808 – May 1809",
+        note: "Gouvion Saint-Cyr's corps came over the eastern Pyrenees from Perpignan by Figueras to relieve Barcelona and open the long siege of Gerona.",
+        path: [
+          [42.7, 2.9],
+          [42.27, 2.96],
+          [41.98, 2.82],
+        ],
+      },
+      {
+        side: "french",
+        name: "Suchet marches on Tarragona",
+        dates: "April–May 1811",
+        note: "From Lérida Suchet's Army of Aragon marched down to the coast to besiege Tarragona, the last great Spanish stronghold in Catalonia.",
+        path: [
+          [41.62, 0.62],
+          [41.35, 1.0],
+          [41.12, 1.25],
+        ],
+      },
+      {
+        side: "french",
+        name: "Soult strikes for Pamplona",
+        dates: "July 1813",
+        note: "Soult's counter-offensive came over the passes of Roncesvalles and Maya to relieve Pamplona, and was stopped on the heights at Sorauren within sight of it.",
+        path: [
+          [43.49, -1.47],
+          [43.16, -1.24],
+          [43.01, -1.32],
+          [42.86, -1.62],
+        ],
+      },
+      {
         side: "allied",
         name: "Wellesley lands in Portugal",
         dates: "August 1808",
@@ -906,6 +953,45 @@ export const campaignMaps: Record<string, CampaignMap> = {
       },
       {
         side: "allied",
+        name: "Storming the border fortresses",
+        dates: "January–April 1812",
+        note: "Wellington took Ciudad Rodrigo by storm in January, then marched his army south behind the frontier by Portalegre and Elvas to storm Badajoz in April, opening both roads into Spain.",
+        path: [
+          [40.62, -6.9],
+          [40.6, -6.53],
+          [40.2, -7.05],
+          [39.29, -7.43],
+          [38.88, -7.16],
+          [38.88, -6.97],
+        ],
+      },
+      {
+        side: "allied",
+        name: "To Burgos and back",
+        dates: "September–November 1812",
+        note: "From Madrid Wellington marched north by Valladolid to besiege the castle of Burgos; when it held and the French armies gathered, he fell back past Salamanca to Ciudad Rodrigo in the cold and rain.",
+        path: [
+          [40.42, -3.7],
+          [41.65, -4.72],
+          [42.34, -3.7],
+          [41.75, -4.9],
+          [40.96, -5.66],
+          [40.6, -6.53],
+        ],
+      },
+      {
+        side: "allied",
+        name: "Graham besieges San Sebastián",
+        dates: "July–September 1813",
+        note: "After Vitoria, Graham's wing marched by Tolosa to the coast to besiege San Sebastián, while the rest of the army watched the passes.",
+        path: [
+          [42.85, -2.67],
+          [43.14, -2.07],
+          [43.32, -1.98],
+        ],
+      },
+      {
+        side: "allied",
         name: "The Salamanca campaign",
         dates: "June–August 1812",
         note: "After storming Ciudad Rodrigo and Badajoz, Wellington advanced on Salamanca, broke Marmont's army there, and entered Madrid.",
@@ -937,6 +1023,7 @@ export const campaignMaps: Record<string, CampaignMap> = {
         note: "Wellington held Soult's counter-stroke at Sorauren, crossed the Bidassoa into France, stormed the Nivelle lines, beat Soult again at Orthez and followed him to Toulouse.",
         path: [
           [42.85, -2.67],
+          [42.81, -1.64],
           [42.86, -1.62],
           [43.33, -1.75],
           [43.36, -1.6],

@@ -113,6 +113,24 @@ export function swords(soon: boolean, size?: number): string {
   return `<svg viewBox="0 0 24 24"${dims} aria-hidden="true">${pair("#fbf6e9", 2.2)}${pair(ink, 0)}</svg>`;
 }
 
+/** A siege's mark, as on an old atlas: a star fort, inked and haloed like the sabres */
+export function fort(soon: boolean, size?: number): string {
+  const ink = soon ? "#5e4d36" : "#5a101e";
+  const dims = size ? ` width="${size}" height="${size}"` : "";
+  // Five bastions about a centre
+  const star = Array.from({ length: 10 }, (_, i) => {
+    const r = i % 2 ? 5.4 : 10.4;
+    const a = ((i * 36 - 90) * Math.PI) / 180;
+    return `${(12 + r * Math.cos(a)).toFixed(2)},${(12.6 + r * Math.sin(a)).toFixed(2)}`;
+  }).join(" ");
+  return (
+    `<svg viewBox="0 0 24 24"${dims} aria-hidden="true">` +
+    `<polygon points="${star}" fill="#fbf6e9" stroke="#fbf6e9" stroke-width="4.4" stroke-linejoin="round"/>` +
+    `<polygon points="${star}" fill="#fbf6e9" stroke="${ink}" stroke-width="1.7" stroke-linejoin="round"/>` +
+    `<circle cx="12" cy="12.6" r="2.3" fill="${ink}"/></svg>`
+  );
+}
+
 const MONTHS: Record<string, string> = {
   January: "Jan", February: "Feb", March: "Mar", April: "Apr", May: "May", June: "Jun",
   July: "Jul", August: "Aug", September: "Sep", October: "Oct", November: "Nov", December: "Dec",
@@ -473,7 +491,9 @@ export function CampaignMap({ campaignId, focus }: { campaignId: string; focus?:
         const { at, engaged, label = "right", nudge = [0, 0] } = battlePlaces[battle.id];
         const soon = isPlanned(battle);
         // A battle's own map shows it larger than any other
-        const size = battle.id === focus ? LARGEST + 6 : markSize(engaged, most);
+        // A star fort is a solid shape, so a little smaller than sabres for the same size of fight
+        const full = battle.id === focus ? LARGEST + 6 : markSize(engaged, most);
+        const size = battlePlaces[battle.id].siege ? Math.round(full * 0.8) : full;
         const marker = L.marker(at, {
           title: battle.name,
           alt: battle.name,
@@ -485,7 +505,7 @@ export function CampaignMap({ campaignId, focus }: { campaignId: string; focus?:
             iconAnchor: [size / 2, size / 2],
             tooltipAnchor: [0, 0],
             popupAnchor: [0, -size / 2],
-            html: swords(soon),
+            html: battlePlaces[battle.id].siege ? fort(soon) : swords(soon),
           }),
         });
         // Its name, and beneath it when it was fought
@@ -556,6 +576,7 @@ export function CampaignMap({ campaignId, focus }: { campaignId: string; focus?:
   // On a battle's map, only the sides that have a march on it
   const shown = focus ? new Set(routesAt(campaignId, focus).map((r) => r.side)) : undefined;
   const keySides = shown ? data.sides.filter((side) => shown.has(side.id)) : data.sides;
+  const hasSieges = scheduleIn(campaignId).some((b) => battlePlaces[b.id]?.siege);
   const toggle = (id: string) =>
     setHidden((h) => {
       const next = new Set(h);
@@ -605,6 +626,12 @@ export function CampaignMap({ campaignId, focus }: { campaignId: string; focus?:
           <span className="map-key-icon" dangerouslySetInnerHTML={{ __html: swords(true, 13) }} />
           <span>Coming soon</span>
         </span>
+        {hasSieges && (
+          <span className="map-key map-key-static">
+            <span className="map-key-icon" dangerouslySetInnerHTML={{ __html: fort(false, 15) }} />
+            <span>Siege</span>
+          </span>
+        )}
         <span className="map-key map-key-static" title="Each battle's mark is sized by the men engaged">
           <span className="map-key-scale" aria-hidden="true">
             <span dangerouslySetInnerHTML={{ __html: swords(false, 10) }} />
