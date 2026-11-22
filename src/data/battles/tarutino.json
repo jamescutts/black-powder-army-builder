@@ -136,7 +136,7 @@
       "notes": [
         "After Nafziger's order of battle for Borodino, six weeks earlier; Borodino's losses, never made good, aren't shown, so the regiments were much weaker than this.",
         "After Borodino the V Corps was down to a few thousand men, so every battalion and regiment is Small.",
-        "Zajączek was wounded at Borodino; who led the division at Tarutino isn't recorded in our sources.",
+        "Mikaberidze gives Krasiński as commanding the division and its first brigade at Borodino, Zajączek having been injured.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
@@ -149,9 +149,9 @@
       "brigades": [
         {
           "type": "gdw-infantry-brigade",
-          "name": "Mielżyński's Brigade",
+          "name": "Krasiński's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Mielżyński",
+            "name": "Gén. de Brigade Krasiński",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -303,9 +303,9 @@
       "brigades": [
         {
           "type": "gdw-infantry-brigade",
-          "name": "Grabowski's Brigade",
+          "name": "Bégański's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Grabowski",
+            "name": "Gén. de Brigade Bégański",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -365,9 +365,9 @@
         },
         {
           "type": "gdw-infantry-brigade",
-          "name": "Pakosz's Brigade",
+          "name": "Potocki's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Pakosz",
+            "name": "Gén. de Brigade Potocki",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -559,27 +559,27 @@
           },
           "regiments": [
             {
-              "name": "48th Line",
+              "name": "15th Léger",
               "units": [
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "I/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "I/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "II/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "II/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "III/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "III/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "IV/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "IV/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "V/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "V/15th Léger"
                 }
               ]
             }
@@ -587,9 +587,9 @@
         },
         {
           "type": "fr-infantry-brigade",
-          "name": "Vandedem's Brigade",
+          "name": "Van Dedem's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Vandedem",
+            "name": "Gén. de Brigade van Dedem",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -622,34 +622,34 @@
         },
         {
           "type": "fr-infantry-brigade",
-          "name": "Grandeau's Brigade",
+          "name": "Grosne's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Grandeau",
+            "name": "Gén. de Brigade Grosne",
             "variant": "Staff rating 8"
           },
           "regiments": [
             {
-              "name": "15th Léger",
+              "name": "48th Line",
               "units": [
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "I/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "I/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "II/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "II/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "III/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "III/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "IV/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "IV/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "V/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "V/48th Line"
                 }
               ]
             },
@@ -658,11 +658,11 @@
               "units": [
                 {
                   "unit": "fr-spanish-infantry",
-                  "name": "I/Joseph Napoléon"
+                  "name": "II/Joseph Napoléon"
                 },
                 {
                   "unit": "fr-spanish-infantry",
-                  "name": "II/Joseph Napoléon"
+                  "name": "III/Joseph Napoléon"
                 }
               ]
             }
@@ -964,9 +964,9 @@
       "brigades": [
         {
           "type": "ru-infantry-brigade",
-          "name": "Chubarov's Brigade",
+          "name": "Ivelich's Brigade",
           "commander": {
-            "name": "Col Chubarov",
+            "name": "Maj-Gen Ivelich",
             "variant": "Staff rating 8"
           },
           "units": [
@@ -990,6 +990,35 @@
               ]
             },
             {
+              "name": "Brest Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Brest"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Brest"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Vadkovsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Vadkovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "32nd Light Battery"
+            }
+          ],
+          "regiments": [
+            {
               "name": "Belozersk Infantry",
               "units": [
                 {
@@ -1001,23 +1030,7 @@
                   "name": "2nd Bn, Belozersk"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "ru-infantry-brigade",
-          "name": "Tuchkov II's Brigade",
-          "commander": {
-            "name": "Maj-Gen Tuchkov II",
-            "variant": "Staff rating 7"
-          },
-          "units": [
-            {
-              "unit": "ru-light-arty",
-              "name": "32nd Light Battery"
-            }
-          ],
-          "regiments": [
+            },
             {
               "name": "Wilmanstrand Infantry",
               "units": [
@@ -1028,19 +1041,6 @@
                 {
                   "unit": "ru-inf-combined-grenadier",
                   "name": "2nd Bn, Wilmanstrand"
-                }
-              ]
-            },
-            {
-              "name": "Brest Infantry",
-              "units": [
-                {
-                  "unit": "ru-inf-combined-grenadier",
-                  "name": "1st Bn, Brest"
-                },
-                {
-                  "unit": "ru-inf-combined-grenadier",
-                  "name": "2nd Bn, Brest"
                 }
               ]
             }
@@ -1061,15 +1061,15 @@
           ],
           "regiments": [
             {
-              "name": "3rd Jäger",
+              "name": "30th Jäger",
               "units": [
                 {
                   "unit": "ru-jager",
-                  "name": "1st Bn, 3rd Jäger"
+                  "name": "1st Bn, 30th Jäger"
                 },
                 {
                   "unit": "ru-jager",
-                  "name": "2nd Bn, 3rd Jäger"
+                  "name": "2nd Bn, 30th Jäger"
                 }
               ]
             },

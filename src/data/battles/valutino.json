@@ -361,6 +361,7 @@
       "summary": "Beside Razout's, in the attacks across the stream and up the slopes through the afternoon.",
       "notes": [
         "After Nafziger's order of battle for the Grande Armée on 15 August, four days before the battle.",
+        "Nafziger gives the 24th Line; Vovsi and Mikaberidze have the 24th Léger, as here.",
         "The 1st Portuguese, of the Portuguese Legion, is shown as the list's Portuguese infantry.",
         "The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
         "Commanders are at Staff Rating 8, the default for historical forces."
@@ -383,28 +384,28 @@
           "units": [
             {
               "unit": "fr-regimental-arty-section",
-              "name": "24th Line Artillery Company"
+              "name": "24th Léger Artillery Company"
             }
           ],
           "regiments": [
             {
-              "name": "24th Line",
+              "name": "24th Léger",
               "units": [
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "I/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "I/24th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "II/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "II/24th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "III/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "III/24th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "IV/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "IV/24th Léger"
                 }
               ]
             },

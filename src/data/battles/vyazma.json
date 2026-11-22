@@ -386,6 +386,7 @@
       "summary": "Eugène turned back to open the road for Davout, and Broussier's division held off Miloradovich's attacks on the flank.",
       "notes": [
         "By now the French divisions were a fraction of their strength, a few hundred to a few thousand men; the formation is as Nafziger gives it earlier in the campaign, so mark battalions Small or leave some out to suit.",
+        "Brigades as Mikaberidze and Vovsi give them for Borodino; battalions after Nafziger's return for 1 August, the division having lost heavily since.",
         "Each French regiment had two 3-pdrs, shown as Regimental Artillery.",
         "The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
         "Commanders are at Staff Rating 8, the default for historical forces."
@@ -400,9 +401,9 @@
       "brigades": [
         {
           "type": "fr-infantry-brigade",
-          "name": "Alméras's Brigade",
+          "name": "Sivray's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Alméras",
+            "name": "Gén. de Brigade Bertrand de Sivray",
             "variant": "Staff rating 8"
           },
           "units": [
@@ -412,7 +413,7 @@
             },
             {
               "unit": "fr-regimental-arty-section",
-              "name": "9th Line Artillery Company"
+              "name": "53rd Line Artillery Company"
             }
           ],
           "regiments": [
@@ -429,6 +430,60 @@
                 }
               ]
             },
+            {
+              "name": "53rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/53rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/53rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/53rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/53rd Line"
+                }
+              ]
+            },
+            {
+              "name": "Joseph Napoléon Regiment",
+              "units": [
+                {
+                  "unit": "fr-spanish-infantry",
+                  "name": "I/Joseph Napoléon"
+                },
+                {
+                  "unit": "fr-spanish-infantry",
+                  "name": "IV/Joseph Napoléon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Alméras's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Alméras",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "9th Line Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "35th Line Artillery Company"
+            }
+          ],
+          "regiments": [
             {
               "name": "9th Line",
               "units": [
@@ -447,35 +502,6 @@
                 {
                   "unit": "fr-line-infantry",
                   "name": "IV/9th Line"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "fr-infantry-brigade",
-          "name": "Sivray's Brigade",
-          "commander": {
-            "name": "Gén. de Brigade Bertrand de Sivray",
-            "variant": "Staff rating 8"
-          },
-          "units": [
-            {
-              "unit": "fr-regimental-arty-section",
-              "name": "35th Line Artillery Company"
-            }
-          ],
-          "regiments": [
-            {
-              "name": "Joseph Napoléon Regiment",
-              "units": [
-                {
-                  "unit": "fr-spanish-infantry",
-                  "name": "I/Joseph Napoléon"
-                },
-                {
-                  "unit": "fr-spanish-infantry",
-                  "name": "IV/Joseph Napoléon"
                 }
               ]
             },
@@ -497,43 +523,6 @@
                 {
                   "unit": "fr-line-infantry",
                   "name": "IV/35th Line"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "fr-infantry-brigade",
-          "name": "Pastol's Brigade",
-          "commander": {
-            "name": "Gén. de Brigade Pastol",
-            "variant": "Staff rating 8"
-          },
-          "units": [
-            {
-              "unit": "fr-regimental-arty-section",
-              "name": "53rd Line Artillery Company"
-            }
-          ],
-          "regiments": [
-            {
-              "name": "53rd Line",
-              "units": [
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "I/53rd Line"
-                },
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "II/53rd Line"
-                },
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "III/53rd Line"
-                },
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "IV/53rd Line"
                 }
               ]
             }
@@ -757,7 +746,7 @@
       "notes": [
         "By now the French divisions were a fraction of their strength, a few hundred to a few thousand men; the formation is as Nafziger gives it earlier in the campaign, so mark battalions Small or leave some out to suit.",
         "After Borodino the V Corps was down to a few thousand men, so every battalion and regiment is Small.",
-        "Zajączek was wounded at Borodino; who led the division at Tarutino isn't recorded in our sources.",
+        "Mikaberidze gives Krasiński as commanding the division and its first brigade at Borodino, Zajączek having been injured.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
@@ -770,9 +759,9 @@
       "brigades": [
         {
           "type": "gdw-infantry-brigade",
-          "name": "Mielżyński's Brigade",
+          "name": "Krasiński's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Mielżyński",
+            "name": "Gén. de Brigade Krasiński",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -1235,9 +1224,9 @@
       "brigades": [
         {
           "type": "ru-infantry-brigade",
-          "name": "Chubarov's Brigade",
+          "name": "Ivelich's Brigade",
           "commander": {
-            "name": "Col Chubarov",
+            "name": "Maj-Gen Ivelich",
             "variant": "Staff rating 8"
           },
           "units": [
@@ -1261,6 +1250,35 @@
               ]
             },
             {
+              "name": "Brest Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Brest"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Brest"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Vadkovsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Vadkovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "32nd Light Battery"
+            }
+          ],
+          "regiments": [
+            {
               "name": "Belozersk Infantry",
               "units": [
                 {
@@ -1272,23 +1290,7 @@
                   "name": "2nd Bn, Belozersk"
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "ru-infantry-brigade",
-          "name": "Tuchkov II's Brigade",
-          "commander": {
-            "name": "Maj-Gen Tuchkov II",
-            "variant": "Staff rating 7"
-          },
-          "units": [
-            {
-              "unit": "ru-light-arty",
-              "name": "32nd Light Battery"
-            }
-          ],
-          "regiments": [
+            },
             {
               "name": "Wilmanstrand Infantry",
               "units": [
@@ -1299,19 +1301,6 @@
                 {
                   "unit": "ru-inf-combined-grenadier",
                   "name": "2nd Bn, Wilmanstrand"
-                }
-              ]
-            },
-            {
-              "name": "Brest Infantry",
-              "units": [
-                {
-                  "unit": "ru-inf-combined-grenadier",
-                  "name": "1st Bn, Brest"
-                },
-                {
-                  "unit": "ru-inf-combined-grenadier",
-                  "name": "2nd Bn, Brest"
                 }
               ]
             }
@@ -1332,15 +1321,15 @@
           ],
           "regiments": [
             {
-              "name": "3rd Jäger",
+              "name": "30th Jäger",
               "units": [
                 {
                   "unit": "ru-jager",
-                  "name": "1st Bn, 3rd Jäger"
+                  "name": "1st Bn, 30th Jäger"
                 },
                 {
                   "unit": "ru-jager",
-                  "name": "2nd Bn, 3rd Jäger"
+                  "name": "2nd Bn, 30th Jäger"
                 }
               ]
             },

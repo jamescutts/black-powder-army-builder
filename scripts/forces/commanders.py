@@ -340,7 +340,7 @@ FORCE_PORTRAITS: dict[str, str] = {
     "borodino-thielmann": "thielmann",
     "borodino-eugen": "eugen_wurttemberg",
     "borodino-23rd": "bakhmetev",
-    "borodino-1st-cuirassiers": "depreradovich",
+    "borodino-delaborde": "delaborde", "borodino-guard-cavalry": "lefebvre_desnouettes",
     "borodino-uvarov": "uvarov",
     "borodino-korff": "korff",
     "borodino-platov": "platov",

@@ -67,9 +67,9 @@ EUGEN = ru_div("tarutino-eugen", "Eugen's 4th Division", "4th Division, II Corps
                ["Prince Eugen of Württemberg is the book's named commander."])
 
 OLSUFIEV = ru_div("tarutino-olsufiev", "Olsufiev's 17th Division", "17th Division, II Corps (Baggovut)", cmd("ru-div-cmd", "Lt-Gen Olsufiev"),
-                  [ru_bde("Chubarov's Brigade", "Col Chubarov", pos("17th"), [ru_regiment("Ryazan"), ru_regiment("Belozersk")]),
-                   ru_bde("Tuchkov II's Brigade", "Maj-Gen Tuchkov II", lt("32nd"), [ru_regiment("Wilmanstrand"), ru_regiment("Brest")]),
-                   ru_bde("Potemkin's Brigade", "Col Potemkin", lt("33rd"), [ru_jager_regiment("3rd"), ru_jager_regiment("48th")], jager=True)],
+                  [ru_bde("Ivelich's Brigade", "Maj-Gen Ivelich", pos("17th"), [ru_regiment("Ryazan"), ru_regiment("Brest")]),
+                   ru_bde("Vadkovsky's Brigade", "Maj-Gen Vadkovsky", lt("32nd"), [ru_regiment("Belozersk"), ru_regiment("Wilmanstrand")]),
+                   ru_bde("Potemkin's Brigade", "Col Potemkin", lt("33rd"), [ru_jager_regiment("30th"), ru_jager_regiment("48th")], jager=True)],
                   "Baggovut's other division, beside Eugen's in the attack on the French left as Murat's men fell back from the camp.")
 
 ORLOV = force("tarutino-orlov-denisov", RU, "Orlov-Denisov's Column", "The right-hand column of Bennigsen's attack", "Russian",
@@ -83,20 +83,20 @@ ORLOV = force("tarutino-orlov-denisov", RU, "Orlov-Denisov's Column", "The right
 
 PONIATOWSKI_16 = force("tarutino-16th", GDW, "Zajączek's 16th Division", "16th Division, V Corps (Poniatowski)", "Polish",
                        "Poniatowski's Poles held the French right at Tarutino; when the Russian columns came out of the woods they covered Murat's withdrawal down the road to Spas-Kuplya.",
-                       [bde("gdw-infantry-brigade", "Mielżyński's Brigade", "Gén. de Brigade Mielżyński",
+                       [bde("gdw-infantry-brigade", "Krasiński's Brigade", "Gén. de Brigade Krasiński",
                             regiments=[{"name": f"{n} Line", "units": [u("gdw-polish-infantry", f"{r}/{n} Line", options=["small-infantry"]) for r in ("I", "II", "III")]} for n in ("3rd", "15th")]),
                         bde("gdw-infantry-brigade", "Paszkowski's Brigade", "Gén. de Brigade Paszkowski",
                             regiments=[{"name": "16th Line", "units": [u("gdw-polish-infantry", f"{r}/16th Line", options=["small-infantry"]) for r in ("I", "II", "III")]}]),
                         bde("gdw-cavalry-brigade", "Tyszkiewicz's Brigade", "Gén. de Brigade Tyszkiewicz", [u("gdw-uhlan", "12th Uhlans", options=["small-cavalry"])]),
                         bde("gdw-divisional-artillery", "Foot Battery", units=[u("gdw-foot-arty", "3rd Polish Foot Artillery")])],
                        command=[cmd("gdw-div-cmd", "Gén. de Division Zajączek")],
-                       notes=[SEPT.replace("Russian", ""), "After Borodino the V Corps was down to a few thousand men, so every battalion and regiment is Small.", "Zajączek was wounded at Borodino; who led the division at Tarutino isn't recorded in our sources."])
+                       notes=[SEPT.replace("Russian", ""), "After Borodino the V Corps was down to a few thousand men, so every battalion and regiment is Small.", "Mikaberidze gives Krasiński as commanding the division and its first brigade at Borodino, Zajączek having been injured."])
 
 PONIATOWSKI_18 = force("tarutino-18th", GDW, "Kniaziewicz's 18th Division", "18th Division, V Corps (Poniatowski)", "Polish",
                        "The other half of the Polish corps, beside the 16th on the right of Murat's line.",
-                       [bde("gdw-infantry-brigade", "Grabowski's Brigade", "Gén. de Brigade Grabowski",
+                       [bde("gdw-infantry-brigade", "Bégański's Brigade", "Gén. de Brigade Bégański",
                             regiments=[{"name": f"{n} Line", "units": [u("gdw-polish-infantry", f"{r}/{n} Line", options=["small-infantry"]) for r in ("I", "II", "III")]} for n in ("2nd", "8th")]),
-                        bde("gdw-infantry-brigade", "Pakosz's Brigade", "Gén. de Brigade Pakosz",
+                        bde("gdw-infantry-brigade", "Potocki's Brigade", "Gén. de Brigade Potocki",
                             regiments=[{"name": "12th Line", "units": [u("gdw-polish-infantry", f"{r}/12th Line", options=["small-infantry"]) for r in ("I", "II", "III")]}]),
                         bde("gdw-cavalry-brigade", "Sułkowski's Brigade", "Gen. Prince Sułkowski",
                             [u("gdw-chasseur-a-cheval", "5th Chasseurs à Cheval", options=["small-cavalry"]), u("gdw-hussar", "13th Hussars", options=["small-cavalry"])]),
@@ -127,10 +127,10 @@ CLAPAREDE = force("tarutino-claparede", VL, "Claparède's Vistula Legion", "Vist
 
 DUFOUR = force("tarutino-dufour", FR, "Dufour's Division", "2nd Division, I Corps (Davout)", "French",
                "Friant's old division under Dufour, lent to Murat's advance guard; it held the woods on the French left as the Russian infantry came on.",
-               [bde("fr-infantry-brigade", "Dufour's Brigade", "Gén. de Brigade Dufour", regiments=[fr_regiment("48th Line", 5)]),
-                bde("fr-infantry-brigade", "Vandedem's Brigade", "Gén. de Brigade Vandedem", regiments=[fr_regiment("33rd Line", 5)]),
-                bde("fr-infantry-brigade", "Grandeau's Brigade", "Gén. de Brigade Grandeau",
-                    regiments=[fr_regiment("15th Léger", 5, light=True), {"name": "Joseph Napoléon Regiment", "units": [u("fr-spanish-infantry", f"{r}/Joseph Napoléon") for r in ("I", "II")]}]),
+               [bde("fr-infantry-brigade", "Dufour's Brigade", "Gén. de Brigade Dufour", regiments=[fr_regiment("15th Léger", 5, light=True)]),
+                bde("fr-infantry-brigade", "Van Dedem's Brigade", "Gén. de Brigade van Dedem", regiments=[fr_regiment("33rd Line", 5)]),
+                bde("fr-infantry-brigade", "Grosne's Brigade", "Gén. de Brigade Grosne",
+                    regiments=[fr_regiment("48th Line", 5), {"name": "Joseph Napoléon Regiment", "units": [u("fr-spanish-infantry", f"{r}/Joseph Napoléon") for r in ("II", "III")]}]),
                 bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "2/7th Foot Artillery"), u("fr-horse-arty", "5/3rd Horse Artillery")])],
                command=[cmd("fr-div-cmd", "Gén. de Brigade Dufour")],
                notes=["After Nafziger's order of battle for Borodino, where Friant was wounded; Dufour led the division afterwards.",
@@ -151,15 +151,16 @@ for f in TARUTINO["forces"]:
 
 BROUSSIER = force("maloyaroslavets-broussier", FR, "Broussier's Division", "14th Division, IV Corps (Eugène)", "French",
                   "Fed into the burning town behind Delzons's men and fought for it street by street through the day, as it changed hands again and again.",
-                  [bde("fr-infantry-brigade", "Alméras's Brigade", "Gén. de Brigade Alméras",
-                       units=[u("fr-regimental-arty-section", "18th Léger Artillery Company"), u("fr-regimental-arty-section", "9th Line Artillery Company")],
-                       regiments=[fr_regiment("18th Léger", 2, light=True), fr_regiment("9th Line", 4)]),
-                   bde("fr-infantry-brigade", "Sivray's Brigade", "Gén. de Brigade Bertrand de Sivray", units=[u("fr-regimental-arty-section", "35th Line Artillery Company")],
-                       regiments=[{"name": "Joseph Napoléon Regiment", "units": [u("fr-spanish-infantry", "I/Joseph Napoléon"), u("fr-spanish-infantry", "IV/Joseph Napoléon")]}, fr_regiment("35th Line", 4)]),
-                   bde("fr-infantry-brigade", "Pastol's Brigade", "Gén. de Brigade Pastol", units=[u("fr-regimental-arty-section", "53rd Line Artillery Company")], regiments=[fr_regiment("53rd Line", 4)]),
+                  [bde("fr-infantry-brigade", "Sivray's Brigade", "Gén. de Brigade Bertrand de Sivray",
+                       units=[u("fr-regimental-arty-section", "18th Léger Artillery Company"), u("fr-regimental-arty-section", "53rd Line Artillery Company")],
+                       regiments=[fr_regiment("18th Léger", 2, light=True), fr_regiment("53rd Line", 4),
+                                  {"name": "Joseph Napoléon Regiment", "units": [u("fr-spanish-infantry", "I/Joseph Napoléon"), u("fr-spanish-infantry", "IV/Joseph Napoléon")]}]),
+                   bde("fr-infantry-brigade", "Alméras's Brigade", "Gén. de Brigade Alméras",
+                       units=[u("fr-regimental-arty-section", "9th Line Artillery Company"), u("fr-regimental-arty-section", "35th Line Artillery Company")],
+                       regiments=[fr_regiment("9th Line", 4), fr_regiment("35th Line", 4)]),
                    bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "7/2nd Foot Artillery"), u("fr-horse-arty", "3/4th Horse Artillery")])],
                   command=[cmd("fr-div-cmd", "Gén. de Division Broussier")],
-                  notes=[AUG, "Each French regiment had two 3-pdrs, shown as Regimental Artillery.", "The horse battery, without three cavalry regiments in the force, shows as a historical departure."])
+                  notes=["Brigades as Mikaberidze and Vovsi give them for Borodino; battalions after Nafziger's return for 1 August, the division having lost heavily since.", "Each French regiment had two 3-pdrs, shown as Regimental Artillery.", "The horse battery, without three cavalry regiments in the force, shows as a historical departure."])
 
 
 def it_reg(name, n, light=False):
@@ -181,8 +182,8 @@ PINO = force("maloyaroslavets-pino", IT, "Pino's Italian Division", "15th Divisi
 
 KAPSEVICH = ru_div("maloyaroslavets-kapsevich", "Kapsevich's 7th Division", "7th Division, VI Corps (Dokhturov)", cmd("ru-div-cmd", "Lt-Gen Kapsevich"),
                    [ru_bde("Lyapunov's Brigade", "Col Lyapunov", pos("7th"), [ru_regiment("Moscow"), ru_regiment("Pskov")]),
-                    ru_bde("Balk's Brigade", "Col Balk", lt("12th"), [ru_regiment("Libau"), ru_regiment("Sofia")]),
-                    ru_bde("Balla's Brigade", "Col Balla", lt("13th"), [ru_jager_regiment("11th"), ru_jager_regiment("36th")], jager=True)],
+                    ru_bde("Aigustov's Brigade", "Col Aigustov", lt("12th"), [ru_regiment("Libau"), ru_regiment("Sofia")]),
+                    ru_bde("Kashirinov's Brigade", "Lt-Col Kashirinov", lt("13th"), [ru_jager_regiment("11th"), ru_jager_regiment("36th")], jager=True)],
                    "Dokhturov's corps marched all night to bar the new road south and reached Maloyaroslavets at dawn, just after Delzons's men had crossed the Luzha; it threw them back into the town and fought for it until Raevsky's corps came up.")
 
 LIKHACHEV = ru_div("maloyaroslavets-likhachev", "Likhachev's 24th Division", "24th Division, VI Corps (Dokhturov)", cmd("ru-div-cmd", "Maj-Gen Likhachev"),

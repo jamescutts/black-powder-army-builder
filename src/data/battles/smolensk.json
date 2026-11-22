@@ -195,6 +195,7 @@
       "summary": "Beside Razout's in Ney's attacks on the suburbs and the citadel.",
       "notes": [
         "After Nafziger's order of battle for the Grande Armée on 15 August, four days before the battle.",
+        "Nafziger gives the 24th Line; Vovsi and Mikaberidze have the 24th Léger, as here.",
         "The 1st Portuguese, of the Portuguese Legion, is shown as the list's Portuguese infantry.",
         "The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
         "Commanders are at Staff Rating 8, the default for historical forces."
@@ -217,28 +218,28 @@
           "units": [
             {
               "unit": "fr-regimental-arty-section",
-              "name": "24th Line Artillery Company"
+              "name": "24th Léger Artillery Company"
             }
           ],
           "regiments": [
             {
-              "name": "24th Line",
+              "name": "24th Léger",
               "units": [
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "I/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "I/24th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "II/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "II/24th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "III/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "III/24th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "IV/24th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "IV/24th Léger"
                 }
               ]
             },
@@ -696,27 +697,27 @@
           },
           "regiments": [
             {
-              "name": "48th Line",
+              "name": "15th Léger",
               "units": [
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "I/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "I/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "II/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "II/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "III/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "III/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "IV/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "IV/15th Léger"
                 },
                 {
-                  "unit": "fr-line-infantry",
-                  "name": "V/48th Line"
+                  "unit": "fr-light-infantry",
+                  "name": "V/15th Léger"
                 }
               ]
             }
@@ -724,9 +725,9 @@
         },
         {
           "type": "fr-infantry-brigade",
-          "name": "Vandedem's Brigade",
+          "name": "Van Dedem's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Vandedem",
+            "name": "Gén. de Brigade van Dedem",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -759,34 +760,34 @@
         },
         {
           "type": "fr-infantry-brigade",
-          "name": "Grandeau's Brigade",
+          "name": "Grosne's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Grandeau",
+            "name": "Gén. de Brigade Grosne",
             "variant": "Staff rating 8"
           },
           "regiments": [
             {
-              "name": "15th Léger",
+              "name": "48th Line",
               "units": [
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "I/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "I/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "II/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "II/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "III/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "III/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "IV/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "IV/48th Line"
                 },
                 {
-                  "unit": "fr-light-infantry",
-                  "name": "V/15th Léger"
+                  "unit": "fr-line-infantry",
+                  "name": "V/48th Line"
                 }
               ]
             },
@@ -795,11 +796,11 @@
               "units": [
                 {
                   "unit": "fr-spanish-infantry",
-                  "name": "I/Joseph Napoléon"
+                  "name": "II/Joseph Napoléon"
                 },
                 {
                   "unit": "fr-spanish-infantry",
-                  "name": "II/Joseph Napoléon"
+                  "name": "III/Joseph Napoléon"
                 }
               ]
             }
@@ -1011,6 +1012,7 @@
       "summary": "Poniatowski's Poles attacked the eastern suburbs by the Dnieper and set their guns on the bridges.",
       "notes": [
         "After Nafziger's order of battle for Borodino, three weeks later.",
+        "Mikaberidze gives Krasiński as commanding the division and its first brigade at Borodino, Zajączek having been injured.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
@@ -1023,9 +1025,9 @@
       "brigades": [
         {
           "type": "gdw-infantry-brigade",
-          "name": "Mielżyński's Brigade",
+          "name": "Krasiński's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Mielżyński",
+            "name": "Gén. de Brigade Krasiński",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -1146,9 +1148,9 @@
       "brigades": [
         {
           "type": "gdw-infantry-brigade",
-          "name": "Grabowski's Brigade",
+          "name": "Bégański's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Grabowski",
+            "name": "Gén. de Brigade Bégański",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -1190,9 +1192,9 @@
         },
         {
           "type": "gdw-infantry-brigade",
-          "name": "Pakosz's Brigade",
+          "name": "Potocki's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Pakosz",
+            "name": "Gén. de Brigade Potocki",
             "variant": "Staff rating 8"
           },
           "regiments": [
@@ -1756,9 +1758,9 @@
         },
         {
           "type": "ru-infantry-brigade",
-          "name": "Balk's Brigade",
+          "name": "Aigustov's Brigade",
           "commander": {
-            "name": "Col Balk",
+            "name": "Col Aigustov",
             "variant": "Staff rating 7"
           },
           "units": [
@@ -1798,9 +1800,9 @@
         },
         {
           "type": "ru-jager-brigade",
-          "name": "Balla's Brigade",
+          "name": "Kashirinov's Brigade",
           "commander": {
-            "name": "Col Balla",
+            "name": "Lt-Col Kashirinov",
             "variant": "Staff rating 7"
           },
           "units": [

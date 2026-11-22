@@ -213,7 +213,7 @@
       "side": "French",
       "summary": "Fed into the burning town behind Delzons's men and fought for it street by street through the day, as it changed hands again and again.",
       "notes": [
-        "After Nafziger's order of battle for the Grande Armée on 1 August; the division had lost heavily since.",
+        "Brigades as Mikaberidze and Vovsi give them for Borodino; battalions after Nafziger's return for 1 August, the division having lost heavily since.",
         "Each French regiment had two 3-pdrs, shown as Regimental Artillery.",
         "The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
         "Commanders are at Staff Rating 8, the default for historical forces."
@@ -228,9 +228,9 @@
       "brigades": [
         {
           "type": "fr-infantry-brigade",
-          "name": "Alméras's Brigade",
+          "name": "Sivray's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Alméras",
+            "name": "Gén. de Brigade Bertrand de Sivray",
             "variant": "Staff rating 8"
           },
           "units": [
@@ -240,7 +240,7 @@
             },
             {
               "unit": "fr-regimental-arty-section",
-              "name": "9th Line Artillery Company"
+              "name": "53rd Line Artillery Company"
             }
           ],
           "regiments": [
@@ -257,6 +257,60 @@
                 }
               ]
             },
+            {
+              "name": "53rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/53rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/53rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/53rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/53rd Line"
+                }
+              ]
+            },
+            {
+              "name": "Joseph Napoléon Regiment",
+              "units": [
+                {
+                  "unit": "fr-spanish-infantry",
+                  "name": "I/Joseph Napoléon"
+                },
+                {
+                  "unit": "fr-spanish-infantry",
+                  "name": "IV/Joseph Napoléon"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Alméras's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Alméras",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "9th Line Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "35th Line Artillery Company"
+            }
+          ],
+          "regiments": [
             {
               "name": "9th Line",
               "units": [
@@ -275,35 +329,6 @@
                 {
                   "unit": "fr-line-infantry",
                   "name": "IV/9th Line"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "fr-infantry-brigade",
-          "name": "Sivray's Brigade",
-          "commander": {
-            "name": "Gén. de Brigade Bertrand de Sivray",
-            "variant": "Staff rating 8"
-          },
-          "units": [
-            {
-              "unit": "fr-regimental-arty-section",
-              "name": "35th Line Artillery Company"
-            }
-          ],
-          "regiments": [
-            {
-              "name": "Joseph Napoléon Regiment",
-              "units": [
-                {
-                  "unit": "fr-spanish-infantry",
-                  "name": "I/Joseph Napoléon"
-                },
-                {
-                  "unit": "fr-spanish-infantry",
-                  "name": "IV/Joseph Napoléon"
                 }
               ]
             },
@@ -325,43 +350,6 @@
                 {
                   "unit": "fr-line-infantry",
                   "name": "IV/35th Line"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "fr-infantry-brigade",
-          "name": "Pastol's Brigade",
-          "commander": {
-            "name": "Gén. de Brigade Pastol",
-            "variant": "Staff rating 8"
-          },
-          "units": [
-            {
-              "unit": "fr-regimental-arty-section",
-              "name": "53rd Line Artillery Company"
-            }
-          ],
-          "regiments": [
-            {
-              "name": "53rd Line",
-              "units": [
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "I/53rd Line"
-                },
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "II/53rd Line"
-                },
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "III/53rd Line"
-                },
-                {
-                  "unit": "fr-line-infantry",
-                  "name": "IV/53rd Line"
                 }
               ]
             }
@@ -638,9 +626,9 @@
         },
         {
           "type": "ru-infantry-brigade",
-          "name": "Balk's Brigade",
+          "name": "Aigustov's Brigade",
           "commander": {
-            "name": "Col Balk",
+            "name": "Col Aigustov",
             "variant": "Staff rating 7"
           },
           "units": [
@@ -680,9 +668,9 @@
         },
         {
           "type": "ru-jager-brigade",
-          "name": "Balla's Brigade",
+          "name": "Kashirinov's Brigade",
           "commander": {
-            "name": "Col Balla",
+            "name": "Lt-Col Kashirinov",
             "variant": "Staff rating 7"
           },
           "units": [

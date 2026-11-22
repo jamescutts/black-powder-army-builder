@@ -92,7 +92,7 @@ CURIAL = force("krasnoi-curial", FIG, "The Old Guard", "3rd Division, Imperial G
                     regiments=[{"name": "1st Chasseurs à Pied", "units": [u("fig-old-guard-chasseurs", "I/1st Chasseurs à Pied"), u("fig-old-guard-chasseurs", "II/1st Chasseurs à Pied")]},
                                {"name": "2nd Chasseurs à Pied", "units": [u("fig-middle-guard-chasseurs", "I/2nd Chasseurs à Pied"), u("fig-middle-guard-chasseurs", "II/2nd Chasseurs à Pied")]}],
                     units=[u("fig-og-foot-arty", "2nd Old Guard Foot Artillery")]),
-                bde("fig-old-guard-brigade", "Curial's Brigade", "Gén. de Division Curial",
+                bde("fig-old-guard-brigade", "Michel's Brigade", "Gén. de Brigade Michel",
                     regiments=[{"name": "1st Grenadiers à Pied", "units": [u("fig-old-guard-grenadiers", "I/1st Grenadiers à Pied"), u("fig-old-guard-grenadiers", "II/1st Grenadiers à Pied")]},
                                {"name": "2nd Grenadiers à Pied", "units": [u("fig-middle-guard-grenadiers", "I/2nd Grenadiers à Pied"), u("fig-middle-guard-grenadiers", "II/2nd Grenadiers à Pied")]},
                                {"name": "3rd Grenadiers à Pied", "units": [u("fig-middle-guard-grenadiers", "I/3rd Grenadiers à Pied"), u("fig-middle-guard-grenadiers", "II/3rd Grenadiers à Pied")]}])],

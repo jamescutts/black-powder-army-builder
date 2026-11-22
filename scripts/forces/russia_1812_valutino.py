@@ -64,13 +64,13 @@ RAZOUT = force("valutino-razout", FR, "Razout's Division", "11th Division, III C
 
 LEDRU = force("valutino-ledru", FR, "Ledru's Division", "10th Division, III Corps (Ney)", "French",
               "Beside Razout's, in the attacks across the stream and up the slopes through the afternoon.",
-              [bde("fr-infantry-brigade", "Gengoult's Brigade", "Gén. de Brigade Gengoult", units=guns(("24th Line", False)),
-                   regiments=[fr_regiment("24th Line", 4), foreign("1st Portuguese", 2)]),
+              [bde("fr-infantry-brigade", "Gengoult's Brigade", "Gén. de Brigade Gengoult", units=guns(("24th Léger", False)),
+                   regiments=[fr_regiment("24th Léger", 4, light=True), foreign("1st Portuguese", 2)]),
                bde("fr-infantry-brigade", "Marion's Brigade", "Gén. de Brigade Marion", units=guns(("46th Line", False)), regiments=[fr_regiment("46th Line", 4)]),
                bde("fr-infantry-brigade", "Bruny's Brigade", "Gén. de Brigade Bruny", units=guns(("72nd Line", False)), regiments=[fr_regiment("72nd Line", 4)]),
                div_arty("12/5th Foot Artillery", "5/6th Horse Artillery")],
               command=[cmd("fr-div-cmd", "Gén. de Division Ledru")],
-              notes=[FR_ORDER, "The 1st Portuguese, of the Portuguese Legion, is shown as the list's Portuguese infantry.", HORSE])
+              notes=[FR_ORDER, "Nafziger gives the 24th Line; Vovsi and Mikaberidze have the 24th Léger, as here.", "The 1st Portuguese, of the Portuguese Legion, is shown as the list's Portuguese infantry.", HORSE])
 
 
 def wt_reg(name):

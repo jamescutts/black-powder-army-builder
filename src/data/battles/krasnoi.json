@@ -196,9 +196,9 @@
         },
         {
           "type": "fig-old-guard-brigade",
-          "name": "Curial's Brigade",
+          "name": "Michel's Brigade",
           "commander": {
-            "name": "Gén. de Division Curial",
+            "name": "Gén. de Brigade Michel",
             "variant": "Staff rating 8"
           },
           "regiments": [

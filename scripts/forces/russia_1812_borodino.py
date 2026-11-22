@@ -16,6 +16,7 @@ import commanders
 import ratings
 from hundred_days import bde, cmd, force, u
 from russia_1812 import ru_regiment
+from russia_1812_north import fr_regiment
 from russia_1812_autumn import BROUSSIER, CLAPAREDE, DUFOUR, EUGEN, KAPSEVICH, LIKHACHEV, OLSUFIEV, PONIATOWSKI_16, PONIATOWSKI_18, SEBASTIANI, naf
 from russia_1812_centre import BAKHMETEV, BRUYERE, CHOGLOKOV, COMPANS, DAVOUT_CAVALRY, DELZONS, DESSAIX, KOLUBAKIN, KONOVNITSYN, PASKEVICH, SAINT_GERMAIN
 from russia_1812_retreat import CURIAL, PLATOV, ROGUET
@@ -51,7 +52,7 @@ THARREAU = force(f"{B}-tharreau", "westphalia", "Tharreau's Westphalians", "23rd
                  "Junot's corps came up on the right between Poniatowski and Davout, and fought through the Utitsa woods towards the flèches in the afternoon.",
                  [bde("wp-infantry-brigade", "Damas's Brigade", "Gen-Maj Damas", units=[u("wp-light-infantry", "3rd Light Bn")],
                       regiments=[{"name": f"{n} Line", "units": [u("wp-line-infantry", f"{r}/{n} Line") for r in ("I", "II")]} for n in ("2nd", "6th")]),
-                  bde("wp-infantry-brigade", "Wickenberg's Brigade", "Gen-Maj Wickenberg", units=[u("wp-light-infantry", "2nd Light Bn"), u("wp-foot-arty", "1st Foot Battery Froede")],
+                  bde("wp-infantry-brigade", "Borstel's Brigade", "Gen-Maj von Borstel", units=[u("wp-light-infantry", "2nd Light Bn"), u("wp-foot-arty", "1st Foot Battery Froede")],
                       regiments=[{"name": "3rd Line", "units": [u("wp-line-infantry", f"{r}/3rd Line") for r in ("I", "II")]},
                                  {"name": "7th Line", "units": [u("wp-line-infantry", f"{r}/7th Line") for r in ("I", "II", "III")]}])],
                  command=[{"unit": "fr-cmd-tharreau"}],
@@ -132,11 +133,14 @@ GUARD = force(f"{B}-guard", "russia", "Lavrov's Guard Infantry", "Guard Division
 
 VORONTSOV = force(f"{B}-vorontsov", "russia", "Vorontsov's Converged Grenadiers", "2nd Converged Grenadier Division, VIII Corps (Borozdin)", "Russian",
                   "Held the Semenovskoe flèches against Davout's first attacks at dawn; of its 4,000 men barely 300 were standing at the end of the morning, and Vorontsov himself was wounded leading a bayonet charge.",
-                  [bde("ru-combined-grenadier-brigade", "Converged Grenadiers", "",
-                       [u("ru-inf-combined-grenadier", f"Converged Grenadiers, {d} Division") for d in ("2nd", "2nd", "12th", "12th", "26th", "26th")]
-                       + [u("ru-position-arty", "31st Position Battery"), u("ru-position-arty", "32nd Position Battery")])],
+                  [bde("ru-combined-grenadier-brigade", "First Brigade", "",
+                       [u("ru-inf-combined-grenadier", f"Converged Grenadiers ({r})") for r in ("Pskov", "Moscow", "19th Jäger", "40th Jäger")]
+                       + [u("ru-position-arty", "31st Position Battery")]),
+                   bde("ru-combined-grenadier-brigade", "Second Brigade", "",
+                       [u("ru-inf-combined-grenadier", f"Converged Grenadiers ({r})") for r in ("Astrakhan", "Fanagoria", "6th Jäger", "New Ingermanland", "42nd Jäger", "Odessa", "Vilna")])],
                   command=[{"unit": "ru-cmd-vorontsov"}],
-                  notes=["Vorontsov is the book's named commander.", NAF, "Two position batteries in one brigade, and no infantry brigade, show as historical departures."])
+                  notes=["Vorontsov is the book's named commander.", "After Mikaberidze's order of battle: eleven converged grenadier battalions, from the 7th, 24th, 2nd Grenadier, 12th, 26th and 27th Divisions.",
+                         "Two Combined Grenadier Brigades, more battalions than one holds, and no infantry brigade show as historical departures."])
 
 MECKLENBURG = force(f"{B}-mecklenburg", "russia", "Prince Karl's 2nd Grenadier Division", "2nd Grenadier Division, VIII Corps (Borozdin)", "Russian",
                     "Sent forward to retake the flèches as they fell; in the counter-attacks there it lost most of its officers, and Prince Karl of Mecklenburg was wounded.",
@@ -144,7 +148,7 @@ MECKLENBURG = force(f"{B}-mecklenburg", "russia", "Prince Karl's 2nd Grenadier D
                          regiments=[{"name": f"{r} Grenadiers", "units": [u("ru-grenadier", f"I/{r} Grenadiers"), u("ru-grenadier", f"II/{r} Grenadiers")]} for r in regs])
                      for c, regs, bat in (("Shatilov", ("Kiev", "Moscow"), u("ru-position-arty", "11th Position Battery")),
                                           ("Buxhoeveden", ("Astrakhan", "Fanagoria"), u("ru-light-arty", "20th Light Battery")),
-                                          ("Hesse", ("Siberia", "Little Russia"), u("ru-light-arty", "21st Light Battery")))],
+                                          ("Levin", ("Siberia", "Little Russia"), u("ru-light-arty", "21st Light Battery")))],
                     command=[cmd("ru-div-cmd", "Maj-Gen Prince Karl of Mecklenburg")],
                     notes=[NAF, "Three Grenadier Brigades where the list takes one show as a historical departure."])
 
@@ -191,10 +195,138 @@ SIEVERS = force(f"{B}-sievers", "russia", "Sievers's Cavalry", "IV Cavalry Corps
                 notes=[NAF, "Two heavy brigades and no infantry show as historical departures."])
 
 
+# ---------------------------------------------------------------- Mikaberidze's corrections and additions
+
+MIKABERIDZE = {"label": "Alexander Mikaberidze and Eman Vovsi, The Battle of Borodino: Orders of Battle (Napoleon Series)",
+               "url": "https://www.napoleon-series.org/military-info/battles/Borodino/Mikaberidze/OrdersofBattle/c_MikaberidzeOOB1.html"}
+VOVSI = {"label": "Eman Vovsi, French Numbered Infantry Regiments at Borodino (Napoleon Series)",
+         "url": "https://www.napoleon-series.org/military-info/battles/1812/Russia/Borodino/c_french1812.html"}
+MIKA = "Brigades and commanders as Mikaberidze and Vovsi give them for Borodino."
+
+DELABORDE = force(f"{B}-delaborde", "french-imperial-guard", "Delaborde's Young Guard", "1st Division, Imperial Guard (Mortier)", "French",
+                  "Berthezène's brigade of the Young Guard, held in reserve with the rest of the Guard all day.",
+                  [bde("fig-young-guard-brigade", "Berthezène's Brigade", "Gén. de Brigade Berthezène",
+                       regiments=[{"name": n, "units": [u(t, f"I/{n}"), u(t, f"II/{n}")]} for n, t in
+                                  (("4th Voltigeurs", "fig-yg-voltigeurs"), ("4th Tirailleurs", "fig-yg-tirailleurs"), ("5th Voltigeurs", "fig-yg-voltigeurs"))])],
+                  command=[cmd("fig-div-cmd", "Gén. de Division Delaborde")],
+                  notes=[MIKA])
+
+GUARD_CAVALRY = force(f"{B}-guard-cavalry", "french-imperial-guard", "Walther's Guard Cavalry", "Guard Cavalry Division (Bessières)", "French",
+                      "The Guard's cavalry, kept back with the rest of the Guard; Napoleon would not risk it.",
+                      [bde("fig-light-cavalry-brigade", "Lefebvre-Desnouettes's Brigade", "Gén. de Division Lefebvre-Desnouettes",
+                           [u("fig-chasseurs-a-cheval", "Chasseurs à Cheval of the Guard"), u("fig-mamluke", "Mamelukes")]),
+                       bde("fig-light-cavalry-brigade", "Krasiński's Brigade", "Gén. de Brigade Krasiński",
+                           [u("fig-polish-lancers", "1st Polish Chevau-légers Lanciers"), u("fig-gendarmes-elite", "Gendarmes d'Élite")]),
+                       bde("fig-light-cavalry-brigade", "Colbert's Brigade", "Gén. de Brigade Colbert", [u("fig-dutch-red-lancers", "2nd (Dutch) Chevau-légers Lanciers")]),
+                       bde("fig-heavy-cavalry-brigade", "Walther's Brigade", "Gén. de Division Walther",
+                           [u("fig-grenadiers-a-cheval-regt", "Grenadiers à Cheval"), u("fig-empress-dragoons", "Empress Dragoons")])],
+                      command=[cmd("fig-div-cmd", "Gén. de Division Walther")],
+                      notes=[MIKA, "Durosnel's Gendarmes d'Élite are shown with the Polish lancers.", "Guard cavalry without the infantry brigades it needs shows as a historical departure."])
+
+KREUTZ = force(f"{B}-kreutz", "russia", "Kreutz's Cavalry", "III Reserve Cavalry Corps", "Russian",
+               "Stood behind the centre, and in the afternoon charged the French cavalry that broke through beyond the Great Redoubt; Kreutz was wounded.",
+               [bde("ru-heavy-cavalry-brigade", "Dyatkov's Brigade", "Maj-Gen Dyatkov", [u("ru-dragoon", "Kurland Dragoons"), u("ru-dragoon", "Orenburg Dragoons")]),
+                bde("ru-heavy-cavalry-brigade", "Kreutz's Brigade", "Col Baron Kreutz", [u("ru-dragoon", "Irkutsk Dragoons"), u("ru-dragoon", "Siberia Dragoons")]),
+                bde("ru-light-cavalry-brigade", "Dorokhov's Brigade", "Maj-Gen Dorokhov",
+                    [u("ru-hussar", "Mariupol Hussars", options=["large-cavalry"]), u("ru-hussar", "Sumy Hussars", options=["large-cavalry"]), u("ru-horse-arty", "7th Horse Battery")])],
+               command=[cmd("ru-div-cmd", "Col Baron Kreutz")],
+               notes=[MIKA, "Mikaberidze lists the corps under Korff; Kreutz commanded it on the day. Two heavy brigades and no infantry show as historical departures."])
+
+
+def lineup(f, brigades):
+    """Rename a force's brigades, and their commanders, in order: (name, commander) or None to leave one as it is"""
+    for b, new in zip(f["brigades"], brigades):
+        if new:
+            b["name"] = new[0]
+            if new[1]:
+                b["commander"] = {"name": new[1]}
+
+
+def regs(*specs):
+    return [{"name": n, "units": [u(t, f"{r}/{n}") for r in rs]} for n, t, rs in specs]
+
+
+def fix(forces):
+    by = {f["id"]: f for f in forces}
+    k = by[f"{B}-konovnitsyn"]
+    lineup(k, [("Tuchkov IV's Brigade", "Maj-Gen Tuchkov IV"), ("Mesheryakov's Brigade", "Col Mesheryakov")])
+    k["brigades"][1]["regiments"] = [ru_regiment("Chernigov"), ru_regiment("Selenginsk", n=1)]
+    k["notes"].insert(0, MIKA + " Koporye had gone to the 23rd Division; one battalion of Selenginsk took its place.")
+    e = by[f"{B}-11th"]
+    e["name"], e["command"] = "Bakhmetev I's 11th Division", [cmd("ru-div-cmd", "Maj-Gen Bakhmetev I")]
+    lineup(e, [("Laptev's Brigade", "Maj-Gen Laptev"), ("Choglokov's Brigade", "Maj-Gen Choglokov")])
+    e["notes"].insert(0, MIKA)
+    t = by[f"{B}-23rd"]
+    t["name"] = "Bakhmetev III's 23rd Division"
+    lineup(t, [("Gurielov's Brigade", "Maj-Gen Prince Gurielov"), ("Aleksopol's Brigade", "Maj-Gen Aleksopol")])
+    t["brigades"][1]["regiments"] = [ru_regiment("Koporye", jager="18th")]
+    t["notes"] = [MIKA + " Okulov had been killed at Ostrovno.", t["notes"][-1]]
+    w = by[f"{B}-12th"]
+    w["name"] = "Vasilchikov's 12th Division"
+    lineup(w, [("Bogdanovsky's Brigade", "Lt-Col Bogdanovsky"), None, ("Glebov's Brigade", "Col Glebov")])
+    w["notes"].insert(0, MIKA + " Vasilchikov had the division by now; Raevsky commanded the corps.")
+    p = by[f"{B}-paskevich"]
+    lineup(p, [("Savoini's Brigade", "Col Savoini"), ("Kadyshev's Brigade", "Lt-Col Kadyshev")])
+    p["notes"].insert(0, MIKA)
+    g = by[f"{B}-guard"]
+    lineup(g, [None, ("Khrapovitsky's Brigade", "Col Khrapovitsky")])
+    g["notes"].insert(0, MIKA)
+    c1 = by[f"{B}-1st-cuirassiers"]
+    c1["name"], c1["command"] = "Borozdin's 1st Cuirassier Division", [cmd("ru-div-cmd", "Maj-Gen Borozdin II")]
+    c1["notes"] = [MIKA, "Guard cavalry without the infantry brigades it needs shows as a historical departure."]
+    lineup(by[f"{B}-2nd-cuirassiers"], [None, ("Tolbuzin's Brigade", "Col Tolbuzin")])
+    by[f"{B}-2nd-cuirassiers"]["notes"].insert(0, MIKA)
+    uv = by[f"{B}-uvarov"]
+    uv["brigades"] = [bde("ru-guard-light-cavalry-brigade", "Chalikov's Brigade", "Maj-Gen Chalikov", [u("ru-lg-dragoon", "Life Guard Dragoons"), u("ru-life-guard-uhlan", "Life Guard Uhlans")]),
+                      bde("ru-guard-light-cavalry-brigade", "Orlov-Denisov's Brigade", "Maj-Gen Orlov-Denisov", [u("ru-lg-hussar", "Life Guard Hussars"), u("ru-life-guard-cossack", "Life Guard Cossacks")]),
+                      bde("ru-light-cavalry-brigade", "Vsevolozhsky's Brigade", "Maj-Gen Vsevolozhsky",
+                          [u("ru-hussar", "Elisavetgrad Hussars", options=["large-cavalry"]), u("ru-dragoon", "Nezhin Dragoons"), u("ru-horse-arty", "2nd Horse Battery")])]
+    uv["notes"] = [MIKA, "Two Guard light cavalry brigades where the list allows one, and Guard cavalry without infantry, show as historical departures."]
+    ko = by[f"{B}-korff"]
+    ko["brigades"] = [bde("ru-heavy-cavalry-brigade", "Davydov's Brigade", "Col Davydov", [u("ru-dragoon", "Moscow Dragoons"), u("ru-dragoon", "Pskov Dragoons")]),
+                      bde("ru-light-cavalry-brigade", "Panchulidzev II's Brigade", "Maj-Gen Panchulidzev II",
+                          [u("ru-hussar", "Izyum Hussars", options=["large-cavalry"]), u("ru-uhlan", "Polish Uhlans", options=["large-cavalry"]), u("ru-horse-arty", "6th Horse Battery")])]
+    ko["notes"] = [MIKA, "Cavalry without infantry shows as a historical departure."]
+    gd = by[f"{B}-gerard"]
+    gd["brigades"][:2] = [bde("fr-infantry-brigade", "Leclerc's Brigade", "Gén. de Brigade Leclerc des Essarts", regiments=[fr_regiment("7th Léger", 5, light=True)]),
+                          bde("fr-infantry-brigade", "Baudinot's Brigade", "Gén. de Brigade Baudinot", regiments=[fr_regiment("12th Line", 5)]),
+                          bde("fr-infantry-brigade", "Gérard's Brigade", "Gén. de Division Gérard", regiments=[fr_regiment("21st Line", 5)])]
+    gd["notes"] = [MIKA + " The 127th Line and the Mecklenburgers guarded the park and did not fight.", gd["notes"][-1]]
+    ds = by[f"{B}-dessaix"]
+    ds["brigades"] = ds["brigades"][1:]
+    ds["notes"].insert(0, MIKA + " Mikaberidze gives the division only the 85th and 108th at Borodino, so Barbanègre's 33rd Léger is left out.")
+    cp = by[f"{B}-compans"]
+    gu = cp["brigades"][2]
+    gu["regiments"], gu["units"] = gu["regiments"][:1], gu["units"][:1]
+    cp["brigades"].insert(3, bde("fr-infantry-brigade", "Lonchamp's Brigade", "Gén. de Brigade Lonchamp",
+                                 units=[u("fr-regimental-battery", "111th Line Artillery Company")], regiments=[fr_regiment("111th Line", 3)]))
+    cp["notes"].insert(0, MIKA + " The 111th had three battalions at Borodino.")
+    dz = by[f"{B}-delzons"]
+    dz["brigades"][:3] = [bde("fr-infantry-brigade", "Huard's Brigade", "Gén. de Brigade Huard",
+                              units=[u("fr-regimental-arty-section", "8th Léger Artillery Company"), u("fr-regimental-arty-section", "84th Line Artillery Company")],
+                              regiments=[fr_regiment("8th Léger", 2, light=True), fr_regiment("84th Line", 4), fr_regiment("1st Provisional Croatian", 2)]),
+                          bde("fr-infantry-brigade", "Plauzonne's Brigade", "Gén. de Brigade Plauzonne",
+                              units=[u("fr-regimental-arty-section", "92nd Line Artillery Company"), u("fr-regimental-arty-section", "106th Line Artillery Company")],
+                              regiments=[fr_regiment("92nd Line", 4), fr_regiment("106th Line", 4)])]
+    dz["notes"].insert(0, MIKA + " Roussel had been killed after Ostrovno; Huard and Plauzonne both fell at Borodino.")
+    mc = by[f"{B}-marchand"]
+    mc["brigades"] = [bde("wt-infantry-brigade", "Temporary Regiment", "", regiments=[{"name": "Temporary Württemberg Regiment",
+                       "units": [u("wt-line-infantry", f"{r}/Temporary Regiment", options=["small-infantry"]) for r in ("I", "II", "III")]}]),
+                      bde("wt-divisional-artillery", "Divisional Artillery", units=[u("wt-light-arty", "1st Foot Battery"), u("wt-light-arty", "2nd Foot Battery"), u("wt-horse-arty", "1st Horse Battery")])]
+    mc["notes"] = ["Marchand, who had taken over from the Crown Prince, is the book's named commander.",
+                   MIKA + " By Borodino the Württemberg infantry, about 1,500 men, had been merged into one temporary regiment of three battalions, all Small.",
+                   "Three battalions in a regiment the list caps at two show as a historical departure."]
+    p16 = by[f"{B}-16th"]
+    p16["name"], p16["command"] = "Krasiński's 16th Division", [cmd("gdw-div-cmd", "Gén. de Brigade Krasiński")]
+    for f in forces:
+        if f["id"] in (f"{B}-friant", f"{B}-broussier", f"{B}-18th", f"{B}-olsufiev", f"{B}-kapsevich", f"{B}-old-guard", f"{B}-tharreau", f"{B}-ledru"):
+            f["notes"].insert(0, MIKA)
+
+
 BORODINO = {
     "id": "borodino", "name": "Borodino", "date": "7 September 1812", "campaign": "russia-1812",
     "summary": "Kutuzov's stand seventy miles from Moscow. All day the French threw themselves at the Russian left: at the Semenovskoe flèches, taken and retaken through the morning until Bagration fell, and at the Great Redoubt in the centre, finally carried in the afternoon by infantry from the front and cuirassiers from behind. Napoleon would not commit the Guard; the Russians fell back a mile and held. The bloodiest single day of the wars, with some 70,000 killed and wounded, it left the road to Moscow open but the Russian army unbroken.",
-    "sources": [naf("812ICA", "French Army, Battle of Borodino, 5–7 September 1812"), naf("812ICB", "Russian Army, Battle of Borodino, 5–7 September 1812"),
+    "sources": [MIKABERIDZE, VOVSI, naf("812ICA", "French Army, Battle of Borodino, 5–7 September 1812"), naf("812ICB", "Russian Army, Battle of Borodino, 5–7 September 1812"),
                 {"label": "Battle of Borodino (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Borodino"}],
     "forces": [
         # Davout's I Corps
@@ -227,7 +359,7 @@ BORODINO = {
         again(SAINT_GERMAIN, "saint-germain", "Nansouty's cuirassiers charged the Russian squares beyond Semenovskoe."),
         again(DAVOUT_CAVALRY, "valence", "Valence's cuirassiers and the I Corps light cavalry, in the charges around the flèches.", name="Valence's Cuirassiers"),
         again(SEBASTIANI, "pajol", "Montbrun's light cavalry, which charged beyond the Great Redoubt after it fell.", name="Pajol's Light Cavalry", command=[cmd("fr-div-cmd", "Gén. de Division Pajol")]),
-        MONTBRUN_HEAVY, GROUCHY, THIELMANN, LEPEL,
+        MONTBRUN_HEAVY, GROUCHY, THIELMANN, LEPEL, DELABORDE, GUARD_CAVALRY,
         # The Russian 1st Army
         again(EUGEN, "eugen", "Marched across from the right to the left centre, where it was shot to pieces by the French batteries before Semenovskoe."),
         again(OLSUFIEV, "olsufiev", "Baggovut's other division, sent to the far left to hold Utitsa against Poniatowski."),
@@ -236,7 +368,7 @@ BORODINO = {
         again(KAPSEVICH, "kapsevich", "Dokhturov's corps held the line north of the Great Redoubt, and in the afternoon took over the left when Bagration fell."),
         again(LIKHACHEV, "likhachev", "Held the Great Redoubt in the afternoon; Likhachev was wounded and taken in it as it fell."),
         GUARD,
-        CUIRASSIERS_1, UVAROV, KORFF,
+        CUIRASSIERS_1, UVAROV, KORFF, KREUTZ,
         again(PLATOV, "platov", "Rode with Uvarov round the French left at midday, the raid that held up the attack on the centre for two hours."),
         # The Russian 2nd Army
         again(KOLUBAKIN, "12th", "Raevsky's corps held the Great Redoubt, the 'Raevsky Redoubt', against Eugène's attacks until the afternoon.", formation="12th Division, VII Corps (Raevsky)"),
@@ -250,6 +382,7 @@ BORODINO = {
 }
 for f in BORODINO["forces"]:
     f["notes"] = [n for n in f["notes"] if not n.startswith("After Nafziger's order of battle for")] + ([NAF] if NAF not in f["notes"] else [])
+fix(BORODINO["forces"])
 
 
 if __name__ == "__main__":
