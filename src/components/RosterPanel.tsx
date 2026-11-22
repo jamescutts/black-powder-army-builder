@@ -17,6 +17,7 @@ import {
 } from "@/lib/validate";
 import { RosterViewModal } from "@/components/RosterViewModal";
 import { InstallCard } from "@/components/InstallCard";
+import { armyPortrait } from "@/lib/portraits";
 
 interface Props {
   nation: Nation;
@@ -234,6 +235,9 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
   }));
   const grandTotal = rosterTotal(nation, roster);
   const period = rosterPeriod(nation, roster);
+  const flag = nation.flagFile ?? nation.flagFiles?.[0];
+  // A named commander's portrait, or the historical force's, with the flag on its corner, as the force cards have
+  const portrait = armyPortrait(roster);
 
   const issues = validateRoster(nation, roster);
   const errors = issues.filter((i) => i.level === "error");
@@ -253,7 +257,20 @@ export function RosterPanel({ nation, roster, onRename }: Props) {
       >
         <Group justify="space-between" align="flex-start" wrap="nowrap" mb="sm">
           <Group gap="sm" align="center" wrap="nowrap" style={{ minWidth: 0 }}>
-            {(nation.flagFile ?? nation.flagFiles?.[0]) && (
+            {portrait ? (
+              <span className="force-portrait" title={`${portrait.title}, ${portrait.artist}`}>
+                <img
+                  src={portrait.src}
+                  alt={`${portrait.title}, ${portrait.artist}`}
+                  style={{ objectPosition: portrait.focus ?? "50% 20%" }}
+                />
+                {flag && (
+                  <span className="force-portrait-flag">
+                    <img src={flag} alt={`${nation.name} flag`} />
+                  </span>
+                )}
+              </span>
+            ) : flag && (
               <div style={{
                 position: "relative",
                 width: 54,

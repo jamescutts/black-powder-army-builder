@@ -179,3 +179,26 @@ def apply(battle: dict) -> dict:
         out[side] = entry
     battle["sides"] = out
     return battle
+
+
+# The army lists' named commanders, by unit id, with their portraits: shown in the roster beside the army's flag
+# when the army is led by one. Written to src/data/commander-portraits.json by running this file.
+NAMED_COMMANDERS = {
+    "pb-cmd-wellington": "wellington", "anb-cmd-wellington": "wellington", "pb-cmd-picton": "picton",
+    "pf-cmd-junot": "junot", "fac-cmd-napoleon": "napoleon", "dbn-cmd-chasse": "chasse",
+    "pr15-cmd-blucher": "blucher", "pr06-cmd-blucher": "blucher", "pr15-cmd-zieten": "zieten",
+    "sax-cmd-thielmann": "thielmann", "fr-cmd-friant": "friant",
+}
+
+
+def write_named():
+    import json
+    from pathlib import Path
+    out = {unit: PORTRAITS[key] for unit, key in sorted(NAMED_COMMANDERS.items()) if key in PORTRAITS}
+    path = Path(__file__).resolve().parents[2] / "src" / "data" / "commander-portraits.json"
+    path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
+    print(f"{len(out)} named commanders with portraits")
+
+
+if __name__ == "__main__":
+    write_named()

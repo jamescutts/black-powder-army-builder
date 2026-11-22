@@ -1,0 +1,81 @@
+{
+  "anb-cmd-wellington": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+    "title": "Arthur Wellesley, Duke of Wellington",
+    "artist": "Thomas Lawrence",
+    "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+    "focus": "50% 18%"
+  },
+  "dbn-cmd-chasse": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/General_D_H_Chass%C3%A9.jpg/250px-General_D_H_Chass%C3%A9.jpg",
+    "title": "David Hendrik Chassé",
+    "artist": "Jan Willem Pieneman",
+    "page": "https://commons.wikimedia.org/wiki/File:General_D_H_Chass%C3%A9.jpg",
+    "focus": "50% 20%",
+    "date": "1832"
+  },
+  "fac-cmd-napoleon": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+    "title": "Napoleon at Fontainebleau",
+    "artist": "Paul Delaroche",
+    "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+    "focus": "50% 22%",
+    "date": "1840"
+  },
+  "fr-cmd-friant": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+    "title": "Louis Friant",
+    "artist": "Ambroise Tardieu",
+    "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+    "focus": "50% 20%"
+  },
+  "pb-cmd-picton": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg/250px-Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+    "title": "Sir Thomas Picton",
+    "artist": "Martin Archer Shee",
+    "page": "https://commons.wikimedia.org/wiki/File:Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+    "focus": "50% 20%"
+  },
+  "pb-cmd-wellington": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+    "title": "Arthur Wellesley, Duke of Wellington",
+    "artist": "Thomas Lawrence",
+    "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+    "focus": "50% 18%"
+  },
+  "pf-cmd-junot": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Junot%2C_par_Appiani.png/250px-Junot%2C_par_Appiani.png",
+    "title": "Jean-Andoche Junot",
+    "artist": "Andrea Appiani",
+    "page": "https://commons.wikimedia.org/wiki/File:Junot%2C_par_Appiani.png",
+    "focus": "50% 22%"
+  },
+  "pr06-cmd-blucher": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+    "title": "Gebhard Leberecht von Blücher",
+    "artist": "after Ernst Gebauer",
+    "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+    "focus": "50% 20%"
+  },
+  "pr15-cmd-blucher": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+    "title": "Gebhard Leberecht von Blücher",
+    "artist": "after Ernst Gebauer",
+    "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+    "focus": "50% 20%"
+  },
+  "pr15-cmd-zieten": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/7/73/Zieten-by-Kruger.jpg",
+    "title": "Hans Ernst Karl von Zieten",
+    "artist": "Franz Krüger",
+    "page": "https://commons.wikimedia.org/wiki/File:Zieten-by-Kruger.jpg",
+    "focus": "50% 18%"
+  },
+  "sax-cmd-thielmann": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Johann_Adolf_Freiherr_von_Thielmann.jpg/250px-Johann_Adolf_Freiherr_von_Thielmann.jpg",
+    "title": "Johann von Thielmann",
+    "artist": "Anton Graff",
+    "page": "https://commons.wikimedia.org/wiki/File:Johann_Adolf_Freiherr_von_Thielmann.jpg",
+    "focus": "50% 14%"
+  }
+}
