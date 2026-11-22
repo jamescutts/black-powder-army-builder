@@ -2750,6 +2750,22 @@ a.app-list-row:active {
   display: block;
 }
 
+.map-key-scale {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.map-key-scale svg {
+  display: block;
+}
+
+.map-pop-engaged {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--mantine-color-gray-7);
+}
+
 /* A battle's crossed swords, lifted a little on hover so it reads as something to press */
 .map-battle {
   cursor: pointer;
@@ -2797,7 +2813,7 @@ a.app-list-row:active {
 }
 
 .campaign-map-canvas[data-sparse] .map-battle svg {
-  scale: 0.8;
+  scale: 0.7;
 }
 
 /* A small flag beside each side on a battle card */

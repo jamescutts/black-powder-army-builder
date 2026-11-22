@@ -14,7 +14,19 @@ import { battleHref } from "@/lib/forces";
 // arrowed lines, coloured and dashed by side. Leaflet over Esri's physical basemap, which needs no key.
 
 // Relief and land cover only: no roads, borders or modern names, so with a sepia wash it reads as an old atlas
-const TILES = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}";
+const TILES = {
+  physical: {
+    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}",
+    maxNativeZoom: 8,
+    attribution: "Tiles &copy; Esri, US National Park Service",
+  },
+  // Hill shading alone, with finer tiles, for a theatre as close as Waterloo's
+  relief: {
+    url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Shaded_Relief/MapServer/tile/{z}/{y}/{x}",
+    maxNativeZoom: 13,
+    attribution: "Tiles &copy; Esri",
+  },
+};
 
 const OFFSET: Record<LabelSide, [number, number]> = {
   top: [0, -8],
@@ -33,8 +45,12 @@ function escape(s: string): string {
   return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 }
 
-const BATTLE_SIZE = 36;
-const SOON_SIZE = 28;
+// A battle's mark is sized by the men engaged, against the largest battle of its campaign: by the square
+// root, so a skirmish still shows beside a Borodino
+const SMALLEST = 22;
+const LARGEST = 48;
+const markSize = (engaged: number, most: number) =>
+  Math.round(SMALLEST + (LARGEST - SMALLEST) * Math.sqrt(Math.min(1, engaged / most)));
 
 /** A battle's mark, as on an old atlas: two crossed light cavalry sabres, their curved blades solid and
  * tapering, with knuckle-bow guards, inked in burgundy for a battle with forces or a fainter sepia for one
@@ -90,7 +106,8 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
 
     import("leaflet").then(({ default: L }) => {
       if (cancelled || !holder.current) return;
-      map = L.map(holder.current, { scrollWheelZoom: false, zoomSnap: 0.25 });
+      const tiles = TILES[data.tiles ?? "physical"];
+      map = L.map(holder.current, { scrollWheelZoom: false, zoomSnap: 0.25, maxZoom: tiles.maxNativeZoom + 1 });
       mapRef.current = map;
       const battles = scheduleIn(campaignId);
       const placed = battles.filter((b) => battlePlaces[b.id]);
@@ -105,7 +122,10 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       const bounds = L.latLngBounds(points);
       let fitZoom = 0;
       const fit = () => {
-        map!.fitBounds(bounds, { paddingTopLeft: [40, 24], paddingBottomRight: [24, 72], animate: false });
+        // Clear of the key over the map's foot, however many rows it runs to
+        const key = holder.current?.parentElement?.querySelector<HTMLElement>(".map-legend");
+        const foot = (key?.offsetHeight ?? 48) + 36;
+        map!.fitBounds(bounds, { paddingTopLeft: [40, 24], paddingBottomRight: [24, foot], animate: false });
         fitZoom = map!.getZoom();
       };
       fit();
@@ -128,27 +148,30 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       sparse();
       map.on("zoomend resize", sparse);
       // Where names would overlap, the less important gives way: where the campaign's march begins first,
-      // then the battles with forces, the cities, the battles still to come, and the towns last
-      const RANK = ["map-label-start", "map-label-battle", "map-label-city", "map-label-soon", "map-label-town"];
+      // then the battles with forces, the battles still to come, the cities, and the towns last
+      const RANK = ["map-label-start", "map-label-battle", "map-label-soon", "map-label-city", "map-label-town"];
       const declutter = () => {
         const labels = [...(holder.current?.querySelectorAll<HTMLElement>(".leaflet-tooltip.map-label") ?? [])];
         const rank = (el: HTMLElement) => RANK.findIndex((c) => el.classList.contains(c));
         labels.sort((a, b) => rank(a) - rank(b));
         const kept: DOMRect[] = [];
+        const frame = holder.current?.getBoundingClientRect();
         for (const el of labels) {
           el.style.visibility = "";
           if (getComputedStyle(el).display === "none") continue;
           const r = el.getBoundingClientRect();
-          if (kept.some((k) => r.left < k.right && k.left < r.right && r.top < k.bottom && k.top < r.bottom)) {
+          // A name cut off by the map's edge gives way too, until the map is moved to show it
+          const cut = !!frame && (r.left < frame.left || r.right > frame.right || r.top < frame.top || r.bottom > frame.bottom);
+          if (cut || kept.some((k) => r.left < k.right && k.left < r.right && r.top < k.bottom && k.top < r.bottom)) {
             el.style.visibility = "hidden";
           } else kept.push(r);
         }
       };
-      map.on("zoomend resize", () => requestAnimationFrame(declutter));
-      L.tileLayer(TILES, {
-        maxNativeZoom: 8,
-        maxZoom: 9,
-        attribution: "Tiles &copy; Esri, US National Park Service",
+      map.on("zoomend moveend resize", () => requestAnimationFrame(declutter));
+      L.tileLayer(tiles.url, {
+        maxNativeZoom: tiles.maxNativeZoom,
+        maxZoom: tiles.maxNativeZoom + 1,
+        attribution: tiles.attribution,
       }).addTo(map);
 
       // The frontiers of the time, in their own pane under the routes; the names of states, provinces and
@@ -226,7 +249,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
           const at = route.startLabel ?? "right";
           // Beside the dot and a little below, clear of the line leaving it
           const below = at === "left" || at === "right" ? 12 : 0;
-          start.bindTooltip(escape(route.start).replace(/\n/g, "<br>"), {
+          start.bindTooltip(`<span style="color: ${side.colour}">${escape(route.start).replace(/\n/g, "<br>")}</span>`, {
             permanent: true,
             direction: at,
             offset: [OFFSET[at][0], OFFSET[at][1] + below],
@@ -270,18 +293,19 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
           .addTo(map);
       }
 
-      // Battles on top, those with forces above those still to come
+      // Battles on top, those with forces above those still to come, and smaller marks above larger ones
+      // so each can be pressed
       const ordered = [...placed.filter(isPlanned), ...placed.filter((b) => !isPlanned(b))];
+      const most = Math.max(...placed.map((b) => battlePlaces[b.id].engaged));
       for (const battle of ordered) {
-        const { at, label = "right", nudge = [0, 0] } = battlePlaces[battle.id];
+        const { at, engaged, label = "right", nudge = [0, 0] } = battlePlaces[battle.id];
         const soon = isPlanned(battle);
-        // Crossed swords on a disc: bold for a battle with forces, pale and smaller for one still to come
-        const size = soon ? SOON_SIZE : BATTLE_SIZE;
+        const size = markSize(engaged, most);
         const marker = L.marker(at, {
           title: battle.name,
           alt: battle.name,
           riseOnHover: true,
-          zIndexOffset: soon ? 500 : 1000,
+          zIndexOffset: (soon ? 500 : 1000) + (LARGEST - size) * 5,
           icon: L.divIcon({
             className: soon ? "map-battle map-battle-soon" : "map-battle",
             iconSize: [size, size],
@@ -305,7 +329,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
         );
         const pop = document.createElement("div");
         pop.className = "map-pop";
-        pop.innerHTML = `<strong>${escape(battle.name)}</strong><div class="map-pop-date">${escape(battle.date)}</div><p>${escape(battle.summary)}</p>`;
+        pop.innerHTML = `<strong>${escape(battle.name)}</strong><div class="map-pop-date">${escape(battle.date)}</div><div class="map-pop-engaged">About ${engaged.toLocaleString("en-GB")} men engaged</div><p>${escape(battle.summary)}</p>`;
         if (soon) {
           pop.insertAdjacentHTML("beforeend", `<span class="map-pop-soon">Coming soon</span>`);
         } else {
@@ -402,6 +426,13 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
         <span className="map-key map-key-static">
           <span className="map-key-icon" dangerouslySetInnerHTML={{ __html: swords(true, 13) }} />
           <span>Coming soon</span>
+        </span>
+        <span className="map-key map-key-static" title="Each battle's mark is sized by the men engaged">
+          <span className="map-key-scale" aria-hidden="true">
+            <span dangerouslySetInnerHTML={{ __html: swords(false, 10) }} />
+            <span dangerouslySetInnerHTML={{ __html: swords(false, 18) }} />
+          </span>
+          <span>Size: men engaged</span>
         </span>
       </div>
     </div>
