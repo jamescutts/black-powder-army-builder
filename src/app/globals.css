@@ -2756,3 +2756,10 @@ a.app-list-row:active {
   border: 2px solid #7d6a4c;
   box-shadow: none;
 }
+
+/* A small flag beside each side on a battle card */
+.army-flag.side-flag {
+  width: 21px;
+  height: 14px;
+  border-radius: 2px;
+}

@@ -608,6 +608,8 @@ export interface HistoricalForce {
   period?: string;
   /** A portrait of the force's commander, shown on its card with the army's flag */
   portrait?: HistoricalArt;
+  /** The flag to show for this force, when its army list's isn't the one it fought under (Poles built from the French list) */
+  flag?: string;
   /** A few sentences on what the force did, in our own words */
   summary: string;
   /** Where it departs from the history or the list's rules, and the choices made in building it */

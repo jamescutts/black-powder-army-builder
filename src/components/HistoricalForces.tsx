@@ -202,9 +202,12 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
                 </Card>
               );
             }
-            const sides = [...new Set(battle.forces.map((f) => f.side))].map(
-              (side) => `${plural(battle.forces.filter((f) => f.side === side).length, side, side)}`
-            );
+            // Each side with its number of forces and the flag of its first force's army
+            const sides = [...new Set(battle.forces.map((f) => f.side))].map((side) => {
+              const forces = battle.forces.filter((f) => f.side === side);
+              const nation = getNation(forces[0].nationId);
+              return { side, label: plural(forces.length, side, side), flag: forces[0].flag ?? nation?.flagFile ?? nation?.flagFiles?.[0] };
+            });
             return (
               <Card key={battle.id} withBorder radius="md" padding={0} className="picker-card home-card saved-list-card">
                 <div className="home-card-photo" data-empty={!battle.art || undefined}>
@@ -232,9 +235,20 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
                   </Text>
                 </Stack>
                 <Group justify="space-between" align="center" gap="xs" p="md" style={{ marginTop: "auto" }}>
-                  <Text size="xs" c="brown.8">
-                    {sides.join(" · ")}
-                  </Text>
+                  <Group gap={10} wrap="wrap" style={{ minWidth: 0 }}>
+                    {sides.map((s) => (
+                      <Group key={s.side} gap={5} wrap="nowrap">
+                        {s.flag && (
+                          <span className="army-flag side-flag" aria-hidden>
+                            <img src={s.flag} alt="" />
+                          </span>
+                        )}
+                        <Text size="xs" c="brown.8">
+                          {s.label}
+                        </Text>
+                      </Group>
+                    ))}
+                  </Group>
                   <Badge color="brown" variant="filled" size="lg">
                     {plural(battle.forces.length, "force", "forces")}
                   </Badge>
@@ -441,7 +455,7 @@ function ForceCard({ force }: { force: HistoricalForce }) {
   const nation = nationForPeriod(base, force.period);
   const { roster } = rosterFromForce(nation, force);
   const departures = validateRoster(nation, roster).filter((i) => i.level === "historical").length;
-  const flag = base.flagFile ?? base.flagFiles?.[0];
+  const flag = force.flag ?? base.flagFile ?? base.flagFiles?.[0];
 
   return (
     <Card withBorder radius="md" padding="md" className="picker-card saved-list-card">

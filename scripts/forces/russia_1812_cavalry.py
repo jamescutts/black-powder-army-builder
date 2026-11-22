@@ -111,6 +111,11 @@ ROMANOV = {"id": "romanov", "name": "Romanovo", "date": "14 July 1812", "campaig
            "forces": [ROMANOV_POLES, ROMANOV_RUSSIANS]}
 
 
+# The Poles fought under their own colours, though built from the French list
+for f in (MIR_POLES, ROMANOV_POLES):
+    f["flag"] = "/flags/grand-duchy-warsaw.svg"
+
+
 if __name__ == "__main__":
     art = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]
     for b in (MIR, ROMANOV):
