@@ -152,6 +152,14 @@ COMMANDERS = {
 }
 
 
+# 1813: the War of Liberation
+COMMANDERS.update({
+    "mockern": {"French": ("Eugène de Beauharnais", "eugene"), "Russian": ("Lt-Gen Berg", "berg"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
+    "lutzen": {"French": ("Napoleon", "napoleon"), "Russian": ("General Wittgenstein", "wittgenstein"), "Prussian": ("General Blücher", "blucher")},
+    "bautzen": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay"), "Prussian": ("Gen-Lt von Kleist", "kleist")},
+    "grossbeeren": {"Saxon": ("Général Reynier", "reynier"), "French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
+})
+
 # A force's own commander, by force id, for a portrait on its card
 FORCE_PORTRAITS: dict[str, str] = {
     # Ligny
@@ -587,6 +595,14 @@ def write_named():
     path = Path(__file__).resolve().parents[2] / "src" / "data" / "commander-portraits.json"
     path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
     print(f"{len(out)} named commanders with portraits")
+
+
+# 1813 forces' commanders
+FORCE_PORTRAITS.update({
+    "mockern-cavalry": "bruyere", "mockern-roth": "berg",
+    "lutzen-girard": "girard", "lutzen-marchand": "marchand", "lutzen-berg": "berg", "lutzen-eugen": "eugen_wurttemberg",
+    "grossbeeren-lecoq": "lecoq", "grossbeeren-durutte": "durutte",
+})
 
 
 if __name__ == "__main__":

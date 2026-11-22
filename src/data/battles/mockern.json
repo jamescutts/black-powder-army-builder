@@ -1,0 +1,482 @@
+{
+  "id": "mockern",
+  "name": "Möckern",
+  "date": "5 April 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg/960px-Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg",
+    "title": "The Battle of Möckern, 5 April 1813",
+    "artist": "Otto Fikentscher",
+    "date": "1863",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern_on_5_April_1813_(O._C._Fikentscher).jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Eugène de Beauharnais",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Portrait_of_Prince_Eugene_de_Beauharnais%2C_Viceroy_of_Italy_and_Duke_of_Leuchtenberg.jpg/250px-Portrait_of_Prince_Eugene_de_Beauharnais%2C_Viceroy_of_Italy_and_Duke_of_Leuchtenberg.jpg",
+        "title": "Eugène de Beauharnais, Viceroy of Italy",
+        "artist": "Andrea Appiani",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_Prince_Eugene_de_Beauharnais%2C_Viceroy_of_Italy_and_Duke_of_Leuchtenberg.jpg",
+        "focus": "50% 20%",
+        "date": "1810"
+      }
+    },
+    "Russian": {
+      "commander": "Lt-Gen Berg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Berg_1_Grigory_Maximobich.jpg/250px-Berg_1_Grigory_Maximobich.jpg",
+        "title": "Grigory Berg",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Berg_1_Grigory_Maximobich.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Lt von Yorck",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    }
+  },
+  "summary": "Eugène, holding the Elbe with the remains of the Grande Armée and the first of the new conscript divisions, came out of Magdeburg towards Berlin and met Wittgenstein's Russians and Yorck's and Bülow's Prussians east of the river. It was three fights more than one battle: at Dannigkow, where Hünerbein's East Prussians stormed the village; at Vehlitz and the Windmühlenberg, where Borstell and Berg drove off the Italians; and at Zeddenick, where Oppen's cavalry routed the French horse. That night Eugène fell back to Magdeburg, and next day behind the Elbe.",
+  "sources": [
+    {
+      "label": "Grande Armée, 25 April 1813 (Nafziger Collection 813DCB)",
+      "url": "https://www.napoleon-series.org/nafzigger/813DCB.pdf"
+    },
+    {
+      "label": "Battle of Möckern (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_M%C3%B6ckern"
+    },
+    {
+      "label": "Gefecht bei Möckern (German Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Gefecht_bei_M%C3%B6ckern"
+    }
+  ],
+  "forces": [
+    {
+      "id": "mockern-lagrange",
+      "nationId": "france",
+      "name": "Lagrange's Division",
+      "formation": "18th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's leading division, posted round Wahlitz with its outposts forward in Dannigkow and Gommern. Hünerbein's East Prussians stormed Dannigkow in the early afternoon and the village was fought over for hours, the 134th's companies holding it until the French drew back on Gommern at dusk.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's return of 25 April, three weeks after the fight; Nafziger has no order of battle for Möckern itself.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "The Irish Legion (3rd Foreign Regiment), two battalions, is shown as Line.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Lagrange",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Charrière's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Charrière",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "134th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/134th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/134th Line"
+                }
+              ]
+            },
+            {
+              "name": "154th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/154th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/154th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/154th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/154th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Suden's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Suden",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "155th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/155th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/155th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/155th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/155th Line"
+                }
+              ]
+            },
+            {
+              "name": "3rd Foreign (Irish Legion)",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/Irish Legion"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/Irish Legion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/1st Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "12/1st Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-zucchi",
+      "nationId": "italy",
+      "name": "Zucchi's Italian Brigade",
+      "formation": "2nd Brigade, 35th Division (Gérard), XI Corps",
+      "side": "French",
+      "summary": "The Italians held Vehlitz with four battalions and four guns, and two more on the Windmühlenberg behind it. When Borstell's Prussians and Berg's Russians came on in the late afternoon they refused a summons to surrender and were driven off the hill at the bayonet.",
+      "notes": [
+        "Built from A Clash of Eagles' Italian 1812 list, the nearest to 1813.",
+        "After Nafziger's return of 25 April, three weeks after the fight; Nafziger has no order of battle for Möckern itself.",
+        "The accounts give the brigade four guns at Vehlitz: the division's Italian horse battery, shown as a half battery. With fewer units than the list wants for it, it shows as a historical departure.",
+        "Zucchi, a brigadier, commands the force, so he is its commander rather than its brigade's.",
+        "The brigade has no divisional commander: Gérard's French brigade (the 6th and 112th Line) wasn't engaged.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "it-div-cmd",
+          "name": "Gén. de Brigade Zucchi",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "it-infantry-brigade",
+          "name": "Zucchi's Brigade",
+          "regiments": [
+            {
+              "name": "2nd Italian Light",
+              "units": [
+                {
+                  "unit": "it-light-infantry",
+                  "name": "III/2nd Italian Light"
+                },
+                {
+                  "unit": "it-light-infantry",
+                  "name": "IV/2nd Italian Light"
+                }
+              ]
+            },
+            {
+              "name": "5th Italian Line",
+              "units": [
+                {
+                  "unit": "it-line-infantry",
+                  "name": "I/5th Italian Line"
+                },
+                {
+                  "unit": "it-line-infantry",
+                  "name": "II/5th Italian Line"
+                },
+                {
+                  "unit": "it-line-infantry",
+                  "name": "III/5th Italian Line"
+                },
+                {
+                  "unit": "it-line-infantry",
+                  "name": "IV/5th Italian Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "it-divisional-artillery",
+          "name": "Artillery",
+          "units": [
+            {
+              "unit": "it-horse-arty",
+              "name": "3rd Italian Horse Battery",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-cavalry",
+      "nationId": "france",
+      "name": "The Light Cavalry at Zeddenick",
+      "formation": "1st Light Cavalry Division, I Cavalry Corps",
+      "side": "French",
+      "summary": "All the horse Eugène had left after Russia, about 1,200 sabres in the remnants of a dozen regiments, holding Zeddenick on the right. Late in the day Oppen's Prussian horse came up with Cossacks and a half battery and put them to flight, and a counter-charge at Vehlitz was broken by a volley and two squadrons of Prussian dragoons.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's return of 25 April, three weeks after the fight; Nafziger has no order of battle for Möckern itself.",
+        "The German account names the 7th Chevau-légers, 8th Hussars and a 9th lancer regiment (Polish, it says; Nafziger has the 9th Chevau-légers), with parts of four chasseur regiments, about 1,200 horse with one battery. Nafziger puts them in Bruyère's division; the account doesn't name the commander.",
+        "Each regiment was a few hundred men at most, so the lancers and hussars are Small and the chasseurs one combined regiment.",
+        "Cavalry without infantry shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Bruyère",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Lancers and Hussars",
+          "units": [
+            {
+              "unit": "fr-lancer",
+              "name": "7th Chevau-légers Lanciers",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "9th Chevau-légers Lanciers",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "8th Hussars",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Combined Chasseurs",
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "Combined 3rd, 13th, 19th and 22nd Chasseurs"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/57/G%C3%A9n%C3%A9ral_Jean_Pierre_Brugui%C3%A8re_dit_Bruy%C3%A8res.jpg",
+        "title": "Jean-Pierre Bruyère",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Pierre_Brugui%C3%A8re_dit_Bruy%C3%A8res.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "mockern-roth",
+      "nationId": "russia",
+      "name": "Roth's Advance Guard",
+      "formation": "Advance guard of Berg's Corps (Wittgenstein)",
+      "side": "Russian",
+      "summary": "The head of Berg's corps, which reached Vehlitz about four in the afternoon and joined Borstell's Prussians in the attack on the village and the Windmühlenberg, its Jäger and militia covering the left; the Grodno Hussars helped break the French cavalry's counter-charge.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "By the spring of 1813 Russian infantry regiments were down to a single field battalion each, the rest having gone back to recruit; each regiment is shown as its one battalion.",
+        "The German account names the 26th Jäger, the Olonetz-Vologda militia battalion and two battalions of Berg's corps at Vehlitz, with the Grodno Hussars; the two battalions aren't named, so they are the 14th Division's Tenginsk and Estonia regiments, the 26th Jäger's own division, from Nafziger's order of battle for Lützen. So is the light battery.",
+        "The militia battalion is Opolchenie, attached to the Estonia regiment as the list takes it.",
+        "A Jäger brigade of one regiment, and a light battery with fewer battalions than the list wants for it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Roth",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Berg's Battalions",
+          "commander": {
+            "name": "Maj-Gen Roth",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #27"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tenginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tenginsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Estonia Infantry with Olonetz-Vologda Opolchenie",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Estonia Infantry"
+                },
+                {
+                  "unit": "ru-opolchenie",
+                  "name": "Olonetz-Vologda Opolchenie"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "26th Jäger",
+          "regiments": [
+            {
+              "name": "26th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "26th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Grodno Hussars",
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Grodno Hussars"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Berg_1_Grigory_Maximobich.jpg/250px-Berg_1_Grigory_Maximobich.jpg",
+        "title": "Grigory Berg",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Berg_1_Grigory_Maximobich.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "toCome": [
+    {
+      "side": "Prussian",
+      "name": "Hünerbein's Advance Guard",
+      "formation": "Yorck's Corps",
+      "summary": "Three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, which stormed Dannigkow and held it against Lagrange's counter-attacks.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Borstell's Brigade",
+      "formation": "Bülow's Corps",
+      "summary": "Four Pomeranian and East Prussian battalions with two batteries and the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Oppen's Cavalry",
+      "formation": "Advance guard of Bülow's Corps",
+      "summary": "Dragoons under the 'mad' Major von Platen and four squadrons of the Leib Hussars, with a fusilier battalion and Cossacks, which routed the French horse at Zeddenick.",
+      "flag": "/flags/prussia.png"
+    }
+  ]
+}

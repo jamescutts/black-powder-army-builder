@@ -8,7 +8,7 @@ import { getNation, getSupplement } from "@/data";
 import { CampaignMap, hasCampaignMap, routesAt } from "./CampaignMap";
 import { battlePlaces, campaignMaps } from "@/data/battles/geo";
 import { battlesIn, campaigns, getCampaign, isPlanned, scheduleIn } from "@/data/battles";
-import type { HistoricalArt, HistoricalCampaign, HistoricalForce } from "@/data/types";
+import type { HistoricalArt, HistoricalBattle, HistoricalCampaign, HistoricalForce } from "@/data/types";
 import { battleHref, campaignHref, forceHref, HISTORICAL_FORCES_PATH, rosterFromForce } from "@/lib/forces";
 import { nationForPeriod } from "@/lib/periods";
 import { rosterTotal, unitCount } from "@/lib/points";
@@ -288,8 +288,9 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
 export function BattleForces({ campaignId, battleId }: { campaignId: string; battleId: string }) {
   const campaign = getCampaign(campaignId)!;
   const battle = battlesIn(campaign.id).find((b) => b.id === battleId)!;
-  // Sides in the order the battle lists their first force
-  const sides = [...new Set(battle.forces.map((f) => f.side))];
+  // Sides in the order the battle lists their first force, then any whose forces are all still to come
+  const toCome = battle.toCome ?? [];
+  const sides = [...new Set([...battle.forces.map((f) => f.side), ...toCome.map((f) => f.side)])];
   // Each side's forces together: their points, units and brigades
   const totals = Object.fromEntries(
     sides.map((side) => {
@@ -315,10 +316,12 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
         title={battle.name}
         dates={battle.date}
         summary={battle.summary}
-        stats={sides.map((side) => {
-          const units = totals[side].units;
-          return { value: units, label: `${side} ${units === 1 ? "unit" : "units"}` };
-        })}
+        stats={sides
+          .filter((side) => totals[side].units > 0)
+          .map((side) => {
+            const units = totals[side].units;
+            return { value: units, label: `${side} ${units === 1 ? "unit" : "units"}` };
+          })}
       />
     <Container size="xl" py="xl">
       <Stack gap="lg">
@@ -333,6 +336,11 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
                 .filter((f) => f.side === side)
                 .map((force) => (
                   <ForceCard key={force.id} force={force} />
+                ))}
+              {toCome
+                .filter((f) => f.side === side)
+                .map((f) => (
+                  <ForceToCome key={f.name} force={f} />
                 ))}
             </SimpleGrid>
           </Stack>
@@ -500,15 +508,54 @@ function SideHead({
           )}
         </div>
       </Group>
-      <Stack gap={4} className="side-head-totals">
-        <Text ff="heading" fw={600} fz="xl" lh={1.1} c="brown.9">
-          {totals.points.toLocaleString("en-GB")} pts
-        </Text>
-        <Text size="xs" c="brown.8">
-          {plural(totals.units, "unit", "units")} · {plural(totals.brigades, "brigade", "brigades")}
-        </Text>
-      </Stack>
+      {totals.units > 0 ? (
+        <Stack gap={4} className="side-head-totals">
+          <Text ff="heading" fw={600} fz="xl" lh={1.1} c="brown.9">
+            {totals.points.toLocaleString("en-GB")} pts
+          </Text>
+          <Text size="xs" c="brown.8">
+            {plural(totals.units, "unit", "units")} · {plural(totals.brigades, "brigade", "brigades")}
+          </Text>
+        </Stack>
+      ) : (
+        <Badge color="gray" variant="light" size="lg">
+          Forces to come
+        </Badge>
+      )}
     </Group>
+  );
+}
+
+/** A force still to be written: its card, without a link, saying so */
+function ForceToCome({ force }: { force: NonNullable<HistoricalBattle["toCome"]>[number] }) {
+  return (
+    <Card withBorder radius="md" padding="md" className="force-to-come">
+      <Group gap="sm" wrap="nowrap" align="flex-start">
+        {force.flag && (
+          <span className="army-flag saved-list-flag">
+            <img src={force.flag} alt="" />
+          </span>
+        )}
+        <Stack gap={2} style={{ minWidth: 0 }}>
+          <Text ff="heading" fw={600} fz="lg" lh={1.25} c="brown.8">
+            {force.name}
+          </Text>
+          {force.formation && (
+            <Text size="sm" lh={1.35}>
+              {force.formation}
+            </Text>
+          )}
+        </Stack>
+      </Group>
+      <Text size="sm" mt="sm" lineClamp={4} style={{ lineHeight: 1.5 }}>
+        {force.summary}
+      </Text>
+      <Group justify="flex-end" style={{ marginTop: "auto", paddingTop: 12 }}>
+        <Badge color="gray" variant="light" size="lg">
+          Coming soon
+        </Badge>
+      </Group>
+    </Card>
   );
 }
 

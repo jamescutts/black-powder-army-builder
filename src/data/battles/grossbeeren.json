@@ -1,0 +1,502 @@
+{
+  "id": "grossbeeren",
+  "name": "Großbeeren",
+  "date": "23 August 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Gro%C3%9Fbeeren_1813.jpg/960px-Gro%C3%9Fbeeren_1813.jpg",
+    "title": "The Battle of Großbeeren",
+    "artist": "Carl Röchling",
+    "date": "1907–08",
+    "page": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fbeeren_1813.jpg"
+  },
+  "sides": {
+    "Saxon": {
+      "commander": "Général Reynier",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png/250px-Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png",
+        "title": "Jean Reynier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png",
+        "focus": "50% 20%"
+      }
+    },
+    "French": {
+      "commander": "Marshal Oudinot",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg/250px-Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg",
+        "title": "Marshal Nicolas Oudinot",
+        "artist": "Robert Lefèvre",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg",
+        "focus": "50% 16%",
+        "date": "1811"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Lt von Bülow",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Friedrich_Wilhelm_Freiherr_von_Bulow.jpg/250px-Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "title": "Friedrich Wilhelm Bülow von Dennewitz",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  },
+  "summary": "The armistice over, Napoleon sent Oudinot with three corps to take Berlin. They marched by separate roads through the wooded country south of the city, out of touch with each other, and on the afternoon of the 23rd, in pouring rain, Reynier's Saxon corps took the village of Großbeeren on its own. At six Bülow's Prussian corps, attacking against Bernadotte's wishes, came on behind sixty guns and stormed the village with the bayonet and musket butt; Reynier's corps broke, and Oudinot fell back on Wittenberg.",
+  "sources": [
+    {
+      "label": "Order of Battle for Gross-Beeren, 23 August 1813 (Nafziger Collection 813HGE)",
+      "url": "https://www.napoleon-series.org/nafzigger/813HGE.pdf"
+    },
+    {
+      "label": "Battle of Großbeeren (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Gro%C3%9Fbeeren"
+    },
+    {
+      "label": "Schlacht bei Großbeeren (German Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Gro%C3%9Fbeeren"
+    }
+  ],
+  "forces": [
+    {
+      "id": "grossbeeren-sahr",
+      "nationId": "saxony",
+      "name": "Sahr's Division",
+      "formation": "25th (Saxon) Division, VII Corps (Reynier)",
+      "side": "Saxon",
+      "summary": "Reynier's leading division, which reached Großbeeren in the rain about four in the afternoon, drove out the Prussian battalion holding it, and occupied the village. At six Bülow's whole corps came on behind sixty guns; the Saxons fought in the burning village with the bayonet and the musket butt until they were driven out.",
+      "notes": [
+        "Built from A Clash of Eagles' Saxon 1812 list, the nearest to 1813: the Saxon army that fought in 1813 was rebuilt from the survivors of Russia on the same lines.",
+        "After Nafziger's order of battle for Großbeeren.",
+        "Each brigade's foot battery, with fewer than the six battalions the list wants for it, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "sax-div-cmd",
+          "name": "Gen-Lt von Sahr",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sax-infantry-brigade",
+          "name": "Bose's Brigade",
+          "commander": {
+            "name": "Oberst von Bose",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-grenadier",
+              "name": "Grenadier Battalion 'Sperl'"
+            },
+            {
+              "unit": "sax-foot-arty",
+              "name": "3rd Foot Battery 'Kühnel'"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "2nd Light 'von Sahr'",
+              "units": [
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "I/2nd Light"
+                },
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "II/2nd Light"
+                }
+              ]
+            },
+            {
+              "name": "König Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/König"
+                }
+              ]
+            },
+            {
+              "name": "Niesemeuschel Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/Niesemeuschel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sax-infantry-brigade",
+          "name": "Ryssel's Brigade",
+          "commander": {
+            "name": "Oberst von Ryssel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-foot-arty",
+              "name": "4th Foot Battery 'Rouvroy II'"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Prinz Anton Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/Prinz Anton"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/Prinz Anton"
+                }
+              ]
+            },
+            {
+              "name": "von Löw Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/von Löw"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/von Löw"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grossbeeren-lecoq",
+      "nationId": "saxony",
+      "name": "Le Coq's Division",
+      "formation": "24th (Saxon) Division, VII Corps (Reynier)",
+      "side": "Saxon",
+      "summary": "Reynier's second division, which came up behind Sahr's and stood on the left of the village. When the Prussian attack broke the first line, six of its battalions went forward to hold the left, and were carried back with the rest in the dark.",
+      "notes": [
+        "Built from A Clash of Eagles' Saxon 1812 list, the nearest to 1813: the Saxon army that fought in 1813 was rebuilt from the survivors of Russia on the same lines.",
+        "After Nafziger's order of battle for Großbeeren.",
+        "Le Coq is the book's named commander.",
+        "The battalion of the Guard Grenadiers is shown as Grenadiers; the 1st Jäger Company with Brause's brigade isn't shown.",
+        "Each brigade's foot battery, with fewer than the six battalions the list wants for it, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Generalleutnant Le Coq (Saxon Corps), with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "sax-cmd-lecoq"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sax-infantry-brigade",
+          "name": "Brause's Brigade",
+          "commander": {
+            "name": "Oberst von Brause",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-grenadier",
+              "name": "I/Guard Grenadiers"
+            },
+            {
+              "unit": "sax-foot-arty",
+              "name": "1st Foot Battery 'Dietrich'"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Light 'Le Coq'",
+              "units": [
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "I/1st Light"
+                },
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "II/1st Light"
+                }
+              ]
+            },
+            {
+              "name": "Maximilian Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/Maximilian"
+                }
+              ]
+            },
+            {
+              "name": "von Rechten Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/von Rechten"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sax-infantry-brigade",
+          "name": "Mellentin's Brigade",
+          "commander": {
+            "name": "Oberst von Mellentin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-grenadier",
+              "name": "Grenadier Battalion 'Spiegel'"
+            },
+            {
+              "unit": "sax-foot-arty",
+              "name": "2nd Foot Battery 'Zandt'"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Prinz Friedrich August Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/Prinz Friedrich August"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/Prinz Friedrich August"
+                }
+              ]
+            },
+            {
+              "name": "von Steindel Regiment",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/von Steindel"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/von Steindel"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Karl_Christian_Erdmann_von_Le_Coq.jpg/250px-Karl_Christian_Erdmann_von_Le_Coq.jpg",
+        "title": "Karl Christian Erdmann von Le Coq",
+        "artist": "M. Knäbig",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Christian_Erdmann_von_Le_Coq.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "grossbeeren-gablenz",
+      "nationId": "saxony",
+      "name": "Gablenz's Light Cavalry",
+      "formation": "26th Light Cavalry Brigade, VII Corps (Reynier)",
+      "side": "Saxon",
+      "summary": "Reynier's corps cavalry, which covered the retreat from Großbeeren in the dark after the infantry broke.",
+      "notes": [
+        "Built from A Clash of Eagles' Saxon 1812 list, the nearest to 1813: the Saxon army that fought in 1813 was rebuilt from the survivors of Russia on the same lines.",
+        "After Nafziger's order of battle for Großbeeren.",
+        "The Hussars had eight squadrons, so they are Large; the Uhlans had five.",
+        "The brigade was led by Oberst von Lindenau for Gablenz, who commanded the corps cavalry.",
+        "The 2nd Horse Battery 'Probsthayn' isn't shown: the list allows one battery with a cavalry brigade.",
+        "Cavalry without infantry shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "sax-div-cmd",
+          "name": "Gen-Maj von Gablenz",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sax-cavalry-brigade",
+          "name": "Gablenz's Brigade",
+          "commander": {
+            "name": "Oberst von Lindenau",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-hussar",
+              "name": "Saxon Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "sax-uhlan",
+              "name": "Prinz Clemens Uhlans"
+            },
+            {
+              "unit": "sax-horse-arty",
+              "name": "1st Horse Battery 'Birnbaum'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grossbeeren-durutte",
+      "nationId": "france",
+      "name": "Durutte's Division",
+      "formation": "32nd Division, VII Corps (Reynier)",
+      "side": "French",
+      "summary": "The French division of Reynier's corps, in reserve behind the Saxons. It was caught up in their rout as the Prussians took the village, and fell back with them on Wittenberg.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Großbeeren.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Detachments of the 3rd battalions of the 36th Léger and 133rd Line, which Nafziger lists, aren't shown.",
+        "The Würzburg battalions are Rheinbund infantry, as the list takes German contingents in French divisions; two of them, where the list allows one, show as a historical departure.",
+        "Nafziger lists no artillery with the division.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Durutte",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Jarry's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jarry",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "36th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/36th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "IV/36th Léger"
+                }
+              ]
+            },
+            {
+              "name": "131st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/131st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/131st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/131st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "133rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/133rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/133rd Line"
+                }
+              ]
+            },
+            {
+              "name": "Würzburg Regiment",
+              "units": [
+                {
+                  "unit": "fr-rheinbund-infantry",
+                  "name": "II/Würzburg"
+                },
+                {
+                  "unit": "fr-rheinbund-infantry",
+                  "name": "III/Würzburg"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/General_Durutte_by_Fran%C3%A7ois_B%C3%B6hm_1.jpg/250px-General_Durutte_by_Fran%C3%A7ois_B%C3%B6hm_1.jpg",
+        "title": "Pierre-François Durutte",
+        "artist": "François Böhm",
+        "page": "https://commons.wikimedia.org/wiki/File:General_Durutte_by_Fran%C3%A7ois_B%C3%B6hm_1.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  ],
+  "toCome": [
+    {
+      "side": "Prussian",
+      "name": "Hesse-Homburg's Brigade",
+      "formation": "3rd Brigade, III Corps (Bülow)",
+      "summary": "East Prussian line and reserve infantry, including the 4th Reserve Regiment that fought for the village with musket butts.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Thümen's Brigade",
+      "formation": "4th Brigade, III Corps (Bülow)",
+      "summary": "Line, reserve and Landwehr battalions in Bülow's attack on the village.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Borstell's Brigade",
+      "formation": "5th Brigade, III Corps (Bülow)",
+      "summary": "Marched to the sound of the guns from Kleinbeeren and fell on the Saxons' flank.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Krafft's Brigade",
+      "formation": "6th Brigade, III Corps (Bülow)",
+      "summary": "Colberg and Pomeranian battalions which led the assault on Großbeeren. Bülow's sixty-four guns included two Russian 12-pdr batteries.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Oppen's Reserve Cavalry",
+      "formation": "III Corps (Bülow)",
+      "summary": "Dragoons, hussars and Landwehr cavalry, which rode down the Saxon rearguard in the dark.",
+      "flag": "/flags/prussia.png"
+    }
+  ]
+}

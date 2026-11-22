@@ -144,12 +144,6 @@ sanSebastian.art = {
 
 const L = "liberation-1813";
 
-export const lutzen = planned("lutzen", "Lützen", "2 May 1813", L,
-  "Wittgenstein and Blücher fell on Ney's corps in its villages south of Lützen; Napoleon's young conscripts held Gross-Görschen and Kaja through the day until the Guard and the converging corps drove the allies off. Scharnhorst was mortally wounded.");
-export const bautzen = planned("bautzen", "Bautzen", "20–21 May 1813", L,
-  "Napoleon forced the Spree at Bautzen and next day attacked the allies' fortified line on the heights behind it, while Ney marched round their right; Ney came on too late and too cautiously, and the allies got away to Silesia. An armistice followed in June.");
-export const grossbeeren = planned("grossbeeren", "Großbeeren", "23 August 1813", L,
-  "Oudinot's march on Berlin, the first blow after the armistice, ran into Bülow's Prussians in the rain south of the city; they stormed Großbeeren from Reynier's Saxons, and Oudinot fell back on Wittenberg.");
 export const katzbach = planned("katzbach", "The Katzbach", "26 August 1813", L,
   "Macdonald's army, crossing the swollen Katzbach and Wütende Neisse in a downpour, was caught by Blücher on the plateau beyond, muskets too wet to fire; driven back over flooded streams, it lost tens of thousands of men in the days after.");
 export const dresden = planned("dresden", "Dresden", "26–27 August 1813", L,
@@ -201,8 +195,6 @@ export const danzig = planned("danzig", "Siege of Danzig", "16 January – 29 No
   "Rapp held the Vistula fortress with the frozen remnants of the Grande Armée and a garrison of a dozen nations through the whole of 1813, beating off Russian and Prussian besiegers until hunger and disease forced him to terms in November.");
 export const luneburg = planned("luneburg", "Lüneburg", "2 April 1813", L,
   "Dörnberg's and Chernyshev's flying columns stormed Lüneburg, held by Morand's small division, and took most of it prisoner after the townspeople helped them in: the first allied victory of the war in Germany.");
-export const mockern = planned("mockern", "Möckern", "5 April 1813", L,
-  "Eugène, advancing from Magdeburg towards Berlin, was met by Wittgenstein's Russians and Yorck's and Bülow's Prussians among the villages east of the Elbe, and after a hard day fell back behind the river.");
 export const rippach = planned("rippach", "Rippach", "1 May 1813", L,
   "Napoleon's advance guard forced the Rippach defile against Winzingerode's cavalry the day before Lützen; Marshal Bessières, reconnoitring, was killed by a cannonball.");
 export const reichenbach = planned("reichenbach", "Reichenbach", "22 May 1813", L,
@@ -249,20 +241,6 @@ export const saintDizier = planned("saint-dizier", "Saint-Dizier", "26 March 181
   "Napoleon, striking at the allies' communications, turned on Winzingerode's cavalry screen at Saint-Dizier and routed it, then learned it had been sent to deceive him while the allied armies marched on Paris: his last victory.");
 
 // Paintings for 1813 and 1814
-lutzen.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Bataille_de_Lutzen%2C_2_mai_1813.jpg/960px-Bataille_de_Lutzen%2C_2_mai_1813.jpg",
-  "title": "The Battle of Lützen, 2 May 1813",
-  "artist": "Joseph Beaume",
-  "date": "1836–37",
-  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Lutzen,_2_mai_1813.jpg"
-};
-bautzen.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/9/96/Battle_of_Bautzen_1813_by_Bellange.jpg",
-  "title": "The Battle of Bautzen",
-  "artist": "after Hippolyte Bellangé",
-  "date": "c. 1825–30",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Bautzen_1813_by_Bellange.jpg"
-};
 katzbach.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/KaempfferKatzbachschlacht.jpg/960px-KaempfferKatzbachschlacht.jpg",
   "title": "The Battle of the Katzbach",
@@ -405,13 +383,6 @@ luneburg.art = {
   "artist": "F. A. Frenzel",
   "page": "https://commons.wikimedia.org/wiki/File:L%C3%BCneburg_Schlacht_1813.jpg"
 };
-mockern.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg/960px-Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg",
-  "title": "The Battle of Möckern, 5 April 1813",
-  "artist": "Otto Fikentscher",
-  "date": "1863",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern_on_5_April_1813_(O._C._Fikentscher).jpg"
-};
 mockernLeipzig.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png/960px-Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
   "title": "The Brandenburg Hussars' Charge at Möckern",
@@ -465,13 +436,6 @@ sehested.art = {
   "artist": "Jørgen Sonne",
   "date": "1822",
   "page": "https://commons.wikimedia.org/wiki/File:J%C3%B8rgen_V_Sonne,_Slaget_ved_Sehested,_KMS42,_Statens_Museum_for_Kunst.jpg"
-};
-grossbeeren.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Gro%C3%9Fbeeren_1813.jpg/960px-Gro%C3%9Fbeeren_1813.jpg",
-  "title": "The Battle of Großbeeren",
-  "artist": "Carl Röchling",
-  "date": "1907–08",
-  "page": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fbeeren_1813.jpg"
 };
 gohrde.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Carl_R%C3%B6chling_-_Eleonore_Prochaska.jpg/960px-Carl_R%C3%B6chling_-_Eleonore_Prochaska.jpg",

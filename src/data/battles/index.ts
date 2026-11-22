@@ -14,7 +14,11 @@ import gorodechno from "./gorodechno.json";
 import klyastitsy from "./klyastitsy.json";
 import krasnoi from "./krasnoi.json";
 import kobrin from "./kobrin.json";
+import bautzen from "./bautzen.json";
+import grossbeeren from "./grossbeeren.json";
 import ligny from "./ligny.json";
+import lutzen from "./lutzen.json";
+import mockern from "./mockern.json";
 import medinaDeRioseco from "./medina-de-rioseco.json";
 import maloyaroslavets from "./maloyaroslavets.json";
 import mesoten from "./mesoten.json";
@@ -46,7 +50,6 @@ import {
   almeida,
   arcis,
   badajoz,
-  bautzen,
   brienne,
   chateauThierry,
   champaubert,
@@ -55,14 +58,12 @@ import {
   dresden,
   fereChampenoise,
   gohrde,
-  grossbeeren,
   hanau,
   katzbach,
   kulm,
   laon,
   laRothiere,
   leipzig,
-  lutzen,
   montereau,
   montmirail,
   paris,
@@ -79,7 +80,6 @@ import {
   tarragona,
   danzig,
   luneburg,
-  mockern,
   rippach,
   reichenbach,
   haynau,
@@ -392,16 +392,16 @@ const allBattles: HistoricalBattle[] = [
   // The War of Liberation
   danzig,
   luneburg,
-  mockern,
+  mockern as HistoricalBattle,
   rippach,
-  lutzen,
-  bautzen,
+  lutzen as HistoricalBattle,
+  bautzen as HistoricalBattle,
   reichenbach,
   haynau,
   luckau,
   kitzen,
   lowenberg,
-  grossbeeren,
+  grossbeeren as HistoricalBattle,
   goldberg,
   katzbach,
   dresden,

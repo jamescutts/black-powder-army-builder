@@ -1,0 +1,974 @@
+{
+  "id": "bautzen",
+  "name": "Bautzen",
+  "date": "20–21 May 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/96/Battle_of_Bautzen_1813_by_Bellange.jpg",
+    "title": "The Battle of Bautzen",
+    "artist": "after Hippolyte Bellangé",
+    "date": "c. 1825–30",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Bautzen_1813_by_Bellange.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Marshal Ney",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Marechal_Ney.jpg/250px-Marechal_Ney.jpg",
+        "title": "Marshal Michel Ney",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Marechal_Ney.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Russian": {
+      "commander": "General Barclay de Tolly",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg/250px-Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "title": "Michael Barclay de Tolly",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "focus": "50% 16%",
+        "date": "1829"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Lt von Kleist"
+    }
+  },
+  "summary": "The allies stood behind the Spree at Bautzen in a fortified line along the heights. On the first day Napoleon forced the river and took the town; on the second he pinned the allied centre and left while Ney's and Lauriston's corps marched round the right. Barclay's Russians and Kleist's Prussians held them off long enough round Gleina and Preititz, and when Ney, unsure of his orders, halted instead of driving on to the allies' rear, Wittgenstein and Blücher got their armies away to the east.",
+  "sources": [
+    {
+      "label": "French Forces at Bautzen 20/21 May 1813 (Nafziger Collection 813ECK)",
+      "url": "https://www.napoleon-series.org/nafzigger/813ECK.pdf"
+    },
+    {
+      "label": "French III Corps at Bautzen, 20/21 May 1813 (Nafziger Collection 813ECJ)",
+      "url": "https://www.napoleon-series.org/nafzigger/813ECJ.pdf"
+    },
+    {
+      "label": "Russo-Prussian Forces at Bautzen 20/21 May 1813 (Nafziger Collection 813ECE)",
+      "url": "https://www.napoleon-series.org/nafzigger/813ECE.pdf"
+    },
+    {
+      "label": "Battle of Bautzen (1813) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Bautzen_(1813)"
+    }
+  ],
+  "forces": [
+    {
+      "id": "bautzen-souham",
+      "nationId": "france",
+      "name": "Souham's Division",
+      "formation": "8th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Leading Ney's march round the allied right on 21 May, it took Preititz at about eleven in the morning, was thrown out again by Kleist's Prussians, and retook it as the rest of III Corps came up; Ney then halted to wait for orders, and the allies' line of retreat stayed open.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Bautzen, with strengths of mid-May.",
+        "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Most of its regiments were provisional: two depot battalions of different regiments put together, each shown as its two battalions.",
+        "Its two provisional light regiments, where the list allows one light regiment in a division, and Chasseraux's four regiments, where the list allows three in a brigade, show as historical departures.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Souham",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chasseraux's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chasseraux",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/6th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/25th Léger"
+                }
+              ]
+            },
+            {
+              "name": "10th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/16th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/28th Léger"
+                }
+              ]
+            },
+            {
+              "name": "14th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/34th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/40th Line"
+                }
+              ]
+            },
+            {
+              "name": "19th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/32nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/58th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chemineau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chemineau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "21st Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/59th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/69th Line"
+                }
+              ]
+            },
+            {
+              "name": "24th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/88th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/103rd Line"
+                }
+              ]
+            },
+            {
+              "name": "22nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/22nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "9/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/2nd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bautzen-delmas",
+      "nationId": "france",
+      "name": "Delmas's Division",
+      "formation": "9th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Brenier's old division, under Delmas since Brenier's wound at Lützen, which followed Souham to Preititz and helped hold it against Kleist and Barclay through the afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Bautzen, with strengths of mid-May.",
+        "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Two light regiments, where the list allows one in a division, show as a historical departure.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Delmas",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Anthing's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Anthing",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/4th Léger"
+                }
+              ]
+            },
+            {
+              "name": "29th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/29th Léger"
+                }
+              ]
+            },
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/136th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/138th Line"
+                }
+              ]
+            },
+            {
+              "name": "145th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/145th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "1/9th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "11/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bautzen-maison",
+      "nationId": "france",
+      "name": "Maison's Division",
+      "formation": "16th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's leading division on 21 May, which crossed the Spree at Klix and attacked Barclay's Russians on the Gleina heights, turning the allied right while Ney went for Preititz.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Bautzen, with strengths of mid-May.",
+        "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Maison",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Avril's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Avril",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "151st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/151st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/151st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/151st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/151st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Penne's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Penne",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "153rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/153rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/153rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/153rd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "1/1st Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "3/1st Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bautzen-puthod",
+      "nationId": "france",
+      "name": "Puthod's Division",
+      "formation": "17th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's second division, which followed Maison against Gleina and pushed Barclay's Russians back on Baruth in the afternoon as the allied right gave way.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Bautzen, with strengths of mid-May.",
+        "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Puthod",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Vachot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Vachot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "146th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/146th Line"
+                }
+              ]
+            },
+            {
+              "name": "147th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/147th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pastol's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pastol",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "148th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/148th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "1/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "11/5th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bautzen-chaplitz",
+      "nationId": "russia",
+      "name": "Chaplitz's Advance Guard",
+      "formation": "Advance guard, 3rd Army of the West (Barclay de Tolly)",
+      "side": "Russian",
+      "summary": "Barclay's outposts beyond Gleina, which met Lauriston's and Ney's columns as they crossed the Spree on the morning of 21 May and fell back fighting on the main line.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Bautzen, with strengths of mid-May.",
+        "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz.",
+        "The Jäger regiments had two battalions each; the hussars (364 men) and uhlans (142) were each two weak squadrons, so they are Small.",
+        "An advance guard without line infantry, and its light battery, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Chaplitz",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-jager-brigade",
+          "name": "Rudzevich's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rudzevich",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #34"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "12th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/12th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/12th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "22nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/22nd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/22nd Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Kozlovsky's Brigade",
+          "commander": {
+            "name": "Col Kozlovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Olviopol Hussars",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-uhlan",
+              "name": "Zhitomir Uhlans",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Grekov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Grekov VIII",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Grekov #8 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Kuteinikov Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Isaev #2 Don Cossacks"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bautzen-shcherbatov",
+      "nationId": "russia",
+      "name": "Shcherbatov's Division",
+      "formation": "18th Division, 3rd Army of the West (Barclay de Tolly)",
+      "side": "Russian",
+      "summary": "The right of Barclay's line on the Gleina heights, which held off Maison's and Puthod's attacks through the morning before Barclay, outflanked, fell back on Preititz and Baruth.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Bautzen, with strengths of mid-May.",
+        "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz.",
+        "By the spring of 1813 Russian infantry regiments were down to a single field battalion each, the rest having gone back to recruit; each regiment is shown as its one battalion.",
+        "Umanets's two cavalry regiments, of about 250 men each, are Small.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Prince Shcherbatov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Bernodossov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Bernodossov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #35"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Vladimir Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vladimir Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Dnieper Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Dnieper Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Heidenreich's Brigade",
+          "commander": {
+            "name": "Col Heidenreich",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Kostroma Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kostroma Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Tambov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tambov Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Karnielov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Karnielov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "28th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "28th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "32nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "32nd Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Umanets's Brigade",
+          "commander": {
+            "name": "Maj-Gen Umanets",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Kinburn Dragoons",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Seversk Mounted Jäger",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bautzen-insov",
+      "nationId": "russia",
+      "name": "Insov's Division",
+      "formation": "9th Division, 3rd Army of the West (Barclay de Tolly)",
+      "side": "Russian",
+      "summary": "The left of Barclay's line, towards Preititz, which with Kleist's Prussians fought to retake the village from Ney in the early afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Bautzen, with strengths of mid-May.",
+        "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz.",
+        "By the spring of 1813 Russian infantry regiments were down to a single field battalion each, the rest having gone back to recruit; each regiment is shown as its one battalion.",
+        "Pahlen's two dragoon regiments, of about 300 men each, are Small.",
+        "The light battery, with fewer battalions than the list wants for it, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Insov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Poltaratsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Poltaratsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #28"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Nasheburg Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Nasheburg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Yakutsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Yakutsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Udom's Brigade",
+          "commander": {
+            "name": "Maj-Gen Udom I",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "10th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "10th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "38th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "38th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Pahlen's Brigade",
+          "commander": {
+            "name": "Maj-Gen Pahlen II",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Tver Dragoons",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Dorpat Dragoons",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "toCome": [
+    {
+      "side": "Prussian",
+      "name": "Kleist's Corps",
+      "formation": "Prussian advance guard",
+      "summary": "Kleist's Prussians and Russian Jäger, which held the Kreckwitz heights and retook Preititz from Ney before withdrawing.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Blücher's Corps",
+      "formation": "Zieten's, Klüx's and Röder's brigades",
+      "summary": "Blücher's Silesian and Brandenburg brigades on the Kreckwitz heights, nearly cut off when Ney reached Preititz.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Yorck's Corps",
+      "formation": "Prussian corps",
+      "summary": "Sent from the centre to help Blücher hold the heights against Bertrand and Marmont.",
+      "flag": "/flags/prussia.png"
+    }
+  ]
+}

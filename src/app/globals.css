@@ -2429,6 +2429,14 @@ a.app-list-row:active {
   object-fit: cover;
 }
 
+/* A force still to be written, on its battle's page: muted, without a link */
+.force-to-come.force-to-come {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.72;
+  border-style: dashed;
+}
+
 /* A campaign's card: each side's flags */
 .campaign-sides {
   display: flex;

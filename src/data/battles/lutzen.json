@@ -1,0 +1,1346 @@
+{
+  "id": "lutzen",
+  "name": "Lützen",
+  "date": "2 May 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Bataille_de_Lutzen%2C_2_mai_1813.jpg/960px-Bataille_de_Lutzen%2C_2_mai_1813.jpg",
+    "title": "The Battle of Lützen, 2 May 1813",
+    "artist": "Joseph Beaume",
+    "date": "1836–37",
+    "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Lutzen,_2_mai_1813.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "General Wittgenstein",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Pjotr-christianowitsch-wittgenstein.jpg/250px-Pjotr-christianowitsch-wittgenstein.jpg",
+        "title": "Count Peter Wittgenstein",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Pjotr-christianowitsch-wittgenstein.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Prussian": {
+      "commander": "General Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  },
+  "summary": "Wittgenstein and Blücher, hoping to catch Napoleon's army strung out on the march to Leipzig, fell on Ney's corps in its villages south of Lützen. All afternoon the Prussians and Russians fought Ney's conscripts for Gross-Görschen, Klein-Görschen, Rahna and Kaja, which changed hands again and again; Scharnhorst was mortally wounded. Napoleon brought up his other corps from both flanks, and at dusk the Young Guard retook the villages behind a great battery. The allies withdrew in good order, but Napoleon, with almost no cavalry, could not pursue.",
+  "sources": [
+    {
+      "label": "French Forces at Gross Görschen or Lützen, 2 May 1813 (Nafziger Collection 813EAA)",
+      "url": "https://www.napoleon-series.org/nafzigger/813EAA.pdf"
+    },
+    {
+      "label": "Russo-Prussian Order of Battle for Gross Görschen or Lützen, 2 May 1813 (Nafziger Collection 813ECD)",
+      "url": "https://www.napoleon-series.org/nafzigger/813ECD.pdf"
+    },
+    {
+      "label": "Battle of Lützen (1813) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCtzen_(1813)"
+    }
+  ],
+  "forces": [
+    {
+      "id": "lutzen-souham",
+      "nationId": "france",
+      "name": "Souham's Division",
+      "formation": "8th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's leading division, camped in the four villages south of Lützen, Gross-Görschen, Klein-Görschen, Rahna and Kaja, when Blücher's Prussians came at it at midday. Its conscripts were driven from village to village and came back again and again; Souham's division lost more than a third of its strength in the day.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Most of its regiments were provisional: two depot battalions of different regiments put together, each shown as its two battalions.",
+        "Its two provisional light regiments, where the list allows one light regiment in a division, and Chasseraux's four regiments, where the list allows three in a brigade, show as historical departures.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Souham",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chasseraux's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chasseraux",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/6th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/25th Léger"
+                }
+              ]
+            },
+            {
+              "name": "10th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/16th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/28th Léger"
+                }
+              ]
+            },
+            {
+              "name": "14th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/34th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/40th Line"
+                }
+              ]
+            },
+            {
+              "name": "19th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/32nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/58th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chemineau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chemineau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "21st Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/59th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/69th Line"
+                }
+              ]
+            },
+            {
+              "name": "24th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/88th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/103rd Line"
+                }
+              ]
+            },
+            {
+              "name": "22nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/22nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "9/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/2nd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lutzen-brenier",
+      "nationId": "france",
+      "name": "Brenier's Division",
+      "formation": "9th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Sent forward from Kaja to help Souham, it fought for Klein-Görschen and Rahna through the afternoon. Brenier was wounded, and Ney himself came up to lead its battalions back into the villages.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Two light regiments, where the list allows one in a division, show as a historical departure.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Brenier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Anthing's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Anthing",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/4th Léger"
+                }
+              ]
+            },
+            {
+              "name": "29th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/29th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "II/29th Léger"
+                }
+              ]
+            },
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/136th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Grillot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Grillot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/138th Line"
+                }
+              ]
+            },
+            {
+              "name": "145th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/145th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "2/9th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "11/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lutzen-girard",
+      "nationId": "france",
+      "name": "Girard's Division",
+      "formation": "10th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "In the second line at the start, it was thrown into Klein-Görschen and Rahna as Souham's battalions gave way. Girard, twice wounded, refused to leave the field and led his men back in on foot.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Girard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Goris's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Goris",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/5th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/12th Léger"
+                }
+              ]
+            },
+            {
+              "name": "139th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/139th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/139th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/139th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/139th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Van Dedem's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Van Dedem",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "140th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/140th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/140th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/140th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/140th Line"
+                }
+              ]
+            },
+            {
+              "name": "141st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/141st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/141st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/141st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/141st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "3/7th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "4/7th Foot Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg/250px-Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "title": "Jean-Baptiste Girard",
+        "artist": "French School",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "lutzen-ricard",
+      "nationId": "france",
+      "name": "Ricard's Division",
+      "formation": "11th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's reserve, at Starsiedel when the battle began, it came into Kaja in the afternoon and retook the village when the Prussian Guard and Yorck's men had driven the others out.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Ricard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Tarayre's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Tarayre",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "9th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "III/9th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "IV/9th Léger"
+                }
+              ]
+            },
+            {
+              "name": "17th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/43rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/75th Line"
+                }
+              ]
+            },
+            {
+              "name": "18th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/50th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/65th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Dumoulin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dumoulin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "142nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/142nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/142nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/142nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/142nd Line"
+                }
+              ]
+            },
+            {
+              "name": "144th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/144th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/144th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/144th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/144th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "18/1st Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "19/7th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lutzen-marchand",
+      "nationId": "confederation-of-the-rhine",
+      "name": "Marchand's Division",
+      "formation": "39th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's German division, Baden, Hessian and Frankfurt troops, on the left round Klein-Görschen and Eisdorf, which held its ground against the Prussian and Russian attacks there through the afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' Confederation of the Rhine 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "The 1st Hessian Light Regiment is shown as the list's Hessian Guard Fusiliers, the only Hessian light troops it has.",
+        "The list's Hessian brigade has only Guard regiments, so the 2nd Hessian (Line) Regiment and the Frankfurt battalion are a Rheinbund brigade.",
+        "The Baden battery had four guns and the Hessians half a battery of three, each shown as a half battery.",
+        "The corps cavalry Nafziger lists with the division (the 10th Hussars and the Baden Dragoons, with Hessian and Württemberg light horse) isn't included.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but Hessian Line and Frankfurt at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "cotr-div-cmd",
+          "name": "Gén. de Division Marchand",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ocs-baden-infantry-brigade",
+          "name": "Stockhorn's Baden Brigade",
+          "commander": {
+            "name": "Gen-Maj von Stockhorn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ocs-foot-arty",
+              "name": "1st Baden Foot Battery",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Baden Line",
+              "units": [
+                {
+                  "unit": "ocs-line-infantry",
+                  "name": "II/1st Baden Line"
+                }
+              ]
+            },
+            {
+              "name": "3rd Baden Line",
+              "units": [
+                {
+                  "unit": "ocs-line-infantry",
+                  "name": "I/3rd Baden Line"
+                },
+                {
+                  "unit": "ocs-line-infantry",
+                  "name": "II/3rd Baden Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ocs-hessian-infantry-brigade",
+          "name": "Prince Emil's Hessian Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Emil of Hesse",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ocs-foot-arty",
+              "name": "Hessian Foot Battery (half)",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Hessian Leib-Garde",
+              "units": [
+                {
+                  "unit": "ocs-hessian-guard",
+                  "name": "I/Hessian Leib-Garde"
+                },
+                {
+                  "unit": "ocs-hessian-guard",
+                  "name": "II/Hessian Leib-Garde"
+                }
+              ]
+            },
+            {
+              "name": "1st Hessian Light",
+              "units": [
+                {
+                  "unit": "ocs-hessian-guard-fusilier",
+                  "name": "I/1st Hessian Light"
+                },
+                {
+                  "unit": "ocs-hessian-guard-fusilier",
+                  "name": "II/1st Hessian Light"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rb-infantry-brigade",
+          "name": "Hessian Line and Frankfurt",
+          "regiments": [
+            {
+              "name": "2nd Hessian Line",
+              "units": [
+                {
+                  "unit": "rb-line-infantry",
+                  "name": "I/2nd Hessian Line"
+                },
+                {
+                  "unit": "rb-line-infantry",
+                  "name": "II/2nd Hessian Line"
+                }
+              ]
+            },
+            {
+              "name": "Frankfurt 'Zweyer' Regiment",
+              "units": [
+                {
+                  "unit": "rb-line-infantry",
+                  "name": "II/Frankfurt"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "title": "Jean-Gabriel Marchand",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "lutzen-dumoustier",
+      "nationId": "french-imperial-guard",
+      "name": "Dumoustier's Young Guard",
+      "formation": "1st Young Guard Division, Imperial Guard (Mortier)",
+      "side": "French",
+      "summary": "Napoleon's last reserve. As the light failed, with Kaja lost again and Ney's divisions spent, he sent sixteen battalions of the Young Guard in four columns under Mortier, behind a battery of seventy guns, through Kaja and Rahna; the allies gave up the villages and drew off in the night.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "Nafziger lists the 6th Tirailleurs in both Berthezène's and Tindal's brigades; it is shown once, with Tindal.",
+        "The 2nd Old Guard Foot Battery of 12-pdrs, attached to the division, isn't included.",
+        "Three Young Guard brigades, where the list allows two without Old Guard, and Tindal's battery in a brigade of four battalions, where the list wants six, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Dumoustier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Berthezène's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Berthezène",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "1st Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Fusilier-Chasseurs",
+              "units": [
+                {
+                  "unit": "fig-fusilier-chasseurs",
+                  "name": "I/Fusilier-Chasseurs"
+                }
+              ]
+            },
+            {
+              "name": "Fusilier-Grenadiers",
+              "units": [
+                {
+                  "unit": "fig-fusilier-grenadiers",
+                  "name": "I/Fusilier-Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "7th Tirailleurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "I/7th Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "II/7th Tirailleurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Lanusse's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lanusse",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Tirailleurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "I/1st Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "II/1st Tirailleurs"
+                }
+              ]
+            },
+            {
+              "name": "2nd Tirailleurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "I/2nd Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "II/2nd Tirailleurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Tindal's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Tindal",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "2nd Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "I/1st Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "II/1st Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "2nd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "I/2nd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "II/2nd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Tirailleurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "I/6th Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "II/6th Tirailleurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lutzen-berg",
+      "nationId": "russia",
+      "name": "Berg's Corps",
+      "formation": "Right wing, second line (Yorck)",
+      "side": "Russian",
+      "summary": "Wittgenstein's Russian infantry in Yorck's second line, which came up behind the Prussians in the afternoon and fought for Kaja and Rahna beside them; its battalions had fought the whole of 1812 under Wittgenstein on the Dvina.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "By the spring of 1813 Russian infantry regiments were down to a single field battalion each, the rest having gone back to recruit; each regiment is shown as its one battalion.",
+        "The Grand Duchess Catherine's Battalion, raised on her estates in 1812, is shown as Volunteer Jäger attached to the Sevsk regiment.",
+        "The position battery, with fewer battalions than the list wants for it, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Berg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Mesentsov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Mesentsov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #5"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Perm Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Perm Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Sevsk Infantry with Grand Duchess Catherine's Battalion",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Sevsk Infantry"
+                },
+                {
+                  "unit": "ru-volunteer-jager",
+                  "name": "Grand Duchess Catherine's Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Prince of Siberia's Brigade",
+          "commander": {
+            "name": "Maj-Gen Prince of Siberia",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Kaluga Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kaluga Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Mogilev Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Mogilev Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Helfreich's Brigade",
+          "commander": {
+            "name": "Maj-Gen Helfreich",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #27"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tenginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tenginsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Estonia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Estonia Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Alexeyev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Alexeyev",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Mitau Dragoons"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Berg_1_Grigory_Maximobich.jpg/250px-Berg_1_Grigory_Maximobich.jpg",
+        "title": "Grigory Berg",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Berg_1_Grigory_Maximobich.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "lutzen-eugen",
+      "nationId": "russia",
+      "name": "Eugen of Württemberg's Corps",
+      "formation": "II Corps, left wing",
+      "side": "Russian",
+      "summary": "On the allied left, it came up late in the morning and pushed towards Starsiedel against Marmont's corps, then was drawn into the fighting round Kaja; at nightfall it covered the allied withdrawal.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "By the spring of 1813 Russian infantry regiments were down to a single field battalion each, the rest having gone back to recruit; each regiment is shown as its one battalion.",
+        "Prince Eugen of Württemberg is the book's named commander. His corps was Shakhovskoy's 3rd and St Priest's 4th Divisions, shown together.",
+        "The Ukrainian Cossack regiments, raised in 1812, are shown as Mounted Cossacks.",
+        "Two Jäger brigades, three-regiment infantry brigades and three light batteries, more than the list allows for the corps' ten line battalions, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major General Eugene von Württemberg, with his own rating; but 3 of the 5 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-cmd-eugene-wurttemberg"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Shilvinsky's Brigade",
+          "commander": {
+            "name": "Col Shilvinsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #7"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Murom Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Murom Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Revel Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Revel Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Chernigov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Chernigov Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Kapustin's Brigade",
+          "commander": {
+            "name": "Col Kapustin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "20th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "20th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "21st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "21st Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Treffurt's Brigade",
+          "commander": {
+            "name": "Col Treffurt",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #33"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tobolsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tobolsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Volhynia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Volhynia Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kremenchug Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kremenchug Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Ivanov's Brigade",
+          "commander": {
+            "name": "Col Ivanov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #6"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "4th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "4th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "34th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "34th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Ukrainian Cossacks",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "1st Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "3rd Ukrainian Cossacks"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg/250px-Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+        "title": "Duke Eugen of Württemberg",
+        "artist": "Louis de Saint-Aubin",
+        "page": "https://commons.wikimedia.org/wiki/File:Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  ],
+  "toCome": [
+    {
+      "side": "Prussian",
+      "name": "Zieten's Upper Silesian Brigade",
+      "formation": "Blücher's Corps",
+      "summary": "Silesian infantry, grenadiers and Schützen with the Silesian hussars and uhlans, which opened the attack on Gross-Görschen.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Klüx's Lower Silesian Brigade",
+      "formation": "Blücher's Corps",
+      "summary": "The West Prussian and Silesian regiments of Blücher's second brigade, thrown into the fight for the villages in the afternoon.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Röder's Brandenburg Brigade",
+      "formation": "Blücher's Corps, with the Guard",
+      "summary": "The Prussian Guard infantry, the Leib Grenadiers and the Guard Jäger, which stormed Klein-Görschen and Kaja.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Dolffs's Reserve Cavalry",
+      "formation": "Blücher's Corps",
+      "summary": "The Garde du Corps, Guard Light Cavalry and cuirassiers, which charged the French squares at dusk; Dolffs was killed.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Yorck's Corps",
+      "formation": "Hünerbein's and Horn's brigades",
+      "summary": "The old Prussian auxiliary corps of 1812, which came up in the afternoon and fought for Kaja beside Berg's Russians.",
+      "flag": "/flags/prussia.png"
+    }
+  ]
+}

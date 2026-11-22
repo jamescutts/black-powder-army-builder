@@ -668,4 +668,6 @@ export interface HistoricalBattle {
   /** Orders of battle the forces were built from */
   sources: { label: string; url?: string }[];
   forces: HistoricalForce[];
+  /** Forces still to be written, shown under their side as cards saying so (e.g. the Prussians of 1813, until a list fits them) */
+  toCome?: { side: string; name: string; formation?: string; summary: string; flag?: string }[];
 }
