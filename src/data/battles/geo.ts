@@ -120,6 +120,17 @@ export const battlePlaces: Record<string, BattlePlace> = {
   nivelle: { at: [43.36, -1.6], engaged: 144000, label: "left" },
   orthez: { at: [43.49, -0.77], engaged: 80000, label: "right" },
   toulouse: { at: [43.6, 1.44], engaged: 92000, label: "right" },
+  // The sieges
+  saragossa: { at: [41.66, -0.93], engaged: 26000, label: "left" },
+  "saragossa-2": { at: [41.64, -0.83], engaged: 80000, label: "right" },
+  gerona: { at: [41.98, 2.82], engaged: 44000, label: "left" },
+  almeida: { at: [40.73, -6.9], engaged: 19000, label: "left" },
+  tarragona: { at: [41.12, 1.25], engaged: 38000, label: "left" },
+  "ciudad-rodrigo": { at: [40.6, -6.53], engaged: 40000, label: "bottom" },
+  badajoz: { at: [38.88, -6.97], engaged: 32000, label: "left" },
+  burgos: { at: [42.34, -3.7], engaged: 37000, label: "left" },
+  "san-sebastian": { at: [43.32, -1.98], engaged: 21000, label: "left" },
+  pamplona: { at: [42.81, -1.64], engaged: 14000, label: "bottom" },
 };
 
 const FRENCH_1812: MapSide = { id: "french", label: "Grande Armée", colour: "#2b4a7e" };

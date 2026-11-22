@@ -437,8 +437,9 @@ export function CampaignMap({ campaignId, focus }: { campaignId: string; focus?:
       layers.clear();
       routeGroups.forEach((g, id) => layers.set(id, g));
 
-      // Towns, for bearings, the great cities larger
+      // Towns, for bearings, the great cities larger; not those a battle or siege already marks
       for (const place of data.places) {
+        if (placed.some((b) => km(battlePlaces[b.id].at, place.at) < 3)) continue;
         L.circleMarker(place.at, {
           radius: place.city ? 3.5 : 2.5,
           color: place.city ? "#fbf6e9" : "#4d3e2b",
