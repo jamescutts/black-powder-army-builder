@@ -19,8 +19,8 @@ import {
   Tooltip,
   UnstyledButton,
 } from "@mantine/core";
-import { IconAlertTriangle, IconChevronDown, IconCopy, IconPencil, IconPlus, IconTrash } from "@tabler/icons-react";
-import type { Nation, RegimentDef } from "@/data/types";
+import { IconAlertTriangle, IconChevronDown, IconCircleDashed, IconCopy, IconPencil, IconPlus, IconTrash } from "@tabler/icons-react";
+import type { HistoricalForce, Nation, RegimentDef } from "@/data/types";
 import type { RosterBrigadeInstance, RosterRegimentInstance, RosterState, RosterUnitLine } from "@/types/army";
 import { UnitLineEditor } from "./UnitLineEditor";
 import { InlineName } from "./InlineName";
@@ -51,9 +51,11 @@ interface Props {
   onChange: (roster: RosterState) => void;
   /** Start with every brigade folded, as a historical force opens, so its whole order of battle shows at a glance */
   startCollapsed?: boolean;
+  /** What the historical force the list came from leaves out, shown after its brigades */
+  missing?: HistoricalForce["missing"];
 }
 
-export function BrigadeBoard({ nation, roster, onChange, startCollapsed = false }: Props) {
+export function BrigadeBoard({ nation, roster, onChange, startCollapsed = false, missing }: Props) {
   // Army-level commanders only: exclude any Command unit that's tied to a brigade, either as
   // its required commander or as a purchasable option within one of its slots (e.g. a
   // subordinate commander attached to an Infantry Brigade).
@@ -933,6 +935,34 @@ export function BrigadeBoard({ nation, roster, onChange, startCollapsed = false 
             </Paper>
           );
         })}
+
+        {/* What fought with the historical force but isn't in it: a unit no list has, or one its list can't take */}
+        {missing && missing.length > 0 && (
+          <Paper p="md" radius="md" className="brigade-missing">
+            <Group gap={8} wrap="nowrap" mb={6}>
+              <IconCircleDashed size={18} aria-hidden className="brigade-missing-icon" />
+              <Text fw={600} c="brown.8">
+                Not in this force
+              </Text>
+            </Group>
+            <Text size="xs" c="brown.8" mb={8}>
+              Fought with it, but left out: the lists here don&apos;t have it, or can&apos;t take it in this force.
+            </Text>
+            <ul className="brigade-missing-list">
+              {missing.map((m) => (
+                <li key={m.name}>
+                  <Text span size="sm" fw={600} c="brown.9">
+                    {m.name}
+                  </Text>
+                  <Text span size="sm" c="brown.9">
+                    {" "}
+                    · {m.reason}
+                  </Text>
+                </li>
+              ))}
+            </ul>
+          </Paper>
+        )}
 
         <Paper p="md" radius="md" className="add-brigade">
           <Text fw={600} mb={4}>

@@ -257,8 +257,7 @@ LZ_MARCHAND = force(
     notes=["Built from A Clash of Eagles' Confederation of the Rhine 1812 list, the nearest to 1813.", LZ_NOTE,
            "The 1st Hessian Light Regiment is shown as the list's Hessian Guard Fusiliers, the only Hessian light troops it has.",
            "The list's Hessian brigade has only Guard regiments, so the 2nd Hessian (Line) Regiment and the Frankfurt battalion are a Rheinbund brigade.",
-           "The Baden battery had four guns and the Hessians half a battery of three, each shown as a half battery.",
-           "The corps cavalry Nafziger lists with the division (the 10th Hussars and the Baden Dragoons, with Hessian and Württemberg light horse) isn't included."])
+           "The Baden battery had four guns and the Hessians half a battery of three, each shown as a half battery."])
 
 LZ_DUMOUSTIER = force(
     "lutzen-dumoustier", FIG, "Dumoustier's Young Guard", "1st Young Guard Division, Imperial Guard (Mortier)", "French",
@@ -275,11 +274,12 @@ LZ_DUMOUSTIER = force(
          units=[u("fig-yg-foot-arty", "2nd Young Guard Foot Battery")],
          regiments=[regt("1st Voltigeurs", bns("fig-yg-voltigeurs", "1st Voltigeurs", 2)),
                     regt("2nd Voltigeurs", bns("fig-yg-voltigeurs", "2nd Voltigeurs", 2)),
-                    regt("6th Tirailleurs", bns("fig-yg-tirailleurs", "6th Tirailleurs", 2))])],
+                    regt("6th Tirailleurs", bns("fig-yg-tirailleurs", "6th Tirailleurs", 2))]),
+     bde("fig-artillery-reserve", "Guard Artillery", units=[u("fig-og-heavy-foot-arty", "2nd Old Guard Foot Battery")])],
     command=[cmd("fig-div-cmd", "Gén. de Division Dumoustier")],
     notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", LZ_NOTE,
            "Nafziger lists the 6th Tirailleurs in both Berthezène's and Tindal's brigades; it is shown once, with Tindal.",
-           "The 2nd Old Guard Foot Battery of 12-pdrs, attached to the division, isn't included.",
+           "The 2nd Old Guard Foot Battery of 12-pdrs, attached to the division, is in the Guard artillery reserve, as the list takes it.",
            "Three Young Guard brigades, where the list allows two without Old Guard, and Tindal's battery in a brigade of four battalions, where the list wants six, show as historical departures."])
 
 LZ_BERG = force(
@@ -480,7 +480,7 @@ GB_LECOQ = force(
                     regt("von Steindel Regiment", bns("sax-musketeer", "von Steindel", 2))])],
     command=[{"unit": "sax-cmd-lecoq"}],
     notes=[LIST_SAX, GB_NOTE, "Le Coq is the book's named commander.",
-           "The battalion of the Guard Grenadiers is shown as Grenadiers; the 1st Jäger Company with Brause's brigade isn't shown.",
+           "The battalion of the Guard Grenadiers is shown as Grenadiers.",
            "Each brigade's foot battery, with fewer than the six battalions the list wants for it, shows as a historical departure."])
 
 GB_GABLENZ = force(
@@ -493,7 +493,6 @@ GB_GABLENZ = force(
     notes=[LIST_SAX, GB_NOTE,
            "The Hussars had eight squadrons, so they are Large; the Uhlans had five.",
            "The brigade was led by Oberst von Lindenau for Gablenz, who commanded the corps cavalry.",
-           "The 2nd Horse Battery 'Probsthayn' isn't shown: the list allows one battery with a cavalry brigade.",
            "Cavalry without infantry shows as a historical departure."])
 
 GB_DURUTTE = force(
@@ -507,7 +506,6 @@ GB_DURUTTE = force(
                     regt("Würzburg Regiment", [u("fr-rheinbund-infantry", "II/Würzburg"), u("fr-rheinbund-infantry", "III/Würzburg")])])],
     command=[cmd("fr-div-cmd", "Gén. de Division Durutte")],
     notes=[LIST_FR, GB_NOTE, CONSCRIPTS,
-           "Detachments of the 3rd battalions of the 36th Léger and 133rd Line, which Nafziger lists, aren't shown.",
            "The Würzburg battalions are Rheinbund infantry, as the list takes German contingents in French divisions; two of them, where the list allows one, show as a historical departure.",
            "Nafziger lists no artillery with the division."])
 
@@ -526,6 +524,22 @@ GROSSBEEREN = battle(
              "Colberg and Pomeranian battalions which led the assault on Großbeeren. Bülow's sixty-four guns included two Russian 12-pdr batteries."),
      to_come("Oppen's Reserve Cavalry", "III Corps (Bülow)",
              "Dragoons, hussars and Landwehr cavalry, which rode down the Saxon rearguard in the dark.")])
+
+
+# What fought with each force but isn't in it, shown at the foot of its brigades in the builder
+MISSING = [
+    (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
+                   "reason": "The 10th Hussars, Baden Dragoons, Hessian Chevau-légers and Württemberg light horse Nafziger lists with the division were Ney's corps cavalry, and the Confederation list has no French hussars."}]),
+    (GB_LECOQ, [{"name": "1st Jäger Company",
+                "reason": "A single company of Saxon Jäger with Brause's brigade, too small for a unit of its own; the Saxon list has no Jäger."}]),
+    (GB_GABLENZ, [{"name": "2nd Horse Battery 'Probsthayn'",
+                  "reason": "The list allows one horse battery with a cavalry brigade, and the brigade's two regiments are its only ones."}]),
+    (GB_DURUTTE, [{"name": "Detachments of the 3/36th Léger and 3/133rd Line",
+                  "reason": "Parts of battalions, too small for units of their own."}]),
+]
+for f, items in MISSING:
+    if items:
+        f["missing"] = items
 
 
 if __name__ == "__main__":

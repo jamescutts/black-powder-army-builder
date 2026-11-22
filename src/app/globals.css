@@ -625,6 +625,25 @@ body {
   line-height: 1.45;
 }
 
+/* A historical force's units left out of it, after its brigades: dashed and muted, like a gap in the line */
+.brigade-missing.brigade-missing {
+  border: 1.5px dashed rgba(107, 61, 23, 0.4);
+  background: rgba(107, 61, 23, 0.05);
+}
+
+.brigade-missing-icon {
+  color: var(--mantine-color-brown-7, #7a4a22);
+  flex-shrink: 0;
+}
+
+.brigade-missing-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .brigade-todos-label {
   font-weight: 600;
 }

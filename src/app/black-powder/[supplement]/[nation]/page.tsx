@@ -486,6 +486,7 @@ function BuilderContent({ nationId }: { nationId: string }) {
                 roster={roster}
                 onChange={setRoster}
                 startCollapsed={Boolean(forceParam)}
+                missing={sourceForce?.missing}
               />
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 5 }}>

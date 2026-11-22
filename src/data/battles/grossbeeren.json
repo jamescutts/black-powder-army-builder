@@ -186,7 +186,7 @@
         "Built from A Clash of Eagles' Saxon 1812 list, the nearest to 1813: the Saxon army that fought in 1813 was rebuilt from the survivors of Russia on the same lines.",
         "After Nafziger's order of battle for Großbeeren.",
         "Le Coq is the book's named commander.",
-        "The battalion of the Guard Grenadiers is shown as Grenadiers; the 1st Jäger Company with Brause's brigade isn't shown.",
+        "The battalion of the Guard Grenadiers is shown as Grenadiers.",
         "Each brigade's foot battery, with fewer than the six battalions the list wants for it, shows as a historical departure.",
         "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Generalleutnant Le Coq (Saxon Corps), with his own rating."
       ],
@@ -294,6 +294,12 @@
           ]
         }
       ],
+      "missing": [
+        {
+          "name": "1st Jäger Company",
+          "reason": "A single company of Saxon Jäger with Brause's brigade, too small for a unit of its own; the Saxon list has no Jäger."
+        }
+      ],
       "portrait": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Karl_Christian_Erdmann_von_Le_Coq.jpg/250px-Karl_Christian_Erdmann_von_Le_Coq.jpg",
         "title": "Karl Christian Erdmann von Le Coq",
@@ -314,7 +320,6 @@
         "After Nafziger's order of battle for Großbeeren.",
         "The Hussars had eight squadrons, so they are Large; the Uhlans had five.",
         "The brigade was led by Oberst von Lindenau for Gablenz, who commanded the corps cavalry.",
-        "The 2nd Horse Battery 'Probsthayn' isn't shown: the list allows one battery with a cavalry brigade.",
         "Cavalry without infantry shows as a historical departure.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
@@ -351,6 +356,12 @@
             }
           ]
         }
+      ],
+      "missing": [
+        {
+          "name": "2nd Horse Battery 'Probsthayn'",
+          "reason": "The list allows one horse battery with a cavalry brigade, and the brigade's two regiments are its only ones."
+        }
       ]
     },
     {
@@ -364,7 +375,6 @@
         "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
         "After Nafziger's order of battle for Großbeeren.",
         "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
-        "Detachments of the 3rd battalions of the 36th Léger and 133rd Line, which Nafziger lists, aren't shown.",
         "The Würzburg battalions are Rheinbund infantry, as the list takes German contingents in French divisions; two of them, where the list allows one, show as a historical departure.",
         "Nafziger lists no artillery with the division.",
         "Commanders are at Staff Rating 8, the default for historical forces."
@@ -451,6 +461,12 @@
           "commander": {
             "variant": "Staff rating 8"
           }
+        }
+      ],
+      "missing": [
+        {
+          "name": "Detachments of the 3/36th Léger and 3/133rd Line",
+          "reason": "Parts of battalions, too small for units of their own."
         }
       ],
       "portrait": {

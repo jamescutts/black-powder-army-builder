@@ -614,6 +614,9 @@ export interface HistoricalForce {
   summary: string;
   /** Where it departs from the history or the list's rules, and the choices made in building it */
   notes?: string[];
+  /** What fought with it but isn't in it (a unit no list has, or one its list can't take), shown at the foot of
+   *  its brigades in the builder */
+  missing?: { name: string; reason: string }[];
   command?: ForceUnit[];
   brigades: ForceBrigade[];
 }

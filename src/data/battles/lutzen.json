@@ -663,7 +663,6 @@
         "The 1st Hessian Light Regiment is shown as the list's Hessian Guard Fusiliers, the only Hessian light troops it has.",
         "The list's Hessian brigade has only Guard regiments, so the 2nd Hessian (Line) Regiment and the Frankfurt battalion are a Rheinbund brigade.",
         "The Baden battery had four guns and the Hessians half a battery of three, each shown as a half battery.",
-        "The corps cavalry Nafziger lists with the division (the 10th Hussars and the Baden Dragoons, with Hessian and Württemberg light horse) isn't included.",
         "Commanders are at Staff Rating 8, the default for historical forces; but Hessian Line and Frankfurt at 7, the most the list allows."
       ],
       "command": [
@@ -792,6 +791,12 @@
           }
         }
       ],
+      "missing": [
+        {
+          "name": "Laboissière's and Jett's cavalry",
+          "reason": "The 10th Hussars, Baden Dragoons, Hessian Chevau-légers and Württemberg light horse Nafziger lists with the division were Ney's corps cavalry, and the Confederation list has no French hussars."
+        }
+      ],
       "portrait": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
         "title": "Jean-Gabriel Marchand",
@@ -811,7 +816,7 @@
         "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.",
         "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
         "Nafziger lists the 6th Tirailleurs in both Berthezène's and Tindal's brigades; it is shown once, with Tindal.",
-        "The 2nd Old Guard Foot Battery of 12-pdrs, attached to the division, isn't included.",
+        "The 2nd Old Guard Foot Battery of 12-pdrs, attached to the division, is in the Guard artillery reserve, as the list takes it.",
         "Three Young Guard brigades, where the list allows two without Old Guard, and Tindal's battery in a brigade of four battalions, where the list wants six, show as historical departures.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
@@ -958,6 +963,16 @@
                   "name": "II/6th Tirailleurs"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "fig-artillery-reserve",
+          "name": "Guard Artillery",
+          "units": [
+            {
+              "unit": "fig-og-heavy-foot-arty",
+              "name": "2nd Old Guard Foot Battery"
             }
           ]
         }
