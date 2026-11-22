@@ -559,3 +559,91 @@ lowenberg.art = {
   "date": "1813",
   "page": "https://commons.wikimedia.org/wiki/File:Pierwsza_bitwa_nad_Bobrem.png"
 };
+
+// The Ulm and Austerlitz Campaign, 1805
+const U = "ulm-austerlitz-1805";
+
+export const wertingen = planned("wertingen", "Wertingen", "8 October 1805", U,
+  "As the Grande Armée swung across the Danube behind Mack, Murat's dragoons and Oudinot's grenadiers caught Auffenberg's Austrian column on the march at Wertingen and broke its squares.");
+export const haslach = planned("haslach", "Haslach-Jungingen", "11 October 1805", U,
+  "Dupont's lone division, left on the north bank before Ulm, ran into a great part of Mack's army trying to break out, and held it off all day before slipping away in the dark.");
+export const elchingen = planned("elchingen", "Elchingen", "14 October 1805", U,
+  "Ney's corps rebuilt the broken bridge under fire and stormed the abbey heights of Elchingen from Riesch's Austrians, closing the ring around Ulm; it later made him Duke of Elchingen.");
+export const ulm = planned("ulm", "Ulm", "15–20 October 1805", U,
+  "Shut into Ulm once Ney had taken the Michelsberg heights above it, Mack gave up the city and the 25,000 men with him: a whole Austrian army taken with hardly a battle.");
+export const amstetten = planned("amstetten", "Amstetten", "5 November 1805", U,
+  "Kutuzov's Russians, falling back down the Danube towards Vienna, left Bagration and Miloradovich to hold Murat's cavalry and Oudinot's grenadiers in the woods at Amstetten.");
+export const durenstein = planned("durenstein", "Dürenstein", "11 November 1805", U,
+  "Kutuzov crossed to the north bank and turned on Mortier's corps strung out along the river under the ruined castle of Dürenstein; Gazan's division was surrounded and fought its way out until Dupont came up.");
+export const schongrabern = planned("schongrabern", "Schöngrabern", "16 November 1805", U,
+  "Bagration's rearguard stood at Schöngrabern, by Hollabrunn, against Murat and Lannes, holding them a whole day so that Kutuzov could get away to join Buxhowden, and then broke out by night.");
+export const austerlitz = planned("austerlitz", "Austerlitz", "2 December 1805", U,
+  "Napoleon drew the Russian and Austrian armies onto his weakened right, where Davout held them in the villages of the Goldbach, then stormed the Pratzen heights in their centre with Soult's corps and cut their army in two: the Battle of the Three Emperors.");
+
+// The Jena Campaign, 1806
+const J = "jena-1806";
+
+export const schleiz = planned("schleiz", "Schleiz", "9 October 1806", J,
+  "Coming north out of the Thuringian Forest, Murat and Bernadotte's leading division drove Tauentzien's Prussians and Saxons out of Schleiz in the first fight of the war.");
+export const saalfeld = planned("saalfeld", "Saalfeld", "10 October 1806", J,
+  "Prince Louis Ferdinand stood with the advance guard before Saalfeld against Lannes's corps and was overwhelmed; the prince himself was cut down by a French quartermaster of hussars.");
+export const jena = planned("jena", "Jena", "14 October 1806", J,
+  "Lannes's corps climbed the Landgrafenberg by night, and at dawn Napoleon's army came down off the heights onto Hohenlohe's Prussians and Saxons, who stood in the open and were shot to pieces before Rüchel's corps came up too late to save them.");
+export const auerstedt = planned("auerstedt", "Auerstedt", "14 October 1806", J,
+  "On the same day, Davout's lone corps met the main Prussian army under Brunswick and the King at Auerstedt, formed square after square as Blücher's cavalry came on, and beat an army twice its size.");
+export const halle = planned("halle", "Halle", "17 October 1806", J,
+  "Bernadotte's corps stormed the bridges and gates of Halle against Eugen of Württemberg's reserve, the one Prussian corps not yet beaten, and drove it off towards the Elbe.");
+export const prenzlau = planned("prenzlau", "Prenzlau", "28 October 1806", J,
+  "Murat's cavalry, riding hard across Brandenburg, caught Hohenlohe's column at Prenzlau, short of the Oder, and talked him into surrendering what was left of his army.");
+export const lubeck = planned("lubeck", "Lübeck", "6 November 1806", J,
+  "Blücher's column, the last Prussian force in the field, was cornered in neutral Lübeck by Bernadotte, Soult and Murat, who stormed the city's gates and sacked it; Blücher surrendered next day at Ratekau.");
+
+// The Polish Campaign, 1806–07
+const Pl = "poland-1807";
+
+export const czarnowo = planned("czarnowo", "Czarnowo", "23–24 December 1806", Pl,
+  "Davout's corps forced the crossing of the Wkra at Czarnowo against Ostermann-Tolstoy's Russians in a night attack, opening Napoleon's winter offensive beyond the Vistula.");
+export const pultusk = planned("pultusk", "Pułtusk", "26 December 1806", Pl,
+  "Lannes's corps attacked Bennigsen's army at Pułtusk across mud and snow, with too few men to beat it; both sides claimed the day, and the Russians drew off in the night.");
+export const golymin = planned("golymin", "Golymin", "26 December 1806", Pl,
+  "On the same day, Golitsyn's Russians held Augereau, Davout's leading division and Murat's cavalry at Golymin, in the mud, until dark let them escape the trap.");
+export const mohrungen = planned("mohrungen", "Mohrungen", "25 January 1807", Pl,
+  "When Bennigsen struck west in the snow at the French winter quarters, Bernadotte turned on Markov's advance guard at Mohrungen and drove it back, though Cossacks took his baggage.");
+export const eylau = planned("eylau", "Eylau", "7–8 February 1807", Pl,
+  "Two days of slaughter in a snowstorm: Augereau's corps lost its way and was destroyed before the Russian guns, Murat's great charge of eighty squadrons saved the centre, and Lestocq's Prussians came in to stop Davout; both armies were left shattered on the field.");
+export const ostroleka = planned("ostroleka", "Ostrołęka", "16 February 1807", Pl,
+  "On the Narew, Savary, with Oudinot's grenadiers and Gazan's division, beat Essen's Russian corps as it tried to push through to Ostrołęka.");
+export const danzig1807 = planned("danzig-1807", "Siege of Danzig", "19 March – 24 May 1807", Pl,
+  "Lefebvre's corps of French, Poles, Saxons and Badeners besieged the great Prussian fortress on the Vistula, held by Kalckreuth; a Russian relief force came by sea and was beaten off, and the city gave up on terms.");
+export const guttstadt = planned("guttstadt", "Guttstadt", "5–6 June 1807", Pl,
+  "Bennigsen opened the summer campaign by falling on Ney's corps, isolated round Guttstadt, which fought its way back over the Passarge in good order.");
+export const heilsberg = planned("heilsberg", "Heilsberg", "10 June 1807", Pl,
+  "Murat, Soult and Lannes attacked Bennigsen's entrenched camp on the Alle at Heilsberg head-on, and were thrown back with heavy loss, though the Russians fell back next day.");
+export const friedland = planned("friedland", "Friedland", "14 June 1807", Pl,
+  "Bennigsen crossed the Alle to catch Lannes's corps alone at Friedland, and Lannes held him until Napoleon came up; Ney's corps then drove into the Russian left, and Sénarmont's guns, pushed close in, broke the army against the river. The Treaty of Tilsit followed.");
+
+// The Danube Campaign, 1809
+const Dn = "danube-1809";
+
+export const teugenHausen = planned("teugen-hausen", "Teugen-Hausen", "19 April 1809", Dn,
+  "Davout's corps, marching up the Danube from Regensburg to join Napoleon, met Hohenzollern's Austrian corps in the wooded hills between Teugen and Hausen and fought its way through.");
+export const abensberg = planned("abensberg", "Abensberg", "20 April 1809", Dn,
+  "Napoleon, with Lannes, the Bavarians and the Württembergers, broke through the thinly held Austrian centre about Abensberg and split Hiller's wing off from Archduke Charles.");
+export const landshut = planned("landshut", "Landshut", "21 April 1809", Dn,
+  "Pursuing Hiller's wing south, Lannes and Masséna's troops stormed the burning bridge over the Isar into Landshut and took the Austrian trains.");
+export const eckmuhl = planned("eckmuhl", "Eckmühl", "22 April 1809", Dn,
+  "Archduke Charles turned on Davout and Lefebvre at Eckmühl, until Napoleon came up from Landshut on his left flank; the French and allied cavalry fought it out in the dusk, and the Austrians fell back over the Danube.");
+export const regensburg = planned("regensburg", "Regensburg", "23 April 1809", Dn,
+  "Lannes stormed the walls of Regensburg, seizing a ladder himself when his grenadiers hung back, to cover the Archduke's crossing; Napoleon was struck in the foot outside the city.");
+export const neumarkt = planned("neumarkt", "Neumarkt", "24 April 1809", Dn,
+  "Hiller, rallied south of the Danube, turned on Bessières's pursuing corps of Bavarians and French at Neumarkt-Sankt Veit and drove it back before resuming his retreat.");
+export const ebelsberg = planned("ebelsberg", "Ebelsberg", "3 May 1809", Dn,
+  "Masséna's corps stormed the long bridge over the Traun and the burning town and castle of Ebelsberg against Hiller's rearguard, at great cost, opening the road to Vienna.");
+export const aspernEssling = planned("aspern-essling", "Aspern-Essling", "21–22 May 1809", Dn,
+  "Napoleon crossed the Danube below Vienna by the island of Lobau, and Archduke Charles attacked his bridgehead before it could fill; the villages of Aspern and Essling changed hands again and again, and with the bridge broken Napoleon fell back to the island, his first defeat in a decade. Lannes was mortally wounded.");
+export const raab = planned("raab", "Raab", "14 June 1809", Dn,
+  "Eugène's Army of Italy, come up through the Alps, caught Archduke John and the Hungarian noble levy before Raab and beat them, so that they could not join the Archduke Charles on the Marchfeld.");
+export const wagram = planned("wagram", "Wagram", "5–6 July 1809", Dn,
+  "Napoleon crossed from the Lobau in force and fought Archduke Charles over two days on the Marchfeld; Masséna's corps held the left against the Austrian counter-attack, Macdonald's great column broke the centre, and Davout turned the Austrian left, and Charles drew off in good order.");
+export const znaim = planned("znaim", "Znaim", "10–11 July 1809", Dn,
+  "Marmont and then Masséna caught up with the retreating Austrians at Znaim, in Moravia, and fought them through the town and its vineyards until the Archduke sought the armistice that ended the war.");

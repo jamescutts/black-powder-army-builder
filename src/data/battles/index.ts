@@ -101,7 +101,45 @@ import {
   soissons,
   limonest,
   saintDizier,
+  wertingen,
+  haslach,
+  elchingen,
+  ulm,
+  amstetten,
+  durenstein,
+  schongrabern,
+  austerlitz,
+  schleiz,
+  saalfeld,
+  jena,
+  auerstedt,
+  halle,
+  prenzlau,
+  lubeck,
+  czarnowo,
+  pultusk,
+  golymin,
+  mohrungen,
+  eylau,
+  ostroleka,
+  danzig1807,
+  guttstadt,
+  heilsberg,
+  friedland,
+  teugenHausen,
+  abensberg,
+  landshut,
+  eckmuhl,
+  regensburg,
+  neumarkt,
+  ebelsberg,
+  aspernEssling,
+  raab,
+  wagram,
+  znaim,
 } from "./planned";
+
+const FRANCE = { name: "France", src: "/flags/france.svg" };
 
 /**
  * Campaigns, in the order they were fought, each with its battles in order, whose historical forces can be opened
@@ -110,6 +148,58 @@ import {
  * it breaks of its list's rules.
  */
 const allCampaigns: HistoricalCampaign[] = [
+  // Army lists: A Clash of Eagles' 1812 lists stand in for every army of 1805 (France, Bavaria, Württemberg,
+  // Austria and Russia); there is no list of the 1805 Austrians or Russians of its own.
+  {
+    id: "ulm-austerlitz-1805",
+    name: "The Ulm and Austerlitz Campaign",
+    dates: "September–December 1805",
+    sides: [
+      { name: "France and her allies", flags: [FRANCE, { name: "Bavaria", src: "/flags/bavaria.svg" }, { name: "Württemberg", src: "/flags/wurttemberg.svg" }, { name: "Baden", src: "/flags/baden.svg" }] },
+      { name: "The Third Coalition", flags: [{ name: "Austria", src: "/flags/austria.svg" }, { name: "Russia", src: "/flags/russia.svg" }] },
+    ],
+    summary:
+      "The Grande Armée marched from the Channel coast to the Rhine and wheeled round behind Mack's Austrians in Bavaria before the Russians could join them, shutting him into Ulm after Wertingen, Haslach and Elchingen, where he surrendered his army. Napoleon followed Kutuzov's Russians down the Danube past Amstetten, Dürenstein and Schöngrabern, took Vienna, and in December beat the Tsar's and the Emperor Francis's armies together at Austerlitz.",
+  },
+  // Army lists: the community Prussia (1806) list covers the Prussians; A Clash of Eagles' 1812 lists stand in
+  // for the French and the Saxons.
+  {
+    id: "jena-1806",
+    name: "The Jena Campaign",
+    dates: "October–November 1806",
+    sides: [
+      { name: "France", flags: [FRANCE] },
+      { name: "The Fourth Coalition", flags: [{ name: "Prussia", src: "/flags/prussia.png" }, { name: "Saxony", src: "/flags/saxony.svg" }] },
+    ],
+    summary:
+      "Prussia went to war alone against Napoleon, and the Grande Armée came north through the Thuringian Forest in three columns, brushing aside the Prussians at Schleiz and Saalfeld. On one day in October Napoleon beat Hohenlohe at Jena while Davout's single corps beat the main Prussian army at Auerstedt, and in the pursuit that followed, through Halle, Prenzlau and Lübeck, the old army of Frederick the Great was hunted down and its fortresses gave up one after another.",
+  },
+  // Army lists: the community Prussia (1806) list covers the Prussians; A Clash of Eagles' 1812 lists stand in
+  // for the French, the Russians, the Poles and the Saxons.
+  {
+    id: "poland-1807",
+    name: "The Polish Campaign",
+    dates: "December 1806 – June 1807",
+    sides: [
+      { name: "France and her allies", flags: [FRANCE, { name: "Poland", src: "/flags/poland.svg" }, { name: "Saxony", src: "/flags/saxony.svg" }] },
+      { name: "The Fourth Coalition", flags: [{ name: "Russia", src: "/flags/russia.svg" }, { name: "Prussia", src: "/flags/prussia.png" }] },
+    ],
+    summary:
+      "With Prussia beaten, Napoleon marched into Poland to meet the Russians coming to its aid, and the war went on through the winter in mud and snow, from Czarnowo, Pułtusk and Golymin to the frozen slaughter of Eylau, where neither army could claim to have won. In the spring Lefebvre took Danzig, and in June, after Guttstadt and Heilsberg, Napoleon caught Bennigsen's army with its back to the Alle at Friedland and broke it, and the Tsar made peace at Tilsit.",
+  },
+  // Army lists: A Clash of Eagles' 1812 lists stand in for every army of 1809: the French, the Confederation of
+  // the Rhine, Bavaria, Saxony, Württemberg, the Kingdom of Italy and Austria.
+  {
+    id: "danube-1809",
+    name: "The Danube Campaign",
+    dates: "April–July 1809",
+    sides: [
+      { name: "France and her allies", flags: [FRANCE, { name: "Bavaria", src: "/flags/bavaria.svg" }, { name: "Saxony", src: "/flags/saxony.svg" }, { name: "Württemberg", src: "/flags/wurttemberg.svg" }, { name: "Kingdom of Italy", src: "/flags/italy-napoleonic.png" }] },
+      { name: "The Fifth Coalition", flags: [{ name: "Austria", src: "/flags/austria.svg" }] },
+    ],
+    summary:
+      "With Napoleon's best troops in Spain, Austria struck first, Archduke Charles crossing into Bavaria in April. Napoleon came up and in five days of fighting, at Teugen-Hausen, Abensberg, Landshut, Eckmühl and Regensburg, threw him back over the Danube, and marched down the river to Vienna. His first crossing of the Danube was beaten at Aspern-Essling, but in July, joined by Eugène's army from Italy, victor at Raab, he crossed again and won at Wagram, and after Znaim Austria sought an armistice.",
+  },
   // Still to come: shown as a card of its own, with no page until it has battles
   {
     id: "peninsular-war",
@@ -210,6 +300,46 @@ export const campaigns: HistoricalCampaign[] = allCampaigns.map((c) => ({
 
 // Every battle, in the order fought: those with forces written, and those still to come (planned.ts)
 const allBattles: HistoricalBattle[] = [
+  // The Ulm and Austerlitz Campaign
+  wertingen,
+  haslach,
+  elchingen,
+  ulm,
+  amstetten,
+  durenstein,
+  schongrabern,
+  austerlitz,
+  // The Jena Campaign
+  schleiz,
+  saalfeld,
+  jena,
+  auerstedt,
+  halle,
+  prenzlau,
+  lubeck,
+  // The Polish Campaign
+  czarnowo,
+  pultusk,
+  golymin,
+  mohrungen,
+  eylau,
+  ostroleka,
+  danzig1807,
+  guttstadt,
+  heilsberg,
+  friedland,
+  // The Danube Campaign
+  teugenHausen,
+  abensberg,
+  landshut,
+  eckmuhl,
+  regensburg,
+  neumarkt,
+  ebelsberg,
+  aspernEssling,
+  raab,
+  wagram,
+  znaim,
   // The Peninsular War
   saragossa,
   medinaDeRioseco as HistoricalBattle,
