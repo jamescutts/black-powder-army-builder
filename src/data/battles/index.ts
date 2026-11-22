@@ -14,6 +14,8 @@ import ligny from "./ligny.json";
 import medinaDeRioseco from "./medina-de-rioseco.json";
 import mesoten from "./mesoten.json";
 import mir from "./mir.json";
+import polotsk from "./polotsk.json";
+import polotsk2 from "./polotsk-2.json";
 import quatreBras from "./quatre-bras.json";
 import orthez from "./orthez.json";
 import ostrovno from "./ostrovno.json";
@@ -34,8 +36,6 @@ import {
   maloyaroslavets,
   nivelle,
   ocana,
-  polotsk,
-  polotsk2,
   smolensk,
   somosierra,
   tarutino,
@@ -190,13 +190,13 @@ const allBattles: HistoricalBattle[] = [
   klyastitsy as HistoricalBattle,
   gorodechno as HistoricalBattle,
   smolensk,
-  polotsk,
+  polotsk as HistoricalBattle,
   valutino,
   dahlenkirchen as HistoricalBattle,
   borodino,
   mesoten as HistoricalBattle,
   tarutino,
-  polotsk2,
+  polotsk2 as HistoricalBattle,
   maloyaroslavets,
   vyazma,
   krasnoi,

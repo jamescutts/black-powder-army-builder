@@ -192,6 +192,19 @@
       "artist": "Denis Dighton",
       "date": "1815",
       "page": "https://commons.wikimedia.org/wiki/File:Denis_Dighton_Battle_of_Orthez.jpg"
+    },
+    "polotsk": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Battle_of_Polotsk.Print_by_Jean_Charles_Langlois.1838.png/960px-Battle_of_Polotsk.Print_by_Jean_Charles_Langlois.1838.png",
+      "title": "The Battle of Polotsk, 18 August 1812",
+      "artist": "Jean-Charles Langlois",
+      "date": "1838",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Polotsk.Print_by_Jean_Charles_Langlois.1838.png"
+    },
+    "polotsk-2": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/%D0%A8%D1%82%D1%83%D1%80%D0%BC_%D0%9F%D0%BE%D0%BB%D0%BE%D1%86%D0%BA%D0%B0_%28%D0%BB%D0%B8%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg/960px-%D0%A8%D1%82%D1%83%D1%80%D0%BC_%D0%9F%D0%BE%D0%BB%D0%BE%D1%86%D0%BA%D0%B0_%28%D0%BB%D0%B8%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg",
+      "title": "The Storming of Polotsk",
+      "artist": "Nikolai Samokysh",
+      "page": "https://commons.wikimedia.org/wiki/File:%D0%A8%D1%82%D1%83%D1%80%D0%BC_%D0%9F%D0%BE%D0%BB%D0%BE%D1%86%D0%BA%D0%B0_%28%D0%BB%D0%B8%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg"
     }
   },
   "campaigns": {

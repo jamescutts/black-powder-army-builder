@@ -17,16 +17,12 @@ const R = "russia-1812";
 
 export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R,
   "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
-export const polotsk = planned("polotsk", "First Polotsk", "17–18 August 1812", R,
-  "Saint-Cyr, taking over from the wounded Oudinot, beat Wittgenstein's attack and won his marshal's baton.");
 export const valutino = planned("valutino", "Valutino", "19 August 1812", R,
   "Ney and Junot caught the Russian rearguard east of Smolensk at Lubino and fought it to a standstill, while Barclay's army got clear.");
 export const borodino = planned("borodino", "Borodino", "7 September 1812", R,
   "Kutuzov's stand before Moscow: a day of assaults on the flèches and the Great Redoubt, the bloodiest single day of the wars, after which the Russians withdrew and Moscow fell.");
 export const tarutino = planned("tarutino", "Tarutino", "18 October 1812", R,
   "Bennigsen surprised Murat's advance guard in its camp on the Chernishnya, the blow that helped decide Napoleon to leave Moscow.");
-export const polotsk2 = planned("polotsk-2", "Second Polotsk", "18–20 October 1812", R,
-  "Reinforced, Wittgenstein stormed Polotsk and drove Saint-Cyr out, threatening the Grande Armée's line of retreat.");
 export const maloyaroslavets = planned("maloyaroslavets", "Maloyaroslavets", "24 October 1812", R,
   "Eugène's corps and Dokhturov's fought all day for the burning town, which changed hands again and again; Napoleon turned back onto the ruined Smolensk road.");
 export const vyazma = planned("vyazma", "Vyazma", "3 November 1812", R,
@@ -43,13 +39,6 @@ smolensk.art = {
   "artist": "Peter von Hess",
   "date": "1846",
   "page": "https://commons.wikimedia.org/wiki/File:Smolensk_by_hess.jpg"
-};
-polotsk.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Battle_of_Polotsk.Print_by_Jean_Charles_Langlois.1838.png/960px-Battle_of_Polotsk.Print_by_Jean_Charles_Langlois.1838.png",
-  "title": "The Battle of Polotsk, 18 August 1812",
-  "artist": "Jean-Charles Langlois",
-  "date": "1838",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Polotsk.Print_by_Jean_Charles_Langlois.1838.png"
 };
 valutino.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Battle_of_Valutino.jpg/960px-Battle_of_Valutino.jpg",
@@ -70,12 +59,6 @@ tarutino.art = {
   "artist": "Peter von Hess",
   "date": "1847",
   "page": "https://commons.wikimedia.org/wiki/File:Tarutino.jpg"
-};
-polotsk2.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/%D0%A8%D1%82%D1%83%D1%80%D0%BC_%D0%9F%D0%BE%D0%BB%D0%BE%D1%86%D0%BA%D0%B0_%28%D0%BB%D0%B8%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg/960px-%D0%A8%D1%82%D1%83%D1%80%D0%BC_%D0%9F%D0%BE%D0%BB%D0%BE%D1%86%D0%BA%D0%B0_%28%D0%BB%D0%B8%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg",
-  "title": "The Storming of Polotsk",
-  "artist": "Nikolai Samokysh",
-  "page": "https://commons.wikimedia.org/wiki/File:%D0%A8%D1%82%D1%83%D1%80%D0%BC_%D0%9F%D0%BE%D0%BB%D0%BE%D1%86%D0%BA%D0%B0_%28%D0%BB%D0%B8%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F_%D0%9D.%D0%A1._%D0%A1%D0%B0%D0%BC%D0%BE%D0%BA%D0%B8%D1%88%D0%B0%29.jpg"
 };
 maloyaroslavets.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hess_maloyaroslavets.jpg/960px-Hess_maloyaroslavets.jpg",

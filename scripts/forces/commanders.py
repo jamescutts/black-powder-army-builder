@@ -130,6 +130,8 @@ COMMANDERS = {
     "fuentes-de-onoro": {"Anglo-Portuguese": ("Viscount Wellington", "wellington"), "French": ("Marshal Masséna", "massena")},
     "sorauren": {"French": ("Marshal Soult", "soult"), "Anglo-Portuguese": ("The Marquess of Wellington", "wellington")},
     "orthez": {"French": ("Marshal Soult", "soult"), "Anglo-Portuguese": ("The Marquess of Wellington", "wellington")},
+    "polotsk": {"French": ("Marshal Oudinot", "oudinot"), "Bavarian": ("Gén. Gouvion Saint-Cyr", "saint_cyr"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
+    "polotsk-2": {"French": ("Marshal Gouvion Saint-Cyr", "saint_cyr"), "Bavarian": ("Gen-Lt von Wrede", "wrede"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
     "gorodechno": {"Austrian": ("Prince Schwarzenberg", "schwarzenberg"), "Saxon": ("Général Reynier", "reynier"), "Russian": ("General Tormasov", "tormasov")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
@@ -245,6 +247,23 @@ FORCE_PORTRAITS: dict[str, str] = {
     "orthez-picton": "picton",
     "orthez-clinton": "clinton",
     "orthez-hussars": "cotton",
+    "polotsk-legrand": "legrand",
+    "polotsk-eighth": "verdier",
+    "polotsk-merle": "merle",
+    "polotsk-cavalry": "doumerc",
+    "polotsk-deroy": "deroy",
+    "polotsk-wrede": "wrede",
+    "polotsk-helfreich": "helfreich",
+    "polotsk-berg": "berg",
+    "polotsk-sazonov": "sazonov",
+    "polotsk-2-legrand": "legrand",
+    "polotsk-2-eighth": "maison",
+    "polotsk-2-merle": "merle",
+    "polotsk-2-cavalry": "doumerc",
+    "polotsk-2-bavarians": "wrede",
+    "polotsk-2-yashvil": "yashvil",
+    "polotsk-2-steinheil": "steinheil",
+    "polotsk-2-berg": "berg",
     "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
@@ -348,6 +367,17 @@ PORTRAITS.update({
     "dalhousie": portrait("George Ramsay, 9th Earl of Dalhousie, from the National Gallery of Canada (cropped).jpg", "The Earl of Dalhousie", "unknown artist", None, "50% 18%"),
     "conroux": portrait("Nicolas François Conroux.jpg", "Nicolas François Conroux", "Jean-Baptiste Wicar", None, "50% 18%"),
     "darmagnac": portrait("Général Jean Barthélémy Claude Toussaint Darmagnac.png", "Jean Barthélemy Darmagnac", "unknown artist", None, "50% 18%", small=True),
+})
+
+# Polotsk
+PORTRAITS.update({
+    "saint_cyr": portrait("Laurent de Gouvion-Saint-Cyr.jpg", "Laurent Gouvion Saint-Cyr", "Horace Vernet", "1821", "50% 16%"),
+    "deroy": portrait("Le général Bernhard Erasmus von Deroy (F. Hanfstaengl, 1829).jpg", "Bernhard Erasmus von Deroy", "Franz Hanfstaengl", "1829"),
+    "wrede": portrait("Karl Philipp Wrede.jpg", "Karl Philipp von Wrede", "Franz Hanfstaengl", "1828"),
+    "maison": portrait("Maison, Nicolas-Joseph.jpg", "Nicolas Joseph Maison", "Alois Senefelder", small=True),
+    "corbineau": portrait("Lieutenant-général Corbineau.jpg", "Jean-Baptiste Corbineau", "unknown artist", "c. 1830"),
+    "yashvil": portrait("Yashvil LM.jpg", "Prince Lev Yashvil", "George Dawe", focus="50% 18%"),
+    "helfreich": portrait("Gelfrejh Bogdan Borisovich.jpg", "Bogdan von Helfreich", "George Dawe", focus="50% 18%"),
 })
 
 # The army lists' other named commanders, for the roster's head
