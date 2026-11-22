@@ -167,6 +167,13 @@ const allCampaigns: HistoricalCampaign[] = [
     id: "jena-1806",
     name: "The Jena Campaign",
     dates: "October–November 1806",
+    art: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Charles_Meynier_-_Entr%C3%A9e_de_Napol%C3%A9on_%C3%A0_Berlin._27_octobre_1806.jpg/960px-Charles_Meynier_-_Entr%C3%A9e_de_Napol%C3%A9on_%C3%A0_Berlin._27_octobre_1806.jpg",
+      title: "Napoleon's Entry into Berlin, 27 October 1806",
+      artist: "Charles Meynier",
+      date: "1810",
+      page: "https://commons.wikimedia.org/wiki/File:Charles_Meynier_-_Entr%C3%A9e_de_Napol%C3%A9on_%C3%A0_Berlin._27_octobre_1806.jpg",
+    },
     sides: [
       { name: "France", flags: [FRANCE] },
       { name: "The Fourth Coalition", flags: [{ name: "Prussia", src: "/flags/prussia.png" }, { name: "Saxony", src: "/flags/saxony.svg" }] },
