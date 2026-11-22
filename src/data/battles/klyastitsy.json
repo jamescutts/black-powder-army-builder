@@ -1,0 +1,954 @@
+{
+  "id": "klyastitsy",
+  "name": "Klyastitsy",
+  "date": "30 July – 1 August 1812",
+  "campaign": "russia-1812",
+  "summary": "On the road to St Petersburg, Wittgenstein turned on Oudinot's II Corps instead of waiting for it. Kulnev's advance guard met Legrand at Yakubovo and held all day; before dawn next morning the whole Russian corps attacked, broke the French centre and drove Oudinot back through Klyastitsy, a grenadier battalion running across the burning bridge. Pursuing too far, Kulnev was caught and killed at Boyarshchina on 1 August, but Oudinot fell back on Polotsk, and the threat to the capital was over.",
+  "sources": [
+    {
+      "label": "French Forces, Battle of Jakobovo, 19 July 1812 [Old Style] (Nafziger Collection 812GAA, after Fabry)",
+      "url": "https://www.napoleon-series.org/nafzigger/812GAA.pdf"
+    },
+    {
+      "label": "Russian I Corps, 18 July 1812 [Old Style] (Nafziger Collection 812GBE)",
+      "url": "https://www.napoleon-series.org/nafzigger/812GBE.pdf"
+    },
+    {
+      "label": "Battle of Klyastitsy (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Klyastitsy"
+    },
+    {
+      "label": "Сражение под Клястицами (Russian Wikipedia)",
+      "url": "https://ru.wikipedia.org/wiki/%D0%A1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE%D0%B4_%D0%9A%D0%BB%D1%8F%D1%81%D1%82%D0%B8%D1%86%D0%B0%D0%BC%D0%B8"
+    }
+  ],
+  "forces": [
+    {
+      "id": "klyastitsy-legrand",
+      "nationId": "france",
+      "name": "Legrand's Division",
+      "formation": "6th Division, II Corps (Oudinot)",
+      "side": "French",
+      "summary": "Oudinot's leading division, which found Kulnev's advance guard at Yakubovo on the afternoon of 30 July and fought it all day, pushing it back to the woods until the Russian horse guns stopped the attack. Next morning it took the weight of Wittgenstein's whole corps and was driven back through Klyastitsy over the Nishcha.",
+      "notes": [
+        "After Nafziger: three brigades of one four-battalion regiment each, about 7,000 men.",
+        "Nafziger (after Fabry) gives each regiment its artillery company, two or four 3-pdrs, shown as Regimental Artillery; he notes it isn't certain they were with their regiments in the field.",
+        "The horse battery, without the three cavalry regiments the list wants for it, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Legrand",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Albert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Albert",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "26th Léger Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "26th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/26th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "II/26th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "III/26th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "IV/26th Léger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Maison's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Maison",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "19th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "19th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/19th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/19th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/19th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/19th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Moreau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Moreau",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "56th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "56th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/56th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/56th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/56th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/56th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "11/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "6/3rd Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/G%C3%A9n%C3%A9ral_Claude_Juste_Alexandre_Legrand.jpg/250px-G%C3%A9n%C3%A9ral_Claude_Juste_Alexandre_Legrand.jpg",
+        "title": "Claude Legrand",
+        "artist": "Antoine-Jean Gros",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Claude_Juste_Alexandre_Legrand.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "klyastitsy-verdier",
+      "nationId": "france",
+      "name": "Verdier's Division",
+      "formation": "8th Division, II Corps (Oudinot)",
+      "side": "French",
+      "summary": "Joined Legrand at Yakubovo late on 30 July and shared the defeat next day. On 1 August, as Oudinot turned at Boyarshchina, it caught Kulnev's pursuing advance guard coming out of the woods and broke it, and then held off Wittgenstein's counter-attack at Golovchitsy.",
+      "notes": [
+        "After Nafziger: sixteen battalions, about 10,000 men. The 124th was a Dutch regiment, raised from the old Dutch army.",
+        "Nafziger (after Fabry) gives each regiment its artillery company, two or four 3-pdrs, shown as Regimental Artillery; he notes it isn't certain they were with their regiments in the field.",
+        "Pouget's brigade mixes a regimental battery (the 37th's four guns) with a section (the 124th's two), and the horse battery has none of the three cavalry regiments the list wants for it; both show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Verdier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Vives's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Vives",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-battery",
+              "name": "11th Léger Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-battery",
+              "name": "2nd Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "11th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/11th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "II/11th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "III/11th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "IV/11th Léger"
+                }
+              ]
+            },
+            {
+              "name": "2nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/2nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/2nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/2nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/2nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "V/2nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pouget's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pouget",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-battery",
+              "name": "37th Line Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "124th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "37th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/37th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/37th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/37th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/37th Line"
+                }
+              ]
+            },
+            {
+              "name": "124th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/124th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/124th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/124th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "15/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "1/3rd Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Jean_Antoine_Verdier.jpg/250px-Jean_Antoine_Verdier.jpg",
+        "title": "Jean-Antoine Verdier",
+        "artist": "André Dutertre",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean_Antoine_Verdier.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "klyastitsy-cavalry",
+      "nationId": "france",
+      "name": "Castex's and Doumerc's Cavalry",
+      "formation": "5th Light Cavalry Brigade and 3rd Cuirassier Division, II Corps (Oudinot)",
+      "side": "French",
+      "summary": "The corps' light cavalry and the cuirassier division lent to Oudinot, which came up to the Nishcha after the first day and covered the retreat towards Polotsk.",
+      "notes": [
+        "After Nafziger. Doumerc's three brigades had a regiment each (Berkheim's 4th, L'Héritier's 7th, Doullembourg's 14th Cuirassiers), shown together as one brigade.",
+        "The accounts don't say where the cavalry fought; Wikipedia has it put at Oudinot's disposal for the second day.",
+        "Cavalry without infantry, and the second horse battery, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Doumerc",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Castex's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Castex",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "23rd Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "24th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Doumerc's Cuirassiers",
+          "commander": {
+            "name": "Gén. de Division Doumerc",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "4th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "7th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "14th Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Doumerc's Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "1/6th Horse Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/6th Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/General_Doumerc.jpg/250px-General_Doumerc.jpg",
+        "title": "Jean-Pierre Doumerc",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:General_Doumerc.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "klyastitsy-kulnev",
+      "nationId": "russia",
+      "name": "Kulnev's Advance Guard",
+      "formation": "Advance Guard, I Corps (Wittgenstein)",
+      "side": "Russian",
+      "summary": "About 3,700 men with twelve horse guns. It met Legrand at Yakubovo on 30 July and held through the day, Sukhozanet's horse battery losing more than a third of its gunners. After the victory it was sent after Oudinot, and on 1 August, coming out of the woods at Boyarshchina onto open ground before the whole French corps, it was broken, and Kulnev killed by a cannonball.",
+      "notes": [
+        "After Nafziger. The Grodno Hussars had eight squadrons, so they are Large; Platov IV's Cossacks, 370 men, are Small.",
+        "No Infantry Brigade, and a horse battery with only two cavalry regiments, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Kulnev",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Kulnev's Cavalry",
+          "commander": {
+            "name": "Maj-Gen Kulnev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Grodno Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Platov IV's Don Cossacks",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "1st Horse Battery (Sukhozanet)"
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Denisyev's Brigade",
+          "commander": {
+            "name": "Col Denisyev",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "25th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 25th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 25th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "26th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 26th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 26th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Kulnev.jpg/250px-Kulnev.jpg",
+        "title": "Yakov Kulnev",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Kulnev.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "klyastitsy-berg",
+      "nationId": "russia",
+      "name": "Berg's First Line",
+      "formation": "5th Division, I Corps (Wittgenstein)",
+      "side": "Russian",
+      "summary": "The corps' main line, sent forward to Yakubovo on the evening of 30 July with the 23rd and 24th Jäger and more guns. Before dawn next day Berg led the whole first line forward; the 23rd Jäger stormed the manor at Yakubovo, the Sevsk and Kaluga regiments drove into the French centre, and Oudinot fell back over the Nishcha.",
+      "notes": [
+        "After Nafziger, who names Colonel Lukov for the Sevsk and Kaluga brigade; the Russian account has Kazachkovsky leading it in the attack of 31 July.",
+        "Two Position Batteries in one brigade, where it takes one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Berg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Prince Sibirsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Prince Sibirsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "27th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Perm Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Perm"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Perm"
+                }
+              ]
+            },
+            {
+              "name": "Mogilev Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Mogilev"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Mogilev"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Kazachkovsky's Brigade",
+          "commander": {
+            "name": "Col Kazachkovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "9th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Sevsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Sevsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Sevsk"
+                }
+              ]
+            },
+            {
+              "name": "Kaluga Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Kaluga"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Kaluga"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Frolov's Brigade",
+          "commander": {
+            "name": "Col Frolov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "5th Position Battery"
+            },
+            {
+              "unit": "ru-position-arty",
+              "name": "14th Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "23rd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 23rd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 23rd Jäger"
+                }
+              ]
+            },
+            {
+              "name": "24th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 24th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 24th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Berg_1_Grigory_Maximobich.jpg/250px-Berg_1_Grigory_Maximobich.jpg",
+        "title": "Grigory Berg",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Berg_1_Grigory_Maximobich.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "klyastitsy-kakhovsky",
+      "nationId": "russia",
+      "name": "The Second Line",
+      "formation": "Grenadiers and Dragoons, I Corps (Wittgenstein)",
+      "side": "Russian",
+      "summary": "The corps' grenadiers and dragoons behind the first line. When Oudinot burned the only bridge over the Nishcha, a battalion of the Pavlovsky grenadiers ran across it while it burned, and the pursuit went on.",
+      "notes": [
+        "After Nafziger: four converged grenadier battalions of the 5th and 14th Divisions, and the reserve battalions of six grenadier regiments, 1,581 men, so each Small.",
+        "Two Combined Grenadier Brigades where the list allows one, and a horse battery with only two cavalry regiments, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Kakhovsky",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-combined-grenadier-brigade",
+          "name": "Converged Grenadiers",
+          "units": [
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Converged Grenadiers 1, 5th and 14th Divisions"
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Converged Grenadiers 2, 5th and 14th Divisions"
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Converged Grenadiers 3, 5th and 14th Divisions"
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Converged Grenadiers 4, 5th and 14th Divisions"
+            },
+            {
+              "unit": "ru-position-arty",
+              "name": "27th Position Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-combined-grenadier-brigade",
+          "name": "Reserve Grenadiers",
+          "units": [
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Leib Grenadiers (Reserve Bn)",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Tauride Grenadiers (Reserve Bn)",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Ekaterinoslav Grenadiers (Reserve Bn)",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Pavlovsky Grenadiers (Reserve Bn)",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Arakcheyev Grenadiers (Reserve Bn)",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "St Petersburg Grenadiers (Reserve Bn)",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Balk's Dragoons",
+          "commander": {
+            "name": "Maj-Gen Balk",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Riga Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Yamburg Dragoons"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "3rd Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "klyastitsy-sazonov",
+      "nationId": "russia",
+      "name": "Sazonov's Reserve",
+      "formation": "14th Division, I Corps (Wittgenstein)",
+      "side": "Russian",
+      "summary": "Held back at Katerinovo with Repnin's depot cavalry while the first line fought on 30 and 31 July, it marched to the Drissa that night to support Kulnev, and came up as the corps struck back at Verdier on 1 August.",
+      "notes": [
+        "After Nafziger: eight battalions, about 4,500 men, with the 26th Light Battery split between the brigades.",
+        "Repnin's reserve of depot cavalry, a converged Jäger battalion and the 26th Position Battery, about 1,600 men, stayed with it; it isn't included.",
+        "The two halves of one light battery count as two batteries against the list's one per six battalions, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Sazonov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Harpe's Brigade",
+          "commander": {
+            "name": "Col Harpe",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty-half",
+              "name": "Half of the 26th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tula Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Tula"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Tula"
+                }
+              ]
+            },
+            {
+              "name": "Navaginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Navaginsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Navaginsk"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Helfreich's Brigade",
+          "commander": {
+            "name": "Maj-Gen Helfreich",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty-half",
+              "name": "Half of the 26th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tenginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Tenginsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Tenginsk"
+                }
+              ]
+            },
+            {
+              "name": "Estonia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Estonia"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Estonia"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Sazonov_1_Ivan_Terentyevich.jpg/250px-Sazonov_1_Ivan_Terentyevich.jpg",
+        "title": "Ivan Sazonov",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Sazonov_1_Ivan_Terentyevich.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Oudinot",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg/250px-Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg",
+        "title": "Marshal Nicolas Oudinot",
+        "artist": "Robert Lefèvre",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg",
+        "focus": "50% 16%",
+        "date": "1811"
+      }
+    },
+    "Russian": {
+      "commander": "Lt-Gen Count Wittgenstein",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Pjotr-christianowitsch-wittgenstein.jpg/250px-Pjotr-christianowitsch-wittgenstein.jpg",
+        "title": "Count Peter Wittgenstein",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Pjotr-christianowitsch-wittgenstein.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Klyastitsy.jpg/960px-Klyastitsy.jpg",
+    "title": "The Battle of Klyastitsy",
+    "artist": "Peter von Hess",
+    "page": "https://commons.wikimedia.org/wiki/File:Klyastitsy.jpg",
+    "focus": "50% 50%"
+  }
+}

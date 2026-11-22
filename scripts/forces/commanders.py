@@ -121,6 +121,7 @@ COMMANDERS = {
     "mir": {"Polish": ("Gén. de Division Rożniecki", "rozniecki"), "Russian": ("General Platov", "platov")},
     "romanov": {"Polish": ("Gén. de Division Latour-Maubourg", "latour_maubourg"), "Russian": ("General Platov", "platov")},
     "kobrin": {"Saxon": ("Gen-Maj von Klengel", "klengel"), "Russian": ("General Tormasov", "tormasov")},
+    "klyastitsy": {"French": ("Marshal Oudinot", "oudinot"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
     "gorodechno": {"Austrian": ("Prince Schwarzenberg", "schwarzenberg"), "Saxon": ("Général Reynier", "reynier"), "Russian": ("General Tormasov", "tormasov")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
@@ -160,6 +161,8 @@ FORCE_PORTRAITS: dict[str, str] = {
     "mir-rozniecki": "rozniecki", "mir-platov": "platov", "romanov-przebendowski": "latour_maubourg", "romanov-platov": "platov",
     "kobrin-tormasov": "tormasov", "gorodechno-bianchi": "bianchi", "gorodechno-lambert": "lambert",
     "gorodechno-kamensky": "kamensky", "gorodechno-nazimov": "nazimov", "gorodechno-udom": "udom",
+    "klyastitsy-legrand": "legrand", "klyastitsy-verdier": "verdier", "klyastitsy-cavalry": "doumerc",
+    "klyastitsy-kulnev": "kulnev", "klyastitsy-berg": "berg", "klyastitsy-sazonov": "sazonov",
     "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
@@ -208,6 +211,18 @@ PORTRAITS.update({
     "frimont": portrait("Johann Frimont.jpg", "Johann Maria Philipp Frimont", "Josef Kriehuber", "1832", "50% 16%"),
     "funck": portrait("Karl Wilhelm Ferdinand von Funck.jpg", "Karl Wilhelm Ferdinand von Funck", "Anton Graff", "1804", "50% 18%"),
     "lecoq": portrait("Karl Christian Erdmann von Le Coq.jpg", "Karl Christian Erdmann von Le Coq", "M. Knäbig", focus="50% 18%"),
+})
+
+# Klyastitsy
+PORTRAITS.update({
+    "wittgenstein": portrait("Pjotr-christianowitsch-wittgenstein.jpg", "Count Peter Wittgenstein", "George Dawe", focus="50% 18%"),
+    "kulnev": portrait("Kulnev.jpg", "Yakov Kulnev", "George Dawe", focus="50% 18%"),
+    "berg": portrait("Berg 1 Grigory Maximobich.jpg", "Grigory Berg", "George Dawe", focus="50% 18%"),
+    "sazonov": portrait("Sazonov 1 Ivan Terentyevich.jpg", "Ivan Sazonov", "workshop of George Dawe", focus="50% 18%"),
+    "oudinot": portrait("Nicolas Charles Oudinot by Robert Lefèvre.jpg", "Marshal Nicolas Oudinot", "Robert Lefèvre", "1811", "50% 16%"),
+    "legrand": portrait("Général Claude Juste Alexandre Legrand.jpg", "Claude Legrand", "Antoine-Jean Gros"),
+    "verdier": portrait("Jean Antoine Verdier.jpg", "Jean-Antoine Verdier", "André Dutertre"),
+    "doumerc": portrait("General Doumerc.jpg", "Jean-Pierre Doumerc", "unknown artist"),
 })
 
 # The army lists' other named commanders, for the roster's head

@@ -19,8 +19,6 @@ export const saltanovka = planned("saltanovka", "Saltanovka", "23 July 1812", R,
   "Raevsky's corps tried to break through Davout's divisions south of Mogilev to open the way for Bagration's army, and was held.");
 export const ostrovno = planned("ostrovno", "Ostrovno", "25–27 July 1812", R,
   "Three days of rearguard fighting west of Vitebsk, as Ostermann-Tolstoy and Konovnitsyn held up Murat's cavalry and Eugène's corps.");
-export const klyastitsy = planned("klyastitsy", "Klyastitsy", "30 July – 1 August 1812", R,
-  "Wittgenstein checked Oudinot's II Corps on the road to St Petersburg, though Kulnev, leading the pursuit, was killed.");
 export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R,
   "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
 export const polotsk = planned("polotsk", "First Polotsk", "17–18 August 1812", R,

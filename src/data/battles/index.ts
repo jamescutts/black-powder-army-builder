@@ -5,6 +5,7 @@ import corunna from "./corunna.json";
 import dahlenkirchen from "./dahlenkirchen.json";
 import eckau from "./eckau.json";
 import gorodechno from "./gorodechno.json";
+import klyastitsy from "./klyastitsy.json";
 import kobrin from "./kobrin.json";
 import ligny from "./ligny.json";
 import mesoten from "./mesoten.json";
@@ -24,7 +25,6 @@ import {
   borodino,
   bussaco,
   fuentesDeOnoro,
-  klyastitsy,
   krasnoi,
   maloyaroslavets,
   medinaDeRioseco,
@@ -122,7 +122,7 @@ const schedule: HistoricalBattle[] = [
   saltanovka,
   ostrovno,
   kobrin as HistoricalBattle,
-  klyastitsy,
+  klyastitsy as HistoricalBattle,
   gorodechno as HistoricalBattle,
   smolensk,
   polotsk,
