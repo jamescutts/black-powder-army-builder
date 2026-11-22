@@ -15,21 +15,12 @@ const planned = (id: string, name: string, date: string, campaign: string, summa
 
 const R = "russia-1812";
 
-export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R,
-  "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
 export const borodino = planned("borodino", "Borodino", "7 September 1812", R,
   "Kutuzov's stand before Moscow: a day of assaults on the flèches and the Great Redoubt, the bloodiest single day of the wars, after which the Russians withdrew and Moscow fell.");
 export const berezina = planned("berezina", "Berezina", "26–29 November 1812", R,
   "Eblé's pontonniers bridged the river at Studienka while Oudinot and Victor held off the converging Russian armies on both banks, and the Grande Armée's remnant crossed.");
 
 // Paintings for the Russian campaign's battles still to come
-smolensk.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Smolensk_by_hess.jpg/960px-Smolensk_by_hess.jpg",
-  "title": "The Battle of Smolensk",
-  "artist": "Peter von Hess",
-  "date": "1846",
-  "page": "https://commons.wikimedia.org/wiki/File:Smolensk_by_hess.jpg"
-};
 borodino.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg/960px-Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg",
   "title": "The Battle of Borodino",

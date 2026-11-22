@@ -237,6 +237,13 @@
       "artist": "Peter von Hess",
       "date": "1849",
       "page": "https://commons.wikimedia.org/wiki/File:Krasnoi.jpg"
+    },
+    "smolensk": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Smolensk_by_hess.jpg/960px-Smolensk_by_hess.jpg",
+      "title": "The Battle of Smolensk",
+      "artist": "Peter von Hess",
+      "date": "1846",
+      "page": "https://commons.wikimedia.org/wiki/File:Smolensk_by_hess.jpg"
     }
   },
   "campaigns": {

@@ -25,6 +25,7 @@ import ostrovno from "./ostrovno.json";
 import rolica from "./rolica.json";
 import romanov from "./romanov.json";
 import salamanca from "./salamanca.json";
+import smolensk from "./smolensk.json";
 import sorauren from "./sorauren.json";
 import saltanovka from "./saltanovka.json";
 import talavera from "./talavera.json";
@@ -40,7 +41,6 @@ import {
   borodino,
   nivelle,
   ocana,
-  smolensk,
   somosierra,
   toulouse,
   almeida,
@@ -377,7 +377,7 @@ const allBattles: HistoricalBattle[] = [
   kobrin as HistoricalBattle,
   klyastitsy as HistoricalBattle,
   gorodechno as HistoricalBattle,
-  smolensk,
+  smolensk as HistoricalBattle,
   polotsk as HistoricalBattle,
   valutino as HistoricalBattle,
   dahlenkirchen as HistoricalBattle,
