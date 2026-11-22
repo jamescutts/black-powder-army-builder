@@ -244,6 +244,34 @@
       "artist": "Peter von Hess",
       "date": "1846",
       "page": "https://commons.wikimedia.org/wiki/File:Smolensk_by_hess.jpg"
+    },
+    "mockern": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg/960px-Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg",
+      "title": "The Battle of Möckern, 5 April 1813",
+      "artist": "Otto Fikentscher",
+      "date": "1863",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern_on_5_April_1813_(O._C._Fikentscher).jpg"
+    },
+    "lutzen": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Bataille_de_Lutzen%2C_2_mai_1813.jpg/960px-Bataille_de_Lutzen%2C_2_mai_1813.jpg",
+      "title": "The Battle of Lützen, 2 May 1813",
+      "artist": "Joseph Beaume",
+      "date": "1836–37",
+      "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Lutzen,_2_mai_1813.jpg"
+    },
+    "bautzen": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/96/Battle_of_Bautzen_1813_by_Bellange.jpg",
+      "title": "The Battle of Bautzen",
+      "artist": "after Hippolyte Bellangé",
+      "date": "c. 1825–30",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Bautzen_1813_by_Bellange.jpg"
+    },
+    "grossbeeren": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Gro%C3%9Fbeeren_1813.jpg/960px-Gro%C3%9Fbeeren_1813.jpg",
+      "title": "The Battle of Großbeeren",
+      "artist": "Carl Röchling",
+      "date": "1907–08",
+      "page": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fbeeren_1813.jpg"
     }
   },
   "campaigns": {
