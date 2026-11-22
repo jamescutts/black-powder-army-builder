@@ -1150,7 +1150,8 @@ button.add-row:focus-visible {
 }
 
 /* The same aged-cloth tint the other flags get */
-.army-flag::after {
+.army-flag::after,
+.force-portrait-flag::after {
   content: "";
   position: absolute;
   inset: 0;
