@@ -541,3 +541,35 @@ gohrde.art = {
   "date": "1900",
   "page": "https://commons.wikimedia.org/wiki/File:Carl_R%C3%B6chling_-_Eleonore_Prochaska.jpg"
 };
+mormant.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Combat_de_Mormant_le_17_f%C3%A9vrier_1814%2C_%C3%A0_dix_heures_du_matin_%28d%C3%A9tail%29.jpg/960px-Combat_de_Mormant_le_17_f%C3%A9vrier_1814%2C_%C3%A0_dix_heures_du_matin_%28d%C3%A9tail%29.jpg",
+  "title": "Mormant, 17 February 1814, at Ten in the Morning",
+  "artist": "Jean-Antoine-Siméon Fort",
+  "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Mormant_le_17_f%C3%A9vrier_1814,_%C3%A0_dix_heures_du_matin_(d%C3%A9tail).jpg"
+};
+barSurAube.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Johann_Lorenz_Rugendas_Schlacht_bei_Bar-sur-Aube.jpg/960px-Johann_Lorenz_Rugendas_Schlacht_bei_Bar-sur-Aube.jpg",
+  "title": "The Battle of Bar-sur-Aube",
+  "artist": "Johann Lorenz Rugendas",
+  "date": "c. 1814",
+  "page": "https://commons.wikimedia.org/wiki/File:Johann_Lorenz_Rugendas_Schlacht_bei_Bar-sur-Aube.jpg"
+};
+laubressel.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Combat_de_Laubressel_Jean_Charles_Langlois_%28d%C3%A9tail%29.jpg/960px-Combat_de_Laubressel_Jean_Charles_Langlois_%28d%C3%A9tail%29.jpg",
+  "title": "The Fight at Laubressel",
+  "artist": "Jean-Charles Langlois",
+  "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Laubressel_Jean_Charles_Langlois_(d%C3%A9tail).jpg"
+};
+limonest.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Charge_du_13e_r%C3%A9giment_de_cuirassiers_%C3%A0_la_bataille_de_Limonest%2C_20_mars_1814.png/960px-Charge_du_13e_r%C3%A9giment_de_cuirassiers_%C3%A0_la_bataille_de_Limonest%2C_20_mars_1814.png",
+  "title": "An Episode of the Battle of Limonest",
+  "artist": "Théodore Jung",
+  "page": "https://commons.wikimedia.org/wiki/File:Charge_du_13e_r%C3%A9giment_de_cuirassiers_%C3%A0_la_bataille_de_Limonest,_20_mars_1814.png"
+};
+saintDizier.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier%2C_1814.jpg/960px-Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier%2C_1814.jpg",
+  "title": "The Guard Dragoons' Charge at Saint-Dizier",
+  "artist": "Édouard Detaille",
+  "page": "https://commons.wikimedia.org/wiki/File:Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier,_1814.jpg",
+  "focus": "50% 30%"
+};
