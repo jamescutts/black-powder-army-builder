@@ -3,6 +3,13 @@
   "name": "Plagwitz",
   "date": "29 August 1813",
   "campaign": "liberation-1813",
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Bitwa_nad_Bobrem.jpg/960px-Bitwa_nad_Bobrem.jpg",
+    "title": "Puthod's Division in the Flooded Bober, 29 August 1813",
+    "artist": "unknown artist",
+    "date": "1813",
+    "page": "https://commons.wikimedia.org/wiki/File:Bitwa_nad_Bobrem.jpg"
+  },
   "sides": {
     "French": {
       "commander": "Gén. de Division Puthod"
