@@ -115,7 +115,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Sir_David_Baird%2C_3rd_Bt_by_Southwell_Brothers.jpg/250px-Sir_David_Baird%2C_3rd_Bt_by_Southwell_Brothers.jpg",
+        "title": "Sir David Baird",
+        "artist": "Southwell Brothers",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_David_Baird%2C_3rd_Bt_by_Southwell_Brothers.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "corunna-hope",
@@ -223,7 +230,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Henry_Raeburn_%281756-1823%29_-_General_Sir_John_Hope%2C_4th_Earl_of_Hopetoun%2C_GCB_-_CUPMS-1998.98_-_County_Buildings_%28West_Section%29_St_Catherine%27s_Street%2C_Cupar.jpg/250px-Henry_Raeburn_%281756-1823%29_-_General_Sir_John_Hope%2C_4th_Earl_of_Hopetoun%2C_GCB_-_CUPMS-1998.98_-_County_Buildings_%28West_Section%29_St_Catherine%27s_Street%2C_Cupar.jpg",
+        "title": "Sir John Hope",
+        "artist": "Henry Raeburn",
+        "page": "https://commons.wikimedia.org/wiki/File:Henry_Raeburn_%281756-1823%29_-_General_Sir_John_Hope%2C_4th_Earl_of_Hopetoun%2C_GCB_-_CUPMS-1998.98_-_County_Buildings_%28West_Section%29_St_Catherine%27s_Street%2C_Cupar.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "corunna-paget",
@@ -292,7 +306,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Martin_Archer_Shee_%281769-1850%29_-_Sir_Edward_Paget_%281775%E2%80%931849%29%2C_General_-_1138_-_Government_Art_Collection.jpg/250px-Martin_Archer_Shee_%281769-1850%29_-_Sir_Edward_Paget_%281775%E2%80%931849%29%2C_General_-_1138_-_Government_Art_Collection.jpg",
+        "title": "Sir Edward Paget",
+        "artist": "Martin Archer Shee",
+        "page": "https://commons.wikimedia.org/wiki/File:Martin_Archer_Shee_%281769-1850%29_-_Sir_Edward_Paget_%281775%E2%80%931849%29%2C_General_-_1138_-_Government_Art_Collection.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "corunna-fraser",
@@ -368,7 +389,14 @@
         "The list allows one Highland or Light battalion in four, so a brigade of three may have none; where one had a Highland or Light regiment, that shows as a historical departure.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Alexander_Mackenzie_Fraser.jpg/250px-Alexander_Mackenzie_Fraser.jpg",
+        "title": "Alexander Mackenzie Fraser",
+        "artist": "after Henry Raeburn",
+        "page": "https://commons.wikimedia.org/wiki/File:Alexander_Mackenzie_Fraser.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "corunna-merle",
@@ -504,7 +532,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg/250px-Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg",
+        "title": "Pierre Hugues Victoire Merle",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "corunna-mermet",
@@ -655,7 +690,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Julien_Auguste_Joseph_Mermet.jpg/250px-Julien_Auguste_Joseph_Mermet.jpg",
+        "title": "Julien Mermet",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Julien_Auguste_Joseph_Mermet.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "corunna-delaborde",
@@ -869,7 +911,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Armand_Lebrun_de_La_Houssaye_%281768-1846%29_Col.jpg/250px-Armand_Lebrun_de_La_Houssaye_%281768-1846%29_Col.jpg",
+        "title": "Armand Lebrun de La Houssaye",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Armand_Lebrun_de_La_Houssaye_%281768-1846%29_Col.jpg",
+        "focus": "50% 18%"
+      }
     }
   ],
   "sides": {

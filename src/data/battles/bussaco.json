@@ -1,0 +1,1503 @@
+{
+  "id": "bussaco",
+  "name": "Bussaco",
+  "date": "27 September 1810",
+  "campaign": "peninsular-war",
+  "summary": "Masséna, invading Portugal, found Wellington's Anglo-Portuguese army drawn up along the ten-mile ridge of Bussaco and attacked it head-on. Reynier's columns climbed out of the mist to the crest and were thrown back by Picton's and Leith's men; Ney's, coming up the road to the convent, met the Light Division's volley at fifty yards. The French lost four and a half thousand men and turned the position instead, and Wellington fell back on the Lines of Torres Vedras.",
+  "sources": [
+    {
+      "label": "British Order of Battle at Busaco, 27 September 1810 (Nafziger Collection 810ISAC)",
+      "url": "https://www.napoleon-series.org/nafzigger/810ISAC.pdf"
+    },
+    {
+      "label": "French Order of Battle at Busaco, 27 September 1810 (Nafziger Collection 810ISAD)",
+      "url": "https://www.napoleon-series.org/nafzigger/810ISAD.pdf"
+    },
+    {
+      "label": "Battle of Buçaco (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Bu%C3%A7aco"
+    }
+  ],
+  "forces": [
+    {
+      "id": "bussaco-merle",
+      "nationId": "peninsular-french",
+      "name": "Merle's Division",
+      "formation": "1st Division, II Corps (Reynier)",
+      "side": "French",
+      "summary": "Climbed the steep ridge north of São Antonio de Cantaro through the morning mist and reached the crest, only to be met by Picton's men and the 88th and 45th, and thrown back down in disorder.",
+      "notes": [
+        "After Nafziger, with each regiment's battalions as he gives them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Merle",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Sarrut's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sarrut",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/2e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/2e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "36e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/36e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Graindorge's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Graindorge",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg/250px-Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg",
+        "title": "Pierre Hugues Victoire Merle",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "bussaco-heudelet",
+      "nationId": "peninsular-french",
+      "name": "Heudelet's Division",
+      "formation": "2nd Division, II Corps (Reynier)",
+      "side": "French",
+      "summary": "Its column, led by Foy's brigade, also reached the top of the ridge, and was driven off it by Leith's division coming along the crest from the south.",
+      "notes": [
+        "After Nafziger, with each regiment's battalions as he gives them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Heudelet",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Foy's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Foy",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "17e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/17e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/17e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/17e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "70e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/70e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/70e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Arnauld's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Arnauld",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "31e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/31e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/31e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/31e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/31e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "47e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/47e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "bussaco-marchand",
+      "nationId": "peninsular-french",
+      "name": "Marchand's Division",
+      "formation": "1st Division, VI Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's second attack, up the road towards the convent; it was stopped by Pack's Portuguese and the guns above.",
+      "notes": [
+        "After Nafziger, with each regiment's battalions as he gives them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Marchand",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Maucune's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Maucune",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/6e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/6e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "69e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/69e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/69e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/69e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Marcognet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Marcognet",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "39e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/39e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/39e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/39e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "76e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/76e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/76e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/76e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "title": "Jean-Gabriel Marchand",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "bussaco-mermet",
+      "nationId": "peninsular-french",
+      "name": "Mermet's Division",
+      "formation": "2nd Division, VI Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's reserve, held below the ridge while Loison and Marchand attacked.",
+      "notes": [
+        "After Nafziger, with each regiment's battalions as he gives them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Mermet",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Bardet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bardet",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "25e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/25e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/25e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "27e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/27e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/27e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/27e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Labassée's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Labassée",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "50e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/50e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/50e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/50e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "59e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/59e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/59e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/59e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Julien_Auguste_Joseph_Mermet.jpg/250px-Julien_Auguste_Joseph_Mermet.jpg",
+        "title": "Julien Mermet",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Julien_Auguste_Joseph_Mermet.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "bussaco-loison",
+      "nationId": "peninsular-french",
+      "name": "Loison's Division",
+      "formation": "3rd Division, VI Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's first attack, straight up the road to the convent at Sula. Simon's brigade reached the crest under the Light Division's fire and was met by the 43rd and 52nd rising from behind it at fifty yards; Simon was wounded and taken.",
+      "notes": [
+        "After Nafziger, with each regiment's battalions as he gives them.",
+        "The Légion du Midi and the Hanoverian Legion are shown as Line.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Loison",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Simon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Simon",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Légion du Midi Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Légion du Midi Ligne"
+                }
+              ]
+            },
+            {
+              "name": "Hanoverian Legion Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Hanoverian Legion Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Hanoverian Legion Ligne"
+                }
+              ]
+            },
+            {
+              "name": "26e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/26e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/26e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/26e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Ferey's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ferey",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "32e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/32e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "66e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/66e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/66e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/66e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "82e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/82e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/82e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/G%C3%A9n%C3%A9ral_Louis_Henri_Loison.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Henri_Loison.jpg",
+        "title": "Louis Henri Loison",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Henri_Loison.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "bussaco-spencer",
+      "nationId": "peninsular-british",
+      "name": "Spencer's 1st Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Held the centre of the ridge around the convent, in reserve behind the Light Division and Pack's Portuguese.",
+      "notes": [
+        "After Nafziger, who gives Sherbrooke; Spencer commanded the division at Bussaco.",
+        "A KGL brigade of four battalions, where the list's has three at most, and Highland battalions in small brigades, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Brent Spencer",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-guards-brigade",
+          "name": "Campbell's Guards Brigade",
+          "commander": {
+            "name": "Maj-Gen Henry Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/Coldstream Guards"
+            },
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/3rd Guards"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Blantyre's Brigade",
+          "commander": {
+            "name": "Col Lord Blantyre",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/24th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/42nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/61st Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-kgl-brigade",
+          "name": "Löwe's KGL Brigade",
+          "commander": {
+            "name": "Maj-Gen von Löwe",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1st Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "5th Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "7th Line Bn KGL"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Pakenham's Brigade",
+          "commander": {
+            "name": "Col Edward Pakenham",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/7th Fusiliers"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/79th Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "6-pdr Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/WP_Brent_Spencer.jpg/250px-WP_Brent_Spencer.jpg",
+        "title": "Sir Brent Spencer",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:WP_Brent_Spencer.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "bussaco-hill",
+      "nationId": "peninsular-british",
+      "name": "Hill's 2nd Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "On the far right of the ridge, out of the fighting, until Hill sent battalions north along the crest to help Leith.",
+      "notes": [
+        "After Nafziger. The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Rowland Hill",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Stewart's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Stewart",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/3rd Foot (Buffs)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/31st Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/48th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/66th Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Inglis's Brigade",
+          "commander": {
+            "name": "Col William Inglis",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "29th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/48th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/57th Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Wilson's Brigade",
+          "commander": {
+            "name": "Col Wilson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/28th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/34th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/39th Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Portuguese 6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-portuguese-arty",
+              "name": "Portuguese 6-pdr Battery"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "9-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "9-pdr Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "bussaco-hamilton",
+      "nationId": "peninsular-british",
+      "name": "Hamilton's Portuguese Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Portuguese regulars on the right of the line beside Hill, ready to support Leith.",
+      "notes": [
+        "Each Portuguese line regiment had two battalions, shown as one Large or standard battalion as the list builds them.",
+        "Without British brigades for the Portuguese ones to go with, the list's ratio shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen John Hamilton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Campbell's Brigade",
+          "commander": {
+            "name": "Col Archibald Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "4th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "10th Line"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Fonseca's Brigade",
+          "commander": {
+            "name": "Brig-Gen Fonseca",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "2nd Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "14th Line"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "bussaco-picton",
+      "nationId": "peninsular-british",
+      "name": "Picton's 3rd Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Held the pass of São Antonio de Cantaro, where Reynier's columns came up out of the mist; the 88th and 45th charged Merle's men on the crest and threw them down the slope.",
+      "notes": [
+        "Picton is the book's named commander.",
+        "Each Portuguese line regiment had two battalions, shown as one Large or standard battalion as the list builds them.",
+        "The force had more guns than the list allows for its battalions (one battery per six), which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major-General Sir Thomas Picton, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-picton"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Mackinnon's Brigade",
+          "commander": {
+            "name": "Col Henry Mackinnon",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/74th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/88th Connaught Rangers"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Lightburne's Brigade",
+          "commander": {
+            "name": "Maj-Gen Lightburne",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/83rd Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (three companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Champalimaud's Brigade",
+          "commander": {
+            "name": "Col Champalimaud",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "9th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "21st Line"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "6-pdr Battery"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "6-pdr Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "bussaco-cole",
+      "nationId": "peninsular-british",
+      "name": "Cole's 4th Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "On the far left of the ridge above Ney's attacks, which never reached it.",
+      "notes": [
+        "After Nafziger.",
+        "Each Portuguese line regiment had two battalions, shown as one Large or standard battalion as the list builds them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Lowry Cole",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Campbell's Brigade",
+          "commander": {
+            "name": "Col Alexander Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/7th Fusiliers"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/11th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/53rd Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Kemmis's Brigade",
+          "commander": {
+            "name": "Col Kemmis",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/27th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/40th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "97th Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Collins's Brigade",
+          "commander": {
+            "name": "Col Richard Collins",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "11th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "23rd Line"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg/250px-Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "title": "Sir Lowry Cole",
+        "artist": "William Dyce",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "bussaco-leith",
+      "nationId": "peninsular-british",
+      "name": "Leith's 5th Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Moved north along the crest as Heudelet's column reached it, and Barnes's brigade, the 9th and 38th leading, charged and drove it off the ridge.",
+      "notes": [
+        "Each Portuguese line regiment had two battalions, shown as one Large or standard battalion as the list builds them.",
+        "The Thomar militia battalion is shown as Portuguese Line, a third in Spry's brigade where the list takes two, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen James Leith",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Barnes's Brigade",
+          "commander": {
+            "name": "Col James Barnes",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/1st Foot (Royal Scots)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/9th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/38th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Spry's Brigade",
+          "commander": {
+            "name": "Col Spry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "3rd Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "15th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "Thomar Militia"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Eben's Brigade",
+          "commander": {
+            "name": "Baron Eben",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "8th Line"
+            },
+            {
+              "unit": "pb-loyal-lusitanian",
+              "name": "Loyal Lusitanian Legion"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Portuguese 6-pdr Battery",
+          "units": [
+            {
+              "unit": "pb-portuguese-arty",
+              "name": "Portuguese 6-pdr Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "bussaco-light",
+      "nationId": "peninsular-british",
+      "name": "Craufurd's Light Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Lay hidden behind the crest above Sula while Loison's division climbed towards it under the rifles' fire; at fifty yards Craufurd called the 43rd and 52nd forward, and their volley and charge swept the French back down the hill.",
+      "notes": [
+        "Craufurd is the book's named commander.",
+        "Two Light Brigades where the list takes one, and a horse troop with an infantry division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major-General Robert Craufurd, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-craufurd"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-brigade",
+          "name": "Beckwith's Brigade",
+          "commander": {
+            "name": "Lt-Col Sidney Beckwith",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/43rd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "3rd Caçadores"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "1/95th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-brigade",
+          "name": "Barclay's Brigade",
+          "commander": {
+            "name": "Lt-Col Robert Barclay",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/52nd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "1st Caçadores"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "1/95th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Ross's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Ross's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "bussaco-portuguese",
+      "nationId": "peninsular-british",
+      "name": "Pack's, Campbell's and Coleman's Portuguese",
+      "formation": "Independent brigades",
+      "side": "Anglo-Portuguese",
+      "summary": "Pack's brigade held the crest beside the Light Division and helped throw back Marchand's attack up the road.",
+      "notes": [
+        "Each Portuguese line regiment had two battalions, shown as one Large or standard battalion as the list builds them.",
+        "Without British brigades for the Portuguese ones to go with, the list's ratio shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Brig-Gen Denis Pack",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Pack's Brigade",
+          "commander": {
+            "name": "Brig-Gen Denis Pack",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "1st Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "16th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "4th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Campbell's Brigade",
+          "commander": {
+            "name": "Brig-Gen Alexander Campbell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "6th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "18th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "6th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Coleman's Brigade",
+          "commander": {
+            "name": "Brig-Gen Coleman",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "7th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "19th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "2nd Caçadores"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/99/Sir_Denis_Pack.jpg",
+        "title": "Sir Denis Pack",
+        "artist": "Saunders",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Denis_Pack.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1800"
+      }
+    }
+  ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Masséna",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg/250px-Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+        "title": "Marshal André Masséna",
+        "artist": "Louis Hersent",
+        "page": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Anglo-Portuguese": {
+      "commander": "Viscount Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg",
+    "title": "The Battle of Bussaco",
+    "artist": "Richard Simkin",
+    "date": "c. 1900",
+    "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg"
+  }
+}

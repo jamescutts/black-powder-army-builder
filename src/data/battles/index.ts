@@ -1,6 +1,8 @@
 import type { HistoricalBattle, HistoricalCampaign, HistoricalForce } from "../types";
 import { getNation } from "../index";
 import albuera from "./albuera.json";
+import bailen from "./bailen.json";
+import bussaco from "./bussaco.json";
 import corunna from "./corunna.json";
 import dahlenkirchen from "./dahlenkirchen.json";
 import eckau from "./eckau.json";
@@ -8,6 +10,7 @@ import gorodechno from "./gorodechno.json";
 import klyastitsy from "./klyastitsy.json";
 import kobrin from "./kobrin.json";
 import ligny from "./ligny.json";
+import medinaDeRioseco from "./medina-de-rioseco.json";
 import mesoten from "./mesoten.json";
 import mir from "./mir.json";
 import quatreBras from "./quatre-bras.json";
@@ -22,14 +25,11 @@ import vitoria from "./vitoria.json";
 import waterloo from "./waterloo.json";
 import wavre from "./wavre.json";
 import {
-  bailen,
   berezina,
   borodino,
-  bussaco,
   fuentesDeOnoro,
   krasnoi,
   maloyaroslavets,
-  medinaDeRioseco,
   nivelle,
   ocana,
   orthez,
@@ -109,8 +109,8 @@ export const campaigns: HistoricalCampaign[] = [
 const schedule: HistoricalBattle[] = [
   // The Peninsular War
   saragossa,
-  medinaDeRioseco,
-  bailen,
+  medinaDeRioseco as HistoricalBattle,
+  bailen as HistoricalBattle,
   rolica as HistoricalBattle,
   vimeiro as HistoricalBattle,
   somosierra,
@@ -120,7 +120,7 @@ const schedule: HistoricalBattle[] = [
   talavera as HistoricalBattle,
   ocana,
   almeida,
-  bussaco,
+  bussaco as HistoricalBattle,
   fuentesDeOnoro,
   tarragona,
   albuera as HistoricalBattle,

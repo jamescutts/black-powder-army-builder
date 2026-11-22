@@ -1,0 +1,923 @@
+{
+  "id": "bailen",
+  "name": "Bailén",
+  "date": "19 July 1808",
+  "campaign": "peninsular-war",
+  "summary": "Dupont's corps, strung out and laden with the loot of Córdoba, found Reding's division across its road home at Bailén. All day in the Andalusian heat the French threw themselves at the Spanish line and were beaten back, their Swiss going over to the enemy; with Castaños's other divisions closing behind and Vedel too late to help, Dupont surrendered his whole corps, the first great defeat of a French army in the field.",
+  "sources": [
+    {
+      "label": "French Forces at Baylen, 19 July 1808 (Nafziger Collection 808GSAG)",
+      "url": "https://www.napoleon-series.org/nafzigger/808GSAG.pdf"
+    },
+    {
+      "label": "Spanish Forces at Baylen, 19 July 1808 (Nafziger Collection 808GSAH)",
+      "url": "https://www.napoleon-series.org/nafzigger/808GSAH.pdf"
+    },
+    {
+      "label": "Battle of Bailén (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Bail%C3%A9n"
+    }
+  ],
+  "forces": [
+    {
+      "id": "bailen-barbou",
+      "nationId": "peninsular-french",
+      "name": "Barbou's Division",
+      "formation": "1st Division, Dupont's Corps",
+      "side": "French",
+      "summary": "Dupont's leading division, which marched into the Spanish army across the road at Bailén at dawn and attacked again and again through the heat of the day, until its men were spent and their water gone.",
+      "notes": [
+        "After Nafziger.",
+        "The Legions of Reserve were raw conscripts; mark them Unreliable if you like.",
+        "The corps' 36 guns were mostly lost on the road; one battery is shown with each division.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Barbou",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Chabert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chabert",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4th Legion of Reserve Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4th Legion of Reserve Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4th Legion of Reserve Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/4th Legion of Reserve Ligne"
+                }
+              ]
+            },
+            {
+              "name": "4th Swiss Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4th Swiss Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Pannetier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pannetier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Legion of Reserve Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/3rd Legion of Reserve Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/3rd Legion of Reserve Ligne"
+                }
+              ]
+            },
+            {
+              "name": "Garde de Paris Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Garde de Paris Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Garde de Paris Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "bailen-frere",
+      "nationId": "peninsular-french",
+      "name": "Frère's Division",
+      "formation": "3rd Division, Dupont's Corps",
+      "side": "French",
+      "summary": "Schramm's brigade of Swiss in Spanish service, with a battalion of the Guard's seamen. In the last attack many of the Swiss went over to their countrymen in Reding's division.",
+      "notes": [
+        "After Nafziger: the Reding and Preux Swiss regiments, four battalions about 2,000 men, shown two each, and the Guard Marines' battalion.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Frère",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Schramm's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Schramm",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Reding Swiss Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Reding Swiss Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Reding Swiss Ligne"
+                }
+              ]
+            },
+            {
+              "name": "Preux Swiss Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Preux Swiss Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Preux Swiss Ligne"
+                }
+              ]
+            },
+            {
+              "name": "Marines of the Guard Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Marines of the Guard Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "bailen-fresia",
+      "nationId": "peninsular-french",
+      "name": "Fresia's Cavalry",
+      "formation": "4th Division, Dupont's Corps",
+      "side": "French",
+      "summary": "Dupont's provisional regiments of dragoons, chasseurs and cuirassiers, which charged the Spanish line repeatedly and once broke into it, taking guns they could not hold.",
+      "notes": [
+        "After Nafziger. The 2nd Provisional Cuirassiers, from Gobert's division, fought here and are shown as the list's Dragoons with Boussart.",
+        "Cavalry on its own has no infantry brigades for its brigades to go with, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Fresia",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Privé's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Privé",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "1st Provisional Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "2nd Provisional Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Dupré's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dupré",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "1st Provisional Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "2nd Provisional Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Boussart's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Boussart",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "6th Provisional Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "2nd Provisional Cuirassiers, Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "bailen-vedel",
+      "nationId": "peninsular-french",
+      "name": "Vedel's Division",
+      "formation": "2nd Division, Dupont's Corps",
+      "side": "French",
+      "summary": "Left behind at La Carolina, it came up on the Spanish rear only in the afternoon, after Dupont had asked for terms, and was included in the capitulation.",
+      "notes": [
+        "After Nafziger, who gives the 1st Legion one battalion of 2,147 men; three are shown.",
+        "The Legions of Reserve were raw conscripts; mark them Unreliable if you like.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Vedel",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Poinsot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Poinsot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "5th Legion of Reserve Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/5th Legion of Reserve Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/5th Legion of Reserve Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/5th Legion of Reserve Ligne"
+                }
+              ]
+            },
+            {
+              "name": "3rd Swiss Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/3rd Swiss Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Cassagne's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Cassagne",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Legion of Reserve Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/1st Legion of Reserve Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/1st Legion of Reserve Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/1st Legion of Reserve Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "bailen-reding",
+      "nationId": "spanish",
+      "name": "Reding's Division",
+      "formation": "1st Division, Army of Andalusia (Castaños)",
+      "side": "Spanish",
+      "summary": "Blocked the road at Bailén and held it all day against Dupont's attacks, its Walloon and Swiss guards and line regiments standing in the heat while the gunners fought the French batteries down.",
+      "notes": [
+        "Nafziger lists each division's units without brigades; the brigades here are ours, grouping its regiments as the list builds them.",
+        "The Spanish cavalry regiments were mere squadrons, a hundred or so men, so they are Small; a cavalry brigade of them, short of the heavy regiments it needs, shows as a historical departure.",
+        "More cavalry regiments than one brigade holds also shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but Walloon Guards at 7, the most the list allows; First Brigade at 7, the most the list allows; Second Brigade at 7, the most the list allows; Reding's Cavalry at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "sp-div-cmd",
+          "name": "Lt-Gen Teodoro Reding",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sp-guard-infantry-brigade",
+          "name": "Walloon Guards",
+          "units": [
+            {
+              "unit": "sp-guard-infantry",
+              "name": "III/Walloon Guards"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "First Brigade",
+          "units": [
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Jaén"
+            },
+            {
+              "unit": "sp-light",
+              "name": "Voluntarios de Barbastro",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Reina",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Reina"
+                }
+              ]
+            },
+            {
+              "name": "Corona",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Corona"
+                }
+              ]
+            },
+            {
+              "name": "Jaén",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Jaén"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Second Brigade",
+          "units": [
+            {
+              "unit": "sp-militia",
+              "name": "Tercio de Tejas"
+            },
+            {
+              "unit": "sp-light",
+              "name": "Cazadores de Antequera",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Irlanda",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Irlanda"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Irlanda"
+                }
+              ]
+            },
+            {
+              "name": "Reding (Swiss)",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Reding (Swiss)"
+                }
+              ]
+            },
+            {
+              "name": "1st Voluntarios de Granada",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "1st Voluntarios de Granada"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-cavalry-brigade",
+          "name": "Reding's Cavalry",
+          "units": [
+            {
+              "unit": "sp-heavy",
+              "name": "Montesa Cavalry",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Farnesio Cavalry",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Reina Dragoons",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Numancia Dragoons",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Olivenza Dragoons",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-lancer",
+              "name": "Utrera Lancers",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-artillery-support",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "sp-horse-artillery",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "sp-artillery-support",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "sp-artillery",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "bailen-coupigny",
+      "nationId": "spanish",
+      "name": "Coupigny's Division",
+      "formation": "2nd Division, Army of Andalusia (Castaños)",
+      "side": "Spanish",
+      "summary": "Beside Reding's, on the left of the line at Bailén, it held off the French attacks and then turned to face Vedel's division as it came up behind.",
+      "notes": [
+        "Nafziger lists each division's units without brigades; the brigades here are ours, grouping its regiments as the list builds them.",
+        "More Militia battalions in a brigade than the list's two show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but First Brigade at 7, the most the list allows; Second Brigade at 7, the most the list allows; Coupigny's Cavalry at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "sp-div-cmd",
+          "name": "Mariscal de Campo Marqués de Coupigny",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sp-infantry-brigade",
+          "name": "First Brigade",
+          "units": [
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Granada"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Trujillo"
+            },
+            {
+              "unit": "sp-light",
+              "name": "Voluntarios de Cataluña"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Ceuta",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Ceuta"
+                }
+              ]
+            },
+            {
+              "name": "Órdenes Militares",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Órdenes Militares"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Órdenes Militares"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Second Brigade",
+          "units": [
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Bujalance"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Cuenca"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Ciudad Real"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "2nd Voluntarios de Granada",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "2nd Voluntarios de Granada"
+                }
+              ]
+            },
+            {
+              "name": "3rd Voluntarios de Granada",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "3rd Voluntarios de Granada"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-cavalry-brigade",
+          "name": "Coupigny's Cavalry",
+          "units": [
+            {
+              "unit": "sp-heavy",
+              "name": "Borbón Cavalry"
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "España Cavalry",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-artillery-support",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "sp-horse-artillery",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "bailen-la-pena",
+      "nationId": "spanish",
+      "name": "La Peña's and Jones's Divisions",
+      "formation": "Reserve and 3rd Divisions, Army of Andalusia (Castaños)",
+      "side": "Spanish",
+      "summary": "Castaños's other two divisions, which followed Dupont from Andújar and closed on his rear as the battle ended, sealing the French in between them and Reding.",
+      "notes": [
+        "Nafziger lists each division's units without brigades; the brigades here are ours, grouping its regiments as the list builds them.",
+        "Jones's division's smaller provincial battalions (Alcázar de San Juan, Guadix, Sevilla, Lorca) and the Santiago and Sagunto cavalry are left out.",
+        "A cavalry brigade with one full heavy regiment, short of the two it needs, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but Lt-Gen Manuel de La Peña at 7, the most the list allows; Mariscal de Campo Félix Jones at 7, the most the list allows; Reserve Cavalry at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "sp-div-cmd",
+          "name": "Lt-Gen Manuel de La Peña",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sp-infantry-brigade",
+          "name": "La Peña's Reserve",
+          "commander": {
+            "name": "Lt-Gen Manuel de La Peña",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "sp-grenadier",
+              "name": "Provincial Grenadiers"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Sigüenza"
+            },
+            {
+              "unit": "sp-light",
+              "name": "Zaragoza Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Burgos",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Burgos"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Burgos"
+                }
+              ]
+            },
+            {
+              "name": "Africa",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Africa"
+                }
+              ]
+            },
+            {
+              "name": "Murcia",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Murcia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Jones's Division",
+          "commander": {
+            "name": "Mariscal de Campo Félix Jones",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Burgos"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Provincial de Plasencia"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Córdoba",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Córdoba"
+                }
+              ]
+            },
+            {
+              "name": "Campomayor",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Campomayor"
+                }
+              ]
+            },
+            {
+              "name": "Valencia",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Valencia"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sp-cavalry-brigade",
+          "name": "Reserve Cavalry",
+          "units": [
+            {
+              "unit": "sp-heavy",
+              "name": "Pavía Dragoons"
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Príncipe Cavalry",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Calatrava Cavalry",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-lancer",
+              "name": "Jerez Lancers",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-artillery-support",
+          "name": "Reserve Artillery",
+          "units": [
+            {
+              "unit": "sp-artillery",
+              "name": "Reserve Artillery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    }
+  ],
+  "sides": {
+    "French": {
+      "commander": "Gén. Dupont"
+    },
+    "Spanish": {
+      "commander": "Gen Castaños"
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg/960px-La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg",
+    "title": "The Surrender of Bailén",
+    "artist": "José Casado del Alisal",
+    "date": "1864",
+    "page": "https://commons.wikimedia.org/wiki/File:La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg"
+  }
+}

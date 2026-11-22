@@ -106,10 +106,6 @@ berezina.art = {
 
 const P = "peninsular-war";
 
-export const medinaDeRioseco = planned("medina-de-rioseco", "Medina de Rioseco", "14 July 1808", P,
-  "Bessières routed the Spanish armies of Cuesta and Blake in Old Castile, opening the road to Madrid for King Joseph.");
-export const bailen = planned("bailen", "Bailén", "16–19 July 1808", P,
-  "Castaños's Spanish army trapped Dupont's corps in the heat of Andalusia and forced it to surrender, the first great defeat of a French army in the field.");
 export const somosierra = planned("somosierra", "Somosierra", "30 November 1808", P,
   "The Polish light horse of the Guard charged up the mountain pass through the Spanish batteries, opening the way to Madrid.");
 // Battles still to come can have their painting already
@@ -122,8 +118,6 @@ somosierra.art = {
 };
 export const ocana = planned("ocana", "Ocaña", "19 November 1809", P,
   "Areizaga's Spanish army was broken on the plain south of Aranjuez by Soult and Mortier, its largest defeat of the war.");
-export const bussaco = planned("bussaco", "Bussaco", "27 September 1810", P,
-  "Masséna's corps climbed the long ridge of Bussaco against Wellington's Anglo-Portuguese line and were thrown back down it.");
 export const fuentesDeOnoro = planned("fuentes-de-onoro", "Fuentes de Oñoro", "3–5 May 1811", P,
   "Masséna's attempt to relieve Almeida, fought out in the village's streets and on the open plain to its south.");
 export const sorauren = planned("sorauren", "Sorauren", "28–30 July 1813", P,
@@ -136,31 +130,11 @@ export const toulouse = planned("toulouse", "Toulouse", "10 April 1814", P,
   "The war's last battle, fought for the heights east of the city before news came that Napoleon had already abdicated.");
 
 // Paintings for the Peninsular War's battles still to come
-medinaDeRioseco.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg/960px-Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg",
-  "title": "The French cuirassiers' charge at Medina de Rioseco",
-  "artist": "unknown artist",
-  "page": "https://commons.wikimedia.org/wiki/File:Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg"
-};
-bailen.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg/960px-La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg",
-  "title": "The Surrender of Bailén",
-  "artist": "José Casado del Alisal",
-  "date": "1864",
-  "page": "https://commons.wikimedia.org/wiki/File:La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg"
-};
 ocana.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg/960px-Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg",
   "title": "The Battle of Ocaña",
   "artist": "after Adolphe Roehn",
   "page": "https://commons.wikimedia.org/wiki/File:Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg"
-};
-bussaco.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg",
-  "title": "The Battle of Bussaco",
-  "artist": "Richard Simkin",
-  "date": "c. 1900",
-  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg"
 };
 fuentesDeOnoro.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Battle_of_Fuentes_d%27Onoro%2C_1811.jpg/960px-Battle_of_Fuentes_d%27Onoro%2C_1811.jpg",
@@ -188,6 +162,14 @@ orthez.art = {
   "artist": "Denis Dighton",
   "date": "1815",
   "page": "https://commons.wikimedia.org/wiki/File:Denis_Dighton_Battle_of_Orthez.jpg"
+};
+
+toulouse.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Battle_of_Toulouse.jpg/960px-Battle_of_Toulouse.jpg",
+  "title": "The Battle of Toulouse",
+  "artist": "Henri Louis Dupray",
+  "date": "c. 1890",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Toulouse.jpg"
 };
 
 // The Peninsular War's sieges: the storms of the breaches were fights of their own

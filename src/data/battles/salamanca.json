@@ -344,7 +344,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg/250px-Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "title": "Sir Lowry Cole",
+        "artist": "William Dyce",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "salamanca-clinton",
@@ -910,7 +917,15 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg/250px-Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "title": "Sir Stapleton Cotton",
+        "artist": "Joseph John Jenkins",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "focus": "50% 18%",
+        "date": "1833"
+      }
     },
     {
       "id": "salamanca-light-cav",
@@ -1003,7 +1018,15 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg/250px-Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "title": "Sir Stapleton Cotton",
+        "artist": "Joseph John Jenkins",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "focus": "50% 18%",
+        "date": "1833"
+      }
     },
     {
       "id": "salamanca-thomieres",
@@ -1435,7 +1458,15 @@
       "notes": [
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Clausel%2C_PA03433.jpg/250px-Clausel%2C_PA03433.jpg",
+        "title": "Bertrand Clausel",
+        "artist": "Antoine Maurin",
+        "page": "https://commons.wikimedia.org/wiki/File:Clausel%2C_PA03433.jpg",
+        "focus": "50% 18%",
+        "date": "1851"
+      }
     },
     {
       "id": "salamanca-bonet",
@@ -1553,7 +1584,14 @@
       "notes": [
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Jean_Pierre_Fran%C3%A7ois_Bonet_%281768-1857%29.jpg/250px-Jean_Pierre_Fran%C3%A7ois_Bonet_%281768-1857%29.jpg",
+        "title": "Jean-Pierre-François Bonet",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean_Pierre_Fran%C3%A7ois_Bonet_%281768-1857%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "salamanca-ferey",
@@ -1662,7 +1700,15 @@
       "notes": [
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Claude_Fran%C3%A7ois_Ferey%2C_baron_de_Rosengath_%281771-1812%29.jpg/250px-Claude_Fran%C3%A7ois_Ferey%2C_baron_de_Rosengath_%281771-1812%29.jpg",
+        "title": "Claude François Ferey",
+        "artist": "F. G. Weitsch",
+        "page": "https://commons.wikimedia.org/wiki/File:Claude_Fran%C3%A7ois_Ferey%2C_baron_de_Rosengath_%281771-1812%29.jpg",
+        "focus": "50% 18%",
+        "date": "1808"
+      }
     },
     {
       "id": "salamanca-sarrut",

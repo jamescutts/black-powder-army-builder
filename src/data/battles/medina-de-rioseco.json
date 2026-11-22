@@ -1,0 +1,804 @@
+{
+  "id": "medina-de-rioseco",
+  "name": "Medina de Rioseco",
+  "date": "14 July 1808",
+  "campaign": "peninsular-war",
+  "summary": "Blake's Army of Galicia and Cuesta's Army of Castile, drawn up apart on the open plain north of Valladolid, were beaten in turn by Bessières's smaller corps. Merle turned Blake's left and drove between the two armies; Mouton then broke Cuesta's, and the road to Madrid lay open for King Joseph.",
+  "sources": [
+    {
+      "label": "Battle of Medina de Rio Seco, 14 July 1808 (Nafziger Collection 808GSAT)",
+      "url": "https://www.napoleon-series.org/nafzigger/808GSAT.pdf"
+    },
+    {
+      "label": "Battle of Medina de Rioseco (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Medina_de_Rioseco"
+    }
+  ],
+  "forces": [
+    {
+      "id": "medina-lasalle",
+      "nationId": "peninsular-french",
+      "name": "Lasalle's Division",
+      "formation": "Bessières's Corps of the Western Pyrenees",
+      "side": "French",
+      "summary": "Bessières's cavalry with Sabatier's brigade of provisional infantry. Lasalle's chasseurs rode down the Spanish left as Merle's infantry climbed the Monclin heights, and swept the field when the Spanish line broke.",
+      "notes": [
+        "After Nafziger. The provisional regiments were raw conscript battalions, soon merged into the 120th Line; mark them Unreliable if you like.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Lasalle",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Lasalle's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lasalle",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "10e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "22e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Sabatier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sabatier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "17th Provisional Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/17th Provisional Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/17th Provisional Ligne"
+                }
+              ]
+            },
+            {
+              "name": "18th Provisional Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/18th Provisional Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/18th Provisional Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "medina-merle",
+      "nationId": "peninsular-french",
+      "name": "Merle's Division",
+      "formation": "Bessières's Corps of the Western Pyrenees",
+      "side": "French",
+      "summary": "Turned the Spanish left on the Monclin heights and then, with the Guard's fusiliers, drove into the gap between Blake's and Cuesta's armies, breaking Blake's line.",
+      "notes": [
+        "After Nafziger. The 13th and 14th Provisional, conscripts, were soon merged into the 119th Line.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Merle",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Darmagnac's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Darmagnac",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "47th Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/47th Ligne"
+                }
+              ]
+            },
+            {
+              "name": "86th Ligne (two companies) and 3rd Swiss",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "Two companies, 86th Ligne",
+                  "options": [
+                    "small"
+                  ]
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/3rd Swiss"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Ducos's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ducos",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "13th Provisional Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/13th Provisional Ligne"
+                }
+              ]
+            },
+            {
+              "name": "14th Provisional Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/14th Provisional Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/14th Provisional Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/14th Provisional Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/14th Provisional Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg/250px-Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg",
+        "title": "Pierre Hugues Victoire Merle",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Pierre_Hugues_Victoire_Merle_%281766-1830%29.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "medina-mouton",
+      "nationId": "peninsular-french",
+      "name": "Mouton's Division",
+      "formation": "Bessières's Corps of the Western Pyrenees",
+      "side": "French",
+      "summary": "Bessières's other division, which struck Cuesta's army as it came forward too late to save Blake's, and drove it from the field and through the town of Medina.",
+      "notes": [
+        "After Nafziger, who doesn't give Rey's battalions; one each is shown.",
+        "The provisional squadron of cuirassiers and carabiniers is shown as the list's Dragoons, as a cavalry brigade of one, below the two regiments it needs; both that and Rey's two Light regiments show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Mouton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Reynaud's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Reynaud",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/4e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "15e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/15e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/15e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/15e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Rey's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rey",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/2e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "12e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/12e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Provisional Cuirassiers",
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "Provisional Squadron of Dragons"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "medina-guard",
+      "nationId": "peninsular-french",
+      "name": "The Guard Detachment",
+      "formation": "From the garrison of Burgos",
+      "side": "French",
+      "summary": "Two battalions of the Imperial Guard's fusiliers with small detachments of Guard cavalry, brought from Burgos. They followed Merle into the gap in the Spanish centre.",
+      "notes": [
+        "After Nafziger: about 1,900 fusiliers and 290 Guard cavalry in three detachments, so each Small, with ten guns. The Fusiliers are shown as the list's Young Guard.",
+        "Guard brigades without the infantry and cavalry brigades they need show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Brigade Dorsenne",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-young-guard-brigade",
+          "name": "Guard Fusiliers",
+          "units": [
+            {
+              "unit": "pf-young-guard",
+              "name": "Fusiliers-Chasseurs"
+            },
+            {
+              "unit": "pf-young-guard",
+              "name": "Fusiliers-Grenadiers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-guard-cavalry-brigade",
+          "name": "Guard Cavalry Detachments",
+          "units": [
+            {
+              "unit": "pf-guard-light",
+              "name": "Chasseurs à Cheval of the Guard",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "pf-guard-lancer",
+              "name": "Polish Light Horse of the Guard",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "pf-empress-dragoon",
+              "name": "Dragoons of the Guard",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "early"
+    },
+    {
+      "id": "medina-blake",
+      "nationId": "spanish",
+      "name": "Blake's Army of Galicia",
+      "formation": "Vanguard, 1st and 4th Divisions",
+      "side": "Spanish",
+      "summary": "Blake's regulars and militia held the low ridge in front of Medina. Merle's attack turned their left on the Monclin heights; Blake's counter-attack was beaten off, and when the French drove between his army and Cuesta's the Galicians broke, losing their guns.",
+      "notes": [
+        "After Nafziger. Each division is shown as one brigade; the half-battalions of volunteers are Small light battalions.",
+        "The 1st Division's Militia Grenadiers were two battalions; one is shown. More Militia and Line regiments in a brigade than the list allows show as historical departures.",
+        "The Spanish cavalry regiments were mere squadrons, a hundred or so men, so they are Small; a cavalry brigade of them, short of the heavy regiments it needs, shows as a historical departure.",
+        "Three batteries of five or six guns for twenty-odd battalions show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but Brig Conde de Maceda at 7, the most the list allows; Mariscal de Campo Cagigal at 7, the most the list allows; Mariscal de Campo Marqués de Portago at 7, the most the list allows; Vanguard Cavalry at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "sp-div-cmd",
+          "name": "Lt-Gen Joaquín Blake",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Maceda's Vanguard",
+          "commander": {
+            "name": "Brig Conde de Maceda",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "sp-grenadier",
+              "name": "Converged Grenadiers"
+            },
+            {
+              "unit": "sp-light",
+              "name": "Voluntarios de Gerona",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-light",
+              "name": "Voluntarios de Cataluña",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Zaragoza",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Zaragoza"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Cagigal's 1st Division",
+          "commander": {
+            "name": "Mariscal de Campo Cagigal",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "sp-grenadier",
+              "name": "Militia Grenadiers of Galicia"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Salamanca Militia"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Mondoñedo Militia"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Tuy Militia"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Buenos Aires Provincial Battalion"
+            },
+            {
+              "unit": "sp-light",
+              "name": "Voluntarios de Barbastro",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Rey",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Rey"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Rey"
+                }
+              ]
+            },
+            {
+              "name": "Hibernia",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Hibernia"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Hibernia"
+                }
+              ]
+            },
+            {
+              "name": "Mallorca",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Mallorca"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "Portago's 4th Division",
+          "commander": {
+            "name": "Mariscal de Campo Marqués de Portago",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "sp-grenadier",
+              "name": "Converged Grenadiers"
+            },
+            {
+              "unit": "sp-light",
+              "name": "Navarra Light Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Príncipe",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Príncipe"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Príncipe"
+                }
+              ]
+            },
+            {
+              "name": "Toledo",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Toledo"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Toledo"
+                }
+              ]
+            },
+            {
+              "name": "Aragón",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "I/Aragón"
+                },
+                {
+                  "unit": "sp-line",
+                  "name": "II/Aragón"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sp-cavalry-brigade",
+          "name": "Vanguard Cavalry",
+          "units": [
+            {
+              "unit": "sp-heavy",
+              "name": "Montesa Cavalry",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Reina Dragoons",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-artillery-support",
+          "name": "4th Artillery, Vanguard",
+          "units": [
+            {
+              "unit": "sp-artillery",
+              "name": "4th Artillery, Vanguard"
+            }
+          ]
+        },
+        {
+          "type": "sp-artillery-support",
+          "name": "4th Artillery, 1st Division",
+          "units": [
+            {
+              "unit": "sp-artillery",
+              "name": "4th Artillery, 1st Division"
+            }
+          ]
+        },
+        {
+          "type": "sp-artillery-support",
+          "name": "4th Artillery, 4th Division",
+          "units": [
+            {
+              "unit": "sp-artillery",
+              "name": "4th Artillery, 4th Division"
+            }
+          ]
+        }
+      ],
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg/250px-El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg",
+        "title": "Joaquín Blake",
+        "artist": "Manuel Ojeda",
+        "page": "https://commons.wikimedia.org/wiki/File:El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "medina-cuesta",
+      "nationId": "spanish",
+      "name": "Cuesta's Army of Castile",
+      "formation": "1st and 2nd Divisions",
+      "side": "Spanish",
+      "summary": "Cuesta's half-trained levies, posted apart from Blake's army, came forward too late to save it and were broken in their turn by Mouton's division, the Leon volunteers and the guardsmen of the Garde du Corps fighting hardest.",
+      "notes": [
+        "After Nafziger: about 10,000 infantry and 560 cavalry, with no guns. The volunteers and tercios, newly raised, are shown as Militia.",
+        "A brigade of only Militia, without the Line regiment it needs, shows as a historical departure.",
+        "The Spanish cavalry regiments were mere squadrons, a hundred or so men, so they are Small; a cavalry brigade of them, short of the heavy regiments it needs, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1st Division at 7, the most the list allows; 2nd Division at 7, the most the list allows; Cuesta's Cavalry at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "sp-div-cmd",
+          "name": "Capt-Gen Gregorio de la Cuesta",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sp-infantry-brigade",
+          "name": "1st Division",
+          "units": [
+            {
+              "unit": "sp-militia",
+              "name": "I/Voluntarios de León"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "II/Voluntarios de León"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Córdoba",
+              "units": [
+                {
+                  "unit": "sp-line",
+                  "name": "Córdoba"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-infantry-brigade",
+          "name": "2nd Division",
+          "units": [
+            {
+              "unit": "sp-militia",
+              "name": "III/Voluntarios de León"
+            },
+            {
+              "unit": "sp-militia",
+              "name": "Tercios de Castilla"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "sp-cavalry-brigade",
+          "name": "Cuesta's Cavalry",
+          "units": [
+            {
+              "unit": "sp-heavy",
+              "name": "Garde du Corps",
+              "options": [
+                "guard-heavy",
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Royal Carabiniers",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "sp-heavy",
+              "name": "Reina Dragoons",
+              "options": [
+                "small"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "period": "early"
+    }
+  ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Bessières"
+    },
+    "Spanish": {
+      "commander": "Gen Blake, with Gen Cuesta",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg/250px-El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg",
+        "title": "Joaquín Blake",
+        "artist": "Manuel Ojeda",
+        "page": "https://commons.wikimedia.org/wiki/File:El_general_Joaqu%C3%ADn_Blake_y_Joyes%2C_por_Manuel_Ojeda.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg/960px-Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg",
+    "title": "The French cuirassiers' charge at Medina de Rioseco",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg"
+  }
+}

@@ -232,7 +232,15 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Anthony_Cardon_-_Sir_Ronald_Craufurd_Ferguson%2C_M_P_-_B1977.14.9921_-_Yale_Center_for_British_Art.jpg/250px-Anthony_Cardon_-_Sir_Ronald_Craufurd_Ferguson%2C_M_P_-_B1977.14.9921_-_Yale_Center_for_British_Art.jpg",
+        "title": "Sir Ronald Craufurd Ferguson",
+        "artist": "Anthony Cardon",
+        "page": "https://commons.wikimedia.org/wiki/File:Anthony_Cardon_-_Sir_Ronald_Craufurd_Ferguson%2C_M_P_-_B1977.14.9921_-_Yale_Center_for_British_Art.jpg",
+        "focus": "50% 18%",
+        "date": "1810"
+      }
     },
     {
       "id": "vimeiro-reserve",
@@ -367,7 +375,14 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/WP_Brent_Spencer.jpg/250px-WP_Brent_Spencer.jpg",
+        "title": "Sir Brent Spencer",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:WP_Brent_Spencer.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vimeiro-delaborde",
@@ -592,7 +607,14 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/G%C3%A9n%C3%A9ral_Louis_Henri_Loison.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Henri_Loison.jpg",
+        "title": "Louis Henri Loison",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Henri_Loison.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vimeiro-reserve-fr",

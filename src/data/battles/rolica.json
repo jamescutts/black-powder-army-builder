@@ -250,7 +250,15 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Anthony_Cardon_-_Sir_Ronald_Craufurd_Ferguson%2C_M_P_-_B1977.14.9921_-_Yale_Center_for_British_Art.jpg/250px-Anthony_Cardon_-_Sir_Ronald_Craufurd_Ferguson%2C_M_P_-_B1977.14.9921_-_Yale_Center_for_British_Art.jpg",
+        "title": "Sir Ronald Craufurd Ferguson",
+        "artist": "Anthony Cardon",
+        "page": "https://commons.wikimedia.org/wiki/File:Anthony_Cardon_-_Sir_Ronald_Craufurd_Ferguson%2C_M_P_-_B1977.14.9921_-_Yale_Center_for_British_Art.jpg",
+        "focus": "50% 18%",
+        "date": "1810"
+      }
     },
     {
       "id": "rolica-trant",

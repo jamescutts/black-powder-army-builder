@@ -310,7 +310,14 @@
           }
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Pablo-morillo.jpg/250px-Pablo-morillo.jpg",
+        "title": "Pablo Morillo",
+        "artist": "Horace Vernet",
+        "page": "https://commons.wikimedia.org/wiki/File:Pablo-morillo.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vitoria-cole",
@@ -416,7 +423,14 @@
           ]
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg/250px-Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "title": "Sir Lowry Cole",
+        "artist": "William Dyce",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vitoria-light",
@@ -733,7 +747,14 @@
           ]
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/George_Ramsay%2C_9th_Earl_of_Dalhousie%2C_from_the_National_Gallery_of_Canada_%28cropped%29.jpg/250px-George_Ramsay%2C_9th_Earl_of_Dalhousie%2C_from_the_National_Gallery_of_Canada_%28cropped%29.jpg",
+        "title": "The Earl of Dalhousie",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:George_Ramsay%2C_9th_Earl_of_Dalhousie%2C_from_the_National_Gallery_of_Canada_%28cropped%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vitoria-howard",
@@ -984,7 +1005,15 @@
           ]
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Thomas_Graham_%281748%E2%80%931843%29%2C_Baron_Lynedoch_by_Thomas_Lawrence_1.jpg/250px-Thomas_Graham_%281748%E2%80%931843%29%2C_Baron_Lynedoch_by_Thomas_Lawrence_1.jpg",
+        "title": "Sir Thomas Graham",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Thomas_Graham_%281748%E2%80%931843%29%2C_Baron_Lynedoch_by_Thomas_Lawrence_1.jpg",
+        "focus": "50% 18%",
+        "date": "1817"
+      }
     },
     {
       "id": "vitoria-longa",
@@ -1187,7 +1216,15 @@
           ]
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg/250px-Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "title": "Sir Stapleton Cotton",
+        "artist": "Joseph John Jenkins",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "focus": "50% 18%",
+        "date": "1833"
+      }
     },
     {
       "id": "vitoria-light-cav",
@@ -1516,7 +1553,14 @@
           ]
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/6/65/G%C3%A9n%C3%A9ral_Eug%C3%A8ne_Casimir_Villatte.png",
+        "title": "Eugène-Casimir Villatte",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Eug%C3%A8ne_Casimir_Villatte.png",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vitoria-conroux",
@@ -1620,7 +1664,14 @@
           ]
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Nicolas_Fran%C3%A7ois_Conroux.jpg/250px-Nicolas_Fran%C3%A7ois_Conroux.jpg",
+        "title": "Nicolas François Conroux",
+        "artist": "Jean-Baptiste Wicar",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Fran%C3%A7ois_Conroux.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vitoria-darricau",
@@ -1994,7 +2045,14 @@
           ]
         }
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/0/0d/G%C3%A9n%C3%A9ral_Jean_Barth%C3%A9l%C3%A9my_Claude_Toussaint_Darmagnac.png",
+        "title": "Jean Barthélemy Darmagnac",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Barth%C3%A9l%C3%A9my_Claude_Toussaint_Darmagnac.png",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vitoria-cassagne",

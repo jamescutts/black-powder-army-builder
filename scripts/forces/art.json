@@ -152,6 +152,26 @@
       "title": "The Battle of Roliça",
       "artist": "Abraham Cooper",
       "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Roli%C3%A7a_-_Abraham_Cooper.png"
+    },
+    "medina-de-rioseco": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg/960px-Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg",
+      "title": "The French cuirassiers' charge at Medina de Rioseco",
+      "artist": "unknown artist",
+      "page": "https://commons.wikimedia.org/wiki/File:Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg"
+    },
+    "bailen": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg/960px-La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg",
+      "title": "The Surrender of Bailén",
+      "artist": "José Casado del Alisal",
+      "date": "1864",
+      "page": "https://commons.wikimedia.org/wiki/File:La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg"
+    },
+    "bussaco": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg",
+      "title": "The Battle of Bussaco",
+      "artist": "Richard Simkin",
+      "date": "c. 1900",
+      "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg"
     }
   },
   "campaigns": {

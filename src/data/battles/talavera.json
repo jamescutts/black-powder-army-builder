@@ -125,7 +125,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/John_Coape_Sherbrooke.jpg/250px-John_Coape_Sherbrooke.jpg",
+        "title": "Sir John Sherbrooke",
+        "artist": "Robert Field",
+        "page": "https://commons.wikimedia.org/wiki/File:John_Coape_Sherbrooke.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "talavera-hill",
@@ -552,7 +559,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Fran%C3%A7ois_Amable_Ruffin.jpg/250px-Fran%C3%A7ois_Amable_Ruffin.jpg",
+        "title": "François Amable Ruffin",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Amable_Ruffin.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "talavera-lapisse",
@@ -794,7 +808,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/6/65/G%C3%A9n%C3%A9ral_Eug%C3%A8ne_Casimir_Villatte.png",
+        "title": "Eugène-Casimir Villatte",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Eug%C3%A8ne_Casimir_Villatte.png",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "talavera-sebastiani",

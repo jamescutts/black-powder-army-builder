@@ -208,7 +208,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg/250px-Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "title": "Sir Lowry Cole",
+        "artist": "William Dyce",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "albuera-hamilton",
@@ -449,7 +456,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Sir_William_Lumley_%281769-1850%29.jpg/250px-Sir_William_Lumley_%281769-1850%29.jpg",
+        "title": "Sir William Lumley",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_William_Lumley_%281769-1850%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "albuera-zayas",
@@ -558,7 +572,15 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/El_general_Jos%C3%A9_Pascual_de_Zayas_y_Chac%C3%B3n%2C_por_Vicente_L%C3%B3pez.jpg/250px-El_general_Jos%C3%A9_Pascual_de_Zayas_y_Chac%C3%B3n%2C_por_Vicente_L%C3%B3pez.jpg",
+        "title": "José Pascual de Zayas",
+        "artist": "Vicente López",
+        "page": "https://commons.wikimedia.org/wiki/File:El_general_Jos%C3%A9_Pascual_de_Zayas_y_Chac%C3%B3n%2C_por_Vicente_L%C3%B3pez.jpg",
+        "focus": "50% 18%",
+        "date": "c. 1818"
+      }
     },
     {
       "id": "albuera-lardizabal",
@@ -749,7 +771,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Ballesteros%2C_PA02569.jpg/250px-Ballesteros%2C_PA02569.jpg",
+        "title": "Francisco Ballesteros",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Ballesteros%2C_PA02569.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "albuera-girard",
@@ -980,7 +1009,15 @@
       "period": "middle",
       "notes": [
         "Commanders are at Staff Rating 8, the default for historical forces."
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Honor%C3%A9_Th%C3%A9odore_Maxime_Gazan_de_la_Peyri%C3%A8re.png/250px-Honor%C3%A9_Th%C3%A9odore_Maxime_Gazan_de_la_Peyri%C3%A8re.png",
+        "title": "Honoré Gazan",
+        "artist": "Aubry",
+        "page": "https://commons.wikimedia.org/wiki/File:Honor%C3%A9_Th%C3%A9odore_Maxime_Gazan_de_la_Peyri%C3%A8re.png",
+        "focus": "50% 18%",
+        "date": "1804"
+      }
     },
     {
       "id": "albuera-werle",
