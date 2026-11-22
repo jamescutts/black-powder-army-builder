@@ -482,15 +482,453 @@
         "page": "https://commons.wikimedia.org/wiki/File:General_Durutte_by_Fran%C3%A7ois_B%C3%B6hm_1.jpg",
         "focus": "50% 20%"
       }
-    }
-  ],
-  "toCome": [
+    },
     {
-      "side": "Prussian",
+      "id": "grossbeeren-bulow",
+      "nationId": "prussians-1815",
       "name": "Bülow's Corps",
       "formation": "III Corps: Hesse-Homburg's, Thümen's, Borstell's and Krafft's brigades, with Oppen's cavalry",
+      "side": "Prussian",
       "summary": "Four brigades of line, reserve and Landwehr infantry, each with its cavalry and battery, which stormed Großbeeren at six in the evening behind sixty-four guns, two of their batteries Russian 12-pdrs; the 4th Reserve Regiment fought in the village with musket butts. Borstell's brigade came in on the Saxons' flank from Kleinbeeren, and Oppen's dragoons, hussars and Landwehr cavalry rode down the rearguard in the dark.",
-      "flag": "/flags/prussia.png"
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for Großbeeren.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "Each brigade's grenadier battalion is with its first line regiment. Thümen's brigade had no Landwehr, which the list's brigade wants. Reserve regiments of three or four battalions, Landwehr regiments of four, and line regiments of three or more musketeer battalions show as historical departures.",
+        "The Pomeranian National Cavalry, a volunteer regiment, is Thümen's attached hussars; two attached hussar regiments in the corps, where the list allows one, show as a historical departure.",
+        "Borstell's Pomeranian Hussars and West Prussian Uhlans are a cavalry brigade of their own. Three dragoon regiments in Oppen's brigade, line and Landwehr cavalry brigades together, and more cavalry brigades than the infantry allows show as historical departures.",
+        "Two 12-pdr batteries, where the corps artillery takes one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Bülow",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "3rd Brigade (Hesse-Homburg)",
+          "commander": {
+            "name": "Gen-Maj Prince Ludwig of Hesse-Homburg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "1st Leib Hussars"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #5"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "3rd East Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "2nd East Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/3rd East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/3rd East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/3rd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "4th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/4th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/4th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "III/4th Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "3rd East Prussian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "8th Bn, 3rd East Prussian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "11th Bn, 3rd East Prussian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "12th Bn, 3rd East Prussian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "20th Bn, 3rd East Prussian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "4th Brigade (Thümen)",
+          "commander": {
+            "name": "Gen-Maj von Thümen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "2nd Company, East Prussian Jäger"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "4th Company, East Prussian Jäger"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "Pomeranian National Cavalry"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #6"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "4th East Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/4th East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/4th East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/4th East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "5th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/5th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/5th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "III/5th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "IV/5th Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Elbe Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Elbe Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Elbe Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "5th Brigade (Borstell)",
+          "commander": {
+            "name": "Gen-Maj von Borstell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #10"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Pomeranian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Pomeranian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st Pomeranian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st Pomeranian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/1st Pomeranian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "2nd Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/2nd Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "III/2nd Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "2nd Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/2nd Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/2nd Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "5th Brigade Cavalry",
+          "units": [
+            {
+              "unit": "pr15-hussar",
+              "name": "Pomeranian Hussars"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "West Prussian Uhlans"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "6th Brigade (Krafft)",
+          "commander": {
+            "name": "Gen-Maj von Krafft",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "1st Pomeranian Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #16"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Colberg Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Colberg Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Colberg Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Colberg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "9th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/9th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/9th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "III/9th Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "1st Neumark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/1st Neumark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/1st Neumark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/1st Neumark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/1st Neumark Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Oppen)",
+          "commander": {
+            "name": "Gen-Maj von Oppen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Queen's Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "Brandenburg Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "2nd West Prussian Dragoons"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "2nd Silesian Hussars (2 squadrons)"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #5"
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Reserve Cavalry (Oppen, Landwehr)",
+          "commander": {
+            "name": "Gen-Maj von Oppen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "2nd Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "4th Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #6"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Foot Battery #4"
+            },
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Foot Battery #5"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #19"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Russian 12-pdr Batteries #7 and #21",
+          "reason": "Two Russian position batteries in Bülow's artillery reserve, which a force from the Prussian list can't take."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Friedrich_Wilhelm_Freiherr_von_Bulow.jpg/250px-Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "title": "Friedrich Wilhelm Bülow von Dennewitz",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "focus": "50% 20%"
+      }
     }
   ]
 }

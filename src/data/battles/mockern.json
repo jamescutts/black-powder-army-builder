@@ -57,6 +57,14 @@
       "url": "https://www.napoleon-series.org/nafzigger/813DCB.pdf"
     },
     {
+      "label": "Prussian Corps, Generallieutenant Yorck, April–May 1813 (Nafziger Collection 813DBJ)",
+      "url": "https://www.napoleon-series.org/nafzigger/813DBJ.pdf"
+    },
+    {
+      "label": "Prussian Army, 1 April 1813 (Nafziger Collection 813DCA)",
+      "url": "https://www.napoleon-series.org/nafzigger/813DCA.pdf"
+    },
+    {
       "label": "Battle of Möckern (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_M%C3%B6ckern"
     },
@@ -460,22 +468,319 @@
         "page": "https://commons.wikimedia.org/wiki/File:Berg_1_Grigory_Maximobich.jpg",
         "focus": "50% 18%"
       }
-    }
-  ],
-  "toCome": [
-    {
-      "side": "Prussian",
-      "name": "Yorck's Corps",
-      "formation": "Prussian corps, with Wittgenstein",
-      "summary": "Yorck's advance guard under Hünerbein, three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, which stormed Dannigkow and held it against Lagrange's counter-attacks; the rest of the corps stood at Leitzkau.",
-      "flag": "/flags/prussia.png"
     },
     {
+      "id": "mockern-yorck",
+      "nationId": "prussians-1815",
+      "name": "Yorck's Corps",
+      "formation": "Prussian corps, with Wittgenstein",
       "side": "Prussian",
+      "summary": "The old Prussian auxiliary corps of 1812. Its advance guard under Hünerbein, three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, stormed Dannigkow and held it against Lagrange's counter-attacks; the rest of the corps stood at Leitzkau.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's returns for April; he has no order of battle for Möckern itself.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "In the spring of 1813 the brigades had no Landwehr yet: each was two line regiments, with grenadier, reserve and Jäger battalions besides, so most have more line regiments, or more battalions in a regiment, than the list's brigade takes, which shows as historical departures.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "The Leib Regiment's fusilier battalion, a regiment of its own in Hünerbein's brigade, shows as a historical departure.",
+        "The brigades' cavalry is together as the corps cavalry: the Lithuanian Dragoons and the 2nd Leib Hussars' two halves from Hünerbein, the combined dragoons from Horn. The 2nd Combined Dragoons were two squadrons each of the 1st West Prussian and Brandenburg Dragoons.",
+        "The half 3-pdr battery is the list's Foot Artillery, as a half battery.",
+        "Batteries beyond the one each brigade takes are in the corps artillery, as the list's reserve takes them; more than it allows, or a reserve horse battery with fewer brigades than the list wants for it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Yorck",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "1st Brigade (Hünerbein)",
+          "commander": {
+            "name": "Gen-Maj von Hünerbein",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #1"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st East Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/1st East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Colberg Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Colberg Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Colberg Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Colberg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Leib Infantry",
+              "units": [
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Leib Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "2nd Brigade (Horn)",
+          "commander": {
+            "name": "Col von Horn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #2"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "5th Combined Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st West Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd West Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/2nd West Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "6th Combined Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st Silesian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd Silesian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/2nd Silesian Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Corps Cavalry",
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Lithuanian Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "2nd Combined Dragoons"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "2nd Leib Hussars"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "6-pdr Horse Battery #2"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "½ 12-pdr Battery #3",
+              "options": [
+                "half-battery"
+              ]
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "½ 3-pdr Battery #1",
+              "options": [
+                "half-battery"
+              ]
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "6-pdr Horse Battery #3"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    },
+    {
+      "id": "mockern-bulow",
+      "nationId": "prussians-1815",
       "name": "Bülow's Corps",
-      "formation": "Borstell's brigade and Oppen's advance guard",
+      "formation": "Borstell's brigade and Oppen's cavalry",
+      "side": "Prussian",
       "summary": "Borstell's Pomeranian and East Prussian battalions, with the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians; and Oppen's cavalry, the 'mad' Major von Platen's dragoons and the Leib Hussars, which routed the French horse at Zeddenick.",
-      "flag": "/flags/prussia.png"
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's returns for April; he has no order of battle for Möckern itself.",
+        "Only Borstell's brigade and Oppen's cavalry fought at Möckern; Hesse-Homburg's and Clausewitz's brigades of Bülow's corps are left out. The Queen's Dragoons, Borstell's own, ride with Oppen's regiments here.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Borstell's horse battery is in the corps artillery, as the list takes it.",
+        "In April 1813 the brigade had no Landwehr yet, which the list's brigade wants; that, Oppen's cavalry brigade with only one infantry brigade to allow it, and a reserve horse battery with too few brigades, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Bülow",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Pomeranian Brigade (Borstell)",
+          "commander": {
+            "name": "Gen-Maj von Borstell",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #10"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Pomeranian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st Pomeranian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st Pomeranian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Pomeranian Grenadiers and East Prussian Fusiliers",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Pomeranian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/4th East Prussian Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Oppen's Cavalry",
+          "commander": {
+            "name": "Gen-Maj von Oppen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Queen's Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "2nd West Prussian Dragoons"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "1st Leib Hussars"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "6-pdr Horse Battery #6"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #11"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Friedrich_Wilhelm_Freiherr_von_Bulow.jpg/250px-Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "title": "Friedrich Wilhelm Bülow von Dennewitz",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Friedrich_Wilhelm_Freiherr_von_Bulow.jpg",
+        "focus": "50% 20%"
+      }
     }
   ]
 }

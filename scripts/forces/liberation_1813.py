@@ -1,8 +1,7 @@
 """
 Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,wartenburg}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
-are built from the 1815 Prussian list, one force a corps; the spring battles' Prussians are still to come, listed
-as cards saying so (`toCome`).
+are built from the 1815 Prussian list, one force a corps.
 
     python3 scripts/forces/liberation_1813.py && npm run check:forces
 
@@ -22,7 +21,6 @@ OUT = Path(__file__).resolve().parents[2] / "src" / "data" / "battles"
 ART = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]
 NAF = "https://www.napoleon-series.org/nafzigger/"
 FR, IT, CR, FIG, SAX, RU = "france", "italy", "confederation-of-the-rhine", "french-imperial-guard", "saxony", "russia"
-PRUSSIA_FLAG = "/flags/prussia.png"
 ROMAN = ["I", "II", "III", "IV", "V", "VI"]
 
 LIST_FR = ("Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army "
@@ -71,10 +69,6 @@ def ru_bn(name, attached=None):
     return regt(f"{name} Infantry" + (f" with {attached['name']}" if attached else ""), units)
 
 
-def to_come(name, formation, summary):
-    return {"side": "Prussian", "name": name, "formation": formation, "summary": summary, "flag": PRUSSIA_FLAG}
-
-
 def battle(id_, name, date, summary, sources, forces, prussians, alliances=(("Russian", "Prussian"),)):
     b = {"id": id_, "name": name, "date": date, "campaign": "liberation-1813", "summary": summary,
          "sources": sources, "forces": forces, "toCome": prussians, "alliances": [list(a) for a in alliances]}
@@ -92,6 +86,285 @@ def write(b):
     out = {k: b[k] for k in order if k in b}
     (OUT / f"{b['id']}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
     print(f"{b['name']}: {len(b['forces'])} forces, {len(b.get('toCome', []))} to come")
+
+
+# ================================================================ The Prussians, from the 1815 list
+
+PR15 = "prussians-1815"
+M, F_, LW = "pr15-musketeer", "pr15-fusilier", "pr15-landwehr"
+KIND = {"M": M, "F": F_, "L": LW}
+PR_LIST = ("Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the "
+           "1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.")
+PR_WHOLE = "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself."
+PR_GROUPED = ("Battalions of different regiments that served together are grouped as a regiment, as the list takes them. "
+              "Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.")
+PR_SUB = "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander."
+PR_SPRING = ("In the spring of 1813 the brigades had no Landwehr yet: each was two line regiments, with grenadier, reserve and "
+             "Jäger battalions besides, so most have more line regiments, or more battalions in a regiment, than the list's brigade "
+             "takes, which shows as historical departures.")
+CUIRASSIERS = ("The list has no cuirassiers or Guard cavalry: the Garde du Corps and the East Prussian, Silesian and Brandenburg "
+               "Cuirassiers are its Dragoons, its only heavy cavalry, and the Guard Light Cavalry its Hussars. Jürgass's three cuirassier "
+               "regiments, where the list's brigade takes two Dragoons, show as a historical departure.")
+GUARD = ("The list has no Guard: the Guard Infantry Regiment and the Normal Battalion are Musketeers and Fusiliers, and the Guard "
+         "Jäger and Wedell's Guard Volunteer Jäger are the list's attached Schützen, its only Jäger battalion a brigade takes; with the Silesian Schützen, "
+         "three where the list allows one in the army, they show as historical departures.")
+PR_CAVALRY = ("More cavalry brigades than the list allows for the infantry, and brigades of two-squadron regiments, show as historical departures; "
+              "regiments of two or three squadrons are shown at full size.")
+PR_ARTY = ("Batteries beyond the one each brigade takes are in the corps artillery, as the list's reserve takes them; more than it allows, "
+           "or a reserve horse battery with fewer brigades than the list wants for it, show as historical departures.")
+
+
+def bn(kind, name):
+    """A Prussian battalion; a grenadier battalion with the list's Veteran upgrade"""
+    return u(KIND[kind], name, **({"options": ["veteran-infantry"]} if "Grenadier" in name else {}))
+
+
+def pi(name, commander, regiments, units=(), sub=None):
+    """A Prussian infantry brigade: regiments as (name, [(kind, battalion)]), with a Subordinate Commander when it has three or more"""
+    extra = [u("pr15-sub-cmd", sub)] if len(regiments) >= 3 else []
+    return bde("pr15-infantry-brigade", name, commander, units=extra + list(units),
+               regiments=[regt(r, [bn(k, b) for k, b in bns_]) for r, bns_ in regiments])
+
+
+def pc(name, commander, units, landwehr=False):
+    return bde("pr15-landwehr-cavalry-brigade" if landwehr else "pr15-cavalry-brigade", name, commander, units=list(units))
+
+
+def pres(*units):
+    return bde("pr15-army-reserve-artillery", "Corps Artillery", units=list(units))
+
+
+HALF = {"options": ["half-battery"]}
+RUSSIAN_BATTERIES = "Russian batteries lent to the brigades, which a force from the Prussian list can't take."
+
+# --- Möckern: Yorck's corps and Bülow's, after Nafziger's returns for April (813DBJ, 813DCA)
+
+MK_PR_YORCK = {"label": "Prussian Corps, Generallieutenant Yorck, April–May 1813 (Nafziger Collection 813DBJ)", "url": NAF + "813DBJ.pdf"}
+MK_PR_ARMY = {"label": "Prussian Army, 1 April 1813 (Nafziger Collection 813DCA)", "url": NAF + "813DCA.pdf"}
+MK_PR_NOTE = "After Nafziger's returns for April; he has no order of battle for Möckern itself."
+
+MK_YORCK = force(
+    "mockern-yorck", PR15, "Yorck's Corps", "Prussian corps, with Wittgenstein", "Prussian",
+    "The old Prussian auxiliary corps of 1812. Its advance guard under Hünerbein, three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, stormed Dannigkow and held it against Lagrange's counter-attacks; the rest of the corps stood at Leitzkau.",
+    [pi("1st Brigade (Hünerbein)", "Gen-Maj von Hünerbein",
+        [("1st East Prussian Infantry", [("M", "I/1st East Prussian Infantry"), ("M", "II/1st East Prussian Infantry"), ("F", "F/1st East Prussian Infantry")]),
+         ("Colberg Infantry", [("M", "I/Colberg Infantry"), ("M", "II/Colberg Infantry"), ("F", "F/Colberg Infantry")]),
+         ("Leib Infantry", [("F", "F/Leib Infantry")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #1")]),
+     pi("2nd Brigade (Horn)", "Col von Horn",
+        [("5th Combined Infantry", [("M", "I/1st West Prussian Infantry"), ("M", "II/2nd West Prussian Infantry"), ("F", "F/2nd West Prussian Infantry")]),
+         ("6th Combined Infantry", [("M", "II/1st Silesian Infantry"), ("M", "II/2nd Silesian Infantry"), ("F", "F/2nd Silesian Infantry")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #2")]),
+     pc("Corps Cavalry", "", [u("pr15-dragoon", "Lithuanian Dragoons"), u("pr15-dragoon", "2nd Combined Dragoons"),
+                              u("pr15-hussar", "2nd Leib Hussars"), u("pr15-horse-arty", "6-pdr Horse Battery #2")]),
+     pres(u("pr15-heavy-arty", "½ 12-pdr Battery #3", **HALF), u("pr15-foot-arty", "½ 3-pdr Battery #1", **HALF),
+          u("pr15-horse-arty", "6-pdr Horse Battery #3"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Yorck")],
+    notes=[PR_LIST, MK_PR_NOTE, PR_WHOLE, PR_SPRING, PR_GROUPED, PR_SUB,
+           "The Leib Regiment's fusilier battalion, a regiment of its own in Hünerbein's brigade, shows as a historical departure.",
+           "The brigades' cavalry is together as the corps cavalry: the Lithuanian Dragoons and the 2nd Leib Hussars' two halves from Hünerbein, the combined dragoons from Horn. The 2nd Combined Dragoons were two squadrons each of the 1st West Prussian and Brandenburg Dragoons.",
+           "The half 3-pdr battery is the list's Foot Artillery, as a half battery.", PR_ARTY])
+
+MK_BULOW = force(
+    "mockern-bulow", PR15, "Bülow's Corps", "Borstell's brigade and Oppen's cavalry", "Prussian",
+    "Borstell's Pomeranian and East Prussian battalions, with the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians; and Oppen's cavalry, the 'mad' Major von Platen's dragoons and the Leib Hussars, which routed the French horse at Zeddenick.",
+    [pi("Pomeranian Brigade (Borstell)", "Gen-Maj von Borstell",
+        [("1st Pomeranian Infantry", [("M", "I/1st Pomeranian Infantry"), ("M", "II/1st Pomeranian Infantry")]),
+         ("Pomeranian Grenadiers and East Prussian Fusiliers", [("M", "Pomeranian Grenadier Battalion"), ("F", "F/4th East Prussian Infantry")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #10")]),
+     pc("Oppen's Cavalry", "Gen-Maj von Oppen",
+        [u("pr15-dragoon", "Queen's Dragoons"), u("pr15-dragoon", "2nd West Prussian Dragoons"), u("pr15-hussar", "1st Leib Hussars"),
+         u("pr15-horse-arty", "6-pdr Horse Battery #6")]),
+     pres(u("pr15-horse-arty", "Horse Battery #11"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Bülow")],
+    notes=[PR_LIST, MK_PR_NOTE,
+           "Only Borstell's brigade and Oppen's cavalry fought at Möckern; Hesse-Homburg's and Clausewitz's brigades of Bülow's corps are left out. The Queen's Dragoons, Borstell's own, ride with Oppen's regiments here.",
+           PR_GROUPED,
+           "Borstell's horse battery is in the corps artillery, as the list takes it.",
+           "In April 1813 the brigade had no Landwehr yet, which the list's brigade wants; that, Oppen's cavalry brigade with only one infantry brigade to allow it, and a reserve horse battery with too few brigades, show as historical departures."])
+
+# --- Lützen and Bautzen: Blücher's corps and Yorck's, after Nafziger (813ECD, 813ECE, from Plotho)
+
+LZ_PR_NOTE = "After Nafziger's order of battle for Lützen, from Plotho."
+BZ_PR_NOTE = "After Nafziger's order of battle for Bautzen, from Plotho."
+DOLFFS = [
+    pc("Reserve Cavalry (Werder)", "Lt-Col von Werder",
+       [u("pr15-dragoon", "Garde du Corps"), u("pr15-hussar", "Guard Light Cavalry"), u("pr15-horse-arty", "Guard Horse Battery #4")]),
+    pc("Reserve Cavalry (Jürgass)", "Col von Jürgass",
+       [u("pr15-dragoon", "East Prussian Cuirassiers"), u("pr15-dragoon", "Silesian Cuirassiers"),
+        u("pr15-dragoon", "Brandenburg Cuirassiers"), u("pr15-horse-arty", "Horse Battery #10")]),
+]
+ZIETEN_CAV = pc("Upper Silesian Cavalry (Laroche)", "Maj Laroche von Starkenfeld",
+                [u("pr15-hussar", "1st Silesian Hussars (2 squadrons)"), u("pr15-hussar", "2nd Silesian Hussars (2 squadrons)"),
+                 u("pr15-uhlan", "Silesian Uhlans (2 squadrons)"), u("pr15-horse-arty", "Horse Battery #9")])
+KLUX_CAV = pc("Lower Silesian Cavalry (Mutius)", "Col von Mutius",
+              [u("pr15-dragoon", "Neumark Dragoons"), u("pr15-dragoon", "1st West Prussian Dragoons (2 squadrons)"),
+               u("pr15-horse-arty", "Horse Battery #7")])
+
+LZ_BLUCHER = force(
+    "lutzen-blucher", PR15, "Blücher's Corps", "Zieten's, Klüx's and Röder's brigades, with Dolffs's cavalry", "Prussian",
+    "The Silesian brigades of Zieten and Klüx, which opened the attack on Gross-Görschen and fought for the villages all afternoon; Röder's Brandenburg brigade with the Guard infantry, which stormed Klein-Görschen and Kaja; and Dolffs's Garde du Corps and cuirassiers, which charged the French squares at dusk, Dolffs killed.",
+    [pi("Upper Silesian Brigade (Zieten)", "Gen-Maj von Zieten",
+        [("1st Silesian Infantry", [("M", "I/1st Silesian Infantry"), ("M", "III/1st Silesian Infantry"), ("F", "F/1st Silesian Infantry")]),
+         ("2nd Silesian Infantry", [("M", "I/2nd Silesian Infantry"), ("M", "III/2nd Silesian Infantry")]),
+         ("Silesian Grenadiers", [("M", "Silesian Grenadier Battalion")])],
+        [u("pr15-schutzen", "Silesian Schützen Battalion"), u("pr15-foot-arty", "6-pdr Foot Battery #11")], sub="Col von Pirch"),
+     ZIETEN_CAV,
+     pi("Lower Silesian Brigade (Klüx)", "Col von Klüx",
+        [("1st West Prussian Infantry", [("M", "II/1st West Prussian Infantry"), ("M", "III/1st West Prussian Infantry"), ("F", "F/1st West Prussian Infantry")]),
+         ("2nd West Prussian Infantry", [("M", "II/2nd West Prussian Infantry"), ("M", "III/2nd West Prussian Infantry")]),
+         ("West Prussian Grenadiers", [("M", "West Prussian Grenadier Battalion")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #7")], sub="Maj von Jagow"),
+     KLUX_CAV,
+     pi("Brandenburg Brigade (Röder)", "Gen-Maj von Röder",
+        [("Guard Infantry", [("M", "I/Guard Infantry"), ("M", "II/Guard Infantry"), ("F", "F/Guard Infantry")]),
+         ("Leib Infantry and Normal Battalion", [("M", "III/Leib Infantry"), ("M", "Normal Infantry Battalion")]),
+         ("Grenadier Battalions", [("M", "Leib Grenadier Battalion"), ("M", "1st East Prussian Grenadier Battalion")])],
+        [u("pr15-schutzen", "Guard Jäger Battalion"), u("pr15-schutzen", "Guard Volunteer Jäger Battalion (Wedell)"),
+         u("pr15-foot-arty", "Guard 6-pdr Foot Battery #4")], sub="Lt-Col von Tippelskirch"),
+     pc("Brandenburg Cavalry (Katzler)", "Lt-Col von Katzler",
+        [u("pr15-uhlan", "West Prussian Uhlans"), u("pr15-hussar", "Brandenburg Hussars (2 squadrons)"), u("pr15-horse-arty", "Horse Battery #8")]),
+     *DOLFFS,
+     pres(u("pr15-heavy-arty", "½ 12-pdr Foot Battery #3", **HALF), u("pr15-foot-arty", "6-pdr Foot Battery #13"),
+          u("pr15-foot-arty", "6-pdr Foot Battery #9"))],
+    command=[{"unit": "pr15-cmd-blucher"}],
+    notes=[PR_LIST, LZ_PR_NOTE, "Blücher is the book's named commander.", PR_WHOLE, PR_SPRING, PR_GROUPED, PR_SUB, GUARD, CUIRASSIERS,
+           "The Silesian Schützen are the list's attached Schützen battalion.", PR_CAVALRY, PR_ARTY])
+LZ_BLUCHER["missing"] = [{"name": "Russian Position Batteries #1, #14 and #33", "reason": RUSSIAN_BATTERIES}]
+
+LZ_YORCK = force(
+    "lutzen-yorck", PR15, "Yorck's Corps", "Hünerbein's and Horn's brigades, with Steinmetz's reserve", "Prussian",
+    "The old Prussian auxiliary corps of 1812, the left of Yorck's second line beside Berg's Russians, which came up in the afternoon and fought for Kaja.",
+    [pi("Hünerbein's Brigade", "Gen-Maj von Hünerbein",
+        [("1st Combined Infantry", [("M", "II/1st East Prussian Infantry"), ("M", "I/2nd East Prussian Infantry"), ("F", "F/1st East Prussian Infantry")]),
+         ("Leib Infantry", [("F", "F/Leib Infantry")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #1")]),
+     pi("Horn's Brigade", "Col von Horn",
+        [("5th Combined Infantry", [("M", "I/1st West Prussian Infantry"), ("M", "II/2nd West Prussian Infantry"), ("F", "F/2nd West Prussian Infantry")]),
+         ("6th Combined Infantry", [("M", "II/1st Silesian Infantry"), ("M", "II/2nd Silesian Infantry"), ("F", "F/2nd Silesian Infantry")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #2")]),
+     pi("Reserve (Steinmetz)", "Lt-Col von Steinmetz",
+        [("Colberg Infantry", [("M", "I/Colberg Infantry"), ("M", "II/Colberg Infantry"), ("F", "F/Colberg Infantry")])],
+        [u("pr15-hussar-attached", "2nd Leib Hussars")]),
+     pc("Corps Cavalry", "", [u("pr15-dragoon", "Lithuanian Dragoons"), u("pr15-dragoon", "2nd Combined Dragoons"),
+                              u("pr15-horse-arty", "6-pdr Horse Battery #2")]),
+     pres(u("pr15-heavy-arty", "½ 12-pdr Battery #3", **HALF), u("pr15-foot-arty", "½ 6-pdr Foot Battery #3", **HALF))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Yorck")],
+    notes=[PR_LIST, LZ_PR_NOTE, PR_WHOLE, PR_SPRING, PR_GROUPED,
+           "The Leib Regiment's fusilier battalion, a regiment of its own in Hünerbein's brigade, and Steinmetz's reserve of the one Colberg Regiment, where the list's brigade wants two, show as historical departures.",
+           "The Lithuanian Dragoons from Hünerbein and the 2nd Combined Dragoons (two squadrons each of the 1st West Prussian and Brandenburg Dragoons) from Horn are together as the corps cavalry, with Steinmetz's horse battery; the 2nd Leib Hussars are Steinmetz's attached hussars.",
+           "The East Prussian Jäger were detached to Kleist.", PR_ARTY])
+LZ_YORCK["missing"] = [{"name": "3-pdr Foot Battery #1", "reason": "A battery of light 3-pdrs with Steinmetz's reserve; the corps artillery's one foot battery is the half of #3."}]
+
+BZ_KLEIST = force(
+    "bautzen-kleist", PR15, "Kleist's Corps", "Prussian advance guard, with Russian Jäger", "Prussian",
+    "Kleist's Prussians, the Colberg Regiment and Silesian hussars, with Russian Jäger and Cossacks, which retook Preititz from Ney before withdrawing.",
+    [pi("Steinmetz's Brigade", "Lt-Col von Steinmetz",
+        [("Colberg Infantry", [("M", "I/Colberg Infantry"), ("M", "II/Colberg Infantry"), ("F", "F/Colberg Infantry")])],
+        [u("pr15-hussar-attached", "3rd Combined Hussars (Thümen)")]),
+     pres(u("pr15-horse-arty", "Horse Battery #3"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Kleist")],
+    notes=[PR_LIST, BZ_PR_NOTE,
+           "Only Kleist's Prussians are here: the Colberg Regiment, the 3rd Combined Hussars (two squadrons each of the 1st and 2nd Silesian Hussars) as its attached hussars, and Horse Battery #3 in the corps artillery. One regiment, where the list's brigade wants two, no Landwehr, which the spring brigades didn't yet have, and a reserve horse battery with too few brigades show as historical departures."])
+BZ_KLEIST["missing"] = [{"name": "Rüdiger's, Vlastov's, Roth's and Rodionov's Russians",
+                         "reason": "The Grodno Hussars, the 23rd to 26th Jäger, Horse Battery #23 and three Don Cossack regiments were Russian, which a force from the Prussian list can't take."}]
+
+BZ_BLUCHER = force(
+    "bautzen-blucher", PR15, "Blücher's Corps", "Zieten's, Klüx's and Röder's brigades, with Dolffs's cavalry", "Prussian",
+    "Blücher's Silesian and Brandenburg brigades on the Kreckwitz heights, nearly cut off when Ney reached Preititz.",
+    [pi("Upper Silesian Brigade (Zieten)", "Gen-Maj von Zieten",
+        [("1st Silesian Infantry", [("M", "I/1st Silesian Infantry"), ("M", "III/1st Silesian Infantry"), ("F", "F/1st Silesian Infantry")]),
+         ("2nd Silesian Infantry", [("M", "I/2nd Silesian Infantry"), ("M", "III/2nd Silesian Infantry")]),
+         ("Silesian Grenadiers and Leib Reserve", [("M", "Silesian Grenadier Battalion"), ("M", "3rd Reserve Battalion, Leib Infantry"), ("M", "5th Reserve Battalion, Leib Infantry")])],
+        [u("pr15-schutzen", "Silesian Schützen Battalion"), u("pr15-foot-arty", "6-pdr Foot Battery #8")], sub="Col von Pirch"),
+     ZIETEN_CAV,
+     pi("Lower Silesian Brigade (Klüx)", "Col von Klüx",
+        [("1st West Prussian Infantry", [("M", "II/1st West Prussian Infantry"), ("M", "III/1st West Prussian Infantry"), ("F", "F/1st West Prussian Infantry")]),
+         ("West Prussian and Leib Reserve", [("M", "II/2nd West Prussian Infantry"), ("M", "III/3rd West Prussian Infantry"), ("M", "2nd Reserve Battalion, Leib Infantry")]),
+         ("West Prussian Grenadiers", [("M", "West Prussian Grenadier Battalion")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #9")], sub="Maj von Jagow"),
+     KLUX_CAV,
+     pi("Brandenburg Brigade (Röder)", "Gen-Maj von Röder",
+        [("Guard Infantry", [("M", "I/Guard Infantry"), ("M", "II/Guard Infantry"), ("F", "F/Guard Infantry")]),
+         ("Leib Infantry and Normal Battalion", [("M", "III/Leib Infantry"), ("M", "1st Reserve Battalion, Leib Infantry"), ("M", "Normal Infantry Battalion")]),
+         ("Grenadier Battalions", [("M", "Leib Grenadier Battalion"), ("M", "1st East Prussian Grenadier Battalion")])],
+        [u("pr15-schutzen", "Guard Jäger Battalion"), u("pr15-schutzen", "Guard Volunteer Jäger Battalion (Wedell)"),
+         u("pr15-foot-arty", "Guard Foot Battery #4")], sub="Lt-Col von Tippelskirch"),
+     pc("Brandenburg Cavalry (Katzler)", "Lt-Col von Katzler",
+        [u("pr15-uhlan", "West Prussian Uhlans"), u("pr15-hussar", "Brandenburg Hussars (2 squadrons)"),
+         u("pr15-hussar", "2nd Leib Hussars"), u("pr15-horse-arty", "Horse Battery #8")]),
+     *DOLFFS,
+     pres(u("pr15-foot-arty", "6-pdr Foot Battery #13"))],
+    command=[{"unit": "pr15-cmd-blucher"}],
+    notes=[PR_LIST, BZ_PR_NOTE, "Blücher is the book's named commander.", PR_WHOLE, PR_SPRING, PR_GROUPED, PR_SUB, GUARD, CUIRASSIERS,
+           "Nafziger lists the 3rd Reserve Battalion of the Leib Regiment with both Zieten and Klüx; it is shown once, with Zieten. His '3/3rd West Prussian' is shown as he gives it.",
+           "Hobe's 2nd Leib Hussars and Brandenburg Hussars ride with Katzler's uhlans as one brigade; the two squadrons of Brandenburg Uhlans, not in the battle, are left out.",
+           "The Silesian Schützen are the list's attached Schützen battalion.", PR_CAVALRY, PR_ARTY])
+BZ_BLUCHER["missing"] = [{"name": "Russian Position Batteries #14 and #33", "reason": RUSSIAN_BATTERIES}]
+
+BZ_YORCK = force(
+    "bautzen-yorck", PR15, "Yorck's Corps", "Zielinsky's and Horn's brigades", "Prussian",
+    "Sent from the centre to help Blücher hold the heights against Bertrand and Marmont.",
+    [pi("Zielinsky's Brigade", "Col von Zielinsky",
+        [("1st East Prussian Infantry", [("M", "I/1st East Prussian Infantry"), ("M", "II/1st East Prussian Infantry"), ("F", "Combined Fusiliers, 1st East Prussian and Leib")]),
+         ("Leib Infantry", [("M", "I/Leib Infantry"), ("M", "II/Leib Infantry"), ("F", "F/2nd East Prussian Infantry")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #1")]),
+     pi("Horn's Brigade", "Col von Horn",
+        [("5th Combined Infantry", [("M", "I/1st West Prussian Infantry"), ("M", "II/2nd West Prussian Infantry"), ("F", "Combined Fusiliers, 5th and 6th Combined")]),
+         ("6th Combined Infantry", [("M", "II/1st Silesian Infantry"), ("M", "II/2nd Silesian Infantry")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #3")]),
+     pc("Corps Cavalry (Wuthenow)", "Lt-Col von Wuthenow",
+        [u("pr15-dragoon", "Lithuanian Dragoons"), u("pr15-dragoon", "1st West Prussian Dragoons (2 squadrons)"),
+         u("pr15-dragoon", "Brandenburg Dragoons (2 squadrons)"), u("pr15-horse-arty", "6-pdr Horse Battery #2")]),
+     pres(u("pr15-foot-arty", "6-pdr Foot Battery #2"), u("pr15-horse-arty", "6-pdr Horse Battery #1"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Yorck")],
+    notes=[PR_LIST, BZ_PR_NOTE, PR_WHOLE, PR_GROUPED,
+           "Corswandt's right wing: Wuthenow's dragoons, with the Lithuanian and Brandenburg Dragoons attached to Horn, are together as the corps cavalry; three dragoon regiments, where the list allows two, show as a historical departure.",
+           "Zielinsky's second battery and Horn's horse battery are in the corps artillery.", PR_SPRING, PR_ARTY])
+BZ_YORCK["missing"] = [{"name": "3-pdr Foot Battery #1", "reason": "A battery of light 3-pdrs with Horn's brigade, which takes one battery; the corps artillery's foot battery is #2."}]
+
+# --- Großbeeren: Bülow's III Corps, after Nafziger (813HGE)
+
+GB_BULOW = force(
+    "grossbeeren-bulow", PR15, "Bülow's Corps", "III Corps: Hesse-Homburg's, Thümen's, Borstell's and Krafft's brigades, with Oppen's cavalry", "Prussian",
+    "Four brigades of line, reserve and Landwehr infantry, each with its cavalry and battery, which stormed Großbeeren at six in the evening behind sixty-four guns, two of their batteries Russian 12-pdrs; the 4th Reserve Regiment fought in the village with musket butts. Borstell's brigade came in on the Saxons' flank from Kleinbeeren, and Oppen's dragoons, hussars and Landwehr cavalry rode down the rearguard in the dark.",
+    [pi("3rd Brigade (Hesse-Homburg)", "Gen-Maj Prince Ludwig of Hesse-Homburg",
+        [("3rd East Prussian Infantry", [("M", "2nd East Prussian Grenadier Battalion"), ("M", "I/3rd East Prussian Infantry"), ("M", "II/3rd East Prussian Infantry"), ("F", "F/3rd East Prussian Infantry")]),
+         ("4th Reserve Infantry", [("M", "I/4th Reserve Infantry"), ("M", "II/4th Reserve Infantry"), ("M", "III/4th Reserve Infantry")]),
+         ("3rd East Prussian Landwehr", [("L", "8th Bn, 3rd East Prussian Landwehr"), ("L", "11th Bn, 3rd East Prussian Landwehr"),
+                                         ("L", "12th Bn, 3rd East Prussian Landwehr"), ("L", "20th Bn, 3rd East Prussian Landwehr")])],
+        [u("pr15-hussar-attached", "1st Leib Hussars"), u("pr15-foot-arty", "6-pdr Foot Battery #5")]),
+     pi("4th Brigade (Thümen)", "Gen-Maj von Thümen",
+        [("4th East Prussian Infantry", [("M", "I/4th East Prussian Infantry"), ("M", "II/4th East Prussian Infantry"), ("F", "F/4th East Prussian Infantry")]),
+         ("5th Reserve Infantry", [("M", "I/5th Reserve Infantry"), ("M", "II/5th Reserve Infantry"), ("M", "III/5th Reserve Infantry"), ("M", "IV/5th Reserve Infantry")]),
+         ("Elbe Infantry", [("M", "I/Elbe Infantry"), ("M", "II/Elbe Infantry")])],
+        [u("pr15-jager-coy", "2nd Company, East Prussian Jäger"), u("pr15-jager-coy", "4th Company, East Prussian Jäger"),
+         u("pr15-hussar-attached", "Pomeranian National Cavalry"), u("pr15-foot-arty", "6-pdr Foot Battery #6")]),
+     pi("5th Brigade (Borstell)", "Gen-Maj von Borstell",
+        [("1st Pomeranian Infantry", [("M", "Pomeranian Grenadier Battalion"), ("M", "I/1st Pomeranian Infantry"), ("M", "II/1st Pomeranian Infantry"), ("F", "F/1st Pomeranian Infantry")]),
+         ("2nd Reserve Infantry", [("M", "I/2nd Reserve Infantry"), ("M", "II/2nd Reserve Infantry"), ("M", "III/2nd Reserve Infantry")]),
+         ("2nd Kurmark Landwehr", [("L", "II/2nd Kurmark Landwehr"), ("L", "IV/2nd Kurmark Landwehr")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #10")]),
+     pc("5th Brigade Cavalry", "", [u("pr15-hussar", "Pomeranian Hussars"), u("pr15-uhlan", "West Prussian Uhlans")]),
+     pi("6th Brigade (Krafft)", "Gen-Maj von Krafft",
+        [("Colberg Infantry", [("M", "I/Colberg Infantry"), ("M", "II/Colberg Infantry"), ("F", "F/Colberg Infantry")]),
+         ("9th Reserve Infantry", [("M", "I/9th Reserve Infantry"), ("M", "II/9th Reserve Infantry"), ("M", "III/9th Reserve Infantry")]),
+         ("1st Neumark Landwehr", [("L", "I/1st Neumark Landwehr"), ("L", "II/1st Neumark Landwehr"), ("L", "III/1st Neumark Landwehr"), ("L", "IV/1st Neumark Landwehr")])],
+        [u("pr15-mounted-landwehr-attached", "1st Pomeranian Landwehr Cavalry"), u("pr15-foot-arty", "6-pdr Foot Battery #16")]),
+     pc("Reserve Cavalry (Oppen)", "Gen-Maj von Oppen",
+        [u("pr15-dragoon", "Queen's Dragoons"), u("pr15-dragoon", "Brandenburg Dragoons"), u("pr15-dragoon", "2nd West Prussian Dragoons"),
+         u("pr15-hussar", "2nd Silesian Hussars (2 squadrons)"), u("pr15-horse-arty", "Horse Battery #5")]),
+     pc("Reserve Cavalry (Oppen, Landwehr)", "Gen-Maj von Oppen",
+        [u("pr15-mounted-landwehr", "2nd Kurmark Landwehr Cavalry"), u("pr15-mounted-landwehr", "4th Kurmark Landwehr Cavalry"),
+         u("pr15-horse-arty", "Horse Battery #6")], landwehr=True),
+     pres(u("pr15-heavy-arty", "12-pdr Foot Battery #4"), u("pr15-heavy-arty", "12-pdr Foot Battery #5"), u("pr15-foot-arty", "6-pdr Foot Battery #19"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Bülow")],
+    notes=[PR_LIST, "After Nafziger's order of battle for Großbeeren.", PR_WHOLE, PR_GROUPED, PR_SUB,
+           "Each brigade's grenadier battalion is with its first line regiment. Thümen's brigade had no Landwehr, which the list's brigade wants. Reserve regiments of three or four battalions, Landwehr regiments of four, and line regiments of three or more musketeer battalions show as historical departures.",
+           "The Pomeranian National Cavalry, a volunteer regiment, is Thümen's attached hussars; two attached hussar regiments in the corps, where the list allows one, show as a historical departure.",
+           "Borstell's Pomeranian Hussars and West Prussian Uhlans are a cavalry brigade of their own. Three dragoon regiments in Oppen's brigade, line and Landwehr cavalry brigades together, and more cavalry brigades than the infantry allows show as historical departures.",
+           "Two 12-pdr batteries, where the corps artillery takes one, show as a historical departure."])
+GB_BULOW["missing"] = [{"name": "Russian 12-pdr Batteries #7 and #21", "reason": "Two Russian position batteries in Bülow's artillery reserve, which a force from the Prussian list can't take."}]
 
 
 # ================================================================ Möckern, 5 April 1813
@@ -159,14 +432,11 @@ MK_ROTH = force(
 MOCKERN = battle(
     "mockern", "Möckern", "5 April 1813",
     "Eugène, holding the Elbe with the remains of the Grande Armée and the first of the new conscript divisions, came out of Magdeburg towards Berlin and met Wittgenstein's Russians and Yorck's and Bülow's Prussians east of the river. It was three fights more than one battle: at Dannigkow, where Hünerbein's East Prussians stormed the village; at Vehlitz and the Windmühlenberg, where Borstell and Berg drove off the Italians; and at Zeddenick, where Oppen's cavalry routed the French horse. That night Eugène fell back to Magdeburg, and next day behind the Elbe.",
-    [APRIL,
+    [APRIL, MK_PR_YORCK, MK_PR_ARMY,
      {"label": "Battle of Möckern (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_M%C3%B6ckern"},
      {"label": "Gefecht bei Möckern (German Wikipedia)", "url": "https://de.wikipedia.org/wiki/Gefecht_bei_M%C3%B6ckern"}],
-    [MK_LAGRANGE, MK_ZUCCHI, MK_CAVALRY, MK_ROTH],
-    [to_come("Yorck's Corps", "Prussian corps, with Wittgenstein",
-             "Yorck's advance guard under Hünerbein, three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, which stormed Dannigkow and held it against Lagrange's counter-attacks; the rest of the corps stood at Leitzkau."),
-     to_come("Bülow's Corps", "Borstell's brigade and Oppen's advance guard",
-             "Borstell's Pomeranian and East Prussian battalions, with the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians; and Oppen's cavalry, the 'mad' Major von Platen's dragoons and the Leib Hussars, which routed the French horse at Zeddenick.")])
+    [MK_LAGRANGE, MK_ZUCCHI, MK_CAVALRY, MK_ROTH, MK_YORCK, MK_BULOW],
+    [])
 
 
 # ================================================================ Lützen, 2 May 1813
@@ -325,11 +595,8 @@ LUTZEN = battle(
     "lutzen", "Lützen", "2 May 1813",
     "Wittgenstein and Blücher, hoping to catch Napoleon's army strung out on the march to Leipzig, fell on Ney's corps in its villages south of Lützen. All afternoon the Prussians and Russians fought Ney's conscripts for Gross-Görschen, Klein-Görschen, Rahna and Kaja, which changed hands again and again; Scharnhorst was mortally wounded. Napoleon brought up his other corps from both flanks, and at dusk the Young Guard retook the villages behind a great battery. The allies withdrew in good order, but Napoleon, with almost no cavalry, could not pursue.",
     [LZ_FR, LZ_AL, {"label": "Battle of Lützen (1813) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCtzen_(1813)"}],
-    [LZ_SOUHAM, LZ_BRENIER, LZ_GIRARD, LZ_RICARD, LZ_MARCHAND, LZ_DUMOUSTIER, LZ_BERG, LZ_EUGEN],
-    [to_come("Blücher's Corps", "Zieten's, Klüx's and Röder's brigades, with Dolffs's cavalry",
-             "The Silesian brigades of Zieten and Klüx, which opened the attack on Gross-Görschen and fought for the villages all afternoon; Röder's Brandenburg brigade with the Guard infantry, which stormed Klein-Görschen and Kaja; and Dolffs's Garde du Corps and cuirassiers, which charged the French squares at dusk, Dolffs killed."),
-     to_come("Yorck's Corps", "Hünerbein's and Horn's brigades",
-             "The old Prussian auxiliary corps of 1812, which came up in the afternoon and fought for Kaja beside Berg's Russians.")])
+    [LZ_SOUHAM, LZ_BRENIER, LZ_GIRARD, LZ_RICARD, LZ_MARCHAND, LZ_DUMOUSTIER, LZ_BERG, LZ_EUGEN, LZ_BLUCHER, LZ_YORCK],
+    [])
 
 
 # ================================================================ Bautzen, 21 May 1813: the northern flank
@@ -428,13 +695,8 @@ BAUTZEN = battle(
     "bautzen", "Bautzen", "20–21 May 1813",
     "The allies stood behind the Spree at Bautzen in a fortified line along the heights. On the first day Napoleon forced the river and took the town; on the second he pinned the allied centre and left while Ney's and Lauriston's corps marched round the right. Barclay's Russians and Kleist's Prussians held them off long enough round Gleina and Preititz, and when Ney, unsure of his orders, halted instead of driving on to the allies' rear, Wittgenstein and Blücher got their armies away to the east.",
     [BZ_FR, BZ_III, BZ_AL, {"label": "Battle of Bautzen (1813) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Bautzen_(1813)"}],
-    [BZ_SOUHAM, BZ_DELMAS, BZ_MAISON, BZ_PUTHOD, BZ_CHAPLITZ, BZ_SHCHERBATOV, BZ_INSOV],
-    [to_come("Kleist's Corps", "Prussian advance guard, with Russian Jäger",
-             "Kleist's Prussians, the Colberg Regiment and Silesian hussars, with Russian Jäger and Cossacks, which retook Preititz from Ney before withdrawing."),
-     to_come("Blücher's Corps", "Zieten's, Klüx's and Röder's brigades",
-             "Blücher's Silesian and Brandenburg brigades on the Kreckwitz heights, nearly cut off when Ney reached Preititz."),
-     to_come("Yorck's Corps", "Zielinsky's and Horn's brigades",
-             "Sent from the centre to help Blücher hold the heights against Bertrand and Marmont.")])
+    [BZ_SOUHAM, BZ_DELMAS, BZ_MAISON, BZ_PUTHOD, BZ_CHAPLITZ, BZ_SHCHERBATOV, BZ_INSOV, BZ_KLEIST, BZ_BLUCHER, BZ_YORCK],
+    [])
 
 
 # ================================================================ Großbeeren, 23 August 1813
@@ -508,9 +770,8 @@ GROSSBEEREN = battle(
     "The armistice over, Napoleon sent Oudinot with three corps to take Berlin. They marched by separate roads through the wooded country south of the city, out of touch with each other, and on the afternoon of the 23rd, in pouring rain, Reynier's Saxon corps took the village of Großbeeren on its own. At six Bülow's Prussian corps, attacking against Bernadotte's wishes, came on behind sixty guns and stormed the village with the bayonet and musket butt; Reynier's corps broke, and Oudinot fell back on Wittenberg.",
     [GB, {"label": "Battle of Großbeeren (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Gro%C3%9Fbeeren"},
      {"label": "Schlacht bei Großbeeren (German Wikipedia)", "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Gro%C3%9Fbeeren"}],
-    [GB_SAHR, GB_LECOQ, GB_GABLENZ, GB_DURUTTE],
-    [to_come("Bülow's Corps", "III Corps: Hesse-Homburg's, Thümen's, Borstell's and Krafft's brigades, with Oppen's cavalry",
-             "Four brigades of line, reserve and Landwehr infantry, each with its cavalry and battery, which stormed Großbeeren at six in the evening behind sixty-four guns, two of their batteries Russian 12-pdrs; the 4th Reserve Regiment fought in the village with musket butts. Borstell's brigade came in on the Saxons' flank from Kleinbeeren, and Oppen's dragoons, hussars and Landwehr cavalry rode down the rearguard in the dark.")],
+    [GB_SAHR, GB_LECOQ, GB_GABLENZ, GB_DURUTTE, GB_BULOW],
+    [],
     alliances=(("Saxon", "French"),))
 
 
@@ -520,7 +781,7 @@ WB_FR = {"label": "French Forces, Battle of Wartenberg, 3 October 1813 (Nafziger
 WB_PR = {"label": "Prussian Forces, Battle of Wartenberg, 3 October 1813 (Nafziger Collection 813JJA, after Mirus)", "url": NAF + "813JJA.pdf"}
 WB_IV = {"label": "French IV Corps, 20 September 1813 (Nafziger Collection 813IZL)", "url": NAF + "813IZL.pdf"}
 WB_NOTE = "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before."
-WT, WP, PR15 = "wurttemberg", "westphalia", "prussians-1815"
+WT, WP = "wurttemberg", "westphalia"
 WEAK = ("Bertrand's corps was worn down by Dennewitz: a fortnight before, its battalions averaged about four hundred men, "
         "and some Italian regiments were down to a few hundred. They are shown at full size; the list's Small upgrade would suit many of them.")
 
@@ -586,10 +847,9 @@ WB_BEAUMONT = force(
 
 
 def pr_regt(name, units):
-    return regt(name, [u(unit, n) for unit, n in units])
+    return regt(name, [u(unit, n, **({"options": ["veteran-infantry"]} if "Grenadier" in n else {})) for unit, n in units])
 
 
-M, F_, LW = "pr15-musketeer", "pr15-fusilier", "pr15-landwehr"
 WB_YORCK = force(
     "wartenburg-yorck", PR15, "Yorck's Corps", "I Corps, Army of Silesia", "Prussian",
     "Blücher's leading corps, which crossed the Elbe on two pontoon bridges in the river's bend and attacked Bertrand in his marshes at dawn. Steinmetz's brigade was shot down before the dike at Wartenburg; Prince Karl of Mecklenburg's went upstream and took Bleddin from the Württembergers; and Horn's, wading through the backwaters with the Leib Regiment at its head, came in on the French flank and decided the day. The corps lost some two thousand men, and Yorck took his title from the village.",
@@ -635,11 +895,16 @@ WB_YORCK = force(
     notes=["Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
            WB_NOTE.replace(", from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before", ", from Mirus's history of the fight"),
            "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
-           "Reserve regiments' battalions and the grenadier battalions are the list's Musketeers; the grenadiers would suit its Veteran upgrade. Battalions of different regiments that served together are grouped as a regiment, as the list takes them.",
+           PR_GROUPED,
            "Nafziger's corps return of the same day has Hünerbein's Landwehr and half his battery detached to Halle; his Wartenburg order of battle, followed here, has the IV/14th Landwehr and the whole of Battery #15 with the brigade.",
            "The East Prussian National Cavalry, a volunteer regiment, is shown as Hussars. The 5th Silesian Landwehr Cavalry is the advance guard infantry's attached Landwehr cavalry.",
            "Mecklenburg's two hussar regiments are shown as attached small hussars; two of them, where the list allows one in the army, show as a historical departure. Battery #3 was split between Mecklenburg and Horn, so each has half of it, Mecklenburg's from the corps artillery.",
            "One-battalion Landwehr regiments in Mecklenburg's and Hünerbein's brigades, Horn's four regiments, and Jürgass's line and Landwehr cavalry brigades together show as historical departures."])
+
+for b in WB_YORCK["brigades"]:
+    if b["type"] == "pr15-infantry-brigade" and len(b.get("regiments", [])) >= 3:
+        b["units"] = [u("pr15-sub-cmd")] + b["units"]
+WB_YORCK["notes"].insert(4, PR_SUB)
 
 WB_FRANQUEMONT["missing"] = [{"name": "Jett's 24th Light Cavalry Brigade",
                               "reason": "A squadron each of the 1st and 3rd Württemberg Chevau-légers, about a hundred men in all, too few for a unit."}]

@@ -604,6 +604,8 @@ FORCE_PORTRAITS.update({
     "lutzen-girard": "girard", "lutzen-marchand": "marchand", "lutzen-berg": "berg", "lutzen-eugen": "eugen_wurttemberg",
     "grossbeeren-lecoq": "lecoq", "grossbeeren-durutte": "durutte",
     "wartenburg-morand": "morand", "wartenburg-yorck": "yorck",
+    "mockern-yorck": "yorck", "lutzen-yorck": "yorck", "bautzen-yorck": "yorck", "bautzen-kleist": "kleist",
+    "mockern-bulow": "bulow", "grossbeeren-bulow": "bulow", "lutzen-blucher": "blucher", "bautzen-blucher": "blucher",
 })
 
 

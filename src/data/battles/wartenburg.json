@@ -462,7 +462,8 @@
         "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
         "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight.",
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
-        "Reserve regiments' battalions and the grenadier battalions are the list's Musketeers; the grenadiers would suit its Veteran upgrade. Battalions of different regiments that served together are grouped as a regiment, as the list takes them.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
         "Nafziger's corps return of the same day has Hünerbein's Landwehr and half his battery detached to Halle; his Wartenburg order of battle, followed here, has the IV/14th Landwehr and the whole of Battery #15 with the brigade.",
         "The East Prussian National Cavalry, a volunteer regiment, is shown as Hussars. The 5th Silesian Landwehr Cavalry is the advance guard infantry's attached Landwehr cavalry.",
         "Mecklenburg's two hussar regiments are shown as attached small hussars; two of them, where the list allows one in the army, show as a historical departure. Battery #3 was split between Mecklenburg and Horn, so each has half of it, Mecklenburg's from the corps artillery.",
@@ -486,6 +487,9 @@
           },
           "units": [
             {
+              "unit": "pr15-sub-cmd"
+            },
+            {
               "unit": "pr15-jager-coy",
               "name": "East Prussian Jäger (2 companies)"
             },
@@ -504,11 +508,17 @@
               "units": [
                 {
                   "unit": "pr15-musketeer",
-                  "name": "Leib-Grenadier Battalion"
+                  "name": "Leib-Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 },
                 {
                   "unit": "pr15-musketeer",
-                  "name": "West Prussian Grenadier Battalion"
+                  "name": "West Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 }
               ]
             },
@@ -583,6 +593,9 @@
           },
           "units": [
             {
+              "unit": "pr15-sub-cmd"
+            },
+            {
               "unit": "pr15-foot-arty",
               "name": "6-pdr Foot Battery #2"
             }
@@ -593,7 +606,10 @@
               "units": [
                 {
                   "unit": "pr15-musketeer",
-                  "name": "1st East Prussian Grenadier Battalion"
+                  "name": "1st East Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 },
                 {
                   "unit": "pr15-musketeer",
@@ -646,6 +662,9 @@
           },
           "units": [
             {
+              "unit": "pr15-sub-cmd"
+            },
+            {
               "unit": "pr15-hussar-attached",
               "name": "2nd Leib Hussars"
             },
@@ -681,7 +700,10 @@
               "units": [
                 {
                   "unit": "pr15-musketeer",
-                  "name": "Silesian Grenadier Battalion"
+                  "name": "Silesian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 },
                 {
                   "unit": "pr15-musketeer",
@@ -708,6 +730,9 @@
             "variant": "Staff rating 8"
           },
           "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
             {
               "unit": "pr15-foot-arty",
               "name": "½ 6-pdr Foot Battery #3",
@@ -779,6 +804,9 @@
             "variant": "Staff rating 8"
           },
           "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
             {
               "unit": "pr15-foot-arty",
               "name": "6-pdr Foot Battery #15"
