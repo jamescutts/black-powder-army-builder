@@ -3,6 +3,7 @@ import { getNation } from "../index";
 import campaignCommanders from "./campaign-commanders.json";
 import albuera from "./albuera.json";
 import bailen from "./bailen.json";
+import berezina from "./berezina.json";
 import borodino from "./borodino.json";
 import bussaco from "./bussaco.json";
 import corunna from "./corunna.json";
@@ -38,7 +39,6 @@ import vyazma from "./vyazma.json";
 import waterloo from "./waterloo.json";
 import wavre from "./wavre.json";
 import {
-  berezina,
   nivelle,
   ocana,
   somosierra,
@@ -388,7 +388,7 @@ const allBattles: HistoricalBattle[] = [
   maloyaroslavets as HistoricalBattle,
   vyazma as HistoricalBattle,
   krasnoi as HistoricalBattle,
-  berezina,
+  berezina as HistoricalBattle,
   // The War of Liberation
   danzig,
   luneburg,

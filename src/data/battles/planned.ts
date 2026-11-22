@@ -15,17 +15,8 @@ const planned = (id: string, name: string, date: string, campaign: string, summa
 
 const R = "russia-1812";
 
-export const berezina = planned("berezina", "Berezina", "26–29 November 1812", R,
-  "Eblé's pontonniers bridged the river at Studienka while Oudinot and Victor held off the converging Russian armies on both banks, and the Grande Armée's remnant crossed.");
 
 // Paintings for the Russian campaign's battles still to come
-berezina.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Crossing_the_Berezina_River%2C_by_Peter_von_Hess.jpg/960px-Crossing_the_Berezina_River%2C_by_Peter_von_Hess.jpg",
-  "title": "The Crossing of the Berezina",
-  "artist": "Peter von Hess",
-  "date": "1844",
-  "page": "https://commons.wikimedia.org/wiki/File:Crossing_the_Berezina_River%2C_by_Peter_von_Hess.jpg"
-};
 
 const P = "peninsular-war";
 
