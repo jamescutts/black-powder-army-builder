@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Anchor, Collapse, SimpleGrid, Stack, Text, Title, UnstyledButton } from "@mantine/core";
+import { Anchor, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import type { CSSProperties } from "react";
-import { IconChevronDown } from "@tabler/icons-react";
 import { getNation } from "@/data";
 import type { ForceBrigade, HistoricalBattle, HistoricalForce } from "@/data/types";
 
@@ -57,12 +55,11 @@ function brigadeUnits(force: HistoricalForce, b: ForceBrigade): string {
 }
 
 /**
- * A battle's order of battle, folded away below its map: each side's forces as they're written here, brigade by
+ * A battle's order of battle, below its map: each side's forces as they're written here, brigade by
  * brigade with their commanders and units by their historical names, what's left out of them, the forces still
  * to come, and the sources they were built from.
  */
 export function OrderOfBattle({ battle }: { battle: HistoricalBattle }) {
-  const [open, setOpen] = useState(false);
   const toCome = battle.toCome ?? [];
   const sides = [...new Set([...battle.forces.map((f) => f.side), ...toCome.map((f) => f.side)])];
   // Columns: the battle's alliances stacked, each with the sides it has here, and every other side on its own
@@ -79,11 +76,6 @@ export function OrderOfBattle({ battle }: { battle: HistoricalBattle }) {
       <Text size="sm" c="brown.9">
         The forces above as their orders of battle give them, brigade by brigade, with the sources they were built from.
       </Text>
-      <UnstyledButton className="force-origin-toggle" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
-        <IconChevronDown size={14} aria-hidden style={{ transform: open ? "rotate(180deg)" : undefined }} />
-        {open ? "Hide the order of battle" : "Show the order of battle"}
-      </UnstyledButton>
-      <Collapse expanded={open}>
         <SimpleGrid cols={{ base: 1, md: Math.min(groups.length, 3) }} spacing="xl" className="oob" mt="xs">
           {groups.map((group) => (
             <Stack
@@ -202,7 +194,6 @@ export function OrderOfBattle({ battle }: { battle: HistoricalBattle }) {
               </ul>
             </div>
           )}
-      </Collapse>
     </Stack>
   );
 }
