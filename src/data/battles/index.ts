@@ -102,11 +102,6 @@ import {
   saintDizier,
 } from "./planned";
 
-// The 1813 and 1814 campaigns are still being written and off by default; set
-// NEXT_PUBLIC_SHOW_1813_1814=true (e.g. in a preview/staging environment, or .env.local) to show them.
-const show1813And1814 = process.env.NEXT_PUBLIC_SHOW_1813_1814 === "true";
-const LATER_CAMPAIGNS = new Set(["liberation-1813", "france-1814"]);
-
 /**
  * Campaigns, in the order they were fought, each with its battles in order, whose historical forces can be opened
  * as new lists. To add a battle, write src/data/battles/<battle-id>.json (a HistoricalBattle naming its
@@ -172,7 +167,7 @@ const allCampaigns: HistoricalCampaign[] = [
   },
 ];
 
-export const campaigns: HistoricalCampaign[] = allCampaigns.filter((c) => show1813And1814 || !LATER_CAMPAIGNS.has(c.id));
+export const campaigns: HistoricalCampaign[] = allCampaigns;
 
 // Every battle, in the order fought: those with forces written, and those still to come (planned.ts)
 const allBattles: HistoricalBattle[] = [
@@ -282,7 +277,7 @@ const allBattles: HistoricalBattle[] = [
   wavre as HistoricalBattle,
 ];
 
-const schedule = allBattles.filter((b) => show1813And1814 || !LATER_CAMPAIGNS.has(b.campaign));
+const schedule = allBattles;
 
 // Only the forces whose army lists this build shows (community lists can be switched off)
 const shown = schedule.map((b) => ({ ...b, forces: b.forces.filter((f) => getNation(f.nationId)) }));
