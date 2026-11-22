@@ -272,6 +272,13 @@
       "artist": "Carl Röchling",
       "date": "1907–08",
       "page": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fbeeren_1813.jpg"
+    },
+    "borodino": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg/960px-Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg",
+      "title": "The Battle of Borodino",
+      "artist": "Peter von Hess",
+      "date": "1843",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg"
     }
   },
   "campaigns": {

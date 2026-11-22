@@ -3,6 +3,7 @@ import { getNation } from "../index";
 import campaignCommanders from "./campaign-commanders.json";
 import albuera from "./albuera.json";
 import bailen from "./bailen.json";
+import borodino from "./borodino.json";
 import bussaco from "./bussaco.json";
 import corunna from "./corunna.json";
 import dahlenkirchen from "./dahlenkirchen.json";
@@ -38,7 +39,6 @@ import waterloo from "./waterloo.json";
 import wavre from "./wavre.json";
 import {
   berezina,
-  borodino,
   nivelle,
   ocana,
   somosierra,
@@ -381,7 +381,7 @@ const allBattles: HistoricalBattle[] = [
   polotsk as HistoricalBattle,
   valutino as HistoricalBattle,
   dahlenkirchen as HistoricalBattle,
-  borodino,
+  borodino as HistoricalBattle,
   mesoten as HistoricalBattle,
   tarutino as HistoricalBattle,
   polotsk2 as HistoricalBattle,
