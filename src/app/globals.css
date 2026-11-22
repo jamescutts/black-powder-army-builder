@@ -2460,11 +2460,6 @@ a.app-list-row:active {
   font-size: 1.6rem;
 }
 
-.history-hero-stats-note.history-hero-stats-note {
-  margin-top: 10px;
-  opacity: 0.8;
-}
-
 /* A battle page's side: its commander's portrait beside the side's name and his */
 .side-head {
   margin-top: var(--mantine-spacing-xs);

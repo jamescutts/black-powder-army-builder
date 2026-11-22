@@ -17,8 +17,6 @@ export interface SideStrength {
   extra?: string;
 }
 
-export const STRENGTH_SOURCE = "Strengths from each battle's Wikipedia article";
-
 export const battleStrengths: Record<string, SideStrength[]> = {
   // The Peninsular War
   rolica: [

@@ -8,7 +8,7 @@ import { getNation, getSupplement } from "@/data";
 import { CampaignMap, hasCampaignMap, routesAt } from "./CampaignMap";
 import { OrderOfBattle } from "./OrderOfBattle";
 import { battlePlaces, campaignMaps } from "@/data/battles/geo";
-import { battleStrengths, STRENGTH_SOURCE } from "@/data/battles/strengths";
+import { battleStrengths } from "@/data/battles/strengths";
 import { battlesIn, campaigns, getCampaign, isPlanned, scheduleIn } from "@/data/battles";
 import type { HistoricalArt, HistoricalBattle, HistoricalCampaign, HistoricalForce } from "@/data/types";
 import { battleHref, campaignHref, forceHref, HISTORICAL_FORCES_PATH, rosterFromForce } from "@/lib/forces";
@@ -334,7 +334,6 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
                   return { value: units, label: `${side} ${units === 1 ? "unit" : "units"}` };
                 })
         }
-        statsNote={strengths ? STRENGTH_SOURCE : undefined}
       />
     <Container size="xl" py="xl">
       <Stack gap="lg">
@@ -422,7 +421,6 @@ function HistoryHero({
   dates,
   summary,
   stats,
-  statsNote,
 }: {
   art?: HistoricalArt;
   trail: { href: string; label: string }[];
@@ -431,8 +429,6 @@ function HistoryHero({
   summary: string;
   /** Figures across the foot: a side's strength in men, with its guns and cavalry beneath, or counts of what's here */
   stats: { value: number | string; label: string; detail?: string }[];
-  /** Where the figures come from, in small type beneath them */
-  statsNote?: string;
 }) {
   const [open, setOpen] = useState(false);
   const up = trail[trail.length - 1];
@@ -490,11 +486,7 @@ function HistoryHero({
             </div>
           ))}
         </Group>
-        {statsNote && (
-          <Text size="xs" className="home-hero-stat-label history-hero-stats-note">
-            {statsNote}
-          </Text>
-        )}
+
       </Container>
       {art && (
         <Anchor href={art.page} target="_blank" rel="noreferrer" className="home-hero-credit" size="xs">
