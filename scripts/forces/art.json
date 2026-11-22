@@ -37,12 +37,12 @@
       "focus": "50% 12%"
     },
     "mesoten": {
-      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/960px-Ludwig_Yorck_von_Wartenburg.jpg",
-      "title": "General Yorck",
-      "artist": "Ernst Gebauer",
-      "date": "1835",
-      "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
-      "focus": "50% 38%"
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png/960px-Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
+      "title": "Yorck's Brandenburg Hussars at Möckern, 1813",
+      "artist": "Richard Knötel",
+      "date": "1901",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
+      "focus": "50% 45%"
     },
     "vimeiro": {
       "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg/960px-The_20th_Light_Dragoons_at_the_Battle_of_Vimeiro%2C_21st_August_1808.jpg",
@@ -83,6 +83,14 @@
       "title": "The Battle of Vitoria",
       "artist": "George Jones",
       "page": "https://commons.wikimedia.org/wiki/File:George_Jones_%281786-1869%29_-_The_Battle_of_Vitoria%2C_21_June_1813_-_485064_-_National_Trust.jpg"
+    },
+    "dahlenkirchen": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png/960px-Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
+      "title": "Horn leads the Leib Regiment at Wartenburg, 1813",
+      "artist": "Richard Knötel",
+      "date": "1901",
+      "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
+      "focus": "50% 45%"
     }
   },
   "campaigns": {

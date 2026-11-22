@@ -27,6 +27,14 @@
     {
       "label": "The fight at Gross-Eckau, from Russkaya Starina, 1912 (Mark Conrad's translation)",
       "url": "https://marksrussianmilitaryhistory.info/GrossEckau.htm"
+    },
+    {
+      "label": "French Left Wing, October 1812, X Corps (Nafziger Collection 812ICC)",
+      "url": "https://www.napoleon-series.org/nafzigger/812ICC.pdf"
+    },
+    {
+      "label": "Royal Prussian Army Corps, 13 May 1812 (Nafziger Collection 812EDG)",
+      "url": "https://www.napoleon-series.org/nafzigger/812EDG.pdf"
     }
   ],
   "forces": [
@@ -40,8 +48,9 @@
       "notes": [
         "Riehn gives the corps 12,000 men and 16 guns at Lautschkrug, and about 16,000 for the whole series of actions; the corps is shown complete.",
         "Each combined regiment drew its three battalions from two parent regiments, as named; each combined cavalry regiment two squadrons from each of two. The 4th's third Leib battalion is taken as its Fusiliers.",
-        "The Leib Hussars (1st Combined Hussars) served with Grandjean's division rather than the corps, and the 2nd Combined Hussars and the Uhlans went to the main army, so they're left out.",
+        "The Leib Hussars (1st Combined Hussars) served with Grandjean's division rather than the corps, as Weltseele and German Wikipedia have it (Nafziger lists them with the corps cavalry, under X Corps), and the 2nd Combined Hussars and the Uhlans went to the main army, so they're left out.",
         "Kleist commanded the corps' infantry and Massenbach its cavalry under the corps commander; add them as Subordinate Commanders if you like.",
+        "By the autumn Nafziger's order of battle (October 1812) and Wikipedia's for Riga give the corps three horse batteries; the two more ride with Hünerbein's dragoons and in the corps artillery here.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
@@ -239,6 +248,10 @@
             {
               "unit": "pr-dragoon",
               "name": "2nd Combined Dragoons (1st W. Prussian, Brandenburg)"
+            },
+            {
+              "unit": "pr-horse-arty",
+              "name": "6-pdr Horse Battery"
             }
           ]
         },
@@ -256,10 +269,22 @@
               "options": [
                 "half-battery"
               ]
+            },
+            {
+              "unit": "pr-horse-arty",
+              "name": "6-pdr Horse Battery"
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
     },
     {
       "id": "mesoten-alexeyev",
@@ -487,15 +512,22 @@
       }
     },
     "Russian": {
-      "commander": "Lt-Gen Count Steinheil"
+      "commander": "Lt-Gen Count Steinheil",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Fabian_F._von_Steinheil.jpg/250px-Fabian_F._von_Steinheil.jpg",
+        "title": "Fabian von Steinheil",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Fabian_F._von_Steinheil.jpg",
+        "focus": "50% 18%"
+      }
     }
   },
   "art": {
-    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/960px-Ludwig_Yorck_von_Wartenburg.jpg",
-    "title": "General Yorck",
-    "artist": "Ernst Gebauer",
-    "date": "1835",
-    "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
-    "focus": "50% 38%"
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png/960px-Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
+    "title": "Yorck's Brandenburg Hussars at Möckern, 1813",
+    "artist": "Richard Knötel",
+    "date": "1901",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
+    "focus": "50% 45%"
   }
 }

@@ -31,8 +31,6 @@ export const polotsk = planned("polotsk", "First Polotsk", "17–18 August 1812"
   "Saint-Cyr, taking over from the wounded Oudinot, beat Wittgenstein's attack and won his marshal's baton.");
 export const valutino = planned("valutino", "Valutino", "19 August 1812", R,
   "Ney and Junot caught the Russian rearguard east of Smolensk at Lubino and fought it to a standstill, while Barclay's army got clear.");
-export const dahlenkirchen = planned("dahlenkirchen", "Dahlenkirchen", "22 August 1812", R,
-  "Essen's sortie from Riga surprised Horn's Prussian outposts along the Düna, which fell back after a stiff fight.");
 export const borodino = planned("borodino", "Borodino", "7 September 1812", R,
   "Kutuzov's stand before Moscow: a day of assaults on the flèches and the Great Redoubt, the bloodiest single day of the wars, after which the Russians withdrew and Moscow fell.");
 export const tarutino = planned("tarutino", "Tarutino", "18 October 1812", R,

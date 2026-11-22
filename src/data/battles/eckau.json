@@ -27,6 +27,14 @@
     {
       "label": "The fight at Gross-Eckau, from Russkaya Starina, 1912 (Mark Conrad's translation)",
       "url": "https://marksrussianmilitaryhistory.info/GrossEckau.htm"
+    },
+    {
+      "label": "French Left Wing, October 1812, X Corps (Nafziger Collection 812ICC)",
+      "url": "https://www.napoleon-series.org/nafzigger/812ICC.pdf"
+    },
+    {
+      "label": "Royal Prussian Army Corps, 13 May 1812 (Nafziger Collection 812EDG)",
+      "url": "https://www.napoleon-series.org/nafzigger/812EDG.pdf"
     }
   ],
   "forces": [
@@ -40,8 +48,9 @@
       "notes": [
         "About 7,000 men and 32 guns of the corps fought, under Grawert with Kleist leading the infantry; the sources don't say which battalions, so the whole corps is here. Take about half its infantry, with Hünerbein's dragoons.",
         "Each combined regiment drew its three battalions from two parent regiments, as named; each combined cavalry regiment two squadrons from each of two. The 4th's third Leib battalion is taken as its Fusiliers.",
-        "The Leib Hussars (1st Combined Hussars) served with Grandjean's division rather than the corps, and the 2nd Combined Hussars and the Uhlans went to the main army, so they're left out.",
+        "The Leib Hussars (1st Combined Hussars) served with Grandjean's division rather than the corps, as Weltseele and German Wikipedia have it (Nafziger lists them with the corps cavalry, under X Corps), and the 2nd Combined Hussars and the Uhlans went to the main army, so they're left out.",
         "Kleist commanded the corps' infantry and Massenbach its cavalry under the corps commander; add them as Subordinate Commanders if you like.",
+        "The corps' March 1812 establishment (Weltseele) has one horse battery, the other two sent with the main army.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
       "command": [
@@ -367,7 +376,14 @@
             "variant": "Staff rating 7"
           }
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/FriedrichvonLowisofMenar.jpg/250px-FriedrichvonLowisofMenar.jpg",
+        "title": "Friedrich von Löwis of Menar",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:FriedrichvonLowisofMenar.jpg",
+        "focus": "50% 18%"
+      }
     }
   ],
   "sides": {
@@ -375,7 +391,14 @@
       "commander": "Gen-Lt von Grawert"
     },
     "Russian": {
-      "commander": "Maj-Gen Löwis of Menar"
+      "commander": "Maj-Gen Löwis of Menar",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/FriedrichvonLowisofMenar.jpg/250px-FriedrichvonLowisofMenar.jpg",
+        "title": "Friedrich von Löwis of Menar",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:FriedrichvonLowisofMenar.jpg",
+        "focus": "50% 18%"
+      }
     }
   },
   "art": {

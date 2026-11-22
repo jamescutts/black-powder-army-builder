@@ -2,6 +2,7 @@ import type { HistoricalBattle, HistoricalCampaign, HistoricalForce } from "../t
 import { getNation } from "../index";
 import albuera from "./albuera.json";
 import corunna from "./corunna.json";
+import dahlenkirchen from "./dahlenkirchen.json";
 import eckau from "./eckau.json";
 import ligny from "./ligny.json";
 import mesoten from "./mesoten.json";
@@ -18,7 +19,6 @@ import {
   berezina,
   borodino,
   bussaco,
-  dahlenkirchen,
   fuentesDeOnoro,
   gorodechno,
   klyastitsy,
@@ -123,7 +123,7 @@ const schedule: HistoricalBattle[] = [
   smolensk,
   polotsk,
   valutino,
-  dahlenkirchen,
+  dahlenkirchen as HistoricalBattle,
   borodino,
   mesoten as HistoricalBattle,
   tarutino,

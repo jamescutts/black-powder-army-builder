@@ -99,8 +99,14 @@ PORTRAITS.update({
     "vandeleur": portrait("Sir John Ormsby Vandeleur by William Salter.jpg", "Sir John Ormsby Vandeleur", "William Salter", focus="50% 20%"),
     "kruse": portrait("August von Kruse.jpg", "August von Kruse", "unknown artist", focus="50% 20%"),
 })
+# 1812, the Riga front (George Dawe's Military Gallery portraits)
+PORTRAITS.update({
+    "steinheil": portrait("Fabian F. von Steinheil.jpg", "Fabian von Steinheil", "George Dawe", focus="50% 18%"),
+    "lowis": portrait("FriedrichvonLowisofMenar.jpg", "Friedrich von Löwis of Menar", "George Dawe", focus="50% 18%"),
+    "essen": portrait("Essen Ivan N.jpg", "Magnus Gustav von Essen", "George Dawe", focus="50% 18%"),
+})
 # No public-domain portrait found for: Lefol, Pécheux, Hulot, Strolz, Teste (Wavre/Ligny); Kellermann the younger,
-# Alten, Quiot, Donzelot, Roussel d'Hurbal, Duhesme (1815); Grawert, Steinheil, Löwis of Menar (1812 campaign).
+# Alten, Quiot, Donzelot, Roussel d'Hurbal, Duhesme (1815); Grawert, Horn, Alexeyev, Rachmanov (1812 campaign).
 # Their force cards show the flag only.
 EXTRA = {}
 
@@ -111,6 +117,7 @@ COMMANDERS = {
     "wavre": {"French": ("Marshal Grouchy", "grouchy"), "Prussian": ("Lt-Gen von Thielmann", "thielmann")},
     "eckau": {"Prussian": ("Gen-Lt von Grawert", "grawert"), "Russian": ("Maj-Gen Löwis of Menar", "lowis")},
     "mesoten": {"Prussian": ("Gen-Lt von Yorck", "yorck"), "Russian": ("Lt-Gen Count Steinheil", "steinheil")},
+    "dahlenkirchen": {"Prussian": ("Gen-Lt von Yorck", "yorck"), "Russian": ("Lt-Gen von Essen", "essen")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
     "albuera": {"Anglo-Portuguese": ("Marshal Beresford", "beresford"), "Spanish": ("Gen. Joaquín Blake", "blake"), "French": ("Marshal Soult", "soult")},
@@ -144,6 +151,8 @@ FORCE_PORTRAITS: dict[str, str] = {
     "wavre-habert": "habert", "wavre-berthezene": "berthezene", "wavre-vichery": "vichery",
     # Wavre — Prussian
     "wavre-prussian-iii-corps": "thielmann",
+    # 1812
+    "eckau-lowis": "lowis", "mesoten-prussian-corps": "yorck", "dahlenkirchen-lowis": "lowis",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
     "waterloo-marcognet": "marcognet", "waterloo-durutte": "durutte", "waterloo-simmer": "simmer",

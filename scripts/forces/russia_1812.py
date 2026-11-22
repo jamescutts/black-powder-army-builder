@@ -29,6 +29,12 @@ SOURCES = [
     {"label": "Richard Riehn, Napoleon's Russian Campaign, ch. 14 (Summer and autumn in Latvia)"},
     {"label": "The fight at Gross-Eckau, from Russkaya Starina, 1912 (Mark Conrad's translation)",
      "url": "https://marksrussianmilitaryhistory.info/GrossEckau.htm"},
+    {"label": "French Left Wing, October 1812, X Corps (Nafziger Collection 812ICC)", "url": "https://www.napoleon-series.org/nafzigger/812ICC.pdf"},
+    {"label": "Royal Prussian Army Corps, 13 May 1812 (Nafziger Collection 812EDG)", "url": "https://www.napoleon-series.org/nafzigger/812EDG.pdf"},
+]
+DAHLENKIRCHEN_SOURCES = SOURCES + [
+    {"label": "Battle of Dahlenkirchen (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Dahlenkirchen"},
+    {"label": "Левиз, Фёдор Фёдорович (Russian Wikipedia)", "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%B2%D0%B8%D0%B7,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"},
 ]
 
 # ---------------------------------------------------------------- The Prussian Auxiliary Corps (Prussia 1812)
@@ -60,24 +66,37 @@ RAUMER = bde("pr-infantry-brigade", "3rd Brigade (Raumer)", "Col von Raumer",
                         combined("6th", [("M", "II/1st Silesian"), ("M", "II/2nd Silesian"), ("F", "F/2nd Silesian")])])
 JEANNERET = bde("pr-cavalry-brigade", "Jeanneret's Brigade", "Col von Jeanneret",
                 [u("pr-hussars", "3rd Combined Hussars (1st & 2nd Silesian)"), u("pr-horse-arty", "6-pdr Horse Battery")])
-HUNERBEIN = bde("pr-cavalry-brigade", "Hünerbein's Brigade", "Col von Hünerbein",
-                [u("pr-dragoon", "1st Combined Dragoons (Lithuanian, 2nd W. Prussian)"),
-                 u("pr-dragoon", "2nd Combined Dragoons (1st W. Prussian, Brandenburg)")])
-CORPS_ARTILLERY = bde("pr-army-artillery", "Corps Artillery",
-                      units=[u("pr-foot-arty", "6-pdr Foot Battery"), u("pr-heavy-arty", "12-pdr Half Battery", options=["half-battery"])])
+DRAGOONS = [u("pr-dragoon", "1st Combined Dragoons (Lithuanian, 2nd W. Prussian)"),
+            u("pr-dragoon", "2nd Combined Dragoons (1st W. Prussian, Brandenburg)")]
+CORPS_GUNS = [u("pr-foot-arty", "6-pdr Foot Battery"), u("pr-heavy-arty", "12-pdr Half Battery", options=["half-battery"])]
+
+
+def hunerbein(horse=False):
+    return bde("pr-cavalry-brigade", "Hünerbein's Brigade", "Col von Hünerbein",
+               DRAGOONS + ([u("pr-horse-arty", "6-pdr Horse Battery")] if horse else []))
+
+
+def corps_artillery(horse=False):
+    return bde("pr-army-artillery", "Corps Artillery", units=CORPS_GUNS + ([u("pr-horse-arty", "6-pdr Horse Battery")] if horse else []))
 
 CORPS_NOTES = [
     "Each combined regiment drew its three battalions from two parent regiments, as named; each combined cavalry regiment two squadrons from each of two. The 4th's third Leib battalion is taken as its Fusiliers.",
-    "The Leib Hussars (1st Combined Hussars) served with Grandjean's division rather than the corps, and the 2nd Combined Hussars and the Uhlans went to the main army, so they're left out.",
+    "The Leib Hussars (1st Combined Hussars) served with Grandjean's division rather than the corps, as Weltseele and German Wikipedia have it (Nafziger lists them with the corps cavalry, under X Corps), and the 2nd Combined Hussars and the Uhlans went to the main army, so they're left out.",
     "Kleist commanded the corps' infantry and Massenbach its cavalry under the corps commander; add them as Subordinate Commanders if you like.",
 ]
 
 
-def prussian_corps(battle, commander, summary, notes=()):
+HORSE_ONE = "The corps' March 1812 establishment (Weltseele) has one horse battery, the other two sent with the main army."
+HORSE_THREE = "By the autumn Nafziger's order of battle (October 1812) and Wikipedia's for Riga give the corps three horse batteries; the two more ride with Hünerbein's dragoons and in the corps artillery here."
+
+
+def prussian_corps(battle, commander, summary, notes=(), horse=1):
+    """The whole corps; horse is its horse batteries, one (March establishment) or three (by the autumn)"""
+    three = horse == 3
     return force(f"{battle}-prussian-corps", PR, "The Prussian Auxiliary Corps", "27th Division, X Corps (Macdonald)", "Prussian", summary,
-                 [BELOW, HORN, RAUMER, JEANNERET, HUNERBEIN, CORPS_ARTILLERY],
+                 [BELOW, HORN, RAUMER, JEANNERET, hunerbein(three), corps_artillery(three)],
                  command=[cmd("pr-div-cmd", commander)],
-                 notes=[*notes, *CORPS_NOTES])
+                 notes=[*notes, *CORPS_NOTES, HORSE_THREE if three else HORSE_ONE])
 
 
 # ---------------------------------------------------------------- Russia 1812-15
@@ -162,15 +181,36 @@ MESOTEN = battle(
     [
         prussian_corps("mesoten", "Gen-Lt von Yorck",
                        "Yorck, now in command, gathered the corps and counter-attacked. On the 29th it crossed the Aa at Mesoten and drove Alexeyev's division back, while his 2nd and 3rd Brigades routed part of Rachmanov's at Gräfenthal; next day the cavalry caught Russian Jäger forming square at Lautschkrug, and on 1 October Jeanneret's advance guard pushed on over the Garosse.",
-                       ["Riehn gives the corps 12,000 men and 16 guns at Lautschkrug, and about 16,000 for the whole series of actions; the corps is shown complete."]),
+                       ["Riehn gives the corps 12,000 men and 16 guns at Lautschkrug, and about 16,000 for the whole series of actions; the corps is shown complete."], horse=3),
         alexeyev("mesoten", "The larger of Steinheil's two divisions, which had pushed south from Riga along the Aa. Attacked at Mesoten on the 29th, it fought hard along the river before falling back, and was driven on over the following days."),
         rachmanov("mesoten", "Steinheil's second division. Part of it was caught and routed at Gräfenthal on the 29th, and at Lautschkrug next day its Jäger were ridden down by Prussian cavalry, losing two battalions as prisoners."),
     ],
 )
 
 
+def horn_detachment(summary):
+    return force("dahlenkirchen-horn", PR, "Horn's Detachment", "2nd Brigade, the Prussian Auxiliary Corps", "Prussian", summary,
+                 [HORN], command=[cmd("pr-div-cmd", "Lt-Col von Horn")],
+                 notes=["Horn's brigade held the corps' right on the Düna at Dahlenkirchen. Wikipedia gives the Prussians there about 1,500 men and 8 guns, about half the brigade with its battery; which battalions isn't recorded, so the whole brigade is here. Take one regiment and the battery.",
+                        "Each combined regiment drew its three battalions from two parent regiments, as named. The 4th's third Leib battalion is taken as its Fusiliers."])
+
+
+DAHLENKIRCHEN = {
+    "id": "dahlenkirchen", "name": "Dahlenkirchen", "date": "22 August 1812", "campaign": "russia-1812",
+    "summary": "With the Prussians spread thin around Riga, Essen struck at both their flanks at once: at Schlock and St Annen on the coast, and up the Düna at Dahlenkirchen and Olai. Löwis's column surprised Horn's outposts at Dahlenkirchen, and after a stiff fight Horn fell back; the Prussians stopped the attacks, but gave the village up as too exposed to hold.",
+    "sources": DAHLENKIRCHEN_SOURCES,
+    "forces": [
+        horn_detachment("Spread along the Düna as the corps' right, Horn's outposts were caught by surprise. They fought before falling back, losing heavily, and Dahlenkirchen was given up."),
+        {**lowis("dahlenkirchen", "Löwis led the attack up the Düna, his Order of St George citing him for this day's fight near Riga (10 August in the Russian calendar). He drove Horn out of Dahlenkirchen, though the Prussians held further back."),
+         "notes": ["Wikipedia gives the Russians about 6,000 men, more than Löwis had at Eckau; which of the Riga garrison's battalions joined his depot Jäger isn't recorded, so his own detachment is here. Add garrison infantry to taste.",
+                   "The depot (second) battalions of three Jäger regiments, two each, with a Cossack regiment and a battery; the battalions are Small.",
+                   "On its own it has none of the list's Infantry Brigades, which shows as a historical departure."]},
+    ],
+}
+
+
 if __name__ == "__main__":
-    for b in (ECKAU, MESOTEN):
+    for b in (ECKAU, MESOTEN, DAHLENKIRCHEN):
         ratings.apply(b)
         commanders.apply(b)
         art = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]

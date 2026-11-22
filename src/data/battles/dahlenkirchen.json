@@ -1,0 +1,268 @@
+{
+  "id": "dahlenkirchen",
+  "name": "Dahlenkirchen",
+  "date": "22 August 1812",
+  "campaign": "russia-1812",
+  "summary": "With the Prussians spread thin around Riga, Essen struck at both their flanks at once: at Schlock and St Annen on the coast, and up the Düna at Dahlenkirchen and Olai. Löwis's column surprised Horn's outposts at Dahlenkirchen, and after a stiff fight Horn fell back; the Prussians stopped the attacks, but gave the village up as too exposed to hold.",
+  "sources": [
+    {
+      "label": "Königlich Preussisches Hülfscorps, Russian Campaign of 1812 (Weltseele)",
+      "url": "https://weltseele.miraheze.org/wiki/Orders_of_Campaign_and_Battle_(Prussia)/K%C3%B6niglich_Preussisches_H%C3%BClfscorps_(Russian_Campaign_of_1812)"
+    },
+    {
+      "label": "Preußischer Feldzug von 1812 (German Wikipedia)",
+      "url": "https://de.wikipedia.org/wiki/Preu%C3%9Fischer_Feldzug_von_1812"
+    },
+    {
+      "label": "Order of battle of the Imperial Russian Army, 1812 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Order_of_battle_of_the_Imperial_Russian_Army_(1812)"
+    },
+    {
+      "label": "Siege of Riga, 1812 (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Siege_of_Riga_(1812)"
+    },
+    {
+      "label": "Richard Riehn, Napoleon's Russian Campaign, ch. 14 (Summer and autumn in Latvia)"
+    },
+    {
+      "label": "The fight at Gross-Eckau, from Russkaya Starina, 1912 (Mark Conrad's translation)",
+      "url": "https://marksrussianmilitaryhistory.info/GrossEckau.htm"
+    },
+    {
+      "label": "French Left Wing, October 1812, X Corps (Nafziger Collection 812ICC)",
+      "url": "https://www.napoleon-series.org/nafzigger/812ICC.pdf"
+    },
+    {
+      "label": "Royal Prussian Army Corps, 13 May 1812 (Nafziger Collection 812EDG)",
+      "url": "https://www.napoleon-series.org/nafzigger/812EDG.pdf"
+    },
+    {
+      "label": "Battle of Dahlenkirchen (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Dahlenkirchen"
+    },
+    {
+      "label": "Левиз, Фёдор Фёдорович (Russian Wikipedia)",
+      "url": "https://ru.wikipedia.org/wiki/%D0%9B%D0%B5%D0%B2%D0%B8%D0%B7,_%D0%A4%D1%91%D0%B4%D0%BE%D1%80_%D0%A4%D1%91%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D0%B8%D1%87"
+    }
+  ],
+  "forces": [
+    {
+      "id": "dahlenkirchen-horn",
+      "nationId": "prussia",
+      "name": "Horn's Detachment",
+      "formation": "2nd Brigade, the Prussian Auxiliary Corps",
+      "side": "Prussian",
+      "summary": "Spread along the Düna as the corps' right, Horn's outposts were caught by surprise. They fought before falling back, losing heavily, and Dahlenkirchen was given up.",
+      "notes": [
+        "Horn's brigade held the corps' right on the Düna at Dahlenkirchen. Wikipedia gives the Prussians there about 1,500 men and 8 guns, about half the brigade with its battery; which battalions isn't recorded, so the whole brigade is here. Take one regiment and the battery.",
+        "Each combined regiment drew its three battalions from two parent regiments, as named. The 4th's third Leib battalion is taken as its Fusiliers.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr-div-cmd",
+          "name": "Lt-Col von Horn",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr-infantry-brigade",
+          "name": "2nd Brigade (Horn)",
+          "commander": {
+            "name": "Lt-Col von Horn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr-foot-arty",
+              "name": "6-pdr Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "3rd Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/Colberg"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/Pomeranian"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "F/Pomeranian"
+                }
+              ]
+            },
+            {
+              "name": "4th Combined Infantry Regiment",
+              "units": [
+                {
+                  "unit": "pr-musketeer",
+                  "name": "I/Leib Infantry"
+                },
+                {
+                  "unit": "pr-musketeer",
+                  "name": "II/Leib Infantry"
+                },
+                {
+                  "unit": "pr-fusilier",
+                  "name": "III/Leib Infantry"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dahlenkirchen-lowis",
+      "nationId": "russia",
+      "name": "Löwis's Detachment",
+      "formation": "From the Riga garrison (Essen)",
+      "side": "Russian",
+      "summary": "Löwis led the attack up the Düna, his Order of St George citing him for this day's fight near Riga (10 August in the Russian calendar). He drove Horn out of Dahlenkirchen, though the Prussians held further back.",
+      "notes": [
+        "Wikipedia gives the Russians about 6,000 men, more than Löwis had at Eckau; which of the Riga garrison's battalions joined his depot Jäger isn't recorded, so his own detachment is here. Add garrison infantry to taste.",
+        "The depot (second) battalions of three Jäger regiments, two each, with a Cossack regiment and a battery; the battalions are Small.",
+        "On its own it has none of the list's Infantry Brigades, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Löwis of Menar",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-jager-brigade",
+          "name": "Depot Jäger",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "4th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 4th Jäger",
+                  "options": [
+                    "small"
+                  ]
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 4th Jäger",
+                  "options": [
+                    "small"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "20th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 20th Jäger",
+                  "options": [
+                    "small"
+                  ]
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 20th Jäger",
+                  "options": [
+                    "small"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "21st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 21st Jäger",
+                  "options": [
+                    "small"
+                  ]
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 21st Jäger",
+                  "options": [
+                    "small"
+                  ]
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Cossacks",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Selivanov's Cossacks"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/FriedrichvonLowisofMenar.jpg/250px-FriedrichvonLowisofMenar.jpg",
+        "title": "Friedrich von Löwis of Menar",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:FriedrichvonLowisofMenar.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "sides": {
+    "Prussian": {
+      "commander": "Gen-Lt von Yorck",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    },
+    "Russian": {
+      "commander": "Lt-Gen von Essen",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Essen_Ivan_N.jpg/250px-Essen_Ivan_N.jpg",
+        "title": "Magnus Gustav von Essen",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Essen_Ivan_N.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png/960px-Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
+    "title": "Horn leads the Leib Regiment at Wartenburg, 1813",
+    "artist": "Richard Knötel",
+    "date": "1901",
+    "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
+    "focus": "50% 45%"
+  }
+}
