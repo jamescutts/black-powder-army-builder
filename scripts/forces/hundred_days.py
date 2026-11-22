@@ -587,14 +587,14 @@ PR_CAVALRY = {
         ("Schwerin", [(D, "8th Dragoons"), (UH, "1st (West Prussian) Uhlans"), (HU, "6th (2nd Silesian) Hussars")], True),
         ("Watzdorf", [(HU, "8th (1st Westphalian) Hussars"), (HU, "10th (1st Magdeburg) Hussars")], True),
         ("Sydow", [(LWC, "1st Neumark Landwehr Cavalry"), (LWC, "2nd Neumark Landwehr Cavalry"),
-                   (LWC, "1st Pomeranian Landwehr Cavalry"), (LWC, "2nd Pomeranian Landwehr Cavalry")], True),
-        ("Sydow", [(LWC, "1st Silesian Landwehr Cavalry"), (LWC, "2nd Silesian Landwehr Cavalry"), (LWC, "3rd Silesian Landwehr Cavalry")], False),
+                   (LWC, "1st Pomeranian Landwehr Cavalry"), (LWC, "2nd Pomeranian Landwehr Cavalry"),
+                   (LWC, "1st Silesian Landwehr Cavalry"), (LWC, "2nd Silesian Landwehr Cavalry"), (LWC, "3rd Silesian Landwehr Cavalry")], True),
     ], False),
 }
 CAVALRY_NOTES = {
     "I": "Lützow's brigade mixed line and Landwehr cavalry, which the list's brigades don't, so its two Landwehr regiments and the Westphalian are a brigade of their own here.",
     "III": "Lottum's brigade had three Uhlan regiments where the list allows two, and Marwitz's mixed line and Landwehr cavalry, so its two Kurmark regiments are a brigade of their own here.",
-    "IV": "Sydow's brigade had seven Landwehr cavalry regiments, more than one of the list's brigades holds, so it is split in two here.",
+    "IV": "Sydow's brigade had seven Landwehr cavalry regiments, two more than the list's brigade holds, which shows as a historical departure.",
 }
 
 

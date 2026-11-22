@@ -591,11 +591,11 @@
         }
       ],
       "portrait": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/John-lambert-waterloo.jpg/250px-John-lambert-waterloo.jpg",
-        "title": "Sir John Lambert",
-        "artist": "William Salter",
-        "page": "https://commons.wikimedia.org/wiki/File:John-lambert-waterloo.jpg",
-        "focus": "50% 20%"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Lambert_Karl_Osipovich.jpg/250px-Lambert_Karl_Osipovich.jpg",
+        "title": "Karl de Lambert",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Lambert_Karl_Osipovich.jpg",
+        "focus": "50% 18%"
       }
     },
     {
@@ -2737,7 +2737,7 @@
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
         "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigades' foot batteries.",
         "The corps cavalry, under Prince Wilhelm of Prussia, follows Nafziger's order of battle (after Plotho). The list takes line or Landwehr cavalry brigades but not both, so a corps with both shows it as a historical departure.",
-        "Sydow's brigade had seven Landwehr cavalry regiments, more than one of the list's brigades holds, so it is split in two here.",
+        "Sydow's brigade had seven Landwehr cavalry regiments, two more than the list's brigade holds, which shows as a historical departure.",
         "Nafziger gives each corps three 12-pdr batteries, a howitzer battery and more 6-pdr foot and horse batteries than its brigades had; the list's reserve takes one heavy, one foot and one horse battery, so only those are here. Which horse batteries rode with the cavalry brigades is our reading.",
         "Bülow commands as the optional Corps Commander (Albion Triumphant p. his brigade commanders at 8, the list's lowest.",
         "Commanders are at Staff Rating 8, the default for historical forces."
@@ -3091,20 +3091,6 @@
               "name": "2nd Pomeranian Landwehr Cavalry"
             },
             {
-              "unit": "pr15-horse-arty",
-              "name": "Horse Battery"
-            }
-          ]
-        },
-        {
-          "type": "pr15-landwehr-cavalry-brigade",
-          "name": "Sydow's Cavalry Brigade (Landwehr)",
-          "commander": {
-            "name": "Lt-Col von Sydow",
-            "variant": "Staff rating 8"
-          },
-          "units": [
-            {
               "unit": "pr15-mounted-landwehr",
               "name": "1st Silesian Landwehr Cavalry"
             },
@@ -3115,6 +3101,10 @@
             {
               "unit": "pr15-mounted-landwehr",
               "name": "3rd Silesian Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
             }
           ]
         },
