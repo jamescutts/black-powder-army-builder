@@ -33,7 +33,15 @@
       }
     },
     "Prussian": {
-      "commander": "Gen-Lt von Kleist"
+      "commander": "Gen-Lt von Kleist",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg/250px-Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
+        "title": "Friedrich Kleist von Nollendorf",
+        "artist": "Hermann Scherenberg",
+        "page": "https://commons.wikimedia.org/wiki/File:Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
+        "focus": "50% 20%",
+        "date": "1863"
+      }
     }
   },
   "alliances": [
@@ -1023,7 +1031,15 @@
           "name": "Rüdiger's, Vlastov's, Roth's and Rodionov's Russians",
           "reason": "The Grodno Hussars, the 23rd to 26th Jäger, Horse Battery #23 and three Don Cossack regiments were Russian, which a force from the Prussian list can't take."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg/250px-Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
+        "title": "Friedrich Kleist von Nollendorf",
+        "artist": "Hermann Scherenberg",
+        "page": "https://commons.wikimedia.org/wiki/File:Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
+        "focus": "50% 20%",
+        "date": "1863"
+      }
     },
     {
       "id": "bautzen-blucher",

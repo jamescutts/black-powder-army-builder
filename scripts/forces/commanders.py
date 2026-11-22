@@ -71,6 +71,7 @@ PORTRAITS.update({
     "foy": portrait("Maximilien Foy 1.jpg", "Maximilien Sébastien Foy", "unknown artist", focus="50% 20%"),
     "jerome": portrait("Jérôme Bonaparte (Kinson).jpg", "Jérôme Bonaparte, King of Westphalia", "after François Kinson", focus="50% 18%"),
     "bulow": portrait("Friedrich Wilhelm Freiherr von Bulow.jpg", "Friedrich Wilhelm Bülow von Dennewitz", "unknown artist", focus="50% 20%"),
+    "kleist": portrait("Hermann Scherenberg-Friedrich Graf Kleist von Nollendorf.jpg", "Friedrich Kleist von Nollendorf", "Hermann Scherenberg", "1863", "50% 20%"),
     # British / King's German Legion
     "picton": portrait("Sir Thomas Picton by Sir Martin Archer Shee.jpg", "Sir Thomas Picton", "Martin Archer Shee", focus="50% 20%"),
     "uxbridge": portrait("Thomas Lawrence (1769-1830) - Henry William Paget (1768–1854), 1st Marquess of Anglesey, KG - WM.1474-1948 - Apsley House.jpg", "Henry Paget, Earl of Uxbridge", "Thomas Lawrence", "1818", "50% 16%"),
