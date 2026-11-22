@@ -161,6 +161,7 @@ COMMANDERS.update({
     "bautzen": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay"), "Prussian": ("General Blücher", "blucher")},
     "grossbeeren": {"Saxon": ("Général Reynier", "reynier"), "French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
     "wartenburg": {"French": ("Général Bertrand", "bertrand"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
+    "dennewitz": {"French": ("Marshal Ney", "ney"), "Saxon": ("Général Reynier", "reynier"), "Prussian": ("Gen-Lt von Bülow", "bulow"), "Russian": ("Maj-Gen Baron Pahlen", "pahlen")},
     "hagelberg": {"French": ("Gén. de Division Girard", "girard"), "Prussian": ("Gen-Maj von Hirschfeld", "hirschfeld")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
 })
@@ -608,6 +609,7 @@ FORCE_PORTRAITS.update({
     "lutzen-girard": "girard", "lutzen-marchand": "marchand", "lutzen-berg": "berg", "lutzen-eugen": "eugen_wurttemberg",
     "grossbeeren-lecoq": "lecoq", "grossbeeren-durutte": "durutte",
     "wartenburg-morand": "morand", "wartenburg-yorck": "yorck",
+    "dennewitz-morand": "morand", "dennewitz-durutte": "durutte", "dennewitz-lecoq": "lecoq", "dennewitz-bulow": "bulow",
     "hanau-old-guard": "friant", "hagelberg-girard": "girard", "hagelberg-hirschfeld": "hirschfeld",
     "mockern-yorck": "yorck", "lutzen-yorck": "yorck", "bautzen-yorck": "yorck", "bautzen-kleist": "kleist",
     "mockern-bulow": "bulow", "grossbeeren-bulow": "bulow", "lutzen-blucher": "blucher", "bautzen-blucher": "blucher",

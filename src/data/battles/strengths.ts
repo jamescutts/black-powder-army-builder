@@ -172,6 +172,10 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "17,000–30,000" },
     { label: "Bavarian, Austrian and Russian", men: "43,000" },
   ],
+  dennewitz: [
+    { label: "French and Saxon", men: "45,000–60,000", guns: "200", engaged: true },
+    { label: "Prussian and Russian", men: "50,000", guns: "150", engaged: true },
+  ],
   hagelberg: [
     { label: "French", men: "8,900", guns: "23" },
     { label: "Prussian", men: "11,310", guns: "11" },

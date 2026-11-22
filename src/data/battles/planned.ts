@@ -150,8 +150,6 @@ export const dresden = planned("dresden", "Dresden", "26–27 August 1813", L,
   "Schwarzenberg's Army of Bohemia attacked Dresden just as Napoleon reached it with the Guard. Next day, in pouring rain, Murat's cavalry broke the Austrian left cut off by the flooded Weisseritz: Napoleon's last great victory in Germany.");
 export const kulm = planned("kulm", "Kulm", "29–30 August 1813", L,
   "Vandamme's corps, pressing down from the mountains to cut off the allies retreating from Dresden, was held at Kulm by Ostermann-Tolstoy and the Russian Guard, then taken in the rear by Kleist's Prussians coming over the hills behind; Vandamme and most of his corps were captured.");
-export const dennewitz = planned("dennewitz", "Dennewitz", "6 September 1813", L,
-  "Ney, sent in Oudinot's place to take Berlin, marched across the front of Bülow's and Tauentzien's Prussians, and his corps were drawn into the fight one at a time; when Oudinot's moved to the wrong flank the line broke, and the Saxons and Bavarians began to waver in their allegiance.");
 export const gohrde = planned("gohrde", "The Göhrde", "16 September 1813", L,
   "In the forests of the Göhrde, east of Lüneburg, Wallmoden's army of Russians, Hanoverians, the King's German Legion and Lützow's Free Corps surrounded and broke Pécheux's division of Davout's corps. Eleonore Prochaska, serving disguised as a man with Lützow's infantry, was mortally wounded there.");
 export const leipzig = planned("leipzig", "Leipzig", "16–19 October 1813", L,
@@ -253,13 +251,6 @@ kulm.art = {
   "artist": "Alexander von Kotzebue",
   "date": "1843",
   "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Kulm_by_Kotsebu.jpg"
-};
-dennewitz.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/The_Battle_of_Dennewitz%2C_September_6%2C_1813_%28Alexander_Wetterling%29_-_Nationalmuseum_-_21864.tif/lossy-page1-960px-The_Battle_of_Dennewitz%2C_September_6%2C_1813_%28Alexander_Wetterling%29_-_Nationalmuseum_-_21864.tif.jpg",
-  "title": "The Battle of Dennewitz",
-  "artist": "Alexander Wetterling",
-  "date": "1842",
-  "page": "https://commons.wikimedia.org/wiki/File:The_Battle_of_Dennewitz,_September_6,_1813_(Alexander_Wetterling)_-_Nationalmuseum_-_21864.tif"
 };
 leipzig.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Sauerweid_A.I._Battle_of_Leipzig%2C_from_2_to_7_october_1813.jpg/960px-Sauerweid_A.I._Battle_of_Leipzig%2C_from_2_to_7_october_1813.jpg",

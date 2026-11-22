@@ -1,5 +1,5 @@
 """
-Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,hagelberg,wartenburg,hanau}.json):
+Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,hagelberg,dennewitz,wartenburg,hanau}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
 are built from the 1815 Prussian list, one force a corps.
 
@@ -10,6 +10,7 @@ the Imperial Guard, the Confederation of the Rhine, Italy, Saxony and Russia (wh
 force's notes say so. Summaries are our own words. Staff Ratings are set by ratings.py.
 """
 
+import copy
 import json
 from pathlib import Path
 
@@ -1218,6 +1219,274 @@ HAGELBERG = battle(
     [HG_GIRARD, HG_HIRSCHFELD], [], alliances=())
 
 
+# ================================================================ Dennewitz, 6 September 1813
+
+DN_FR = {"label": "French Forces, Battle of Dennewitz, 6 September 1813 (Nafziger Collection 813IAG)", "url": NAF + "813IAG.pdf"}
+DN_AL = {"label": "Allied Forces, Battle of Dennewitz, 6 September 1813 (Nafziger Collection 813IAF)", "url": NAF + "813IAF.pdf"}
+DN_NOTE = "After Nafziger's order of battle for Dennewitz."
+DN_SAX_NOTE = ("After Nafziger's order of battle for Großbeeren, a fortnight before: his Dennewitz return gives the Saxons as one "
+               "division, an organisation he notes was only set up on 17 September, so the two divisions of August are kept here.")
+GDW = "grand-duchy-of-warsaw"
+DN_WEAK = "Its battalions were well under strength after Großbeeren; they are shown at full size, and the list's Small upgrade would suit many of them."
+
+
+def again(f, id_, summary, notes):
+    """A force from another battle, as it fought here"""
+    g = copy.deepcopy(f)
+    g["id"], g["summary"] = id_, summary
+    g["notes"] = notes + [n for n in g["notes"][1:] if n not in (GB_NOTE,)]
+    g.pop("missing", None)
+    return g
+
+
+def bn_list(unit, reg, labels):
+    return regt(reg, [u(unit, f"{b}/{reg}") for b in labels])
+
+
+DN_MORAND = force(
+    "dennewitz-morand", FR, "Morand's Division", "12th Division, IV Corps (Bertrand)", "French",
+    "Bertrand's leading division, which came on Tauentzien's corps across the Agerbach at Dennewitz in the morning and fought the Prussian Landwehr there until Bülow's brigades came up on its flank.",
+    [bde("fr-infantry-brigade", "Ligier-Belair's Brigade", "Gén. de Brigade Ligier-Belair", regiments=[bn_list("fr-light-infantry", "8th Léger", ["2", "4"])]),
+     bde("fr-infantry-brigade", "Toussaint's Brigade", "Gén. de Brigade Toussaint",
+         units=[u("fr-regimental-arty-section", "Artillery Company, 13th Line")], regiments=[bn_list("fr-line-infantry", "13th Line", ["1", "2", "3", "4", "6"])]),
+     bde("fr-infantry-brigade", "Hulot's Brigade", "Gén. de Brigade Hulot",
+         units=[u("fr-regimental-arty-section", "Artillery Company, 23rd Line")], regiments=[bn_list("fr-line-infantry", "23rd Line", ["1", "2", "4", "6"])]),
+     foot("1/2nd Foot Artillery", "3/2nd Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Morand")],
+    notes=[LIST_FR, DN_NOTE,
+           "The 13th and 23rd Line's regimental artillery companies are from Nafziger's IV Corps return of 20 September, each shown as a section of regimental guns.",
+           TWO_BATTERIES])
+
+DN_FONTANELLI = force(
+    "dennewitz-fontanelli", IT, "Fontanelli's Division", "15th Division, IV Corps (Bertrand)", "French",
+    "Bertrand's Italians, who came up beside Morand against Tauentzien's line and were drawn into the fighting round Dennewitz and Rohrbeck as Bülow's corps arrived.",
+    [bde("it-infantry-brigade", "Martel's Brigade", "Gén. de Brigade Martel",
+         regiments=[bn_list("it-line-infantry", "1st Italian Line", ["3", "4"]), bn_list("it-line-infantry", "4th Italian Line", ["2", "3", "4"])]),
+     bde("it-infantry-brigade", "Saint-Andrea's Brigade", "Gén. de Brigade Saint-Andrea",
+         regiments=[bn_list("it-light-infantry", "1st Italian Light", ["2", "3", "4"]), bn_list("it-line-infantry", "6th Italian Line", ["3", "4"])]),
+     bde("it-infantry-brigade", "Moroni's Brigade", "Gén. de Brigade Moroni",
+         regiments=[regt("Milan Guard", [u("it-line-infantry", "1st Milan Guard Battalion")]), bn_list("it-line-infantry", "7th Italian Line", ["2", "3", "4"])]),
+     bde("it-divisional-artillery", "Divisional Artillery",
+         units=[u("it-foot-arty", "1/1st Italian Foot Battery"), u("it-foot-arty", "13/1st Italian Foot Battery")])],
+    command=[cmd("it-div-cmd", "Gén. de Division Fontanelli")],
+    notes=["Built from A Clash of Eagles' Italian list, the nearest to 1813.", DN_NOTE,
+           "The Milan Guard Battalion, a city guard and not the Royal Guard, is shown as Line.",
+           "The division's two foot batteries, where the list allows one, show as a historical departure."])
+
+DN_FRANQUEMONT = force(
+    "dennewitz-franquemont", WT, "Franquemont's Division", "38th (Württemberg) Division, IV Corps (Bertrand)", "French",
+    "The Württemberg contingent, with Jett's chevau-légers, on Bertrand's left. It fought for Göhlsdorf and Rohrbeck against Bülow's brigades through the afternoon and lost heavily in the rout; after the battle it was down to four combined battalions.",
+    [bde("wt-light-infantry-brigade", "Stockmayer's Brigade", "Gen-Maj von Stockmayer",
+         units=[u("wt-light-infantry", "I/9th Light"), u("wt-light-infantry", "I/10th Light")],
+         regiments=[regt("7th Line", bns("wt-line-infantry", "7th Line", 2))]),
+     bde("wt-infantry-brigade", "Spitzenberg's Brigade", "Gen-Maj von Spitzenberg",
+         regiments=[regt("1st Line", bns("wt-line-infantry", "1st Line", 2)), regt("2nd Line", [u("wt-line-infantry", "I/2nd Line")])]),
+     bde("wt-infantry-brigade", "Döring's Brigade", "Gen-Maj von Döring",
+         regiments=[regt("4th Line", bns("wt-line-infantry", "4th Line", 2)), regt("6th Line", bns("wt-line-infantry", "6th Line", 2))]),
+     bde("wt-cavalry-brigade", "Jett's Brigade", "Gen-Maj von Jett",
+         units=[u("wt-chevauleger", "1st Chevau-légers 'Prince Adam'"), u("wt-chevauleger", "3rd Chevau-légers 'Duke Louis'"),
+                u("wt-horse-arty", "1st Horse Battery")]),
+     bde("wt-divisional-artillery", "Divisional Artillery", units=[u("wt-light-arty", "1st Württemberg Foot Battery")])],
+    command=[cmd("wt-div-cmd", "Gen-Lt Graf Franquemont")],
+    notes=["Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1813.", DN_NOTE,
+           "The foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery.",
+           "Jett's two regiments had about 300 men between them a fortnight later."])
+
+DN_DOMBROWSKI = force(
+    "dennewitz-dombrowski", GDW, "Dombrowski's Division", "27th (Polish) Division, IV Corps (Bertrand)", "French",
+    "The Polish division of Bertrand's corps, two infantry regiments and Krukowiecki's light horse, which covered the corps' flank and fell back with it.",
+    [bde("gdw-infantry-brigade", "Zoltowski's Brigade", "Gén. de Brigade Zoltowski",
+         regiments=[regt("2nd Polish Infantry", bns("gdw-polish-infantry", "2nd Polish", 2)), regt("4th Polish Infantry", bns("gdw-polish-infantry", "4th Polish", 2))]),
+     bde("gdw-cavalry-brigade", "Krukowiecki's Brigade", "Gén. de Brigade Krukowiecki",
+         units=[u("gdw-uhlan", "2nd Uhlans"), u("gdw-chasseur-a-cheval", "4th Chasseurs à Cheval")])],
+    command=[cmd("gdw-div-cmd", "Gén. de Division Dombrowski")],
+    notes=["Built from A Clash of Eagles' Grand Duchy of Warsaw list, the nearest to 1813.", DN_NOTE,
+           "Nafziger has the 2nd Polish attached to Durutte's division; it is shown here with its own division, as the French list can't take it.",
+           "One infantry brigade for its cavalry brigade, where the list wants two, shows as a historical departure."])
+
+DN_SAHR = again(GB_SAHR, "dennewitz-sahr",
+                "Reynier's leading Saxon division, which took Göhlsdorf in the afternoon and held it against Bülow's attacks until Borstell's brigade came up on its flank about four; when Oudinot's corps was moved away behind it, the Saxons were left alone, and broke.",
+                [LIST_SAX, DN_SAX_NOTE])
+DN_LECOQ = again(GB_LECOQ, "dennewitz-lecoq",
+                 "Reynier's second Saxon division, fed into the fight for Göhlsdorf beside Sahr's and carried away in the rout when the line broke behind it.",
+                 [LIST_SAX, DN_SAX_NOTE])
+DN_GABLENZ = again(GB_GABLENZ, "dennewitz-gablenz",
+                   "Reynier's Saxon horse, the Hussars and the Prinz Clemens Uhlans, which tried to cover the corps' retreat after Göhlsdorf.",
+                   [LIST_SAX, DN_SAX_NOTE])
+
+DN_DURUTTE = force(
+    "dennewitz-durutte", FR, "Durutte's Division", "32nd Division, VII Corps (Reynier)", "French",
+    "The French division of Reynier's corps, in support of the Saxons at Göhlsdorf, caught up again in their rout.",
+    [bde("fr-infantry-brigade", "Devaux's Brigade", "Gén. de Brigade Devaux",
+         regiments=[bn_list("fr-light-infantry", "35th Léger", ["1", "4"]), bn_list("fr-line-infantry", "132nd Line", ["1", "3", "4"])]),
+     bde("fr-infantry-brigade", "Jarry's Brigade", "Gén. de Brigade Jarry",
+         regiments=[bn_list("fr-light-infantry", "36th Léger", ["1", "4"]), bn_list("fr-line-infantry", "131st Line", ["1", "3", "4"])]),
+     bde("fr-infantry-brigade", "Menu's Brigade", "Gén. de Brigade Menu",
+         regiments=[bn_list("fr-line-infantry", "133rd Line", ["3", "4"]),
+                    regt("Würzburg Regiment", [u("fr-rheinbund-infantry", "2/Würzburg"), u("fr-rheinbund-infantry", "3/Würzburg")])]),
+     foot("12/1st Foot Artillery", "13/8th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Durutte")],
+    notes=[LIST_FR, DN_NOTE, CONSCRIPTS, DN_WEAK,
+           "Two light regiments, where the list allows one in a division, and two Würzburg battalions as Rheinbund infantry, where it allows one, show as historical departures.",
+           TWO_BATTERIES])
+
+DN_PACTHOD = force(
+    "dennewitz-pacthod", FR, "Pacthod's Division", "13th Division, XII Corps (Oudinot)", "French",
+    "Oudinot's leading division, which came up late in the afternoon to support Reynier at Göhlsdorf, before Ney ordered the corps away to his left.",
+    [bde("fr-infantry-brigade", "Bardet's Brigade", "Gén. de Brigade Bardet",
+         regiments=[bn_list("fr-light-infantry", "1st Léger", ["4"]), bn_list("fr-line-infantry", "7th Line", ["3", "4"]), bn_list("fr-line-infantry", "42nd Line", ["4"])]),
+     bde("fr-infantry-brigade", "Cacault's Brigade", "Gén. de Brigade Cacault",
+         regiments=[bn_list("fr-line-infantry", "67th Line", ["3", "4"]), bn_list("fr-line-infantry", "101st Line", ["2", "3", "4"])]),
+     foot("4/4th Foot Artillery", "20/4th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Pacthod")],
+    notes=[LIST_FR, DN_NOTE, CONSCRIPTS, DN_WEAK, TWO_BATTERIES])
+
+DN_GUILLEMINOT = force(
+    "dennewitz-guilleminot", FR, "Guilleminot's Division", "14th Division, XII Corps (Oudinot)", "French",
+    "Oudinot's second French division, moved across the rear of the battle on Ney's order just as Borstell struck Göhlsdorf, and so out of the fight when it was decided.",
+    [bde("fr-infantry-brigade", "Gruyer's Brigade", "Gén. de Brigade Gruyer",
+         regiments=[bn_list("fr-light-infantry", "18th Léger", ["2", "6"]), bn_list("fr-line-infantry", "156th Line", ["1", "2", "3"])]),
+     bde("fr-infantry-brigade", "Brun de Villeret's Brigade", "Gén. de Brigade Brun de Villeret",
+         regiments=[regt("Illyrian Regiment", [u("fr-line-infantry", "2/Illyrian Regiment")]),
+                    bn_list("fr-line-infantry", "52nd Line", ["3", "4"]), bn_list("fr-line-infantry", "137th Line", ["1", "2", "3"])]),
+     foot("2/4th Foot Artillery", "1/8th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Guilleminot")],
+    notes=[LIST_FR, DN_NOTE, CONSCRIPTS, DN_WEAK, "The Illyrian battalion is shown as Line.", TWO_BATTERIES])
+
+DN_RAGLOVICH = force(
+    "dennewitz-raglovich", BAV, "Raglovich's Division", "29th (Bavarian) Division, XII Corps (Oudinot)", "French",
+    "Oudinot's Bavarian division, single battalions of many regiments and two Jäger battalions, which marched off with the rest of the corps at Ney's order and covered the retreat.",
+    [bde("bav-infantry-brigade", "Beckers's Brigade", "Gen-Maj von Beckers",
+         units=[u("bav-light-infantry", "1st Jäger Battalion")],
+         regiments=[bav("3rd and 4th Line", bns_=["II/3rd Line", "I/4th Line"]), bav("8th and 13th Line", bns_=["II/8th Line", "Reserve Battalion, 13th Line"])]),
+     bde("bav-infantry-brigade", "Second Brigade", "",
+         units=[u("bav-light-infantry", "2nd Jäger Battalion")],
+         regiments=[bav("5th and 7th Line", bns_=["II/5th Line", "II/7th Line"]), bav("9th and 10th Line", bns_=["II/9th Line", "II/10th Line"])]),
+     bde("bav-divisional-artillery", "Divisional Artillery", units=[u("bav-light-arty", "1st Foot Battery"), u("bav-foot-arty", "2nd Foot Battery")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt von Raglovich")],
+    notes=[LIST_BAV.replace("; Bavaria had changed sides a fortnight before", ", still on the French side"), DN_NOTE,
+           "Its line battalions were each from a different regiment; they are grouped in pairs as the brigades' regiments, as the list takes them.",
+           "Nafziger doesn't say what the two foot batteries were; one is shown as the list's Light Artillery, the other as Foot Artillery."])
+
+DN_BEAUMONT = force(
+    "dennewitz-beaumont", WP, "Beaumont's Cavalry", "29th Light Cavalry Brigade, XII Corps (Oudinot)", "French",
+    "Oudinot's corps cavalry, three regiments of German light horse.",
+    [bde("wp-cavalry-brigade", "Wolff's Brigade", "Gen-Maj Wolff",
+         units=[u("wp-guard-chevau-leger", "Westphalian Chevau-légers-lanciers"), u("wp-hussar", "Hessian Chevau-légers"), u("wp-hussar", "Bavarian Chevau-légers")])],
+    command=[cmd("wp-div-cmd", "Gén. de Division Beaumont")],
+    notes=["Built from A Clash of Eagles' Westphalian 1812 list, for its Guard Chevau-légers.", DN_NOTE,
+           "The Hessian and Bavarian Chevau-légers are shown as Westphalian Hussars, the list's other light cavalry.",
+           "Three regiments, where the list's brigade takes two, and a cavalry brigade with no infantry brigade to allow it, show as historical departures."])
+
+DN_ARRIGHI = force(
+    "dennewitz-arrighi", FR, "Arrighi's Cavalry", "III Cavalry Corps", "French",
+    "The army's cavalry reserve, squadrons from many regiments, which covered the retreat after the French line broke.",
+    [bde("fr-light-cavalry-brigade", "Jacquinot's Brigade", "Gén. de Brigade Jacquinot",
+         units=[u("fr-chasseur-a-cheval", "5th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "10th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "13th Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Merlin's Brigade", "Gén. de Brigade Merlin",
+         units=[u("fr-chasseur-a-cheval", "15th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "21st Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "22nd Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Mouriez's Brigade", "Gén. de Brigade Mouriez",
+         units=[u("fr-chasseur-a-cheval", "29th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "31st Chasseurs à Cheval"), u("fr-hussar-regt", "1st Hussars")]),
+     bde("fr-light-cavalry-brigade", "Ameil's Brigade", "Gén. de Brigade Ameil",
+         units=[u("fr-hussar-regt", "2nd Hussars"), u("fr-hussar-regt", "4th Hussars"), u("fr-hussar-regt", "12th Hussars")]),
+     bde("fr-heavy-cavalry-brigade", "Axamitowski's Brigade", "Gén. de Brigade Axamitowski",
+         units=[u("fr-dragoon", "4th and 5th Dragoons"), u("fr-dragoon", "12th and 14th Dragoons"), u("fr-dragoon", "24th Dragoons")]),
+     bde("fr-heavy-cavalry-brigade", "Quinette's Brigade", "Gén. de Brigade Quinette",
+         units=[u("fr-dragoon", "16th and 17th Dragoons"), u("fr-dragoon", "21st and 26th Dragoons"), u("fr-dragoon", "27th Dragoons and 13th Cuirassiers")]),
+     bde("fr-divisional-artillery", "Horse Artillery", units=[u("fr-horse-arty", "1/5th Horse Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Arrighi")],
+    notes=[LIST_FR, DN_NOTE,
+           "Most regiments sent one or two squadrons, so each listed regiment is shown as a unit; the dragoon brigades' many single squadrons are paired, two regiments to a unit, and the 13th Cuirassiers' one squadron rides with the 27th Dragoons.",
+           "Ameil's three hussar regiments, where the list's brigade takes two, show as a historical departure. The corps' other horse batteries, more than the list takes, are on the Not in this force card.",
+           CAV_ONLY])
+DN_ARRIGHI["missing"] = [{"name": "5/5th, 2/1st and 4/6th Horse Artillery", "reason": "The corps' other three horse batteries, more than the list takes."}]
+
+# --- The allies
+
+DN_TAUENTZIEN = force(
+    "dennewitz-tauentzien", PR15, "Tauentzien's Corps", "IV Corps, Army of the North", "Prussian",
+    "Almost all Landwehr, standing across the road to Jüterbog, it took Bertrand's attack in the morning and held on at Dennewitz for hours against odds until Bülow's corps came in on the French flank.",
+    [pi("Dobschütz's Brigade", "Gen-Maj von Dobschütz",
+        [("3rd Reserve Infantry", [("M", "I/3rd Reserve Infantry"), ("M", "II/3rd Reserve Infantry"), ("M", "III/3rd Reserve Infantry")]),
+         ("1st Kurmark Landwehr", [("L", "I/1st Kurmark Landwehr"), ("L", "II/1st Kurmark Landwehr")]),
+         ("1st Silesian Landwehr", [("L", "I/1st Silesian Landwehr"), ("L", "II/1st Silesian Landwehr"), ("L", "III/1st Silesian Landwehr")])],
+        [u("pr15-foot-arty", "6-pdr Foot Battery #27")]),
+     pi("Lindenau's Brigade", "Col Graf Lindenau",
+        [("2nd Neumark Landwehr", [("L", f"{r}/2nd Neumark Landwehr") for r in ("I", "II", "III", "IV")]),
+         ("5th Kurmark Landwehr", [("L", f"{r}/5th Kurmark Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-foot-arty", "Heavy 6-pdr Foot Battery #17")]),
+     pc("Landwehr Cavalry", "", [u("pr15-mounted-landwehr", "Berlin Landwehr Cavalry (2 squadrons)"), u("pr15-mounted-landwehr", "2nd Kurmark Landwehr Cavalry (2 squadrons)"),
+                                 u("pr15-mounted-landwehr", "2nd Neumark Landwehr Cavalry (2 squadrons)"), u("pr15-mounted-landwehr", "3rd East Prussian Landwehr Cavalry"),
+                                 u("pr15-mounted-landwehr", "3rd Pomeranian Landwehr Cavalry"), u("pr15-mounted-landwehr", "7th Kurmark Landwehr Cavalry (Katte)"),
+                                 u("pr15-horse-arty", "½ Horse Battery #6", **HALF)], landwehr=True),
+     pres(u("pr15-foot-arty", "½ 6-pdr Foot Battery #30", **HALF), u("pr15-horse-arty", "½ Horse Battery #11", **HALF))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt Graf Tauentzien")],
+    notes=[PR_LIST, DN_NOTE, PR_GROUPED, PR_SUB,
+           "Nafziger gives the corps' infantry as Lindenau's one division; it is split into the two brigades of his Großbeeren return, Dobschütz's and Lindenau's.",
+           "A reserve regiment of three musketeer battalions, Landwehr regiments of four battalions, Lindenau's brigade with no line regiment, and six Landwehr cavalry regiments in one brigade, where it takes five, show as historical departures.",
+           "The half horse battery #6 rides with the Landwehr cavalry.", PR_ARTY])
+DN_TAUENTZIEN["missing"] = [{"name": "Ilovaisky #3 Don Cossacks", "reason": "A Russian Cossack regiment with the corps, which a force from the Prussian list can't take."}]
+
+DN_BULOW = force(
+    "dennewitz-bulow", PR15, "Bülow's Corps", "III Corps, Army of the North", "Prussian",
+    "Marching to Tauentzien's help, Thümen's and Hesse-Homburg's brigades came in on Bertrand's flank at midday and Krafft's soon after; Borstell, ordered elsewhere, came on his own initiative about four and struck the Saxons at Göhlsdorf. With Oudinot's corps marched away behind them, the French line broke.",
+    [pi("4th Brigade (Thümen)", "Gen-Maj von Thümen",
+        [("4th East Prussian Infantry", [("M", "I/4th East Prussian Infantry"), ("M", "II/4th East Prussian Infantry"), ("M", "III/4th East Prussian Infantry"), ("F", "F/4th East Prussian Infantry")]),
+         ("5th Reserve Infantry", [("M", f"{r}/5th Reserve Infantry") for r in ("I", "II", "III", "IV")]),
+         ("Elbe Infantry", [("M", "I/Elbe Infantry"), ("M", "II/Elbe Infantry")])],
+        [u("pr15-jager-coy", "2nd Company, East Prussian Jäger"), u("pr15-jager-coy", "3rd Company, East Prussian Jäger"),
+         u("pr15-foot-arty", "6-pdr Foot Battery #6")], sub="Col von Stutterheim"),
+     pi("3rd Brigade (Hesse-Homburg)", "Gen-Maj Prince Ludwig of Hesse-Homburg",
+        [("3rd East Prussian Infantry", [("M", "2nd East Prussian Grenadier Battalion"), ("M", "I/3rd East Prussian Infantry"), ("M", "II/3rd East Prussian Infantry"), ("F", "F/3rd East Prussian Infantry")]),
+         ("4th Reserve Infantry", [("M", "I/4th Reserve Infantry"), ("M", "II/4th Reserve Infantry"), ("M", "III/4th Reserve Infantry")]),
+         ("3rd East Prussian Landwehr", [("L", f"{r}/3rd East Prussian Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-hussar-attached", "1st Leib Hussars"), u("pr15-foot-arty", "6-pdr Foot Battery #5")], sub="Lt-Col von Sjöholm"),
+     pi("6th Brigade (Krafft)", "Col von Krafft",
+        [("Colberg Infantry", [("M", "I/Colberg Infantry"), ("M", "II/Colberg Infantry"), ("F", "F/Colberg Infantry")]),
+         ("9th Reserve Infantry", [("M", "I/9th Reserve Infantry"), ("M", "II/9th Reserve Infantry"), ("M", "III/9th Reserve Infantry")]),
+         ("1st Neumark Landwehr", [("L", f"{r}/1st Neumark Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-mounted-landwehr-attached", "1st Pomeranian Landwehr Cavalry"), u("pr15-foot-arty", "6-pdr Foot Battery #16")], sub="Lt-Col von Zastrow"),
+     pi("5th Brigade (Borstell)", "Gen-Maj von Borstell",
+        [("1st Pomeranian Infantry", [("M", "Pomeranian Grenadier Battalion"), ("M", "I/1st Pomeranian Infantry"), ("M", "II/1st Pomeranian Infantry"), ("M", "III/1st Pomeranian Infantry")]),
+         ("2nd Reserve Infantry", [("M", "I/2nd Reserve Infantry"), ("M", "II/2nd Reserve Infantry"), ("F", "F/2nd Reserve Infantry")]),
+         ("2nd Kurmark Landwehr", [("L", f"{r}/2nd Kurmark Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-hussar-attached", "Pomeranian Hussars"), u("pr15-foot-arty", "6-pdr Foot Battery #10")], sub="Lt-Col von Schoon"),
+     pc("Brigade Dragoons", "", [u("pr15-dragoon", "Brandenburg Dragoons (3 squadrons)"), u("pr15-dragoon", "West Prussian Dragoons (2 squadrons)")]),
+     pc("Reserve Cavalry (Oppen)", "Gen-Maj von Oppen",
+        [u("pr15-dragoon", "Queen's Dragoons"), u("pr15-dragoon", "2nd West Prussian Dragoons"), u("pr15-hussar", "Pomeranian National Cavalry"),
+         u("pr15-horse-arty", "Horse Battery #5")]),
+     pc("Reserve Cavalry (Oppen, Landwehr)", "Gen-Maj von Oppen",
+        [u("pr15-mounted-landwehr", "2nd Kurmark Landwehr Cavalry (3 squadrons)"), u("pr15-mounted-landwehr", "4th Kurmark Landwehr Cavalry (3 squadrons)"),
+         u("pr15-mounted-landwehr", "2nd Pomeranian Landwehr Cavalry (3 squadrons)"), u("pr15-horse-arty", "½ Horse Battery #6", **HALF)], landwehr=True),
+     pres(u("pr15-heavy-arty", "12-pdr Foot Battery #4"), u("pr15-heavy-arty", "12-pdr Foot Battery #5 (2 howitzers)", **HALF),
+          u("pr15-foot-arty", "6-pdr Foot Battery #19"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Bülow")],
+    notes=[PR_LIST, DN_NOTE, PR_GROUPED, PR_SUB,
+           "Nafziger lists the 1st Leib Hussars with both Thümen and Hesse-Homburg; they are shown once, with Hesse-Homburg, as at Großbeeren. The Brandenburg Dragoons, attached to Thümen, and the West Prussian Dragoons, to Krafft, are a dragoon brigade of their own.",
+           "Each brigade's grenadier battalion is with its first line regiment. Line and reserve regiments of three or more musketeer battalions, Thümen's brigade with no Landwehr and three line regiments, Landwehr regiments of four, two attached hussar regiments where the list allows one, line and Landwehr cavalry brigades together, and two 12-pdr batteries where the corps artillery takes one show as historical departures.",
+           "Thümen's 12-pdr battery and Krafft's two 12-pdr howitzers are in the corps artillery."])
+DN_BULOW["missing"] = [
+    {"name": "Russian 12-pdr Batteries #7 and #21", "reason": "Russian batteries with Thümen and Krafft, which a force from the Prussian list can't take."},
+    {"name": "Mörner Hussars and a Swedish horse battery", "reason": "Swedes who came up with Borstell about four; there is no Swedish list."}]
+
+DN_PAHLEN = force(
+    "dennewitz-pahlen", RU, "Pahlen's Advance Guard", "Lead elements, Winzingerode's Russian corps", "Russian",
+    "The head of Winzingerode's Russian corps, which reached the field about six as the French gave way, and joined the pursuit.",
+    [bde("ru-light-cavalry-brigade", "Pahlen's Brigade", "Maj-Gen Baron Pahlen",
+         units=[u("ru-hussar", "Izyum Hussars"), u("ru-hussar", "Converged Hussars")]),
+     bde("ru-jager-brigade", "44th Jäger", "", regiments=[regt("44th Jäger", bns("ru-jager", "44th Jäger", 2))])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Baron Pahlen")],
+    notes=[LIST_RU, DN_NOTE, "A Jäger brigade of one regiment, and cavalry with no infantry brigade to allow it, show as historical departures."])
+
+DENNEWITZ = battle(
+    "dennewitz", "Dennewitz", "6 September 1813",
+    "Ney, sent in Oudinot's place to take Berlin, marched across the front of the Army of the North towards Jüterbog. Bertrand's corps ran into Tauentzien's Landwehr at Dennewitz, which held through the morning until Bülow's corps came in on the French flank at midday. Reynier's Saxons took Göhlsdorf and held it, but as Borstell arrived on their flank about four, Ney ordered Oudinot's corps across the rear of the battle to his other wing; the Saxons were left alone and broke, the French line went with them, and Ney's army streamed back on Torgau, losing some 20,000 men. The Saxons and Bavarians took their defeat as a sign to change sides.",
+    [DN_FR, DN_AL, GB, WB_IV, {"label": "Battle of Dennewitz (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Dennewitz"}],
+    [DN_MORAND, DN_FONTANELLI, DN_FRANQUEMONT, DN_DOMBROWSKI, DN_SAHR, DN_LECOQ, DN_GABLENZ, DN_DURUTTE,
+     DN_PACTHOD, DN_GUILLEMINOT, DN_RAGLOVICH, DN_BEAUMONT, DN_ARRIGHI, DN_TAUENTZIEN, DN_BULOW, DN_PAHLEN],
+    [], alliances=(("Saxon", "French"), ("Prussian", "Russian")))
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -1235,5 +1504,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, HAGELBERG, WARTENBURG, HANAU):
+    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, HAGELBERG, DENNEWITZ, WARTENBURG, HANAU):
         write(b)
