@@ -1,4 +1,5 @@
 import { supplements, nations, getNation, getNationsForSupplement, getSupplement } from "@/data";
+import { campaignSummary, campaigns } from "@/data/battles";
 import { RULESETS } from "@/data/rulesets";
 import type { Nation } from "@/data/types";
 import { HomeView } from "@/components/HomeView";
@@ -8,7 +9,7 @@ import { SITE_DESCRIPTION, pageMeta } from "@/lib/meta";
 
 export const metadata = pageMeta({ description: SITE_DESCRIPTION, path: "/" });
 
-// Each from a different nation, so no flag shows twice
+// Each from a different nation, so no flag shows twice in the app callout's phone preview
 const FEATURED_ARMIES = [
   "france",
   "russia",
@@ -49,10 +50,12 @@ export default function HomePage() {
     flags: n.flagFiles ?? (n.flagFile ? [n.flagFile] : []),
     href: `/black-powder/${n.supplementId}/${n.id}`,
   });
-  // A few well-known armies to link to directly, one from each book where possible
+  // A few well-known armies, for the app callout's phone preview
   const armies = FEATURED_ARMIES.map(getNation)
     .filter((n) => n !== undefined)
     .map(toHomeArmy);
+  // The campaigns with forces to play, to link to directly
+  const playable = campaigns.map(campaignSummary).filter((c) => c.forces > 0);
   // The app lists every army, book by book, to scroll through
   const allArmies = nations.map(toHomeArmy);
 
@@ -60,7 +63,15 @@ export default function HomePage() {
   return (
     <AppSwitch
       app={<AppHome supplements={supplementSummaries} armies={allArmies} />}
-      browser={<HomeView counts={counts} rulesets={rulesets} supplements={supplementSummaries} armies={armies} />}
+      browser={
+        <HomeView
+          counts={counts}
+          rulesets={rulesets}
+          supplements={supplementSummaries}
+          armies={armies}
+          campaigns={playable}
+        />
+      }
     />
   );
 }

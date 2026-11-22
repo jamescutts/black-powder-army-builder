@@ -2178,49 +2178,6 @@ a.app-list-row:active {
   }
 }
 
-/* Army cards: the army's flag (or flags) set in a tinted band */
-.home-card-flags {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--mantine-spacing-sm);
-  height: 96px;
-  padding: 14px;
-  background:
-    radial-gradient(ellipse at center, rgba(255, 250, 235, 0.55), transparent 70%),
-    rgba(107, 61, 23, 0.1);
-  border-bottom: 1px solid var(--mantine-color-default-border);
-}
-
-.home-card-flag {
-  position: relative;
-  height: 100%;
-  aspect-ratio: 3 / 2;
-  overflow: hidden;
-  border-radius: 3px;
-  border: 1px solid rgba(43, 31, 20, 0.3);
-  box-shadow: 0 1px 4px rgba(43, 31, 20, 0.2);
-}
-
-.home-card-flag img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* The same aged-paper tint as the flags in the army picker */
-.home-card-flag::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(ellipse at center, transparent 40%, rgba(60, 30, 5, 0.35) 100%),
-    linear-gradient(135deg, rgba(180, 130, 60, 0.18) 0%, rgba(120, 70, 20, 0.22) 100%);
-  mix-blend-mode: multiply;
-  pointer-events: none;
-}
-
 /* Phones: a bar along the foot of the screen with the army's points and state, and a way to the roster,
    which otherwise sits below the whole builder. In the site header's ink, so it reads as page chrome. */
 .roster-bar,

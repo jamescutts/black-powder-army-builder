@@ -7,6 +7,9 @@ import { IconArrowRight, IconDownload } from "@tabler/icons-react";
 import { ARTWORK } from "@/data/artwork";
 import { useInstallApp } from "@/components/InstallApp";
 import { AppCallout } from "@/components/AppCallout";
+import { CampaignCard } from "@/components/CampaignCard";
+import type { CampaignSummary } from "@/data/battles";
+import { HISTORICAL_FORCES_PATH } from "@/lib/forces";
 
 export interface HomeCounts {
   rulesets: number;
@@ -252,42 +255,20 @@ function SupplementCard({ s }: { s: HomeSupplement }) {
   );
 }
 
-function ArmyCard({ a }: { a: HomeArmy }) {
-  return (
-    <Card component={Link} href={a.href} withBorder radius="md" padding={0} className="picker-card home-card">
-      <div className="home-card-flags" aria-hidden>
-        {a.flags.map((f) => (
-          <div key={f} className="home-card-flag">
-            <img src={f} alt="" />
-          </div>
-        ))}
-      </div>
-      <Stack gap={4} p="md" style={{ flex: 1 }}>
-        <Text size="xs" c="dimmed" fw={600}>
-          {a.supplement}
-        </Text>
-        <Text ff="heading" fw={600} fz="md" lh={1.25} c="brown.8">
-          {a.name}
-        </Text>
-        <Text size="sm" c="dimmed" lineClamp={2} style={{ lineHeight: 1.5 }}>
-          {a.blurb}
-        </Text>
-      </Stack>
-    </Card>
-  );
-}
-
 export function HomeView({
   counts,
   rulesets,
   supplements,
   armies,
+  campaigns,
 }: {
   counts: HomeCounts;
   rulesets: HomeRuleset[];
   supplements: HomeSupplement[];
-  /** A few armies to link to directly */
+  /** A few armies, for the app callout's phone preview */
   armies: HomeArmy[];
+  /** The campaigns with forces to play, to link to directly */
+  campaigns: CampaignSummary[];
 }) {
   const rulesetsFeature: Feature = {
     count: plural(counts.rulesets, "rule set", "rule sets"),
@@ -341,20 +322,20 @@ export function HomeView({
         </FeatureSection>
       </Band>
 
-      {armies.length > 0 && (
+      {campaigns.length > 0 && (
         <Band>
           <Stack gap="sm">
             <Group justify="space-between" align="flex-end" gap="sm">
               <Title order={2} size="h3" c="brown.8">
-                Or start with a famous army
+                Or start with a historical campaign
               </Title>
-              <Anchor component={Link} href="/black-powder" size="sm" c="brown.7">
-                All armies →
+              <Anchor component={Link} href={HISTORICAL_FORCES_PATH} size="sm" c="brown.7">
+                All campaigns →
               </Anchor>
             </Group>
-            <SimpleGrid cols={{ base: 1, xs: 2, md: 4 }} spacing="md">
-              {armies.map((a) => (
-                <ArmyCard key={a.href} a={a} />
+            <SimpleGrid cols={{ base: 1, sm: 2, lg: 4 }} spacing="md">
+              {campaigns.map((c) => (
+                <CampaignCard key={c.id} c={c} />
               ))}
             </SimpleGrid>
           </Stack>

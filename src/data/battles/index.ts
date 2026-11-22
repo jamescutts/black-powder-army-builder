@@ -485,6 +485,28 @@ export function battlesIn(campaignId: string): HistoricalBattle[] {
   return battles.filter((b) => b.campaign === campaignId);
 }
 
+/** What a campaign's card shows, small enough for the home page to be sent without the battles */
+export type CampaignSummary = Pick<HistoricalCampaign, "id" | "art" | "name" | "dates" | "summary" | "sides"> & {
+  /** Its forces, across every battle written so far */
+  forces: number;
+  /** No battles listed yet, so the card has no link and says it's coming */
+  soon: boolean;
+};
+
+export function campaignSummary(c: HistoricalCampaign): CampaignSummary {
+  const fought = battlesIn(c.id);
+  return {
+    id: c.id,
+    art: c.art,
+    name: c.name,
+    dates: c.dates,
+    summary: c.summary,
+    sides: c.sides,
+    forces: fought.reduce((n, b) => n + b.forces.length, 0),
+    soon: fought.length === 0 && scheduleIn(c.id).length === 0,
+  };
+}
+
 /** A campaign's battle, or undefined when it has no such battle */
 export function getBattle(campaignId: string, battleId: string): HistoricalBattle | undefined {
   return battlesIn(campaignId).find((b) => b.id === battleId);
