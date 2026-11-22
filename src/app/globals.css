@@ -2429,7 +2429,7 @@ a.app-list-row:active {
   object-fit: cover;
 }
 
-/* A campaign's card: each side's flags, and its commanders' portraits */
+/* A campaign's card: each side's flags */
 .campaign-sides {
   display: flex;
   flex-wrap: wrap;
@@ -2462,20 +2462,6 @@ a.app-list-row:active {
   background:
     radial-gradient(ellipse at center, transparent 40%, rgba(60, 30, 5, 0.3) 100%),
     linear-gradient(135deg, rgba(180, 130, 60, 0.16) 0%, rgba(120, 70, 20, 0.2) 100%);
-}
-
-.campaign-commanders {
-  row-gap: 8px;
-}
-
-.campaign-commander img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid #d9c287;
-  box-shadow: 0 1px 3px rgba(33, 20, 10, 0.25);
-  background: rgba(107, 61, 23, 0.12);
 }
 
 /* A historical force's card: its commander's portrait, round, with the army's flag on its lower corner */

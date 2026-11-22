@@ -107,10 +107,11 @@ export function HistoricalCampaigns() {
                     {campaign.summary}
                   </Text>
                 </Stack>
-                <Stack gap="sm" p="lg" style={{ marginTop: "auto" }}>
-                  {campaign.sides && <CampaignSides sides={campaign.sides} />}
-                  {campaign.commanders && <CampaignCommanders commanders={campaign.commanders} />}
-                </Stack>
+                {campaign.sides && (
+                  <div style={{ marginTop: "auto", padding: "var(--mantine-spacing-lg)" }}>
+                    <CampaignSides sides={campaign.sides} />
+                  </div>
+                )}
               </Card>
             );
           })}
@@ -119,7 +120,6 @@ export function HistoricalCampaigns() {
     </Container>
   );
 }
-
 
 /** A campaign's two sides, as rows of their nations' flags with "against" between them */
 function CampaignSides({ sides }: { sides: NonNullable<HistoricalCampaign["sides"]> }) {
@@ -142,22 +142,6 @@ function CampaignSides({ sides }: { sides: NonNullable<HistoricalCampaign["sides
         </Group>
       ))}
     </div>
-  );
-}
-
-/** A campaign's chief commanders, each a small round portrait with his name */
-function CampaignCommanders({ commanders }: { commanders: NonNullable<HistoricalCampaign["commanders"]> }) {
-  return (
-    <Group gap="xs" className="campaign-commanders">
-      {commanders.map((c) => (
-        <Group key={c.name} gap={6} wrap="nowrap" className="campaign-commander">
-          {c.portrait && <img src={c.portrait.src} alt="" style={{ objectPosition: c.portrait.focus }} loading="lazy" />}
-          <Text span size="xs" fw={600} c="brown.9">
-            {c.name}
-          </Text>
-        </Group>
-      ))}
-    </Group>
   );
 }
 
