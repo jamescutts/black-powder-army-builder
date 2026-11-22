@@ -1330,30 +1330,9 @@
   "toCome": [
     {
       "side": "Prussian",
-      "name": "Zieten's Upper Silesian Brigade",
-      "formation": "Blücher's Corps",
-      "summary": "Silesian infantry, grenadiers and Schützen with the Silesian hussars and uhlans, which opened the attack on Gross-Görschen.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Klüx's Lower Silesian Brigade",
-      "formation": "Blücher's Corps",
-      "summary": "The West Prussian and Silesian regiments of Blücher's second brigade, thrown into the fight for the villages in the afternoon.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Röder's Brandenburg Brigade",
-      "formation": "Blücher's Corps, with the Guard",
-      "summary": "The Prussian Guard infantry, the Leib Grenadiers and the Guard Jäger, which stormed Klein-Görschen and Kaja.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Dolffs's Reserve Cavalry",
-      "formation": "Blücher's Corps",
-      "summary": "The Garde du Corps, Guard Light Cavalry and cuirassiers, which charged the French squares at dusk; Dolffs was killed.",
+      "name": "Blücher's Corps",
+      "formation": "Zieten's, Klüx's and Röder's brigades, with Dolffs's cavalry",
+      "summary": "The Silesian brigades of Zieten and Klüx, which opened the attack on Gross-Görschen and fought for the villages all afternoon; Röder's Brandenburg brigade with the Guard infantry, which stormed Klein-Görschen and Kaja; and Dolffs's Garde du Corps and cuirassiers, which charged the French squares at dusk, Dolffs killed.",
       "flag": "/flags/prussia.png"
     },
     {

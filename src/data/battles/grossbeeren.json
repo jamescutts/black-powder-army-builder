@@ -487,37 +487,9 @@
   "toCome": [
     {
       "side": "Prussian",
-      "name": "Hesse-Homburg's Brigade",
-      "formation": "3rd Brigade, III Corps (Bülow)",
-      "summary": "East Prussian line and reserve infantry, including the 4th Reserve Regiment that fought for the village with musket butts.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Thümen's Brigade",
-      "formation": "4th Brigade, III Corps (Bülow)",
-      "summary": "Line, reserve and Landwehr battalions in Bülow's attack on the village.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Borstell's Brigade",
-      "formation": "5th Brigade, III Corps (Bülow)",
-      "summary": "Marched to the sound of the guns from Kleinbeeren and fell on the Saxons' flank.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Krafft's Brigade",
-      "formation": "6th Brigade, III Corps (Bülow)",
-      "summary": "Colberg and Pomeranian battalions which led the assault on Großbeeren. Bülow's sixty-four guns included two Russian 12-pdr batteries.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Oppen's Reserve Cavalry",
-      "formation": "III Corps (Bülow)",
-      "summary": "Dragoons, hussars and Landwehr cavalry, which rode down the Saxon rearguard in the dark.",
+      "name": "Bülow's Corps",
+      "formation": "III Corps: Hesse-Homburg's, Thümen's, Borstell's and Krafft's brigades, with Oppen's cavalry",
+      "summary": "Four brigades of line, reserve and Landwehr infantry, each with its cavalry and battery, which stormed Großbeeren at six in the evening behind sixty-four guns, two of their batteries Russian 12-pdrs; the 4th Reserve Regiment fought in the village with musket butts. Borstell's brigade came in on the Saxons' flank from Kleinbeeren, and Oppen's dragoons, hussars and Landwehr cavalry rode down the rearguard in the dark.",
       "flag": "/flags/prussia.png"
     }
   ]

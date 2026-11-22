@@ -161,12 +161,10 @@ MOCKERN = battle(
      {"label": "Battle of Möckern (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_M%C3%B6ckern"},
      {"label": "Gefecht bei Möckern (German Wikipedia)", "url": "https://de.wikipedia.org/wiki/Gefecht_bei_M%C3%B6ckern"}],
     [MK_LAGRANGE, MK_ZUCCHI, MK_CAVALRY, MK_ROTH],
-    [to_come("Hünerbein's Advance Guard", "Yorck's Corps",
-             "Three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, which stormed Dannigkow and held it against Lagrange's counter-attacks."),
-     to_come("Borstell's Brigade", "Bülow's Corps",
-             "Four Pomeranian and East Prussian battalions with two batteries and the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians."),
-     to_come("Oppen's Cavalry", "Advance guard of Bülow's Corps",
-             "Dragoons under the 'mad' Major von Platen and four squadrons of the Leib Hussars, with a fusilier battalion and Cossacks, which routed the French horse at Zeddenick.")])
+    [to_come("Yorck's Corps", "Prussian corps, with Wittgenstein",
+             "Yorck's advance guard under Hünerbein, three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, which stormed Dannigkow and held it against Lagrange's counter-attacks; the rest of the corps stood at Leitzkau."),
+     to_come("Bülow's Corps", "Borstell's brigade and Oppen's advance guard",
+             "Borstell's Pomeranian and East Prussian battalions, with the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians; and Oppen's cavalry, the 'mad' Major von Platen's dragoons and the Leib Hussars, which routed the French horse at Zeddenick.")])
 
 
 # ================================================================ Lützen, 2 May 1813
@@ -326,14 +324,8 @@ LUTZEN = battle(
     "Wittgenstein and Blücher, hoping to catch Napoleon's army strung out on the march to Leipzig, fell on Ney's corps in its villages south of Lützen. All afternoon the Prussians and Russians fought Ney's conscripts for Gross-Görschen, Klein-Görschen, Rahna and Kaja, which changed hands again and again; Scharnhorst was mortally wounded. Napoleon brought up his other corps from both flanks, and at dusk the Young Guard retook the villages behind a great battery. The allies withdrew in good order, but Napoleon, with almost no cavalry, could not pursue.",
     [LZ_FR, LZ_AL, {"label": "Battle of Lützen (1813) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_L%C3%BCtzen_(1813)"}],
     [LZ_SOUHAM, LZ_BRENIER, LZ_GIRARD, LZ_RICARD, LZ_MARCHAND, LZ_DUMOUSTIER, LZ_BERG, LZ_EUGEN],
-    [to_come("Zieten's Upper Silesian Brigade", "Blücher's Corps",
-             "Silesian infantry, grenadiers and Schützen with the Silesian hussars and uhlans, which opened the attack on Gross-Görschen."),
-     to_come("Klüx's Lower Silesian Brigade", "Blücher's Corps",
-             "The West Prussian and Silesian regiments of Blücher's second brigade, thrown into the fight for the villages in the afternoon."),
-     to_come("Röder's Brandenburg Brigade", "Blücher's Corps, with the Guard",
-             "The Prussian Guard infantry, the Leib Grenadiers and the Guard Jäger, which stormed Klein-Görschen and Kaja."),
-     to_come("Dolffs's Reserve Cavalry", "Blücher's Corps",
-             "The Garde du Corps, Guard Light Cavalry and cuirassiers, which charged the French squares at dusk; Dolffs was killed."),
+    [to_come("Blücher's Corps", "Zieten's, Klüx's and Röder's brigades, with Dolffs's cavalry",
+             "The Silesian brigades of Zieten and Klüx, which opened the attack on Gross-Görschen and fought for the villages all afternoon; Röder's Brandenburg brigade with the Guard infantry, which stormed Klein-Görschen and Kaja; and Dolffs's Garde du Corps and cuirassiers, which charged the French squares at dusk, Dolffs killed."),
      to_come("Yorck's Corps", "Hünerbein's and Horn's brigades",
              "The old Prussian auxiliary corps of 1812, which came up in the afternoon and fought for Kaja beside Berg's Russians.")])
 
@@ -435,11 +427,11 @@ BAUTZEN = battle(
     "The allies stood behind the Spree at Bautzen in a fortified line along the heights. On the first day Napoleon forced the river and took the town; on the second he pinned the allied centre and left while Ney's and Lauriston's corps marched round the right. Barclay's Russians and Kleist's Prussians held them off long enough round Gleina and Preititz, and when Ney, unsure of his orders, halted instead of driving on to the allies' rear, Wittgenstein and Blücher got their armies away to the east.",
     [BZ_FR, BZ_III, BZ_AL, {"label": "Battle of Bautzen (1813) (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Bautzen_(1813)"}],
     [BZ_SOUHAM, BZ_DELMAS, BZ_MAISON, BZ_PUTHOD, BZ_CHAPLITZ, BZ_SHCHERBATOV, BZ_INSOV],
-    [to_come("Kleist's Corps", "Prussian advance guard",
-             "Kleist's Prussians and Russian Jäger, which held the Kreckwitz heights and retook Preititz from Ney before withdrawing."),
+    [to_come("Kleist's Corps", "Prussian advance guard, with Russian Jäger",
+             "Kleist's Prussians, the Colberg Regiment and Silesian hussars, with Russian Jäger and Cossacks, which retook Preititz from Ney before withdrawing."),
      to_come("Blücher's Corps", "Zieten's, Klüx's and Röder's brigades",
              "Blücher's Silesian and Brandenburg brigades on the Kreckwitz heights, nearly cut off when Ney reached Preititz."),
-     to_come("Yorck's Corps", "Prussian corps",
+     to_come("Yorck's Corps", "Zielinsky's and Horn's brigades",
              "Sent from the centre to help Blücher hold the heights against Bertrand and Marmont.")])
 
 
@@ -515,15 +507,8 @@ GROSSBEEREN = battle(
     [GB, {"label": "Battle of Großbeeren (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Gro%C3%9Fbeeren"},
      {"label": "Schlacht bei Großbeeren (German Wikipedia)", "url": "https://de.wikipedia.org/wiki/Schlacht_bei_Gro%C3%9Fbeeren"}],
     [GB_SAHR, GB_LECOQ, GB_GABLENZ, GB_DURUTTE],
-    [to_come("Hesse-Homburg's Brigade", "3rd Brigade, III Corps (Bülow)",
-             "East Prussian line and reserve infantry, including the 4th Reserve Regiment that fought for the village with musket butts."),
-     to_come("Thümen's Brigade", "4th Brigade, III Corps (Bülow)", "Line, reserve and Landwehr battalions in Bülow's attack on the village."),
-     to_come("Borstell's Brigade", "5th Brigade, III Corps (Bülow)",
-             "Marched to the sound of the guns from Kleinbeeren and fell on the Saxons' flank."),
-     to_come("Krafft's Brigade", "6th Brigade, III Corps (Bülow)",
-             "Colberg and Pomeranian battalions which led the assault on Großbeeren. Bülow's sixty-four guns included two Russian 12-pdr batteries."),
-     to_come("Oppen's Reserve Cavalry", "III Corps (Bülow)",
-             "Dragoons, hussars and Landwehr cavalry, which rode down the Saxon rearguard in the dark.")],
+    [to_come("Bülow's Corps", "III Corps: Hesse-Homburg's, Thümen's, Borstell's and Krafft's brigades, with Oppen's cavalry",
+             "Four brigades of line, reserve and Landwehr infantry, each with its cavalry and battery, which stormed Großbeeren at six in the evening behind sixty-four guns, two of their batteries Russian 12-pdrs; the 4th Reserve Regiment fought in the village with musket butts. Borstell's brigade came in on the Saxons' flank from Kleinbeeren, and Oppen's dragoons, hussars and Landwehr cavalry rode down the rearguard in the dark.")],
     alliances=(("Saxon", "French"),))
 
 

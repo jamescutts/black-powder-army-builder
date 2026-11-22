@@ -465,23 +465,16 @@
   "toCome": [
     {
       "side": "Prussian",
-      "name": "Hünerbein's Advance Guard",
-      "formation": "Yorck's Corps",
-      "summary": "Three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, which stormed Dannigkow and held it against Lagrange's counter-attacks.",
+      "name": "Yorck's Corps",
+      "formation": "Prussian corps, with Wittgenstein",
+      "summary": "Yorck's advance guard under Hünerbein, three East Prussian battalions with hussars, dragoons, Cossacks and twelve guns, which stormed Dannigkow and held it against Lagrange's counter-attacks; the rest of the corps stood at Leitzkau.",
       "flag": "/flags/prussia.png"
     },
     {
       "side": "Prussian",
-      "name": "Borstell's Brigade",
-      "formation": "Bülow's Corps",
-      "summary": "Four Pomeranian and East Prussian battalions with two batteries and the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Prussian",
-      "name": "Oppen's Cavalry",
-      "formation": "Advance guard of Bülow's Corps",
-      "summary": "Dragoons under the 'mad' Major von Platen and four squadrons of the Leib Hussars, with a fusilier battalion and Cossacks, which routed the French horse at Zeddenick.",
+      "name": "Bülow's Corps",
+      "formation": "Borstell's brigade and Oppen's advance guard",
+      "summary": "Borstell's Pomeranian and East Prussian battalions, with the Queen's Dragoons, which took Vehlitz and the Windmühlenberg with Berg's Russians; and Oppen's cavalry, the 'mad' Major von Platen's dragoons and the Leib Hussars, which routed the French horse at Zeddenick.",
       "flag": "/flags/prussia.png"
     }
   ]

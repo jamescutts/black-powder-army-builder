@@ -958,8 +958,8 @@
     {
       "side": "Prussian",
       "name": "Kleist's Corps",
-      "formation": "Prussian advance guard",
-      "summary": "Kleist's Prussians and Russian Jäger, which held the Kreckwitz heights and retook Preititz from Ney before withdrawing.",
+      "formation": "Prussian advance guard, with Russian Jäger",
+      "summary": "Kleist's Prussians, the Colberg Regiment and Silesian hussars, with Russian Jäger and Cossacks, which retook Preititz from Ney before withdrawing.",
       "flag": "/flags/prussia.png"
     },
     {
@@ -972,7 +972,7 @@
     {
       "side": "Prussian",
       "name": "Yorck's Corps",
-      "formation": "Prussian corps",
+      "formation": "Zielinsky's and Horn's brigades",
       "summary": "Sent from the centre to help Blücher hold the heights against Bertrand and Marmont.",
       "flag": "/flags/prussia.png"
     }
