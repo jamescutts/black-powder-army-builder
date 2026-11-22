@@ -33,6 +33,39 @@ function escape(s: string): string {
   return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 }
 
+const BATTLE_SIZE = 30;
+const SOON_SIZE = 23;
+
+/** A battle's mark, as on an old atlas: two crossed sabres in ink, haloed in parchment so they stand off
+ * the lines under them; burgundy for a battle with forces, a fainter sepia for one still to come */
+export function swords(soon: boolean, size?: number): string {
+  const ink = soon ? "#5e4d36" : "#5a101e";
+  const dims = size ? ` width="${size}" height="${size}"` : "";
+  const blades = "M4 3.5 Q8.6 6.6 15.2 15.2 M20 3.5 Q15.4 6.6 8.8 15.2";
+  const guards = "M13 17.4 L17.4 13 M6.6 13 L11 17.4";
+  const grips = "M15.2 15.2 L18.4 18.4 M8.8 15.2 L5.6 18.4";
+  const sabres = (stroke: string, extra: number) =>
+    `<g fill="none" stroke="${stroke}" stroke-linecap="round" stroke-linejoin="round">` +
+    `<path d="${blades}" stroke-width="${1.9 + extra}"/>` +
+    `<path d="${guards}" stroke-width="${1.6 + extra}"/>` +
+    `<path d="${grips}" stroke-width="${2.4 + extra}"/></g>` +
+    `<g fill="${stroke}"><circle cx="19.2" cy="19.2" r="${1.4 + extra / 2}"/><circle cx="4.8" cy="19.2" r="${1.4 + extra / 2}"/></g>`;
+  return `<svg viewBox="0 0 24 24"${dims} aria-hidden="true">${sabres("#fbf6e9", 2.6)}${sabres(ink, 0)}</svg>`;
+}
+
+const MONTHS: Record<string, string> = {
+  January: "Jan", February: "Feb", March: "Mar", April: "Apr", May: "May", June: "Jun",
+  July: "Jul", August: "Aug", September: "Sep", October: "Oct", November: "Nov", December: "Dec",
+};
+
+/** A battle's date, short enough for the map: "16–18 August 1812" as "16–18 Aug" */
+function shortDate(date: string): string {
+  return date
+    .replace(/,?\s*\d{4}/g, "")
+    .replace(/\b(January|February|March|April|May|June|July|August|September|October|November|December)\b/g, (m) => MONTHS[m])
+    .trim();
+}
+
 export function hasCampaignMap(campaignId: string): boolean {
   return campaignId in campaignMaps;
 }
@@ -92,6 +125,24 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       };
       sparse();
       map.on("zoomend resize", sparse);
+      // Where names would overlap, the less important gives way: where the campaign's march begins first,
+      // then the battles with forces, the cities, the battles still to come, and the towns last
+      const RANK = ["map-label-start", "map-label-battle", "map-label-city", "map-label-soon", "map-label-town"];
+      const declutter = () => {
+        const labels = [...(holder.current?.querySelectorAll<HTMLElement>(".leaflet-tooltip.map-label") ?? [])];
+        const rank = (el: HTMLElement) => RANK.findIndex((c) => el.classList.contains(c));
+        labels.sort((a, b) => rank(a) - rank(b));
+        const kept: DOMRect[] = [];
+        for (const el of labels) {
+          el.style.visibility = "";
+          if (getComputedStyle(el).display === "none") continue;
+          const r = el.getBoundingClientRect();
+          if (kept.some((k) => r.left < k.right && k.left < r.right && r.top < k.bottom && k.top < r.bottom)) {
+            el.style.visibility = "hidden";
+          } else kept.push(r);
+        }
+      };
+      map.on("zoomend resize", () => requestAnimationFrame(declutter));
       L.tileLayer(TILES, {
         maxNativeZoom: 8,
         maxZoom: 9,
@@ -222,20 +273,34 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       for (const battle of ordered) {
         const { at, label = "right", nudge = [0, 0] } = battlePlaces[battle.id];
         const soon = isPlanned(battle);
-        const marker = L.circleMarker(at, {
-          radius: soon ? 5 : 7,
-          color: soon ? "#7d6a4c" : "#fbf6e9",
-          weight: 2,
-          fillColor: soon ? "#efe8d8" : "#701626",
-          fillOpacity: 1,
-          className: soon ? "map-battle map-battle-soon" : "map-battle",
+        // Crossed swords on a disc: bold for a battle with forces, pale and smaller for one still to come
+        const size = soon ? SOON_SIZE : BATTLE_SIZE;
+        const marker = L.marker(at, {
+          title: battle.name,
+          alt: battle.name,
+          riseOnHover: true,
+          zIndexOffset: soon ? 500 : 1000,
+          icon: L.divIcon({
+            className: soon ? "map-battle map-battle-soon" : "map-battle",
+            iconSize: [size, size],
+            iconAnchor: [size / 2, size / 2],
+            tooltipAnchor: [0, 0],
+            popupAnchor: [0, -size / 2],
+            html: swords(soon),
+          }),
         });
-        marker.bindTooltip(escape(battle.name), {
-          permanent: true,
-          direction: label,
-          offset: [OFFSET[label][0] + nudge[0], OFFSET[label][1] + nudge[1]],
-          className: soon ? "map-label map-label-soon" : "map-label map-label-battle",
-        });
+        // Its name, and beneath it when it was fought
+        const gap = size / 2 + 3;
+        const side: [number, number] = [Math.sign(OFFSET[label][0]) * gap, Math.sign(OFFSET[label][1]) * gap];
+        marker.bindTooltip(
+          `${escape(battle.name)}<span class="map-label-date">${escape(shortDate(battle.date))}</span>`,
+          {
+            permanent: true,
+            direction: label,
+            offset: [side[0] + nudge[0], side[1] + nudge[1]],
+            className: soon ? "map-label map-label-soon" : "map-label map-label-battle",
+          }
+        );
         const pop = document.createElement("div");
         pop.className = "map-pop";
         pop.innerHTML = `<strong>${escape(battle.name)}</strong><div class="map-pop-date">${escape(battle.date)}</div><p>${escape(battle.summary)}</p>`;
@@ -259,6 +324,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
         marker.addTo(map);
       }
 
+      requestAnimationFrame(declutter);
       setReady(true);
     });
 
@@ -328,11 +394,11 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
           </UnstyledButton>
         ))}
         <span className="map-key map-key-static">
-          <span className="map-key-dot" aria-hidden="true" />
+          <span className="map-key-icon" dangerouslySetInnerHTML={{ __html: swords(false, 16) }} />
           <span>Battle with forces</span>
         </span>
         <span className="map-key map-key-static">
-          <span className="map-key-dot map-key-dot-soon" aria-hidden="true" />
+          <span className="map-key-icon" dangerouslySetInnerHTML={{ __html: swords(true, 13) }} />
           <span>Coming soon</span>
         </span>
       </div>

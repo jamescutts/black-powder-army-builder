@@ -2740,21 +2740,64 @@ a.app-list-row:active {
   display: block;
 }
 
-.map-key-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #701626;
-  border: 2px solid #fbf6e9;
-  box-shadow: 0 0 0 1px #701626;
+.map-key-icon {
+  display: inline-flex;
+  width: 16px;
+  justify-content: center;
 }
 
-.map-key-dot.map-key-dot-soon {
-  width: 10px;
-  height: 10px;
-  background: #efe8d8;
-  border: 2px solid #7d6a4c;
-  box-shadow: none;
+.map-key-icon svg {
+  display: block;
+}
+
+/* A battle's crossed swords, lifted a little on hover so it reads as something to press */
+.map-battle {
+  cursor: pointer;
+}
+
+.map-battle svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 120ms ease;
+}
+
+.map-battle:hover svg,
+.map-battle:focus-visible svg {
+  transform: scale(1.15);
+}
+
+.map-battle-soon svg {
+  opacity: 0.85;
+}
+
+.map-label-date {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.15;
+  color: var(--mantine-color-brown-7);
+}
+
+.map-label-soon .map-label-date {
+  font-weight: 500;
+  color: var(--mantine-color-gray-6);
+}
+
+.leaflet-tooltip.map-label-battle,
+.leaflet-tooltip.map-label-soon {
+  line-height: 1.2;
+  padding: 1px 5px;
+  text-align: center;
+}
+
+.campaign-map-canvas[data-sparse] .map-label-date {
+  display: none;
+}
+
+.campaign-map-canvas[data-sparse] .map-battle svg {
+  scale: 0.8;
 }
 
 /* A small flag beside each side on a battle card */

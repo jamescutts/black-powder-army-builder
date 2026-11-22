@@ -65,11 +65,11 @@ export interface CampaignMap {
 /** Every battle's position on its campaign's map */
 export const battlePlaces: Record<string, BattlePlace> = {
   // The Russian Campaign
-  mir: { at: [53.45, 26.47], label: "left" },
+  mir: { at: [53.45, 26.47], label: "right" },
   romanov: { at: [53.03, 26.45], label: "right" },
   eckau: { at: [56.55, 24.2], label: "right", nudge: [0, 5] },
   saltanovka: { at: [53.8, 30.35], label: "bottom" },
-  ostrovno: { at: [55.35, 29.85], label: "top" },
+  ostrovno: { at: [55.35, 29.85], label: "bottom" },
   klyastitsy: { at: [55.88, 28.6], label: "top" },
   gorodechno: { at: [52.22, 24.53], label: "bottom" },
   kobrin: { at: [52.21, 24.36], label: "top" },
@@ -83,7 +83,7 @@ export const battlePlaces: Record<string, BattlePlace> = {
   "polotsk-2": { at: [55.49, 28.86], label: "right" },
   maloyaroslavets: { at: [55.01, 36.47], label: "bottom" },
   vyazma: { at: [55.21, 34.3], label: "top" },
-  krasnoi: { at: [54.56, 31.43], label: "bottom" },
+  krasnoi: { at: [54.56, 31.43], label: "left" },
   berezina: { at: [54.33, 28.35], label: "bottom" },
 };
 
