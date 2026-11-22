@@ -35,7 +35,7 @@ export function HistoricalCampaigns() {
           </Text>
         </Stack>
 
-        <SimpleGrid cols={{ base: 1, md: 2 }} spacing="md">
+        <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
           {campaigns.map((campaign) => {
             const battles = battlesIn(campaign.id);
             const toCome = scheduleIn(campaign.id).length - battles.length;
