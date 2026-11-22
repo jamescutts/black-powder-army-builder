@@ -43,7 +43,31 @@ import {
   valutino,
   vyazma,
   almeida,
+  arcis,
   badajoz,
+  bautzen,
+  brienne,
+  chateauThierry,
+  champaubert,
+  craonne,
+  dennewitz,
+  dresden,
+  fereChampenoise,
+  gohrde,
+  grossbeeren,
+  hanau,
+  katzbach,
+  kulm,
+  laon,
+  laRothiere,
+  leipzig,
+  lutzen,
+  montereau,
+  montmirail,
+  paris,
+  reims,
+  vauchamps,
+  wartenburg,
   burgos,
   ciudadRodrigo,
   gerona,
@@ -54,13 +78,18 @@ import {
   tarragona,
 } from "./planned";
 
+// The 1813 and 1814 campaigns are still being written and off by default; set
+// NEXT_PUBLIC_SHOW_1813_1814=true (e.g. in a preview/staging environment, or .env.local) to show them.
+const show1813And1814 = process.env.NEXT_PUBLIC_SHOW_1813_1814 === "true";
+const LATER_CAMPAIGNS = new Set(["liberation-1813", "france-1814"]);
+
 /**
  * Campaigns, in the order they were fought, each with its battles in order, whose historical forces can be opened
  * as new lists. To add a battle, write src/data/battles/<battle-id>.json (a HistoricalBattle naming its
  * campaign's id) and import it here. Run `npm run check:forces` to see that every force builds and what
  * it breaks of its list's rules.
  */
-export const campaigns: HistoricalCampaign[] = [
+const allCampaigns: HistoricalCampaign[] = [
   // Still to come: shown as a card of its own, with no page until it has battles
   {
     id: "peninsular-war",
@@ -91,6 +120,20 @@ export const campaigns: HistoricalCampaign[] = [
       "Napoleon crossed the Niemen in June with the largest army Europe had seen, drawn from France and half the continent. The Russian armies fell back before it, fighting rearguard actions from Mir and Ostrovno to Smolensk, until Kutuzov stood at Borodino. Napoleon took Moscow but not the peace he sought, and the retreat through the winter, harried at Maloyaroslavets, Vyazma and Krasnoi and across the Berezina, destroyed his army, while on the flanks Austrians, Saxons and Prussians fought campaigns of their own.",
   },
   {
+    id: "liberation-1813",
+    name: "The War of Liberation",
+    dates: "April–October 1813",
+    summary:
+      "With the Grande Armée lost in Russia, Prussia rose and joined the Tsar. Napoleon came back into Saxony with a new army of conscripts and beat the allies at Lützen and Bautzen, then agreed an armistice that brought Austria and Sweden in against him. In the autumn his marshals were beaten in turn at Großbeeren, the Katzbach, Kulm and Dennewitz while he won at Dresden, until the allied armies closed on him at Leipzig; Bavaria changed sides, and he fought his way home through Hanau to the Rhine.",
+  },
+  {
+    id: "france-1814",
+    name: "The Campaign in France",
+    dates: "January–March 1814",
+    summary:
+      "The allies crossed the Rhine in the winter and marched on Paris in two armies, Blücher's along the Marne and Schwarzenberg's along the Seine. Beaten at La Rothière, Napoleon turned on them with a small army of veterans, conscripts and National Guards, and in the Six Days of February broke Blücher's corps one by one at Champaubert, Montmirail, Château-Thierry and Vauchamps, then threw Schwarzenberg back at Montereau. But Craonne, Laon and Arcis-sur-Aube wore him down, and when the allies marched past him on Paris the city fell, and he abdicated at Fontainebleau.",
+  },
+  {
     id: "hundred-days",
     name: "The Hundred Days",
     dates: "June 1815",
@@ -105,8 +148,10 @@ export const campaigns: HistoricalCampaign[] = [
   },
 ];
 
+export const campaigns: HistoricalCampaign[] = allCampaigns.filter((c) => show1813And1814 || !LATER_CAMPAIGNS.has(c.id));
+
 // Every battle, in the order fought: those with forces written, and those still to come (planned.ts)
-const schedule: HistoricalBattle[] = [
+const allBattles: HistoricalBattle[] = [
   // The Peninsular War
   saragossa,
   medinaDeRioseco as HistoricalBattle,
@@ -156,12 +201,40 @@ const schedule: HistoricalBattle[] = [
   vyazma,
   krasnoi,
   berezina,
+  // The War of Liberation
+  lutzen,
+  bautzen,
+  grossbeeren,
+  katzbach,
+  dresden,
+  kulm,
+  dennewitz,
+  gohrde,
+  wartenburg,
+  leipzig,
+  hanau,
+  // The Campaign in France
+  brienne,
+  laRothiere,
+  champaubert,
+  montmirail,
+  chateauThierry,
+  vauchamps,
+  montereau,
+  craonne,
+  laon,
+  reims,
+  arcis,
+  fereChampenoise,
+  paris,
   // The Hundred Days
   ligny as HistoricalBattle,
   quatreBras as HistoricalBattle,
   waterloo as HistoricalBattle,
   wavre as HistoricalBattle,
 ];
+
+const schedule = allBattles.filter((b) => show1813And1814 || !LATER_CAMPAIGNS.has(b.campaign));
 
 // Only the forces whose army lists this build shows (community lists can be switched off)
 const shown = schedule.map((b) => ({ ...b, forces: b.forces.filter((f) => getNation(f.nationId)) }));

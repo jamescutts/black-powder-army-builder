@@ -98,6 +98,34 @@ export const battlePlaces: Record<string, BattlePlace> = {
   krasnoi: { at: [54.56, 31.43], engaged: 130000, label: "left" },
   berezina: { at: [54.33, 28.35], engaged: 110000, label: "bottom" },
 
+  // The War of Liberation
+  lutzen: { at: [51.21, 12.15], engaged: 180000, label: "left" },
+  bautzen: { at: [51.18, 14.43], engaged: 300000, label: "right" },
+  grossbeeren: { at: [52.36, 13.31], engaged: 80000, label: "top" },
+  katzbach: { at: [51.15, 16.13], engaged: 200000, label: "right" },
+  dresden: { at: [51.05, 13.74], engaged: 370000, label: "bottom" },
+  kulm: { at: [50.7, 13.94], engaged: 85000, label: "right" },
+  dennewitz: { at: [51.94, 12.99], engaged: 108000, label: "right" },
+  gohrde: { at: [53.12, 10.84], engaged: 15000, label: "right" },
+  wartenburg: { at: [51.82, 12.8], engaged: 34000, label: "left" },
+  leipzig: { at: [51.34, 12.37], engaged: 560000, label: "bottom" },
+  hanau: { at: [50.13, 8.92], engaged: 60000, label: "bottom" },
+
+  // The Campaign in France
+  brienne: { at: [48.39, 4.53], engaged: 66000, label: "right" },
+  "la-rothiere": { at: [48.34, 4.52], engaged: 130000, label: "bottom" },
+  champaubert: { at: [48.88, 3.78], engaged: 15000, label: "top" },
+  montmirail: { at: [48.87, 3.54], engaged: 50000, label: "left" },
+  "chateau-thierry": { at: [49.05, 3.4], engaged: 45000, label: "left" },
+  vauchamps: { at: [48.88, 3.62], engaged: 45000, label: "bottom" },
+  montereau: { at: [48.39, 2.95], engaged: 45000, label: "bottom" },
+  craonne: { at: [49.44, 3.79], engaged: 60000, label: "right" },
+  laon: { at: [49.56, 3.62], engaged: 140000, label: "top" },
+  reims: { at: [49.26, 4.03], engaged: 35000, label: "right" },
+  "arcis-sur-aube": { at: [48.53, 4.14], engaged: 100000, label: "left" },
+  "fere-champenoise": { at: [48.75, 3.99], engaged: 50000, label: "right" },
+  paris: { at: [48.87, 2.38], engaged: 150000, label: "left" },
+
   // The Hundred Days
   ligny: { at: [50.51, 4.58], engaged: 152000, label: "right" },
   "quatre-bras": { at: [50.57, 4.45], engaged: 56000, label: "left" },
