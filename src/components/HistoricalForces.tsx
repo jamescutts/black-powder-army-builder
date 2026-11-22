@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Anchor, Badge, Breadcrumbs, Card, Container, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { IconBook2, IconChevronLeft } from "@tabler/icons-react";
 import { getNation, getSupplement } from "@/data";
+import { CampaignMap, hasCampaignMap } from "./CampaignMap";
 import { battlesIn, campaigns, getCampaign, isPlanned, scheduleIn } from "@/data/battles";
 import type { HistoricalArt, HistoricalForce } from "@/data/types";
 import { battleHref, campaignHref, forceHref, HISTORICAL_FORCES_PATH, rosterFromForce } from "@/lib/forces";
@@ -151,6 +152,17 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
       />
     <Container size="xl" py="xl">
       <Stack gap="lg">
+        {hasCampaignMap(campaign.id) && (
+          <Stack gap="xs" component="section" id="map">
+            <Title order={2} className="builder-heading">
+              How the armies moved
+            </Title>
+            <Text size="sm" c="brown.9">
+              Click a route to see who marched, or a battle for its summary. Routes are approximate.
+            </Text>
+            <CampaignMap campaignId={campaign.id} />
+          </Stack>
+        )}
         <Title order={2} className="builder-heading">
           Battles
         </Title>

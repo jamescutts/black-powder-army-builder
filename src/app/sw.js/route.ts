@@ -54,7 +54,8 @@ const EXTRAS = __EXTRAS__;
 const PAGE_CACHE = "ab-pages-" + VERSION;
 const STATIC_CACHE = "ab-static-" + VERSION;
 const ART_CACHE = "ab-art";
-const KEEP = [PAGE_CACHE, STATIC_CACHE, ART_CACHE];
+const MAP_CACHE = "ab-map-tiles";
+const KEEP = [PAGE_CACHE, STATIC_CACHE, ART_CACHE, MAP_CACHE];
 const WARMED = "/__offline-warmed";
 
 // How long a page or in-app navigation waits on the network before using the saved copy
@@ -159,6 +160,9 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== self.location.origin) {
     if (req.destination === "image" && /(^|\.)wikimedia\.org$/.test(url.hostname)) {
       event.respondWith(cacheFirst(req, ART_CACHE));
+    } else if (req.destination === "image" && url.hostname === "server.arcgisonline.com") {
+      // A campaign map's tiles, kept once seen so its map still draws offline
+      event.respondWith(cacheFirst(req, MAP_CACHE));
     }
     return;
   }
