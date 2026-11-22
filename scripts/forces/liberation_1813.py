@@ -75,9 +75,9 @@ def to_come(name, formation, summary):
     return {"side": "Prussian", "name": name, "formation": formation, "summary": summary, "flag": PRUSSIA_FLAG}
 
 
-def battle(id_, name, date, summary, sources, forces, prussians):
+def battle(id_, name, date, summary, sources, forces, prussians, alliances=(("Russian", "Prussian"),)):
     return {"id": id_, "name": name, "date": date, "campaign": "liberation-1813", "summary": summary,
-            "sources": sources, "forces": forces, "toCome": prussians}
+            "sources": sources, "forces": forces, "toCome": prussians, "alliances": [list(a) for a in alliances]}
 
 
 def write(b):
@@ -86,7 +86,7 @@ def write(b):
     if b["id"] in ART:
         b["art"] = ART[b["id"]]
     # Keep the file's keys in the order the others have them
-    order = ["id", "name", "date", "campaign", "art", "sides", "summary", "sources", "forces", "toCome"]
+    order = ["id", "name", "date", "campaign", "art", "sides", "alliances", "summary", "sources", "forces", "toCome"]
     out = {k: b[k] for k in order if k in b}
     (OUT / f"{b['id']}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
     print(f"{b['name']}: {len(b['forces'])} forces, {len(b['toCome'])} to come")
@@ -523,7 +523,8 @@ GROSSBEEREN = battle(
      to_come("Krafft's Brigade", "6th Brigade, III Corps (Bülow)",
              "Colberg and Pomeranian battalions which led the assault on Großbeeren. Bülow's sixty-four guns included two Russian 12-pdr batteries."),
      to_come("Oppen's Reserve Cavalry", "III Corps (Bülow)",
-             "Dragoons, hussars and Landwehr cavalry, which rode down the Saxon rearguard in the dark.")])
+             "Dragoons, hussars and Landwehr cavalry, which rode down the Saxon rearguard in the dark.")],
+    alliances=(("Saxon", "French"),))
 
 
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder

@@ -625,6 +625,41 @@ body {
   line-height: 1.45;
 }
 
+/* A battle's order of battle, as Fleet Ledger's battle pages show their fleets: each side under a rule in its
+   army's colour, each force within it edged down the left in its own */
+.oob-side {
+  border-top: 4px solid var(--oob-colour, #6b3d17);
+  padding-top: var(--mantine-spacing-sm);
+  min-width: 0;
+}
+
+.oob-force {
+  border-left: 3px solid var(--oob-colour, #6b3d17);
+  padding-left: var(--mantine-spacing-sm);
+}
+
+.oob-to-come {
+  border-left-style: dashed;
+  opacity: 0.8;
+}
+
+.oob-brigades {
+  margin: 4px 0 2px;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.oob-sources {
+  margin-top: var(--mantine-spacing-lg);
+}
+
+.oob-sources ul {
+  margin: 4px 0 0;
+  padding-left: 1.1rem;
+}
+
 /* A historical force's units left out of it, after its brigades: dashed and muted, like a gap in the line */
 .brigade-missing.brigade-missing {
   border: 1.5px dashed rgba(107, 61, 23, 0.4);

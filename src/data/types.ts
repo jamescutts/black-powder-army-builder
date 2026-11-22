@@ -671,6 +671,9 @@ export interface HistoricalBattle {
   /** Orders of battle the forces were built from */
   sources: { label: string; url?: string }[];
   forces: HistoricalForce[];
+  /** Sides that fought as one, stacked in one column of the order of battle (e.g. [["Russian", "Prussian"]]); any
+   *  side not named keeps a column of its own */
+  alliances?: string[][];
   /** Forces still to be written, shown under their side as cards saying so (e.g. the Prussians of 1813, until a list fits them) */
   toCome?: { side: string; name: string; formation?: string; summary: string; flag?: string }[];
 }
