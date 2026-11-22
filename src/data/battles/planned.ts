@@ -584,3 +584,33 @@ export const wagram = planned("wagram", "Wagram", "5–6 July 1809", Dn,
   "Napoleon crossed from the Lobau in force and fought Archduke Charles over two days on the Marchfeld; Masséna's corps held the left against the Austrian counter-attack, Macdonald's great column broke the centre, and Davout turned the Austrian left, and Charles drew off in good order.");
 export const znaim = planned("znaim", "Znaim", "10–11 July 1809", Dn,
   "Marmont and then Masséna caught up with the retreating Austrians at Znaim, in Moravia, and fought them through the town and its vineyards until the Archduke sought the armistice that ended the war.");
+
+// Paintings for the Jena campaign
+jena.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Bataille_d%27I%C3%A9na%2C_14_octobre_1806_%28Vernet%29.jpg/960px-Bataille_d%27I%C3%A9na%2C_14_octobre_1806_%28Vernet%29.jpg",
+  "title": "The Battle of Jena, 14 October 1806",
+  "artist": "Horace Vernet",
+  "date": "1836",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_d%27I%C3%A9na,_14_octobre_1806_(Vernet).jpg",
+  "focus": "50% 35%"
+};
+schleiz.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bataille_de_Schleiz.jpg/960px-Bataille_de_Schleiz.jpg",
+  "title": "The Battle of Schleiz",
+  "artist": "Benjamin Zix",
+  "date": "1806",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Schleiz.jpg"
+};
+saalfeld.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Heldentod_der_Prinzen_Louis_Ferdinand_bei_Saalfeld.jpg",
+  "title": "The Death of Prince Louis Ferdinand at Saalfeld",
+  "artist": "Richard Knötel",
+  "page": "https://commons.wikimedia.org/wiki/File:Heldentod_der_Prinzen_Louis_Ferdinand_bei_Saalfeld.jpg"
+};
+halle.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Per_Krafft_d.y._-_The_Battle_of_Halle%2C_October_17th_1806_-_NM_4782_-_Nationalmuseum.jpg/960px-Per_Krafft_d.y._-_The_Battle_of_Halle%2C_October_17th_1806_-_NM_4782_-_Nationalmuseum.jpg",
+  "title": "The Battle of Halle, 17 October 1806",
+  "artist": "Per Krafft the Younger",
+  "date": "1821",
+  "page": "https://commons.wikimedia.org/wiki/File:Per_Krafft_d.y._-_The_Battle_of_Halle,_October_17th_1806_-_NM_4782_-_Nationalmuseum.jpg"
+};
