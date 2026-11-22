@@ -453,3 +453,30 @@ paris.art = {
   "date": "1834",
   "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Paris_1814_by_Villevalde.jpg"
 };
+danzig.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Die_Russen_belagern_Danzig.jpg/960px-Die_Russen_belagern_Danzig.jpg",
+  "title": "The Russian Lines before Danzig, Winter 1813",
+  "artist": "Johann Michael Voltz",
+  "date": "c. 1820",
+  "page": "https://commons.wikimedia.org/wiki/File:Die_Russen_belagern_Danzig.jpg"
+};
+luneburg.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/L%C3%BCneburg_Schlacht_1813.jpg/960px-L%C3%BCneburg_Schlacht_1813.jpg",
+  "title": "The Fight at Lüneburg, 2 April 1813",
+  "artist": "F. A. Frenzel",
+  "page": "https://commons.wikimedia.org/wiki/File:L%C3%BCneburg_Schlacht_1813.jpg"
+};
+mockern.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg/960px-Battle_of_M%C3%B6ckern_on_5_April_1813_%28O._C._Fikentscher%29.jpg",
+  "title": "The Battle of Möckern, 5 April 1813",
+  "artist": "Otto Fikentscher",
+  "date": "1863",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern_on_5_April_1813_(O._C._Fikentscher).jpg"
+};
+mockernLeipzig.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png/960px-Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
+  "title": "The Brandenburg Hussars' Charge at Möckern",
+  "artist": "Richard Knötel",
+  "date": "1901",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern._October_16,_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png"
+};
