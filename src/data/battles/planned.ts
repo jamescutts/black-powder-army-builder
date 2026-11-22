@@ -556,3 +556,23 @@ saintDizier.art = {
   "page": "https://commons.wikimedia.org/wiki/File:Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier,_1814.jpg",
   "focus": "50% 30%"
 };
+wartenburg.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png/960px-Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
+  "title": "The Leib Regiment's Attack under Horn at Wartenburg",
+  "artist": "Richard Knötel",
+  "date": "1901",
+  "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3,_1813.png"
+};
+haynau.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Combat_d%27Haynau%2C_26_mai_1813.jpg/960px-Combat_d%27Haynau%2C_26_mai_1813.jpg",
+  "title": "Prussian Cavalry against Maison's Infantry at Haynau",
+  "artist": "Richard Knötel",
+  "page": "https://commons.wikimedia.org/wiki/File:Combat_d%27Haynau,_26_mai_1813.jpg"
+};
+lowenberg.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Pierwsza_bitwa_nad_Bobrem.png/960px-Pierwsza_bitwa_nad_Bobrem.png",
+  "title": "The First Battle on the Bober, 21 August 1813",
+  "artist": "unknown artist",
+  "date": "1813",
+  "page": "https://commons.wikimedia.org/wiki/File:Pierwsza_bitwa_nad_Bobrem.png"
+};
