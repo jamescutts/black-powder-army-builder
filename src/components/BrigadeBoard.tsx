@@ -202,7 +202,15 @@ export function BrigadeBoard({ nation, roster, onChange, startCollapsed = false 
         groups.push({ label, units: units || "no battalions yet" });
       });
     });
-    const others = countUnits(bi.slotLines.flat().map((line) => ({ line })));
+    // A unit given its own name (a cavalry regiment, a numbered battery) gets a line of its own, as a regiment
+    // does; the rest are counted together on one line
+    const lines = bi.slotLines.flat();
+    for (const line of lines) {
+      if (!line.name?.trim()) continue;
+      const units = countUnits([{ line }]);
+      if (units) groups.push({ label: line.name.trim(), units });
+    }
+    const others = countUnits(lines.filter((l) => !l.name?.trim()).map((line) => ({ line })));
     return { commander, groups, others, empty: groups.length === 0 && !others };
   };
 
