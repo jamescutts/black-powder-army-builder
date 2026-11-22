@@ -498,7 +498,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Henry_Clinton_%281771-1829%29.jpg/250px-Henry_Clinton_%281771-1829%29.jpg",
+        "title": "Sir Henry Clinton",
+        "artist": "Samuel William Reynolds",
+        "page": "https://commons.wikimedia.org/wiki/File:Henry_Clinton_%281771-1829%29.jpg",
+        "focus": "50% 20%",
+        "date": "1827"
+      }
     },
     {
       "id": "waterloo-lambert",
@@ -854,7 +862,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/August_von_Kruse.jpg/250px-August_von_Kruse.jpg",
+        "title": "August von Kruse",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:August_von_Kruse.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-brunswick",
@@ -1126,7 +1141,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Sir_John_Ormsby_Vandeleur_by_William_Salter.jpg/250px-Sir_John_Ormsby_Vandeleur_by_William_Salter.jpg",
+        "title": "Sir John Ormsby Vandeleur",
+        "artist": "William Salter",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_John_Ormsby_Vandeleur_by_William_Salter.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-donzelot",
@@ -1305,7 +1327,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Pierre-Louis_Binet_de_Marcognet.jpg/250px-Pierre-Louis_Binet_de_Marcognet.jpg",
+        "title": "Pierre-Louis Binet de Marcognet",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Pierre-Louis_Binet_de_Marcognet.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-quiot",
@@ -1469,7 +1498,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/General_Durutte_by_Fran%C3%A7ois_B%C3%B6hm_1.jpg/250px-General_Durutte_by_Fran%C3%A7ois_B%C3%B6hm_1.jpg",
+        "title": "Pierre-François Durutte",
+        "artist": "François Böhm",
+        "page": "https://commons.wikimedia.org/wiki/File:General_Durutte_by_Fran%C3%A7ois_B%C3%B6hm_1.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-jerome",
@@ -1787,7 +1823,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/G%C3%A9n%C3%A9ral_Gilbert_D%C3%A9sir%C3%A9_Joseph_Bachelu.jpg/250px-G%C3%A9n%C3%A9ral_Gilbert_D%C3%A9sir%C3%A9_Joseph_Bachelu.jpg",
+        "title": "Gilbert Bachelu",
+        "artist": "Forestier",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Gilbert_D%C3%A9sir%C3%A9_Joseph_Bachelu.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
     },
     {
       "id": "waterloo-simmer",
@@ -1873,7 +1917,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/BOYER_2353_-_Le_Lieutenant_g%C3%A9n%C3%A9ral_baron_Simmer%2C_Ancien_d%C3%A9put%C3%A9_du_Puy-de-D%C3%B4me.jpg/250px-BOYER_2353_-_Le_Lieutenant_g%C3%A9n%C3%A9ral_baron_Simmer%2C_Ancien_d%C3%A9put%C3%A9_du_Puy-de-D%C3%B4me.jpg",
+        "title": "François Simmer",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:BOYER_2353_-_Le_Lieutenant_g%C3%A9n%C3%A9ral_baron_Simmer%2C_Ancien_d%C3%A9put%C3%A9_du_Puy-de-D%C3%B4me.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-jeanin",
@@ -1954,7 +2005,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Jean-Baptiste_Jeanin.jpg/250px-Jean-Baptiste_Jeanin.jpg",
+        "title": "Jean-Baptiste Jeanin",
+        "artist": "Jacques-Louis David",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean-Baptiste_Jeanin.jpg",
+        "focus": "50% 20%",
+        "date": "1810"
+      }
     },
     {
       "id": "waterloo-wathier",
@@ -2021,7 +2080,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Pierre_Wathier_de_Saint-Alphonse.jpg/250px-Pierre_Wathier_de_Saint-Alphonse.jpg",
+        "title": "Pierre Wathier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Pierre_Wathier_de_Saint-Alphonse.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-delort",
@@ -2162,7 +2228,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/G%C3%A9n%C3%A9ral_Samuel_Fran%C3%A7ois_Lh%C3%A9ritier_de_Ch%C3%A9zelles.jpg/250px-G%C3%A9n%C3%A9ral_Samuel_Fran%C3%A7ois_Lh%C3%A9ritier_de_Ch%C3%A9zelles.jpg",
+        "title": "Samuel-François Lhéritier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Samuel_Fran%C3%A7ois_Lh%C3%A9ritier_de_Ch%C3%A9zelles.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-roussel",
@@ -2296,7 +2369,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Riesener_-_Le_colonel_baron_C.-C._Jacquinot_%281772-1848%29_en_tenue_de_colonel_du_11e_chasseurs_%C3%A0_cheval.jpg/250px-Riesener_-_Le_colonel_baron_C.-C._Jacquinot_%281772-1848%29_en_tenue_de_colonel_du_11e_chasseurs_%C3%A0_cheval.jpg",
+        "title": "Charles-Claude Jacquinot",
+        "artist": "Henri-François Riesener",
+        "page": "https://commons.wikimedia.org/wiki/File:Riesener_-_Le_colonel_baron_C.-C._Jacquinot_%281772-1848%29_en_tenue_de_colonel_du_11e_chasseurs_%C3%A0_cheval.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-old-guard",
@@ -2378,7 +2458,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Le_g%C3%A9n%C3%A9ral_Antoine_Drouot_%281774-1847%29.jpg/250px-Le_g%C3%A9n%C3%A9ral_Antoine_Drouot_%281774-1847%29.jpg",
+        "title": "Antoine Drouot",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Antoine_Drouot_%281774-1847%29.jpg",
+        "focus": "50% 20%",
+        "date": "1816"
+      }
     },
     {
       "id": "waterloo-middle-guard",
@@ -2624,7 +2712,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "title": "Charles Lefebvre-Desnouettes",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "waterloo-prussian-iv-corps",

@@ -82,10 +82,26 @@ PORTRAITS.update({
     # Brunswick
     "brunswick": portrait("Herzog von Braunschweig-Oels.jpg", "Friedrich Wilhelm, Duke of Brunswick-Oels", "Johann Christian Ludwig Tunica", focus="50% 20%"),
 })
-# No public-domain portrait found for: Bachelu, Lefol, Pécheux, Hulot, Strolz, Teste (Wavre/Ligny);
-# Donzelot, Marcognet, Quiot, Durutte, Simmer, Jeanin, Wathier, L'Héritier, Roussel d'Hurbal, Jacquinot (Waterloo French);
-# Alten, Clinton, Vandeleur, Vivian, Kruse (Waterloo Allied); Grawert, Steinheil, Löwis of Menar (1812 campaign).
-# Their force cards show the name only.
+# More 1815 divisional commanders, found on a second, slower search of Commons
+PORTRAITS.update({
+    "bachelu": portrait("Général Gilbert Désiré Joseph Bachelu.jpg", "Gilbert Bachelu", "Forestier", "1818", "50% 20%"),
+    "pire": portrait("Portrait d'Hippolyte Marie Guillaume de Rosnyvinen (1778-1850) général et comte d'Empire.jpg", "Hippolyte de Piré", "Emmanuel Lauret", "1842", "50% 20%"),
+    "marcognet": portrait("Pierre-Louis Binet de Marcognet.jpg", "Pierre-Louis Binet de Marcognet", "unknown artist", focus="50% 20%"),
+    "durutte": portrait("General Durutte by François Böhm 1.jpg", "Pierre-François Durutte", "François Böhm", focus="50% 20%"),
+    "simmer": portrait("BOYER 2353 - Le Lieutenant général baron Simmer, Ancien député du Puy-de-Dôme.jpg", "François Simmer", "unknown artist", focus="50% 20%"),
+    "jeanin": portrait("Jean-Baptiste Jeanin.jpg", "Jean-Baptiste Jeanin", "Jacques-Louis David", "1810", "50% 20%"),
+    "wathier": portrait("Pierre Wathier de Saint-Alphonse.jpg", "Pierre Wathier", "unknown artist", focus="50% 20%"),
+    "lheritier": portrait("Général Samuel François Lhéritier de Chézelles.jpg", "Samuel-François Lhéritier", "unknown artist", focus="50% 20%"),
+    "jacquinot": portrait("Riesener - Le colonel baron C.-C. Jacquinot (1772-1848) en tenue de colonel du 11e chasseurs à cheval.jpg", "Charles-Claude Jacquinot", "Henri-François Riesener", focus="50% 20%"),
+    "drouot": portrait("Le général Antoine Drouot (1774-1847).jpg", "Antoine Drouot", "unknown artist", "1816", "50% 20%"),
+    "lefebvre_desnouettes": portrait("Général Charles Lefebvre Desnouettes (2).jpg", "Charles Lefebvre-Desnouettes", "unknown artist", focus="50% 20%"),
+    "clinton": portrait("Henry Clinton (1771-1829).jpg", "Sir Henry Clinton", "Samuel William Reynolds", "1827", "50% 20%"),
+    "vandeleur": portrait("Sir John Ormsby Vandeleur by William Salter.jpg", "Sir John Ormsby Vandeleur", "William Salter", focus="50% 20%"),
+    "kruse": portrait("August von Kruse.jpg", "August von Kruse", "unknown artist", focus="50% 20%"),
+})
+# No public-domain portrait found for: Lefol, Pécheux, Hulot, Strolz, Teste (Wavre/Ligny); Kellermann the younger,
+# Alten, Quiot, Donzelot, Roussel d'Hurbal, Duhesme (1815); Grawert, Steinheil, Löwis of Menar (1812 campaign).
+# Their force cards show the flag only.
 EXTRA = {}
 
 COMMANDERS = {
@@ -128,6 +144,12 @@ FORCE_PORTRAITS: dict[str, str] = {
     "wavre-habert": "habert", "wavre-berthezene": "berthezene", "wavre-vichery": "vichery",
     # Wavre — Prussian
     "wavre-prussian-iii-corps": "thielmann",
+    # Found on the second search
+    "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
+    "waterloo-marcognet": "marcognet", "waterloo-durutte": "durutte", "waterloo-simmer": "simmer",
+    "waterloo-jeanin": "jeanin", "waterloo-wathier": "wathier", "waterloo-lheritier": "lheritier",
+    "waterloo-jacquinot": "jacquinot", "waterloo-old-guard": "drouot", "waterloo-guard-cavalry": "lefebvre_desnouettes",
+    "waterloo-clinton": "clinton", "waterloo-vandeleur-vivian": "vandeleur", "waterloo-kruse": "kruse",
 }
 
 

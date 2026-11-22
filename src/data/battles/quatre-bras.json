@@ -101,7 +101,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/G%C3%A9n%C3%A9ral_Gilbert_D%C3%A9sir%C3%A9_Joseph_Bachelu.jpg/250px-G%C3%A9n%C3%A9ral_Gilbert_D%C3%A9sir%C3%A9_Joseph_Bachelu.jpg",
+        "title": "Gilbert Bachelu",
+        "artist": "Forestier",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Gilbert_D%C3%A9sir%C3%A9_Joseph_Bachelu.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
     },
     {
       "id": "quatre-bras-foy",
@@ -394,7 +402,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Portrait_d%27Hippolyte_Marie_Guillaume_de_Rosnyvinen_%281778-1850%29_g%C3%A9n%C3%A9ral_et_comte_d%27Empire.jpg/250px-Portrait_d%27Hippolyte_Marie_Guillaume_de_Rosnyvinen_%281778-1850%29_g%C3%A9n%C3%A9ral_et_comte_d%27Empire.jpg",
+        "title": "Hippolyte de Piré",
+        "artist": "Emmanuel Lauret",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_d%27Hippolyte_Marie_Guillaume_de_Rosnyvinen_%281778-1850%29_g%C3%A9n%C3%A9ral_et_comte_d%27Empire.jpg",
+        "focus": "50% 20%",
+        "date": "1842"
+      }
     },
     {
       "id": "quatre-bras-guiton",
