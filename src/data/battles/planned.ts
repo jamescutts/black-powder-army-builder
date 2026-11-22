@@ -364,3 +364,92 @@ hanau.art = {
   "date": "1824",
   "page": "https://commons.wikimedia.org/wiki/File:Vernet-Battle_of_Hanau.jpg"
 };
+brienne.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg/960px-Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg",
+  "title": "The Battle of Brienne",
+  "artist": "Jean-Antoine-Siméon Fort",
+  "date": "c. 1850",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Brienne_(1814),_Sim%C3%A9on_Fort.jpg"
+};
+laRothiere.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Wigand_%28circle%29_Schlacht_bei_Rothiere_1814.jpg/960px-Wigand_%28circle%29_Schlacht_bei_Rothiere_1814.jpg",
+  "title": "The Battle of La Rothière",
+  "artist": "circle of Balthasar Wigand",
+  "date": "c. 1830",
+  "page": "https://commons.wikimedia.org/wiki/File:Wigand_(circle)_Schlacht_bei_Rothiere_1814.jpg"
+};
+champaubert.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Combat_de_Champaubert%2C_10_f%C3%A9vrier_1814%2C_dans_la_soir%C3%A9e.jpg/960px-Combat_de_Champaubert%2C_10_f%C3%A9vrier_1814%2C_dans_la_soir%C3%A9e.jpg",
+  "title": "Champaubert, the evening of 10 February 1814",
+  "artist": "Jean-Antoine-Siméon Fort",
+  "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Champaubert,_10_f%C3%A9vrier_1814,_dans_la_soir%C3%A9e.jpg"
+};
+montmirail.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/The_battle_of_Montmirail_in_1814_%281822%29%2C_by_Horace_Vernet.jpg/960px-The_battle_of_Montmirail_in_1814_%281822%29%2C_by_Horace_Vernet.jpg",
+  "title": "The Battle of Montmirail",
+  "artist": "Horace Vernet",
+  "date": "1822",
+  "page": "https://commons.wikimedia.org/wiki/File:The_battle_of_Montmirail_in_1814_(1822),_by_Horace_Vernet.jpg"
+};
+chateauThierry.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Combat_de_Ch%C3%A2teau-Thierry%2C_12_f%C3%A9vrier_1814%2C_%C3%A0_3_ou_4_heures_du_soir.jpg/960px-Combat_de_Ch%C3%A2teau-Thierry%2C_12_f%C3%A9vrier_1814%2C_%C3%A0_3_ou_4_heures_du_soir.jpg",
+  "title": "Château-Thierry, 12 February 1814",
+  "artist": "Jean-Antoine-Siméon Fort",
+  "date": "1842–43",
+  "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Ch%C3%A2teau-Thierry,_12_f%C3%A9vrier_1814,_%C3%A0_3_ou_4_heures_du_soir.jpg"
+};
+vauchamps.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Battle_of_Etoges_%28Vauchamps%29%2C_14_January_1813_%28R._Knotel%29.jpg/960px-Battle_of_Etoges_%28Vauchamps%29%2C_14_January_1813_%28R._Knotel%29.jpg",
+  "title": "Prussian infantry at Étoges, during Vauchamps",
+  "artist": "Richard Knötel",
+  "date": "1901",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Etoges_(Vauchamps),_14_January_1813_(R._Knotel).jpg"
+};
+montereau.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Bataille_de_Montereau%2C_18_f%C3%A9vrier_1814.jpg/960px-Bataille_de_Montereau%2C_18_f%C3%A9vrier_1814.jpg",
+  "title": "The Battle of Montereau",
+  "artist": "Jean-Charles Langlois",
+  "date": "1840",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Montereau,_18_f%C3%A9vrier_1814.jpg"
+};
+craonne.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Jung_theodore.jpg/960px-Jung_theodore.jpg",
+  "title": "The Battle of Craonne",
+  "artist": "Théodore Jung",
+  "page": "https://commons.wikimedia.org/wiki/File:Jung_theodore.jpg"
+};
+laon.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Battle_of_Laon._The_Neumark_Dragoon_Regiment_ambushes_the_fleeing_enemy_near_Athies_on_the_night_of_March_9-10%2C_1814.png/960px-Battle_of_Laon._The_Neumark_Dragoon_Regiment_ambushes_the_fleeing_enemy_near_Athies_on_the_night_of_March_9-10%2C_1814.png",
+  "title": "The Neumark Dragoons at Athies, Laon",
+  "artist": "Richard Knötel",
+  "date": "1901",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Laon._The_Neumark_Dragoon_Regiment_ambushes_the_fleeing_enemy_near_Athies_on_the_night_of_March_9-10,_1814.png"
+};
+reims.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Szeptycki_capture_des_Prussiens_%C3%A0_Reims_%281814%29.jpg/960px-Szeptycki_capture_des_Prussiens_%C3%A0_Reims_%281814%29.jpg",
+  "title": "Szeptycki's Lancers Taking Prussians at Reims",
+  "artist": "Juliusz Kossak",
+  "date": "1882",
+  "page": "https://commons.wikimedia.org/wiki/File:Szeptycki_capture_des_Prussiens_%C3%A0_Reims_(1814).jpg"
+};
+arcis.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Battle_of_Arcis-sur-Aube._Austrian_battle_for_possession_of_the_village_of_Grand-Torcy_on_March_20%2C_1814.png/960px-Battle_of_Arcis-sur-Aube._Austrian_battle_for_possession_of_the_village_of_Grand-Torcy_on_March_20%2C_1814.png",
+  "title": "Austrians at Grand-Torcy, Arcis-sur-Aube",
+  "artist": "Richard Knötel",
+  "date": "1901",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Arcis-sur-Aube._Austrian_battle_for_possession_of_the_village_of_Grand-Torcy_on_March_20,_1814.png"
+};
+fereChampenoise.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/A.I.Dmitriev-Mamonov-Fere-Champenoise.jpg/960px-A.I.Dmitriev-Mamonov-Fere-Champenoise.jpg",
+  "title": "The Battle of Fère-Champenoise",
+  "artist": "Alexander Dmitriev-Mamonov",
+  "date": "before 1836",
+  "page": "https://commons.wikimedia.org/wiki/File:A.I.Dmitriev-Mamonov-Fere-Champenoise.jpg"
+};
+paris.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Battle_of_Paris_1814_by_Villevalde.jpg/960px-Battle_of_Paris_1814_by_Villevalde.jpg",
+  "title": "The Battle of Paris",
+  "artist": "Bogdan Willewalde",
+  "date": "1834",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Paris_1814_by_Villevalde.jpg"
+};
