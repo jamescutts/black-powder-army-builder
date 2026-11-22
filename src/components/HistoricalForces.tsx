@@ -8,6 +8,7 @@ import { getNation, getSupplement } from "@/data";
 import { CampaignMap, hasCampaignMap, routesAt } from "./CampaignMap";
 import { OrderOfBattle } from "./OrderOfBattle";
 import { battlePlaces, campaignMaps } from "@/data/battles/geo";
+import { battleStrengths, STRENGTH_SOURCE } from "@/data/battles/strengths";
 import { battlesIn, campaigns, getCampaign, isPlanned, scheduleIn } from "@/data/battles";
 import type { HistoricalArt, HistoricalBattle, HistoricalCampaign, HistoricalForce } from "@/data/types";
 import { battleHref, campaignHref, forceHref, HISTORICAL_FORCES_PATH, rosterFromForce } from "@/lib/forces";
@@ -289,6 +290,8 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
 export function BattleForces({ campaignId, battleId }: { campaignId: string; battleId: string }) {
   const campaign = getCampaign(campaignId)!;
   const battle = battlesIn(campaign.id).find((b) => b.id === battleId)!;
+  // The armies' strengths as historians give them, for the header; the forces' own unit counts where there are none
+  const strengths = battleStrengths[battle.id];
   // Sides in the order the battle lists their first force, then any whose forces are all still to come
   const toCome = battle.toCome ?? [];
   const sides = [...new Set([...battle.forces.map((f) => f.side), ...toCome.map((f) => f.side)])];
@@ -317,12 +320,21 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
         title={battle.name}
         dates={battle.date}
         summary={battle.summary}
-        stats={sides
-          .filter((side) => totals[side].units > 0)
-          .map((side) => {
-            const units = totals[side].units;
-            return { value: units, label: `${side} ${units === 1 ? "unit" : "units"}` };
-          })}
+        stats={
+          strengths
+            ? strengths.map((st) => ({
+                value: st.men,
+                label: `${st.label}${st.engaged ? " engaged" : ""}`,
+                detail: [st.guns && `${st.guns} guns`, st.cavalry && `${st.cavalry} cavalry`, st.extra].filter(Boolean).join(" · ") || undefined,
+              }))
+            : sides
+                .filter((side) => totals[side].units > 0)
+                .map((side) => {
+                  const units = totals[side].units;
+                  return { value: units, label: `${side} ${units === 1 ? "unit" : "units"}` };
+                })
+        }
+        statsNote={strengths ? STRENGTH_SOURCE : undefined}
       />
     <Container size="xl" py="xl">
       <Stack gap="lg">
@@ -410,13 +422,17 @@ function HistoryHero({
   dates,
   summary,
   stats,
+  statsNote,
 }: {
   art?: HistoricalArt;
   trail: { href: string; label: string }[];
   title: string;
   dates: string;
   summary: string;
-  stats: { value: number; label: string }[];
+  /** Figures across the foot: a side's strength in men, with its guns and cavalry beneath, or counts of what's here */
+  stats: { value: number | string; label: string; detail?: string }[];
+  /** Where the figures come from, in small type beneath them */
+  statsNote?: string;
 }) {
   const [open, setOpen] = useState(false);
   const up = trail[trail.length - 1];
@@ -466,9 +482,19 @@ function HistoryHero({
               <Text size="sm" className="home-hero-stat-label">
                 {s.label}
               </Text>
+              {s.detail && (
+                <Text size="xs" className="home-hero-stat-label">
+                  {s.detail}
+                </Text>
+              )}
             </div>
           ))}
         </Group>
+        {statsNote && (
+          <Text size="xs" className="home-hero-stat-label history-hero-stats-note">
+            {statsNote}
+          </Text>
+        )}
       </Container>
       {art && (
         <Anchor href={art.page} target="_blank" rel="noreferrer" className="home-hero-credit" size="xs">
