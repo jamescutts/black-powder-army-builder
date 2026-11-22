@@ -73,7 +73,7 @@ PORTRAITS.update({
     "bulow": portrait("Friedrich Wilhelm Freiherr von Bulow.jpg", "Friedrich Wilhelm Bülow von Dennewitz", "unknown artist", focus="50% 20%"),
     # British / King's German Legion
     "picton": portrait("Sir Thomas Picton by Sir Martin Archer Shee.jpg", "Sir Thomas Picton", "Martin Archer Shee", focus="50% 20%"),
-    "uxbridge": portrait("Uxbridge (BM 1867,1214.731).jpg", "Henry Paget, Earl of Uxbridge", "Francis William Wilkin", focus="50% 18%"),
+    "uxbridge": portrait("Thomas Lawrence (1769-1830) - Henry William Paget (1768–1854), 1st Marquess of Anglesey, KG - WM.1474-1948 - Apsley House.jpg", "Henry Paget, Earl of Uxbridge", "Thomas Lawrence", "1818", "50% 16%"),
     "cooke": portrait("Portrait of General Sir George Cooke (1768–1837) (by Jan Willem Pieneman).jpg", "Sir George Cooke", "Jan Willem Pieneman", focus="50% 20%"),
     "lambert": portrait("John-lambert-waterloo.jpg", "Sir John Lambert", "William Salter", focus="50% 20%"),
     # Dutch-Belgian

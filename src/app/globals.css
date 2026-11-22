@@ -2468,13 +2468,13 @@ a.app-list-row:active {
   object-fit: cover;
 }
 
-/* A side's totals, across from its commander */
+/* A side's totals, across from its commander; under the commander on a phone */
 .side-head-totals {
-  text-align: right;
+  align-items: flex-end;
 }
 
 @media (max-width: 36em) {
   .side-head-totals {
-    text-align: left;
+    align-items: flex-start;
   }
 }

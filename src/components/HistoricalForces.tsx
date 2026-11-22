@@ -392,11 +392,6 @@ function SideHead({
   totals: { points: number; units: number; brigades: number };
 }) {
   const p = info?.portrait;
-  const figures: [string, string][] = [
-    [totals.points.toLocaleString("en-GB"), "points"],
-    [String(totals.units), totals.units === 1 ? "unit" : "units"],
-    [String(totals.brigades), totals.brigades === 1 ? "brigade" : "brigades"],
-  ];
   return (
     <Group justify="space-between" align="center" gap="sm" className="side-head">
       <Group gap="sm" wrap="nowrap">
@@ -416,18 +411,14 @@ function SideHead({
           )}
         </div>
       </Group>
-      <Group gap="lg" wrap="nowrap" className="side-head-totals">
-        {figures.map(([value, label]) => (
-          <div key={label}>
-            <Text ff="heading" fw={600} fz="lg" lh={1.1} c="brown.9">
-              {value}
-            </Text>
-            <Text size="xs" c="brown.8">
-              {label}
-            </Text>
-          </div>
-        ))}
-      </Group>
+      <Stack gap={4} className="side-head-totals">
+        <Text ff="heading" fw={600} fz="xl" lh={1.1} c="brown.9">
+          {totals.points.toLocaleString("en-GB")} pts
+        </Text>
+        <Text size="xs" c="brown.8">
+          {plural(totals.units, "unit", "units")} · {plural(totals.brigades, "brigade", "brigades")}
+        </Text>
+      </Stack>
     </Group>
   );
 }

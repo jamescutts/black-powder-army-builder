@@ -1064,11 +1064,12 @@
         }
       ],
       "portrait": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Uxbridge_%28BM_1867%2C1214.731%29.jpg/250px-Uxbridge_%28BM_1867%2C1214.731%29.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Thomas_Lawrence_%281769-1830%29_-_Henry_William_Paget_%281768%E2%80%931854%29%2C_1st_Marquess_of_Anglesey%2C_KG_-_WM.1474-1948_-_Apsley_House.jpg/250px-Thomas_Lawrence_%281769-1830%29_-_Henry_William_Paget_%281768%E2%80%931854%29%2C_1st_Marquess_of_Anglesey%2C_KG_-_WM.1474-1948_-_Apsley_House.jpg",
         "title": "Henry Paget, Earl of Uxbridge",
-        "artist": "Francis William Wilkin",
-        "page": "https://commons.wikimedia.org/wiki/File:Uxbridge_%28BM_1867%2C1214.731%29.jpg",
-        "focus": "50% 18%"
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Thomas_Lawrence_%281769-1830%29_-_Henry_William_Paget_%281768%E2%80%931854%29%2C_1st_Marquess_of_Anglesey%2C_KG_-_WM.1474-1948_-_Apsley_House.jpg",
+        "focus": "50% 16%",
+        "date": "1818"
       }
     },
     {
