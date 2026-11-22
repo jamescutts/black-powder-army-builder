@@ -71,7 +71,7 @@ PORTRAITS.update({
     "foy": portrait("Maximilien Foy 1.jpg", "Maximilien Sébastien Foy", "unknown artist", focus="50% 20%"),
     "jerome": portrait("Jérôme Bonaparte (Kinson).jpg", "Jérôme Bonaparte, King of Westphalia", "after François Kinson", focus="50% 18%"),
     "bulow": portrait("Friedrich Wilhelm Freiherr von Bulow.jpg", "Friedrich Wilhelm Bülow von Dennewitz", "unknown artist", focus="50% 20%"),
-    "hirschfeld": portrait("Portret van Carl Friedrich von Hirschfeld, RP-P-1914-2337.jpg", "Karl Friedrich von Hirschfeld", "Friedrich Wilhelm Bollinger, after Georg Friedrich Adolph Schöner", "c. 1800–1825", "50% 25%"),
+    "hirschfeld": portrait("Karl Friedrich von Hirschfeld (Krethlow).jpg", "Karl Friedrich von Hirschfeld", "Johann Ferdinand Krethlow", focus="50% 22%", small=True),
     "kleist": portrait("Hermann Scherenberg-Friedrich Graf Kleist von Nollendorf.jpg", "Friedrich Kleist von Nollendorf", "Hermann Scherenberg", "1863", "50% 20%"),
     # British / King's German Legion
     "picton": portrait("Sir Thomas Picton by Sir Martin Archer Shee.jpg", "Sir Thomas Picton", "Martin Archer Shee", focus="50% 20%"),

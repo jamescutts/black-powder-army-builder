@@ -24,12 +24,11 @@
     "Prussian": {
       "commander": "Gen-Maj von Hirschfeld",
       "portrait": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg/250px-Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/1/15/Karl_Friedrich_von_Hirschfeld_%28Krethlow%29.jpg",
         "title": "Karl Friedrich von Hirschfeld",
-        "artist": "Friedrich Wilhelm Bollinger, after Georg Friedrich Adolph Schöner",
-        "page": "https://commons.wikimedia.org/wiki/File:Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
-        "focus": "50% 25%",
-        "date": "c. 1800–1825"
+        "artist": "Johann Ferdinand Krethlow",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Friedrich_von_Hirschfeld_%28Krethlow%29.jpg",
+        "focus": "50% 22%"
       }
     }
   },
@@ -455,12 +454,11 @@
         }
       ],
       "portrait": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg/250px-Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/1/15/Karl_Friedrich_von_Hirschfeld_%28Krethlow%29.jpg",
         "title": "Karl Friedrich von Hirschfeld",
-        "artist": "Friedrich Wilhelm Bollinger, after Georg Friedrich Adolph Schöner",
-        "page": "https://commons.wikimedia.org/wiki/File:Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
-        "focus": "50% 25%",
-        "date": "c. 1800–1825"
+        "artist": "Johann Ferdinand Krethlow",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Friedrich_von_Hirschfeld_%28Krethlow%29.jpg",
+        "focus": "50% 22%"
       }
     }
   ]
