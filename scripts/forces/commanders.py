@@ -71,6 +71,7 @@ PORTRAITS.update({
     "foy": portrait("Maximilien Foy 1.jpg", "Maximilien Sébastien Foy", "unknown artist", focus="50% 20%"),
     "jerome": portrait("Jérôme Bonaparte (Kinson).jpg", "Jérôme Bonaparte, King of Westphalia", "after François Kinson", focus="50% 18%"),
     "bulow": portrait("Friedrich Wilhelm Freiherr von Bulow.jpg", "Friedrich Wilhelm Bülow von Dennewitz", "unknown artist", focus="50% 20%"),
+    "hirschfeld": portrait("Portret van Carl Friedrich von Hirschfeld, RP-P-1914-2337.jpg", "Karl Friedrich von Hirschfeld", "Friedrich Wilhelm Bollinger, after Georg Friedrich Adolph Schöner", "c. 1800–1825", "50% 25%"),
     "kleist": portrait("Hermann Scherenberg-Friedrich Graf Kleist von Nollendorf.jpg", "Friedrich Kleist von Nollendorf", "Hermann Scherenberg", "1863", "50% 20%"),
     # British / King's German Legion
     "picton": portrait("Sir Thomas Picton by Sir Martin Archer Shee.jpg", "Sir Thomas Picton", "Martin Archer Shee", focus="50% 20%"),
@@ -160,6 +161,7 @@ COMMANDERS.update({
     "bautzen": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay"), "Prussian": ("General Blücher", "blucher")},
     "grossbeeren": {"Saxon": ("Général Reynier", "reynier"), "French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
     "wartenburg": {"French": ("Général Bertrand", "bertrand"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
+    "hagelberg": {"French": ("Gén. de Division Girard", "girard"), "Prussian": ("Gen-Maj von Hirschfeld", "hirschfeld")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
 })
 
@@ -606,7 +608,7 @@ FORCE_PORTRAITS.update({
     "lutzen-girard": "girard", "lutzen-marchand": "marchand", "lutzen-berg": "berg", "lutzen-eugen": "eugen_wurttemberg",
     "grossbeeren-lecoq": "lecoq", "grossbeeren-durutte": "durutte",
     "wartenburg-morand": "morand", "wartenburg-yorck": "yorck",
-    "hanau-old-guard": "friant",
+    "hanau-old-guard": "friant", "hagelberg-girard": "girard", "hagelberg-hirschfeld": "hirschfeld",
     "mockern-yorck": "yorck", "lutzen-yorck": "yorck", "bautzen-yorck": "yorck", "bautzen-kleist": "kleist",
     "mockern-bulow": "bulow", "grossbeeren-bulow": "bulow", "lutzen-blucher": "blucher", "bautzen-blucher": "blucher",
 })

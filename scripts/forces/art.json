@@ -300,6 +300,13 @@
       "artist": "Horace Vernet",
       "date": "1824",
       "page": "https://commons.wikimedia.org/wiki/File:Vernet-Battle_of_Hanau.jpg"
+    },
+    "hagelberg": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/e/e0/R%C3%B6chling%2CCarl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg",
+      "title": "The Landwehr's Attack at Hagelberg",
+      "artist": "Carl Röchling",
+      "date": "c. 1900",
+      "page": "https://commons.wikimedia.org/wiki/File:R%C3%B6chling,Carl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg"
     }
   },
   "campaigns": {

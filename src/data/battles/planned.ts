@@ -205,8 +205,6 @@ export const lowenberg = planned("lowenberg", "Löwenberg", "21 August 1813", L,
   "As the armistice ended Napoleon came at Blücher on the Bober with the Guard and three corps; Blücher, under orders to avoid a battle with the Emperor himself, fought and fell back.");
 export const goldberg = planned("goldberg", "Goldberg", "23 August 1813", L,
   "Macdonald's corps attacked Blücher's army around Goldberg, taking the Wolfsberg after a fight in which the Prussian infantry and Russian Jäger held on until ordered back.");
-export const hagelberg = planned("hagelberg", "Hagelberg", "27 August 1813", L,
-  "Hirschfeld's Prussians, most of them raw Kurmark Landwehr, attacked Girard's division as it marched from Magdeburg and broke it in a brutal fight round the village walls, much of it with musket butts.");
 export const plagwitz = planned("plagwitz", "Plagwitz", "29 August 1813", L,
   "After the Katzbach, Puthod's division, cut off on the flooded Bober with its back to the river, was surrounded by Langeron's Russians and destroyed, Puthod taken with his eagles.");
 export const altenburg = planned("altenburg", "Altenburg", "28 September 1813", L,
@@ -404,13 +402,6 @@ goldberg.art = {
   "title": "The Fight at Goldberg, 23 August 1813",
   "artist": "unknown artist",
   "page": "https://commons.wikimedia.org/wiki/File:Das_Gefecht_bei_Goldberg,_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg"
-};
-hagelberg.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/e/e0/R%C3%B6chling%2CCarl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg",
-  "title": "The Landwehr's Attack at Hagelberg",
-  "artist": "Carl Röchling",
-  "date": "c. 1900",
-  "page": "https://commons.wikimedia.org/wiki/File:R%C3%B6chling,Carl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg"
 };
 liebertwolkwitz.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Grenadiers_%C3%A0_cheval_fran%C3%A7ais_contre_cuirassiers_prussiens_au_combat_de_Liebertwolkwitz%2C_le_14_octobre_1813.jpg/960px-Grenadiers_%C3%A0_cheval_fran%C3%A7ais_contre_cuirassiers_prussiens_au_combat_de_Liebertwolkwitz%2C_le_14_octobre_1813.jpg",

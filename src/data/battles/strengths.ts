@@ -172,6 +172,10 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "17,000–30,000" },
     { label: "Bavarian, Austrian and Russian", men: "43,000" },
   ],
+  hagelberg: [
+    { label: "French", men: "8,900", guns: "23" },
+    { label: "Prussian", men: "11,310", guns: "11" },
+  ],
   wartenburg: [
     { label: "French", men: "13,000–15,000", guns: "24" },
     { label: "Prussian", men: "16,000", guns: "64" },

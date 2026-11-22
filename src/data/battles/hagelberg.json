@@ -1,0 +1,467 @@
+{
+  "id": "hagelberg",
+  "name": "Hagelberg",
+  "date": "27 August 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/e/e0/R%C3%B6chling%2CCarl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg",
+    "title": "The Landwehr's Attack at Hagelberg",
+    "artist": "Carl Röchling",
+    "date": "c. 1900",
+    "page": "https://commons.wikimedia.org/wiki/File:R%C3%B6chling,Carl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Gén. de Division Girard",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg/250px-Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "title": "Jean-Baptiste Girard",
+        "artist": "French School",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Maj von Hirschfeld",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg/250px-Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
+        "title": "Karl Friedrich von Hirschfeld",
+        "artist": "Friedrich Wilhelm Bollinger, after Georg Friedrich Adolph Schöner",
+        "page": "https://commons.wikimedia.org/wiki/File:Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
+        "focus": "50% 25%",
+        "date": "c. 1800–1825"
+      }
+    }
+  },
+  "summary": "While Oudinot fell back from Großbeeren, Girard marched out of Magdeburg with a column of depot battalions and German allies to join him. Hirschfeld, with a corps of Kurmark Landwehr only weeks old and a few regular battalions, caught him near Belzig and attacked round the village of Hagelberg in the rain. The Landwehr's muskets would not fire, and the fight at the village walls was settled with butts and bayonets; Girard's column broke, his cavalry fled, Chernyshev's Cossacks joined the pursuit, and little more than a third of it reached Magdeburg.",
+  "sources": [
+    {
+      "label": "Prussian Order of Battle for Hagelberg, 27 August 1813 (Nafziger Collection 813HHC)",
+      "url": "https://www.napoleon-series.org/nafzigger/813HHC.pdf"
+    },
+    {
+      "label": "French Forces, Battle of Hagelberg, 27 August 1813 (Nafziger Collection 813HID)",
+      "url": "https://www.napoleon-series.org/nafzigger/813HID.pdf"
+    },
+    {
+      "label": "Battle of Hagelberg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Hagelberg"
+    }
+  ],
+  "forces": [
+    {
+      "id": "hagelberg-girard",
+      "nationId": "france",
+      "name": "Girard's Division",
+      "formation": "Magdeburg Division (Lanusse), under Girard",
+      "side": "French",
+      "summary": "Girard's column out of Magdeburg, marching to join Oudinot's drive on Berlin: third battalions of French regiments, Westphalians, Saxon ducal troops and Croats. Caught round Hagelberg by Hirschfeld's Landwehr, it was broken in the village and among its walls and gardens, much of the fighting done with musket butts; Girard was wounded, and barely a third of his men got back to Magdeburg.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Hagelberg.",
+        "Lanusse commanded the Magdeburg Division under Girard, who led the whole column; Girard leads the force.",
+        "The third and sixth battalions of regiments serving elsewhere, sent out from their depots, are grouped as the brigades' regiments, as the list takes them. The Croatian battalion is shown as Line.",
+        "The 9th Westphalian and the Saxon ducal battalions are the list's Rheinbund infantry; two Rheinbund battalions in Baville's regiment, where the list takes one, show as a historical departure.",
+        "The 13th Hussars had three squadrons, about 500 men.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Girard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Sennegon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sennegon",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Light Battalions",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/24th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/26th Léger"
+                }
+              ]
+            },
+            {
+              "name": "Line Battalions",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/18th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/19th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/1st Croatian"
+                }
+              ]
+            },
+            {
+              "name": "9th Westphalian Line",
+              "units": [
+                {
+                  "unit": "fr-rheinbund-infantry",
+                  "name": "1/9th Westphalian Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Baville's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Baville",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "134th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/134th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/134th Line"
+                }
+              ]
+            },
+            {
+              "name": "Line Battalions",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/56th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/72nd Line"
+                }
+              ]
+            },
+            {
+              "name": "Saxon Ducal House (4th Rheinbund)",
+              "units": [
+                {
+                  "unit": "fr-rheinbund-infantry",
+                  "name": "1/Saxon Ducal House"
+                },
+                {
+                  "unit": "fr-rheinbund-infantry",
+                  "name": "2/Saxon Ducal House"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Attached Cavalry",
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "13th Hussars"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "1/9th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "16/9th Foot Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Two escadrons de marche",
+          "reason": "A squadron each of heavy and light cavalry drafts on their way to the army, too few for units of their own."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg/250px-Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "title": "Jean-Baptiste Girard",
+        "artist": "French School",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "hagelberg-hirschfeld",
+      "nationId": "prussians-1815",
+      "name": "Hirschfeld's Corps",
+      "formation": "Detached corps, Army of the North",
+      "side": "Prussian",
+      "summary": "Hirschfeld's column of Kurmark Landwehr, raw troops of a few weeks' service with only a stiffening of the 1st Reserve Regiment, which caught Girard round Hagelberg. Its battalions stormed the village, and when their wet muskets would not fire they fought it out at the walls with butts and bayonets; Chernyshev's Cossacks came up to complete the rout.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for Hagelberg.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "The Kurmark Landwehr had been raised that summer and were the list's Landwehr to the life, Unreliable rule and all.",
+        "Hirschfeld's brigades were wings and detachments of a few battalions each, not the list's brigades: Langen's three 1st Reserve battalions with no Landwehr, Marwitz's one Landwehr regiment and Boguslawski's two with no line regiment, Landwehr regiments of one or four battalions, and Reuss's battery with three battalions to support it all show as historical departures.",
+        "The 3rd Kurmark Landwehr Cavalry's fourth squadron rode with Reuss's detachment, as its attached Landwehr cavalry.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Maj von Hirschfeld",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Advance Guard (Langen)",
+          "commander": {
+            "name": "Maj von Langen",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "III/1st Reserve Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Right Wing (Puttlitz)",
+          "commander": {
+            "name": "Gen-Maj von Puttlitz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "IV/1st Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "6th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/6th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/6th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/6th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/6th Kurmark Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "7th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/7th Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Left Wing (Boguslawski)",
+          "commander": {
+            "name": "Col von Boguslawski",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/3rd Kurmark Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "4th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/4th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/4th Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Reserve (Marwitz)",
+          "commander": {
+            "name": "Lt-Col von der Marwitz",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/3rd Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/3rd Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/3rd Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Detachment (Reuss)",
+          "commander": {
+            "name": "Lt-Col von Reuss",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "3rd Kurmark Landwehr Cavalry (1 squadron)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #6"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Elbe Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Elbe Infantry"
+                }
+              ]
+            },
+            {
+              "name": "4th and 7th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/4th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/7th Kurmark Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Cavalry (Bismarck)",
+          "commander": {
+            "name": "Col von Bismarck",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "3rd Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "5th Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "6th Kurmark Landwehr Cavalry"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Russian Light Battery #26 (Chamborand)",
+          "reason": "A Russian battery of ten guns with Bismarck's cavalry, which a force from the Prussian list can't take."
+        },
+        {
+          "name": "Chernyshev's Cossacks",
+          "reason": "Five Cossack regiments that came up to join the pursuit; Russian, so not in a force from the Prussian list."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg/250px-Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
+        "title": "Karl Friedrich von Hirschfeld",
+        "artist": "Friedrich Wilhelm Bollinger, after Georg Friedrich Adolph Schöner",
+        "page": "https://commons.wikimedia.org/wiki/File:Portret_van_Carl_Friedrich_von_Hirschfeld%2C_RP-P-1914-2337.jpg",
+        "focus": "50% 25%",
+        "date": "c. 1800–1825"
+      }
+    }
+  ]
+}

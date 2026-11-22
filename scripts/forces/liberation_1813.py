@@ -1,5 +1,5 @@
 """
-Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,wartenburg,hanau}.json):
+Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,hagelberg,wartenburg,hanau}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
 are built from the 1815 Prussian list, one force a corps.
 
@@ -1154,6 +1154,70 @@ HANAU = battle(
     [], alliances=(("Bavarian", "Austrian", "Russian"),))
 
 
+# ================================================================ Hagelberg, 27 August 1813
+
+HG_PR = {"label": "Prussian Order of Battle for Hagelberg, 27 August 1813 (Nafziger Collection 813HHC)", "url": NAF + "813HHC.pdf"}
+HG_FR = {"label": "French Forces, Battle of Hagelberg, 27 August 1813 (Nafziger Collection 813HID)", "url": NAF + "813HID.pdf"}
+HG_NOTE = "After Nafziger's order of battle for Hagelberg."
+
+HG_GIRARD = force(
+    "hagelberg-girard", FR, "Girard's Division", "Magdeburg Division (Lanusse), under Girard", "French",
+    "Girard's column out of Magdeburg, marching to join Oudinot's drive on Berlin: third battalions of French regiments, Westphalians, Saxon ducal troops and Croats. Caught round Hagelberg by Hirschfeld's Landwehr, it was broken in the village and among its walls and gardens, much of the fighting done with musket butts; Girard was wounded, and barely a third of his men got back to Magdeburg.",
+    [bde("fr-infantry-brigade", "Sennegon's Brigade", "Gén. de Brigade Sennegon",
+         regiments=[provisional("Light Battalions", ["3/24th Léger", "3/26th Léger"], True),
+                    provisional("Line Battalions", ["3/18th Line", "3/19th Line", "2/1st Croatian"]),
+                    regt("9th Westphalian Line", [u("fr-rheinbund-infantry", "1/9th Westphalian Line")])]),
+     bde("fr-infantry-brigade", "Baville's Brigade", "Gén. de Brigade Baville",
+         regiments=[regt("134th Line", [u("fr-line-infantry", "3/134th Line"), u("fr-line-infantry", "6/134th Line")]),
+                    provisional("Line Battalions", ["3/56th Line", "3/72nd Line"]),
+                    regt("Saxon Ducal House (4th Rheinbund)", [u("fr-rheinbund-infantry", "1/Saxon Ducal House"), u("fr-rheinbund-infantry", "2/Saxon Ducal House")])]),
+     bde("fr-light-cavalry-brigade", "Attached Cavalry", "", units=[u("fr-hussar-regt", "13th Hussars")]),
+     foot("1/9th Foot Artillery", "16/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Girard")],
+    notes=[LIST_FR, HG_NOTE,
+           "Lanusse commanded the Magdeburg Division under Girard, who led the whole column; Girard leads the force.",
+           "The third and sixth battalions of regiments serving elsewhere, sent out from their depots, are grouped as the brigades' regiments, as the list takes them. The Croatian battalion is shown as Line.",
+           "The 9th Westphalian and the Saxon ducal battalions are the list's Rheinbund infantry; two Rheinbund battalions in Baville's regiment, where the list takes one, show as a historical departure.",
+           "The 13th Hussars had three squadrons, about 500 men.", TWO_BATTERIES])
+HG_GIRARD["missing"] = [{"name": "Two escadrons de marche", "reason": "A squadron each of heavy and light cavalry drafts on their way to the army, too few for units of their own."}]
+
+HG_HIRSCHFELD = force(
+    "hagelberg-hirschfeld", PR15, "Hirschfeld's Corps", "Detached corps, Army of the North", "Prussian",
+    "Hirschfeld's column of Kurmark Landwehr, raw troops of a few weeks' service with only a stiffening of the 1st Reserve Regiment, which caught Girard round Hagelberg. Its battalions stormed the village, and when their wet muskets would not fire they fought it out at the walls with butts and bayonets; Chernyshev's Cossacks came up to complete the rout.",
+    [pi("Advance Guard (Langen)", "Maj von Langen",
+        [("1st Reserve Infantry", [("M", "I/1st Reserve Infantry"), ("M", "II/1st Reserve Infantry"), ("M", "III/1st Reserve Infantry")])]),
+     pi("Right Wing (Puttlitz)", "Gen-Maj von Puttlitz",
+        [("1st Reserve Infantry", [("M", "IV/1st Reserve Infantry")]),
+         ("6th Kurmark Landwehr", [("L", "I/6th Kurmark Landwehr"), ("L", "II/6th Kurmark Landwehr"), ("L", "III/6th Kurmark Landwehr"), ("L", "IV/6th Kurmark Landwehr")]),
+         ("7th Kurmark Landwehr", [("L", "II/7th Kurmark Landwehr")])]),
+     pi("Left Wing (Boguslawski)", "Col von Boguslawski",
+        [("3rd Kurmark Landwehr", [("L", "II/3rd Kurmark Landwehr")]),
+         ("4th Kurmark Landwehr", [("L", "II/4th Kurmark Landwehr"), ("L", "III/4th Kurmark Landwehr")])]),
+     pi("Reserve (Marwitz)", "Lt-Col von der Marwitz",
+        [("3rd Kurmark Landwehr", [("L", "I/3rd Kurmark Landwehr"), ("L", "III/3rd Kurmark Landwehr"), ("L", "IV/3rd Kurmark Landwehr")])]),
+     pi("Detachment (Reuss)", "Lt-Col von Reuss",
+        [("Elbe Infantry", [("M", "I/Elbe Infantry")]),
+         ("4th and 7th Kurmark Landwehr", [("L", "I/4th Kurmark Landwehr"), ("L", "I/7th Kurmark Landwehr")])],
+        [u("pr15-mounted-landwehr-attached", "3rd Kurmark Landwehr Cavalry (1 squadron)"), u("pr15-foot-arty", "6-pdr Foot Battery #6")]),
+     pc("Cavalry (Bismarck)", "Col von Bismarck",
+        [u("pr15-mounted-landwehr", "3rd Kurmark Landwehr Cavalry"), u("pr15-mounted-landwehr", "5th Kurmark Landwehr Cavalry"),
+         u("pr15-mounted-landwehr", "6th Kurmark Landwehr Cavalry")], landwehr=True)],
+    command=[cmd("pr15-corps-cmd", "Gen-Maj von Hirschfeld")],
+    notes=[PR_LIST, HG_NOTE, PR_GROUPED, PR_SUB,
+           "The Kurmark Landwehr had been raised that summer and were the list's Landwehr to the life, Unreliable rule and all.",
+           "Hirschfeld's brigades were wings and detachments of a few battalions each, not the list's brigades: Langen's three 1st Reserve battalions with no Landwehr, Marwitz's one Landwehr regiment and Boguslawski's two with no line regiment, Landwehr regiments of one or four battalions, and Reuss's battery with three battalions to support it all show as historical departures.",
+           "The 3rd Kurmark Landwehr Cavalry's fourth squadron rode with Reuss's detachment, as its attached Landwehr cavalry."])
+HG_HIRSCHFELD["missing"] = [
+    {"name": "Russian Light Battery #26 (Chamborand)", "reason": "A Russian battery of ten guns with Bismarck's cavalry, which a force from the Prussian list can't take."},
+    {"name": "Chernyshev's Cossacks", "reason": "Five Cossack regiments that came up to join the pursuit; Russian, so not in a force from the Prussian list."}]
+
+HAGELBERG = battle(
+    "hagelberg", "Hagelberg", "27 August 1813",
+    "While Oudinot fell back from Großbeeren, Girard marched out of Magdeburg with a column of depot battalions and German allies to join him. Hirschfeld, with a corps of Kurmark Landwehr only weeks old and a few regular battalions, caught him near Belzig and attacked round the village of Hagelberg in the rain. The Landwehr's muskets would not fire, and the fight at the village walls was settled with butts and bayonets; Girard's column broke, his cavalry fled, Chernyshev's Cossacks joined the pursuit, and little more than a third of it reached Magdeburg.",
+    [HG_PR, HG_FR, {"label": "Battle of Hagelberg (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Hagelberg"}],
+    [HG_GIRARD, HG_HIRSCHFELD], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -1171,5 +1235,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, WARTENBURG, HANAU):
+    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, HAGELBERG, WARTENBURG, HANAU):
         write(b)
