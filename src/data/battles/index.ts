@@ -13,6 +13,7 @@ import klyastitsy from "./klyastitsy.json";
 import kobrin from "./kobrin.json";
 import ligny from "./ligny.json";
 import medinaDeRioseco from "./medina-de-rioseco.json";
+import maloyaroslavets from "./maloyaroslavets.json";
 import mesoten from "./mesoten.json";
 import mir from "./mir.json";
 import polotsk from "./polotsk.json";
@@ -26,6 +27,7 @@ import salamanca from "./salamanca.json";
 import sorauren from "./sorauren.json";
 import saltanovka from "./saltanovka.json";
 import talavera from "./talavera.json";
+import tarutino from "./tarutino.json";
 import valutino from "./valutino.json";
 import vimeiro from "./vimeiro.json";
 import vitoria from "./vitoria.json";
@@ -35,12 +37,10 @@ import {
   berezina,
   borodino,
   krasnoi,
-  maloyaroslavets,
   nivelle,
   ocana,
   smolensk,
   somosierra,
-  tarutino,
   toulouse,
   vyazma,
   almeida,
@@ -253,9 +253,9 @@ const allBattles: HistoricalBattle[] = [
   dahlenkirchen as HistoricalBattle,
   borodino,
   mesoten as HistoricalBattle,
-  tarutino,
+  tarutino as HistoricalBattle,
   polotsk2 as HistoricalBattle,
-  maloyaroslavets,
+  maloyaroslavets as HistoricalBattle,
   vyazma,
   krasnoi,
   berezina,

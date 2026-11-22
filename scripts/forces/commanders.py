@@ -133,6 +133,8 @@ COMMANDERS = {
     "polotsk": {"French": ("Marshal Oudinot", "oudinot"), "Bavarian": ("Gén. Gouvion Saint-Cyr", "saint_cyr"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
     "polotsk-2": {"French": ("Marshal Gouvion Saint-Cyr", "saint_cyr"), "Bavarian": ("Gen-Lt von Wrede", "wrede"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
     "valutino": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay")},
+    "tarutino": {"French": ("Marshal Murat", "murat"), "Russian": ("General Bennigsen", "bennigsen")},
+    "maloyaroslavets": {"French": ("Prince Eugène", "eugene"), "Russian": ("General Dokhturov", "dokhturov")},
     "gorodechno": {"Austrian": ("Prince Schwarzenberg", "schwarzenberg"), "Saxon": ("Général Reynier", "reynier"), "Russian": ("General Tormasov", "tormasov")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
@@ -269,6 +271,17 @@ FORCE_PORTRAITS: dict[str, str] = {
     "valutino-konovnitsyn": "konovnitsyn",
     "valutino-stroganov": "stroganov",
     "valutino-bakhmetev": "bakhmetev",
+    "tarutino-sebastiani": "murat",
+    "tarutino-16th": "zajaczek",
+    "tarutino-18th": "kniaziewicz",
+    "tarutino-claparede": "claparede",
+    "tarutino-orlov-denisov": "orlov_denisov",
+    "tarutino-eugen": "eugen_wurttemberg",
+    "maloyaroslavets-delzons": "delzons",
+    "maloyaroslavets-broussier": "broussier",
+    "maloyaroslavets-pino": "pino",
+    "maloyaroslavets-12th": "raevsky",
+    "maloyaroslavets-paskevich": "paskevich",
     "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
@@ -383,6 +396,19 @@ PORTRAITS.update({
     "corbineau": portrait("Lieutenant-général Corbineau.jpg", "Jean-Baptiste Corbineau", "unknown artist", "c. 1830"),
     "yashvil": portrait("Yashvil LM.jpg", "Prince Lev Yashvil", "George Dawe", focus="50% 18%"),
     "helfreich": portrait("Gelfrejh Bogdan Borisovich.jpg", "Bogdan von Helfreich", "George Dawe", focus="50% 18%"),
+})
+
+# Tarutino and Maloyaroslavets
+PORTRAITS.update({
+    "bennigsen": portrait("PPN663944481 Bildnis von Levin August Gottlieb Bennigsen (1822).jpg", "Count Levin von Bennigsen", "George Dawe", "1822", "50% 18%"),
+    "dokhturov": portrait("Dmitry Sergeyevich Dokhturov.jpg", "Dmitry Dokhturov", "George Dawe", "1819", "50% 18%"),
+    "eugene": portrait("Portrait of Prince Eugene de Beauharnais, Viceroy of Italy and Duke of Leuchtenberg.jpg", "Eugène de Beauharnais, Viceroy of Italy", "Andrea Appiani", "1810"),
+    "orlov_denisov": portrait("Orlov-Denisov.jpg", "Count Vasily Orlov-Denisov", "workshop of George Dawe", focus="50% 18%"),
+    "claparede": portrait("Villain -Michel Marie Claparède (1770-1842) - French General - Peer of France.jpg", "Michel Claparède", "François le Villain", "1835"),
+    "broussier": portrait("Général Broussier jean-baptiste.jpg", "Jean-Baptiste Broussier", "Bovinet"),
+    "pino": portrait("Domenico Pino.jpg", "Domenico Pino", "unknown artist"),
+    "kniaziewicz": portrait("Karol Otto Kniaziewicz 1.PNG", "Karol Kniaziewicz", "unknown artist"),
+    "zajaczek": portrait("Le général Zayonchek.png", "Józef Zajączek", "André Dutertre"),
 })
 
 # The army lists' other named commanders, for the roster's head

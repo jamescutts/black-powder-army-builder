@@ -211,6 +211,19 @@
       "title": "The Battle of Valutino",
       "artist": "Peter von Hess",
       "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Valutino.jpg"
+    },
+    "tarutino": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tarutino.jpg/960px-Tarutino.jpg",
+      "title": "The Battle of Tarutino",
+      "artist": "Peter von Hess",
+      "date": "1847",
+      "page": "https://commons.wikimedia.org/wiki/File:Tarutino.jpg"
+    },
+    "maloyaroslavets": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hess_maloyaroslavets.jpg/960px-Hess_maloyaroslavets.jpg",
+      "title": "The Battle of Maloyaroslavets",
+      "artist": "Peter von Hess",
+      "page": "https://commons.wikimedia.org/wiki/File:Hess_maloyaroslavets.jpg"
     }
   },
   "campaigns": {

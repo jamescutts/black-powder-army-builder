@@ -19,10 +19,6 @@ export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R
   "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
 export const borodino = planned("borodino", "Borodino", "7 September 1812", R,
   "Kutuzov's stand before Moscow: a day of assaults on the flèches and the Great Redoubt, the bloodiest single day of the wars, after which the Russians withdrew and Moscow fell.");
-export const tarutino = planned("tarutino", "Tarutino", "18 October 1812", R,
-  "Bennigsen surprised Murat's advance guard in its camp on the Chernishnya, the blow that helped decide Napoleon to leave Moscow.");
-export const maloyaroslavets = planned("maloyaroslavets", "Maloyaroslavets", "24 October 1812", R,
-  "Eugène's corps and Dokhturov's fought all day for the burning town, which changed hands again and again; Napoleon turned back onto the ruined Smolensk road.");
 export const vyazma = planned("vyazma", "Vyazma", "3 November 1812", R,
   "Miloradovich fell on the French rearguard of Davout, Eugène and Ney during the retreat, cutting at its columns before they got through.");
 export const krasnoi = planned("krasnoi", "Krasnoi", "15–18 November 1812", R,
@@ -44,19 +40,6 @@ borodino.art = {
   "artist": "Peter von Hess",
   "date": "1843",
   "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg"
-};
-tarutino.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Tarutino.jpg/960px-Tarutino.jpg",
-  "title": "The Battle of Tarutino",
-  "artist": "Peter von Hess",
-  "date": "1847",
-  "page": "https://commons.wikimedia.org/wiki/File:Tarutino.jpg"
-};
-maloyaroslavets.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hess_maloyaroslavets.jpg/960px-Hess_maloyaroslavets.jpg",
-  "title": "The Battle of Maloyaroslavets",
-  "artist": "Peter von Hess",
-  "page": "https://commons.wikimedia.org/wiki/File:Hess_maloyaroslavets.jpg"
 };
 vyazma.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Battle_vyazma.jpg/960px-Battle_vyazma.jpg",
