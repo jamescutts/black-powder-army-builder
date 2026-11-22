@@ -91,6 +91,30 @@
       "date": "1901",
       "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
       "focus": "50% 45%"
+    },
+    "mir": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg/960px-Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg",
+      "title": "The Polish cavalry against Bagration's rearguard at Mir",
+      "artist": "Henri Félix Emmanuel Philippoteaux",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg",
+      "focus": "50% 45%",
+      "date": "c. 1867"
+    },
+    "romanov": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Platov3.jpg/960px-Platov3.jpg",
+      "title": "Platov's Cossacks at Mir",
+      "artist": "Wiktor Mazurowski",
+      "page": "https://commons.wikimedia.org/wiki/File:Platov3.jpg",
+      "focus": "50% 45%",
+      "date": "1912"
+    },
+    "gorodechno": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Schlacht_bei_Podubnie.jpg/960px-Schlacht_bei_Podubnie.jpg",
+      "title": "The Battle of Podubno (Gorodechno)",
+      "artist": "Fritz Reiner",
+      "page": "https://commons.wikimedia.org/wiki/File:Schlacht_bei_Podubnie.jpg",
+      "focus": "50% 45%",
+      "date": "1813"
     }
   },
   "campaigns": {

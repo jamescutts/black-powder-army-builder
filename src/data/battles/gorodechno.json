@@ -1,0 +1,1395 @@
+{
+  "id": "gorodechno",
+  "name": "Gorodechno",
+  "date": "12 August 1812",
+  "campaign": "russia-1812",
+  "summary": "Reynier, reinforced by Schwarzenberg's Austrian corps, turned on Tormasov. While the Austrians held the Russians' front behind the marshes at Gorodechno, the Saxons marched round through the forest onto their left flank and rear. Tormasov swung his line round to face them and fought all afternoon, but at nightfall fell back, and the Third Army withdrew to the south.",
+  "sources": [
+    {
+      "label": "Battle of Gorodetchna, 12 August 1812 (Nafziger Collection 812HBJ)",
+      "url": "https://www.napoleon-series.org/nafzigger/812HBJ.pdf"
+    }
+  ],
+  "forces": [
+    {
+      "id": "gorodechno-trautenberg",
+      "nationId": "austria",
+      "name": "Trautenberg's Division",
+      "formation": "Austrian Auxiliary Corps (Schwarzenberg)",
+      "side": "Austrian",
+      "summary": "The corps' leading division, with Zechmeister's light troops and hussars out in front. It held the front facing the Russian position behind the marshes at Gorodechno while the Saxons worked round the flank.",
+      "notes": [
+        "After Nafziger, who marks only Bianchi's Simbschen and Alvinczy regiments as Hungarian, so Duka and Beaulieu are shown as German.",
+        "Each division had a battery of eight 6-pdrs, shown here as its brigade battery; with only four line battalions, where the list wants six for each, it shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML von Trautenberg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Zechmeister's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Zechmeister",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-jager",
+              "name": "5th Jäger Bn"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "I/St Georg Grenz"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Kienmayer Hussars"
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Plöcher's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Plöcher",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Duka Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Duka"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Duka"
+                }
+              ]
+            },
+            {
+              "name": "Beaulieu Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Beaulieu"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Beaulieu"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-bianchi",
+      "nationId": "austria",
+      "name": "Bianchi's Division",
+      "formation": "Austrian Auxiliary Corps (Schwarzenberg)",
+      "side": "Austrian",
+      "summary": "The corps' strongest division, with Liechtenstein's grenadiers. It was fed in on the left as Schwarzenberg and Reynier turned the Russian flank, and pressed Tormasov back off the heights at Podubno.",
+      "notes": [
+        "Bianchi is the book's named commander.",
+        "After Nafziger, who marks Simbschen and Alvinczy as Hungarian; a brigade of two Hungarian regiments, where the list wants no more Hungarian than German, shows as a historical departure.",
+        "The corps reserve's 12-pdr battery is shown with this division.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Feldmarschall-Leutnant Bianchi, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "at-cmd-bianchi"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Lilienberg's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Lilienberg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Simbschen Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Simbschen"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Simbschen"
+                }
+              ]
+            },
+            {
+              "name": "Alvinczy Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Alvinczy"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Alvinczy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Hessen-Homburg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince of Hessen-Homburg",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Hiller Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Hiller"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Hiller"
+                }
+              ]
+            },
+            {
+              "name": "Colloredo-Mansfeld Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Colloredo-Mansfeld"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Colloredo-Mansfeld"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Liechtenstein's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Alois Liechtenstein",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenadier",
+              "name": "Kirchenbetter Grenadiers"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Brzeczinski Grenadiers"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Davidovich Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Davidovich"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Davidovich"
+                }
+              ]
+            },
+            {
+              "name": "Esterházy Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Esterházy"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Esterházy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-reserve-artillery",
+          "name": "Corps Reserve",
+          "units": [
+            {
+              "unit": "at-position-battery",
+              "name": "12-pdr Position Battery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vinzenz_Ferrerius_von_Bianchi.jpg",
+        "title": "Friedrich von Bianchi",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Vinzenz_Ferrerius_von_Bianchi.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "gorodechno-siegenthal",
+      "nationId": "austria",
+      "name": "Siegenthal's Division",
+      "formation": "Austrian Auxiliary Corps (Schwarzenberg)",
+      "side": "Austrian",
+      "summary": "The corps' third division, with Mohr's light brigade. It followed the advance round the Russian left and joined the push that drove Tormasov off the field in the evening.",
+      "notes": [
+        "Mayer's brigade had three regiments, more than the list's brigade holds, so the single battalion of Czartoryski's is a brigade of its own here.",
+        "After Nafziger. The division's battery of eight 6-pdrs, with five line battalions where the list wants six, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML von Siegenthal",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Mayer's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Mayer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Sottulinski Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Sottulinski"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Sottulinski"
+                }
+              ]
+            },
+            {
+              "name": "Prince de Ligne Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Prince de Ligne"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Prince de Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Mayer's Brigade (Czartoryski)",
+          "commander": {
+            "name": "Gen-Maj von Mayer",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Czartoryski Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Czartoryski"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Mohr's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Mohr",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/Warasdiner-Kreuzer Grenz"
+            },
+            {
+              "unit": "at-jager",
+              "name": "7th Jäger Bn"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Hessen-Homburg Hussars"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-frimont",
+      "nationId": "austria",
+      "name": "Frimont's Cavalry",
+      "formation": "Austrian Auxiliary Corps (Schwarzenberg)",
+      "side": "Austrian",
+      "summary": "The corps' cavalry division, six regiments of light horse and dragoons, which covered the flank march round the marshes and harried the Russian withdrawal.",
+      "notes": [
+        "After Nafziger. Each of Frölich's and Wrede's brigades had three regiments, more than the list's light cavalry brigade holds, so the Kaiser Hussars and the Levenehr Dragoons are brigades of their own here.",
+        "Four cavalry brigades, where the list allows one of each kind, and no infantry, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Frimont",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Frölich's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Frölich",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-chevauleger",
+              "name": "Hohenzollern Chevaulegers"
+            },
+            {
+              "unit": "at-chevauleger",
+              "name": "O'Reilly Chevaulegers"
+            }
+          ]
+        },
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Frölich's Brigade (Kaiser Hussars)",
+          "commander": {
+            "name": "Gen-Maj von Frölich",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-hussar",
+              "name": "Kaiser Hussars"
+            }
+          ]
+        },
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Wrede's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Wrede",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-hussar",
+              "name": "Blankenstein Hussars"
+            },
+            {
+              "unit": "at-dragoon",
+              "name": "Riesch Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "at-heavy-cavalry-brigade",
+          "name": "Wrede's Brigade (Levenehr Dragoons)",
+          "commander": {
+            "name": "Gen-Maj von Wrede",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-dragoon",
+              "name": "Levenehr Dragoons"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-lecoq",
+      "nationId": "saxony",
+      "name": "Le Coq's Division",
+      "formation": "21st Division, VII Corps (Reynier)",
+      "side": "Saxon",
+      "summary": "Reynier's stronger division, with the corps' heavy guns. It led the march through the forest round the Russian left and, deployed across Tormasov's flank and rear, fought off the Russian counter-attacks through the afternoon.",
+      "notes": [
+        "Le Coq is the book's named commander.",
+        "After Nafziger. The division's horse battery, von Roth's, has no place in the list's infantry brigades, so it is left out; give it to Gablenz's cavalry with Funck's division if you like. The corps' 12-pdr battery von Brause is shown with Steindel.",
+        "Rouvroy's foot battery with Nostitz's four battalions, where the list wants six, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Generalleutnant Le Coq (Saxon Corps), with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "sax-cmd-lecoq"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sax-infantry-brigade",
+          "name": "Steindel's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Steindel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-grenadier",
+              "name": "Liebenau Grenadiers"
+            },
+            {
+              "unit": "sax-regimental-arty",
+              "name": "Prinz Friedrich Regimental Battery"
+            },
+            {
+              "unit": "sax-regimental-arty",
+              "name": "Prinz Clemens Regimental Battery"
+            },
+            {
+              "unit": "sax-heavy-arty",
+              "name": "12-pdr Foot Battery von Brause"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Prinz Friedrich August Infantry",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/Prinz Friedrich August"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/Prinz Friedrich August"
+                }
+              ]
+            },
+            {
+              "name": "Prinz Clemens Infantry",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/Prinz Clemens"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/Prinz Clemens"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sax-infantry-brigade",
+          "name": "Nostitz's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Nostitz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-regimental-arty",
+              "name": "Prinz Anton Regimental Battery"
+            },
+            {
+              "unit": "sax-foot-arty",
+              "name": "Foot Battery Rouvroy"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Prinz Anton Infantry",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/Prinz Anton"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/Prinz Anton"
+                }
+              ]
+            },
+            {
+              "name": "1st Light Infantry",
+              "units": [
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "I/1st Light Infantry"
+                },
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "II/1st Light Infantry"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-funck",
+      "nationId": "saxony",
+      "name": "Funck's Division and Gablenz's Cavalry",
+      "formation": "22nd Division and 23rd Light Cavalry Brigade, VII Corps (Reynier)",
+      "side": "Saxon",
+      "summary": "What was left of the 22nd Division after Klengel's brigade was lost at Kobrin: Sahr's grenadiers and light infantry, with the corps' light cavalry under Gablenz, which rode round the Russian flank with the Austrian horse.",
+      "notes": [
+        "After Nafziger. The Saxon Hussars had eight squadrons, so they are Large.",
+        "Klengel's brigade of this division had been taken at Kobrin a fortnight before.",
+        "Grenadiers and light infantry only, with no Saxon Infantry Brigade, and so a Cavalry Brigade with none to go with, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "sax-div-cmd",
+          "name": "Gen-Lt von Funck",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sax-grenadier-brigade",
+          "name": "Sahr's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Sahr",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-grenadier",
+              "name": "von Spiegel Grenadiers"
+            },
+            {
+              "unit": "sax-grenadier",
+              "name": "von Anger Grenadiers"
+            },
+            {
+              "unit": "sax-foot-arty",
+              "name": "Foot Battery Bonniot"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "2nd Light Infantry",
+              "units": [
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "I/2nd Light Infantry"
+                },
+                {
+                  "unit": "sax-light-infantry",
+                  "name": "II/2nd Light Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sax-cavalry-brigade",
+          "name": "Gablenz's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Gablenz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-hussar",
+              "name": "Saxon Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "sax-chevauleger",
+              "name": "Polenz Chevaulegers"
+            },
+            {
+              "unit": "sax-uhlan",
+              "name": "Prinz Clemens Uhlans"
+            },
+            {
+              "unit": "sax-horse-arty",
+              "name": "2nd Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-kamensky",
+      "nationId": "russia",
+      "name": "Kamensky's Corps",
+      "formation": "18th Division (Shcherbatov), Third Army of the West",
+      "side": "Russian",
+      "summary": "Tormasov's left, which found the Saxons coming out of the forest on its flank and rear. Kamensky turned to face them and held through the afternoon, his grenadiers and Jäger fighting off attack after attack until the army could fall back in the night.",
+      "notes": [
+        "After Nafziger. The Pavlograd Hussars had eight squadrons, so they are Large. Nafziger doesn't give every regiment's battalions; two field battalions each are shown, the usual for 1812.",
+        "The 11th Horse Battery with the corps' one hussar regiment, where the list wants four cavalry regiments for each, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 5 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen of Infantry Count Kamensky",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Bernados's Brigade",
+          "commander": {
+            "name": "Maj-Gen Bernados",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "18th Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tambov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Tambov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Tambov"
+                }
+              ]
+            },
+            {
+              "name": "Vladimir Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Vladimir"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Vladimir"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Khovansky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Prince Khovansky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "34th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Dnieper Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Dnieper"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Dnieper"
+                }
+              ]
+            },
+            {
+              "name": "Kostroma Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Kostroma"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Kostroma"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Meshcherinov's Brigade",
+          "commander": {
+            "name": "Col Meshcherinov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "35th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "28th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 28th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 28th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "32nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 32nd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 32nd Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-combined-grenadier-brigade",
+          "name": "Converged Grenadiers",
+          "units": [
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Converged Grenadiers, 9th Division"
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Converged Grenadiers, 15th Division"
+            },
+            {
+              "unit": "ru-inf-combined-grenadier",
+              "name": "Converged Grenadiers, 18th Division"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Pavlograd Hussars",
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Pavlograd Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "11th Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-nazimov",
+      "nationId": "russia",
+      "name": "Nazimov's Division",
+      "formation": "15th Division, Markov's Corps, Third Army of the West",
+      "side": "Russian",
+      "summary": "The 15th Division of Markov's corps, sent across to the threatened left as the Saxons came out on the flank, and part of the line that held there until dark.",
+      "notes": [
+        "After Nafziger. Nafziger doesn't give every regiment's battalions; two field battalions each are shown, the usual for 1812.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Nazimov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Oldekop's Brigade",
+          "commander": {
+            "name": "Maj-Gen Oldekop",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "15th Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kurin Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Kurin"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Kurin"
+                }
+              ]
+            },
+            {
+              "name": "Kolyvan Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Kolyvan"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Kolyvan"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Stepanov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Stepanov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "28th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kozlov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Kozlov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Kozlov"
+                }
+              ]
+            },
+            {
+              "name": "Vitebsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Vitebsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Vitebsk"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Vyazemsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Prince Vyazemsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "29th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "13th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 13th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 13th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "14th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 14th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 14th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-udom",
+      "nationId": "russia",
+      "name": "Udom's Division",
+      "formation": "9th Division, Markov's Corps, Third Army of the West",
+      "side": "Russian",
+      "summary": "The 9th Division, which held the front facing the Austrians across the marshes at Gorodechno before being drawn into the fight on the left.",
+      "notes": [
+        "After Nafziger. The Alexandria Hussars had eight squadrons, so they are Large. Nafziger doesn't give every regiment's battalions; two field battalions each are shown, the usual for 1812.",
+        "The 12th Horse Battery with the division's one hussar regiment, where the list wants four cavalry regiments for each, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Udom",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Reichel's Brigade",
+          "commander": {
+            "name": "Maj-Gen Reichel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "9th Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Ryazhsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Ryazhsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Ryazhsk"
+                }
+              ]
+            },
+            {
+              "name": "Apsheron Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Apsheron"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Apsheron"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Seliverstov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Seliverstov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "16th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Yakutsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Yakutsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Yakutsk"
+                }
+              ]
+            },
+            {
+              "name": "Nasheburg Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Nasheburg"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Nasheburg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "The Jäger",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "17th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "10th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 10th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 10th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "38th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 38th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 38th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Madatov's Hussars",
+          "commander": {
+            "name": "Col Madatov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Alexandria Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "12th Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gorodechno-lambert",
+      "nationId": "russia",
+      "name": "Lambert's Cavalry",
+      "formation": "Cavalry Corps, Third Army of the West",
+      "side": "Russian",
+      "summary": "Tormasov's cavalry: two divisions of dragoons with the Tatar Uhlans, and a host of Cossacks, Bashkirs, Kalmyks and Tatars. It met the Austro-Saxon horse working round the flank and covered the army's withdrawal.",
+      "notes": [
+        "After Nafziger: the 5th Cavalry Division's dragoon brigades and Knorring's Tatar Uhlans (eight squadrons, so Large), and Chaplits's 8th Division dragoons under Barkov.",
+        "Nafziger gives the nine irregular regiments only thirty squadrons between them, so each is Small; they are two brigades here, more than one of the list's brigades holds.",
+        "More cavalry brigades of each kind than the list allows, and no infantry, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Count Lambert",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Berdyaev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Berdyaev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Tver Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Starodub Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Khrushchov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Khrushchov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Zhitomir Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Arzamas Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Knorring's Brigade",
+          "commander": {
+            "name": "Maj-Gen Knorring",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-uhlan",
+              "name": "Tatar Uhlans",
+              "options": [
+                "large-cavalry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Barkov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Barkov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Taganrog Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Vladimir Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Serpukhov Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Don Cossacks",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Platov IV's Don Cossacks",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Barabanshchikov II's Don Cossacks",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Vlasov II's Don Cossacks",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Diachkin's Cossacks",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Bashkirs, Kalmyks and Tatars",
+          "units": [
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "2nd Bashkirs",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "1st Kalmyks",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "2nd Kalmyks",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "Feodosia Tatars",
+              "options": [
+                "small-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "Evpatoria Tatars",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Lambert_Karl_Osipovich.jpg/250px-Lambert_Karl_Osipovich.jpg",
+        "title": "Karl de Lambert",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Lambert_Karl_Osipovich.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "sides": {
+    "Austrian": {
+      "commander": "Prince Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    "Saxon": {
+      "commander": "Général Reynier",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png/250px-Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png",
+        "title": "Jean Reynier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png",
+        "focus": "50% 20%"
+      }
+    },
+    "Russian": {
+      "commander": "General Tormasov",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tormasov.jpg/250px-Tormasov.jpg",
+        "title": "Alexander Tormasov",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Tormasov.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Schlacht_bei_Podubnie.jpg/960px-Schlacht_bei_Podubnie.jpg",
+    "title": "The Battle of Podubno (Gorodechno)",
+    "artist": "Fritz Reiner",
+    "page": "https://commons.wikimedia.org/wiki/File:Schlacht_bei_Podubnie.jpg",
+    "focus": "50% 45%",
+    "date": "1813"
+  }
+}

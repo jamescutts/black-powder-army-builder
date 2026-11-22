@@ -4,10 +4,14 @@ import albuera from "./albuera.json";
 import corunna from "./corunna.json";
 import dahlenkirchen from "./dahlenkirchen.json";
 import eckau from "./eckau.json";
+import gorodechno from "./gorodechno.json";
+import kobrin from "./kobrin.json";
 import ligny from "./ligny.json";
 import mesoten from "./mesoten.json";
+import mir from "./mir.json";
 import quatreBras from "./quatre-bras.json";
 import rolica from "./rolica.json";
+import romanov from "./romanov.json";
 import salamanca from "./salamanca.json";
 import talavera from "./talavera.json";
 import vimeiro from "./vimeiro.json";
@@ -20,12 +24,10 @@ import {
   borodino,
   bussaco,
   fuentesDeOnoro,
-  gorodechno,
   klyastitsy,
   krasnoi,
   maloyaroslavets,
   medinaDeRioseco,
-  mir,
   nivelle,
   ocana,
   orthez,
@@ -114,12 +116,14 @@ const schedule: HistoricalBattle[] = [
   orthez,
   toulouse,
   // The Russian Campaign
-  mir,
+  mir as HistoricalBattle,
+  romanov as HistoricalBattle,
   eckau as HistoricalBattle,
   saltanovka,
   ostrovno,
+  kobrin as HistoricalBattle,
   klyastitsy,
-  gorodechno,
+  gorodechno as HistoricalBattle,
   smolensk,
   polotsk,
   valutino,

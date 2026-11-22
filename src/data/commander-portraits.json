@@ -1,10 +1,40 @@
 {
+  "anb-cmd-kempt": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sir_James_Kempt_by_William_Salter.jpg/250px-Sir_James_Kempt_by_William_Salter.jpg",
+    "title": "Sir James Kempt",
+    "artist": "William Salter",
+    "page": "https://commons.wikimedia.org/wiki/File:Sir_James_Kempt_by_William_Salter.jpg",
+    "focus": "50% 20%"
+  },
+  "anb-cmd-pack": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/9/99/Sir_Denis_Pack.jpg",
+    "title": "Sir Denis Pack",
+    "artist": "Saunders",
+    "page": "https://commons.wikimedia.org/wiki/File:Sir_Denis_Pack.jpg",
+    "focus": "50% 20%",
+    "date": "c. 1800"
+  },
   "anb-cmd-wellington": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
     "title": "Arthur Wellesley, Duke of Wellington",
     "artist": "Thomas Lawrence",
     "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
     "focus": "50% 18%"
+  },
+  "at-cmd-bianchi": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Vinzenz_Ferrerius_von_Bianchi.jpg",
+    "title": "Friedrich von Bianchi",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Vinzenz_Ferrerius_von_Bianchi.jpg",
+    "focus": "50% 20%"
+  },
+  "at-cmd-schwarzenberg": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+    "title": "Karl Philipp, Prince Schwarzenberg",
+    "artist": "Carl Hummel",
+    "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+    "focus": "50% 20%",
+    "date": "c. 1816"
   },
   "dbn-cmd-chasse": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/General_D_H_Chass%C3%A9.jpg/250px-General_D_H_Chass%C3%A9.jpg",
@@ -14,6 +44,21 @@
     "focus": "50% 20%",
     "date": "1832"
   },
+  "dbn-cmd-ghigny": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Charles_%C3%89tienne_de_Ghigny.jpg/250px-Charles_%C3%89tienne_de_Ghigny.jpg",
+    "title": "Charles-Étienne de Ghigny",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Charles_%C3%89tienne_de_Ghigny.jpg",
+    "focus": "50% 20%"
+  },
+  "dbn-cmd-orange": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Koning_Willem_II.jpg/250px-Koning_Willem_II.jpg",
+    "title": "William, Prince of Orange",
+    "artist": "Charles Pierre Verhulst",
+    "page": "https://commons.wikimedia.org/wiki/File:Koning_Willem_II.jpg",
+    "focus": "50% 20%",
+    "date": "1817"
+  },
   "fac-cmd-napoleon": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
     "title": "Napoleon at Fontainebleau",
@@ -22,11 +67,61 @@
     "focus": "50% 22%",
     "date": "1840"
   },
+  "fr-cmd-compans": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg",
+    "title": "Jean Dominique Compans",
+    "artist": "Forestier",
+    "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg",
+    "focus": "50% 20%",
+    "date": "1820"
+  },
+  "fr-cmd-davout": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Louis_nicolas_davout.jpg/250px-Louis_nicolas_davout.jpg",
+    "title": "Marshal Louis-Nicolas Davout",
+    "artist": "after Pierre-Claude Gautherot",
+    "page": "https://commons.wikimedia.org/wiki/File:Louis_nicolas_davout.jpg",
+    "focus": "50% 20%"
+  },
+  "fr-cmd-dessaix": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Le_g%C3%A9n%C3%A9ral_Joseph_Marie_Dessaix.jpg/250px-Le_g%C3%A9n%C3%A9ral_Joseph_Marie_Dessaix.jpg",
+    "title": "Joseph Marie Dessaix",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Joseph_Marie_Dessaix.jpg",
+    "focus": "50% 20%"
+  },
   "fr-cmd-friant": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
     "title": "Louis Friant",
     "artist": "Ambroise Tardieu",
     "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+    "focus": "50% 20%"
+  },
+  "fr-cmd-marchand": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+    "title": "Jean-Gabriel Marchand",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+    "focus": "50% 20%"
+  },
+  "fr-cmd-murat": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Murat_%28Gerard%29.jpg/250px-Murat_%28Gerard%29.jpg",
+    "title": "Marshal Joachim Murat",
+    "artist": "François Gérard",
+    "page": "https://commons.wikimedia.org/wiki/File:Murat_%28Gerard%29.jpg",
+    "focus": "50% 20%"
+  },
+  "fr-cmd-tharreau": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/G%C3%A9n%C3%A9ral_Jean_Victor_Tharreau.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Victor_Tharreau.jpg",
+    "title": "Jean-Victor Tharreau",
+    "artist": "Robert Lefèvre",
+    "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Victor_Tharreau.jpg",
+    "focus": "50% 20%"
+  },
+  "gdw-cmd-poniatowski": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Prince_J%C3%B3zef_Poniatowski.jpg/250px-Prince_J%C3%B3zef_Poniatowski.jpg",
+    "title": "Prince Józef Poniatowski",
+    "artist": "attributed to Jean-Urbain Guérin",
+    "page": "https://commons.wikimedia.org/wiki/File:Prince_J%C3%B3zef_Poniatowski.jpg",
     "focus": "50% 20%"
   },
   "pb-cmd-picton": {
@@ -50,11 +145,72 @@
     "page": "https://commons.wikimedia.org/wiki/File:Junot%2C_par_Appiani.png",
     "focus": "50% 22%"
   },
+  "pf-cmd-massena": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg/250px-Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+    "title": "Marshal André Masséna",
+    "artist": "Louis Hersent",
+    "page": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+    "focus": "50% 20%"
+  },
+  "pf-cmd-sebastiani": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/S%C3%A9bastiani%2C_Horace_-_4.jpg/250px-S%C3%A9bastiani%2C_Horace_-_4.jpg",
+    "title": "Horace Sébastiani",
+    "artist": "Jean-Baptiste Paulin Guérin",
+    "page": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastiani%2C_Horace_-_4.jpg",
+    "focus": "50% 20%"
+  },
   "pr06-cmd-blucher": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
     "title": "Gebhard Leberecht von Blücher",
     "artist": "after Ernst Gebauer",
     "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+    "focus": "50% 20%"
+  },
+  "pr06-cmd-brunswick": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Annetti_-_Charles_William_Ferdinand%2C_Duke_of_Brunswick.png/250px-Annetti_-_Charles_William_Ferdinand%2C_Duke_of_Brunswick.png",
+    "title": "Charles William Ferdinand, Duke of Brunswick",
+    "artist": "Annetti",
+    "page": "https://commons.wikimedia.org/wiki/File:Annetti_-_Charles_William_Ferdinand%2C_Duke_of_Brunswick.png",
+    "focus": "50% 20%",
+    "date": "c. 1790"
+  },
+  "pr06-cmd-hohenlohe": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Friedrich_Ludwig_zu_Hohenlohe-Ingelfingen.jpg/250px-Friedrich_Ludwig_zu_Hohenlohe-Ingelfingen.jpg",
+    "title": "Friedrich Ludwig, Prince of Hohenlohe-Ingelfingen",
+    "artist": "Wilhelm Arndt",
+    "page": "https://commons.wikimedia.org/wiki/File:Friedrich_Ludwig_zu_Hohenlohe-Ingelfingen.jpg",
+    "focus": "50% 20%",
+    "date": "c. 1795"
+  },
+  "pr06-cmd-kalckreuth": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Friedrich_Adolf_Graf_von_Kalckreuth.jpg/250px-Friedrich_Adolf_Graf_von_Kalckreuth.jpg",
+    "title": "Friedrich Adolf von Kalckreuth",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Friedrich_Adolf_Graf_von_Kalckreuth.jpg",
+    "focus": "50% 20%",
+    "date": "1809"
+  },
+  "pr06-cmd-louisferdinand": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Louis_Ferdinand_of_Prussia.jpg/250px-Louis_Ferdinand_of_Prussia.jpg",
+    "title": "Prince Louis Ferdinand of Prussia",
+    "artist": "Jean-Laurent Mosnier",
+    "page": "https://commons.wikimedia.org/wiki/File:Louis_Ferdinand_of_Prussia.jpg",
+    "focus": "50% 20%",
+    "date": "1799"
+  },
+  "pr06-cmd-ruchel": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Ernst_von_R%C3%BCchel.jpg/250px-Ernst_von_R%C3%BCchel.jpg",
+    "title": "Ernst von Rüchel",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Ernst_von_R%C3%BCchel.jpg",
+    "focus": "50% 20%",
+    "date": "c. 1802"
+  },
+  "pr06-cmd-tauentzien": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bogislav_von_Tauentzien.jpg/250px-Bogislav_von_Tauentzien.jpg",
+    "title": "Bogislav von Tauentzien",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Bogislav_von_Tauentzien.jpg",
     "focus": "50% 20%"
   },
   "pr15-cmd-blucher": {
@@ -71,11 +227,106 @@
     "page": "https://commons.wikimedia.org/wiki/File:Zieten-by-Kruger.jpg",
     "focus": "50% 18%"
   },
+  "ru-cmd-bagration": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/George_Dawe_-_Portrait_of_General_Pyotr_Bagration_%281765-1812%29_-_Google_Art_Project.jpg/250px-George_Dawe_-_Portrait_of_General_Pyotr_Bagration_%281765-1812%29_-_Google_Art_Project.jpg",
+    "title": "Prince Pyotr Bagration",
+    "artist": "George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:George_Dawe_-_Portrait_of_General_Pyotr_Bagration_%281765-1812%29_-_Google_Art_Project.jpg",
+    "focus": "50% 18%"
+  },
+  "ru-cmd-barclay": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg/250px-Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+    "title": "Michael Barclay de Tolly",
+    "artist": "George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+    "focus": "50% 16%",
+    "date": "1829"
+  },
+  "ru-cmd-bogdanovsky": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Bogdanovsky_Andrey_Vasilyevich.jpg/250px-Bogdanovsky_Andrey_Vasilyevich.jpg",
+    "title": "Andrei Bogdanovsky",
+    "artist": "workshop of George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Bogdanovsky_Andrey_Vasilyevich.jpg",
+    "focus": "50% 18%"
+  },
+  "ru-cmd-denisov": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Denisov_7_Vasily_Timofeevich.jpg/250px-Denisov_7_Vasily_Timofeevich.jpg",
+    "title": "Vasily Denisov",
+    "artist": "workshop of George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Denisov_7_Vasily_Timofeevich.jpg",
+    "focus": "50% 18%"
+  },
+  "ru-cmd-eugene-wurttemberg": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg/250px-Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+    "title": "Duke Eugen of Württemberg",
+    "artist": "Louis de Saint-Aubin",
+    "page": "https://commons.wikimedia.org/wiki/File:Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+    "focus": "50% 20%"
+  },
+  "ru-cmd-kutaisov": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Kutaisov.jpg/250px-Kutaisov.jpg",
+    "title": "Alexander Kutaisov",
+    "artist": "George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Kutaisov.jpg",
+    "focus": "50% 18%"
+  },
+  "ru-cmd-kutuzov": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Kutuzov2_by_Daw.jpg/250px-Kutuzov2_by_Daw.jpg",
+    "title": "Field Marshal Mikhail Kutuzov",
+    "artist": "George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Kutuzov2_by_Daw.jpg",
+    "focus": "50% 14%",
+    "date": "1829"
+  },
+  "ru-cmd-platov": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg/250px-Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg",
+    "title": "Matvei Platov",
+    "artist": "Thomas Phillips",
+    "page": "https://commons.wikimedia.org/wiki/File:Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg",
+    "focus": "50% 16%",
+    "date": "1814"
+  },
+  "ru-cmd-raevsky": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Rajevskij_N_N.jpg/250px-Rajevskij_N_N.jpg",
+    "title": "Nikolay Raevsky",
+    "artist": "George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Rajevskij_N_N.jpg",
+    "focus": "50% 18%"
+  },
+  "ru-cmd-stroganov": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Stroganov_P_A.jpg/250px-Stroganov_P_A.jpg",
+    "title": "Pavel Stroganov",
+    "artist": "George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Stroganov_P_A.jpg",
+    "focus": "50% 18%"
+  },
+  "ru-cmd-vorontsov": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dawe%2C_Mikhail_Vorontsov.jpg/250px-Dawe%2C_Mikhail_Vorontsov.jpg",
+    "title": "Mikhail Vorontsov",
+    "artist": "George Dawe",
+    "page": "https://commons.wikimedia.org/wiki/File:Dawe%2C_Mikhail_Vorontsov.jpg",
+    "focus": "50% 18%"
+  },
+  "sax-cmd-reynier": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png/250px-Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png",
+    "title": "Jean Reynier",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Jean-Louis-%C3%89b%C3%A9n%C3%A9zer_Reynier.png",
+    "focus": "50% 20%"
+  },
   "sax-cmd-thielmann": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Johann_Adolf_Freiherr_von_Thielmann.jpg/250px-Johann_Adolf_Freiherr_von_Thielmann.jpg",
     "title": "Johann von Thielmann",
     "artist": "Anton Graff",
     "page": "https://commons.wikimedia.org/wiki/File:Johann_Adolf_Freiherr_von_Thielmann.jpg",
     "focus": "50% 14%"
+  },
+  "wp-cmd-von-ochs": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Adam_ludwig_von_ochs.jpg/250px-Adam_ludwig_von_ochs.jpg",
+    "title": "Adam Ludwig von Ochs",
+    "artist": "unknown artist",
+    "page": "https://commons.wikimedia.org/wiki/File:Adam_ludwig_von_ochs.jpg",
+    "focus": "50% 20%",
+    "date": "1823"
   }
 }

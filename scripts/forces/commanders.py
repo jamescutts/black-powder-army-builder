@@ -118,6 +118,10 @@ COMMANDERS = {
     "eckau": {"Prussian": ("Gen-Lt von Grawert", "grawert"), "Russian": ("Maj-Gen Löwis of Menar", "lowis")},
     "mesoten": {"Prussian": ("Gen-Lt von Yorck", "yorck"), "Russian": ("Lt-Gen Count Steinheil", "steinheil")},
     "dahlenkirchen": {"Prussian": ("Gen-Lt von Yorck", "yorck"), "Russian": ("Lt-Gen von Essen", "essen")},
+    "mir": {"Polish": ("Gén. de Division Rożniecki", "rozniecki"), "Russian": ("General Platov", "platov")},
+    "romanov": {"Polish": ("Gén. de Division Latour-Maubourg", "latour_maubourg"), "Russian": ("General Platov", "platov")},
+    "kobrin": {"Saxon": ("Gen-Maj von Klengel", "klengel"), "Russian": ("General Tormasov", "tormasov")},
+    "gorodechno": {"Austrian": ("Prince Schwarzenberg", "schwarzenberg"), "Saxon": ("Général Reynier", "reynier"), "Russian": ("General Tormasov", "tormasov")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
     "albuera": {"Anglo-Portuguese": ("Marshal Beresford", "beresford"), "Spanish": ("Gen. Joaquín Blake", "blake"), "French": ("Marshal Soult", "soult")},
@@ -153,6 +157,8 @@ FORCE_PORTRAITS: dict[str, str] = {
     "wavre-prussian-iii-corps": "thielmann",
     # 1812
     "eckau-lowis": "lowis", "mesoten-prussian-corps": "yorck", "dahlenkirchen-lowis": "lowis",
+    "mir-rozniecki": "rozniecki", "mir-platov": "platov", "romanov-przebendowski": "latour_maubourg", "romanov-platov": "platov",
+    "kobrin-tormasov": "tormasov", "gorodechno-bianchi": "bianchi", "gorodechno-lambert": "lambert",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
     "waterloo-marcognet": "marcognet", "waterloo-durutte": "durutte", "waterloo-simmer": "simmer",
@@ -181,6 +187,54 @@ def apply(battle: dict) -> dict:
     return battle
 
 
+# 1812: Bagration's retreat and the southern flank
+PORTRAITS.update({
+    "platov": portrait("Thomas Phillips - Portrait of Matvei Platov - WGA17404.jpg", "Matvei Platov", "Thomas Phillips", "1814", "50% 16%"),
+    "rozniecki": portrait("Aleksander Rożniecki 1.PNG", "Aleksander Rożniecki", "unknown artist"),
+    "latour_maubourg": portrait("Général Marie Victor Nicolas de Fay de La Tour Maubourg.jpg", "Marie-Victor de Latour-Maubourg", "unknown artist", small=True),
+    "vasilchikov": portrait("Vasilchikov 2 Dmitry Vasilyevich.jpg", "Dmitry Vasilchikov", "workshop of George Dawe", focus="50% 18%"),
+    "kuteinikov": portrait("Kuteinikov D E.jpg", "Dmitry Kuteinikov", "George Dawe", focus="50% 18%"),
+    "tormasov": portrait("Tormasov.jpg", "Alexander Tormasov", "workshop of George Dawe", focus="50% 18%"),
+    "lambert": portrait("Lambert Karl Osipovich.jpg", "Karl de Lambert", "workshop of George Dawe", focus="50% 18%"),
+})
+
+# The army lists' other named commanders, for the roster's head
+PORTRAITS.update({
+    "massena": portrait("André Masséna (Hersent).jpg", "Marshal André Masséna", "Louis Hersent"),
+    "sebastiani": portrait("Sébastiani, Horace - 4.jpg", "Horace Sébastiani", "Jean-Baptiste Paulin Guérin"),
+    "kempt": portrait("Sir James Kempt by William Salter.jpg", "Sir James Kempt", "William Salter"),
+    "pack": portrait("Sir Denis Pack.jpg", "Sir Denis Pack", "Saunders", "c. 1800", small=True),
+    "orange": portrait("Koning Willem II.jpg", "William, Prince of Orange", "Charles Pierre Verhulst", "1817"),
+    "ghigny": portrait("Charles Étienne de Ghigny.jpg", "Charles-Étienne de Ghigny", "unknown artist"),
+    "schwarzenberg": portrait("Carl Hummel, Fürst Karl Philipp zu Schwarzenberg (um 1816).jpg", "Karl Philipp, Prince Schwarzenberg", "Carl Hummel", "c. 1816"),
+    "bianchi": portrait("Vinzenz Ferrerius von Bianchi.jpg", "Friedrich von Bianchi", "unknown artist", small=True),
+    "davout": portrait("Louis nicolas davout.jpg", "Marshal Louis-Nicolas Davout", "after Pierre-Claude Gautherot"),
+    "murat": portrait("Murat (Gerard).jpg", "Marshal Joachim Murat", "François Gérard"),
+    "compans": portrait("Général Jean Dominique Compans (2).jpg", "Jean Dominique Compans", "Forestier", "1820"),
+    "dessaix": portrait("Le général Joseph Marie Dessaix.jpg", "Joseph Marie Dessaix", "unknown artist"),
+    "tharreau": portrait("Général Jean Victor Tharreau.jpg", "Jean-Victor Tharreau", "Robert Lefèvre"),
+    "marchand": portrait("Général Jean Gabriel Marchand.jpg", "Jean-Gabriel Marchand", "unknown artist"),
+    "poniatowski": portrait("Prince Józef Poniatowski.jpg", "Prince Józef Poniatowski", "attributed to Jean-Urbain Guérin"),
+    "kutuzov": portrait("Kutuzov2 by Daw.jpg", "Field Marshal Mikhail Kutuzov", "George Dawe", "1829", "50% 14%"),
+    "barclay": portrait("Barclay de Tolly (Dawe) (cropped).jpg", "Michael Barclay de Tolly", "George Dawe", "1829", "50% 16%"),
+    "bagration": portrait("George Dawe - Portrait of General Pyotr Bagration (1765-1812) - Google Art Project.jpg", "Prince Pyotr Bagration", "George Dawe", focus="50% 18%"),
+    "raevsky": portrait("Rajevskij N N.jpg", "Nikolay Raevsky", "George Dawe", focus="50% 18%"),
+    "eugen_wurttemberg": portrait("Eugen von Württemberg (1788–1857) by Louis de Saint-Aubin - Hermitage.jpg", "Duke Eugen of Württemberg", "Louis de Saint-Aubin"),
+    "denisov": portrait("Denisov 7 Vasily Timofeevich.jpg", "Vasily Denisov", "workshop of George Dawe", focus="50% 18%"),
+    "vorontsov": portrait("Dawe, Mikhail Vorontsov.jpg", "Mikhail Vorontsov", "George Dawe", focus="50% 18%"),
+    "stroganov": portrait("Stroganov P A.jpg", "Pavel Stroganov", "George Dawe", focus="50% 18%"),
+    "kutaisov": portrait("Kutaisov.jpg", "Alexander Kutaisov", "George Dawe", focus="50% 18%"),
+    "bogdanovsky": portrait("Bogdanovsky Andrey Vasilyevich.jpg", "Andrei Bogdanovsky", "workshop of George Dawe", focus="50% 18%"),
+    "reynier": portrait("Jean-Louis-Ébénézer Reynier.png", "Jean Reynier", "unknown artist"),
+    "ochs": portrait("Adam ludwig von ochs.jpg", "Adam Ludwig von Ochs", "unknown artist", "1823"),
+    "brunswick_1806": portrait("Annetti - Charles William Ferdinand, Duke of Brunswick.png", "Charles William Ferdinand, Duke of Brunswick", "Annetti", "c. 1790"),
+    "hohenlohe": portrait("Friedrich Ludwig zu Hohenlohe-Ingelfingen.jpg", "Friedrich Ludwig, Prince of Hohenlohe-Ingelfingen", "Wilhelm Arndt", "c. 1795"),
+    "ruchel": portrait("Ernst von Rüchel.jpg", "Ernst von Rüchel", "unknown artist", "c. 1802"),
+    "kalckreuth": portrait("Friedrich Adolf Graf von Kalckreuth.jpg", "Friedrich Adolf von Kalckreuth", "unknown artist", "1809"),
+    "tauentzien": portrait("Bogislav von Tauentzien.jpg", "Bogislav von Tauentzien", "unknown artist"),
+    "louis_ferdinand": portrait("Louis Ferdinand of Prussia.jpg", "Prince Louis Ferdinand of Prussia", "Jean-Laurent Mosnier", "1799"),
+})
+
 # The army lists' named commanders, by unit id, with their portraits: shown in the roster beside the army's flag
 # when the army is led by one. Written to src/data/commander-portraits.json by running this file.
 NAMED_COMMANDERS = {
@@ -188,6 +242,16 @@ NAMED_COMMANDERS = {
     "pf-cmd-junot": "junot", "fac-cmd-napoleon": "napoleon", "dbn-cmd-chasse": "chasse",
     "pr15-cmd-blucher": "blucher", "pr06-cmd-blucher": "blucher", "pr15-cmd-zieten": "zieten",
     "sax-cmd-thielmann": "thielmann", "fr-cmd-friant": "friant",
+    "pf-cmd-massena": "massena", "pf-cmd-sebastiani": "sebastiani", "anb-cmd-kempt": "kempt", "anb-cmd-pack": "pack",
+    "dbn-cmd-orange": "orange", "dbn-cmd-ghigny": "ghigny", "at-cmd-schwarzenberg": "schwarzenberg", "at-cmd-bianchi": "bianchi",
+    "fr-cmd-davout": "davout", "fr-cmd-murat": "murat", "fr-cmd-compans": "compans", "fr-cmd-dessaix": "dessaix",
+    "fr-cmd-tharreau": "tharreau", "fr-cmd-marchand": "marchand", "gdw-cmd-poniatowski": "poniatowski",
+    "ru-cmd-platov": "platov", "ru-cmd-kutuzov": "kutuzov", "ru-cmd-barclay": "barclay", "ru-cmd-bagration": "bagration", "ru-cmd-raevsky": "raevsky",
+    "ru-cmd-eugene-wurttemberg": "eugen_wurttemberg", "ru-cmd-denisov": "denisov", "ru-cmd-vorontsov": "vorontsov",
+    "ru-cmd-stroganov": "stroganov", "ru-cmd-kutaisov": "kutaisov", "ru-cmd-bogdanovsky": "bogdanovsky",
+    "sax-cmd-reynier": "reynier", "wp-cmd-von-ochs": "ochs", "pr06-cmd-brunswick": "brunswick_1806",
+    "pr06-cmd-hohenlohe": "hohenlohe", "pr06-cmd-ruchel": "ruchel", "pr06-cmd-kalckreuth": "kalckreuth",
+    "pr06-cmd-tauentzien": "tauentzien", "pr06-cmd-louisferdinand": "louis_ferdinand",
 }
 
 

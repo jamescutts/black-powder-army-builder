@@ -1,0 +1,241 @@
+{
+  "id": "mir",
+  "name": "Mir",
+  "date": "9–10 July 1812",
+  "campaign": "russia-1812",
+  "summary": "The first cavalry fight of the invasion. Platov's Cossacks, covering Bagration's retreat, drew Rożniecki's Polish lancers into an ambush around the town of Mir: they let the leading brigade ride through a thin screen and fell on it from all sides, and next day, reinforced by regular cavalry, beat the rest of the division as it came up, driving it back with heavy loss.",
+  "sources": [
+    {
+      "label": "French and Russian Forces, Battle of Mir, 27–28 June 1812 (Nafziger Collection 812FAA)",
+      "url": "https://www.napoleon-series.org/nafzigger/812FAA.pdf"
+    },
+    {
+      "label": "Battle of Mir (1812) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mir_(1812)"
+    },
+    {
+      "label": "V. Kharkevich, Platov's actions in the rearguard of Bagration in 1812: the cavalry fights at Mir and Romanovo (1901)"
+    }
+  ],
+  "forces": [
+    {
+      "id": "mir-rozniecki",
+      "nationId": "france",
+      "name": "Rożniecki's Polish Lancers",
+      "formation": "4th Light Cavalry Division, IV Reserve Cavalry Corps (Latour-Maubourg)",
+      "side": "Polish",
+      "summary": "The lancers of the Grande Armée's right wing, riding ahead of Jérôme's army after Bagration. They came on brigade by brigade down the road to Mir, into an ambush: Turno's brigade was drawn in on the first day, and on the second the rest of the division was fed in piecemeal, surrounded by Cossacks and driven back, until Tyszkiewicz's brigade covered the retreat.",
+      "notes": [
+        "Rożniecki's division served in Latour-Maubourg's reserve cavalry corps of the Grande Armée, so it is built from the French list, whose light cavalry brigades take Polish Uhlans; the Grand Duchy of Warsaw's list allows only two regiments a brigade.",
+        "The two brigades of three regiments each, three squadrons apiece, about 4,000 men, follow Nafziger. Wikipedia adds the 12th Uhlans, the 4th Chasseurs and a horse battery, and Tyszkiewicz's brigade, which covered the retreat; add them if you like.",
+        "A cavalry force on its own has none of the list's Infantry Brigades, which shows as a historical departure. So do its two Light Cavalry Brigades without the two Infantry Brigades each needs.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Rożniecki",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Dziewanowski's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dziewanowski",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "2nd Uhlans"
+            },
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "7th Uhlans"
+            },
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "11th Uhlans"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Turno's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Turno",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "3rd Uhlans"
+            },
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "15th Uhlans"
+            },
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "16th Uhlans"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Aleksander_Ro%C5%BCniecki_1.PNG/250px-Aleksander_Ro%C5%BCniecki_1.PNG",
+        "title": "Aleksander Rożniecki",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Aleksander_Ro%C5%BCniecki_1.PNG",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "mir-platov",
+      "nationId": "russia",
+      "name": "Platov's Rearguard",
+      "formation": "Rearguard of the 2nd Army of the West (Bagration)",
+      "side": "Russian",
+      "summary": "Platov's Cossacks covered Bagration's retreat. He left a thin screen at Mir with ambushes on either side of the road, let the Polish lancers ride in, and fell on them from all sides; on the second day Vasilchikov's hussars and dragoons came up and the fighting ran on for six hours to Simiakovo before the Poles broke.",
+      "notes": [
+        "Platov is the book's named commander.",
+        "After Nafziger: Krasnov's and Kuteinikov's Cossacks, each with half the Ataman regiment (four sotnias, so Small), and the Akhtyrka Hussars and Kiev Dragoons with the 2nd Don Horse Battery from Raevsky's VII Corps. The Tatar and Kalmyk regiments are the list's Irregular Cossacks.",
+        "Wikipedia's figures (about 8,500 men, 3,500 on the first day) add the New Russia Dragoons, the Lithuanian Uhlans and the 5th Jäger, who came up on the second day; add them as reinforcements if you like.",
+        "Two Cossack Brigades, where the list allows one, and no Infantry Brigade, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named General of Cavalry Matvei Platov, with his own rating; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-cmd-platov"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Krasnov's Detachment",
+          "commander": {
+            "name": "Maj-Gen Krasnov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Sysoev's Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Ilovaisky's Cossacks"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "Stavropol Kalmyks"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "Perekop Tatars"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Ataman Cossacks",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Kuteinikov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Kuteinikov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "Simferopol Tatars"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Balabin's Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Grekov's Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Ataman Cossacks",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Vasilchikov's Cavalry",
+          "commander": {
+            "name": "Maj-Gen Vasilchikov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Akhtyrka Hussars"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Kiev Dragoons"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "2nd Don Horse Battery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg/250px-Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg",
+        "title": "Matvei Platov",
+        "artist": "Thomas Phillips",
+        "page": "https://commons.wikimedia.org/wiki/File:Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg",
+        "focus": "50% 16%",
+        "date": "1814"
+      }
+    }
+  ],
+  "sides": {
+    "Polish": {
+      "commander": "Gén. de Division Rożniecki",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Aleksander_Ro%C5%BCniecki_1.PNG/250px-Aleksander_Ro%C5%BCniecki_1.PNG",
+        "title": "Aleksander Rożniecki",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Aleksander_Ro%C5%BCniecki_1.PNG",
+        "focus": "50% 20%"
+      }
+    },
+    "Russian": {
+      "commander": "General Platov",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg/250px-Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg",
+        "title": "Matvei Platov",
+        "artist": "Thomas Phillips",
+        "page": "https://commons.wikimedia.org/wiki/File:Thomas_Phillips_-_Portrait_of_Matvei_Platov_-_WGA17404.jpg",
+        "focus": "50% 16%",
+        "date": "1814"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg/960px-Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg",
+    "title": "The Polish cavalry against Bagration's rearguard at Mir",
+    "artist": "Henri Félix Emmanuel Philippoteaux",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg",
+    "focus": "50% 45%",
+    "date": "c. 1867"
+  }
+}

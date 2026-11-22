@@ -15,16 +15,12 @@ const planned = (id: string, name: string, date: string, campaign: string, summa
 
 const R = "russia-1812";
 
-export const mir = planned("mir", "Mir", "9–10 July 1812", R,
-  "Platov's Cossacks drew the Polish lancers of the advancing Grande Armée into an ambush around the town of Mir, the first cavalry fight of the invasion.");
 export const saltanovka = planned("saltanovka", "Saltanovka", "23 July 1812", R,
   "Raevsky's corps tried to break through Davout's divisions south of Mogilev to open the way for Bagration's army, and was held.");
 export const ostrovno = planned("ostrovno", "Ostrovno", "25–27 July 1812", R,
   "Three days of rearguard fighting west of Vitebsk, as Ostermann-Tolstoy and Konovnitsyn held up Murat's cavalry and Eugène's corps.");
 export const klyastitsy = planned("klyastitsy", "Klyastitsy", "30 July – 1 August 1812", R,
   "Wittgenstein checked Oudinot's II Corps on the road to St Petersburg, though Kulnev, leading the pursuit, was killed.");
-export const gorodechno = planned("gorodechno", "Gorodechno", "12 August 1812", R,
-  "On the southern flank, Schwarzenberg's Austrians and Reynier's Saxons drove Tormasov's Third Army back.");
 export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R,
   "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
 export const polotsk = planned("polotsk", "First Polotsk", "17–18 August 1812", R,

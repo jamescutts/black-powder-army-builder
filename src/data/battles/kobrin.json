@@ -1,0 +1,241 @@
+{
+  "id": "kobrin",
+  "name": "Kobrin",
+  "date": "27 July 1812",
+  "campaign": "russia-1812",
+  "summary": "The first Russian victory of the war on the southern flank. Reynier's Saxon VII Corps was spread thin across Volhynia when Tormasov's Third Army came north. At Kobrin his columns closed on Klengel's brigade from three sides; the Saxons held the burning town all day, but with no relief coming Klengel surrendered with his whole brigade.",
+  "sources": [
+    {
+      "label": "Order of Battle for Kobrin, 27 July 1812 (Nafziger Collection 812GBG)",
+      "url": "https://www.napoleon-series.org/nafzigger/812GBG.pdf"
+    }
+  ],
+  "forces": [
+    {
+      "id": "kobrin-klengel",
+      "nationId": "saxony",
+      "name": "Klengel's Brigade",
+      "formation": "22nd Division (Funck), VII Corps (Reynier)",
+      "side": "Saxon",
+      "summary": "Left alone at Kobrin to watch the Mukhavets crossings while Reynier's corps was strung out to the west, the brigade found Russian columns closing on every road. It barricaded the town and fought all day from its houses and the old fort, until, with the town burning and its ammunition spent, Klengel surrendered with some 2,300 men.",
+      "notes": [
+        "After Nafziger: the König and Niesemeuschel regiments, two battalions each, with their two regimental batteries of four 4-pdrs, and three squadrons of the Prinz Clemens Uhlans (Small).",
+        "A Cavalry Brigade of a single regiment is within the list; the uhlans fought and surrendered alongside the infantry.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "sax-div-cmd",
+          "name": "Gen-Maj von Klengel",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "sax-infantry-brigade",
+          "name": "Klengel's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Klengel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "sax-regimental-arty",
+              "name": "König Regimental Battery"
+            },
+            {
+              "unit": "sax-regimental-arty",
+              "name": "Niesemeuschel Regimental Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "König Infantry",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/König"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/König"
+                }
+              ]
+            },
+            {
+              "name": "von Niesemeuschel Infantry",
+              "units": [
+                {
+                  "unit": "sax-musketeer",
+                  "name": "I/von Niesemeuschel"
+                },
+                {
+                  "unit": "sax-musketeer",
+                  "name": "II/von Niesemeuschel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sax-cavalry-brigade",
+          "name": "Prinz Clemens Uhlans",
+          "units": [
+            {
+              "unit": "sax-uhlan",
+              "name": "Prinz Clemens Uhlans",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "kobrin-tormasov",
+      "nationId": "russia",
+      "name": "Tormasov's Columns",
+      "formation": "Third Army of the West",
+      "side": "Russian",
+      "summary": "Tormasov, coming north from Volhynia, closed on Kobrin from three sides at once: Madatov's hussars from the north on the Pruzhany road, the Pavlograd Hussars and 13th Jäger from the west, and dragoons and two Jäger regiments from the south. They cut the Saxons off and pressed into the town street by street until it surrendered.",
+      "notes": [
+        "After Nafziger, who gives the troops by the road they came on: from the north the Alexandria Hussars (four squadrons, in two waves), the Starodub Dragoons and Tatar Uhlans; from the west the Pavlograd Hussars (eight squadrons, so Large) and the 13th Jäger; from the south the Starodub and Tver Dragoons and the 10th and 14th Jäger. A Cossack sotnia with Madatov is left out.",
+        "Single squadrons make the Tatar Uhlans and the Tver Dragoons (two squadrons) Small. Nafziger doesn't give every regiment's battalions; two field battalions each are shown, the usual for 1812.",
+        "Nafziger names no guns; Tormasov's batteries shelled the town, so add a Light Battery to the Jäger if you like.",
+        "No Infantry Brigade shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen of Cavalry Tormasov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-jager-brigade",
+          "name": "The Jäger",
+          "regiments": [
+            {
+              "name": "10th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 10th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 10th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "13th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 13th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 13th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "14th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 14th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 14th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Hussars and Uhlans",
+          "commander": {
+            "name": "Lt-Col Madatov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Alexandria Hussars"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Pavlograd Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-uhlan",
+              "name": "Tatar Uhlans",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "The Dragoons",
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Starodub Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Tver Dragoons",
+              "options": [
+                "small-cavalry"
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tormasov.jpg/250px-Tormasov.jpg",
+        "title": "Alexander Tormasov",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Tormasov.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "sides": {
+    "Saxon": {
+      "commander": "Gen-Maj von Klengel"
+    },
+    "Russian": {
+      "commander": "General Tormasov",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Tormasov.jpg/250px-Tormasov.jpg",
+        "title": "Alexander Tormasov",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Tormasov.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  }
+}
