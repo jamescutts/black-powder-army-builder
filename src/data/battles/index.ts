@@ -142,6 +142,13 @@ const allCampaigns: HistoricalCampaign[] = [
     id: "liberation-1813",
     name: "The War of Liberation",
     dates: "1813",
+    art: {
+      src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Declaration_of_victory_after_the_Battle_of_Leipzig%2C_1813_%28by_Johann_Peter_Krafft%29.jpg/960px-Declaration_of_victory_after_the_Battle_of_Leipzig%2C_1813_%28by_Johann_Peter_Krafft%29.jpg",
+      title: "The Declaration of Victory after the Battle of Leipzig",
+      artist: "Johann Peter Krafft",
+      date: "1839",
+      page: "https://commons.wikimedia.org/wiki/File:Declaration_of_victory_after_the_Battle_of_Leipzig,_1813_(by_Johann_Peter_Krafft).jpg",
+    },
     summary:
       "With the Grande Armée lost in Russia, Prussia rose and joined the Tsar. Napoleon came back into Saxony with a new army of conscripts and beat the allies at Lützen and Bautzen, then agreed an armistice that brought Austria and Sweden in against him. In the autumn his marshals were beaten in turn at Großbeeren, the Katzbach, Kulm and Dennewitz while he won at Dresden, until the allied armies closed on him at Leipzig; Bavaria changed sides, and he fought his way home through Hanau to the Rhine, leaving garrisons besieged behind him from Danzig to Hamburg.",
   },
@@ -149,6 +156,13 @@ const allCampaigns: HistoricalCampaign[] = [
     id: "france-1814",
     name: "The Campaign in France",
     dates: "January–March 1814",
+    art: {
+      src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Jean-Louis-Ernest_Meissonier-Campagne_de_France.jpg/960px-Jean-Louis-Ernest_Meissonier-Campagne_de_France.jpg",
+      title: "1814, Campagne de France",
+      artist: "Ernest Meissonier",
+      date: "1864",
+      page: "https://commons.wikimedia.org/wiki/File:Jean-Louis-Ernest_Meissonier-Campagne_de_France.jpg",
+    },
     summary:
       "The allies crossed the Rhine in the winter and marched on Paris in two armies, Blücher's along the Marne and Schwarzenberg's along the Seine. Beaten at La Rothière, Napoleon turned on them with a small army of veterans, conscripts and National Guards, and in the Six Days of February broke Blücher's corps one by one at Champaubert, Montmirail, Château-Thierry and Vauchamps, then threw Schwarzenberg back at Montereau. But Craonne, Laon and Arcis-sur-Aube wore him down, and when the allies marched past him on Paris the city fell, and he abdicated at Fontainebleau.",
   },

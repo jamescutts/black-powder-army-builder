@@ -308,3 +308,59 @@ export const limonest = planned("limonest", "Limonest", "20 March 1814", F,
   "Augereau's army, which had held the Rhône valley against the Austrians since January, was beaten before Lyon at Limonest by the Prince of Hesse-Homburg, and Lyon fell next day.");
 export const saintDizier = planned("saint-dizier", "Saint-Dizier", "26 March 1814", F,
   "Napoleon, striking at the allies' communications, turned on Winzingerode's cavalry screen at Saint-Dizier and routed it, then learned it had been sent to deceive him while the allied armies marched on Paris: his last victory.");
+
+// Paintings for 1813 and 1814
+lutzen.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Bataille_de_Lutzen%2C_2_mai_1813.jpg/960px-Bataille_de_Lutzen%2C_2_mai_1813.jpg",
+  "title": "The Battle of Lützen, 2 May 1813",
+  "artist": "Joseph Beaume",
+  "date": "1836–37",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Lutzen,_2_mai_1813.jpg"
+};
+bautzen.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/9/96/Battle_of_Bautzen_1813_by_Bellange.jpg",
+  "title": "The Battle of Bautzen",
+  "artist": "after Hippolyte Bellangé",
+  "date": "c. 1825–30",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Bautzen_1813_by_Bellange.jpg"
+};
+katzbach.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/KaempfferKatzbachschlacht.jpg/960px-KaempfferKatzbachschlacht.jpg",
+  "title": "The Battle of the Katzbach",
+  "artist": "Eduard Kaempffer",
+  "page": "https://commons.wikimedia.org/wiki/File:KaempfferKatzbachschlacht.jpg"
+};
+dresden.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Napoleon.Dresden.jpg/960px-Napoleon.Dresden.jpg",
+  "title": "The Battle of Dresden, 27 August 1813",
+  "artist": "Carle Vernet and Jacques-François Swebach",
+  "page": "https://commons.wikimedia.org/wiki/File:Napoleon.Dresden.jpg"
+};
+kulm.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Battle_of_Kulm_by_Kotsebu.jpg/960px-Battle_of_Kulm_by_Kotsebu.jpg",
+  "title": "The Battle of Kulm",
+  "artist": "Alexander von Kotzebue",
+  "date": "1843",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Kulm_by_Kotsebu.jpg"
+};
+dennewitz.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/The_Battle_of_Dennewitz%2C_September_6%2C_1813_%28Alexander_Wetterling%29_-_Nationalmuseum_-_21864.tif/lossy-page1-960px-The_Battle_of_Dennewitz%2C_September_6%2C_1813_%28Alexander_Wetterling%29_-_Nationalmuseum_-_21864.tif.jpg",
+  "title": "The Battle of Dennewitz",
+  "artist": "Alexander Wetterling",
+  "date": "1842",
+  "page": "https://commons.wikimedia.org/wiki/File:The_Battle_of_Dennewitz,_September_6,_1813_(Alexander_Wetterling)_-_Nationalmuseum_-_21864.tif"
+};
+leipzig.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Sauerweid_A.I._Battle_of_Leipzig%2C_from_2_to_7_october_1813.jpg/960px-Sauerweid_A.I._Battle_of_Leipzig%2C_from_2_to_7_october_1813.jpg",
+  "title": "The Battle of Leipzig",
+  "artist": "Alexander Sauerweid",
+  "date": "1844",
+  "page": "https://commons.wikimedia.org/wiki/File:Sauerweid_A.I._Battle_of_Leipzig,_from_2_to_7_october_1813.jpg"
+};
+hanau.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Vernet-Battle_of_Hanau.jpg/960px-Vernet-Battle_of_Hanau.jpg",
+  "title": "The Battle of Hanau",
+  "artist": "Horace Vernet",
+  "date": "1824",
+  "page": "https://commons.wikimedia.org/wiki/File:Vernet-Battle_of_Hanau.jpg"
+};
