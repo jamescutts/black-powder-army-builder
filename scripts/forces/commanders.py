@@ -135,6 +135,8 @@ COMMANDERS = {
     "valutino": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay")},
     "tarutino": {"French": ("Marshal Murat", "murat"), "Russian": ("General Bennigsen", "bennigsen")},
     "maloyaroslavets": {"French": ("Prince Eugène", "eugene"), "Russian": ("General Dokhturov", "dokhturov")},
+    "vyazma": {"French": ("Marshal Davout, with Eugène and Ney", "davout"), "Russian": ("General Miloradovich", "miloradovich")},
+    "krasnoi": {"French": ("Napoleon", "napoleon"), "Russian": ("Field Marshal Kutuzov", "kutuzov")},
     "gorodechno": {"Austrian": ("Prince Schwarzenberg", "schwarzenberg"), "Saxon": ("Général Reynier", "reynier"), "Russian": ("General Tormasov", "tormasov")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
@@ -282,6 +284,21 @@ FORCE_PORTRAITS: dict[str, str] = {
     "maloyaroslavets-pino": "pino",
     "maloyaroslavets-12th": "raevsky",
     "maloyaroslavets-paskevich": "paskevich",
+    "vyazma-compans": "compans",
+    "vyazma-dessaix": "dessaix",
+    "vyazma-broussier": "broussier",
+    "vyazma-pino": "pino",
+    "vyazma-16th": "zajaczek",
+    "vyazma-eugen": "eugen_wurttemberg",
+    "vyazma-paskevich": "paskevich",
+    "vyazma-platov": "platov",
+    "krasnoi-roguet": "roguet",
+    "krasnoi-compans": "compans",
+    "krasnoi-konovnitsyn": "konovnitsyn",
+    "krasnoi-stroganov": "stroganov",
+    "krasnoi-paskevich": "paskevich",
+    "krasnoi-kolubakin": "raevsky",
+    "krasnoi-eugen": "eugen_wurttemberg",
     "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
@@ -409,6 +426,12 @@ PORTRAITS.update({
     "pino": portrait("Domenico Pino.jpg", "Domenico Pino", "unknown artist"),
     "kniaziewicz": portrait("Karol Otto Kniaziewicz 1.PNG", "Karol Kniaziewicz", "unknown artist"),
     "zajaczek": portrait("Le général Zayonchek.png", "Józef Zajączek", "André Dutertre"),
+})
+
+# Vyazma and Krasnoi
+PORTRAITS.update({
+    "miloradovich": portrait("Mikhail Andreevitch Miloradovitch by George Dawe - Suvorov museum.jpg", "Count Mikhail Miloradovich", "George Dawe", focus="50% 18%"),
+    "roguet": portrait("François Roguet.jpg", "François Roguet", "unknown artist"),
 })
 
 # The army lists' other named commanders, for the roster's head

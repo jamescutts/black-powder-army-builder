@@ -10,6 +10,7 @@ import eckau from "./eckau.json";
 import fuentesDeOnoro from "./fuentes-de-onoro.json";
 import gorodechno from "./gorodechno.json";
 import klyastitsy from "./klyastitsy.json";
+import krasnoi from "./krasnoi.json";
 import kobrin from "./kobrin.json";
 import ligny from "./ligny.json";
 import medinaDeRioseco from "./medina-de-rioseco.json";
@@ -31,18 +32,17 @@ import tarutino from "./tarutino.json";
 import valutino from "./valutino.json";
 import vimeiro from "./vimeiro.json";
 import vitoria from "./vitoria.json";
+import vyazma from "./vyazma.json";
 import waterloo from "./waterloo.json";
 import wavre from "./wavre.json";
 import {
   berezina,
   borodino,
-  krasnoi,
   nivelle,
   ocana,
   smolensk,
   somosierra,
   toulouse,
-  vyazma,
   almeida,
   arcis,
   badajoz,
@@ -256,8 +256,8 @@ const allBattles: HistoricalBattle[] = [
   tarutino as HistoricalBattle,
   polotsk2 as HistoricalBattle,
   maloyaroslavets as HistoricalBattle,
-  vyazma,
-  krasnoi,
+  vyazma as HistoricalBattle,
+  krasnoi as HistoricalBattle,
   berezina,
   // The War of Liberation
   danzig,

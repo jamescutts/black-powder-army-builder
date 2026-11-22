@@ -224,6 +224,19 @@
       "title": "The Battle of Maloyaroslavets",
       "artist": "Peter von Hess",
       "page": "https://commons.wikimedia.org/wiki/File:Hess_maloyaroslavets.jpg"
+    },
+    "vyazma": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Battle_vyazma.jpg/960px-Battle_vyazma.jpg",
+      "title": "The Battle of Vyazma",
+      "artist": "Peter von Hess",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_vyazma.jpg"
+    },
+    "krasnoi": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Krasnoi.jpg/960px-Krasnoi.jpg",
+      "title": "The Battle of Krasnoi",
+      "artist": "Peter von Hess",
+      "date": "1849",
+      "page": "https://commons.wikimedia.org/wiki/File:Krasnoi.jpg"
     }
   },
   "campaigns": {

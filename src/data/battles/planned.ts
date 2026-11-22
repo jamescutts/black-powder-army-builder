@@ -19,10 +19,6 @@ export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R
   "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
 export const borodino = planned("borodino", "Borodino", "7 September 1812", R,
   "Kutuzov's stand before Moscow: a day of assaults on the flèches and the Great Redoubt, the bloodiest single day of the wars, after which the Russians withdrew and Moscow fell.");
-export const vyazma = planned("vyazma", "Vyazma", "3 November 1812", R,
-  "Miloradovich fell on the French rearguard of Davout, Eugène and Ney during the retreat, cutting at its columns before they got through.");
-export const krasnoi = planned("krasnoi", "Krasnoi", "15–18 November 1812", R,
-  "Kutuzov's army struck the retreating columns as they passed; the Young Guard fought to keep the road open, and Ney's cut-off rearguard escaped across the Dnieper.");
 export const berezina = planned("berezina", "Berezina", "26–29 November 1812", R,
   "Eblé's pontonniers bridged the river at Studienka while Oudinot and Victor held off the converging Russian armies on both banks, and the Grande Armée's remnant crossed.");
 
@@ -40,19 +36,6 @@ borodino.art = {
   "artist": "Peter von Hess",
   "date": "1843",
   "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg"
-};
-vyazma.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Battle_vyazma.jpg/960px-Battle_vyazma.jpg",
-  "title": "The Battle of Vyazma",
-  "artist": "Peter von Hess",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_vyazma.jpg"
-};
-krasnoi.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Krasnoi.jpg/960px-Krasnoi.jpg",
-  "title": "The Battle of Krasnoi",
-  "artist": "Peter von Hess",
-  "date": "1849",
-  "page": "https://commons.wikimedia.org/wiki/File:Krasnoi.jpg"
 };
 berezina.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Crossing_the_Berezina_River%2C_by_Peter_von_Hess.jpg/960px-Crossing_the_Berezina_River%2C_by_Peter_von_Hess.jpg",
