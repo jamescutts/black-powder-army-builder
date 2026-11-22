@@ -286,6 +286,13 @@
       "artist": "Peter von Hess",
       "date": "1844",
       "page": "https://commons.wikimedia.org/wiki/File:Crossing_the_Berezina_River%2C_by_Peter_von_Hess.jpg"
+    },
+    "wartenburg": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png/960px-Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
+      "title": "The Leib Regiment's Attack under Horn at Wartenburg",
+      "artist": "Richard Knötel",
+      "date": "1901",
+      "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3,_1813.png"
     }
   },
   "campaigns": {

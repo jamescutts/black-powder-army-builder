@@ -16,6 +16,7 @@ import krasnoi from "./krasnoi.json";
 import kobrin from "./kobrin.json";
 import bautzen from "./bautzen.json";
 import grossbeeren from "./grossbeeren.json";
+import wartenburg from "./wartenburg.json";
 import ligny from "./ligny.json";
 import lutzen from "./lutzen.json";
 import mockern from "./mockern.json";
@@ -69,7 +70,6 @@ import {
   paris,
   reims,
   vauchamps,
-  wartenburg,
   burgos,
   ciudadRodrigo,
   gerona,
@@ -422,7 +422,7 @@ const allBattles: HistoricalBattle[] = [
   dennewitz,
   gohrde,
   altenburg,
-  wartenburg,
+  wartenburg as HistoricalBattle,
   liebertwolkwitz,
   mockernLeipzig,
   leipzig,

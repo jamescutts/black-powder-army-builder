@@ -154,8 +154,6 @@ export const dennewitz = planned("dennewitz", "Dennewitz", "6 September 1813", L
   "Ney, sent in Oudinot's place to take Berlin, marched across the front of Bülow's and Tauentzien's Prussians, and his corps were drawn into the fight one at a time; when Oudinot's moved to the wrong flank the line broke, and the Saxons and Bavarians began to waver in their allegiance.");
 export const gohrde = planned("gohrde", "The Göhrde", "16 September 1813", L,
   "In the forests of the Göhrde, east of Lüneburg, Wallmoden's army of Russians, Hanoverians, the King's German Legion and Lützow's Free Corps surrounded and broke Pécheux's division of Davout's corps. Eleonore Prochaska, serving disguised as a man with Lützow's infantry, was mortally wounded there.");
-export const wartenburg = planned("wartenburg", "Wartenburg", "3 October 1813", L,
-  "Yorck's corps crossed the Elbe on pontoons in the river's bend at Wartenburg and assaulted Bertrand's corps, posted in the village behind dikes and marshes; Horn's brigade waded through the mud to take it, opening the way for Blücher's march to join the northern army before Leipzig.");
 export const leipzig = planned("leipzig", "Leipzig", "16–19 October 1813", L,
   "The Battle of the Nations: four allied armies closed on Napoleon round Leipzig, at Wachau, Möckern and Lindenau on the 16th, and on the 18th from every side, as the Saxons went over. In the retreat on the 19th the Elster bridge was blown too soon, Poniatowski drowned, and the rearguard was lost.");
 export const hanau = planned("hanau", "Hanau", "30–31 October 1813", L,
@@ -475,13 +473,6 @@ saintDizier.art = {
   "artist": "Édouard Detaille",
   "page": "https://commons.wikimedia.org/wiki/File:Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier,_1814.jpg",
   "focus": "50% 30%"
-};
-wartenburg.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png/960px-Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
-  "title": "The Leib Regiment's Attack under Horn at Wartenburg",
-  "artist": "Richard Knötel",
-  "date": "1901",
-  "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3,_1813.png"
 };
 haynau.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Combat_d%27Haynau%2C_26_mai_1813.jpg/960px-Combat_d%27Haynau%2C_26_mai_1813.jpg",

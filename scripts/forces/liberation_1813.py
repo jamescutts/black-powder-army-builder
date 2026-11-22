@@ -1,8 +1,8 @@
 """
-Writes the first forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren}.json):
+Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,wartenburg}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
-are still to come: each battle lists them as cards saying so (`toCome`), until a list fits them (the 1815
-Prussian list is the likeliest).
+are built from the 1815 Prussian list, one force a corps; the spring battles' Prussians are still to come, listed
+as cards saying so (`toCome`).
 
     python3 scripts/forces/liberation_1813.py && npm run check:forces
 
@@ -76,8 +76,10 @@ def to_come(name, formation, summary):
 
 
 def battle(id_, name, date, summary, sources, forces, prussians, alliances=(("Russian", "Prussian"),)):
-    return {"id": id_, "name": name, "date": date, "campaign": "liberation-1813", "summary": summary,
-            "sources": sources, "forces": forces, "toCome": prussians, "alliances": [list(a) for a in alliances]}
+    b = {"id": id_, "name": name, "date": date, "campaign": "liberation-1813", "summary": summary,
+         "sources": sources, "forces": forces, "toCome": prussians, "alliances": [list(a) for a in alliances]}
+    # A battle with nothing still to come, or no allies fighting apart, leaves those out
+    return {k: v for k, v in b.items() if v or k not in ("toCome", "alliances")}
 
 
 def write(b):
@@ -89,7 +91,7 @@ def write(b):
     order = ["id", "name", "date", "campaign", "art", "sides", "alliances", "summary", "sources", "forces", "toCome"]
     out = {k: b[k] for k in order if k in b}
     (OUT / f"{b['id']}.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
-    print(f"{b['name']}: {len(b['forces'])} forces, {len(b['toCome'])} to come")
+    print(f"{b['name']}: {len(b['forces'])} forces, {len(b.get('toCome', []))} to come")
 
 
 # ================================================================ Möckern, 5 April 1813
@@ -512,6 +514,145 @@ GROSSBEEREN = battle(
     alliances=(("Saxon", "French"),))
 
 
+# ================================================================ Wartenburg, 3 October 1813
+
+WB_FR = {"label": "French Forces, Battle of Wartenberg, 3 October 1813 (Nafziger Collection 813JJB, after Mirus)", "url": NAF + "813JJB.pdf"}
+WB_PR = {"label": "Prussian Forces, Battle of Wartenberg, 3 October 1813 (Nafziger Collection 813JJA, after Mirus)", "url": NAF + "813JJA.pdf"}
+WB_IV = {"label": "French IV Corps, 20 September 1813 (Nafziger Collection 813IZL)", "url": NAF + "813IZL.pdf"}
+WB_NOTE = "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before."
+WT, WP, PR15 = "wurttemberg", "westphalia", "prussians-1815"
+WEAK = ("Bertrand's corps was worn down by Dennewitz: a fortnight before, its battalions averaged about four hundred men, "
+        "and some Italian regiments were down to a few hundred. They are shown at full size; the list's Small upgrade would suit many of them.")
+
+WB_MORAND = force(
+    "wartenburg-morand", FR, "Morand's Division", "12th Division, IV Corps (Bertrand)", "French",
+    "Bertrand's French division, posted in Wartenburg village and along the dike in front of it, which made a ready-made breastwork. It threw back Steinmetz's brigade, attacking straight across the open marshland, again and again, and only gave the village up when Horn's brigade came in on its flank.",
+    [bde("fr-infantry-brigade", "Ligier-Belair's Brigade", "Gén. de Brigade Ligier-Belair", regiments=[light("8th Léger", 4)]),
+     bde("fr-infantry-brigade", "Toussaint's Brigade", "Gén. de Brigade Toussaint",
+         units=[u("fr-regimental-arty-section", "Artillery Company, 13th Line")], regiments=[line("13th Line", 4)]),
+     bde("fr-infantry-brigade", "Hulot's Brigade", "Gén. de Brigade Hulot",
+         units=[u("fr-regimental-arty-section", "Artillery Company, 23rd Line")],
+         regiments=[regt("23rd Line", [u("fr-line-infantry", f"{b}/23rd Line") for b in ("1", "2", "4")])]),
+     foot("1/2nd Foot Artillery", "3/2nd Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Morand")],
+    notes=[LIST_FR, WB_NOTE, WEAK,
+           "The 13th and 23rd Line still had their regimental artillery companies, each shown as a section of regimental guns.",
+           TWO_BATTERIES])
+
+WB_FONTANELLI = force(
+    "wartenburg-fontanelli", IT, "Fontanelli's Division", "15th Division, IV Corps (Bertrand)", "French",
+    "The Italians stood behind Morand round Wartenburg, and were coming up to support him when Horn's brigade, having waded through the backwaters and over the dikes, fell on them and turned the French line.",
+    [bde("it-infantry-brigade", "Martel's Brigade", "Gén. de Brigade Martel",
+         regiments=[regt("1st Italian Line", [u("it-line-infantry", "1st Italian Line")]),
+                    regt("4th Italian Line", [u("it-line-infantry", "4th Italian Line")])]),
+     bde("it-infantry-brigade", "Saint-Andrea's Brigade", "Gén. de Brigade Saint-Andrea",
+         regiments=[regt("1st Italian Light", [u("it-light-infantry", "1st Italian Light")]),
+                    regt("6th Italian Line", [u("it-line-infantry", "6th Italian Line")])]),
+     bde("it-infantry-brigade", "Moroni's Brigade", "Gén. de Brigade Moroni",
+         regiments=[regt("Milan Guard", [u("it-line-infantry", "Milan Guard Battalion")]),
+                    regt("7th Italian Line", [u("it-line-infantry", "7th Italian Line")])]),
+     bde("it-divisional-artillery", "Divisional Artillery",
+         units=[u("it-foot-arty", "1/1st Italian Foot Battery"), u("it-foot-arty", "13/1st Italian Foot Battery")])],
+    command=[cmd("it-div-cmd", "Gén. de Division Fontanelli")],
+    notes=["Built from A Clash of Eagles' Italian list, the nearest to 1813.", WB_NOTE,
+           "Each regiment was down to a single battalion, of a few hundred men; each is shown as one battalion.",
+           "The Milan Guard Battalion, a city guard and not the Royal Guard, is shown as Line.",
+           "The division's two foot batteries, where the list allows one, and only for an army of eight battalions or more, show as historical departures."])
+
+WB_FRANQUEMONT = force(
+    "wartenburg-franquemont", WT, "Franquemont's Division", "38th (Württemberg) Division, IV Corps (Bertrand)", "French",
+    "All that was left of the Württemberg contingent, four combined battalions, holding Bleddin on Bertrand's right. Prince Karl of Mecklenburg's brigade came up the Elbe against it in the late morning, and by two in the afternoon had driven it out of the village.",
+    [bde("wt-light-infantry-brigade", "Stockmayer's Brigade", "Gen-Maj von Stockmayer",
+         units=[u("wt-light-infantry", "Combined Light Battalion")],
+         regiments=[regt("1st Combined Line", [u("wt-line-infantry", "1st Combined Line Battalion")])]),
+     bde("wt-infantry-brigade", "Döring's Brigade", "Gen-Maj von Döring",
+         regiments=[regt("2nd Combined Line", [u("wt-line-infantry", "2nd Combined Line Battalion")]),
+                    regt("3rd Combined Line", [u("wt-line-infantry", "3rd Combined Line Battalion")])]),
+     bde("wt-divisional-artillery", "Divisional Artillery", units=[u("wt-light-arty", "1st Württemberg Foot Battery")])],
+    command=[cmd("wt-div-cmd", "Gen-Lt Graf Franquemont")],
+    notes=["Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1813.", WB_NOTE,
+           "After Dennewitz each pair of regiments was put together as one combined battalion: the light battalion from the 9th and 10th Light, and the line battalions from the 1st, 4th and 6th Line. Together they had under two thousand men.",
+           "The foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery; with four battalions, where the list wants seven for it, it shows as a historical departure."])
+
+WB_BEAUMONT = force(
+    "wartenburg-beaumont", WP, "Beaumont's Cavalry", "29th Light Cavalry Brigade, IV Corps (Bertrand)", "French",
+    "The corps' cavalry, two regiments of German light horse, on the right near Bleddin. It was swept aside by Mecklenburg's hussars as the Württembergers gave way.",
+    [bde("wp-cavalry-brigade", "Wolff's Brigade", "Gen-Maj Wolff",
+         units=[u("wp-guard-chevau-leger", "Westphalian Guard Chevau-légers"), u("wp-hussar", "Hessian Chevau-légers")])],
+    command=[cmd("wp-div-cmd", "Gén. de Division Beaumont")],
+    notes=["Built from A Clash of Eagles' Westphalian 1812 list, for its Guard Chevau-légers.", WB_NOTE,
+           "The Hessian Chevau-légers are shown as Westphalian Hussars, the list's other light cavalry.",
+           "A cavalry brigade on its own has no infantry brigade, which the list needs for it, so this shows as a historical departure. Play it alongside Franquemont's or Fontanelli's division."])
+
+
+def pr_regt(name, units):
+    return regt(name, [u(unit, n) for unit, n in units])
+
+
+M, F_, LW = "pr15-musketeer", "pr15-fusilier", "pr15-landwehr"
+WB_YORCK = force(
+    "wartenburg-yorck", PR15, "Yorck's Corps", "I Corps, Army of Silesia", "Prussian",
+    "Blücher's leading corps, which crossed the Elbe on two pontoon bridges in the river's bend and attacked Bertrand in his marshes at dawn. Steinmetz's brigade was shot down before the dike at Wartenburg; Prince Karl of Mecklenburg's went upstream and took Bleddin from the Württembergers; and Horn's, wading through the backwaters with the Leib Regiment at its head, came in on the French flank and decided the day. The corps lost some two thousand men, and Yorck took his title from the village.",
+    [bde("pr15-infantry-brigade", "Advance Guard Infantry (Hiller)", "Maj Hiller von Gärtringen",
+         units=[u("pr15-jager-coy", "East Prussian Jäger (2 companies)"), u("pr15-jager-coy", "Guard Jäger Company"),
+                u("pr15-mounted-landwehr-attached", "5th Silesian Landwehr Cavalry")],
+         regiments=[pr_regt("Grenadier Battalions", [(M, "Leib-Grenadier Battalion"), (M, "West Prussian Grenadier Battalion")]),
+                    pr_regt("Line and Reserve Battalions", [(M, "I/Brandenburg Infantry"), (M, "II/12th Reserve Infantry"), (F_, "F/2nd East Prussian Infantry")]),
+                    pr_regt("Silesian Landwehr", [(LW, "III/13th Silesian Landwehr"), (LW, "II/14th Silesian Landwehr"), (LW, "IV/15th Silesian Landwehr")])]),
+     bde("pr15-cavalry-brigade", "Advance Guard Cavalry (Katzler)", "Col von Katzler",
+         units=[u("pr15-hussar", "Brandenburg Hussars"), u("pr15-uhlan", "Brandenburg Uhlans"),
+                u("pr15-hussar", "East Prussian National Cavalry"), u("pr15-horse-arty", "Horse Battery #2")]),
+     bde("pr15-infantry-brigade", "1st Brigade (Steinmetz)", "Col von Steinmetz",
+         units=[u("pr15-foot-arty", "6-pdr Foot Battery #2")],
+         regiments=[pr_regt("East Prussian Grenadiers and 2nd East Prussian", [(M, "1st East Prussian Grenadier Battalion"), (M, "I/2nd East Prussian Infantry")]),
+                    pr_regt("5th and 6th Silesian Landwehr", [(LW, "I/6th Silesian Landwehr"), (LW, "I/5th Silesian Landwehr"), (LW, "III/5th Silesian Landwehr")]),
+                    pr_regt("13th Silesian Landwehr", [(LW, "I/13th Silesian Landwehr"), (LW, "II/13th Silesian Landwehr"), (LW, "IV/13th Silesian Landwehr")])]),
+     bde("pr15-infantry-brigade", "2nd Brigade (Mecklenburg)", "Gen-Maj Prince Karl of Mecklenburg",
+         units=[u("pr15-hussar-attached", "2nd Leib Hussars"), u("pr15-hussar-attached", "Mecklenburg-Strelitz Hussars"),
+                u("pr15-foot-arty", "6-pdr Foot Battery #1")],
+         regiments=[pr_regt("1st East Prussian Infantry", [(M, "I/1st East Prussian Infantry"), (M, "II/1st East Prussian Infantry"), (F_, "F/1st East Prussian Infantry")]),
+                    pr_regt("Silesian Grenadiers and 2nd East Prussian", [(M, "Silesian Grenadier Battalion"), (M, "II/2nd East Prussian Infantry")]),
+                    pr_regt("5th Silesian Landwehr", [(LW, "IV/5th Silesian Landwehr")])]),
+     bde("pr15-infantry-brigade", "7th Brigade (Horn)", "Gen-Maj von Horn",
+         units=[u("pr15-foot-arty", "½ 6-pdr Foot Battery #3", options=["half-battery"])],
+         regiments=[pr_regt("Leib Infantry", [(M, "I/Leib Infantry"), (M, "II/Leib Infantry"), (F_, "F/Leib Infantry")]),
+                    pr_regt("Thuringian Battalion", [(M, "Thuringian Battalion")]),
+                    pr_regt("15th Silesian Landwehr", [(LW, "I/15th Silesian Landwehr"), (LW, "II/15th Silesian Landwehr")]),
+                    pr_regt("4th Silesian Landwehr", [(LW, "III/4th Silesian Landwehr"), (LW, "Combined II & IV/Silesian Landwehr")])]),
+     bde("pr15-infantry-brigade", "8th Brigade (Hünerbein)", "Gen-Maj von Hünerbein",
+         units=[u("pr15-foot-arty", "6-pdr Foot Battery #15")],
+         regiments=[pr_regt("Brandenburg Infantry", [(M, "II/Brandenburg Infantry"), (F_, "F/Brandenburg Infantry")]),
+                    pr_regt("12th Reserve Infantry", [(M, "I/12th Reserve Infantry"), (F_, "F/12th Reserve Infantry")]),
+                    pr_regt("14th Silesian Landwehr", [(LW, "IV/14th Silesian Landwehr")])]),
+     bde("pr15-cavalry-brigade", "Reserve Cavalry (Jürgass)", "Col von Wahlen-Jürgass",
+         units=[u("pr15-dragoon", "Lithuanian Dragoons"), u("pr15-dragoon", "West Prussian Dragoons"), u("pr15-horse-arty", "Horse Battery #1")]),
+     bde("pr15-landwehr-cavalry-brigade", "Reserve Cavalry (Jürgass, Landwehr)", "Col von Wahlen-Jürgass",
+         units=[u("pr15-mounted-landwehr", "10th Silesian Landwehr Cavalry"), u("pr15-mounted-landwehr", "1st Neumark Landwehr Cavalry"),
+                u("pr15-horse-arty", "Horse Battery #3")]),
+     bde("pr15-army-reserve-artillery", "Corps Artillery",
+         units=[u("pr15-foot-arty", "½ 6-pdr Foot Battery #3 (with Mecklenburg)", options=["half-battery"])])],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Yorck")],
+    notes=["Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+           WB_NOTE.replace(", from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before", ", from Mirus's history of the fight"),
+           "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+           "Reserve regiments' battalions and the grenadier battalions are the list's Musketeers; the grenadiers would suit its Veteran upgrade. Battalions of different regiments that served together are grouped as a regiment, as the list takes them.",
+           "Nafziger's corps return of the same day has Hünerbein's Landwehr and half his battery detached to Halle; his Wartenburg order of battle, followed here, has the IV/14th Landwehr and the whole of Battery #15 with the brigade.",
+           "The East Prussian National Cavalry, a volunteer regiment, is shown as Hussars. The 5th Silesian Landwehr Cavalry is the advance guard infantry's attached Landwehr cavalry.",
+           "Mecklenburg's two hussar regiments are shown as attached small hussars; two of them, where the list allows one in the army, show as a historical departure. Battery #3 was split between Mecklenburg and Horn, so each has half of it, Mecklenburg's from the corps artillery.",
+           "One-battalion Landwehr regiments in Mecklenburg's and Hünerbein's brigades, Horn's four regiments, and Jürgass's line and Landwehr cavalry brigades together show as historical departures."])
+
+WB_FRANQUEMONT["missing"] = [{"name": "Jett's 24th Light Cavalry Brigade",
+                              "reason": "A squadron each of the 1st and 3rd Württemberg Chevau-légers, about a hundred men in all, too few for a unit."}]
+WB_YORCK["missing"] = [{"name": "III/2nd Leib Hussars", "reason": "One squadron with Katzler's advance guard, too small for a unit of its own; the rest of the regiment is with Mecklenburg."},
+                       {"name": "II/5th Silesian Landwehr", "reason": "Detached to Halle, and not at Wartenburg."}]
+
+WARTENBURG = battle(
+    "wartenburg", "Wartenburg", "3 October 1813",
+    "Blücher, marching north to join Bernadotte before Leipzig, threw two pontoon bridges over the Elbe where the river bends round Wartenburg. Bertrand's corps held the far bank, Morand's French in the village behind a long dike, with marsh and backwaters in front. Yorck's corps crossed at dawn. Steinmetz's brigade attacked the dike head-on and was shot down; Mecklenburg's went upstream and drove the Württembergers out of Bleddin; and Horn's, wading through the mud, came in on the flank. Bertrand fell back on Kemberg, and the Army of Silesia was over the Elbe.",
+    [WB_FR, WB_PR, WB_IV, {"label": "Battle of Wartenburg (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Wartenburg"}],
+    [WB_MORAND, WB_FONTANELLI, WB_FRANQUEMONT, WB_BEAUMONT, WB_YORCK], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -529,5 +670,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN):
+    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, WARTENBURG):
         write(b)

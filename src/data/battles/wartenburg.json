@@ -1,0 +1,903 @@
+{
+  "id": "wartenburg",
+  "name": "Wartenburg",
+  "date": "3 October 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png/960px-Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3%2C_1813.png",
+    "title": "The Leib Regiment's Attack under Horn at Wartenburg",
+    "artist": "Richard Knötel",
+    "date": "1901",
+    "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3,_1813.png"
+  },
+  "sides": {
+    "French": {
+      "commander": "Général Bertrand"
+    },
+    "Prussian": {
+      "commander": "Gen-Lt von Yorck",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    }
+  },
+  "summary": "Blücher, marching north to join Bernadotte before Leipzig, threw two pontoon bridges over the Elbe where the river bends round Wartenburg. Bertrand's corps held the far bank, Morand's French in the village behind a long dike, with marsh and backwaters in front. Yorck's corps crossed at dawn. Steinmetz's brigade attacked the dike head-on and was shot down; Mecklenburg's went upstream and drove the Württembergers out of Bleddin; and Horn's, wading through the mud, came in on the flank. Bertrand fell back on Kemberg, and the Army of Silesia was over the Elbe.",
+  "sources": [
+    {
+      "label": "French Forces, Battle of Wartenberg, 3 October 1813 (Nafziger Collection 813JJB, after Mirus)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JJB.pdf"
+    },
+    {
+      "label": "Prussian Forces, Battle of Wartenberg, 3 October 1813 (Nafziger Collection 813JJA, after Mirus)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JJA.pdf"
+    },
+    {
+      "label": "French IV Corps, 20 September 1813 (Nafziger Collection 813IZL)",
+      "url": "https://www.napoleon-series.org/nafzigger/813IZL.pdf"
+    },
+    {
+      "label": "Battle of Wartenburg (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Wartenburg"
+    }
+  ],
+  "forces": [
+    {
+      "id": "wartenburg-morand",
+      "nationId": "france",
+      "name": "Morand's Division",
+      "formation": "12th Division, IV Corps (Bertrand)",
+      "side": "French",
+      "summary": "Bertrand's French division, posted in Wartenburg village and along the dike in front of it, which made a ready-made breastwork. It threw back Steinmetz's brigade, attacking straight across the open marshland, again and again, and only gave the village up when Horn's brigade came in on its flank.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before.",
+        "Bertrand's corps was worn down by Dennewitz: a fortnight before, its battalions averaged about four hundred men, and some Italian regiments were down to a few hundred. They are shown at full size; the list's Small upgrade would suit many of them.",
+        "The 13th and 23rd Line still had their regimental artillery companies, each shown as a section of regimental guns.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Morand",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Ligier-Belair's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ligier-Belair",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "8th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/8th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "II/8th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "III/8th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "IV/8th Léger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Toussaint's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Toussaint",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "Artillery Company, 13th Line"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "13th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/13th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/13th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/13th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/13th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Hulot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Hulot",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "Artillery Company, 23rd Line"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "23rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/23rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/23rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/23rd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "1/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "3/2nd Foot Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Portrait_%C3%A9questre_du_g%C3%A9n%C3%A9ral_Morand.jpg/250px-Portrait_%C3%A9questre_du_g%C3%A9n%C3%A9ral_Morand.jpg",
+        "title": "Charles-Antoine Morand",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_%C3%A9questre_du_g%C3%A9n%C3%A9ral_Morand.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "wartenburg-fontanelli",
+      "nationId": "italy",
+      "name": "Fontanelli's Division",
+      "formation": "15th Division, IV Corps (Bertrand)",
+      "side": "French",
+      "summary": "The Italians stood behind Morand round Wartenburg, and were coming up to support him when Horn's brigade, having waded through the backwaters and over the dikes, fell on them and turned the French line.",
+      "notes": [
+        "Built from A Clash of Eagles' Italian list, the nearest to 1813.",
+        "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before.",
+        "Each regiment was down to a single battalion, of a few hundred men; each is shown as one battalion.",
+        "The Milan Guard Battalion, a city guard and not the Royal Guard, is shown as Line.",
+        "The division's two foot batteries, where the list allows one, and only for an army of eight battalions or more, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "it-div-cmd",
+          "name": "Gén. de Division Fontanelli",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "it-infantry-brigade",
+          "name": "Martel's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Martel",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Italian Line",
+              "units": [
+                {
+                  "unit": "it-line-infantry",
+                  "name": "1st Italian Line"
+                }
+              ]
+            },
+            {
+              "name": "4th Italian Line",
+              "units": [
+                {
+                  "unit": "it-line-infantry",
+                  "name": "4th Italian Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "it-infantry-brigade",
+          "name": "Saint-Andrea's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Saint-Andrea",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Italian Light",
+              "units": [
+                {
+                  "unit": "it-light-infantry",
+                  "name": "1st Italian Light"
+                }
+              ]
+            },
+            {
+              "name": "6th Italian Line",
+              "units": [
+                {
+                  "unit": "it-line-infantry",
+                  "name": "6th Italian Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "it-infantry-brigade",
+          "name": "Moroni's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Moroni",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Milan Guard",
+              "units": [
+                {
+                  "unit": "it-line-infantry",
+                  "name": "Milan Guard Battalion"
+                }
+              ]
+            },
+            {
+              "name": "7th Italian Line",
+              "units": [
+                {
+                  "unit": "it-line-infantry",
+                  "name": "7th Italian Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "it-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "it-foot-arty",
+              "name": "1/1st Italian Foot Battery"
+            },
+            {
+              "unit": "it-foot-arty",
+              "name": "13/1st Italian Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wartenburg-franquemont",
+      "nationId": "wurttemberg",
+      "name": "Franquemont's Division",
+      "formation": "38th (Württemberg) Division, IV Corps (Bertrand)",
+      "side": "French",
+      "summary": "All that was left of the Württemberg contingent, four combined battalions, holding Bleddin on Bertrand's right. Prince Karl of Mecklenburg's brigade came up the Elbe against it in the late morning, and by two in the afternoon had driven it out of the village.",
+      "notes": [
+        "Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before.",
+        "After Dennewitz each pair of regiments was put together as one combined battalion: the light battalion from the 9th and 10th Light, and the line battalions from the 1st, 4th and 6th Line. Together they had under two thousand men.",
+        "The foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery; with four battalions, where the list wants seven for it, it shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "wt-div-cmd",
+          "name": "Gen-Lt Graf Franquemont",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "wt-light-infantry-brigade",
+          "name": "Stockmayer's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Stockmayer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-light-infantry",
+              "name": "Combined Light Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Combined Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "1st Combined Line Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Döring's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Döring",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Combined Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "2nd Combined Line Battalion"
+                }
+              ]
+            },
+            {
+              "name": "3rd Combined Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "3rd Combined Line Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "wt-light-arty",
+              "name": "1st Württemberg Foot Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Jett's 24th Light Cavalry Brigade",
+          "reason": "A squadron each of the 1st and 3rd Württemberg Chevau-légers, about a hundred men in all, too few for a unit."
+        }
+      ]
+    },
+    {
+      "id": "wartenburg-beaumont",
+      "nationId": "westphalia",
+      "name": "Beaumont's Cavalry",
+      "formation": "29th Light Cavalry Brigade, IV Corps (Bertrand)",
+      "side": "French",
+      "summary": "The corps' cavalry, two regiments of German light horse, on the right near Bleddin. It was swept aside by Mecklenburg's hussars as the Württembergers gave way.",
+      "notes": [
+        "Built from A Clash of Eagles' Westphalian 1812 list, for its Guard Chevau-légers.",
+        "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight; its batteries are from his return of the IV Corps a fortnight before.",
+        "The Hessian Chevau-légers are shown as Westphalian Hussars, the list's other light cavalry.",
+        "A cavalry brigade on its own has no infantry brigade, which the list needs for it, so this shows as a historical departure. Play it alongside Franquemont's or Fontanelli's division.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "wp-div-cmd",
+          "name": "Gén. de Division Beaumont",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "wp-cavalry-brigade",
+          "name": "Wolff's Brigade",
+          "commander": {
+            "name": "Gen-Maj Wolff",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wp-guard-chevau-leger",
+              "name": "Westphalian Guard Chevau-légers"
+            },
+            {
+              "unit": "wp-hussar",
+              "name": "Hessian Chevau-légers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wartenburg-yorck",
+      "nationId": "prussians-1815",
+      "name": "Yorck's Corps",
+      "formation": "I Corps, Army of Silesia",
+      "side": "Prussian",
+      "summary": "Blücher's leading corps, which crossed the Elbe on two pontoon bridges in the river's bend and attacked Bertrand in his marshes at dawn. Steinmetz's brigade was shot down before the dike at Wartenburg; Prince Karl of Mecklenburg's went upstream and took Bleddin from the Württembergers; and Horn's, wading through the backwaters with the Leib Regiment at its head, came in on the French flank and decided the day. The corps lost some two thousand men, and Yorck took his title from the village.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Reserve regiments' battalions and the grenadier battalions are the list's Musketeers; the grenadiers would suit its Veteran upgrade. Battalions of different regiments that served together are grouped as a regiment, as the list takes them.",
+        "Nafziger's corps return of the same day has Hünerbein's Landwehr and half his battery detached to Halle; his Wartenburg order of battle, followed here, has the IV/14th Landwehr and the whole of Battery #15 with the brigade.",
+        "The East Prussian National Cavalry, a volunteer regiment, is shown as Hussars. The 5th Silesian Landwehr Cavalry is the advance guard infantry's attached Landwehr cavalry.",
+        "Mecklenburg's two hussar regiments are shown as attached small hussars; two of them, where the list allows one in the army, show as a historical departure. Battery #3 was split between Mecklenburg and Horn, so each has half of it, Mecklenburg's from the corps artillery.",
+        "One-battalion Landwehr regiments in Mecklenburg's and Hünerbein's brigades, Horn's four regiments, and Jürgass's line and Landwehr cavalry brigades together show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Yorck",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Advance Guard Infantry (Hiller)",
+          "commander": {
+            "name": "Maj Hiller von Gärtringen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-jager-coy",
+              "name": "East Prussian Jäger (2 companies)"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "Guard Jäger Company"
+            },
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "5th Silesian Landwehr Cavalry"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Grenadier Battalions",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Leib-Grenadier Battalion"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "West Prussian Grenadier Battalion"
+                }
+              ]
+            },
+            {
+              "name": "Line and Reserve Battalions",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Brandenburg Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/12th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/2nd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/14th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/15th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Advance Guard Cavalry (Katzler)",
+          "commander": {
+            "name": "Col von Katzler",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-hussar",
+              "name": "Brandenburg Hussars"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "Brandenburg Uhlans"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "East Prussian National Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #2"
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "1st Brigade (Steinmetz)",
+          "commander": {
+            "name": "Col von Steinmetz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #2"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "East Prussian Grenadiers and 2nd East Prussian",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "1st East Prussian Grenadier Battalion"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/2nd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "5th and 6th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/6th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/5th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/5th Silesian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "13th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/13th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "2nd Brigade (Mecklenburg)",
+          "commander": {
+            "name": "Gen-Maj Prince Karl of Mecklenburg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "2nd Leib Hussars"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "Mecklenburg-Strelitz Hussars"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #1"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st East Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/1st East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Silesian Grenadiers and 2nd East Prussian",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Silesian Grenadier Battalion"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "5th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/5th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "7th Brigade (Horn)",
+          "commander": {
+            "name": "Gen-Maj von Horn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "½ 6-pdr Foot Battery #3",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Leib Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Leib Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Thuringian Battalion",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Thuringian Battalion"
+                }
+              ]
+            },
+            {
+              "name": "15th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/15th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/15th Silesian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "4th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/4th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "Combined II & IV/Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "8th Brigade (Hünerbein)",
+          "commander": {
+            "name": "Gen-Maj von Hünerbein",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #15"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Brandenburg Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Brandenburg Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Brandenburg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "12th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/12th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/12th Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "14th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/14th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Jürgass)",
+          "commander": {
+            "name": "Col von Wahlen-Jürgass",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Lithuanian Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "West Prussian Dragoons"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #1"
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Reserve Cavalry (Jürgass, Landwehr)",
+          "commander": {
+            "name": "Col von Wahlen-Jürgass",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "10th Silesian Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "1st Neumark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #3"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "½ 6-pdr Foot Battery #3 (with Mecklenburg)",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "III/2nd Leib Hussars",
+          "reason": "One squadron with Katzler's advance guard, too small for a unit of its own; the rest of the regiment is with Mecklenburg."
+        },
+        {
+          "name": "II/5th Silesian Landwehr",
+          "reason": "Detached to Halle, and not at Wartenburg."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    }
+  ]
+}
