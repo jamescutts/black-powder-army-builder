@@ -6,6 +6,7 @@ import bussaco from "./bussaco.json";
 import corunna from "./corunna.json";
 import dahlenkirchen from "./dahlenkirchen.json";
 import eckau from "./eckau.json";
+import fuentesDeOnoro from "./fuentes-de-onoro.json";
 import gorodechno from "./gorodechno.json";
 import klyastitsy from "./klyastitsy.json";
 import kobrin from "./kobrin.json";
@@ -14,10 +15,12 @@ import medinaDeRioseco from "./medina-de-rioseco.json";
 import mesoten from "./mesoten.json";
 import mir from "./mir.json";
 import quatreBras from "./quatre-bras.json";
+import orthez from "./orthez.json";
 import ostrovno from "./ostrovno.json";
 import rolica from "./rolica.json";
 import romanov from "./romanov.json";
 import salamanca from "./salamanca.json";
+import sorauren from "./sorauren.json";
 import saltanovka from "./saltanovka.json";
 import talavera from "./talavera.json";
 import vimeiro from "./vimeiro.json";
@@ -27,17 +30,14 @@ import wavre from "./wavre.json";
 import {
   berezina,
   borodino,
-  fuentesDeOnoro,
   krasnoi,
   maloyaroslavets,
   nivelle,
   ocana,
-  orthez,
   polotsk,
   polotsk2,
   smolensk,
   somosierra,
-  sorauren,
   tarutino,
   toulouse,
   valutino,
@@ -166,7 +166,7 @@ const allBattles: HistoricalBattle[] = [
   ocana,
   almeida,
   bussaco as HistoricalBattle,
-  fuentesDeOnoro,
+  fuentesDeOnoro as HistoricalBattle,
   tarragona,
   albuera as HistoricalBattle,
   ciudadRodrigo,
@@ -176,9 +176,9 @@ const allBattles: HistoricalBattle[] = [
   vitoria as HistoricalBattle,
   pamplona,
   sanSebastian,
-  sorauren,
+  sorauren as HistoricalBattle,
   nivelle,
-  orthez,
+  orthez as HistoricalBattle,
   toulouse,
   // The Russian Campaign
   mir as HistoricalBattle,

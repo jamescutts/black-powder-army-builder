@@ -118,14 +118,8 @@ somosierra.art = {
 };
 export const ocana = planned("ocana", "Ocaña", "19 November 1809", P,
   "Areizaga's Spanish army was broken on the plain south of Aranjuez by Soult and Mortier, its largest defeat of the war.");
-export const fuentesDeOnoro = planned("fuentes-de-onoro", "Fuentes de Oñoro", "3–5 May 1811", P,
-  "Masséna's attempt to relieve Almeida, fought out in the village's streets and on the open plain to its south.");
-export const sorauren = planned("sorauren", "Sorauren", "28–30 July 1813", P,
-  "Soult's drive through the Pyrenees to relieve Pamplona was stopped on the heights above Sorauren.");
 export const nivelle = planned("nivelle", "Nivelle", "10 November 1813", P,
   "Wellington stormed Soult's fortified lines along the Nivelle, carrying the war into France.");
-export const orthez = planned("orthez", "Orthez", "27 February 1814", P,
-  "Wellington turned Soult out of his position on the ridge above Orthez and drove him east.");
 export const toulouse = planned("toulouse", "Toulouse", "10 April 1814", P,
   "The war's last battle, fought for the heights east of the city before news came that Napoleon had already abdicated.");
 
@@ -136,32 +130,12 @@ ocana.art = {
   "artist": "after Adolphe Roehn",
   "page": "https://commons.wikimedia.org/wiki/File:Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg"
 };
-fuentesDeOnoro.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Battle_of_Fuentes_d%27Onoro%2C_1811.jpg/960px-Battle_of_Fuentes_d%27Onoro%2C_1811.jpg",
-  "title": "The Battle of Fuentes de Oñoro",
-  "artist": "George Bryant Campion",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Fuentes_d%27Onoro%2C_1811.jpg"
-};
-sorauren.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg/960px-Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg",
-  "title": "The field of Sorauren",
-  "artist": "Edward Hawke Locker",
-  "date": "1824",
-  "page": "https://commons.wikimedia.org/wiki/File:Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg"
-};
 nivelle.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bataille_de_la_Nivelle.jpg/960px-Bataille_de_la_Nivelle.jpg",
   "title": "The Battle of the Nivelle",
   "artist": "William Heath and James Jenkins",
   "date": "1831",
   "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_la_Nivelle.jpg"
-};
-orthez.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Denis_Dighton_Battle_of_Orthez.jpg/960px-Denis_Dighton_Battle_of_Orthez.jpg",
-  "title": "The final charge of the British cavalry at Orthez",
-  "artist": "Denis Dighton",
-  "date": "1815",
-  "page": "https://commons.wikimedia.org/wiki/File:Denis_Dighton_Battle_of_Orthez.jpg"
 };
 
 toulouse.art = {

@@ -172,6 +172,26 @@
       "artist": "Richard Simkin",
       "date": "c. 1900",
       "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg"
+    },
+    "fuentes-de-onoro": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Battle_of_Fuentes_d%27Onoro%2C_1811.jpg/960px-Battle_of_Fuentes_d%27Onoro%2C_1811.jpg",
+      "title": "The Battle of Fuentes de Oñoro",
+      "artist": "George Bryant Campion",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Fuentes_d%27Onoro%2C_1811.jpg"
+    },
+    "sorauren": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg/960px-Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg",
+      "title": "The field of Sorauren",
+      "artist": "Edward Hawke Locker",
+      "date": "1824",
+      "page": "https://commons.wikimedia.org/wiki/File:Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg"
+    },
+    "orthez": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Denis_Dighton_Battle_of_Orthez.jpg/960px-Denis_Dighton_Battle_of_Orthez.jpg",
+      "title": "The final charge of the British cavalry at Orthez",
+      "artist": "Denis Dighton",
+      "date": "1815",
+      "page": "https://commons.wikimedia.org/wiki/File:Denis_Dighton_Battle_of_Orthez.jpg"
     }
   },
   "campaigns": {

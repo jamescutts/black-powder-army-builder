@@ -1,0 +1,1184 @@
+{
+  "id": "fuentes-de-onoro",
+  "name": "Fuentes de Oñoro",
+  "date": "3–5 May 1811",
+  "campaign": "peninsular-war",
+  "summary": "Masséna came back to relieve Almeida and found Wellington across his road at the village of Fuentes de Oñoro. Two days of fighting in its walled lanes left it in British hands; on the 5th Masséna swung round the open southern flank, and the 7th and Light Divisions fell back across the plain in squares through Montbrun's cavalry. Wellington held the shortened line, and Masséna withdrew: 'if Boney had been there, we should have been beat'.",
+  "sources": [
+    {
+      "label": "Anglo-Portuguese Army at Fuentes de Onoro, 3–5 May 1811 (Nafziger Collection 811ESAG)",
+      "url": "https://www.napoleon-series.org/nafzigger/811ESAG.pdf"
+    },
+    {
+      "label": "French Army at Fuentes de Onoro, 3–5 May 1811 (Nafziger Collection 811ESAH)",
+      "url": "https://www.napoleon-series.org/nafzigger/811ESAH.pdf"
+    },
+    {
+      "label": "Battle of Fuentes de Oñoro (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Fuentes_de_O%C3%B1oro"
+    }
+  ],
+  "forces": [
+    {
+      "id": "fuentes-spencer",
+      "nationId": "peninsular-british",
+      "name": "Spencer's 1st Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Held the ridge behind the village; on 5 May, as Wellington swung his right back, its Highland battalions were sent down into Fuentes de Oñoro to clear it of the French.",
+      "notes": [
+        "After Nafziger.",
+        "Highland battalions beyond the list's one in four, and a KGL brigade of four battalions, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Brent Spencer",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-guards-brigade",
+          "name": "Stopford's Guards Brigade",
+          "commander": {
+            "name": "Maj-Gen Edward Stopford",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/Coldstream Guards"
+            },
+            {
+              "unit": "pb-foot-guard",
+              "name": "1/3rd Guards"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Nightingall's Brigade",
+          "commander": {
+            "name": "Maj-Gen Miles Nightingall",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/24th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/42nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/79th Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Howard's Brigade",
+          "commander": {
+            "name": "Maj-Gen Kenneth Howard",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/50th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "71st Highland Light Infantry",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "92nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "3/95th Rifles (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-kgl-brigade",
+          "name": "Löwe's KGL Brigade",
+          "commander": {
+            "name": "Maj-Gen von Löwe",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1st Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "5th Line Bn KGL"
+            },
+            {
+              "unit": "pb-line",
+              "name": "7th Line Bn KGL"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Lawson's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Lawson's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/WP_Brent_Spencer.jpg/250px-WP_Brent_Spencer.jpg",
+        "title": "Sir Brent Spencer",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:WP_Brent_Spencer.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "fuentes-picton",
+      "nationId": "peninsular-british",
+      "name": "Picton's 3rd Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Sent battalions down into the village through the fighting; on the 5th the 88th charged down its streets and drove the French out.",
+      "notes": [
+        "Picton is the book's named commander.",
+        "Each Portuguese line regiment's two battalions are shown as one, as the list builds them.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major-General Sir Thomas Picton, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-picton"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Mackinnon's Brigade",
+          "commander": {
+            "name": "Col Henry Mackinnon",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "74th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/88th Connaught Rangers"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (three companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Colville's Brigade",
+          "commander": {
+            "name": "Maj-Gen Charles Colville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "2/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/83rd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/88th Connaught Rangers"
+            },
+            {
+              "unit": "pb-line",
+              "name": "94th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Power's Brigade",
+          "commander": {
+            "name": "Col Manley Power",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "9th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "21st Line"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg/250px-Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "title": "Sir Thomas Picton",
+        "artist": "Martin Archer Shee",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "fuentes-houston",
+      "nationId": "peninsular-british",
+      "name": "Houston's 7th Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "New to the army and posted out on the right at Poço Velho, it was caught there on 5 May by Montbrun's cavalry and the 6th Corps, and only got back with the Light Division's help, the Chasseurs Britanniques beating off the horsemen from behind a wall.",
+      "notes": [
+        "After Nafziger.",
+        "Each Portuguese line regiment's two battalions are shown as one, as the list builds them.",
+        "Two Light battalions in a brigade of three show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen John Houston",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Sontag's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Sontag",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "51st Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "85th Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "Chasseurs Britanniques",
+              "options": [
+                "chasseurs"
+              ]
+            },
+            {
+              "unit": "pb-brunswick-light",
+              "name": "Brunswick Oels (eight companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Doyle's Brigade",
+          "commander": {
+            "name": "Col John Doyle",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "7th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "19th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "2nd Caçadores"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "fuentes-light",
+      "nationId": "peninsular-british",
+      "name": "Craufurd's Light Division",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Back with the army that morning, Craufurd took the division out to bring the 7th home, and retired it across two miles of open plain in squares with Montbrun's cavalry riding round them, a march that became famous.",
+      "notes": [
+        "Craufurd is the book's named commander.",
+        "Nafziger puts the Caçadores in a brigade of their own; one goes with each Light brigade, as the list builds them.",
+        "Two Light Brigades, the second Light battalion in Drummond's, and a horse troop with an infantry division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major-General Robert Craufurd, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-craufurd"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-brigade",
+          "name": "Beckwith's Brigade",
+          "commander": {
+            "name": "Lt-Col Sidney Beckwith",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/43rd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "3rd Caçadores"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "2/95th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-brigade",
+          "name": "Drummond's Brigade",
+          "commander": {
+            "name": "Col George Drummond",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/52nd Light Infantry"
+            },
+            {
+              "unit": "pb-light-inf",
+              "name": "2/52nd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "1st Caçadores"
+            },
+            {
+              "unit": "pb-rifle-coys",
+              "name": "1/95th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Ross's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Ross's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "fuentes-cavalry",
+      "nationId": "peninsular-british",
+      "name": "Cotton's Cavalry",
+      "formation": "Wellington's army",
+      "side": "Anglo-Portuguese",
+      "summary": "Fewer than 1,900 sabres against Montbrun's 3,500, it covered the retreat of the 7th and Light Divisions on 5 May, charging again and again to hold off the French dragoons.",
+      "notes": [
+        "After Nafziger. Barbacena's Portuguese were barely 300 men, so Small.",
+        "Slade's heavy brigade, with one heavy regiment where it needs two, and cavalry without infantry, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Stapleton Cotton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-heavy-cavalry-brigade",
+          "name": "Slade's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Slade",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-dragoon-guards",
+              "name": "1st Royal Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "14th Light Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Arentschildt's Brigade",
+          "commander": {
+            "name": "Col von Arentschildt",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "16th Light Dragoons"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "1st Hussars KGL",
+              "options": [
+                "kgl"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-cavalry-brigade",
+          "name": "Barbacena's Brigade",
+          "commander": {
+            "name": "Brig-Gen Barbacena",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "4th Portuguese Dragoons",
+              "options": [
+                "small"
+              ]
+            },
+            {
+              "unit": "pb-portuguese-cavalry",
+              "name": "10th Portuguese Dragoons",
+              "options": [
+                "small"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Bull's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Bull's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg/250px-Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "title": "Sir Stapleton Cotton",
+        "artist": "Joseph John Jenkins",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "focus": "50% 18%",
+        "date": "1833"
+      }
+    },
+    {
+      "id": "fuentes-ferey",
+      "nationId": "peninsular-french",
+      "name": "Ferey's Division",
+      "formation": "3rd Division, VI Corps (Loison)",
+      "side": "French",
+      "summary": "Loison's old division, under Ferey: it stormed into Fuentes de Oñoro on 3 May and fought for its walled lanes all afternoon, and on the 5th came at it again.",
+      "notes": [
+        "After Nafziger, whose return gives Simon's battalions as very weak, barely 600 men in all; mark them Small if you like.",
+        "The Légion du Midi and the Hanoverian Legion are shown as Line.",
+        "Four regiments in Simon's brigade, where the list takes three, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Brigade Ferey",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Simon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Simon",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "32e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/32e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "Légion du Midi Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Légion du Midi Ligne"
+                }
+              ]
+            },
+            {
+              "name": "Hanoverian Legion Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/Hanoverian Legion Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/Hanoverian Legion Ligne"
+                }
+              ]
+            },
+            {
+              "name": "26e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/26e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/26e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/26e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Ferey's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ferey",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "66e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/66e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/66e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/66e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "82e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/82e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/82e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/82e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Claude_Fran%C3%A7ois_Ferey%2C_baron_de_Rosengath_%281771-1812%29.jpg/250px-Claude_Fran%C3%A7ois_Ferey%2C_baron_de_Rosengath_%281771-1812%29.jpg",
+        "title": "Claude François Ferey",
+        "artist": "F. G. Weitsch",
+        "page": "https://commons.wikimedia.org/wiki/File:Claude_Fran%C3%A7ois_Ferey%2C_baron_de_Rosengath_%281771-1812%29.jpg",
+        "focus": "50% 18%",
+        "date": "1808"
+      }
+    },
+    {
+      "id": "fuentes-marchand",
+      "nationId": "peninsular-french",
+      "name": "Marchand's Division",
+      "formation": "1st Division, VI Corps (Loison)",
+      "side": "French",
+      "summary": "Attacked out of the woods at Poço Velho on 5 May, driving the 7th Division back, and then fed into the village fight.",
+      "notes": [
+        "After Nafziger.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Marchand",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Maucune's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Maucune",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/6e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/6e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "69e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/69e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/69e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/69e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Marcognet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Marcognet",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "39e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/39e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/39e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/39e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "76e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/76e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/76e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/76e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "title": "Jean-Gabriel Marchand",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "fuentes-mermet",
+      "nationId": "peninsular-french",
+      "name": "Mermet's Division",
+      "formation": "2nd Division, VI Corps (Loison)",
+      "side": "French",
+      "summary": "Followed Marchand round the southern flank on the 5th, pressing the 7th and Light Divisions as they fell back.",
+      "notes": [
+        "After Nafziger.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Mermet",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Bardet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bardet",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "25e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/25e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/25e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "27e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/27e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/27e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/27e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Labassée's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Labassée",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "50e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/50e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/50e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/50e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "59e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/59e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/59e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "III/59e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Julien_Auguste_Joseph_Mermet.jpg/250px-Julien_Auguste_Joseph_Mermet.jpg",
+        "title": "Julien Mermet",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Julien_Auguste_Joseph_Mermet.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "fuentes-conroux",
+      "nationId": "peninsular-french",
+      "name": "Conroux's Division",
+      "formation": "2nd Division, IX Corps (d'Erlon)",
+      "side": "French",
+      "summary": "Two provisional regiments of fourth battalions from the regiments in Spain, which d'Erlon sent into Fuentes de Oñoro on 5 May; they took most of the village before the 71st, 79th and 88th threw them out.",
+      "notes": [
+        "After Nafziger. The provisional regiments were made of single battalions from six regiments, three to each.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Conroux",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Gérard's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gérard",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Provisional",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "IV/8e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/24e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/45e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "2nd Provisional",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "IV/94e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/95e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "IV/96e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Nicolas_Fran%C3%A7ois_Conroux.jpg/250px-Nicolas_Fran%C3%A7ois_Conroux.jpg",
+        "title": "Nicolas François Conroux",
+        "artist": "Jean-Baptiste Wicar",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Fran%C3%A7ois_Conroux.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "fuentes-montbrun",
+      "nationId": "peninsular-french",
+      "name": "Montbrun's Cavalry",
+      "formation": "Reserve Cavalry and IX Corps cavalry",
+      "side": "French",
+      "summary": "Massena's dragoons and d'Erlon's chasseurs, which swept round the open southern flank on 5 May, overran the 7th Division's outposts and rode round the Light Division's squares all the way back to the ridge.",
+      "notes": [
+        "After Nafziger, whose return gives the dragoons only a few hundred men each, as Koch had them; other accounts make them stronger. Nafziger repeats the 15th in Ornano's brigade, so the 11th is shown there.",
+        "Cavalry on its own has no infantry brigades for its brigades to go with, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Montbrun",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Cavrois's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Cavrois",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "3e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "10e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "15e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Ornano's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ornano",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "6e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "11e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "25e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Fournier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fournier",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "7e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "18e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "20e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "6/2nd Horse Artillery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "6/2nd Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    },
+    {
+      "id": "fuentes-guard",
+      "nationId": "peninsular-french",
+      "name": "Lepic's Guard Cavalry",
+      "formation": "Reserve, Army of Portugal",
+      "side": "French",
+      "summary": "Eight hundred Grenadiers à Cheval of the Guard under Lepic, which stood ready to charge the retreating Light Division and were held back, Bessières refusing to commit them without orders.",
+      "notes": [
+        "After Nafziger: one regiment of eight squadrons, with two guns.",
+        "Guard cavalry without the infantry and cavalry brigades it needs shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Brigade Lepic",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-guard-cavalry-brigade",
+          "name": "Lepic's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lepic",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-guard-grenadier-a-cheval",
+              "name": "Grenadiers à Cheval of the Guard"
+            }
+          ]
+        }
+      ],
+      "period": "middle"
+    }
+  ],
+  "sides": {
+    "Anglo-Portuguese": {
+      "commander": "Viscount Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "French": {
+      "commander": "Marshal Masséna",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg/250px-Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+        "title": "Marshal André Masséna",
+        "artist": "Louis Hersent",
+        "page": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Battle_of_Fuentes_d%27Onoro%2C_1811.jpg/960px-Battle_of_Fuentes_d%27Onoro%2C_1811.jpg",
+    "title": "The Battle of Fuentes de Oñoro",
+    "artist": "George Bryant Campion",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Fuentes_d%27Onoro%2C_1811.jpg"
+  }
+}

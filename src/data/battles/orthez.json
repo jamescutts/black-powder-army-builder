@@ -1,0 +1,1605 @@
+{
+  "id": "orthez",
+  "name": "Orthez",
+  "date": "27 February 1814",
+  "campaign": "peninsular-war",
+  "summary": "Soult made a stand on the ridge north of the Gave de Pau above Orthez. Beresford's attack on St Boès at the French right was beaten back again and again, and Picton's in the centre stalled, until Wellington sent the 52nd up the marshy hollow between them and broke the French line in two, while Hill forced the river upstream. Soult's army fell back in growing disorder towards Toulouse.",
+  "sources": [
+    {
+      "label": "French Army of the Pyrenees, 16 January 1814 (Nafziger Collection 814ASAD)",
+      "url": "https://www.napoleon-series.org/nafzigger/814ASAD.pdf"
+    },
+    {
+      "label": "Anglo-Portuguese Army, 1 January 1814 (Nafziger Collection 814ASAB)",
+      "url": "https://www.napoleon-series.org/nafzigger/814ASAB.pdf"
+    },
+    {
+      "label": "Battle of Orthez (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Orthez"
+    }
+  ],
+  "forces": [
+    {
+      "id": "orthez-taupin",
+      "nationId": "peninsular-french",
+      "name": "Taupin's Division",
+      "formation": "Reille's Wing",
+      "side": "French",
+      "summary": "Held the village and church of St Boès on the right of the French ridge, where Ross's brigade attacked it four times in the morning and was beaten off each time.",
+      "notes": [
+        "After Nafziger's return of 16 January 1814, six weeks before the battle; the divisions had sent men to Napoleon since, so they were smaller.",
+        "Béchaud's four single-battalion regiments are shown as two regiments of two battalions.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Taupin",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Rey's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rey",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "12e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/12e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/12e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "32e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/32e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/32e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "43e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/43e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/43e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Béchaud's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Béchaud",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "45e and 47e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/45e and 47e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/45e and 47e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "55e and 58e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/55e and 58e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/55e and 58e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "orthez-rouget",
+      "nationId": "peninsular-french",
+      "name": "Rouget's Division",
+      "formation": "Reille's Wing",
+      "side": "French",
+      "summary": "Maransin's old division, beside Taupin's, which fought for the narrow ridge behind St Boès until the 52nd's attack broke the French centre.",
+      "notes": [
+        "After Nafziger's return of 16 January 1814, six weeks before the battle; the divisions had sent men to Napoleon since, so they were smaller.",
+        "The 34th Line, which Nafziger also lists in Harispe's division, is left out.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Brigade Rouget",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Barbot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Barbot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/4e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "40e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/40e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/40e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "50e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/50e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Rouget's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rouget",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "27e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/27e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "59e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/59e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "130e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/130e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/130e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "orthez-foy",
+      "nationId": "peninsular-french",
+      "name": "Foy's Division",
+      "formation": "D'Erlon's Wing",
+      "side": "French",
+      "summary": "Held the centre of the ridge above the Dax road against Picton; Foy was badly wounded, and his division broke as the line gave way.",
+      "notes": [
+        "After Nafziger's return of 16 January 1814, six weeks before the battle; the divisions had sent men to Napoleon since, so they were smaller.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Foy",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Fririon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fririon",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/6e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "69e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/69e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/69e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "76e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/76e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Berlier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Berlier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "36e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/36e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/36e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "39e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/39e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "65e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/65e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/65e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Maximilien_Foy_1.jpg/250px-Maximilien_Foy_1.jpg",
+        "title": "Maximilien Sébastien Foy",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Maximilien_Foy_1.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "orthez-darmagnac",
+      "nationId": "peninsular-french",
+      "name": "Darmagnac's Division",
+      "formation": "D'Erlon's Wing",
+      "side": "French",
+      "summary": "Beside Foy's, it held the ridge against the 6th Division and fell back with the centre.",
+      "notes": [
+        "After Nafziger's return of 16 January 1814, six weeks before the battle; the divisions had sent men to Napoleon since, so they were smaller.",
+        "The 8th and 54th, a battalion each, are shown together as one regiment.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Darmagnac",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Chassé's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chassé",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/16e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "28e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/28e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/28e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "8e and 54e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/8e and 54e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/8e and 54e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Gruardet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gruardet",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "31e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/31e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/31e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "51e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/51e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "75e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/75e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/75e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/0/0d/G%C3%A9n%C3%A9ral_Jean_Barth%C3%A9l%C3%A9my_Claude_Toussaint_Darmagnac.png",
+        "title": "Jean Barthélemy Darmagnac",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Barth%C3%A9l%C3%A9my_Claude_Toussaint_Darmagnac.png",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "orthez-harispe",
+      "nationId": "peninsular-french",
+      "name": "Harispe's Division",
+      "formation": "Clausel's Wing",
+      "side": "French",
+      "summary": "Held Orthez itself and the bridge on the left, against Hill; when Hill forced the fords above the town Harispe's men were pushed back, and the whole army had to retire.",
+      "notes": [
+        "After Nafziger's return of 16 January 1814, six weeks before the battle; the divisions had sent men to Napoleon since, so they were smaller.",
+        "Two companies of the 114th and the 8th Neapolitan battalion are shown as one regiment, the 117th's four companies as a Small battalion.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Harispe",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Dauture's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dauture",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "9e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/9e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/9e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "34e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/34e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/34e Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Paris's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Paris",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "10e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/10e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/10e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "81e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/81e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/81e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "114e and 8th Neapolitan Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/114e and 8th Neapolitan Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/114e and 8th Neapolitan Ligne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-infantry-brigade",
+          "name": "Baurot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Baurot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "25e Léger",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/25e Léger"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/25e Léger"
+                }
+              ],
+              "options": [
+                "light"
+              ]
+            },
+            {
+              "name": "115e Ligne",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "I/115e Ligne"
+                },
+                {
+                  "unit": "pf-line",
+                  "name": "II/115e Ligne"
+                }
+              ]
+            },
+            {
+              "name": "117e Ligne (four companies)",
+              "units": [
+                {
+                  "unit": "pf-line",
+                  "name": "117e Ligne",
+                  "options": [
+                    "small"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Foot Battery",
+          "units": [
+            {
+              "unit": "pf-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "orthez-cavalry",
+      "nationId": "peninsular-french",
+      "name": "Pierre Soult's Cavalry",
+      "formation": "1st Cavalry Division",
+      "side": "French",
+      "summary": "The army's only cavalry division by then, which covered the retreat from the ridge as the 7th Hussars charged into the rearguard.",
+      "notes": [
+        "After Nafziger's return of 16 January 1814, six weeks before the battle; the divisions had sent men to Napoleon since, so they were smaller.",
+        "Cavalry on its own has no infantry brigades for its brigades to go with, which shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pf-div-cmd",
+          "name": "Gén. de Division Pierre Soult",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Berton's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Berton",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "2e Hussards"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "13e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "21e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Vial's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Vial",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-line-light-cav",
+              "name": "5e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "10e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "15e Chasseurs"
+            },
+            {
+              "unit": "pf-line-light-cav",
+              "name": "22e Chasseurs"
+            }
+          ]
+        },
+        {
+          "type": "pf-cavalry-brigade",
+          "name": "Sparre's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sparre",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pf-dragoon",
+              "name": "5e Dragons"
+            },
+            {
+              "unit": "pf-dragoon",
+              "name": "12e Dragons"
+            }
+          ]
+        },
+        {
+          "type": "pf-army-artillery",
+          "name": "Horse Battery",
+          "units": [
+            {
+              "unit": "pf-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "orthez-cole",
+      "nationId": "peninsular-british",
+      "name": "Cole's 4th Division",
+      "formation": "Beresford's column",
+      "side": "Anglo-Portuguese",
+      "summary": "Led the attack on the French right at St Boès, where Ross's brigade stormed the village and was thrown back four times; Ross was wounded.",
+      "notes": [
+        "After Nafziger's return of 1 January 1814; the brigades had changed little since the summer, but battalions were weaker.",
+        "Each Portuguese line regiment's two battalions are shown as one, as the list builds them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Lowry Cole",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Anson's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Anson",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "3/27th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/40th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/48th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2nd Provisional Bn (2nd and 53rd)"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (two companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Ross's Brigade",
+          "commander": {
+            "name": "Maj-Gen Robert Ross",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/7th Fusiliers"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/20th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/23rd Royal Welch Fusiliers"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "Brunswick Oels (company)"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Stubbs's Brigade",
+          "commander": {
+            "name": "Col George Stubbs",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "11th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "23rd Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "7th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Sympher's KGL Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Sympher's KGL Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg/250px-Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "title": "Sir Lowry Cole",
+        "artist": "William Dyce",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Galbraith_Lowry_Cole_by_William_Dyce.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "orthez-walker",
+      "nationId": "peninsular-british",
+      "name": "Walker's 7th Division",
+      "formation": "Beresford's column",
+      "side": "Anglo-Portuguese",
+      "summary": "Came up beside the 4th Division against St Boès and the ridge behind it, and joined the final advance as the French line broke.",
+      "notes": [
+        "After Nafziger's return of 1 January 1814; the brigades had changed little since the summer, but battalions were weaker.",
+        "Each Portuguese line regiment's two battalions are shown as one, as the list builds them.",
+        "Two Light battalions in Inglis's brigade show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen George Walker",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Gardiner's Brigade",
+          "commander": {
+            "name": "Col Gardiner",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/6th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "3rd Provisional Bn (24th and 58th)"
+            },
+            {
+              "unit": "pb-brunswick-light",
+              "name": "Brunswick Oels (nine companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Inglis's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Inglis",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/51st Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/68th Light Infantry",
+              "options": [
+                "light-infantry"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/82nd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "Chasseurs Britanniques",
+              "options": [
+                "chasseurs"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Doyle's Brigade",
+          "commander": {
+            "name": "Col John Doyle",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "7th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "19th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "2nd Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Cairnes's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Cairnes's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "orthez-picton",
+      "nationId": "peninsular-british",
+      "name": "Picton's 3rd Division",
+      "formation": "Picton's column",
+      "side": "Anglo-Portuguese",
+      "summary": "Attacked the French centre up the spurs from the Dax road, held at first, then pushed on to the crest as the 52nd broke through on its left.",
+      "notes": [
+        "Picton is the book's named commander.",
+        "After Nafziger's return of 1 January 1814; the brigades had changed little since the summer, but battalions were weaker.",
+        "Each Portuguese line regiment's two battalions are shown as one, as the list builds them.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major-General Sir Thomas Picton, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pb-cmd-picton"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Brisbane's Brigade",
+          "commander": {
+            "name": "Maj-Gen Thomas Brisbane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/45th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/74th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/88th Connaught Rangers"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (four companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Keane's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Keane",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/5th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/83rd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/87th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/94th Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Power's Brigade",
+          "commander": {
+            "name": "Maj-Gen Manley Power",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "9th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "21st Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "11th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Douglas's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Douglas's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg/250px-Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "title": "Sir Thomas Picton",
+        "artist": "Martin Archer Shee",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Thomas_Picton_by_Sir_Martin_Archer_Shee.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "orthez-clinton",
+      "nationId": "peninsular-british",
+      "name": "Clinton's 6th Division",
+      "formation": "Picton's column",
+      "side": "Anglo-Portuguese",
+      "summary": "Beside Picton's, against Darmagnac's division on the ridge.",
+      "notes": [
+        "After Nafziger's return of 1 January 1814; the brigades had changed little since the summer, but battalions were weaker.",
+        "Each Portuguese line regiment's two battalions are shown as one, as the list builds them.",
+        "Three Highland battalions where the list allows one in four show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Henry Clinton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Stirling's Highland Brigade",
+          "commander": {
+            "name": "Col James Stirling",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/42nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/79th Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/91st Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (two companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Lambert's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Lambert",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/11th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/32nd Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/36th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/61st Foot"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Madden's Brigade",
+          "commander": {
+            "name": "Brig-Gen Madden",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "8th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "12th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "9th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Brandreth's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Brandreth's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Henry_Clinton_%281771-1829%29.jpg/250px-Henry_Clinton_%281771-1829%29.jpg",
+        "title": "Sir Henry Clinton",
+        "artist": "Samuel William Reynolds",
+        "page": "https://commons.wikimedia.org/wiki/File:Henry_Clinton_%281771-1829%29.jpg",
+        "focus": "50% 20%",
+        "date": "1827"
+      }
+    },
+    {
+      "id": "orthez-light",
+      "nationId": "peninsular-british",
+      "name": "Alten's Light Division",
+      "formation": "Wellington's reserve",
+      "side": "Anglo-Portuguese",
+      "summary": "In reserve until the attack on St Boès stalled, when Wellington sent the 52nd up the marshy hollow between the two French wings; its advance broke the French line in two.",
+      "notes": [
+        "After Nafziger's return of 1 January 1814; the brigades had changed little since the summer, but battalions were weaker.",
+        "Nafziger puts the 17th Portuguese and the Caçadores in a brigade of their own; they're shared between the Light brigades, as the list builds them.",
+        "Two Light Brigades, and a horse troop with an infantry division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Maj-Gen Charles Alten",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-brigade",
+          "name": "Kempt's Brigade",
+          "commander": {
+            "name": "Maj-Gen James Kempt",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/43rd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "1st Caçadores"
+            },
+            {
+              "unit": "pb-rifle-bn",
+              "name": "1/95th Rifles"
+            },
+            {
+              "unit": "pb-rifle-bn",
+              "name": "3/95th Rifles"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-brigade",
+          "name": "Barnard's Brigade",
+          "commander": {
+            "name": "Col Andrew Barnard",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-inf",
+              "name": "1/52nd Light Infantry"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "3rd Caçadores"
+            },
+            {
+              "unit": "pb-rifle-bn",
+              "name": "2/95th Rifles"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "17th Portuguese Line"
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Ross's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Ross's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "orthez-hill",
+      "nationId": "peninsular-british",
+      "name": "Stewart's 2nd Division",
+      "formation": "Hill's column",
+      "side": "Anglo-Portuguese",
+      "summary": "With Hill on the right, it forced the fords of the Gave above Orthez and turned the French left, threatening Soult's line of retreat.",
+      "notes": [
+        "After Nafziger's return of 1 January 1814; the brigades had changed little since the summer, but battalions were weaker.",
+        "Each Portuguese line regiment's two battalions are shown as one, as the list builds them.",
+        "Nafziger gives Barnes's brigade the 51st; it was the 50th, with the 71st and 92nd. Two Highland battalions in a brigade of three show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir William Stewart",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Barnes's Brigade",
+          "commander": {
+            "name": "Maj-Gen Edward Barnes",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/50th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/71st Highland Light Infantry",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/92nd Highlanders",
+              "options": [
+                "highlanders"
+              ]
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (two companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Byng's Brigade",
+          "commander": {
+            "name": "Maj-Gen John Byng",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/3rd Foot (Buffs)"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/57th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1st Provisional Bn (31st and 66th)"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (two companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-infantry-brigade",
+          "name": "Pringle's Brigade",
+          "commander": {
+            "name": "Maj-Gen William Pringle",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-line",
+              "name": "1/28th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "2/34th Foot"
+            },
+            {
+              "unit": "pb-line",
+              "name": "1/39th Foot"
+            },
+            {
+              "unit": "pb-rifle-coy",
+              "name": "5/60th Rifles (two companies)"
+            }
+          ]
+        },
+        {
+          "type": "pb-portuguese-infantry-brigade",
+          "name": "Ashworth's Brigade",
+          "commander": {
+            "name": "Col Charles Ashworth",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-portuguese-line",
+              "name": "6th Line"
+            },
+            {
+              "unit": "pb-portuguese-line",
+              "name": "18th Line"
+            },
+            {
+              "unit": "pb-cacadores",
+              "name": "6th Caçadores"
+            }
+          ]
+        },
+        {
+          "type": "pb-divisional-artillery",
+          "name": "Maxwell's Battery",
+          "units": [
+            {
+              "unit": "pb-royal-arty",
+              "name": "Maxwell's Battery"
+            }
+          ]
+        }
+      ],
+      "period": "late"
+    },
+    {
+      "id": "orthez-hussars",
+      "nationId": "peninsular-british",
+      "name": "Somerset's and Vivian's Hussars",
+      "formation": "Cotton's cavalry",
+      "side": "Anglo-Portuguese",
+      "summary": "Followed the broken French army off the ridge; the 7th Hussars charged into the rearguard near Sallespisse and took several hundred prisoners.",
+      "notes": [
+        "After Nafziger's return of 1 January 1814; the brigades had changed little since the summer, but battalions were weaker.",
+        "Cavalry on its own, without infantry brigades for its brigades to go with, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pb-div-cmd",
+          "name": "Lt-Gen Sir Stapleton Cotton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Somerset's Brigade",
+          "commander": {
+            "name": "Maj-Gen Lord Edward Somerset",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "7th Hussars"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "10th Hussars"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "15th Hussars"
+            }
+          ]
+        },
+        {
+          "type": "pb-light-cavalry-brigade",
+          "name": "Vivian's Brigade",
+          "commander": {
+            "name": "Maj-Gen Hussey Vivian",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "18th Hussars"
+            },
+            {
+              "unit": "pb-light-dragoon-hussar",
+              "name": "1st Hussars KGL",
+              "options": [
+                "kgl"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pb-horse-artillery",
+          "name": "Gardiner's Troop RHA",
+          "units": [
+            {
+              "unit": "pb-royal-horse-arty",
+              "name": "Gardiner's Troop RHA"
+            }
+          ]
+        }
+      ],
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg/250px-Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "title": "Sir Stapleton Cotton",
+        "artist": "Joseph John Jenkins",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_of_General_Stapleton_Cotton%2C_Viscount_%26_Baron_Combermere%2C_G.C.B._%284671422%29.jpg",
+        "focus": "50% 18%",
+        "date": "1833"
+      }
+    }
+  ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Soult",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nicolas_Jean_de_Dieu_Soult.jpg/250px-Nicolas_Jean_de_Dieu_Soult.jpg",
+        "title": "Marshal Jean-de-Dieu Soult",
+        "artist": "after Louis-Henri de Rudder",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Jean_de_Dieu_Soult.jpg",
+        "focus": "50% 14%"
+      }
+    },
+    "Anglo-Portuguese": {
+      "commander": "The Marquess of Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Denis_Dighton_Battle_of_Orthez.jpg/960px-Denis_Dighton_Battle_of_Orthez.jpg",
+    "title": "The final charge of the British cavalry at Orthez",
+    "artist": "Denis Dighton",
+    "date": "1815",
+    "page": "https://commons.wikimedia.org/wiki/File:Denis_Dighton_Battle_of_Orthez.jpg"
+  }
+}
