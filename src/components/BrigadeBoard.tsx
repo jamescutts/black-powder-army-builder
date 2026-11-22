@@ -49,9 +49,11 @@ interface Props {
   nation: Nation;
   roster: RosterState;
   onChange: (roster: RosterState) => void;
+  /** Start with every brigade folded, as a historical force opens, so its whole order of battle shows at a glance */
+  startCollapsed?: boolean;
 }
 
-export function BrigadeBoard({ nation, roster, onChange }: Props) {
+export function BrigadeBoard({ nation, roster, onChange, startCollapsed = false }: Props) {
   // Army-level commanders only: exclude any Command unit that's tied to a brigade, either as
   // its required commander or as a purchasable option within one of its slots (e.g. a
   // subordinate commander attached to an Infantry Brigade).
@@ -111,8 +113,10 @@ export function BrigadeBoard({ nation, roster, onChange }: Props) {
   });
 
   // Brigades folded down to a one-line summary, so a big army stays easy to scan. Everything starts
-  // open, and new brigades are added open.
-  const [collapsed, setCollapsed] = useState<Set<string>>(() => new Set());
+  // open (folded for a historical force just opened), and new brigades are added open.
+  const [collapsed, setCollapsed] = useState<Set<string>>(
+    () => new Set(startCollapsed ? roster.brigadeInstances.map((bi) => bi.key) : [])
+  );
   const toggleCollapsed = (key: string) =>
     setCollapsed((prev) => {
       const next = new Set(prev);

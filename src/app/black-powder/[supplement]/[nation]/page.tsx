@@ -480,7 +480,13 @@ function BuilderContent({ nationId }: { nationId: string }) {
           )}
           <Grid gap="lg">
             <Grid.Col span={{ base: 12, md: 7 }}>
-              <BrigadeBoard key={listId} nation={periodNation} roster={roster} onChange={setRoster} />
+              <BrigadeBoard
+                key={listId}
+                nation={periodNation}
+                roster={roster}
+                onChange={setRoster}
+                startCollapsed={Boolean(forceParam)}
+              />
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 5 }}>
               {/* An invisible copy of the "Army command" heading, so on wide screens the roster card's top
