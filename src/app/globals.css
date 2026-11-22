@@ -1688,6 +1688,24 @@ a.app-list-row:active {
   height: 24px;
 }
 
+/* A campaign's painting, cropped square at the head of its row */
+.app-list-thumb {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: var(--mantine-radius-sm);
+  border: 1px solid rgba(43, 31, 20, 0.2);
+  background: rgba(107, 61, 23, 0.1);
+}
+
+.app-list-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .app-list-text {
   display: flex;
   flex: 1 1 auto;

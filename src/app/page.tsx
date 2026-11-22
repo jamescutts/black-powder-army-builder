@@ -54,7 +54,7 @@ export default function HomePage() {
   const armies = FEATURED_ARMIES.map(getNation)
     .filter((n) => n !== undefined)
     .map(toHomeArmy);
-  // The campaigns with forces to play, to link to directly
+  // The campaigns with forces to play, to link to directly, in the app and the browser alike
   const playable = campaigns.map(campaignSummary).filter((c) => c.forces > 0);
   // The app lists every army, book by book, to scroll through
   const allArmies = nations.map(toHomeArmy);
@@ -62,7 +62,7 @@ export default function HomePage() {
   // The installed app opens on its own home page, for getting back to an army; the browser's introduces the site
   return (
     <AppSwitch
-      app={<AppHome supplements={supplementSummaries} armies={allArmies} />}
+      app={<AppHome supplements={supplementSummaries} armies={allArmies} campaigns={playable} />}
       browser={
         <HomeView
           counts={counts}

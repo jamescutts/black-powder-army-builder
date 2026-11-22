@@ -9,6 +9,8 @@ import { HERO, type HomeArmy, type HomeSupplement } from "@/components/HomeView"
 import { useIsApp } from "@/lib/useIsApp";
 import { KOFI_URL } from "@/lib/meta";
 import { DisclaimerText } from "@/components/SiteDisclaimer";
+import type { CampaignSummary } from "@/data/battles";
+import { campaignHref, HISTORICAL_FORCES_PATH } from "@/lib/forces";
 
 // Your armies need every army list to add up their points, so they're loaded only in the app, never for
 // the browser's home page (which draws this page too, hidden: see AppSwitch)
@@ -18,11 +20,20 @@ const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one :
 
 /**
  * The installed app's home page: somewhere to carry on or start an army, rather than the browser's
- * introduction to the site (HomeView). A short banner, your armies, the books, every army to start
- * from, then the fan-tool disclaimer, the Ko-fi appeal and About, which stand in for the browser's
+ * introduction to the site (HomeView). A short banner, your armies, the books, the historical campaigns,
+ * every army to start from, then the fan-tool disclaimer, the Ko-fi appeal and About, which stand in for the browser's
  * footer (the app has none).
  */
-export function AppHome({ supplements, armies }: { supplements: HomeSupplement[]; armies: HomeArmy[] }) {
+export function AppHome({
+  supplements,
+  armies,
+  campaigns,
+}: {
+  supplements: HomeSupplement[];
+  armies: HomeArmy[];
+  /** The campaigns with forces to play */
+  campaigns: CampaignSummary[];
+}) {
   const isApp = useIsApp();
   // The same painting as the browser's home page, so it's the one file either way
   const [src, setSrc] = useState(HERO.large);
@@ -72,6 +83,8 @@ export function AppHome({ supplements, armies }: { supplements: HomeSupplement[]
             ))}
           </div>
         </Stack>
+
+        {campaigns.length > 0 && <Campaigns campaigns={campaigns} />}
 
         {armies.length > 0 && <AllArmies armies={armies} />}
 
@@ -134,6 +147,40 @@ export function AppHome({ supplements, armies }: { supplements: HomeSupplement[]
         </Stack>
       </Stack>
     </Container>
+  );
+}
+
+/** The campaigns with forces, as rows like the books', each with its painting, then a row to all of them */
+function Campaigns({ campaigns }: { campaigns: CampaignSummary[] }) {
+  return (
+    <Stack gap="xs" component="section" aria-labelledby="app-home-campaigns">
+      <Title order={2} id="app-home-campaigns" className="app-home-heading">
+        Historical campaigns
+      </Title>
+      <div className="app-list">
+        {campaigns.map((c) => (
+          <Link key={c.id} href={campaignHref(c.id)} className="app-list-row">
+            <span className="app-list-thumb" aria-hidden>
+              {c.art && <img src={c.art.src} alt="" loading="lazy" style={{ objectPosition: c.art.focus }} />}
+            </span>
+            <span className="app-list-text">
+              <Text ff="heading" fw={600} lh={1.25} c="brown.8">
+                {c.name}
+              </Text>
+              <Text size="xs" c="dimmed">
+                {c.dates} · {plural(c.forces, "force", "forces")}
+              </Text>
+            </span>
+            <IconChevronRight size={18} className="app-list-chevron" aria-hidden />
+          </Link>
+        ))}
+        {/* Every campaign, those still to come among them: the list's last row */}
+        <Link href={HISTORICAL_FORCES_PATH} className="app-list-row app-list-more">
+          <span className="app-list-text">All campaigns</span>
+          <IconChevronRight size={18} className="app-list-chevron" aria-hidden />
+        </Link>
+      </div>
+    </Stack>
   );
 }
 
