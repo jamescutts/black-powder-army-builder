@@ -1342,6 +1342,7 @@
         "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
         "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
         "The list has no Guard: the Guard Infantry Regiment and the Normal Battalion are Musketeers and Fusiliers, and the Guard Jäger and Wedell's Guard Volunteer Jäger are the list's attached Schützen, its only Jäger battalion a brigade takes; with the Silesian Schützen, three where the list allows one in the army, they show as historical departures.",
+        "The Guard takes the list's Veteran upgrades: the Guard Infantry and the Normal Battalion, the Garde du Corps and Guard Light Cavalry, and the Guard foot and horse batteries. The Guard Jäger, as Schützen, have none to take. Both of Werder's regiments Veteran, where the list allows half a brigade's, shows as a historical departure.",
         "The list has no cuirassiers or Guard cavalry: the Garde du Corps and the East Prussian, Silesian and Brandenburg Cuirassiers are its Dragoons, its only heavy cavalry, and the Guard Light Cavalry its Hussars. Jürgass's three cuirassier regiments, where the list's brigade takes two Dragoons, show as a historical departure.",
         "The Silesian Schützen are the list's attached Schützen battalion.",
         "More cavalry brigades than the list allows for the infantry, and brigades of two-squadron regiments, show as historical departures; regiments of two or three squadrons are shown at full size.",
@@ -1552,7 +1553,10 @@
             },
             {
               "unit": "pr15-foot-arty",
-              "name": "Guard 6-pdr Foot Battery #4"
+              "name": "Guard 6-pdr Foot Battery #4",
+              "options": [
+                "veteran-artillery"
+              ]
             }
           ],
           "regiments": [
@@ -1561,15 +1565,24 @@
               "units": [
                 {
                   "unit": "pr15-musketeer",
-                  "name": "I/Guard Infantry"
+                  "name": "I/Guard Infantry",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 },
                 {
                   "unit": "pr15-musketeer",
-                  "name": "II/Guard Infantry"
+                  "name": "II/Guard Infantry",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 },
                 {
                   "unit": "pr15-fusilier",
-                  "name": "F/Guard Infantry"
+                  "name": "F/Guard Infantry",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 }
               ]
             },
@@ -1582,7 +1595,10 @@
                 },
                 {
                   "unit": "pr15-musketeer",
-                  "name": "Normal Infantry Battalion"
+                  "name": "Normal Infantry Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
                 }
               ]
             },
@@ -1639,15 +1655,24 @@
           "units": [
             {
               "unit": "pr15-dragoon",
-              "name": "Garde du Corps"
+              "name": "Garde du Corps",
+              "options": [
+                "veteran-cavalry"
+              ]
             },
             {
               "unit": "pr15-hussar",
-              "name": "Guard Light Cavalry"
+              "name": "Guard Light Cavalry",
+              "options": [
+                "veteran-cavalry"
+              ]
             },
             {
               "unit": "pr15-horse-arty",
-              "name": "Guard Horse Battery #4"
+              "name": "Guard Horse Battery #4",
+              "options": [
+                "veteran-artillery"
+              ]
             }
           ]
         },

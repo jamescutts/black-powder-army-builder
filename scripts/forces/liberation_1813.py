@@ -98,6 +98,9 @@ PR_LIST = ("Built from Albion Triumphant's Prussian 1815 list, the nearest to 18
 PR_WHOLE = "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself."
 PR_GROUPED = ("Battalions of different regiments that served together are grouped as a regiment, as the list takes them. "
               "Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.")
+PR_GUARD_VETERAN = ("The Guard takes the list's Veteran upgrades: the Guard Infantry and the Normal Battalion, the Garde du Corps and "
+                    "Guard Light Cavalry, and the Guard foot and horse batteries. The Guard Jäger, as Schützen, have none to take. Both of Werder's "
+                    "regiments Veteran, where the list allows half a brigade's, shows as a historical departure.")
 PR_SUB = "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander."
 PR_SPRING = ("In the spring of 1813 the brigades had no Landwehr yet: each was two line regiments, with grenadier, reserve and "
              "Jäger battalions besides, so most have more line regiments, or more battalions in a regiment, than the list's brigade "
@@ -115,8 +118,9 @@ PR_ARTY = ("Batteries beyond the one each brigade takes are in the corps artille
 
 
 def bn(kind, name):
-    """A Prussian battalion; a grenadier battalion with the list's Veteran upgrade"""
-    return u(KIND[kind], name, **({"options": ["veteran-infantry"]} if "Grenadier" in name else {}))
+    """A Prussian battalion; a grenadier or Guard battalion with the list's Veteran upgrade"""
+    elite = "Grenadier" in name or "Guard" in name or name.startswith("Normal")
+    return u(KIND[kind], name, **({"options": ["veteran-infantry"]} if elite else {}))
 
 
 def pi(name, commander, regiments, units=(), sub=None):
@@ -189,7 +193,8 @@ LZ_PR_NOTE = "After Nafziger's order of battle for Lützen, from Plotho."
 BZ_PR_NOTE = "After Nafziger's order of battle for Bautzen, from Plotho."
 DOLFFS = [
     pc("Reserve Cavalry (Werder)", "Lt-Col von Werder",
-       [u("pr15-dragoon", "Garde du Corps"), u("pr15-hussar", "Guard Light Cavalry"), u("pr15-horse-arty", "Guard Horse Battery #4")]),
+       [u("pr15-dragoon", "Garde du Corps", options=["veteran-cavalry"]), u("pr15-hussar", "Guard Light Cavalry", options=["veteran-cavalry"]),
+        u("pr15-horse-arty", "Guard Horse Battery #4", options=["veteran-artillery"])]),
     pc("Reserve Cavalry (Jürgass)", "Col von Jürgass",
        [u("pr15-dragoon", "East Prussian Cuirassiers"), u("pr15-dragoon", "Silesian Cuirassiers"),
         u("pr15-dragoon", "Brandenburg Cuirassiers"), u("pr15-horse-arty", "Horse Battery #10")]),
@@ -221,14 +226,14 @@ LZ_BLUCHER = force(
          ("Leib Infantry and Normal Battalion", [("M", "III/Leib Infantry"), ("M", "Normal Infantry Battalion")]),
          ("Grenadier Battalions", [("M", "Leib Grenadier Battalion"), ("M", "1st East Prussian Grenadier Battalion")])],
         [u("pr15-schutzen", "Guard Jäger Battalion"), u("pr15-schutzen", "Guard Volunteer Jäger Battalion (Wedell)"),
-         u("pr15-foot-arty", "Guard 6-pdr Foot Battery #4")], sub="Lt-Col von Tippelskirch"),
+         u("pr15-foot-arty", "Guard 6-pdr Foot Battery #4", options=["veteran-artillery"])], sub="Lt-Col von Tippelskirch"),
      pc("Brandenburg Cavalry (Katzler)", "Lt-Col von Katzler",
         [u("pr15-uhlan", "West Prussian Uhlans"), u("pr15-hussar", "Brandenburg Hussars (2 squadrons)"), u("pr15-horse-arty", "Horse Battery #8")]),
      *DOLFFS,
      pres(u("pr15-heavy-arty", "½ 12-pdr Foot Battery #3", **HALF), u("pr15-foot-arty", "6-pdr Foot Battery #13"),
           u("pr15-foot-arty", "6-pdr Foot Battery #9"))],
     command=[{"unit": "pr15-cmd-blucher"}],
-    notes=[PR_LIST, LZ_PR_NOTE, "Blücher is the book's named commander.", PR_WHOLE, PR_SPRING, PR_GROUPED, PR_SUB, GUARD, CUIRASSIERS,
+    notes=[PR_LIST, LZ_PR_NOTE, "Blücher is the book's named commander.", PR_WHOLE, PR_SPRING, PR_GROUPED, PR_SUB, GUARD, PR_GUARD_VETERAN, CUIRASSIERS,
            "The Silesian Schützen are the list's attached Schützen battalion.", PR_CAVALRY, PR_ARTY])
 LZ_BLUCHER["missing"] = [{"name": "Russian Position Batteries #1, #14 and #33", "reason": RUSSIAN_BATTERIES}]
 
@@ -289,14 +294,14 @@ BZ_BLUCHER = force(
          ("Leib Infantry and Normal Battalion", [("M", "III/Leib Infantry"), ("M", "1st Reserve Battalion, Leib Infantry"), ("M", "Normal Infantry Battalion")]),
          ("Grenadier Battalions", [("M", "Leib Grenadier Battalion"), ("M", "1st East Prussian Grenadier Battalion")])],
         [u("pr15-schutzen", "Guard Jäger Battalion"), u("pr15-schutzen", "Guard Volunteer Jäger Battalion (Wedell)"),
-         u("pr15-foot-arty", "Guard Foot Battery #4")], sub="Lt-Col von Tippelskirch"),
+         u("pr15-foot-arty", "Guard Foot Battery #4", options=["veteran-artillery"])], sub="Lt-Col von Tippelskirch"),
      pc("Brandenburg Cavalry (Katzler)", "Lt-Col von Katzler",
         [u("pr15-uhlan", "West Prussian Uhlans"), u("pr15-hussar", "Brandenburg Hussars (2 squadrons)"),
          u("pr15-hussar", "2nd Leib Hussars"), u("pr15-horse-arty", "Horse Battery #8")]),
      *DOLFFS,
      pres(u("pr15-foot-arty", "6-pdr Foot Battery #13"))],
     command=[{"unit": "pr15-cmd-blucher"}],
-    notes=[PR_LIST, BZ_PR_NOTE, "Blücher is the book's named commander.", PR_WHOLE, PR_SPRING, PR_GROUPED, PR_SUB, GUARD, CUIRASSIERS,
+    notes=[PR_LIST, BZ_PR_NOTE, "Blücher is the book's named commander.", PR_WHOLE, PR_SPRING, PR_GROUPED, PR_SUB, GUARD, PR_GUARD_VETERAN, CUIRASSIERS,
            "Nafziger lists the 3rd Reserve Battalion of the Leib Regiment with both Zieten and Klüx; it is shown once, with Zieten. His '3/3rd West Prussian' is shown as he gives it.",
            "Hobe's 2nd Leib Hussars and Brandenburg Hussars ride with Katzler's uhlans as one brigade; the two squadrons of Brandenburg Uhlans, not in the battle, are left out.",
            "The Silesian Schützen are the list's attached Schützen battalion.", PR_CAVALRY, PR_ARTY])
