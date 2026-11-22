@@ -25,6 +25,7 @@ import salamanca from "./salamanca.json";
 import sorauren from "./sorauren.json";
 import saltanovka from "./saltanovka.json";
 import talavera from "./talavera.json";
+import valutino from "./valutino.json";
 import vimeiro from "./vimeiro.json";
 import vitoria from "./vitoria.json";
 import waterloo from "./waterloo.json";
@@ -40,7 +41,6 @@ import {
   somosierra,
   tarutino,
   toulouse,
-  valutino,
   vyazma,
   almeida,
   arcis,
@@ -191,7 +191,7 @@ const allBattles: HistoricalBattle[] = [
   gorodechno as HistoricalBattle,
   smolensk,
   polotsk as HistoricalBattle,
-  valutino,
+  valutino as HistoricalBattle,
   dahlenkirchen as HistoricalBattle,
   borodino,
   mesoten as HistoricalBattle,

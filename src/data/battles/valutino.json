@@ -1,0 +1,1308 @@
+{
+  "id": "valutino",
+  "name": "Valutino",
+  "date": "19 August 1812",
+  "campaign": "russia-1812",
+  "summary": "Ney, pushing east from burning Smolensk, ran into the Russian rearguard on the plateau beyond the Stragan stream at Lubino, covering Barclay's army as it struggled onto the Moscow road. All afternoon the French attacked across the marshy ground while Junot's corps, close on the Russian flank, never moved. In the evening Gudin's division carried the crest, Gudin falling at its head, but Barclay's army had got clear.",
+  "sources": [
+    {
+      "label": "French Grande Armée, 15 August 1812 (Nafziger Collection 812HDA)",
+      "url": "https://www.napoleon-series.org/nafzigger/812HDA.pdf"
+    },
+    {
+      "label": "Russian Armies at the beginning of the 1812 Campaign (Nafziger Collection 812XBA)",
+      "url": "https://www.napoleon-series.org/nafzigger/812XBA.pdf"
+    },
+    {
+      "label": "Battle of Valutino (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Valutino"
+    }
+  ],
+  "forces": [
+    {
+      "id": "valutino-gudin",
+      "nationId": "france",
+      "name": "Gudin's Division",
+      "formation": "3rd Division, I Corps (Davout)",
+      "side": "French",
+      "summary": "Lent to Ney for the attack, it led the final assault across the Stragan towards the crest in the evening; Gudin had both legs shattered by a round shot at its head and died three days later.",
+      "notes": [
+        "After Nafziger's order of battle for the Grande Armée on 15 August, four days before the battle.",
+        "Each regiment had its own two or four 3-pdrs, shown as Regimental Artillery.",
+        "Leclerc's brigade mixes a regimental battery with a section, and ten line battalions in a brigade is the list's limit; with the Mecklenburgers it has more. The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Gudin",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Desailly's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Desailly",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-battery",
+              "name": "7th Léger Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-battery",
+              "name": "12th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "7th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/7th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "II/7th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "III/7th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "IV/7th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "V/7th Léger"
+                }
+              ]
+            },
+            {
+              "name": "12th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/12th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/12th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/12th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/12th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "V/12th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Leclerc's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Leclerc",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "127th Line Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-battery",
+              "name": "21st Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "127th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/127th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/127th Line"
+                }
+              ]
+            },
+            {
+              "name": "21st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/21st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/21st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/21st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/21st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "V/21st Line"
+                }
+              ]
+            },
+            {
+              "name": "Mecklenburg-Strelitz Battalion",
+              "units": [
+                {
+                  "unit": "fr-rheinbund-infantry",
+                  "name": "Mecklenburg-Strelitz Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "3/7th Foot Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "4/3rd Horse Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valutino-razout",
+      "nationId": "france",
+      "name": "Razout's Division",
+      "formation": "11th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's leading division, which crossed the Stragan under the Russian guns in the afternoon and fought its way up towards the crest of the plateau.",
+      "notes": [
+        "After Nafziger's order of battle for the Grande Armée on 15 August, four days before the battle.",
+        "The 2nd Portuguese, of the Portuguese Legion, is shown as the list's Portuguese infantry.",
+        "The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Razout",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Joubert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Joubert",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "4th Line Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "18th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/4th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/4th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/4th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/4th Line"
+                }
+              ]
+            },
+            {
+              "name": "18th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/18th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/18th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/18th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/18th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Compère's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Compère",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Portuguese",
+              "units": [
+                {
+                  "unit": "fr-portuguese-infantry",
+                  "name": "I/2nd Portuguese"
+                },
+                {
+                  "unit": "fr-portuguese-infantry",
+                  "name": "II/2nd Portuguese"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "d'Henin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade d'Henin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "93rd Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "93rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/93rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/93rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/93rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/93rd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "18/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "6/5th Horse Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valutino-ledru",
+      "nationId": "france",
+      "name": "Ledru's Division",
+      "formation": "10th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Beside Razout's, in the attacks across the stream and up the slopes through the afternoon.",
+      "notes": [
+        "After Nafziger's order of battle for the Grande Armée on 15 August, four days before the battle.",
+        "The 1st Portuguese, of the Portuguese Legion, is shown as the list's Portuguese infantry.",
+        "The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Ledru",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Gengoult's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gengoult",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "24th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "24th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/24th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/24th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/24th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/24th Line"
+                }
+              ]
+            },
+            {
+              "name": "1st Portuguese",
+              "units": [
+                {
+                  "unit": "fr-portuguese-infantry",
+                  "name": "I/1st Portuguese"
+                },
+                {
+                  "unit": "fr-portuguese-infantry",
+                  "name": "II/1st Portuguese"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Marion's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Marion",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "46th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "46th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/46th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/46th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/46th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/46th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Bruny's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bruny",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "72nd Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "72nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/72nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/72nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/72nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/72nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "12/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "5/6th Horse Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valutino-marchand",
+      "nationId": "wurttemberg",
+      "name": "Marchand's Württembergers",
+      "formation": "25th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "The Württemberg division, worn down by the march, which supported Ney's attacks and helped storm the crest at the end of the day.",
+      "notes": [
+        "Marchand, who had taken over from the Crown Prince, is the book's named commander.",
+        "After Nafziger's order of battle for the Grande Armée on 15 August, four days before the battle.",
+        "Nafziger's return gives each two-battalion regiment between 400 and 850 men, so every battalion is Small.",
+        "Two foot batteries, where the list allows one for this many battalions, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named General de Division Marchand, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "fr-cmd-marchand"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Hügel's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Hügel",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Line 'Prinz Paul'",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/1st Line 'Prinz Paul'",
+                  "options": [
+                    "small-infantry"
+                  ]
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/1st Line 'Prinz Paul'",
+                  "options": [
+                    "small-infantry"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/4th Line",
+                  "options": [
+                    "small-infantry"
+                  ]
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/4th Line",
+                  "options": [
+                    "small-infantry"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Koch's Brigade",
+          "commander": {
+            "name": "Gen-Maj Koch",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Line 'Herzog Wilhelm'",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/2nd Line 'Herzog Wilhelm'",
+                  "options": [
+                    "small-infantry"
+                  ]
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/2nd Line 'Herzog Wilhelm'",
+                  "options": [
+                    "small-infantry"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "6th Line 'Kronprinz'",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/6th Line 'Kronprinz'",
+                  "options": [
+                    "small-infantry"
+                  ]
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/6th Line 'Kronprinz'",
+                  "options": [
+                    "small-infantry"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-light-infantry-brigade",
+          "name": "Brusselle's Light Brigade",
+          "commander": {
+            "name": "Gen-Maj von Brusselle",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-light-infantry",
+              "name": "1st Light Bn",
+              "options": [
+                "small-infantry"
+              ]
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "2nd Light Bn",
+              "options": [
+                "small-infantry"
+              ]
+            },
+            {
+              "unit": "wt-jagers",
+              "name": "1st Jäger Bn 'König'",
+              "options": [
+                "small-infantry"
+              ]
+            },
+            {
+              "unit": "wt-jagers",
+              "name": "2nd Jäger Bn",
+              "options": [
+                "small-infantry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "wt-light-arty",
+              "name": "1st Foot Battery"
+            },
+            {
+              "unit": "wt-light-arty",
+              "name": "2nd Foot Battery"
+            },
+            {
+              "unit": "wt-heavy-arty",
+              "name": "12-pdr Foot Battery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "title": "Jean-Gabriel Marchand",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "valutino-konovnitsyn",
+      "nationId": "russia",
+      "name": "Konovnitsyn's Division",
+      "formation": "3rd Division, III Corps (Tuchkov)",
+      "side": "Russian",
+      "summary": "Part of the III Corps that Yermolov sent to Tuchkov's rearguard; it held the line of the Stragan through the afternoon.",
+      "notes": [
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "The division's two converged grenadier battalions are the Jäger brigade's Grenadier regiment, as the list builds it.",
+        "Uvarov's cuirassiers stood behind it in reserve but couldn't be used in the woods.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Konovnitsyn",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Tuchkov III's Brigade",
+          "commander": {
+            "name": "Maj-Gen Tuchkov III",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "3rd Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Murom Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Murom"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Murom"
+                }
+              ]
+            },
+            {
+              "name": "Revel Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Revel"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Revel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Voeikov's Brigade",
+          "commander": {
+            "name": "Col Voeikov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "5th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Chernigov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Chernigov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Chernigov"
+                }
+              ]
+            },
+            {
+              "name": "Koporye Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Koporye"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Koporye"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Prince Shakhovskoy's Brigade",
+          "commander": {
+            "name": "Maj-Gen Prince Shakhovskoy",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "6th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "20th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 20th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 20th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "21st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 21st Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 21st Jäger"
+                }
+              ]
+            },
+            {
+              "name": "Converged Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "1st Converged Grenadier Bn"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "2nd Converged Grenadier Bn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/George_Dawe_-_Portrait_of_Pyotr_P._Konovnitsyn.jpg/250px-George_Dawe_-_Portrait_of_Pyotr_P._Konovnitsyn.jpg",
+        "title": "Pyotr Konovnitsyn",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:George_Dawe_-_Portrait_of_Pyotr_P._Konovnitsyn.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "valutino-stroganov",
+      "nationId": "russia",
+      "name": "Stroganov's Grenadiers",
+      "formation": "1st Grenadier Division, III Corps (Tuchkov)",
+      "side": "Russian",
+      "summary": "Sent up by Yermolov with the rest of the III Corps to reinforce Tuchkov's rearguard, the grenadiers held the crest above the Stragan against the evening attacks.",
+      "notes": [
+        "Stroganov is the book's named commander.",
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "Three Grenadier Brigades where the list takes one show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major General Pavel Stroganov, with his own rating; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-cmd-stroganov"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Tsvilenev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Tsvilenev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "1st Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Pavlovsky Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Pavlovsky Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Pavlovsky Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Ekaterinoslav Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Ekaterinoslav Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Ekaterinoslav Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Zheltukhin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Zheltukhin",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "1st Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Arakcheyev Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Arakcheyev Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Arakcheyev Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Leib Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Leib Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Leib Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Fock's Brigade",
+          "commander": {
+            "name": "Maj-Gen Fock",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "2nd Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "St Petersburg Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/St Petersburg Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/St Petersburg Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Tauride Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Tauride Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Tauride Grenadiers"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Stroganov_P_A.jpg/250px-Stroganov_P_A.jpg",
+        "title": "Pavel Stroganov",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Stroganov_P_A.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "valutino-choglokov",
+      "nationId": "russia",
+      "name": "Choglokov's Division",
+      "formation": "11th Division, IV Corps (Ostermann-Tolstoy)",
+      "side": "Russian",
+      "summary": "Sent up with Ostermann's IV Corps to hold the crest as Ney's attacks grew stronger in the evening.",
+      "notes": [
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Choglokov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Filisov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Filisov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "2nd Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Polotsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Polotsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Polotsk"
+                }
+              ]
+            },
+            {
+              "name": "Elets Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Elets"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Elets"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Kexholm and Pernov",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "3rd Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kexholm Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Kexholm"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Kexholm"
+                }
+              ]
+            },
+            {
+              "name": "Pernov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Pernov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Pernov"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Bistrom's Brigade",
+          "commander": {
+            "name": "Col Bistrom",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "4th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 1st Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 1st Jäger"
+                }
+              ]
+            },
+            {
+              "name": "33rd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 33rd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 33rd Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "valutino-bakhmetev",
+      "nationId": "russia",
+      "name": "Bakhmetev's Division",
+      "formation": "23rd Division, IV Corps (Ostermann-Tolstoy)",
+      "side": "Russian",
+      "summary": "The other half of Ostermann's corps, in the line on the plateau as the last French assault came in.",
+      "notes": [
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "The division had only five regiments; the 18th Jäger is attached to the Selenginsk regiment, as the list takes it.",
+        "Two light batteries in one brigade, and a position battery with only eight battalions, where the list wants nine, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Bakhmetev",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Okulov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Okulov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "23rd Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Rylsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Rylsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Rylsk"
+                }
+              ]
+            },
+            {
+              "name": "Ekaterinburg Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Ekaterinburg"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Ekaterinburg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Selenginsk and 18th Jäger",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "43rd Light Battery"
+            },
+            {
+              "unit": "ru-light-arty",
+              "name": "44th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Selenginsk Infantry with 18th Jäger",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Selenginsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Selenginsk"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 18th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 18th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bahmetyev_3_Alexey_Nikolaevich.jpg/250px-Bahmetyev_3_Alexey_Nikolaevich.jpg",
+        "title": "Alexey Bakhmetev",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Bahmetyev_3_Alexey_Nikolaevich.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Ney",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Marechal_Ney.jpg/250px-Marechal_Ney.jpg",
+        "title": "Marshal Michel Ney",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Marechal_Ney.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Russian": {
+      "commander": "General Barclay de Tolly",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg/250px-Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "title": "Michael Barclay de Tolly",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "focus": "50% 16%",
+        "date": "1829"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Battle_of_Valutino.jpg/960px-Battle_of_Valutino.jpg",
+    "title": "The Battle of Valutino",
+    "artist": "Peter von Hess",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Valutino.jpg"
+  }
+}

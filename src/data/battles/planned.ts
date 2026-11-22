@@ -17,8 +17,6 @@ const R = "russia-1812";
 
 export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R,
   "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
-export const valutino = planned("valutino", "Valutino", "19 August 1812", R,
-  "Ney and Junot caught the Russian rearguard east of Smolensk at Lubino and fought it to a standstill, while Barclay's army got clear.");
 export const borodino = planned("borodino", "Borodino", "7 September 1812", R,
   "Kutuzov's stand before Moscow: a day of assaults on the flèches and the Great Redoubt, the bloodiest single day of the wars, after which the Russians withdrew and Moscow fell.");
 export const tarutino = planned("tarutino", "Tarutino", "18 October 1812", R,
@@ -39,12 +37,6 @@ smolensk.art = {
   "artist": "Peter von Hess",
   "date": "1846",
   "page": "https://commons.wikimedia.org/wiki/File:Smolensk_by_hess.jpg"
-};
-valutino.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Battle_of_Valutino.jpg/960px-Battle_of_Valutino.jpg",
-  "title": "The Battle of Valutino",
-  "artist": "Peter von Hess",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Valutino.jpg"
 };
 borodino.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg/960px-Battle_of_Borodino_on_26_August_%287_September%29_1812_%28by_Peter_von_Hess%2C_original_colors_version%29.jpg",

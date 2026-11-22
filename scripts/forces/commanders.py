@@ -132,6 +132,7 @@ COMMANDERS = {
     "orthez": {"French": ("Marshal Soult", "soult"), "Anglo-Portuguese": ("The Marquess of Wellington", "wellington")},
     "polotsk": {"French": ("Marshal Oudinot", "oudinot"), "Bavarian": ("Gén. Gouvion Saint-Cyr", "saint_cyr"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
     "polotsk-2": {"French": ("Marshal Gouvion Saint-Cyr", "saint_cyr"), "Bavarian": ("Gen-Lt von Wrede", "wrede"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
+    "valutino": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay")},
     "gorodechno": {"Austrian": ("Prince Schwarzenberg", "schwarzenberg"), "Saxon": ("Général Reynier", "reynier"), "Russian": ("General Tormasov", "tormasov")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
@@ -264,6 +265,10 @@ FORCE_PORTRAITS: dict[str, str] = {
     "polotsk-2-yashvil": "yashvil",
     "polotsk-2-steinheil": "steinheil",
     "polotsk-2-berg": "berg",
+    "valutino-marchand": "marchand",
+    "valutino-konovnitsyn": "konovnitsyn",
+    "valutino-stroganov": "stroganov",
+    "valutino-bakhmetev": "bakhmetev",
     "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
