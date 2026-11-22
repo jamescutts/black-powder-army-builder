@@ -122,6 +122,8 @@ COMMANDERS = {
     "romanov": {"Polish": ("Gén. de Division Latour-Maubourg", "latour_maubourg"), "Russian": ("General Platov", "platov")},
     "kobrin": {"Saxon": ("Gen-Maj von Klengel", "klengel"), "Russian": ("General Tormasov", "tormasov")},
     "klyastitsy": {"French": ("Marshal Oudinot", "oudinot"), "Russian": ("Lt-Gen Count Wittgenstein", "wittgenstein")},
+    "saltanovka": {"French": ("Marshal Davout", "davout"), "Russian": ("Lt-Gen Raevsky", "raevsky")},
+    "ostrovno": {"French": ("Marshal Murat", "murat"), "Russian": ("Lt-Gen Count Ostermann-Tolstoy", "ostermann")},
     "gorodechno": {"Austrian": ("Prince Schwarzenberg", "schwarzenberg"), "Saxon": ("Général Reynier", "reynier"), "Russian": ("General Tormasov", "tormasov")},
     "rolica": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. de Division Delaborde", "delaborde")},
     "vimeiro": {"Anglo-Portuguese": ("Sir Arthur Wellesley", "wellington"), "French": ("Gén. Junot", "junot")},
@@ -163,6 +165,10 @@ FORCE_PORTRAITS: dict[str, str] = {
     "gorodechno-kamensky": "kamensky", "gorodechno-nazimov": "nazimov", "gorodechno-udom": "udom",
     "klyastitsy-legrand": "legrand", "klyastitsy-verdier": "verdier", "klyastitsy-cavalry": "doumerc",
     "klyastitsy-kulnev": "kulnev", "klyastitsy-berg": "berg", "klyastitsy-sazonov": "sazonov",
+    "saltanovka-dessaix": "dessaix", "saltanovka-compans": "compans", "saltanovka-cavalry": "bordessoulle",
+    "saltanovka-kolubakin": "raevsky", "saltanovka-paskevich": "paskevich",
+    "ostrovno-bruyere": "bruyere", "ostrovno-delzons": "delzons", "ostrovno-bakhmetev": "bakhmetev",
+    "ostrovno-cavalry": "ostermann", "ostrovno-konovnitsyn": "konovnitsyn", "ostrovno-pahlen": "pahlen",
     "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
@@ -223,6 +229,18 @@ PORTRAITS.update({
     "legrand": portrait("Général Claude Juste Alexandre Legrand.jpg", "Claude Legrand", "Antoine-Jean Gros"),
     "verdier": portrait("Jean Antoine Verdier.jpg", "Jean-Antoine Verdier", "André Dutertre"),
     "doumerc": portrait("General Doumerc.jpg", "Jean-Pierre Doumerc", "unknown artist"),
+})
+
+# Saltanovka and Ostrovno
+PORTRAITS.update({
+    "ostermann": portrait("Ostermann-tolstoi.jpg", "Count Alexander Ostermann-Tolstoy", "George Dawe", "1825", "50% 18%"),
+    "konovnitsyn": portrait("George Dawe - Portrait of Pyotr P. Konovnitsyn.jpg", "Pyotr Konovnitsyn", "George Dawe", focus="50% 18%"),
+    "pahlen": portrait("Peter Graf von der Pahlen.jpg", "Count Peter von der Pahlen", "George Dawe", focus="50% 18%"),
+    "paskevich": portrait("Ivan Paskevich.jpg", "Ivan Paskevich", "George Dawe", "1823", "50% 18%"),
+    "bakhmetev": portrait("Bahmetyev 3 Alexey Nikolaevich.jpg", "Alexey Bakhmetev", "George Dawe", focus="50% 18%"),
+    "delzons": portrait("General Delzons Maitrier - cropped.png", "Alexis Joseph Delzons", "Maitrier", "1830"),
+    "bruyere": portrait("Général Jean Pierre Bruguière dit Bruyères.jpg", "Jean-Pierre Bruyère", "unknown artist", small=True),
+    "bordessoulle": portrait("Brémond - General Bordessoule.jpg", "Étienne de Bordessoulle", "Jean-François Brémond", "1838"),
 })
 
 # The army lists' other named commanders, for the roster's head

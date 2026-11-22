@@ -218,11 +218,11 @@
     }
   },
   "art": {
-    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Platov3.jpg/960px-Platov3.jpg",
-    "title": "Platov's Cossacks at Mir",
-    "artist": "Wiktor Mazurowski",
-    "page": "https://commons.wikimedia.org/wiki/File:Platov3.jpg",
-    "focus": "50% 45%",
-    "date": "1912"
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/%D0%91%D0%BE%D0%B9_%D0%BA%D0%B0%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%9C%D0%B8%D1%80%D0%BE%D0%BC.jpg/960px-%D0%91%D0%BE%D0%B9_%D0%BA%D0%B0%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%9C%D0%B8%D1%80%D0%BE%D0%BC.jpg",
+    "title": "The Cossack fight at Mir",
+    "artist": "Nikolai Krasovsky",
+    "date": "1889",
+    "page": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D0%B9_%D0%BA%D0%B0%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%9C%D0%B8%D1%80%D0%BE%D0%BC.jpg",
+    "focus": "50% 55%"
   }
 }

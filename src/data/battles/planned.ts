@@ -15,10 +15,6 @@ const planned = (id: string, name: string, date: string, campaign: string, summa
 
 const R = "russia-1812";
 
-export const saltanovka = planned("saltanovka", "Saltanovka", "23 July 1812", R,
-  "Raevsky's corps tried to break through Davout's divisions south of Mogilev to open the way for Bagration's army, and was held.");
-export const ostrovno = planned("ostrovno", "Ostrovno", "25–27 July 1812", R,
-  "Three days of rearguard fighting west of Vitebsk, as Ostermann-Tolstoy and Konovnitsyn held up Murat's cavalry and Eugène's corps.");
 export const smolensk = planned("smolensk", "Smolensk", "16–18 August 1812", R,
   "Napoleon assaulted the walled city, held by Raevsky and then Dokhturov while the Russian armies withdrew; it burned before they left it.");
 export const polotsk = planned("polotsk", "First Polotsk", "17–18 August 1812", R,

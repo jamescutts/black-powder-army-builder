@@ -11,9 +11,11 @@ import ligny from "./ligny.json";
 import mesoten from "./mesoten.json";
 import mir from "./mir.json";
 import quatreBras from "./quatre-bras.json";
+import ostrovno from "./ostrovno.json";
 import rolica from "./rolica.json";
 import romanov from "./romanov.json";
 import salamanca from "./salamanca.json";
+import saltanovka from "./saltanovka.json";
 import talavera from "./talavera.json";
 import vimeiro from "./vimeiro.json";
 import vitoria from "./vitoria.json";
@@ -31,10 +33,8 @@ import {
   nivelle,
   ocana,
   orthez,
-  ostrovno,
   polotsk,
   polotsk2,
-  saltanovka,
   smolensk,
   somosierra,
   sorauren,
@@ -119,8 +119,8 @@ const schedule: HistoricalBattle[] = [
   mir as HistoricalBattle,
   romanov as HistoricalBattle,
   eckau as HistoricalBattle,
-  saltanovka,
-  ostrovno,
+  saltanovka as HistoricalBattle,
+  ostrovno as HistoricalBattle,
   kobrin as HistoricalBattle,
   klyastitsy as HistoricalBattle,
   gorodechno as HistoricalBattle,

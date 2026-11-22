@@ -1,0 +1,975 @@
+{
+  "id": "ostrovno",
+  "name": "Ostrovno",
+  "date": "25–27 July 1812",
+  "campaign": "russia-1812",
+  "summary": "Three days of rearguard fighting on the road to Vitebsk, where Barclay meant to stand. On the 25th Ostermann-Tolstoy's corps held Murat's cavalry in squares on the forest road until Delzons's infantry turned its flank; on the 26th Konovnitsyn's division held on until Napoleon came up and broke it; on the 27th Pahlen held at Dobreyka. Then Barclay, learning Bagration could not join him, slipped away towards Smolensk.",
+  "sources": [
+    {
+      "label": "Russian Armies at the beginning of the 1812 Campaign (Nafziger Collection 812XBA)",
+      "url": "https://www.napoleon-series.org/nafzigger/812XBA.pdf"
+    },
+    {
+      "label": "French Grande Armée, 1 August 1812 (Nafziger Collection 812HAB)",
+      "url": "https://www.napoleon-series.org/nafzigger/812HAB.pdf"
+    },
+    {
+      "label": "Battle of Ostrovno (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ostrovno"
+    },
+    {
+      "label": "Бой под Островно (Russian Wikipedia)",
+      "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BE%D0%B9_%D0%BF%D0%BE%D0%B4_%D0%9E%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%BD%D0%BE"
+    }
+  ],
+  "forces": [
+    {
+      "id": "ostrovno-bruyere",
+      "nationId": "france",
+      "name": "Bruyère's Light Cavalry",
+      "formation": "1st Light Cavalry Division, I Reserve Cavalry Corps (Nansouty)",
+      "side": "French",
+      "summary": "Murat's leading division, which ran into Ostermann's rearguard on the Vitebsk road on 25 July. Piré's brigade charged and took eight guns, and the hussars and lancers came on again and again against the Russian squares on the narrow road between the woods.",
+      "notes": [
+        "After Nafziger's order of battle for 1 August, a week or so after the fight.",
+        "The 2nd Combined Prussian Hussars, from Yorck's contingent, rode with Niewiewski's Poles.",
+        "Three Light Cavalry Brigades and no infantry show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Bruyère",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Jacquinot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jacquinot",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "7th Hussars"
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "9th Chevau-légers Lanciers"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Piré's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Piré",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "16th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "8th Hussars"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Niewiewski's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Niewiewski",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "6th Polish Uhlans"
+            },
+            {
+              "unit": "fr-polish-uhlan",
+              "name": "8th Polish Uhlans"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "2nd Combined Prussian Hussars"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "7/6th Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/57/G%C3%A9n%C3%A9ral_Jean_Pierre_Brugui%C3%A8re_dit_Bruy%C3%A8res.jpg",
+        "title": "Jean-Pierre Bruyère",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Pierre_Brugui%C3%A8re_dit_Bruy%C3%A8res.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "ostrovno-saint-germain",
+      "nationId": "france",
+      "name": "Saint-Germain's Cuirassiers",
+      "formation": "1st Cuirassier Division, I Reserve Cavalry Corps (Nansouty)",
+      "side": "French",
+      "summary": "Nansouty's heavy division, on the French right on 25 July, where it threw back a charge by Russian dragoons; the 2nd Cuirassiers lost 187 horses in the day.",
+      "notes": [
+        "After Nafziger's order of battle for 1 August, a week or so after the fight.",
+        "Its three brigades of one regiment each (Bessières's, Bruno's, Queunot's) are shown together.",
+        "Cavalry without infantry, and the second horse battery, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Saint-Germain",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Saint-Germain's Cuirassiers",
+          "commander": {
+            "name": "Gén. de Division Saint-Germain",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "2nd Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "3rd Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "9th Cuirassiers"
+            },
+            {
+              "unit": "fr-lancer-small",
+              "name": "Company, 1st Chevau-légers"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "1/5th Horse Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/5th Horse Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ostrovno-delzons",
+      "nationId": "france",
+      "name": "Delzons's Division",
+      "formation": "13th Division, IV Corps (Eugène)",
+      "side": "French",
+      "summary": "The first infantry up. Two battalions of its 8th Léger came forward with Murat on 25 July, and as the division arrived it worked through the forest to turn the Russian left, forcing Ostermann back towards Vitebsk; next day it led the attacks on Konovnitsyn. Roussel, one of its brigadiers, was shot dead that night by a French sentry.",
+      "notes": [
+        "After Nafziger's order of battle for 1 August, a week or so after the fight.",
+        "The 1st Provisional Croatian Regiment, raised in the Illyrian Provinces, is shown as Line infantry.",
+        "Each regiment but the Croatians had two 3-pdrs, shown as Regimental Artillery.",
+        "The horse battery, without three cavalry regiments in the force, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Delzons",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Huard's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Huard",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "8th Léger Artillery Company"
+            },
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "84th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "8th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/8th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "II/8th Léger"
+                }
+              ]
+            },
+            {
+              "name": "84th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/84th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/84th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/84th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/84th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Roussel's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Roussel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "92nd Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Provisional Croatian",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/1st Provisional Croatian"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/1st Provisional Croatian"
+                }
+              ]
+            },
+            {
+              "name": "92nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/92nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/92nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/92nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/92nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "106th Line",
+          "units": [
+            {
+              "unit": "fr-regimental-arty-section",
+              "name": "106th Line Artillery Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "106th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/106th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/106th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/106th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/106th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "9/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "2/4th Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/General_Delzons_Maitrier_-_cropped.png/250px-General_Delzons_Maitrier_-_cropped.png",
+        "title": "Alexis Joseph Delzons",
+        "artist": "Maitrier",
+        "page": "https://commons.wikimedia.org/wiki/File:General_Delzons_Maitrier_-_cropped.png",
+        "focus": "50% 20%",
+        "date": "1830"
+      }
+    },
+    {
+      "id": "ostrovno-choglokov",
+      "nationId": "russia",
+      "name": "Choglokov's Division",
+      "formation": "11th Division, IV Corps (Ostermann-Tolstoy)",
+      "side": "Russian",
+      "summary": "Half of Ostermann's corps, which stood across the Vitebsk road on 25 July in battalion squares under Murat's guns and charges. Asked what to do, Ostermann is said to have answered: stand and die.",
+      "notes": [
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Choglokov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Filisov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Filisov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "2nd Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Polotsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Polotsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Polotsk"
+                }
+              ]
+            },
+            {
+              "name": "Elets Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Elets"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Elets"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Kexholm and Pernov",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "3rd Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kexholm Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Kexholm"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Kexholm"
+                }
+              ]
+            },
+            {
+              "name": "Pernov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Pernov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Pernov"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Bistrom's Brigade",
+          "commander": {
+            "name": "Col Bistrom",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "4th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 1st Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 1st Jäger"
+                }
+              ]
+            },
+            {
+              "name": "33rd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 33rd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 33rd Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ostrovno-bakhmetev",
+      "nationId": "russia",
+      "name": "Bakhmetev's Division",
+      "formation": "23rd Division, IV Corps (Ostermann-Tolstoy)",
+      "side": "Russian",
+      "summary": "The other half of Ostermann's corps on 25 July, holding the woods on the left until Delzons's infantry came round them; Okulov, one of its brigadiers, was killed in the three days' fighting.",
+      "notes": [
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "The division had only five regiments; the 18th Jäger is attached to the Selenginsk regiment, as the list takes it.",
+        "Two light batteries in one brigade, and a position battery with only eight battalions, where the list wants nine, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Bakhmetev",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Okulov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Okulov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "23rd Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Rylsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Rylsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Rylsk"
+                }
+              ]
+            },
+            {
+              "name": "Ekaterinburg Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Ekaterinburg"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Ekaterinburg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Selenginsk and 18th Jäger",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "43rd Light Battery"
+            },
+            {
+              "unit": "ru-light-arty",
+              "name": "44th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Selenginsk Infantry with 18th Jäger",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Selenginsk"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Selenginsk"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 18th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 18th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Bahmetyev_3_Alexey_Nikolaevich.jpg/250px-Bahmetyev_3_Alexey_Nikolaevich.jpg",
+        "title": "Alexey Bakhmetev",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Bahmetyev_3_Alexey_Nikolaevich.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "ostrovno-cavalry",
+      "nationId": "russia",
+      "name": "Ostermann's Cavalry",
+      "formation": "With IV Corps (Ostermann-Tolstoy)",
+      "side": "Russian",
+      "summary": "The cavalry with the rearguard, which ran into the French advance guard at the start of the day: the Life Guard Hussars and the Nezhin Dragoons, then a second hussar regiment, with a horse battery that lost six guns in the woods to the 8th Hussars.",
+      "notes": [
+        "The Russian accounts name the Life Guard Hussars and the Nezhin Dragoons, with a second hussar regiment, a dragoon brigade and a horse battery. The Izyum Hussars (eight squadrons, so Large) were attached to the 23rd Division in Nafziger's order of battle; which hussars came up isn't recorded.",
+        "Guard cavalry without the infantry brigades it needs, no infantry, and a horse battery with only two cavalry regiments, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Count Ostermann-Tolstoy",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-guard-light-cavalry-brigade",
+          "name": "Life Guard Hussars",
+          "units": [
+            {
+              "unit": "ru-lg-hussar",
+              "name": "Life Guard Hussars"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Hussars and Dragoons",
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Izyum Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Nezhin Dragoons"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Ostermann-tolstoi.jpg/250px-Ostermann-tolstoi.jpg",
+        "title": "Count Alexander Ostermann-Tolstoy",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Ostermann-tolstoi.jpg",
+        "focus": "50% 18%",
+        "date": "1825"
+      }
+    },
+    {
+      "id": "ostrovno-konovnitsyn",
+      "nationId": "russia",
+      "name": "Konovnitsyn's Division",
+      "formation": "3rd Division, III Corps (Tuchkov)",
+      "side": "Russian",
+      "summary": "Relieved Ostermann's battered corps on 26 July and held the forest road all day against Murat and Delzons until Napoleon himself came up in the afternoon; by three o'clock the line had broken, and the retreat nearly became a rout.",
+      "notes": [
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "The division's two converged grenadier battalions are the Jäger brigade's Grenadier regiment, as the list builds it.",
+        "Uvarov's cuirassiers stood behind it in reserve but couldn't be used in the woods.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Konovnitsyn",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Tuchkov III's Brigade",
+          "commander": {
+            "name": "Maj-Gen Tuchkov III",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "3rd Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Murom Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Murom"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Murom"
+                }
+              ]
+            },
+            {
+              "name": "Revel Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Revel"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Revel"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Voeikov's Brigade",
+          "commander": {
+            "name": "Col Voeikov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "5th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Chernigov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Chernigov"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Chernigov"
+                }
+              ]
+            },
+            {
+              "name": "Koporye Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "1st Bn, Koporye"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "2nd Bn, Koporye"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Prince Shakhovskoy's Brigade",
+          "commander": {
+            "name": "Maj-Gen Prince Shakhovskoy",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "6th Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "20th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 20th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 20th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "21st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "1st Bn, 21st Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Bn, 21st Jäger"
+                }
+              ]
+            },
+            {
+              "name": "Converged Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "1st Converged Grenadier Bn"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "2nd Converged Grenadier Bn"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/George_Dawe_-_Portrait_of_Pyotr_P._Konovnitsyn.jpg/250px-George_Dawe_-_Portrait_of_Pyotr_P._Konovnitsyn.jpg",
+        "title": "Pyotr Konovnitsyn",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:George_Dawe_-_Portrait_of_Pyotr_P._Konovnitsyn.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "ostrovno-pahlen",
+      "nationId": "russia",
+      "name": "Pahlen's Cavalry",
+      "formation": "3rd Cavalry Division",
+      "side": "Russian",
+      "summary": "The last rearguard, with some infantry and forty guns, which held at Dobreyka eight kilometres from Vitebsk on 27 July from dawn until mid-afternoon, and then fell back behind the Luchesa while Barclay's army marched for Smolensk.",
+      "notes": [
+        "After Nafziger's order of battle for the start of the campaign; losses since then aren't shown.",
+        "The Irkutsk Dragoons and Mariupol Hussars had eight squadrons each, so they are Large.",
+        "Pahlen's rearguard also had three to four thousand infantry, which the accounts don't name; add a brigade from the IV Corps if you like.",
+        "No Infantry Brigade shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Count Pahlen",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Skalon's Brigade",
+          "commander": {
+            "name": "Maj-Gen Skalon",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Orenburg Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Siberia Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Klebeck's Brigade",
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Irkutsk Dragoons",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Mariupol Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "9th Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Peter_Graf_von_der_Pahlen.jpg/250px-Peter_Graf_von_der_Pahlen.jpg",
+        "title": "Count Peter von der Pahlen",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Peter_Graf_von_der_Pahlen.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "sides": {
+    "French": {
+      "commander": "Marshal Murat",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Murat_%28Gerard%29.jpg/250px-Murat_%28Gerard%29.jpg",
+        "title": "Marshal Joachim Murat",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Murat_%28Gerard%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Russian": {
+      "commander": "Lt-Gen Count Ostermann-Tolstoy",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Ostermann-tolstoi.jpg/250px-Ostermann-tolstoi.jpg",
+        "title": "Count Alexander Ostermann-Tolstoy",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Ostermann-tolstoi.jpg",
+        "focus": "50% 18%",
+        "date": "1825"
+      }
+    }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/5/57/Battle_of_Ostrovno_1812.PNG",
+    "title": "The Battle of Ostrovno",
+    "artist": "Albrecht Adam",
+    "date": "1845",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Ostrovno_1812.PNG",
+    "focus": "50% 45%"
+  }
+}

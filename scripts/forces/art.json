@@ -93,20 +93,20 @@
       "focus": "50% 45%"
     },
     "mir": {
-      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg/960px-Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg",
-      "title": "The Polish cavalry against Bagration's rearguard at Mir",
-      "artist": "Henri Félix Emmanuel Philippoteaux",
-      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_the_Polish_cavalry_against_the_rearguard_of_Prince_Bagration%2C_10_July_1812.jpg",
-      "focus": "50% 45%",
-      "date": "c. 1867"
-    },
-    "romanov": {
       "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Platov3.jpg/960px-Platov3.jpg",
       "title": "Platov's Cossacks at Mir",
       "artist": "Wiktor Mazurowski",
+      "date": "1912",
       "page": "https://commons.wikimedia.org/wiki/File:Platov3.jpg",
-      "focus": "50% 45%",
-      "date": "1912"
+      "focus": "50% 50%"
+    },
+    "romanov": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/%D0%91%D0%BE%D0%B9_%D0%BA%D0%B0%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%9C%D0%B8%D1%80%D0%BE%D0%BC.jpg/960px-%D0%91%D0%BE%D0%B9_%D0%BA%D0%B0%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%9C%D0%B8%D1%80%D0%BE%D0%BC.jpg",
+      "title": "The Cossack fight at Mir",
+      "artist": "Nikolai Krasovsky",
+      "date": "1889",
+      "page": "https://commons.wikimedia.org/wiki/File:%D0%91%D0%BE%D0%B9_%D0%BA%D0%B0%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2_%D0%BF%D0%BE%D0%B4_%D0%9C%D0%B8%D1%80%D0%BE%D0%BC.jpg",
+      "focus": "50% 55%"
     },
     "gorodechno": {
       "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Schlacht_bei_Podubnie.jpg/960px-Schlacht_bei_Podubnie.jpg",
@@ -130,6 +130,22 @@
       "artist": "Peter von Hess",
       "page": "https://commons.wikimedia.org/wiki/File:Klyastitsy.jpg",
       "focus": "50% 50%"
+    },
+    "saltanovka": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Raevsky_saltanovka.jpg/960px-Raevsky_saltanovka.jpg",
+      "title": "Raevsky's soldiers at Saltanovka",
+      "artist": "Nikolai Samokysh",
+      "date": "1912",
+      "page": "https://commons.wikimedia.org/wiki/File:Raevsky_saltanovka.jpg",
+      "focus": "50% 40%"
+    },
+    "ostrovno": {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/5/57/Battle_of_Ostrovno_1812.PNG",
+      "title": "The Battle of Ostrovno",
+      "artist": "Albrecht Adam",
+      "date": "1845",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Ostrovno_1812.PNG",
+      "focus": "50% 45%"
     }
   },
   "campaigns": {
