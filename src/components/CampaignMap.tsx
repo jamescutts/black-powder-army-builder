@@ -33,24 +33,26 @@ function escape(s: string): string {
   return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]!);
 }
 
-const BATTLE_SIZE = 30;
-const SOON_SIZE = 23;
+const BATTLE_SIZE = 36;
+const SOON_SIZE = 28;
 
-/** A battle's mark, as on an old atlas: two crossed sabres in ink, haloed in parchment so they stand off
- * the lines under them; burgundy for a battle with forces, a fainter sepia for one still to come */
+/** A battle's mark, as on an old atlas: two crossed light cavalry sabres, their curved blades solid and
+ * tapering, with knuckle-bow guards, inked in burgundy for a battle with forces or a fainter sepia for one
+ * still to come, and haloed in parchment so they stand off the lines under them */
 export function swords(soon: boolean, size?: number): string {
   const ink = soon ? "#5e4d36" : "#5a101e";
   const dims = size ? ` width="${size}" height="${size}"` : "";
-  const blades = "M4 3.5 Q8.6 6.6 15.2 15.2 M20 3.5 Q15.4 6.6 8.8 15.2";
-  const guards = "M13 17.4 L17.4 13 M6.6 13 L11 17.4";
-  const grips = "M15.2 15.2 L18.4 18.4 M8.8 15.2 L5.6 18.4";
-  const sabres = (stroke: string, extra: number) =>
-    `<g fill="none" stroke="${stroke}" stroke-linecap="round" stroke-linejoin="round">` +
-    `<path d="${blades}" stroke-width="${1.9 + extra}"/>` +
-    `<path d="${guards}" stroke-width="${1.6 + extra}"/>` +
-    `<path d="${grips}" stroke-width="${2.4 + extra}"/></g>` +
-    `<g fill="${stroke}"><circle cx="19.2" cy="19.2" r="${1.4 + extra / 2}"/><circle cx="4.8" cy="19.2" r="${1.4 + extra / 2}"/></g>`;
-  return `<svg viewBox="0 0 24 24"${dims} aria-hidden="true">${sabres("#fbf6e9", 2.6)}${sabres(ink, 0)}</svg>`;
+  // One sabre, point at the top left and hilt at the bottom right, in a light cavalry sabre's proportions:
+  // a long slim blade with a gentle curve, tapering to its point, then a short grip, a thin stirrup guard
+  // and a small pommel cap; the other is its mirror image
+  const sabre = (colour: string, halo: number) =>
+    `<path d="M2.6 2.6 Q12.8 7.1 17.75 16.65 L16.65 17.75 Q11.7 8.3 2.6 2.6 Z" fill="${colour}" stroke="${colour}" stroke-width="${halo || 0.3}" stroke-linejoin="round"/>` +
+    `<path d="M15.8 18.6 L18.6 15.8 Q21.7 17.5 20.6 20.6" fill="none" stroke="${colour}" stroke-width="${1.05 + halo}" stroke-linecap="round" stroke-linejoin="round"/>` +
+    `<path d="M17.2 17.2 L20 20" fill="none" stroke="${colour}" stroke-width="${2.05 + halo}" stroke-linecap="round"/>` +
+    `<circle cx="20.3" cy="20.3" r="${1 + halo / 2}" fill="${colour}"/>`;
+  const pair = (colour: string, halo: number) =>
+    `<g>${sabre(colour, halo)}</g><g transform="matrix(-1 0 0 1 24 0)">${sabre(colour, halo)}</g>`;
+  return `<svg viewBox="0 0 24 24"${dims} aria-hidden="true">${pair("#fbf6e9", 2.2)}${pair(ink, 0)}</svg>`;
 }
 
 const MONTHS: Record<string, string> = {
