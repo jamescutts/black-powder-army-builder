@@ -256,3 +256,55 @@ export const fereChampenoise = planned("fere-champenoise", "Fère-Champenoise", 
   "The allied cavalry, marching on Paris, rode down Marmont's and Mortier's corps on the plain, and then Pacthod's and Amey's National Guard divisions, which formed squares and fought on until the Tsar himself rode in to accept their surrender.");
 export const paris = planned("paris", "Paris", "30 March 1814", F,
   "The allied armies attacked the heights of Belleville, Romainville and Montmartre, held by Marmont and Mortier with conscripts, National Guards and the pupils of the École Polytechnique; that night Marmont signed the capitulation, and the allies entered the city next day.");
+
+// More of 1813: the smaller actions and the sieges
+export const danzig = planned("danzig", "Siege of Danzig", "16 January – 29 November 1813", L,
+  "Rapp held the Vistula fortress with the frozen remnants of the Grande Armée and a garrison of a dozen nations through the whole of 1813, beating off Russian and Prussian besiegers until hunger and disease forced him to terms in November.");
+export const luneburg = planned("luneburg", "Lüneburg", "2 April 1813", L,
+  "Dörnberg's and Chernyshev's flying columns stormed Lüneburg, held by Morand's small division, and took most of it prisoner after the townspeople helped them in: the first allied victory of the war in Germany.");
+export const mockern = planned("mockern", "Möckern", "5 April 1813", L,
+  "Eugène, advancing from Magdeburg towards Berlin, was met by Wittgenstein's Russians and Yorck's and Bülow's Prussians among the villages east of the Elbe, and after a hard day fell back behind the river.");
+export const rippach = planned("rippach", "Rippach", "1 May 1813", L,
+  "Napoleon's advance guard forced the Rippach defile against Winzingerode's cavalry the day before Lützen; Marshal Bessières, reconnoitring, was killed by a cannonball.");
+export const reichenbach = planned("reichenbach", "Reichenbach", "22 May 1813", L,
+  "Pursuing the allies east from Bautzen, Napoleon's advance guard and cavalry were held by the Russian rearguard at Reichenbach; Duroc, Grand Marshal of the Palace, was mortally wounded by a shot that struck near the Emperor.");
+export const haynau = planned("haynau", "Haynau", "26 May 1813", L,
+  "Blücher laid an ambush for the French advance guard in Silesia: Maison's division, marching carelessly through Haynau, was charged by Prussian cavalry hidden behind a ridge and lost its guns and hundreds of prisoners.");
+export const luckau = planned("luckau", "Luckau", "4 June 1813", L,
+  "Oudinot, sent towards Berlin, attacked Bülow's Prussians in the walled town of Luckau and its suburbs and was beaten off, on the day the armistice was agreed.");
+export const kitzen = planned("kitzen", "Kitzen", "17 June 1813", L,
+  "During the armistice Lützow's Free Corps, marching back to Prussian lines, was surrounded at Kitzen by French and Württemberg cavalry who held it was outside the truce, and cut to pieces; the poet Theodor Körner was among the wounded.");
+export const lowenberg = planned("lowenberg", "Löwenberg", "21 August 1813", L,
+  "As the armistice ended Napoleon came at Blücher on the Bober with the Guard and three corps; Blücher, under orders to avoid a battle with the Emperor himself, fought and fell back.");
+export const goldberg = planned("goldberg", "Goldberg", "23 August 1813", L,
+  "Macdonald's corps attacked Blücher's army around Goldberg, taking the Wolfsberg after a fight in which the Prussian infantry and Russian Jäger held on until ordered back.");
+export const hagelberg = planned("hagelberg", "Hagelberg", "27 August 1813", L,
+  "Hirschfeld's Prussians, most of them raw Kurmark Landwehr, attacked Girard's division as it marched from Magdeburg and broke it in a brutal fight round the village walls, much of it with musket butts.");
+export const plagwitz = planned("plagwitz", "Plagwitz", "29 August 1813", L,
+  "After the Katzbach, Puthod's division, cut off on the flooded Bober with its back to the river, was surrounded by Langeron's Russians and destroyed, Puthod taken with his eagles.");
+export const altenburg = planned("altenburg", "Altenburg", "28 September 1813", L,
+  "Thielmann's and Platov's raiders surprised Lefebvre-Desnouettes's cavalry at Altenburg behind the French lines and drove it back with heavy loss.");
+export const liebertwolkwitz = planned("liebertwolkwitz", "Liebertwolkwitz", "14 October 1813", L,
+  "Two days before Leipzig, Murat's cavalry met Wittgenstein's and Pahlen's on the open plain south of the city in the greatest cavalry battle of the wars, charge and counter-charge through the day with nothing decided.");
+export const mockernLeipzig = planned("mockern-leipzig", "Möckern (Leipzig)", "16 October 1813", L,
+  "North of Leipzig, while the great battle raged at Wachau, Yorck's Prussian corps stormed Marmont's line at Möckern, taking and losing the village again and again until the Prussian cavalry broke through; the fiercest single fight of the battle.");
+export const torgau = planned("torgau", "Siege of Torgau", "18 October 1813 – 10 January 1814", L,
+  "The Elbe fortress, crowded with sick and wounded from Leipzig and swept by typhus, was besieged by Tauentzien's Prussians and surrendered in January.");
+export const hamburg = planned("hamburg", "Siege of Hamburg", "3 December 1813 – 27 May 1814", L,
+  "Davout held Hamburg against Bennigsen's Russians through the winter, turning out thousands of townspeople and firing the suburbs, and only gave the city up weeks after Napoleon's abdication.");
+export const sehested = planned("sehested", "Sehested", "10 December 1813", L,
+  "Napoleon's Danish allies, retreating into Holstein before Bernadotte's army, broke through Wallmoden's corps at Sehested to reach the fortress of Rendsburg; Denmark made peace a month later.");
+
+// More of 1814
+export const mormant = planned("mormant", "Mormant", "17 February 1814", F,
+  "Turning back south after the Six Days, Napoleon's cavalry and Gérard's infantry caught Pahlen's Russian advance guard in the open at Mormant and cut it to pieces.");
+export const barSurAube = planned("bar-sur-aube", "Bar-sur-Aube", "27 February 1814", F,
+  "Schwarzenberg turned on Oudinot's and Macdonald's rearguard at Bar-sur-Aube and drove it back over the Aube; Wittgenstein was wounded leading the attack.");
+export const laubressel = planned("laubressel", "Laubressel", "3 March 1814", F,
+  "The allied army of Bohemia followed up its success at Bar-sur-Aube and beat Macdonald and Oudinot again at Laubressel, east of Troyes.");
+export const soissons = planned("soissons", "Soissons", "3 March 1814", F,
+  "With Blücher's army trapped against the Aisne, Moreau's small garrison gave up Soissons and its bridge to Bülow and Winzingerode, letting the Army of Silesia across; Napoleon called it the worst blow of the campaign.");
+export const limonest = planned("limonest", "Limonest", "20 March 1814", F,
+  "Augereau's army, which had held the Rhône valley against the Austrians since January, was beaten before Lyon at Limonest by the Prince of Hesse-Homburg, and Lyon fell next day.");
+export const saintDizier = planned("saint-dizier", "Saint-Dizier", "26 March 1814", F,
+  "Napoleon, striking at the allies' communications, turned on Winzingerode's cavalry screen at Saint-Dizier and routed it, then learned it had been sent to deceive him while the allied armies marched on Paris: his last victory.");
