@@ -152,13 +152,21 @@ function kmFromRoute(at: LatLng, path: LatLng[]): number {
   return best;
 }
 
-/** The marches that led to a battle or away from it: those passing within 5 km of it, or, where none does,
- * the nearest within 50 km */
+/** The marches that led to a battle or away from it: those of its time passing within 5 km of it, or,
+ * where none does, the nearest within 50 km */
 export function routesAt(campaignId: string, battleId: string): MapRoute[] {
   const data = campaignMaps[campaignId];
   const place = battlePlaces[battleId];
   if (!data || !place) return [];
-  const near = data.routes.map((r) => ({ r, d: kmFromRoute(place.at, r.path) }));
+  // Only marches of the battle's own year or years: Napoleon's road through Vitoria in 1808 is no part of
+  // the battle there in 1813
+  const years = (s: string) => (s.match(/\b1[78]\d\d\b/g) ?? []).map(Number);
+  const when = years(scheduleIn(campaignId).find((b) => b.id === battleId)?.date ?? "");
+  const inTime = (r: MapRoute) => {
+    const span = years(r.dates);
+    return !when.length || !span.length || when.some((y) => y >= Math.min(...span) && y <= Math.max(...span));
+  };
+  const near = data.routes.filter(inTime).map((r) => ({ r, d: kmFromRoute(place.at, r.path) }));
   const close = near.filter((n) => n.d <= 5);
   if (close.length) return close.map((n) => n.r);
   const nearest = Math.min(...near.map((n) => n.d));

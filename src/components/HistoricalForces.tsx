@@ -327,13 +327,10 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
   );
 }
 
-// The campaigns whose battles have a map of their own so far
-const BATTLE_MAPS = new Set(["russia-1812"]);
-
 /** A battle's place in its campaign, as on Fleet Ledger's battle pages: the campaign's map centred on it,
  * with the marches that led to it and away from it, listed beneath */
 function BattleMap({ campaignId, battleId, name }: { campaignId: string; battleId: string; name: string }) {
-  if (!BATTLE_MAPS.has(campaignId) || !hasCampaignMap(campaignId) || !battlePlaces[battleId]) return null;
+  if (!hasCampaignMap(campaignId) || !battlePlaces[battleId]) return null;
   const routes = routesAt(campaignId, battleId);
   const sides = new Map(campaignMaps[campaignId].sides.map((s) => [s.id, s]));
   return (

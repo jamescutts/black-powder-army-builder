@@ -492,7 +492,7 @@ export const campaignMaps: Record<string, CampaignMap> = {
     tiles: "relief",
     sides: [
       { id: "french", label: "Armée du Nord", colour: "#2b4a7e" },
-      { id: "allied", label: "Wellington's Anglo-allied army", colour: "#a3322a", dash: "8 6" },
+      { id: "allied", label: "Wellington's Anglo-allied army", colour: "#a3322a", dash: "8 6", lane: 8 },
       { id: "prussian", label: "Blücher's Prussians", colour: "#2e2b28", dash: "12 4 2 4" },
     ],
     places: [
@@ -784,6 +784,75 @@ export const campaignMaps: Record<string, CampaignMap> = {
         ],
       },
       {
+        side: "french",
+        name: "Delaborde's delaying action",
+        dates: "August 1808",
+        note: "Sent north from Lisbon to delay Wellesley while Junot gathered his army, Delaborde fell back from Alcobaça to the heights at Roliça, fought there, and withdrew south.",
+        path: [
+          [39.55, -8.98],
+          [39.32, -9.18],
+          [39.05, -9.05],
+        ],
+      },
+      {
+        side: "french",
+        name: "Junot marches out of Lisbon",
+        dates: "August 1808",
+        note: "Junot gathered what he could of his army of Portugal and marched north by Torres Vedras to attack Wellesley's beachhead at Vimeiro.",
+        path: [
+          [38.72, -9.14],
+          [39.09, -9.26],
+          [39.18, -9.32],
+        ],
+      },
+      {
+        side: "french",
+        name: "Victor and Joseph against Talavera",
+        dates: "July 1809",
+        note: "Victor fell back on Toledo to join King Joseph and Sebastiani, and the three came back down the Tagus together to attack the allies at Talavera.",
+        path: [
+          [40.42, -3.7],
+          [39.86, -4.02],
+          [39.96, -4.83],
+        ],
+      },
+      {
+        side: "french",
+        name: "Soult marches to relieve Badajoz",
+        dates: "May 1811",
+        note: "Soult brought an army up from Seville by Llerena and Santa Marta to raise the siege of Badajoz, and met Beresford and Blake at Albuera.",
+        path: [
+          [37.39, -5.98],
+          [38.24, -6.02],
+          [38.62, -6.63],
+          [38.72, -6.82],
+        ],
+      },
+      {
+        side: "french",
+        name: "Marmont's manoeuvres",
+        dates: "July 1812",
+        note: "Marmont crossed the Douro at Tordesillas and marched south, trying to turn Wellington's flank and cut him from Ciudad Rodrigo, until his columns overreached at the Arapiles.",
+        path: [
+          [41.5, -5.0],
+          [41.15, -5.25],
+          [40.95, -5.45],
+          [40.91, -5.6],
+        ],
+      },
+      {
+        side: "french",
+        name: "Joseph's retreat to Vitoria",
+        dates: "May–June 1813",
+        note: "King Joseph gave up Madrid and fell back by Valladolid and Burgos, his convoys swelling with the spoils of five years, until Wellington caught him at Vitoria.",
+        path: [
+          [40.42, -3.7],
+          [41.65, -4.72],
+          [42.34, -3.7],
+          [42.85, -2.67],
+        ],
+      },
+      {
         side: "allied",
         name: "Wellesley lands in Portugal",
         dates: "August 1808",
@@ -896,6 +965,17 @@ export const campaignMaps: Record<string, CampaignMap> = {
           [43.01, -7.56],
           [42.46, -6.06],
           [41.88, -5.04],
+        ],
+      },
+      {
+        side: "spanish",
+        name: "Cuesta joins Wellesley",
+        dates: "July 1809",
+        note: "Cuesta's Army of Estremadura came up the Tagus from Almaraz by Oropesa to join Wellesley, and held the allied right among the olive groves at Talavera.",
+        path: [
+          [39.81, -5.67],
+          [39.92, -5.18],
+          [39.96, -4.83],
         ],
       },
       {
