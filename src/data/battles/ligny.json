@@ -8,6 +8,10 @@
     {
       "label": "Waterloo campaign order of battle (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Waterloo_campaign_order_of_battle"
+    },
+    {
+      "label": "Prussian Army of the Lower Rhine, June 1815 (Nafziger Collection 815FAG, after Plotho)",
+      "url": "https://www.napoleon-series.org/nafzigger/815FAG.pdf"
     }
   ],
   "forces": [
@@ -863,7 +867,10 @@
       "notes": [
         "The order of battle gives Pirch II's brigade four regiments, the 16th Infantry among them, where the list's brigade has at most two Line regiments and three in all, so these show as historical departures.",
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigades' foot batteries.",
+        "The corps cavalry, under Röder, follows Nafziger's order of battle (after Plotho). The list takes line or Landwehr cavalry brigades but not both, so a corps with both shows it as a historical departure.",
+        "Lützow's brigade mixed line and Landwehr cavalry, which the list's brigades don't, so its two Landwehr regiments and the Westphalian are a brigade of their own here.",
+        "Nafziger gives each corps three 12-pdr batteries, a howitzer battery and more 6-pdr foot and horse batteries than its brigades had; the list's reserve takes one heavy, one foot and one horse battery, so only those are here. Which horse batteries rode with the cavalry brigades is our reading.",
         "Zieten is the book's named commander.",
         "Commanders are at Staff Rating 8, the default for historical forces, except the book's named General Hans Ernst Karl, Graf von Zieten, with his own rating."
       ],
@@ -1157,6 +1164,94 @@
               ]
             }
           ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Treskow's Cavalry Brigade",
+          "commander": {
+            "name": "Gen-Maj von Treskow",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "5th (Brandenburg) Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "2nd (1st West Prussian) Dragoons"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "3rd (Brandenburg) Uhlans"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Lützow's Cavalry Brigade",
+          "commander": {
+            "name": "Gen-Maj von Lützow",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-hussar",
+              "name": "4th (1st Silesian) Hussars"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "6th (2nd West Prussian) Uhlans"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Lützow's Cavalry Brigade (Landwehr)",
+          "commander": {
+            "name": "Gen-Maj von Lützow",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "1st Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "2nd Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "Westphalian Landwehr Cavalry"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "I Corps Reserve Artillery",
+          "units": [
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Battery"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Battery"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
         }
       ],
       "portrait": {
@@ -1176,7 +1271,9 @@
       "summary": "Blücher's reserve behind the line, fed in brigade by brigade: into Saint-Amand-la-Haye and Wagnelée to try to turn the French left, and into Ligny as the centre was worn down.",
       "notes": [
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigades' foot batteries.",
+        "The corps cavalry, under Wahlen-Jürgass, follows Nafziger's order of battle (after Plotho). The list takes line or Landwehr cavalry brigades but not both, so a corps with both shows it as a historical departure.",
+        "Nafziger gives each corps three 12-pdr batteries, a howitzer battery and more 6-pdr foot and horse batteries than its brigades had; the list's reserve takes one heavy, one foot and one horse battery, so only those are here. Which horse batteries rode with the cavalry brigades is our reading.",
         "Pirch I commands as the optional Corps Commander (Albion Triumphant p. his brigade commanders at 8, the list's lowest.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
@@ -1455,6 +1552,98 @@
               ]
             }
           ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Thümen's Cavalry Brigade",
+          "commander": {
+            "name": "Gen-Maj von Thümen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "1st (Queen's) Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "6th (Neumark) Dragoons"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "2nd (Silesian) Uhlans"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Sohr's Cavalry Brigade",
+          "commander": {
+            "name": "Gen-Maj von Sohr",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-hussar",
+              "name": "3rd (Brandenburg) Hussars"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "5th (Pomeranian) Hussars"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "11th (Berg) Hussars"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Schulenburg's Cavalry Brigade",
+          "commander": {
+            "name": "Gen-Maj von Schulenburg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "4th Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "5th Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "Elbe Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "II Corps Reserve Artillery",
+          "units": [
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Battery"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Battery"
+            }
+          ]
         }
       ],
       "portrait": {
@@ -1475,7 +1664,10 @@
       "notes": [
         "Luck's brigade was all Landwehr, two Kurmark regiments, where the list's brigade needs a Line regiment, which shows as a historical departure.",
         "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
-        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+        "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigades' foot batteries.",
+        "The corps cavalry, under Hobe, follows Nafziger's order of battle (after Plotho). The list takes line or Landwehr cavalry brigades but not both, so a corps with both shows it as a historical departure.",
+        "Lottum's brigade had three Uhlan regiments where the list allows two, and Marwitz's mixed line and Landwehr cavalry, so its two Kurmark regiments are a brigade of their own here.",
+        "Nafziger gives each corps three 12-pdr batteries, a howitzer battery and more 6-pdr foot and horse batteries than its brigades had; the list's reserve takes one heavy, one foot and one horse battery, so only those are here. Which horse batteries rode with the cavalry brigades is our reading.",
         "Thielemann commands as the optional Corps Commander (Albion Triumphant p. his brigade commanders at 8, the list's lowest.",
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
@@ -1718,6 +1910,94 @@
                   "name": "III/6th Kurmark Landwehr"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Lottum's Cavalry Brigade",
+          "commander": {
+            "name": "Gen-Maj von Lottum",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "7th (Westphalian) Dragoons"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "5th Uhlans"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "7th (Rhineland) Uhlans"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "8th (Rhineland) Uhlans"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Marwitz's Cavalry Brigade",
+          "commander": {
+            "name": "Gen-Maj von Marwitz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-hussar",
+              "name": "9th (Rhineland) Hussars"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "12th Hussars"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Marwitz's Cavalry Brigade (Landwehr)",
+          "commander": {
+            "name": "Gen-Maj von Marwitz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "3rd Kurmark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "6th Kurmark Landwehr Cavalry"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "III Corps Reserve Artillery",
+          "units": [
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Battery"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Battery"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery"
             }
           ]
         }

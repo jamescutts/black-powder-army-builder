@@ -18,7 +18,8 @@ import ratings
 OUT = Path(__file__).resolve().parents[2] / "src" / "data" / "battles"
 ROMAN = ["I", "II", "III", "IV"]
 SOURCES = [
-    {"label": "Waterloo campaign order of battle (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Waterloo_campaign_order_of_battle"}
+    {"label": "Waterloo campaign order of battle (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Waterloo_campaign_order_of_battle"},
+    {"label": "Prussian Army of the Lower Rhine, June 1815 (Nafziger Collection 815FAG, after Plotho)", "url": "https://www.napoleon-series.org/nafzigger/815FAG.pdf"},
 ]
 RATINGS = "Staff Ratings are our judgement: the division's commander at 8, brigade commanders at 7."
 
@@ -563,14 +564,73 @@ def pr_brigade(n):
                regiments=[pr_ir(r) for r in irs] + [pr_lw(r) for r in lws])
 
 
+# Each corps' cavalry, after Nafziger (815FAG, from Plotho): (brigade commander, [(unit, regiment)]), with
+# Landwehr cavalry kept as brigades of their own, since the list's brigades take one or the other
+D, UH, HU, LWC = "pr15-dragoon", "pr15-uhlan", "pr15-hussar", "pr15-mounted-landwehr"
+PR_CAVALRY = {
+    "I": ("Röder", [
+        ("Treskow", [(D, "5th (Brandenburg) Dragoons"), (D, "2nd (1st West Prussian) Dragoons"), (UH, "3rd (Brandenburg) Uhlans")], True),
+        ("Lützow", [(HU, "4th (1st Silesian) Hussars"), (UH, "6th (2nd West Prussian) Uhlans")], True),
+        ("Lützow", [(LWC, "1st Kurmark Landwehr Cavalry"), (LWC, "2nd Kurmark Landwehr Cavalry"), (LWC, "Westphalian Landwehr Cavalry")], False),
+    ], True),
+    "II": ("Wahlen-Jürgass", [
+        ("Thümen", [(D, "1st (Queen's) Dragoons"), (D, "6th (Neumark) Dragoons"), (UH, "2nd (Silesian) Uhlans")], True),
+        ("Sohr", [(HU, "3rd (Brandenburg) Hussars"), (HU, "5th (Pomeranian) Hussars"), (HU, "11th (Berg) Hussars")], True),
+        ("Schulenburg", [(LWC, "4th Kurmark Landwehr Cavalry"), (LWC, "5th Kurmark Landwehr Cavalry"), (LWC, "Elbe Landwehr Cavalry")], True),
+    ], False),
+    "III": ("Hobe", [
+        ("Lottum", [(D, "7th (Westphalian) Dragoons"), (UH, "5th Uhlans"), (UH, "7th (Rhineland) Uhlans"), (UH, "8th (Rhineland) Uhlans")], True),
+        ("Marwitz", [(HU, "9th (Rhineland) Hussars"), (HU, "12th Hussars")], True),
+        ("Marwitz", [(LWC, "3rd Kurmark Landwehr Cavalry"), (LWC, "6th Kurmark Landwehr Cavalry")], False),
+    ], True),
+    "IV": ("Prince Wilhelm of Prussia", [
+        ("Schwerin", [(D, "8th Dragoons"), (UH, "1st (West Prussian) Uhlans"), (HU, "6th (2nd Silesian) Hussars")], True),
+        ("Watzdorf", [(HU, "8th (1st Westphalian) Hussars"), (HU, "10th (1st Magdeburg) Hussars")], True),
+        ("Sydow", [(LWC, "1st Neumark Landwehr Cavalry"), (LWC, "2nd Neumark Landwehr Cavalry"),
+                   (LWC, "1st Pomeranian Landwehr Cavalry"), (LWC, "2nd Pomeranian Landwehr Cavalry")], True),
+        ("Sydow", [(LWC, "1st Silesian Landwehr Cavalry"), (LWC, "2nd Silesian Landwehr Cavalry"), (LWC, "3rd Silesian Landwehr Cavalry")], False),
+    ], False),
+}
+CAVALRY_NOTES = {
+    "I": "Lützow's brigade mixed line and Landwehr cavalry, which the list's brigades don't, so its two Landwehr regiments and the Westphalian are a brigade of their own here.",
+    "III": "Lottum's brigade had three Uhlan regiments where the list allows two, and Marwitz's mixed line and Landwehr cavalry, so its two Kurmark regiments are a brigade of their own here.",
+    "IV": "Sydow's brigade had seven Landwehr cavalry regiments, more than one of the list's brigades holds, so it is split in two here.",
+}
+
+
+def pr_cavalry(corps):
+    """A corps' cavalry: its line and Landwehr brigades, each with a horse battery where it had one to spare"""
+    _cmd, brigades, _reserve_horse = PR_CAVALRY[corps]
+    out, seen = [], set()
+    for commander, regiments, horse in brigades:
+        landwehr = all(unit == LWC for unit, _ in regiments)
+        part = " (Landwehr)" if commander in seen else ""
+        seen.add(commander)
+        out.append(bde("pr15-landwehr-cavalry-brigade" if landwehr else "pr15-cavalry-brigade",
+                       f"{commander}'s Cavalry Brigade{part}", f"Gen-Maj von {commander}" if commander != "Sydow" else "Lt-Col von Sydow",
+                       units=[u(unit, name) for unit, name in regiments] + ([u("pr15-horse-arty", "Horse Battery")] if horse else [])))
+    return out
+
+
+def pr_reserve(corps):
+    """A corps' reserve artillery, as much of it as the list's reserve takes: one heavy, one foot and one horse battery"""
+    reserve_horse = PR_CAVALRY[corps][2]
+    return bde("pr15-army-reserve-artillery", f"{corps} Corps Reserve Artillery",
+               units=[u("pr15-heavy-arty", "12-pdr Battery"), u("pr15-foot-arty", "6-pdr Battery")]
+               + ([u("pr15-horse-arty", "Horse Battery")] if reserve_horse else []))
+
+
 def prussian_corps(corps, battle, summary, notes=()):
     """A Prussian corps as one force: its four brigades were each the size of another army's division"""
     name, brigades, commander = PR_CORPS[corps]
     return force(f"{battle}-prussian-{corps.lower()}-corps", PR, name, f"{corps} Corps, Army of the Lower Rhine", "Prussian", summary,
-                 [pr_brigade(n) for n in brigades], command=[commander],
+                 [pr_brigade(n) for n in brigades] + pr_cavalry(corps) + [pr_reserve(corps)], command=[commander],
                  notes=[n_ for n_ in (PR_NOTES.get(n) for n in brigades) if n_] + list(notes) + [
                      "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
-                     "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The corps' cavalry and reserve artillery aren't included, and the order of battle doesn't number the brigades' foot batteries.",
+                     "Each regiment's three battalions are the list's two Musketeer and one Fusilier battalions, or three Landwehr. The order of battle doesn't number the brigades' foot batteries.",
+                     f"The corps cavalry, under {PR_CAVALRY[corps][0]}, follows Nafziger's order of battle (after Plotho). The list takes line or Landwehr cavalry brigades but not both, so a corps with both shows it as a historical departure.",
+                     *([CAVALRY_NOTES[corps]] if corps in CAVALRY_NOTES else []),
+                     "Nafziger gives each corps three 12-pdr batteries, a howitzer battery and more 6-pdr foot and horse batteries than its brigades had; the list's reserve takes one heavy, one foot and one horse battery, so only those are here. Which horse batteries rode with the cavalry brigades is our reading.",
                      CORPS_RATINGS[corps]])
 
 
