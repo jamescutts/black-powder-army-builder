@@ -480,3 +480,64 @@ mockernLeipzig.art = {
   "date": "1901",
   "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern._October_16,_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png"
 };
+rippach.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Death_of_Marshal_Bessieres.png",
+  "title": "The Death of Marshal Bessières",
+  "artist": "unknown artist",
+  "date": "19th century",
+  "page": "https://commons.wikimedia.org/wiki/File:Death_of_Marshal_Bessieres.png"
+};
+reichenbach.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/BOYER_935_-_Mort_de_Duroc.jpg/960px-BOYER_935_-_Mort_de_Duroc.jpg",
+  "title": "The Death of Duroc",
+  "artist": "unknown artist",
+  "page": "https://commons.wikimedia.org/wiki/File:BOYER_935_-_Mort_de_Duroc.jpg"
+};
+luckau.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Battle_of_Luckau_on_4_June_1813_%28R._Knotel%29.png/960px-Battle_of_Luckau_on_4_June_1813_%28R._Knotel%29.png",
+  "title": "The Fight at Luckau, 4 June 1813",
+  "artist": "Richard Knötel",
+  "date": "1901",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Luckau_on_4_June_1813_(R._Knotel).png"
+};
+goldberg.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Das_Gefecht_bei_Goldberg%2C_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg/960px-Das_Gefecht_bei_Goldberg%2C_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg",
+  "title": "The Fight at Goldberg, 23 August 1813",
+  "artist": "unknown artist",
+  "page": "https://commons.wikimedia.org/wiki/File:Das_Gefecht_bei_Goldberg,_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg"
+};
+hagelberg.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/e/e0/R%C3%B6chling%2CCarl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg",
+  "title": "The Landwehr's Attack at Hagelberg",
+  "artist": "Carl Röchling",
+  "date": "c. 1900",
+  "page": "https://commons.wikimedia.org/wiki/File:R%C3%B6chling,Carl_-_Die_Kolbenschlacht_bei_Hagelberg_27.August_1813_und_der_preu%C3%9Fische_Winkelried.jpg"
+};
+liebertwolkwitz.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Grenadiers_%C3%A0_cheval_fran%C3%A7ais_contre_cuirassiers_prussiens_au_combat_de_Liebertwolkwitz%2C_le_14_octobre_1813.jpg/960px-Grenadiers_%C3%A0_cheval_fran%C3%A7ais_contre_cuirassiers_prussiens_au_combat_de_Liebertwolkwitz%2C_le_14_octobre_1813.jpg",
+  "title": "French Horse Grenadiers against Prussian Cuirassiers at Liebertwolkwitz",
+  "artist": "Carl Röchling",
+  "date": "before 1920",
+  "page": "https://commons.wikimedia.org/wiki/File:Grenadiers_%C3%A0_cheval_fran%C3%A7ais_contre_cuirassiers_prussiens_au_combat_de_Liebertwolkwitz,_le_14_octobre_1813.jpg"
+};
+sehested.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/J%C3%B8rgen_V_Sonne%2C_Slaget_ved_Sehested%2C_KMS42%2C_Statens_Museum_for_Kunst.jpg/960px-J%C3%B8rgen_V_Sonne%2C_Slaget_ved_Sehested%2C_KMS42%2C_Statens_Museum_for_Kunst.jpg",
+  "title": "The Battle of Sehested",
+  "artist": "Jørgen Sonne",
+  "date": "1822",
+  "page": "https://commons.wikimedia.org/wiki/File:J%C3%B8rgen_V_Sonne,_Slaget_ved_Sehested,_KMS42,_Statens_Museum_for_Kunst.jpg"
+};
+grossbeeren.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Gro%C3%9Fbeeren_1813.jpg/960px-Gro%C3%9Fbeeren_1813.jpg",
+  "title": "The Battle of Großbeeren",
+  "artist": "Carl Röchling",
+  "date": "1907–08",
+  "page": "https://commons.wikimedia.org/wiki/File:Gro%C3%9Fbeeren_1813.jpg"
+};
+gohrde.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Carl_R%C3%B6chling_-_Eleonore_Prochaska.jpg/960px-Carl_R%C3%B6chling_-_Eleonore_Prochaska.jpg",
+  "title": "Eleonore Prochaska at the Göhrde",
+  "artist": "Carl Röchling",
+  "date": "1900",
+  "page": "https://commons.wikimedia.org/wiki/File:Carl_R%C3%B6chling_-_Eleonore_Prochaska.jpg"
+};
