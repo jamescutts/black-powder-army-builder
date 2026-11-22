@@ -614,3 +614,22 @@ halle.art = {
   "date": "1821",
   "page": "https://commons.wikimedia.org/wiki/File:Per_Krafft_d.y._-_The_Battle_of_Halle,_October_17th_1806_-_NM_4782_-_Nationalmuseum.jpg"
 };
+auerstedt.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Bataille_d%27Auerstaedt%2C_14_octobre_1806.jpg",
+  "title": "French Squares against the Prussian Cavalry at Auerstedt",
+  "artist": "Michelet",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_d%27Auerstaedt,_14_octobre_1806.jpg"
+};
+prenzlau.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Combat_de_Prenzlau%2C_28_octobre_1806.jpg/960px-Combat_de_Prenzlau%2C_28_octobre_1806.jpg",
+  "title": "Prussian Grenadiers at Prenzlau",
+  "artist": "Richard Knötel",
+  "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Prenzlau,_28_octobre_1806.jpg"
+};
+lubeck.art = {
+  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Bl%C3%BCcher%27s_capitulation_at_Ratekau%2C_7_November_1806.jpg/960px-Bl%C3%BCcher%27s_capitulation_at_Ratekau%2C_7_November_1806.jpg",
+  "title": "Blücher's Capitulation at Ratekau, after Lübeck",
+  "artist": "Carl Röchling",
+  "date": "1901",
+  "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher%27s_capitulation_at_Ratekau,_7_November_1806.jpg"
+};
