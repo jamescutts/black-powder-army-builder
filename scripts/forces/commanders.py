@@ -157,7 +157,7 @@ COMMANDERS = {
 COMMANDERS.update({
     "mockern": {"French": ("Eugène de Beauharnais", "eugene"), "Russian": ("Lt-Gen Berg", "berg"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
     "lutzen": {"French": ("Napoleon", "napoleon"), "Russian": ("General Wittgenstein", "wittgenstein"), "Prussian": ("General Blücher", "blucher")},
-    "bautzen": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay"), "Prussian": ("Gen-Lt von Kleist", "kleist")},
+    "bautzen": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay"), "Prussian": ("General Blücher", "blucher")},
     "grossbeeren": {"Saxon": ("Général Reynier", "reynier"), "French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
     "wartenburg": {"French": ("Général Bertrand", "bertrand"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
 })

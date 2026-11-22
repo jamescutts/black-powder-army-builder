@@ -33,14 +33,13 @@
       }
     },
     "Prussian": {
-      "commander": "Gen-Lt von Kleist",
+      "commander": "General Blücher",
       "portrait": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg/250px-Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
-        "title": "Friedrich Kleist von Nollendorf",
-        "artist": "Hermann Scherenberg",
-        "page": "https://commons.wikimedia.org/wiki/File:Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
-        "focus": "50% 20%",
-        "date": "1863"
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
       }
     }
   },
