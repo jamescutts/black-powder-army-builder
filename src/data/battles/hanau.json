@@ -1,0 +1,1497 @@
+{
+  "id": "hanau",
+  "name": "Hanau",
+  "date": "30–31 October 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Vernet-Battle_of_Hanau.jpg/960px-Vernet-Battle_of_Hanau.jpg",
+    "title": "The Battle of Hanau",
+    "artist": "Horace Vernet",
+    "date": "1824",
+    "page": "https://commons.wikimedia.org/wiki/File:Vernet-Battle_of_Hanau.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Bavarian": {
+      "commander": "General Wrede",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Karl_Philipp_Wrede.jpg/250px-Karl_Philipp_Wrede.jpg",
+        "title": "Karl Philipp von Wrede",
+        "artist": "Franz Hanfstaengl",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Philipp_Wrede.jpg",
+        "focus": "50% 20%",
+        "date": "1828"
+      }
+    },
+    "Austrian": {
+      "commander": "Under Wrede",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Karl_Philipp_Wrede.jpg/250px-Karl_Philipp_Wrede.jpg",
+        "title": "Karl Philipp von Wrede",
+        "artist": "Franz Hanfstaengl",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Philipp_Wrede.jpg",
+        "focus": "50% 20%",
+        "date": "1828"
+      }
+    },
+    "Russian": {
+      "commander": "Under Wrede",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Karl_Philipp_Wrede.jpg/250px-Karl_Philipp_Wrede.jpg",
+        "title": "Karl Philipp von Wrede",
+        "artist": "Franz Hanfstaengl",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Philipp_Wrede.jpg",
+        "focus": "50% 20%",
+        "date": "1828"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Bavarian",
+      "Austrian",
+      "Russian"
+    ]
+  ],
+  "summary": "Wrede, whose Bavarians had changed sides a fortnight before, marched with Austrians and Bavarians to stand across Napoleon's road home at Hanau, with the Kinzig at his back and the Lamboy forest in front. On the 30th Charpentier's and Dubreton's divisions cleared the forest in skirmish order; Drouot then brought fifty of the Guard's guns out on Wrede's left and silenced his batteries, and Nansouty's Guard cavalry and Sébastiani's squadrons rode down the allied horse. Wrede's line fell back over the Kinzig, many men drowning at the Lamboy bridge, and on the 31st the Grande Armée's remnant marched on through Hanau to the Rhine.",
+  "sources": [
+    {
+      "label": "Bavarian Army Corps, Battle of Hanau, 29–31 October 1813 (Nafziger Collection 813JAC)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JAC.pdf"
+    },
+    {
+      "label": "Allied Forces, Battle of Hanau, 29–31 October 1813 (Nafziger Collection 813JAG)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JAG.pdf"
+    },
+    {
+      "label": "French Imperial Guard, 1 November 1813 (Nafziger Collection 813KXD)",
+      "url": "https://www.napoleon-series.org/nafzigger/813KXD.pdf"
+    },
+    {
+      "label": "French Guard Cavalry, 15 October 1813 (Nafziger Collection 813JZD)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JZD.pdf"
+    },
+    {
+      "label": "Battle of Hanau order of battle (Wikipedia, after Mir)",
+      "url": "https://en.wikipedia.org/wiki/Hanau_order_of_battle"
+    },
+    {
+      "label": "Battle of Hanau (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Hanau"
+    }
+  ],
+  "forces": [
+    {
+      "id": "hanau-charpentier",
+      "nationId": "france",
+      "name": "Charpentier's Division",
+      "formation": "36th Division, XI Corps (Macdonald)",
+      "side": "French",
+      "summary": "Macdonald's leading division, which went into the Lamboy forest in skirmish order on the morning of the 30th and pushed Wrede's light troops back through the trees, opening the way for the Guard's guns.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Wikipedia's order of battle for Hanau, from Mir's history of the battle; the page names regiments and battalions but no batteries.",
+        "Only these divisions of Victor's and Macdonald's corps were engaged, and after Leipzig their battalions were far below strength; they are shown at full size, and the list's Small upgrade would suit many of them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Charpentier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Simmer's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Simmer",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/6th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/6th Line"
+                }
+              ]
+            },
+            {
+              "name": "112th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/112th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/112th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/112th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/112th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Meunier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Meunier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "14th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "I/14th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "II/14th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "III/14th Léger"
+                }
+              ]
+            },
+            {
+              "name": "3rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/3rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/3rd Line"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-dubreton",
+      "nationId": "france",
+      "name": "Dubreton's Division",
+      "formation": "4th Division, II Corps (Victor)",
+      "side": "French",
+      "summary": "Victor's division, which fought through the forest beside Charpentier's and cleared it in front of the allied centre by midday.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Wikipedia's order of battle for Hanau, from Mir's history of the battle; the page names regiments and battalions but no batteries.",
+        "Only these divisions of Victor's and Macdonald's corps were engaged, and after Leipzig their battalions were far below strength; they are shown at full size, and the list's Small upgrade would suit many of them.",
+        "The order of battle names no commander for the division's first brigade.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Dubreton",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Dubreton's Brigade",
+          "regiments": [
+            {
+              "name": "24th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/24th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/24th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/24th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/24th Line"
+                }
+              ]
+            },
+            {
+              "name": "10th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/10th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/10th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/10th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/10th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Brun's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Brun",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "37th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/37th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/37th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/37th Line"
+                }
+              ]
+            },
+            {
+              "name": "56th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/56th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/56th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/56th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "IV/56th Line"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-old-guard",
+      "nationId": "french-imperial-guard",
+      "name": "The Old Guard, with Drouot's Guns",
+      "formation": "1st and 2nd Old Guard Divisions (Friant, Curial), Imperial Guard",
+      "side": "French",
+      "summary": "The Guard's infantry, which held the edge of the forest while Drouot brought its artillery out on a track towards Wrede's left. Fifty guns, massed under the Guard's protection, silenced the allied batteries and opened the way for the Guard cavalry; on the 31st the Guard marched on through Hanau.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.",
+        "After Wikipedia's order of battle for Hanau, from Mir's history of the battle; the page names regiments and battalions but no batteries.",
+        "The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, and the 2nd, raised in 1811, its Middle Guard.",
+        "The Fusilier regiments of Curial's division, without the Young Guard regiment the list's brigade wants beside them, show as a historical departure; the Vélites of Turin and Florence are the list's Italian brigade.",
+        "The order of battle gives the Guard artillery as forty foot and twelve horse guns, about five foot and two horse batteries. Two Old Guard foot batteries, one with each Old Guard brigade, the 12-pdr battery and the two horse batteries are here; the batteries themselves aren't named.",
+        "Drouot commanded the Guard infantry and artillery at Hanau; Friant leads the force, as its senior division commander.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Friant",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Christiani's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Christiani",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "I/1st Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "II/1st Chasseurs à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "I/2nd Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "II/2nd Chasseurs à Pied"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Michel's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Michel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "I/1st Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "II/1st Grenadiers à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "I/2nd Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "II/2nd Grenadiers à Pied"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Curial's Fusiliers",
+          "commander": {
+            "name": "Gén. de Division Curial",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Fusilier-Chasseurs",
+              "units": [
+                {
+                  "unit": "fig-fusilier-chasseurs",
+                  "name": "I/Fusilier-Chasseurs"
+                },
+                {
+                  "unit": "fig-fusilier-chasseurs",
+                  "name": "II/Fusilier-Chasseurs"
+                }
+              ]
+            },
+            {
+              "name": "Fusilier-Grenadiers",
+              "units": [
+                {
+                  "unit": "fig-fusilier-grenadiers",
+                  "name": "I/Fusilier-Grenadiers"
+                },
+                {
+                  "unit": "fig-fusilier-grenadiers",
+                  "name": "II/Fusilier-Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-italian-brigade",
+          "name": "Curial's Vélites",
+          "units": [
+            {
+              "unit": "fig-velites-turin",
+              "name": "Vélites of Turin"
+            },
+            {
+              "unit": "fig-velites-florence",
+              "name": "Vélites of Florence"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-artillery-reserve",
+          "name": "Guard Artillery (Drouot)",
+          "units": [
+            {
+              "unit": "fig-og-heavy-foot-arty",
+              "name": "Old Guard 12-pdr Foot Battery"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Old Guard Horse Battery"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Old Guard Horse Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Two more Guard foot batteries",
+          "reason": "The rest of Drouot's forty foot guns, more than the list's Old Guard brigades and reserve take."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "title": "Louis Friant",
+        "artist": "Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "hanau-guard-cavalry",
+      "nationId": "french-imperial-guard",
+      "name": "Nansouty's Guard Cavalry",
+      "formation": "Guard Cavalry Corps, Imperial Guard",
+      "side": "French",
+      "summary": "Brought out beside Drouot's guns on Wrede's left, it fell on the Bavarian and Austrian cavalry there, the Grenadiers à Cheval and Dragoons riding them down, and drove them back on the Kinzig.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.",
+        "After Wikipedia's order of battle for Hanau, from Mir's history of the battle; the page names regiments and battalions but no batteries.",
+        "Each Guard regiment is shown as one unit, its Old and Young Guard squadrons together: Walther's Old Guard squadrons and Lefebvre-Desnouettes's Young Guard ones.",
+        "The Guard Cavalry's four horse batteries are from Nafziger's return of 15 October.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Nansouty",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Walther's Heavy Cavalry",
+          "commander": {
+            "name": "Gén. de Division Walther",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Old Guard Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Lion's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lion",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Old Guard Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Krasinski's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Krasinski",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st (Polish) Chevau-légers Lanciers"
+            }
+          ]
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Colbert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Colbert",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-dutch-red-lancers",
+              "name": "2nd (Dutch) Chevau-légers Lanciers"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Old Guard Horse Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "1st to 4th Gardes d'Honneur",
+          "reason": "The list has only the Italian Gardes d'Honneur, and only with its Italian vélites."
+        },
+        {
+          "name": "Berg Lancers",
+          "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."
+        },
+        {
+          "name": "Young Guard Dragoons (Pinteville)",
+          "reason": "Two squadrons apart from the Empress Dragoons, too few for a unit of their own."
+        }
+      ]
+    },
+    {
+      "id": "hanau-sebastiani",
+      "nationId": "france",
+      "name": "Sébastiani's Cavalry",
+      "formation": "II Cavalry Corps",
+      "side": "French",
+      "summary": "About three thousand horsemen in twenty-two regiments, which came out with the Guard cavalry on Wrede's left and joined in the charges that drove the allied horse back.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Wikipedia's order of battle for Hanau, from Mir's history of the battle; the page names regiments and battalions but no batteries.",
+        "The corps' twenty-two regiments had two to four squadrons each, about 140 men on average; they are shown at full size, and the list's Small upgrade would suit them.",
+        "The chevau-légers lanciers are the list's Lancers.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Sébastiani",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Gérard's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gérard",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-lancer",
+              "name": "2nd Chevau-légers"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "11th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "12th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Dommanget's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dommanget",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-lancer",
+              "name": "4th Chevau-légers"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "5th Hussars"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "9th Hussars"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Maurin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Maurin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-lancer",
+              "name": "6th Chevau-légers"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "4th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "7th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "20th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Wathier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Wathier",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "23rd Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "24th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "11th Hussars"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Daugeranville's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Daugeranville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-carabinier",
+              "name": "1st Carabiniers"
+            },
+            {
+              "unit": "fr-carabinier",
+              "name": "2nd Carabiniers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "1st Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Thiry's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thiry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "5th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "8th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "10th Cuirassiers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-beckers",
+      "nationId": "bavaria",
+      "name": "Beckers's Division",
+      "formation": "2nd Division, Bavarian Army Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Part of Wrede's centre, posted along the Frankfurt road where it left the Lamboy forest. Its light troops were driven back out of the trees by Charpentier's and Dubreton's skirmishers, and when the French guns came into action its line was pounded and fell back on the Kinzig.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1813; Bavaria had changed sides a fortnight before.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "The Kreis battalions were national field battalions, raised in 1813 from the districts' militia and often made up of parts of two; they are shown as Line.",
+        "The Wurst batteries, light 6-pdrs with the gunners riding on the limbers, are the list's Light Artillery.",
+        "The corps' artillery reserve, two 12-pdr batteries under Ulmer, is shown one with each division, as the list's Heavy Foot Battery.",
+        "The Wurst battery rides with Elbracht's chevau-légers, as the list takes a light battery in a cavalry brigade; the 3rd Chevau-légers had three squadrons.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt Beckers von Westerstetten",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Pappenheim's Brigade",
+          "commander": {
+            "name": "Gen-Maj Graf Pappenheim",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-light-infantry",
+              "name": "Combined Jäger Battalion (5th and 6th)"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/4th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/4th Line"
+                }
+              ]
+            },
+            {
+              "name": "Kreis Battalions",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "Combined Salzach Kreis Battalion"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "1st Regen Kreis Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Zoller's Brigade",
+          "commander": {
+            "name": "Gen-Maj Freiherr von Zoller",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-light-infantry",
+              "name": "1st Jäger Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/6th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/6th Line"
+                }
+              ]
+            },
+            {
+              "name": "Kreis Battalions",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "1st Iller Kreis Battalion"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "Combined Rezat Kreis Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Elbracht's Brigade",
+          "commander": {
+            "name": "Gen-Maj Elbracht",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "3rd Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "6th Chevau-légers"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "2nd Wurst Battery"
+            }
+          ]
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "7th 6-pdr Foot Battery (Danner)"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "11th 12-pdr Foot Battery (Dietrich)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-lamotte",
+      "nationId": "bavaria",
+      "name": "Lamotte's Division",
+      "formation": "3rd Division, Bavarian Army Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Wrede's right, by the Kinzig and the Lamboy bridge. When the centre gave way it was left with the river at its back and a single bridge to cross; many men were drowned trying to get over, and the division fell back into Hanau.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1813; Bavaria had changed sides a fortnight before.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "The Kreis battalions were national field battalions, raised in 1813 from the districts' militia and often made up of parts of two; they are shown as Line.",
+        "The Wurst batteries, light 6-pdrs with the gunners riding on the limbers, are the list's Light Artillery.",
+        "Both brigades were made up of single battalions of different regiments, so Stockh's has three regiments and Deroy's four, where the list's brigade takes two; these show as historical departures.",
+        "The corps' artillery reserve, two 12-pdr batteries under Ulmer, is shown one with each division, as the list's Heavy Foot Battery.",
+        "The Wurst battery rides with Diez's chevau-légers, as the list takes a light battery in a cavalry brigade; both regiments had three squadrons.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt Freiherr von Lamotte",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Stockh's Brigade",
+          "commander": {
+            "name": "Gen-Maj Jason von der Stockh",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/11th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/11th Line"
+                }
+              ]
+            },
+            {
+              "name": "7th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/7th Line"
+                }
+              ]
+            },
+            {
+              "name": "Kreis Battalions",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "1st Iller Kreis Battalion"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "1st Unter-Donau Kreis Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Deroy's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Deroy",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "5th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/5th Line"
+                }
+              ]
+            },
+            {
+              "name": "8th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "9th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/9th Line"
+                }
+              ]
+            },
+            {
+              "name": "Kreis Battalions",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "2nd Iller Kreis Battalion"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "1st Isar Kreis Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Diez's Brigade",
+          "commander": {
+            "name": "Col Diez",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "4th Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "5th Chevau-légers"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "3rd Wurst Battery (Halder)"
+            }
+          ]
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "9th 6-pdr Foot Battery (Achner)"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "8th 12-pdr Foot Battery (Anzinger)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-vieregg",
+      "nationId": "bavaria",
+      "name": "Vieregg's Cavalry",
+      "formation": "1st Cavalry Brigade, Bavarian Army Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "The Bavarian cavalry reserve, on Wrede's left with the Austrian horse, which met the charge of the Guard cavalry and Sébastiani's squadrons when Drouot's guns had done their work, and was driven back.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1813; Bavaria had changed sides a fortnight before.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "Three regiments, where the list's brigade takes two, show as a historical departure.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Maj Freiherr von Vieregg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Vieregg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Freiherr von Vieregg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "1st Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "2nd Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "7th Chevau-légers"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-fresnel",
+      "nationId": "austria",
+      "name": "Fresnel's Light Division",
+      "formation": "Light Division, Austrian I Corps",
+      "side": "Austrian",
+      "summary": "The Austrian light troops, Jäger, hussars and uhlans, out in front of the allied line and in the forest, the first to meet the French columns on the morning of the 30th.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "The division's Szekler Grenz regiment was detached to Bach's division, and is shown there.",
+        "With no line infantry brigade, which the list wants first, the division shows a historical departure. Play it alongside Bach's division.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Graf Fresnel",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Hardegg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Graf Hardegg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-hussar",
+              "name": "Archduke Joseph Hussars"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Volkmann's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Volkmann",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-jager",
+              "name": "3rd Jäger Battalion"
+            },
+            {
+              "unit": "at-uhlan",
+              "name": "Schwarzenberg Uhlans"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-bach",
+      "nationId": "austria",
+      "name": "Bach's Division",
+      "formation": "Line Division, Austrian I Corps",
+      "side": "Austrian",
+      "summary": "The Austrian line infantry, with the Szekler Grenzers lent from the light division, in the allied centre beside the Bavarians; it held its ground until the French guns and cavalry broke the left, then fell back over the Kinzig.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "Each regiment fought with four battalions, where the list takes two Large ones; the Grenz battalions and two brigade batteries together are more additional troops than the brigade takes. These show as historical departures.",
+        "One of the corps' three 12-pdr batteries is here as the list's Position Battery; with eight line battalions, where the list wants nine for it, and one brigade where the list wants one per 500 points, these show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "Gen-Maj von Bach",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Bach's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Bach",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/Szekler Grenz"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "II/Szekler Grenz"
+            },
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            },
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Archduke Rudolph Infantry (IR 14)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Archduke Rudolph"
+                }
+              ]
+            },
+            {
+              "name": "Jordis Infantry (IR 59)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Jordis"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-reserve-artillery",
+          "name": "Reserve Artillery (Sertnik)",
+          "units": [
+            {
+              "unit": "at-position-battery",
+              "name": "12-pdr Position Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Two more 12-pdr Position Batteries and a 6-pdr Foot Battery",
+          "reason": "The rest of Sertnik's corps artillery, more than the list takes for the division's battalions."
+        }
+      ]
+    },
+    {
+      "id": "hanau-trautenberg",
+      "nationId": "austria",
+      "name": "Trautenberg's Grenadiers",
+      "formation": "1st Reserve Division, Austrian I Corps",
+      "side": "Austrian",
+      "summary": "Seven battalions of Austrian grenadiers, Wrede's reserve, which covered the retreat over the Kinzig when the centre gave way.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "The order of battle doesn't name the grenadier battalions, so they are numbered here.",
+        "Two grenadier brigades with no line infantry brigade, which the list wants first, and Klenau's 6-pdr battery with no line battalions to allow it, show as historical departures. Play it alongside Bach's division.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML von Trautenberg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-grenadier-brigade",
+          "name": "Klenau's Brigade",
+          "commander": {
+            "name": "Gen-Maj Graf Klenau",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenadier",
+              "name": "Grenadier Battalion 1"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Grenadier Battalion 2"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Grenadier Battalion 3"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Grenadier Battalion 4"
+            },
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-grenadier-brigade",
+          "name": "Diemar's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Diemar",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenadier",
+              "name": "Grenadier Battalion 5"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Grenadier Battalion 6"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Grenadier Battalion 7"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Diemar's 3-pdr Brigade Battery",
+          "reason": "The list's grenadier brigade takes only a 6-pdr battery."
+        }
+      ]
+    },
+    {
+      "id": "hanau-spleny",
+      "nationId": "austria",
+      "name": "Spleny's Cavalry",
+      "formation": "Cavalry Reserve Division, Austrian I Corps",
+      "side": "Austrian",
+      "summary": "The Austrian heavy and hussar cavalry, on the allied left beside Vieregg's Bavarians, which was overthrown by the Guard cavalry's charge.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "The Frimont Hussars, Minutillo's other regiment, were detached and are left out.",
+        "A light brigade of one regiment, and dragoons and cuirassiers in one heavy brigade, which the list's brigade doesn't mix, show as historical departures.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML von Spleny",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Minutillo's Brigade",
+          "commander": {
+            "name": "Gen-Maj Minutillo",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-hussar",
+              "name": "Szekler Hussars"
+            }
+          ]
+        },
+        {
+          "type": "at-heavy-cavalry-brigade",
+          "name": "Flachenfeld's Brigade",
+          "commander": {
+            "name": "Col von Flachenfeld",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-dragoon",
+              "name": "Knesevich Dragoons"
+            },
+            {
+              "unit": "at-cuirassier",
+              "name": "Liechtenstein Cuirassiers"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hanau-mensdorff",
+      "nationId": "russia",
+      "name": "Mensdorff's Cossacks",
+      "formation": "Streifkorps, with Wrede",
+      "side": "Russian",
+      "summary": "Two Don Cossack regiments of Mensdorff's raiding column, which had come to join Wrede and harried the French columns on the road from Gelnhausen.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history.",
+        "Mensdorff was an Austrian officer leading a column of Russian Cossacks.",
+        "Chernyshev's and Orlov-Denisov's raiding columns, which Nafziger lists with Wrede's army, were not in the battle.",
+        "A Cossack brigade on its own has no infantry brigade, which the list wants, so this shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but the brigade commander at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Col Count Mensdorff-Pouilly",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Mensdorff's Streifkorps",
+          "commander": {
+            "name": "Lt-Col Count Mensdorff-Pouilly",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Gorin #1 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Ilovaisky #10 Don Cossacks"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

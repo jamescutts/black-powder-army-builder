@@ -1,5 +1,5 @@
 """
-Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,wartenburg}.json):
+Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,wartenburg,hanau}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
 are built from the 1815 Prussian list, one force a corps.
 
@@ -923,6 +923,237 @@ WARTENBURG = battle(
     [WB_MORAND, WB_FONTANELLI, WB_FRANQUEMONT, WB_BEAUMONT, WB_YORCK], [], alliances=())
 
 
+# ================================================================ Hanau, 30–31 October 1813
+
+HN_BAV = {"label": "Bavarian Army Corps, Battle of Hanau, 29–31 October 1813 (Nafziger Collection 813JAC)", "url": NAF + "813JAC.pdf"}
+HN_AL = {"label": "Allied Forces, Battle of Hanau, 29–31 October 1813 (Nafziger Collection 813JAG)", "url": NAF + "813JAG.pdf"}
+HN_GUARD = {"label": "French Imperial Guard, 1 November 1813 (Nafziger Collection 813KXD)", "url": NAF + "813KXD.pdf"}
+HN_GUARD_CAV = {"label": "French Guard Cavalry, 15 October 1813 (Nafziger Collection 813JZD)", "url": NAF + "813JZD.pdf"}
+HN_OOB = {"label": "Battle of Hanau order of battle (Wikipedia, after Mir)", "url": "https://en.wikipedia.org/wiki/Hanau_order_of_battle"}
+HN_FR_NOTE = "After Wikipedia's order of battle for Hanau, from Mir's history of the battle; the page names regiments and battalions but no batteries."
+HN_AL_NOTE = "After Nafziger's order of battle for Hanau, from the Bavarian war archives' history."
+AU, BAV = "austria", "bavaria"
+HN_WEAK = ("Only these divisions of Victor's and Macdonald's corps were engaged, and after Leipzig their battalions were far "
+           "below strength; they are shown at full size, and the list's Small upgrade would suit many of them.")
+CAV_ONLY = ("A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a "
+            "historical departure. Play it alongside infantry, or agree it with your opponent.")
+
+
+def fr_regt(name, n, light_=False):
+    return light(name, n) if light_ else line(name, n)
+
+
+HN_CHARPENTIER = force(
+    "hanau-charpentier", FR, "Charpentier's Division", "36th Division, XI Corps (Macdonald)", "French",
+    "Macdonald's leading division, which went into the Lamboy forest in skirmish order on the morning of the 30th and pushed Wrede's light troops back through the trees, opening the way for the Guard's guns.",
+    [bde("fr-infantry-brigade", "Simmer's Brigade", "Gén. de Brigade Simmer", regiments=[fr_regt("6th Line", 2), fr_regt("112th Line", 4)]),
+     bde("fr-infantry-brigade", "Meunier's Brigade", "Gén. de Brigade Meunier", regiments=[fr_regt("14th Léger", 3, True), fr_regt("3rd Line", 2)])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Charpentier")],
+    notes=[LIST_FR, HN_FR_NOTE, HN_WEAK])
+
+HN_DUBRETON = force(
+    "hanau-dubreton", FR, "Dubreton's Division", "4th Division, II Corps (Victor)", "French",
+    "Victor's division, which fought through the forest beside Charpentier's and cleared it in front of the allied centre by midday.",
+    [bde("fr-infantry-brigade", "Dubreton's Brigade", "", regiments=[fr_regt("24th Line", 4), fr_regt("10th Line", 4)]),
+     bde("fr-infantry-brigade", "Brun's Brigade", "Gén. de Brigade Brun", regiments=[fr_regt("37th Line", 3), fr_regt("56th Line", 4)])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Dubreton")],
+    notes=[LIST_FR, HN_FR_NOTE, HN_WEAK, "The order of battle names no commander for the division's first brigade."])
+
+HN_GUARD_INF = force(
+    "hanau-old-guard", FIG, "The Old Guard, with Drouot's Guns", "1st and 2nd Old Guard Divisions (Friant, Curial), Imperial Guard", "French",
+    "The Guard's infantry, which held the edge of the forest while Drouot brought its artillery out on a track towards Wrede's left. Fifty guns, massed under the Guard's protection, silenced the allied batteries and opened the way for the Guard cavalry; on the 31st the Guard marched on through Hanau.",
+    [bde("fig-old-guard-brigade", "Christiani's Brigade", "Gén. de Brigade Christiani",
+         units=[u("fig-og-foot-arty", "Old Guard Foot Battery")],
+         regiments=[regt("1st Chasseurs à Pied", bns("fig-old-guard-chasseurs", "1st Chasseurs à Pied", 2)),
+                    regt("2nd Chasseurs à Pied", bns("fig-middle-guard-chasseurs", "2nd Chasseurs à Pied", 2))]),
+     bde("fig-old-guard-brigade", "Michel's Brigade", "Gén. de Brigade Michel",
+         units=[u("fig-og-foot-arty", "Old Guard Foot Battery")],
+         regiments=[regt("1st Grenadiers à Pied", bns("fig-old-guard-grenadiers", "1st Grenadiers à Pied", 2)),
+                    regt("2nd Grenadiers à Pied", bns("fig-middle-guard-grenadiers", "2nd Grenadiers à Pied", 2))]),
+     bde("fig-young-guard-brigade", "Curial's Fusiliers", "Gén. de Division Curial",
+         regiments=[regt("Fusilier-Chasseurs", bns("fig-fusilier-chasseurs", "Fusilier-Chasseurs", 2)),
+                    regt("Fusilier-Grenadiers", bns("fig-fusilier-grenadiers", "Fusilier-Grenadiers", 2))]),
+     bde("fig-italian-brigade", "Curial's Vélites", "", units=[u("fig-velites-turin", "Vélites of Turin"), u("fig-velites-florence", "Vélites of Florence")]),
+     bde("fig-artillery-reserve", "Guard Artillery (Drouot)",
+         units=[u("fig-og-heavy-foot-arty", "Old Guard 12-pdr Foot Battery"), u("fig-og-horse-arty", "Old Guard Horse Battery"),
+                u("fig-og-horse-arty", "Old Guard Horse Battery")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Friant")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", HN_FR_NOTE,
+           "The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, and the 2nd, raised in 1811, its Middle Guard.",
+           "The Fusilier regiments of Curial's division, without the Young Guard regiment the list's brigade wants beside them, show as a historical departure; the Vélites of Turin and Florence are the list's Italian brigade.",
+           "The order of battle gives the Guard artillery as forty foot and twelve horse guns, about five foot and two horse batteries. Two Old Guard foot batteries, one with each Old Guard brigade, the 12-pdr battery and the two horse batteries are here; the batteries themselves aren't named.",
+           "Drouot commanded the Guard infantry and artillery at Hanau; Friant leads the force, as its senior division commander."])
+HN_GUARD_INF["missing"] = [{"name": "Two more Guard foot batteries", "reason": "The rest of Drouot's forty foot guns, more than the list's Old Guard brigades and reserve take."}]
+
+HN_GUARD_CAV_F = force(
+    "hanau-guard-cavalry", FIG, "Nansouty's Guard Cavalry", "Guard Cavalry Corps, Imperial Guard", "French",
+    "Brought out beside Drouot's guns on Wrede's left, it fell on the Bavarian and Austrian cavalry there, the Grenadiers à Cheval and Dragoons riding them down, and drove them back on the Kinzig.",
+    [bde("fig-heavy-cavalry-brigade", "Walther's Heavy Cavalry", "Gén. de Division Walther",
+         units=[u("fig-grenadiers-a-cheval-regt", "Grenadiers à Cheval"), u("fig-empress-dragoons", "Empress Dragoons"),
+                u("fig-og-horse-arty", "Old Guard Horse Battery")]),
+     bde("fig-light-cavalry-brigade", "Lion's Brigade", "Gén. de Brigade Lion",
+         units=[u("fig-chasseurs-a-cheval", "Chasseurs à Cheval"), u("fig-og-horse-arty", "Old Guard Horse Battery")]),
+     bde("fig-light-cavalry-brigade", "Krasinski's Brigade", "Gén. de Brigade Krasinski", units=[u("fig-polish-lancers", "1st (Polish) Chevau-légers Lanciers")]),
+     bde("fig-light-cavalry-brigade", "Colbert's Brigade", "Gén. de Brigade Colbert",
+         units=[u("fig-dutch-red-lancers", "2nd (Dutch) Chevau-légers Lanciers"), u("fig-og-horse-arty", "Old Guard Horse Battery")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Nansouty")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", HN_FR_NOTE,
+           "Each Guard regiment is shown as one unit, its Old and Young Guard squadrons together: Walther's Old Guard squadrons and Lefebvre-Desnouettes's Young Guard ones.",
+           "The Guard Cavalry's four horse batteries are from Nafziger's return of 15 October.",
+           CAV_ONLY])
+HN_GUARD_CAV_F["missing"] = [
+    {"name": "1st to 4th Gardes d'Honneur", "reason": "The list has only the Italian Gardes d'Honneur, and only with its Italian vélites."},
+    {"name": "Berg Lancers", "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."},
+    {"name": "Young Guard Dragoons (Pinteville)", "reason": "Two squadrons apart from the Empress Dragoons, too few for a unit of their own."}]
+
+HN_SEBASTIANI = force(
+    "hanau-sebastiani", FR, "Sébastiani's Cavalry", "II Cavalry Corps", "French",
+    "About three thousand horsemen in twenty-two regiments, which came out with the Guard cavalry on Wrede's left and joined in the charges that drove the allied horse back.",
+    [bde("fr-light-cavalry-brigade", "Gérard's Brigade", "Gén. de Brigade Gérard",
+         units=[u("fr-lancer", "2nd Chevau-légers"), u("fr-chasseur-a-cheval", "11th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "12th Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Dommanget's Brigade", "Gén. de Brigade Dommanget",
+         units=[u("fr-lancer", "4th Chevau-légers"), u("fr-hussar-regt", "5th Hussars"), u("fr-hussar-regt", "9th Hussars")]),
+     bde("fr-light-cavalry-brigade", "Maurin's Brigade", "Gén. de Brigade Maurin",
+         units=[u("fr-lancer", "6th Chevau-légers"), u("fr-chasseur-a-cheval", "4th Chasseurs à Cheval"),
+                u("fr-chasseur-a-cheval", "7th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "20th Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Wathier's Brigade", "Gén. de Brigade Wathier",
+         units=[u("fr-chasseur-a-cheval", "23rd Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "24th Chasseurs à Cheval"), u("fr-hussar-regt", "11th Hussars")]),
+     bde("fr-heavy-cavalry-brigade", "Daugeranville's Brigade", "Gén. de Brigade Daugeranville",
+         units=[u("fr-carabinier", "1st Carabiniers"), u("fr-carabinier", "2nd Carabiniers"), u("fr-cuirassier", "1st Cuirassiers")]),
+     bde("fr-heavy-cavalry-brigade", "Thiry's Brigade", "Gén. de Brigade Thiry",
+         units=[u("fr-cuirassier", "5th Cuirassiers"), u("fr-cuirassier", "8th Cuirassiers"), u("fr-cuirassier", "10th Cuirassiers")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Sébastiani")],
+    notes=[LIST_FR, HN_FR_NOTE,
+           "The corps' twenty-two regiments had two to four squadrons each, about 140 men on average; they are shown at full size, and the list's Small upgrade would suit them.",
+           "The chevau-légers lanciers are the list's Lancers.", CAV_ONLY])
+
+# --- Wrede's army
+
+KREIS = ("The Kreis battalions were national field battalions, raised in 1813 from the districts' militia and often made up of parts of "
+         "two; they are shown as Line.")
+WURST = "The Wurst batteries, light 6-pdrs with the gunners riding on the limbers, are the list's Light Artillery."
+LIST_BAV = "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1813; Bavaria had changed sides a fortnight before."
+LIST_AU = "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1813."
+
+
+def bav(name, n=0, bns_=()):
+    return regt(name, [u("bav-line-infantry", b) for b in bns_] if bns_ else bns("bav-line-infantry", name, n))
+
+
+HN_BECKERS = force(
+    "hanau-beckers", BAV, "Beckers's Division", "2nd Division, Bavarian Army Corps (Wrede)", "Bavarian",
+    "Part of Wrede's centre, posted along the Frankfurt road where it left the Lamboy forest. Its light troops were driven back out of the trees by Charpentier's and Dubreton's skirmishers, and when the French guns came into action its line was pounded and fell back on the Kinzig.",
+    [bde("bav-infantry-brigade", "Pappenheim's Brigade", "Gen-Maj Graf Pappenheim",
+         units=[u("bav-light-infantry", "Combined Jäger Battalion (5th and 6th)")],
+         regiments=[bav("4th Line", 2), bav("Kreis Battalions", bns_=["Combined Salzach Kreis Battalion", "1st Regen Kreis Battalion"])]),
+     bde("bav-infantry-brigade", "Zoller's Brigade", "Gen-Maj Freiherr von Zoller",
+         units=[u("bav-light-infantry", "1st Jäger Battalion")],
+         regiments=[bav("6th Line", 2), bav("Kreis Battalions", bns_=["1st Iller Kreis Battalion", "Combined Rezat Kreis Battalion"])]),
+     bde("bav-cavalry-brigade", "Elbracht's Brigade", "Gen-Maj Elbracht",
+         units=[u("bav-chevau-leger", "3rd Chevau-légers"), u("bav-chevau-leger", "6th Chevau-légers"), u("bav-light-arty", "2nd Wurst Battery")]),
+     bde("bav-divisional-artillery", "Divisional Artillery",
+         units=[u("bav-foot-arty", "7th 6-pdr Foot Battery (Danner)"), u("bav-position-battery", "11th 12-pdr Foot Battery (Dietrich)")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt Beckers von Westerstetten")],
+    notes=[LIST_BAV, HN_AL_NOTE, KREIS, WURST,
+           "The corps' artillery reserve, two 12-pdr batteries under Ulmer, is shown one with each division, as the list's Heavy Foot Battery.",
+           "The Wurst battery rides with Elbracht's chevau-légers, as the list takes a light battery in a cavalry brigade; the 3rd Chevau-légers had three squadrons."])
+
+HN_LAMOTTE = force(
+    "hanau-lamotte", BAV, "Lamotte's Division", "3rd Division, Bavarian Army Corps (Wrede)", "Bavarian",
+    "Wrede's right, by the Kinzig and the Lamboy bridge. When the centre gave way it was left with the river at its back and a single bridge to cross; many men were drowned trying to get over, and the division fell back into Hanau.",
+    [bde("bav-infantry-brigade", "Stockh's Brigade", "Gen-Maj Jason von der Stockh",
+         regiments=[bav("11th Line", 2), bav("7th Line", bns_=["I/7th Line"]),
+                    bav("Kreis Battalions", bns_=["1st Iller Kreis Battalion", "1st Unter-Donau Kreis Battalion"])]),
+     bde("bav-infantry-brigade", "Deroy's Brigade", "Gen-Maj von Deroy",
+         regiments=[bav("5th Line", bns_=["I/5th Line"]), bav("8th Line", bns_=["I/8th Line"]), bav("9th Line", bns_=["I/9th Line"]),
+                    bav("Kreis Battalions", bns_=["2nd Iller Kreis Battalion", "1st Isar Kreis Battalion"])]),
+     bde("bav-cavalry-brigade", "Diez's Brigade", "Col Diez",
+         units=[u("bav-chevau-leger", "4th Chevau-légers"), u("bav-chevau-leger", "5th Chevau-légers"), u("bav-light-arty", "3rd Wurst Battery (Halder)")]),
+     bde("bav-divisional-artillery", "Divisional Artillery",
+         units=[u("bav-foot-arty", "9th 6-pdr Foot Battery (Achner)"), u("bav-position-battery", "8th 12-pdr Foot Battery (Anzinger)")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt Freiherr von Lamotte")],
+    notes=[LIST_BAV, HN_AL_NOTE, KREIS, WURST,
+           "Both brigades were made up of single battalions of different regiments, so Stockh's has three regiments and Deroy's four, where the list's brigade takes two; these show as historical departures.",
+           "The corps' artillery reserve, two 12-pdr batteries under Ulmer, is shown one with each division, as the list's Heavy Foot Battery.",
+           "The Wurst battery rides with Diez's chevau-légers, as the list takes a light battery in a cavalry brigade; both regiments had three squadrons."])
+
+HN_VIEREGG = force(
+    "hanau-vieregg", BAV, "Vieregg's Cavalry", "1st Cavalry Brigade, Bavarian Army Corps (Wrede)", "Bavarian",
+    "The Bavarian cavalry reserve, on Wrede's left with the Austrian horse, which met the charge of the Guard cavalry and Sébastiani's squadrons when Drouot's guns had done their work, and was driven back.",
+    [bde("bav-cavalry-brigade", "Vieregg's Brigade", "Gen-Maj Freiherr von Vieregg",
+         units=[u("bav-chevau-leger", "1st Chevau-légers"), u("bav-chevau-leger", "2nd Chevau-légers"), u("bav-chevau-leger", "7th Chevau-légers")])],
+    command=[cmd("bav-div-cmd", "Gen-Maj Freiherr von Vieregg")],
+    notes=[LIST_BAV, HN_AL_NOTE, "Three regiments, where the list's brigade takes two, show as a historical departure.", CAV_ONLY])
+
+HN_FRESNEL = force(
+    "hanau-fresnel", AU, "Fresnel's Light Division", "Light Division, Austrian I Corps", "Austrian",
+    "The Austrian light troops, Jäger, hussars and uhlans, out in front of the allied line and in the forest, the first to meet the French columns on the morning of the 30th.",
+    [bde("at-light-cavalry-brigade", "Hardegg's Brigade", "Gen-Maj Graf Hardegg", units=[u("at-hussar", "Archduke Joseph Hussars")]),
+     bde("at-advanced-guard-brigade", "Volkmann's Brigade", "Gen-Maj von Volkmann",
+         units=[u("at-jager", "3rd Jäger Battalion"), u("at-uhlan", "Schwarzenberg Uhlans"), u("at-cavalry-arty", "Cavalry Battery")])],
+    command=[cmd("at-inf-div-cmd", "FML Graf Fresnel")],
+    notes=[LIST_AU, HN_AL_NOTE,
+           "The division's Szekler Grenz regiment was detached to Bach's division, and is shown there.",
+           "With no line infantry brigade, which the list wants first, the division shows a historical departure. Play it alongside Bach's division."])
+
+HN_BACH = force(
+    "hanau-bach", AU, "Bach's Division", "Line Division, Austrian I Corps", "Austrian",
+    "The Austrian line infantry, with the Szekler Grenzers lent from the light division, in the allied centre beside the Bavarians; it held its ground until the French guns and cavalry broke the left, then fell back over the Kinzig.",
+    [bde("at-line-infantry-brigade", "Bach's Brigade", "Gen-Maj von Bach",
+         units=[u("at-grenz", "I/Szekler Grenz"), u("at-grenz", "II/Szekler Grenz"), u("at-6pdr-brigade-battery", "6-pdr Brigade Battery"),
+                u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")],
+         regiments=[regt("Archduke Rudolph Infantry (IR 14)", bns("at-infantry-german", "Archduke Rudolph", 4)),
+                    regt("Jordis Infantry (IR 59)", bns("at-infantry-german", "Jordis", 4))]),
+     bde("at-reserve-artillery", "Reserve Artillery (Sertnik)", units=[u("at-position-battery", "12-pdr Position Battery")])],
+    command=[cmd("at-inf-div-cmd", "Gen-Maj von Bach")],
+    notes=[LIST_AU, HN_AL_NOTE,
+           "Each regiment fought with four battalions, where the list takes two Large ones; the Grenz battalions and two brigade batteries together are more additional troops than the brigade takes. These show as historical departures.",
+           "One of the corps' three 12-pdr batteries is here as the list's Position Battery; with eight line battalions, where the list wants nine for it, and one brigade where the list wants one per 500 points, these show as historical departures."])
+HN_BACH["missing"] = [{"name": "Two more 12-pdr Position Batteries and a 6-pdr Foot Battery", "reason": "The rest of Sertnik's corps artillery, more than the list takes for the division's battalions."}]
+
+HN_TRAUTENBERG = force(
+    "hanau-trautenberg", AU, "Trautenberg's Grenadiers", "1st Reserve Division, Austrian I Corps", "Austrian",
+    "Seven battalions of Austrian grenadiers, Wrede's reserve, which covered the retreat over the Kinzig when the centre gave way.",
+    [bde("at-grenadier-brigade", "Klenau's Brigade", "Gen-Maj Graf Klenau",
+         units=[*[u("at-grenadier", f"Grenadier Battalion {i}") for i in range(1, 5)], u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")]),
+     bde("at-grenadier-brigade", "Diemar's Brigade", "Gen-Maj von Diemar",
+         units=[u("at-grenadier", f"Grenadier Battalion {i}") for i in range(5, 8)])],
+    command=[cmd("at-inf-div-cmd", "FML von Trautenberg")],
+    notes=[LIST_AU, HN_AL_NOTE, "The order of battle doesn't name the grenadier battalions, so they are numbered here.",
+           "Two grenadier brigades with no line infantry brigade, which the list wants first, and Klenau's 6-pdr battery with no line battalions to allow it, show as historical departures. Play it alongside Bach's division."])
+HN_TRAUTENBERG["missing"] = [{"name": "Diemar's 3-pdr Brigade Battery", "reason": "The list's grenadier brigade takes only a 6-pdr battery."}]
+
+HN_SPLENY = force(
+    "hanau-spleny", AU, "Spleny's Cavalry", "Cavalry Reserve Division, Austrian I Corps", "Austrian",
+    "The Austrian heavy and hussar cavalry, on the allied left beside Vieregg's Bavarians, which was overthrown by the Guard cavalry's charge.",
+    [bde("at-light-cavalry-brigade", "Minutillo's Brigade", "Gen-Maj Minutillo", units=[u("at-hussar", "Szekler Hussars")]),
+     bde("at-heavy-cavalry-brigade", "Flachenfeld's Brigade", "Col von Flachenfeld",
+         units=[u("at-dragoon", "Knesevich Dragoons"), u("at-cuirassier", "Liechtenstein Cuirassiers"), u("at-cavalry-arty", "Cavalry Battery")])],
+    command=[cmd("at-inf-div-cmd", "FML von Spleny")],
+    notes=[LIST_AU, HN_AL_NOTE,
+           "The Frimont Hussars, Minutillo's other regiment, were detached and are left out.",
+           "A light brigade of one regiment, and dragoons and cuirassiers in one heavy brigade, which the list's brigade doesn't mix, show as historical departures.",
+           CAV_ONLY])
+
+HN_MENSDORFF = force(
+    "hanau-mensdorff", RU, "Mensdorff's Cossacks", "Streifkorps, with Wrede", "Russian",
+    "Two Don Cossack regiments of Mensdorff's raiding column, which had come to join Wrede and harried the French columns on the road from Gelnhausen.",
+    [bde("ru-cossack-brigade", "Mensdorff's Streifkorps", "Lt-Col Count Mensdorff-Pouilly",
+         units=[u("ru-mounted-cossack", "Gorin #1 Don Cossacks"), u("ru-mounted-cossack", "Ilovaisky #10 Don Cossacks")])],
+    command=[cmd("ru-div-cmd", "Lt-Col Count Mensdorff-Pouilly")],
+    notes=[LIST_RU, HN_AL_NOTE, "Mensdorff was an Austrian officer leading a column of Russian Cossacks.",
+           "Chernyshev's and Orlov-Denisov's raiding columns, which Nafziger lists with Wrede's army, were not in the battle.",
+           "A Cossack brigade on its own has no infantry brigade, which the list wants, so this shows as a historical departure."])
+
+HANAU = battle(
+    "hanau", "Hanau", "30–31 October 1813",
+    "Wrede, whose Bavarians had changed sides a fortnight before, marched with Austrians and Bavarians to stand across Napoleon's road home at Hanau, with the Kinzig at his back and the Lamboy forest in front. On the 30th Charpentier's and Dubreton's divisions cleared the forest in skirmish order; Drouot then brought fifty of the Guard's guns out on Wrede's left and silenced his batteries, and Nansouty's Guard cavalry and Sébastiani's squadrons rode down the allied horse. Wrede's line fell back over the Kinzig, many men drowning at the Lamboy bridge, and on the 31st the Grande Armée's remnant marched on through Hanau to the Rhine.",
+    [HN_BAV, HN_AL, HN_GUARD, HN_GUARD_CAV, HN_OOB, {"label": "Battle of Hanau (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Hanau"}],
+    [HN_CHARPENTIER, HN_DUBRETON, HN_GUARD_INF, HN_GUARD_CAV_F, HN_SEBASTIANI,
+     HN_BECKERS, HN_LAMOTTE, HN_VIEREGG, HN_FRESNEL, HN_BACH, HN_TRAUTENBERG, HN_SPLENY, HN_MENSDORFF],
+    [], alliances=(("Bavarian", "Austrian", "Russian"),))
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -940,5 +1171,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, WARTENBURG):
+    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, WARTENBURG, HANAU):
         write(b)

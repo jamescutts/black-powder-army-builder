@@ -160,6 +160,7 @@ COMMANDERS.update({
     "bautzen": {"French": ("Marshal Ney", "ney"), "Russian": ("General Barclay de Tolly", "barclay"), "Prussian": ("General Blücher", "blucher")},
     "grossbeeren": {"Saxon": ("Général Reynier", "reynier"), "French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
     "wartenburg": {"French": ("Général Bertrand", "bertrand"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
+    "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
 })
 
 # A force's own commander, by force id, for a portrait on its card
@@ -605,6 +606,7 @@ FORCE_PORTRAITS.update({
     "lutzen-girard": "girard", "lutzen-marchand": "marchand", "lutzen-berg": "berg", "lutzen-eugen": "eugen_wurttemberg",
     "grossbeeren-lecoq": "lecoq", "grossbeeren-durutte": "durutte",
     "wartenburg-morand": "morand", "wartenburg-yorck": "yorck",
+    "hanau-old-guard": "friant",
     "mockern-yorck": "yorck", "lutzen-yorck": "yorck", "bautzen-yorck": "yorck", "bautzen-kleist": "kleist",
     "mockern-bulow": "bulow", "grossbeeren-bulow": "bulow", "lutzen-blucher": "blucher", "bautzen-blucher": "blucher",
 })

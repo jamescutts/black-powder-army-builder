@@ -156,8 +156,6 @@ export const gohrde = planned("gohrde", "The Göhrde", "16 September 1813", L,
   "In the forests of the Göhrde, east of Lüneburg, Wallmoden's army of Russians, Hanoverians, the King's German Legion and Lützow's Free Corps surrounded and broke Pécheux's division of Davout's corps. Eleonore Prochaska, serving disguised as a man with Lützow's infantry, was mortally wounded there.");
 export const leipzig = planned("leipzig", "Leipzig", "16–19 October 1813", L,
   "The Battle of the Nations: four allied armies closed on Napoleon round Leipzig, at Wachau, Möckern and Lindenau on the 16th, and on the 18th from every side, as the Saxons went over. In the retreat on the 19th the Elster bridge was blown too soon, Poniatowski drowned, and the rearguard was lost.");
-export const hanau = planned("hanau", "Hanau", "30–31 October 1813", L,
-  "Wrede's Bavarians and Austrians, changed sides a fortnight before, stood across Napoleon's road home at Hanau with a river at their backs. Drouot massed the Guard's guns, the Guard cavalry broke the Bavarian left, and the Grande Armée's remnant marched on to the Rhine.");
 
 const F = "france-1814";
 
@@ -271,13 +269,6 @@ leipzig.art = {
   "artist": "Alexander Sauerweid",
   "date": "1844",
   "page": "https://commons.wikimedia.org/wiki/File:Sauerweid_A.I._Battle_of_Leipzig,_from_2_to_7_october_1813.jpg"
-};
-hanau.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Vernet-Battle_of_Hanau.jpg/960px-Vernet-Battle_of_Hanau.jpg",
-  "title": "The Battle of Hanau",
-  "artist": "Horace Vernet",
-  "date": "1824",
-  "page": "https://commons.wikimedia.org/wiki/File:Vernet-Battle_of_Hanau.jpg"
 };
 brienne.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg/960px-Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg",

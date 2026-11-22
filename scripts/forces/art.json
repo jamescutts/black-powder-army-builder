@@ -293,6 +293,13 @@
       "artist": "Richard Knötel",
       "date": "1901",
       "page": "https://commons.wikimedia.org/wiki/File:Attack_of_the_second_battalion_of_the_German_Lieb-Regiment_under_General_von_Horn_near_Wartenburg._October_3,_1813.png"
+    },
+    "hanau": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Vernet-Battle_of_Hanau.jpg/960px-Vernet-Battle_of_Hanau.jpg",
+      "title": "The Battle of Hanau",
+      "artist": "Horace Vernet",
+      "date": "1824",
+      "page": "https://commons.wikimedia.org/wiki/File:Vernet-Battle_of_Hanau.jpg"
     }
   },
   "campaigns": {

@@ -17,6 +17,7 @@ import kobrin from "./kobrin.json";
 import bautzen from "./bautzen.json";
 import grossbeeren from "./grossbeeren.json";
 import wartenburg from "./wartenburg.json";
+import hanau from "./hanau.json";
 import ligny from "./ligny.json";
 import lutzen from "./lutzen.json";
 import mockern from "./mockern.json";
@@ -59,7 +60,6 @@ import {
   dresden,
   fereChampenoise,
   gohrde,
-  hanau,
   katzbach,
   kulm,
   laon,
@@ -427,7 +427,7 @@ const allBattles: HistoricalBattle[] = [
   mockernLeipzig,
   leipzig,
   torgau,
-  hanau,
+  hanau as HistoricalBattle,
   hamburg,
   sehested,
   // The Campaign in France
