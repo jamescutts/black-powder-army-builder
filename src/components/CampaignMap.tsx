@@ -130,7 +130,46 @@ export function hasCampaignMap(campaignId: string): boolean {
   return campaignId in campaignMaps;
 }
 
-export function CampaignMap({ campaignId }: { campaignId: string }) {
+/** Distance in km between two points, near enough at a campaign's scale */
+function km(a: LatLng, b: LatLng): number {
+  const cos = Math.cos(((a[0] + b[0]) / 2) * (Math.PI / 180));
+  return Math.hypot((b[1] - a[1]) * 111.32 * cos, (b[0] - a[0]) * 110.57);
+}
+
+/** How near a route passes to a point, in km */
+function kmFromRoute(at: LatLng, path: LatLng[]): number {
+  const cos = Math.cos(at[0] * (Math.PI / 180));
+  const xy = (p: LatLng): [number, number] => [(p[1] - at[1]) * 111.32 * cos, (p[0] - at[0]) * 110.57];
+  let best = Infinity;
+  for (let i = 0; i < path.length - 1; i++) {
+    const [ax, ay] = xy(path[i]);
+    const [bx, by] = xy(path[i + 1]);
+    const dx = bx - ax;
+    const dy = by - ay;
+    const t = Math.max(0, Math.min(1, -(ax * dx + ay * dy) / (dx * dx + dy * dy || 1)));
+    best = Math.min(best, Math.hypot(ax + dx * t, ay + dy * t));
+  }
+  return best;
+}
+
+/** The marches that led to a battle or away from it: those passing within 5 km of it, or, where none does,
+ * the nearest within 50 km */
+export function routesAt(campaignId: string, battleId: string): MapRoute[] {
+  const data = campaignMaps[campaignId];
+  const place = battlePlaces[battleId];
+  if (!data || !place) return [];
+  const near = data.routes.map((r) => ({ r, d: kmFromRoute(place.at, r.path) }));
+  const close = near.filter((n) => n.d <= 5);
+  if (close.length) return close.map((n) => n.r);
+  const nearest = Math.min(...near.map((n) => n.d));
+  return nearest <= 50 ? near.filter((n) => n.d <= nearest + 5).map((n) => n.r) : [];
+}
+
+/**
+ * A campaign's map, or, given a battle to focus on, that battle's: centred on it and the country around
+ * it, its sabres larger, the marches that led to it and away from it drawn full and the rest faded back
+ */
+export function CampaignMap({ campaignId, focus }: { campaignId: string; focus?: string }) {
   const data = campaignMaps[campaignId];
   const mapRef = useRef<Leaflet.Map | null>(null);
   const router = useRouter();
@@ -149,25 +188,51 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
     import("leaflet").then(({ default: L }) => {
       if (cancelled || !holder.current) return;
       const tiles = TILES[data.tiles ?? "physical"];
+      // A battle's map opens no closer than its tiles' finest, so the land stays crisp; it can still be zoomed
+      // in a step beyond
       map = L.map(holder.current, { scrollWheelZoom: false, zoomSnap: 0.25, maxZoom: tiles.maxNativeZoom + 1 });
       mapRef.current = map;
       const battles = scheduleIn(campaignId);
       const placed = battles.filter((b) => battlePlaces[b.id]);
+      const focused = focus ? battlePlaces[focus] : undefined;
+      const through = new Set(focus ? routesAt(campaignId, focus) : data.routes);
       // The view first, as Leaflet can't draw a line on a map with none: the battles, and the towns and
       // frontiers around them too where there's room
       const wide = holder.current.clientWidth >= 640;
-      const points: LatLng[] = [
+      let points: LatLng[] = [
         ...placed.map((b) => battlePlaces[b.id].at),
         ...(wide ? data.places.map((p) => p.at) : []),
         ...data.routes.filter((r) => r.start).map((r) => r.path[0]),
       ];
-      const bounds = L.latLngBounds(points);
+      // For one battle, the country within reach of it: a fraction of the campaign's breadth, or more where
+      // its nearest neighbour is further off; and whatever of its marches, battles and towns lie in that
+      if (focused) {
+        const lats = placed.map((b) => battlePlaces[b.id].at[0]);
+        const lngs = placed.map((b) => battlePlaces[b.id].at[1]);
+        const breadth = km([Math.min(...lats), Math.min(...lngs)], [Math.max(...lats), Math.max(...lngs)]);
+        const others = placed.filter((b) => b.id !== focus).map((b) => km(focused.at, battlePlaces[b.id].at));
+        const reach = Math.max(breadth * 0.15, Math.min(...others, Infinity) * 1.2, 8);
+        const within = (p: LatLng) => km(focused.at, p) <= reach;
+        const near = [
+          ...[...through].flatMap((r) => r.path).filter(within),
+          ...placed.map((b) => battlePlaces[b.id].at).filter(within),
+        ];
+        // Mirrored about the battle, so it sits in the middle of its map
+        const [lat, lng] = focused.at;
+        points = [focused.at, ...near, ...near.map(([a, b]): LatLng => [2 * lat - a, 2 * lng - b])];
+      }      const bounds = L.latLngBounds(points);
+      if (focused && points.length === 1) bounds.extend(L.latLng(focused.at[0] + 0.3, focused.at[1] + 0.5)).extend(L.latLng(focused.at[0] - 0.3, focused.at[1] - 0.5));
       let fitZoom = 0;
       const fit = () => {
         // Clear of the key over the map's foot, however many rows it runs to
         const key = holder.current?.parentElement?.querySelector<HTMLElement>(".map-legend");
         const foot = (key?.offsetHeight ?? 48) + 36;
-        map!.fitBounds(bounds, { paddingTopLeft: [40, 24], paddingBottomRight: [24, foot], animate: false });
+        map!.fitBounds(bounds, {
+          paddingTopLeft: [40, 24],
+          paddingBottomRight: [24, foot],
+          maxZoom: focus ? tiles.maxNativeZoom : undefined,
+          animate: false,
+        });
         fitZoom = map!.getZoom();
       };
       fit();
@@ -191,7 +256,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       map.on("zoomend resize", sparse);
       // Where names would overlap, the less important gives way: where the campaign's march begins first,
       // then the battles with forces, the battles still to come, the cities, and the towns last
-      const RANK = ["map-label-start", "map-label-battle", "map-label-soon", "map-label-city", "map-label-town"];
+      const RANK = ["map-label-focus", "map-label-start", "map-label-battle", "map-label-soon", "map-label-city", "map-label-town"];
       const declutter = () => {
         const labels = [...(holder.current?.querySelectorAll<HTMLElement>(".leaflet-tooltip.map-label") ?? [])];
         const rank = (el: HTMLElement) => RANK.findIndex((c) => el.classList.contains(c));
@@ -269,13 +334,17 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
         lines: Leaflet.Polyline[];
         start: Leaflet.CircleMarker;
         marks: Leaflet.LayerGroup;
+        main?: boolean;
       }[] = [];
       for (const route of data.routes) {
         const side = sideOf.get(route.side)!;
         const group = routeGroups.get(route.side)!;
         const lines: Leaflet.Polyline[] = [];
+        // On a battle's map, only the marches that led to it and away from it, drawn as the main ones
+        if (!through.has(route)) continue;
+        const main = focus ? true : route.main;
         // A main army's march is drawn heavier, edged in parchment, so it can be followed through the rest
-        if (route.main) {
+        if (main) {
           lines.push(
             L.polyline(route.path, {
               color: "#fbf6e9",
@@ -290,8 +359,8 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
         lines.push(
           L.polyline(route.path, {
             color: side.colour,
-            weight: route.main ? 4.5 : 3,
-            opacity: route.main ? 0.95 : 0.85,
+            weight: main ? 4.5 : 3,
+            opacity: main ? 0.95 : 0.85,
             dashArray: side.dash,
             lineCap: "round",
             lineJoin: "round",
@@ -325,7 +394,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
           });
         }
         start.addTo(group);
-        drawn.push({ route, side, lines, start, marks: L.layerGroup().addTo(group) });
+        drawn.push({ route, side, lines, start, marks: L.layerGroup().addTo(group), main });
       }
 
       // Lay the routes out for the map's zoom. Each runs a few pixels to the right of its direction of travel
@@ -333,7 +402,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       // armies on it, run side by side instead of on top of each other; and chevrons along it, at a steady
       // spacing on screen, show which way it went, with an arrowhead where it ends
       const layout = () => {
-        for (const { route, side, lines, start, marks } of drawn) {
+        for (const { route, side, lines, start, marks, main } of drawn) {
           const pts = offsetLine(
             route.path.map((p) => map!.latLngToLayerPoint(p)),
             side.lane ?? 3
@@ -342,7 +411,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
           for (const line of lines) line.setLatLngs(latlngs);
           start.setLatLng(latlngs[0]);
           marks.clearLayers();
-          for (const c of chevrons(pts, route.main ? 80 : 100)) {
+          for (const c of chevrons(pts, main ? 80 : 100)) {
             const end = c.end;
             const size = end ? 16 : 12;
             marks.addLayer(
@@ -394,14 +463,15 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       for (const battle of ordered) {
         const { at, engaged, label = "right", nudge = [0, 0] } = battlePlaces[battle.id];
         const soon = isPlanned(battle);
-        const size = markSize(engaged, most);
+        // A battle's own map shows it larger than any other
+        const size = battle.id === focus ? LARGEST + 6 : markSize(engaged, most);
         const marker = L.marker(at, {
           title: battle.name,
           alt: battle.name,
           riseOnHover: true,
-          zIndexOffset: (soon ? 500 : 1000) + (LARGEST - size) * 5,
+          zIndexOffset: battle.id === focus ? 2000 : (soon ? 500 : 1000) + (LARGEST - size) * 5,
           icon: L.divIcon({
-            className: soon ? "map-battle map-battle-soon" : "map-battle",
+            className: `map-battle${soon ? " map-battle-soon" : ""}${!focus ? "" : battle.id === focus ? " map-battle-focus" : " map-faded"}`,
             iconSize: [size, size],
             iconAnchor: [size / 2, size / 2],
             tooltipAnchor: [0, 0],
@@ -418,13 +488,15 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
             permanent: true,
             direction: label,
             offset: [side[0] + nudge[0], side[1] + nudge[1]],
-            className: soon ? "map-label map-label-soon" : "map-label map-label-battle",
+            className: `map-label ${battle.id === focus ? "map-label-focus" : soon ? "map-label-soon" : "map-label-battle"}${focus && battle.id !== focus ? " map-faded" : ""}`,
           }
         );
         const pop = document.createElement("div");
         pop.className = "map-pop";
         pop.innerHTML = `<strong>${escape(battle.name)}</strong><div class="map-pop-date">${escape(battle.date)}</div><div class="map-pop-engaged">About ${engaged.toLocaleString("en-GB")} men engaged</div><p>${escape(battle.summary)}</p>`;
-        if (soon) {
+        if (battle.id === focus) {
+          // Already on its page
+        } else if (soon) {
           pop.insertAdjacentHTML("beforeend", `<span class="map-pop-soon">Coming soon</span>`);
         } else {
           const link = document.createElement("a");
@@ -455,7 +527,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       mapRef.current = null;
       layers.clear();
     };
-  }, [campaignId, data, router]);
+  }, [campaignId, focus, data, router]);
 
   // Show or hide a side's routes from the key
   useEffect(() => {
@@ -472,6 +544,9 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
   }, [hidden, ready]);
 
   if (!data) return null;
+  // On a battle's map, only the sides that have a march on it
+  const shown = focus ? new Set(routesAt(campaignId, focus).map((r) => r.side)) : undefined;
+  const keySides = shown ? data.sides.filter((side) => shown.has(side.id)) : data.sides;
   const toggle = (id: string) =>
     setHidden((h) => {
       const next = new Set(h);
@@ -490,7 +565,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
         )}
       </div>
       <div className="map-legend" aria-label="Map key">
-        {data.sides.map((side) => (
+        {keySides.map((side) => (
           <UnstyledButton
             key={side.id}
             className="map-key"

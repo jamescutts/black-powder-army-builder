@@ -2787,6 +2787,47 @@ a.app-list-row:active {
   opacity: 0.85;
 }
 
+/* A battle's own map: its sabres and name stand out, the campaign's other battles and marches step back */
+.campaign-map .map-faded,
+.campaign-map .leaflet-tooltip.map-faded {
+  opacity: 0.4 !important;
+}
+
+/* Under a battle's map: the marches that led to it and away from it */
+.battle-routes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px 24px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.battle-routes li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.battle-routes svg {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.map-battle-focus svg {
+  filter: drop-shadow(0 0 3px rgba(251, 246, 233, 0.95)) drop-shadow(0 1px 3px rgba(51, 32, 15, 0.35));
+}
+
+.leaflet-tooltip.map-label-focus {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 1px 6px;
+  text-align: center;
+  color: var(--mantine-color-red-8);
+  background: rgba(251, 246, 233, 0.92);
+}
+
 .map-label-date {
   display: block;
   font-size: 10.5px;

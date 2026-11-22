@@ -5,7 +5,8 @@ import { useState } from "react";
 import { Anchor, Badge, Breadcrumbs, Card, Container, Group, SimpleGrid, Stack, Text, Title } from "@mantine/core";
 import { IconBook2, IconChevronLeft } from "@tabler/icons-react";
 import { getNation, getSupplement } from "@/data";
-import { CampaignMap, hasCampaignMap } from "./CampaignMap";
+import { CampaignMap, hasCampaignMap, routesAt } from "./CampaignMap";
+import { battlePlaces, campaignMaps } from "@/data/battles/geo";
 import { battlesIn, campaigns, getCampaign, isPlanned, scheduleIn } from "@/data/battles";
 import type { HistoricalArt, HistoricalForce } from "@/data/types";
 import { battleHref, campaignHref, forceHref, HISTORICAL_FORCES_PATH, rosterFromForce } from "@/lib/forces";
@@ -319,9 +320,57 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
             </SimpleGrid>
           </Stack>
         ))}
+        <BattleMap campaignId={campaign.id} battleId={battle.id} name={battle.name} />
       </Stack>
     </Container>
     </>
+  );
+}
+
+// The campaigns whose battles have a map of their own so far
+const BATTLE_MAPS = new Set(["russia-1812"]);
+
+/** A battle's place in its campaign, as on Fleet Ledger's battle pages: the campaign's map centred on it,
+ * with the marches that led to it and away from it, listed beneath */
+function BattleMap({ campaignId, battleId, name }: { campaignId: string; battleId: string; name: string }) {
+  if (!BATTLE_MAPS.has(campaignId) || !hasCampaignMap(campaignId) || !battlePlaces[battleId]) return null;
+  const routes = routesAt(campaignId, battleId);
+  const sides = new Map(campaignMaps[campaignId].sides.map((s) => [s.id, s]));
+  return (
+    <Stack gap="xs" component="section" id="map" mt="md">
+      <Title order={2} className="builder-heading">
+        Where it was fought
+      </Title>
+      <Text size="sm" c="brown.9">
+        {routes.length
+          ? `${name} on the campaign's map, with the marches that led to it and away from it. Routes are approximate.`
+          : `${name} on the campaign's map. Routes are approximate.`}
+      </Text>
+      <CampaignMap campaignId={campaignId} focus={battleId} />
+      {routes.length > 0 && (
+        <ul className="battle-routes">
+          {routes.map((r) => {
+            const side = sides.get(r.side)!;
+            return (
+              <li key={r.name}>
+                <svg width="26" height="8" aria-hidden="true">
+                  <line x1="2" y1="4" x2="24" y2="4" stroke={side.colour} strokeWidth="3" strokeDasharray={side.dash} strokeLinecap="round" />
+                </svg>
+                <Text size="sm" c="brown.9">
+                  <Text span fw={600}>
+                    {r.name}
+                  </Text>
+                  {" · "}
+                  <Text span style={{ whiteSpace: "nowrap" }}>
+                    {r.dates}
+                  </Text>
+                </Text>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </Stack>
   );
 }
 
