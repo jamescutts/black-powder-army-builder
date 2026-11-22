@@ -8,7 +8,7 @@ import { getNation, getSupplement } from "@/data";
 import { CampaignMap, hasCampaignMap, routesAt } from "./CampaignMap";
 import { battlePlaces, campaignMaps } from "@/data/battles/geo";
 import { battlesIn, campaigns, getCampaign, isPlanned, scheduleIn } from "@/data/battles";
-import type { HistoricalArt, HistoricalForce } from "@/data/types";
+import type { HistoricalArt, HistoricalCampaign, HistoricalForce } from "@/data/types";
 import { battleHref, campaignHref, forceHref, HISTORICAL_FORCES_PATH, rosterFromForce } from "@/lib/forces";
 import { nationForPeriod } from "@/lib/periods";
 import { rosterTotal, unitCount } from "@/lib/points";
@@ -79,11 +79,11 @@ export function HistoricalCampaigns() {
                 <div className="home-card-photo" data-empty={!campaign.art || undefined}>
                   {campaign.art && (
                     <img
-                        src={campaign.art.src}
-                        alt={`${campaign.art.title}, ${campaign.art.artist}`}
-                        loading="lazy"
-                        style={{ objectPosition: campaign.art.focus }}
-                      />
+                      src={campaign.art.src}
+                      alt={`${campaign.art.title}, ${campaign.art.artist}`}
+                      loading="lazy"
+                      style={{ objectPosition: campaign.art.focus }}
+                    />
                   )}
                 </div>
                 <Stack gap={6} p="lg" pb={0}>
@@ -93,38 +93,71 @@ export function HistoricalCampaigns() {
                       {campaign.name}
                     </Text>
                   </Link>
-                  <Text size="sm" fw={600} c="brown.8">
-                    {campaign.dates}
-                  </Text>
+                  <Group gap="xs" justify="space-between" wrap="nowrap">
+                    <Text size="sm" fw={600} c="brown.8">
+                      {campaign.dates}
+                    </Text>
+                    {forces === 0 && (
+                      <Badge color="gray" variant="light" size="sm">
+                        Forces to come
+                      </Badge>
+                    )}
+                  </Group>
                   <Text size="sm" c="brown.9" style={{ lineHeight: 1.55 }}>
                     {campaign.summary}
                   </Text>
                 </Stack>
-                <Group justify="space-between" align="center" gap="xs" p="lg" style={{ marginTop: "auto" }}>
-                  <Text size="sm" c="brown.9">
-                    {battles.map((b) => b.name).join(" · ")}
-                    {toCome > 0 && (
-                      <Text span size="sm" c="brown.8">
-                        {battles.length > 0 ? ` · ${toCome} more to come` : plural(toCome, "battle to come", "battles to come")}
-                      </Text>
-                    )}
-                  </Text>
-                  {forces > 0 ? (
-                    <Badge color="brown" variant="filled" size="lg">
-                      {plural(forces, "force", "forces")}
-                    </Badge>
-                  ) : (
-                    <Badge color="gray" variant="light" size="lg">
-                      Coming soon
-                    </Badge>
-                  )}
-                </Group>
+                <Stack gap="sm" p="lg" style={{ marginTop: "auto" }}>
+                  {campaign.sides && <CampaignSides sides={campaign.sides} />}
+                  {campaign.commanders && <CampaignCommanders commanders={campaign.commanders} />}
+                </Stack>
               </Card>
             );
           })}
         </SimpleGrid>
       </Stack>
     </Container>
+  );
+}
+
+
+/** A campaign's two sides, as rows of their nations' flags with "against" between them */
+function CampaignSides({ sides }: { sides: NonNullable<HistoricalCampaign["sides"]> }) {
+  return (
+    <div className="campaign-sides">
+      {sides.map((side, i) => (
+        <Group key={side.name} gap={6} wrap="nowrap" className="campaign-side">
+          {i > 0 && (
+            <Text span size="xs" fs="italic" c="brown.8" mr={2}>
+              against
+            </Text>
+          )}
+          <Group gap={5} wrap="wrap" role="img" aria-label={`${side.name}: ${side.flags.map((f) => f.name).join(", ")}`}>
+            {side.flags.map((flag) => (
+              <span key={flag.name} className="campaign-flag" title={flag.name}>
+                <img src={flag.src} alt="" />
+              </span>
+            ))}
+          </Group>
+        </Group>
+      ))}
+    </div>
+  );
+}
+
+/** A campaign's chief commanders, each a small round portrait with his name */
+function CampaignCommanders({ commanders }: { commanders: NonNullable<HistoricalCampaign["commanders"]> }) {
+  return (
+    <Group gap="xs" className="campaign-commanders">
+      {commanders.map((c) => (
+        <Group key={c.name} gap={6} wrap="nowrap" className="campaign-commander">
+          {c.portrait && <img src={c.portrait.src} alt="" style={{ objectPosition: c.portrait.focus }} loading="lazy" />}
+          <Text span size="xs" fw={600} c="brown.9">
+            {c.name}
+          </Text>
+        </Group>
+      ))}
+    </Group>
   );
 }
 

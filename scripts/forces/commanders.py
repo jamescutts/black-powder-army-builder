@@ -442,6 +442,30 @@ NAMED_COMMANDERS = {
 }
 
 
+# Each campaign's chief commanders, shown with their portraits on its card in the Historical forces list.
+# Written to src/data/battles/campaign-commanders.json by running this file.
+PORTRAITS.update({
+    "bernadotte": portrait("Charles XIV John as Crown Prince of Sweden - François Gérard.jpg", "Jean-Baptiste Bernadotte, Crown Prince of Sweden", "after François Gérard", focus="50% 18%"),
+})
+CAMPAIGN_COMMANDERS = {
+    "peninsular-war": [("Wellington", "wellington"), ("Moore", "moore"), ("Soult", "soult"), ("Masséna", "massena")],
+    "russia-1812": [("Napoleon", "napoleon"), ("Kutuzov", "kutuzov"), ("Barclay de Tolly", "barclay"), ("Bagration", "bagration")],
+    "liberation-1813": [("Napoleon", "napoleon"), ("Blücher", "blucher"), ("Schwarzenberg", "schwarzenberg"), ("Bernadotte", "bernadotte")],
+    "france-1814": [("Napoleon", "napoleon"), ("Blücher", "blucher"), ("Schwarzenberg", "schwarzenberg"), ("Marmont", "marmont")],
+    "hundred-days": [("Napoleon", "napoleon"), ("Wellington", "wellington"), ("Blücher", "blucher"), ("Ney", "ney")],
+}
+
+
+def write_campaigns():
+    import json
+    from pathlib import Path
+    out = {c: [{"name": name, **({"portrait": PORTRAITS[key]} if key in PORTRAITS else {})} for name, key in people]
+           for c, people in CAMPAIGN_COMMANDERS.items()}
+    path = Path(__file__).resolve().parents[2] / "src" / "data" / "battles" / "campaign-commanders.json"
+    path.write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
+    print(f"{len(out)} campaigns' commanders")
+
+
 def write_named():
     import json
     from pathlib import Path
@@ -453,3 +477,4 @@ def write_named():
 
 if __name__ == "__main__":
     write_named()
+    write_campaigns()

@@ -1,5 +1,6 @@
 import type { HistoricalBattle, HistoricalCampaign, HistoricalForce } from "../types";
 import { getNation } from "../index";
+import campaignCommanders from "./campaign-commanders.json";
 import albuera from "./albuera.json";
 import bailen from "./bailen.json";
 import bussaco from "./bussaco.json";
@@ -121,6 +122,10 @@ const allCampaigns: HistoricalCampaign[] = [
       date: "1810",
       page: "https://commons.wikimedia.org/wiki/File:Louis-Fran%C3%A7ois_Lejeune_-_Battle_of_Somosierra,_November_30,_1808.jpg",
     },
+    sides: [
+      { name: "France", flags: [{ name: "France", src: "/flags/france.svg" }] },
+      { name: "The allies", flags: [{ name: "Britain", src: "/flags/britain.svg" }, { name: "Spain", src: "/flags/spain.svg" }] },
+    ],
     summary:
       "Six years of war in Spain and Portugal, as Wellington's British and Portuguese army, the Spanish and the guerrillas fought the French armies across the Peninsula, from Vimeiro and Talavera to Salamanca and Vitoria.",
   },
@@ -135,6 +140,10 @@ const allCampaigns: HistoricalCampaign[] = [
       date: "1908–09",
       page: "https://commons.wikimedia.org/wiki/File:De_overtocht_over_de_Berezina.jpg",
     },
+    sides: [
+      { name: "The Grande Armée", flags: [{ name: "France", src: "/flags/france.svg" }, { name: "Grand Duchy of Warsaw", src: "/flags/grand-duchy-warsaw.svg" }, { name: "Austria", src: "/flags/austria.svg" }, { name: "Prussia", src: "/flags/prussia.png" }, { name: "Saxony", src: "/flags/saxony.svg" }] },
+      { name: "Russia", flags: [{ name: "Russia", src: "/flags/russia.svg" }] },
+    ],
     summary:
       "Napoleon crossed the Niemen in June with the largest army Europe had seen, drawn from France and half the continent. The Russian armies fell back before it, fighting rearguard actions from Mir and Ostrovno to Smolensk, until Kutuzov stood at Borodino. Napoleon took Moscow but not the peace he sought, and the retreat through the winter, harried at Maloyaroslavets, Vyazma and Krasnoi and across the Berezina, destroyed his army, while on the flanks Austrians, Saxons and Prussians fought campaigns of their own.",
   },
@@ -149,6 +158,10 @@ const allCampaigns: HistoricalCampaign[] = [
       date: "1839",
       page: "https://commons.wikimedia.org/wiki/File:Declaration_of_victory_after_the_Battle_of_Leipzig,_1813_(by_Johann_Peter_Krafft).jpg",
     },
+    sides: [
+      { name: "France and her allies", flags: [{ name: "France", src: "/flags/france.svg" }, { name: "Saxony", src: "/flags/saxony.svg" }, { name: "Grand Duchy of Warsaw", src: "/flags/grand-duchy-warsaw.svg" }, { name: "Kingdom of Italy", src: "/flags/italy-napoleonic.png" }, { name: "Westphalia", src: "/flags/westphalia.svg" }] },
+      { name: "The Sixth Coalition", flags: [{ name: "Russia", src: "/flags/russia.svg" }, { name: "Prussia", src: "/flags/prussia.png" }, { name: "Austria", src: "/flags/austria.svg" }, { name: "Sweden", src: "/flags/sweden.svg" }, { name: "Britain", src: "/flags/britain.svg" }] },
+    ],
     summary:
       "With the Grande Armée lost in Russia, Prussia rose and joined the Tsar. Napoleon came back into Saxony with a new army of conscripts and beat the allies at Lützen and Bautzen, then agreed an armistice that brought Austria and Sweden in against him. In the autumn his marshals were beaten in turn at Großbeeren, the Katzbach, Kulm and Dennewitz while he won at Dresden, until the allied armies closed on him at Leipzig; Bavaria changed sides, and he fought his way home through Hanau to the Rhine, leaving garrisons besieged behind him from Danzig to Hamburg.",
   },
@@ -163,6 +176,10 @@ const allCampaigns: HistoricalCampaign[] = [
       date: "1864",
       page: "https://commons.wikimedia.org/wiki/File:Jean-Louis-Ernest_Meissonier-Campagne_de_France.jpg",
     },
+    sides: [
+      { name: "France", flags: [{ name: "France", src: "/flags/france.svg" }] },
+      { name: "The Sixth Coalition", flags: [{ name: "Russia", src: "/flags/russia.svg" }, { name: "Prussia", src: "/flags/prussia.png" }, { name: "Austria", src: "/flags/austria.svg" }, { name: "Bavaria", src: "/flags/bavaria.svg" }, { name: "Württemberg", src: "/flags/wurttemberg.svg" }] },
+    ],
     summary:
       "The allies crossed the Rhine in the winter and marched on Paris in two armies, Blücher's along the Marne and Schwarzenberg's along the Seine. Beaten at La Rothière, Napoleon turned on them with a small army of veterans, conscripts and National Guards, and in the Six Days of February broke Blücher's corps one by one at Champaubert, Montmirail, Château-Thierry and Vauchamps, then threw Schwarzenberg back at Montereau. But Craonne, Laon and Arcis-sur-Aube wore him down, and when the allies marched past him on Paris the city fell, and he abdicated at Fontainebleau.",
   },
@@ -176,12 +193,20 @@ const allCampaigns: HistoricalCampaign[] = [
       artist: "Adolph Northen",
       page: "https://commons.wikimedia.org/wiki/File:1815-06-18_Adolph_Northen_oil_on_canvas_Die_Verteidigung_des_Meierhofes_La_Haye_Sainte_bei_Waterloo,_Historisches_Museum_Hannover.webp",
     },
+    sides: [
+      { name: "France", flags: [{ name: "France", src: "/flags/france.svg" }] },
+      { name: "The Seventh Coalition", flags: [{ name: "Britain", src: "/flags/britain.svg" }, { name: "United Netherlands", src: "/flags/netherlands.svg" }, { name: "Brunswick", src: "/flags/brunswick.svg" }, { name: "Nassau", src: "/flags/nassau.svg" }, { name: "Prussia", src: "/flags/prussia.png" }] },
+    ],
     summary:
       "Napoleon's return from Elba ended in four days in Belgium. He struck between Wellington's Anglo-allied army and Blücher's Prussians, beating the Prussians at Ligny while Ney held Wellington at Quatre Bras; two days later the allies joined to defeat him at Waterloo, while Grouchy fought the Prussian rearguard at Wavre.",
   },
 ];
 
-export const campaigns: HistoricalCampaign[] = allCampaigns;
+// Each campaign with its chief commanders' portraits, written by scripts/forces/commanders.py
+export const campaigns: HistoricalCampaign[] = allCampaigns.map((c) => ({
+  ...c,
+  commanders: (campaignCommanders as Record<string, HistoricalCampaign["commanders"]>)[c.id],
+}));
 
 // Every battle, in the order fought: those with forces written, and those still to come (planned.ts)
 const allBattles: HistoricalBattle[] = [

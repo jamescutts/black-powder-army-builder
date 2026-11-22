@@ -645,6 +645,10 @@ export interface HistoricalCampaign {
   /** e.g. "June 1815" */
   dates: string;
   summary: string;
+  /** The two sides, each with its nations' flags, shown on the campaign's card: Napoleon's side first */
+  sides?: { name: string; flags: { name: string; src: string }[] }[];
+  /** Its chief commanders, with their portraits, shown on its card (from campaign-commanders.json) */
+  commanders?: { name: string; portrait?: HistoricalArt }[];
 }
 
 /** A battle whose forces are grouped together under its heading, within its campaign */

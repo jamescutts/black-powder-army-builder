@@ -1,0 +1,222 @@
+{
+  "peninsular-war": [
+    {
+      "name": "Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "name": "Moore",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Thomas_Lawrence_%281769-1830%29_-_Lieutenant-General_Sir_John_Moore_%281761%E2%80%931809%29%2C_KB_-_NAM._1966-07-22_-_National_Army_Museum.jpg/250px-Thomas_Lawrence_%281769-1830%29_-_Lieutenant-General_Sir_John_Moore_%281761%E2%80%931809%29%2C_KB_-_NAM._1966-07-22_-_National_Army_Museum.jpg",
+        "title": "Sir John Moore",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Thomas_Lawrence_%281769-1830%29_-_Lieutenant-General_Sir_John_Moore_%281761%E2%80%931809%29%2C_KB_-_NAM._1966-07-22_-_National_Army_Museum.jpg",
+        "focus": "50% 18%",
+        "date": "1805"
+      }
+    },
+    {
+      "name": "Soult",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nicolas_Jean_de_Dieu_Soult.jpg/250px-Nicolas_Jean_de_Dieu_Soult.jpg",
+        "title": "Marshal Jean-de-Dieu Soult",
+        "artist": "after Louis-Henri de Rudder",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Jean_de_Dieu_Soult.jpg",
+        "focus": "50% 14%"
+      }
+    },
+    {
+      "name": "Masséna",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg/250px-Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+        "title": "Marshal André Masséna",
+        "artist": "Louis Hersent",
+        "page": "https://commons.wikimedia.org/wiki/File:Andr%C3%A9_Mass%C3%A9na_%28Hersent%29.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  ],
+  "russia-1812": [
+    {
+      "name": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    {
+      "name": "Kutuzov",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Kutuzov2_by_Daw.jpg/250px-Kutuzov2_by_Daw.jpg",
+        "title": "Field Marshal Mikhail Kutuzov",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Kutuzov2_by_Daw.jpg",
+        "focus": "50% 14%",
+        "date": "1829"
+      }
+    },
+    {
+      "name": "Barclay de Tolly",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg/250px-Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "title": "Michael Barclay de Tolly",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "focus": "50% 16%",
+        "date": "1829"
+      }
+    },
+    {
+      "name": "Bagration",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/George_Dawe_-_Portrait_of_General_Pyotr_Bagration_%281765-1812%29_-_Google_Art_Project.jpg/250px-George_Dawe_-_Portrait_of_General_Pyotr_Bagration_%281765-1812%29_-_Google_Art_Project.jpg",
+        "title": "Prince Pyotr Bagration",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:George_Dawe_-_Portrait_of_General_Pyotr_Bagration_%281765-1812%29_-_Google_Art_Project.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "liberation-1813": [
+    {
+      "name": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    {
+      "name": "Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "name": "Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    {
+      "name": "Bernadotte",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Charles_XIV_John_as_Crown_Prince_of_Sweden_-_Fran%C3%A7ois_G%C3%A9rard.jpg/250px-Charles_XIV_John_as_Crown_Prince_of_Sweden_-_Fran%C3%A7ois_G%C3%A9rard.jpg",
+        "title": "Jean-Baptiste Bernadotte, Crown Prince of Sweden",
+        "artist": "after François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Charles_XIV_John_as_Crown_Prince_of_Sweden_-_Fran%C3%A7ois_G%C3%A9rard.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ],
+  "france-1814": [
+    {
+      "name": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    {
+      "name": "Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "name": "Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    {
+      "name": "Marmont",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Marmont.jpg/250px-Marmont.jpg",
+        "title": "Marshal Auguste de Marmont",
+        "artist": "Jean-Baptiste Paulin Guérin",
+        "page": "https://commons.wikimedia.org/wiki/File:Marmont.jpg",
+        "focus": "50% 16%",
+        "date": "1837"
+      }
+    }
+  ],
+  "hundred-days": [
+    {
+      "name": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    {
+      "name": "Wellington",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "name": "Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "name": "Ney",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Marechal_Ney.jpg/250px-Marechal_Ney.jpg",
+        "title": "Marshal Michel Ney",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Marechal_Ney.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ]
+}
