@@ -127,7 +127,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "salamanca-leith",
@@ -439,7 +446,15 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Henry_Clinton_%281771-1829%29.jpg/250px-Henry_Clinton_%281771-1829%29.jpg",
+        "title": "Sir Henry Clinton",
+        "artist": "Samuel William Reynolds",
+        "page": "https://commons.wikimedia.org/wiki/File:Henry_Clinton_%281771-1829%29.jpg",
+        "focus": "50% 20%",
+        "date": "1827"
+      }
     },
     {
       "id": "salamanca-campbell",
@@ -809,7 +824,15 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/99/Sir_Denis_Pack.jpg",
+        "title": "Sir Denis Pack",
+        "artist": "Saunders",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Denis_Pack.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1800"
+      }
     },
     {
       "id": "salamanca-heavy",
@@ -1853,7 +1876,14 @@
       "notes": [
         "Commanders are at Staff Rating 8, the default for historical forces."
       ],
-      "period": "late"
+      "period": "late",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Maximilien_Foy_1.jpg/250px-Maximilien_Foy_1.jpg",
+        "title": "Maximilien Sébastien Foy",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Maximilien_Foy_1.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "salamanca-cavalry",

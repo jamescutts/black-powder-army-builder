@@ -778,7 +778,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg/250px-Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg",
+        "title": "Henri-François Delaborde",
+        "artist": "Jean-Antoine Pinchon",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "corunna-cavalry",

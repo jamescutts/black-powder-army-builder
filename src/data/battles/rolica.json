@@ -163,7 +163,14 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "rolica-ferguson",
@@ -417,7 +424,14 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg/250px-Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg",
+        "title": "Henri-François Delaborde",
+        "artist": "Jean-Antoine Pinchon",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg",
+        "focus": "50% 20%"
+      }
     }
   ],
   "sides": {
@@ -441,5 +455,11 @@
         "focus": "50% 20%"
       }
     }
+  },
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Battle_of_Roli%C3%A7a_-_Abraham_Cooper.png/960px-Battle_of_Roli%C3%A7a_-_Abraham_Cooper.png",
+    "title": "The Battle of Roliça",
+    "artist": "Abraham Cooper",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Roli%C3%A7a_-_Abraham_Cooper.png"
   }
 }

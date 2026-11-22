@@ -169,6 +169,14 @@ FORCE_PORTRAITS: dict[str, str] = {
     "saltanovka-kolubakin": "raevsky", "saltanovka-paskevich": "paskevich",
     "ostrovno-bruyere": "bruyere", "ostrovno-delzons": "delzons", "ostrovno-bakhmetev": "bakhmetev",
     "ostrovno-cavalry": "ostermann", "ostrovno-konovnitsyn": "konovnitsyn", "ostrovno-pahlen": "pahlen",
+    # The Peninsula: commanders whose portraits we already have
+    "rolica-centre": "wellington", "rolica-delaborde": "delaborde",
+    "vimeiro-hill": "wellington", "vimeiro-delaborde": "delaborde", "vimeiro-reserve-fr": "junot",
+    "albuera-girard": "girard", "albuera-werle": "soult", "albuera-latour-maubourg": "latour_maubourg",
+    "corunna-delaborde": "delaborde",
+    "talavera-hill": "wellington", "talavera-sebastiani": "sebastiani", "talavera-dragoons": "latour_maubourg",
+    "salamanca-pakenham": "wellington", "salamanca-clinton": "clinton", "salamanca-portuguese": "pack", "salamanca-foy": "foy",
+    "vitoria-light": "wellington", "vitoria-picton": "picton",
     "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",

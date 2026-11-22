@@ -856,7 +856,14 @@
       "period": "middle",
       "notes": [
         "Commanders are at Staff Rating 8, the default for historical forces."
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg/250px-Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "title": "Jean-Baptiste Girard",
+        "artist": "French School",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Girard_%28Ecole_fran%C3%A7aise_du_XIX%C3%A8me_si%C3%A8cle%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "albuera-gazan",
@@ -1134,7 +1141,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Nicolas_Jean_de_Dieu_Soult.jpg/250px-Nicolas_Jean_de_Dieu_Soult.jpg",
+        "title": "Marshal Jean-de-Dieu Soult",
+        "artist": "after Louis-Henri de Rudder",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Jean_de_Dieu_Soult.jpg",
+        "focus": "50% 14%"
+      }
     },
     {
       "id": "albuera-latour-maubourg",
@@ -1263,7 +1277,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/c9/G%C3%A9n%C3%A9ral_Marie_Victor_Nicolas_de_Fay_de_La_Tour_Maubourg.jpg",
+        "title": "Marie-Victor de Latour-Maubourg",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Marie_Victor_Nicolas_de_Fay_de_La_Tour_Maubourg.jpg",
+        "focus": "50% 20%"
+      }
     }
   ],
   "sides": {

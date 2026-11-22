@@ -107,7 +107,14 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "vimeiro-eastern-ridge",
@@ -474,7 +481,14 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg/250px-Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg",
+        "title": "Henri-François Delaborde",
+        "artist": "Jean-Antoine Pinchon",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Henri-Fran%C3%A7ois_Delaborde.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "vimeiro-loison",
@@ -662,7 +676,14 @@
           ]
         }
       ],
-      "period": "early"
+      "period": "early",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Junot%2C_par_Appiani.png/250px-Junot%2C_par_Appiani.png",
+        "title": "Jean-Andoche Junot",
+        "artist": "Andrea Appiani",
+        "page": "https://commons.wikimedia.org/wiki/File:Junot%2C_par_Appiani.png",
+        "focus": "50% 22%"
+      }
     }
   ],
   "sides": {

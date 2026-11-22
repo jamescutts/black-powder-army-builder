@@ -134,3 +134,140 @@ export const orthez = planned("orthez", "Orthez", "27 February 1814", P,
   "Wellington turned Soult out of his position on the ridge above Orthez and drove him east.");
 export const toulouse = planned("toulouse", "Toulouse", "10 April 1814", P,
   "The war's last battle, fought for the heights east of the city before news came that Napoleon had already abdicated.");
+
+// Paintings for the Peninsular War's battles still to come
+medinaDeRioseco.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg/960px-Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg",
+  "title": "The French cuirassiers' charge at Medina de Rioseco",
+  "artist": "unknown artist",
+  "page": "https://commons.wikimedia.org/wiki/File:Charge_de_l%27escadron_provisoire_de_cuirassiers_fran%C3%A7ais_%C3%A0_la_bataille_de_Medina_de_Rioseco.jpg"
+};
+bailen.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg/960px-La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg",
+  "title": "The Surrender of Bailén",
+  "artist": "José Casado del Alisal",
+  "date": "1864",
+  "page": "https://commons.wikimedia.org/wiki/File:La_Rendici%C3%B3n_de_Bail%C3%A9n_%28Casado_del_Alisal%29.jpg"
+};
+ocana.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg/960px-Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg",
+  "title": "The Battle of Ocaña",
+  "artist": "after Adolphe Roehn",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_d%27Oca%C3%B1a%2C_19_novembre_1809.jpg"
+};
+bussaco.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/9/93/Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg",
+  "title": "The Battle of Bussaco",
+  "artist": "Richard Simkin",
+  "date": "c. 1900",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Bu%C3%A7aco%2C_27_septembre_1810.jpg"
+};
+fuentesDeOnoro.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Battle_of_Fuentes_d%27Onoro%2C_1811.jpg/960px-Battle_of_Fuentes_d%27Onoro%2C_1811.jpg",
+  "title": "The Battle of Fuentes de Oñoro",
+  "artist": "George Bryant Campion",
+  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Fuentes_d%27Onoro%2C_1811.jpg"
+};
+sorauren.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg/960px-Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg",
+  "title": "The field of Sorauren",
+  "artist": "Edward Hawke Locker",
+  "date": "1824",
+  "page": "https://commons.wikimedia.org/wiki/File:Sorauren._Field_of_battle._1824._Edward_Hawke_Locker.jpg"
+};
+nivelle.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Bataille_de_la_Nivelle.jpg/960px-Bataille_de_la_Nivelle.jpg",
+  "title": "The Battle of the Nivelle",
+  "artist": "William Heath and James Jenkins",
+  "date": "1831",
+  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_la_Nivelle.jpg"
+};
+orthez.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Denis_Dighton_Battle_of_Orthez.jpg/960px-Denis_Dighton_Battle_of_Orthez.jpg",
+  "title": "The final charge of the British cavalry at Orthez",
+  "artist": "Denis Dighton",
+  "date": "1815",
+  "page": "https://commons.wikimedia.org/wiki/File:Denis_Dighton_Battle_of_Orthez.jpg"
+};
+
+// The Peninsular War's sieges: the storms of the breaches were fights of their own
+export const saragossa = planned("saragossa", "First Siege of Saragossa", "15 June – 14 August 1808", P,
+  "Palafox's citizens and soldiers held the walled city street by street against Verdier's assaults, until news of Bailén drew the French off.");
+export const saragossa2 = planned("saragossa-2", "Second Siege of Saragossa", "20 December 1808 – 20 February 1809", P,
+  "Lannes's corps came back and took the city house by house in two months of mining and street fighting, as fever and fire killed tens of thousands within its walls.");
+export const gerona = planned("gerona", "Siege of Gerona", "6 May – 10 December 1809", P,
+  "Álvarez de Castro's garrison beat off assault after assault on the Catalan fortress for seven months, until starvation and disease forced its surrender.");
+export const almeida = planned("almeida", "Siege of Almeida", "25 July – 28 August 1810", P,
+  "Masséna's siege of the Portuguese border fortress ended in a day, when a shell touched off the magazine and the explosion levelled the castle.");
+export const tarragona = planned("tarragona", "Siege of Tarragona", "5 May – 29 June 1811", P,
+  "Suchet's Army of Aragon besieged the great Catalan port and stormed its walls, sacking the city and winning his marshal's baton.");
+export const ciudadRodrigo = planned("ciudad-rodrigo", "Ciudad Rodrigo", "7–19 January 1812", P,
+  "Wellington took the border fortress in midwinter in twelve days, storming its two breaches by night; Craufurd was killed at the lesser breach.");
+export const badajoz = planned("badajoz", "Badajoz", "16 March – 6 April 1812", P,
+  "The bloodiest storm of the war: the Light and 4th Divisions failed again and again at the breaches while Picton's 3rd Division took the castle by escalade and Leith's 5th the San Vicente bastion.");
+export const burgos = planned("burgos", "Siege of Burgos", "19 September – 21 October 1812", P,
+  "Wellington's attempt on the castle of Burgos, with too few guns, failed after five assaults, and began the retreat from Burgos.");
+export const sanSebastian = planned("san-sebastian", "San Sebastián", "7 July – 8 September 1813", P,
+  "Graham's besiegers stormed the breach at the second attempt, under covering fire shot over their heads, and the town burned in the sack that followed.");
+export const pamplona = planned("pamplona", "Siege of Pamplona", "26 June – 31 October 1813", P,
+  "Blockaded by Spanish troops after Vitoria, the fortress was the aim of Soult's counter-offensive in the Pyrenees, and held out until starved into surrender.");
+
+// Paintings for the sieges
+saragossa.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Girardet-Siege_of_Saragossa.jpg/960px-Girardet-Siege_of_Saragossa.jpg",
+  "title": "The Siege of Saragossa",
+  "artist": "Jules Girardet",
+  "date": "1906",
+  "page": "https://commons.wikimedia.org/wiki/File:Girardet-Siege_of_Saragossa.jpg"
+};
+saragossa2.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Siege_of_Saragossa.jpg/960px-Siege_of_Saragossa.jpg",
+  "title": "The Siege of Saragossa",
+  "artist": "Horace Vernet",
+  "date": "1819",
+  "page": "https://commons.wikimedia.org/wiki/File:Siege_of_Saragossa.jpg",
+  "focus": "50% 45%"
+};
+gerona.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Des1809-Girona-Pronostich1847.jpg",
+  "title": "The Siege of Gerona, 1809",
+  "artist": "unknown artist",
+  "date": "c. 1846",
+  "page": "https://commons.wikimedia.org/wiki/File:Des1809-Girona-Pronostich1847.jpg"
+};
+tarragona.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/2/20/Remond_-_Prise_de_Tarragone_en_Catalogne_par_le_g%C3%A9n%C3%A9ral_en_chef_Suchet%2C_le_28_juin_1811.jpg",
+  "title": "The Taking of Tarragona by Suchet",
+  "artist": "Jean-Charles-Joseph Rémond",
+  "date": "1837",
+  "page": "https://commons.wikimedia.org/wiki/File:Remond_-_Prise_de_Tarragone_en_Catalogne_par_le_g%C3%A9n%C3%A9ral_en_chef_Suchet%2C_le_28_juin_1811.jpg"
+};
+ciudadRodrigo.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/P427_STORMING_OF_THE_FORTRESS_CIUDAD_RODRIGO_BY_THE_ENGLISH_UNDER_LORD_WELLINGTON_1812.jpg/960px-P427_STORMING_OF_THE_FORTRESS_CIUDAD_RODRIGO_BY_THE_ENGLISH_UNDER_LORD_WELLINGTON_1812.jpg",
+  "title": "The Storming of Ciudad Rodrigo",
+  "artist": "from Cassell's history",
+  "date": "1865",
+  "page": "https://commons.wikimedia.org/wiki/File:P427_STORMING_OF_THE_FORTRESS_CIUDAD_RODRIGO_BY_THE_ENGLISH_UNDER_LORD_WELLINGTON_1812.jpg",
+  "focus": "50% 40%"
+};
+badajoz.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Siege_of_Badajoz%2C_by_Richard_Caton_Woodville_Jr.jpg/960px-Siege_of_Badajoz%2C_by_Richard_Caton_Woodville_Jr.jpg",
+  "title": "The Storming of Badajoz",
+  "artist": "Richard Caton Woodville Jr.",
+  "date": "1908",
+  "page": "https://commons.wikimedia.org/wiki/File:Siege_of_Badajoz%2C_by_Richard_Caton_Woodville_Jr.jpg"
+};
+burgos.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Siege_of_burgos_1812_heim.jpg",
+  "title": "The Siege of Burgos",
+  "artist": "François Joseph Heim",
+  "date": "1813",
+  "page": "https://commons.wikimedia.org/wiki/File:Siege_of_burgos_1812_heim.jpg"
+};
+sanSebastian.art = {
+  "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Asalto_a_San_Sebasti%C3%A1n_el_25_de_julio_de_1813.jpg/960px-Asalto_a_San_Sebasti%C3%A1n_el_25_de_julio_de_1813.jpg",
+  "title": "The Assault on San Sebastián",
+  "artist": "Denis Dighton",
+  "date": "1813",
+  "page": "https://commons.wikimedia.org/wiki/File:Asalto_a_San_Sebasti%C3%A1n_el_25_de_julio_de_1813.jpg"
+};

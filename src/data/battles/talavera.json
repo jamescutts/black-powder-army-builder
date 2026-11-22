@@ -206,7 +206,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg/250px-Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "title": "Arthur Wellesley, Duke of Wellington",
+        "artist": "Thomas Lawrence",
+        "page": "https://commons.wikimedia.org/wiki/File:Sir_Arthur_Wellesley%2C_1st_Duke_of_Wellington.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "talavera-mackenzie",
@@ -904,7 +911,14 @@
           ]
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/S%C3%A9bastiani%2C_Horace_-_4.jpg/250px-S%C3%A9bastiani%2C_Horace_-_4.jpg",
+        "title": "Horace Sébastiani",
+        "artist": "Jean-Baptiste Paulin Guérin",
+        "page": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastiani%2C_Horace_-_4.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "talavera-leval",
@@ -1145,7 +1159,14 @@
           }
         }
       ],
-      "period": "middle"
+      "period": "middle",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/c9/G%C3%A9n%C3%A9ral_Marie_Victor_Nicolas_de_Fay_de_La_Tour_Maubourg.jpg",
+        "title": "Marie-Victor de Latour-Maubourg",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Marie_Victor_Nicolas_de_Fay_de_La_Tour_Maubourg.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "talavera-light-cav",
