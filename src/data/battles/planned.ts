@@ -203,8 +203,6 @@ export const lowenberg = planned("lowenberg", "Löwenberg", "21 August 1813", L,
   "As the armistice ended Napoleon came at Blücher on the Bober with the Guard and three corps; Blücher, under orders to avoid a battle with the Emperor himself, fought and fell back.");
 export const goldberg = planned("goldberg", "Goldberg", "23 August 1813", L,
   "Macdonald's corps attacked Blücher's army around Goldberg, taking the Wolfsberg after a fight in which the Prussian infantry and Russian Jäger held on until ordered back.");
-export const plagwitz = planned("plagwitz", "Plagwitz", "29 August 1813", L,
-  "After the Katzbach, Puthod's division, cut off on the flooded Bober with its back to the river, was surrounded by Langeron's Russians and destroyed, Puthod taken with his eagles.");
 export const altenburg = planned("altenburg", "Altenburg", "28 September 1813", L,
   "Thielmann's and Platov's raiders surprised Lefebvre-Desnouettes's cavalry at Altenburg behind the French lines and drove it back with heavy loss.");
 export const liebertwolkwitz = planned("liebertwolkwitz", "Liebertwolkwitz", "14 October 1813", L,

@@ -72,6 +72,7 @@ PORTRAITS.update({
     "jerome": portrait("Jérôme Bonaparte (Kinson).jpg", "Jérôme Bonaparte, King of Westphalia", "after François Kinson", focus="50% 18%"),
     "bulow": portrait("Friedrich Wilhelm Freiherr von Bulow.jpg", "Friedrich Wilhelm Bülow von Dennewitz", "unknown artist", focus="50% 20%"),
     "hirschfeld": portrait("Karl Friedrich von Hirschfeld (Krethlow).jpg", "Karl Friedrich von Hirschfeld", "Johann Ferdinand Krethlow", focus="50% 22%", small=True),
+    "langeron": portrait("Langeron A F.jpg", "Count Alexandre de Langeron", "George Dawe", "before 1825", "50% 18%"),
     "kleist": portrait("Hermann Scherenberg-Friedrich Graf Kleist von Nollendorf.jpg", "Friedrich Kleist von Nollendorf", "Hermann Scherenberg", "1863", "50% 20%"),
     # British / King's German Legion
     "picton": portrait("Sir Thomas Picton by Sir Martin Archer Shee.jpg", "Sir Thomas Picton", "Martin Archer Shee", focus="50% 20%"),
@@ -162,6 +163,7 @@ COMMANDERS.update({
     "grossbeeren": {"Saxon": ("Général Reynier", "reynier"), "French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
     "wartenburg": {"French": ("Général Bertrand", "bertrand"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
     "dennewitz": {"French": ("Marshal Ney", "ney"), "Saxon": ("Général Reynier", "reynier"), "Prussian": ("Gen-Lt von Bülow", "bulow"), "Russian": ("Maj-Gen Baron Pahlen", "pahlen")},
+    "plagwitz": {"French": ("Gén. de Division Puthod", "puthod"), "Russian": ("General Langeron", "langeron")},
     "hagelberg": {"French": ("Gén. de Division Girard", "girard"), "Prussian": ("Gen-Maj von Hirschfeld", "hirschfeld")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
 })

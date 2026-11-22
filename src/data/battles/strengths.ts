@@ -176,6 +176,11 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French and Saxon", men: "45,000–60,000", guns: "200", engaged: true },
     { label: "Prussian and Russian", men: "50,000", guns: "150", engaged: true },
   ],
+  // Plagwitz has no Wikipedia article; these are Clash of Steel's figures
+  plagwitz: [
+    { label: "French", men: "7,500" },
+    { label: "Russian", men: "25,000" },
+  ],
   hagelberg: [
     { label: "French", men: "8,900", guns: "23" },
     { label: "Prussian", men: "11,310", guns: "11" },

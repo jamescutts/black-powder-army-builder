@@ -1,5 +1,5 @@
 """
-Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,hagelberg,dennewitz,wartenburg,hanau}.json):
+Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,hagelberg,plagwitz,dennewitz,wartenburg,hanau}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
 are built from the 1815 Prussian list, one force a corps.
 
@@ -1487,6 +1487,75 @@ DENNEWITZ = battle(
     [], alliances=(("Saxon", "French"), ("Prussian", "Russian")))
 
 
+# ================================================================ Plagwitz, 29 August 1813
+
+PW_FR = {"label": "Grande Armée, 15 August 1813 (Nafziger Collection 813HFC)", "url": NAF + "813HFC.pdf"}
+PW_RU = {"label": "Army of Silesia, Battle of the Katzbach, 26 August 1813 (Nafziger Collection 813HHB)", "url": NAF + "813HHB.pdf"}
+PW_COS = {"label": "Plagwitz (Clash of Steel)", "url": "https://www.clash-of-steel.co.uk/battles/1294"}
+PW_HOW = {"label": "Combat of Plagwitz, 29 August 1813 (History of War)", "url": "https://www.historyofwar.org/articles/combat_plagwitz.html"}
+PW_RU_NOTE = ("After Nafziger's order of battle for the Katzbach three days before; Nafziger has none for Plagwitz, and Clash of Steel "
+              "names the Russian VI Corps and I Cavalry Corps as the troops that caught Puthod.")
+
+
+def ru_regt(name, n, unit="ru-inf-combined-grenadier"):
+    return regt(name, bns(unit, name, n) if n > 1 else [u(unit, name)])
+
+
+PW_PUTHOD = force(
+    "plagwitz-puthod", FR, "Puthod's Division", "17th Division, V Corps (Lauriston)", "French",
+    "Sent off to Macdonald's right before the Katzbach, it was cut off by the defeat there and marched west to the Bober, only to find the bridges down and the river in flood. Langeron's Russians caught it at Plagwitz, east of Löwenberg, with the river at its back; it formed on the heights, was broken by the Russian cavalry, and surrendered, Puthod and his eagles with it, many men drowning as they tried to swim the Bober.",
+    [bde("fr-infantry-brigade", "Vachot's Brigade", "Gén. de Brigade Vachot",
+         regiments=[regt("3rd Foreign (Irish Legion)", bns("fr-line-infantry", "Irish Legion", 2)), line("134th Line", 2), line("146th Line", 3)]),
+     bde("fr-infantry-brigade", "Boisserolles's Brigade", "Gén. de Brigade Boisserolles", regiments=[line("147th Line", 3), line("148th Line", 3)]),
+     foot("1/5th Foot Artillery", "11/5th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Puthod")],
+    notes=[LIST_FR, "After Nafziger's return of the Grande Armée for 15 August, a fortnight before; Nafziger has no order of battle for Plagwitz.",
+           CONSCRIPTS, "The Irish Legion (3rd Foreign Regiment), two weak battalions of about 230 men each, is shown as Line.",
+           NO_REGT_GUNS, TWO_BATTERIES])
+
+PW_SHCHERBATOV = force(
+    "plagwitz-shcherbatov", RU, "Shcherbatov's Corps", "VI Corps, Langeron's corps, Army of Silesia", "Russian",
+    "Langeron's infantry, which followed Puthod's column to the Bober and closed on it at Plagwitz as the cavalry pinned it against the river.",
+    [bde("ru-infantry-brigade", "Kirschnitzky's Brigade", "Col Kirschnitzky", units=[u("ru-position-arty", "Position Battery #15")],
+         regiments=[ru_regt("Pskov Infantry", 2), ru_regt("Moscow Infantry", 2)]),
+     bde("ru-infantry-brigade", "Augustov's Brigade", "Col Augustov", units=[u("ru-light-arty", "Light Battery #17")],
+         regiments=[ru_regt("Sofia Infantry", 1), ru_regt("Libau Infantry", 2)]),
+     bde("ru-jager-brigade", "Dietrich's Brigade", "Col Dietrich",
+         regiments=[ru_regt("11th Jäger", 2, "ru-jager"), ru_regt("36th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Blagoveshchensky's Brigade", "Lt-Col Blagoveshchensky", units=[u("ru-light-arty", "Light Battery #28")],
+         regiments=[ru_regt("Vladimir Infantry", 1), ru_regt("Dnieper Infantry", 1)]),
+     bde("ru-infantry-brigade", "Tambov and Kostroma", "", regiments=[ru_regt("Tambov Infantry", 1), ru_regt("Kostroma Infantry", 1)]),
+     bde("ru-jager-brigade", "Meshcherinov's Brigade", "Maj-Gen Meshcherinov",
+         regiments=[ru_regt("32nd Jäger", 1, "ru-jager"), ru_regt("28th Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Lt-Gen Prince Shcherbatov")],
+    notes=[LIST_RU, PW_RU_NOTE,
+           "Talyzin's 7th Division (the first three brigades) and Bernodossov's 18th (the last three), about 8,300 men in all at the Katzbach; regiments are shown with the battalions Nafziger gives them.",
+           "Nafziger also lists the 36th Jäger in Udom's 9th Division; it is shown here only.",
+           "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures."])
+
+PW_KORFF = force(
+    "plagwitz-korff", RU, "Korff's Cavalry", "I Cavalry Corps, Langeron's corps, Army of Silesia", "Russian",
+    "Langeron's cavalry, which reached Puthod's column on the Plagwitz heights, rode it down against the flooded Bober and took the surrender of most of what was left.",
+    [bde("ru-heavy-cavalry-brigade", "Berdyaev's Brigade", "Maj-Gen Berdyaev",
+         units=[u("ru-dragoon", "Tver Dragoons"), u("ru-dragoon", "Kinburn Dragoons")]),
+     bde("ru-light-cavalry-brigade", "Panchulidzev's Brigade", "Maj-Gen Panchulidzev",
+         units=[u("ru-mounted-jager", "Chernigov Mounted Jäger"), u("ru-mounted-jager", "Seversk Mounted Jäger"), u("ru-mounted-jager", "Arzamas Mounted Jäger")]),
+     bde("ru-light-cavalry-brigade", "Pahlen's Brigade", "Maj-Gen Count Pahlen",
+         units=[u("ru-mounted-jager", "Dorpat Mounted Jäger"), u("ru-mounted-jager", "Lithuania Mounted Jäger"), u("ru-horse-arty", "Horse Battery #6")]),
+     bde("ru-cossack-brigade", "Witte's Ukrainian Cossacks", "Maj-Gen Count de Witte",
+         units=[u("ru-mounted-cossack", "1st Ukrainian Cossacks"), u("ru-mounted-cossack", "2nd Ukrainian Cossacks"), u("ru-mounted-cossack", "3rd Ukrainian Cossacks")])],
+    command=[cmd("ru-div-cmd", "Lt-Gen Baron Korff")],
+    notes=[LIST_RU, PW_RU_NOTE,
+           "About 4,000 men at the Katzbach, its regiments of two or three squadrons each. The Chasseurs à Cheval are the list's Mounted Jäger, and the Ukrainian Cossack regiments, raised in 1812, its Mounted Cossacks.",
+           "Three mounted jäger regiments in Panchulidzev's brigade, where the list takes two, two light cavalry brigades where it allows one, and cavalry with no infantry brigade to allow it, show as historical departures."])
+
+PLAGWITZ = battle(
+    "plagwitz", "Plagwitz", "29 August 1813",
+    "Puthod's division, detached to Macdonald's right before the Katzbach, was cut off by his defeat there. Marching west in the rain, it found the Bober in flood and its bridges gone at Hirschberg and again at Löwenberg. Langeron's Russians caught it at Plagwitz, east of the river; it stood on the heights with the Bober at its back until the Russian cavalry broke it. Puthod surrendered with his eagles and some 3,000 men; the rest were cut down or drowned trying to swim the river, and of a division of 7,500 almost nothing got away.",
+    [PW_FR, PW_RU, PW_COS, PW_HOW],
+    [PW_PUTHOD, PW_SHCHERBATOV, PW_KORFF], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -1504,5 +1573,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, HAGELBERG, DENNEWITZ, WARTENBURG, HANAU):
+    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
         write(b)

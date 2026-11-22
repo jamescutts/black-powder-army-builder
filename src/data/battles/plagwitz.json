@@ -1,0 +1,514 @@
+{
+  "id": "plagwitz",
+  "name": "Plagwitz",
+  "date": "29 August 1813",
+  "campaign": "liberation-1813",
+  "sides": {
+    "French": {
+      "commander": "Gén. de Division Puthod"
+    },
+    "Russian": {
+      "commander": "General Langeron",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Langeron_A_F.jpg/250px-Langeron_A_F.jpg",
+        "title": "Count Alexandre de Langeron",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Langeron_A_F.jpg",
+        "focus": "50% 18%",
+        "date": "before 1825"
+      }
+    }
+  },
+  "summary": "Puthod's division, detached to Macdonald's right before the Katzbach, was cut off by his defeat there. Marching west in the rain, it found the Bober in flood and its bridges gone at Hirschberg and again at Löwenberg. Langeron's Russians caught it at Plagwitz, east of the river; it stood on the heights with the Bober at its back until the Russian cavalry broke it. Puthod surrendered with his eagles and some 3,000 men; the rest were cut down or drowned trying to swim the river, and of a division of 7,500 almost nothing got away.",
+  "sources": [
+    {
+      "label": "Grande Armée, 15 August 1813 (Nafziger Collection 813HFC)",
+      "url": "https://www.napoleon-series.org/nafzigger/813HFC.pdf"
+    },
+    {
+      "label": "Army of Silesia, Battle of the Katzbach, 26 August 1813 (Nafziger Collection 813HHB)",
+      "url": "https://www.napoleon-series.org/nafzigger/813HHB.pdf"
+    },
+    {
+      "label": "Plagwitz (Clash of Steel)",
+      "url": "https://www.clash-of-steel.co.uk/battles/1294"
+    },
+    {
+      "label": "Combat of Plagwitz, 29 August 1813 (History of War)",
+      "url": "https://www.historyofwar.org/articles/combat_plagwitz.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "plagwitz-puthod",
+      "nationId": "france",
+      "name": "Puthod's Division",
+      "formation": "17th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Sent off to Macdonald's right before the Katzbach, it was cut off by the defeat there and marched west to the Bober, only to find the bridges down and the river in flood. Langeron's Russians caught it at Plagwitz, east of Löwenberg, with the river at its back; it formed on the heights, was broken by the Russian cavalry, and surrendered, Puthod and his eagles with it, many men drowning as they tried to swim the Bober.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's return of the Grande Armée for 15 August, a fortnight before; Nafziger has no order of battle for Plagwitz.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "The Irish Legion (3rd Foreign Regiment), two weak battalions of about 230 men each, is shown as Line.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Puthod",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Vachot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Vachot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Foreign (Irish Legion)",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/Irish Legion"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/Irish Legion"
+                }
+              ]
+            },
+            {
+              "name": "134th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/134th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/134th Line"
+                }
+              ]
+            },
+            {
+              "name": "146th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/146th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Boisserolles's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Boisserolles",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "147th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/147th Line"
+                }
+              ]
+            },
+            {
+              "name": "148th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "I/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "II/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "III/148th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "1/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "11/5th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plagwitz-shcherbatov",
+      "nationId": "russia",
+      "name": "Shcherbatov's Corps",
+      "formation": "VI Corps, Langeron's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Langeron's infantry, which followed Puthod's column to the Bober and closed on it at Plagwitz as the cavalry pinned it against the river.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach three days before; Nafziger has none for Plagwitz, and Clash of Steel names the Russian VI Corps and I Cavalry Corps as the troops that caught Puthod.",
+        "Talyzin's 7th Division (the first three brigades) and Bernodossov's 18th (the last three), about 8,300 men in all at the Katzbach; regiments are shown with the battalions Nafziger gives them.",
+        "Nafziger also lists the 36th Jäger in Udom's 9th Division; it is shown here only.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Prince Shcherbatov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Kirschnitzky's Brigade",
+          "commander": {
+            "name": "Col Kirschnitzky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #15"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Pskov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Pskov Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Pskov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Moscow Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Moscow Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Moscow Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Augustov's Brigade",
+          "commander": {
+            "name": "Col Augustov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #17"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Sofia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Sofia Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Libau Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Libau Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Libau Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Dietrich's Brigade",
+          "commander": {
+            "name": "Col Dietrich",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/11th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/11th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "36th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "36th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Blagoveshchensky's Brigade",
+          "commander": {
+            "name": "Lt-Col Blagoveshchensky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #28"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Vladimir Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vladimir Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Dnieper Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Dnieper Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Tambov and Kostroma",
+          "regiments": [
+            {
+              "name": "Tambov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tambov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kostroma Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kostroma Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Meshcherinov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Meshcherinov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "32nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "32nd Jäger"
+                }
+              ]
+            },
+            {
+              "name": "28th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "28th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plagwitz-korff",
+      "nationId": "russia",
+      "name": "Korff's Cavalry",
+      "formation": "I Cavalry Corps, Langeron's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Langeron's cavalry, which reached Puthod's column on the Plagwitz heights, rode it down against the flooded Bober and took the surrender of most of what was left.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach three days before; Nafziger has none for Plagwitz, and Clash of Steel names the Russian VI Corps and I Cavalry Corps as the troops that caught Puthod.",
+        "About 4,000 men at the Katzbach, its regiments of two or three squadrons each. The Chasseurs à Cheval are the list's Mounted Jäger, and the Ukrainian Cossack regiments, raised in 1812, its Mounted Cossacks.",
+        "Three mounted jäger regiments in Panchulidzev's brigade, where the list takes two, two light cavalry brigades where it allows one, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Baron Korff",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Berdyaev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Berdyaev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Tver Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Kinburn Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Panchulidzev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Panchulidzev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Chernigov Mounted Jäger"
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Seversk Mounted Jäger"
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Arzamas Mounted Jäger"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Pahlen's Brigade",
+          "commander": {
+            "name": "Maj-Gen Count Pahlen",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Dorpat Mounted Jäger"
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Lithuania Mounted Jäger"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #6"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Witte's Ukrainian Cossacks",
+          "commander": {
+            "name": "Maj-Gen Count de Witte",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "1st Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "2nd Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "3rd Ukrainian Cossacks"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
