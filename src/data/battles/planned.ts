@@ -144,8 +144,6 @@ sanSebastian.art = {
 
 const L = "liberation-1813";
 
-export const katzbach = planned("katzbach", "The Katzbach", "26 August 1813", L,
-  "Macdonald's army, crossing the swollen Katzbach and Wütende Neisse in a downpour, was caught by Blücher on the plateau beyond, muskets too wet to fire; driven back over flooded streams, it lost tens of thousands of men in the days after.");
 export const dresden = planned("dresden", "Dresden", "26–27 August 1813", L,
   "Schwarzenberg's Army of Bohemia attacked Dresden just as Napoleon reached it with the Guard. Next day, in pouring rain, Murat's cavalry broke the Austrian left cut off by the flooded Weisseritz: Napoleon's last great victory in Germany.");
 export const kulm = planned("kulm", "Kulm", "29–30 August 1813", L,
@@ -231,12 +229,6 @@ export const saintDizier = planned("saint-dizier", "Saint-Dizier", "26 March 181
   "Napoleon, striking at the allies' communications, turned on Winzingerode's cavalry screen at Saint-Dizier and routed it, then learned it had been sent to deceive him while the allied armies marched on Paris: his last victory.");
 
 // Paintings for 1813 and 1814
-katzbach.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/KaempfferKatzbachschlacht.jpg/960px-KaempfferKatzbachschlacht.jpg",
-  "title": "The Battle of the Katzbach",
-  "artist": "Eduard Kaempffer",
-  "page": "https://commons.wikimedia.org/wiki/File:KaempfferKatzbachschlacht.jpg"
-};
 dresden.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Napoleon.Dresden.jpg/960px-Napoleon.Dresden.jpg",
   "title": "The Battle of Dresden, 27 August 1813",

@@ -1,5 +1,5 @@
 """
-Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,hagelberg,plagwitz,dennewitz,wartenburg,hanau}.json):
+Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,katzbach,hagelberg,plagwitz,dennewitz,wartenburg,hanau}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
 are built from the 1815 Prussian list, one force a corps.
 
@@ -1556,6 +1556,330 @@ PLAGWITZ = battle(
     [PW_PUTHOD, PW_SHCHERBATOV, PW_KORFF], [], alliances=())
 
 
+# ================================================================ The Katzbach, 26 August 1813
+
+KB_FR = {"label": "French Forces, Battle of the Katzbach, 26 August 1813 (Nafziger Collection 813HIC)", "url": NAF + "813HIC.pdf"}
+KB_AL = {"label": "Army of Silesia, Battle of the Katzbach, 26 August 1813 (Nafziger Collection 813HHB)", "url": NAF + "813HHB.pdf"}
+KB_NOTE = "After Nafziger's order of battle for the Katzbach."
+KB_WET = ("It rained all day: muskets would hardly fire, and much of the fighting on the plateau was done with bayonet, "
+          "butt and sabre.")
+
+
+def fr_bns(unit, reg, labels):
+    return regt(reg, [u(unit, f"{b}/{reg}") for b in labels])
+
+
+L_, I_ = "fr-light-infantry", "fr-line-infantry"
+
+KB_BRAYER = force(
+    "katzbach-brayer", FR, "Brayer's Division", "8th Division, III Corps (Souham)", "French",
+    "Souham's leading division, which came up the defile from Kroitsch onto the plateau late in the afternoon as the first French troops there were giving way, and was fed into the fight in the rain against Yorck's and Sacken's lines.",
+    [bde("fr-infantry-brigade", "1st Brigade", "",
+         regiments=[provisional("6th Provisional Légère", ["2/6th Léger", "3/25th Léger"], True),
+                    provisional("10th Provisional Légère", ["3/16th Léger", "1/28th Léger"], True),
+                    provisional("14th Provisional Line", ["4/34th Line", "3/40th Line"]),
+                    provisional("19th Provisional Line", ["6/32nd Line", "2/58th Line"])]),
+     bde("fr-infantry-brigade", "Charrière's Brigade", "Gén. de Brigade Charrière",
+         regiments=[fr_bns(I_, "22nd Line", ["1", "3", "4"]),
+                    provisional("21st Provisional Line", ["3/59th Line", "4/69th Line"]),
+                    provisional("24th Provisional Line", ["3/88th Line", "3/103rd Line"])]),
+     foot("10/2nd Foot Artillery", "5/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Brigade Brayer")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS,
+           "Souham's old division, which he led at Lützen and Bautzen; Brayer commanded it under him here. Most of its regiments were provisional, two depot battalions of different regiments each.",
+           "Its two provisional light regiments, where the list allows one in a division, and the first brigade's four regiments, where it allows three, show as historical departures.",
+           NO_REGT_GUNS, TWO_BATTERIES])
+
+KB_DELMAS = force(
+    "katzbach-delmas", FR, "Delmas's Division", "9th Division, III Corps (Souham)", "French",
+    "Souham's second division, which followed Brayer's up from the Katzbach and was caught in the crush on the plateau when the allied cavalry broke the French left.",
+    [bde("fr-infantry-brigade", "1st Brigade", "",
+         regiments=[provisional("2nd Provisional Légère", ["3/2nd Léger", "3/4th Léger"], True), fr_bns(L_, "29th Léger", ["1", "2"]),
+                    fr_bns(I_, "136th Line", ["1", "2", "3"])]),
+     bde("fr-infantry-brigade", "Vergez's Brigade", "Gén. de Brigade Vergez",
+         regiments=[fr_bns(I_, "138th Line", ["1", "2", "3"]), fr_bns(I_, "145th Line", ["1", "2", "3"])]),
+     foot("2/9th Foot Artillery", "11/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Delmas")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS, "Two light regiments, where the list allows one in a division, show as a historical departure.", NO_REGT_GUNS, TWO_BATTERIES])
+
+KB_ALBERT = force(
+    "katzbach-albert", FR, "Albert's Division", "10th Division, III Corps (Souham)", "French",
+    "Girard's old division, under Albert since Girard was wounded at Lützen, part of Souham's corps marching up from Liegnitz to the plateau.",
+    [bde("fr-infantry-brigade", "Van Dedem's Brigade", "Gén. de Brigade Van Dedem",
+         regiments=[provisional("4th Provisional Légère", ["4/5th Léger", "4/12th Léger"], True), fr_bns(I_, "139th Line", ["1", "2", "3"])]),
+     bde("fr-infantry-brigade", "Suden's Brigade", "Gén. de Brigade Suden",
+         regiments=[fr_bns(I_, "140th Line", ["1", "2", "3"]), fr_bns(I_, "141st Line", ["1", "2", "3"])]),
+     foot("3/7th Foot Artillery", "4/7th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Albert")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS, NO_REGT_GUNS, TWO_BATTERIES])
+
+KB_RICARD = force(
+    "katzbach-ricard", FR, "Ricard's Division", "11th Division, III Corps (Souham)", "French",
+    "Souham's last division, still marching up when the French on the plateau broke, and swept back with them over the flooded streams.",
+    [bde("fr-infantry-brigade", "1st Brigade", "",
+         regiments=[fr_bns(L_, "9th Léger", ["3", "4"]), provisional("17th Provisional Line", ["4/43rd Line", "3/75th Line"]),
+                    regt("50th and 65th Line", [u(I_, "3/50th Line"), u(I_, "4/50th Line"), u(I_, "4/65th Line")])]),
+     bde("fr-infantry-brigade", "Dumoulin's Brigade", "Gén. de Brigade Dumoulin",
+         regiments=[fr_bns(I_, "142nd Line", ["1", "2", "3"]), fr_bns(I_, "144th Line", ["1", "2", "3"])]),
+     foot("19/7th Foot Artillery", "5/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Ricard")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS,
+           "Nafziger gives the 5/9th Foot Artillery to both Brayer and Ricard; it is shown with each, as he gives it.",
+           NO_REGT_GUNS, TWO_BATTERIES])
+
+KB_MARCHAND = force(
+    "katzbach-marchand", CR, "Marchand's Division", "39th Division, III Corps (Souham)", "French",
+    "Souham's German division, Baden and Hessian troops, which came up behind the French divisions and covered the retreat to the Katzbach.",
+    [bde("ocs-baden-infantry-brigade", "Stockhorn's Baden Brigade", "Gen-Maj von Stockhorn",
+         units=[u("ocs-foot-arty", "1st Baden Foot Battery")],
+         regiments=[regt("1st Baden Line", bns("ocs-line-infantry", "1st Baden Line", 2)), regt("3rd Baden Line", bns("ocs-line-infantry", "3rd Baden Line", 2))]),
+     bde("ocs-hessian-infantry-brigade", "Prince Emil's Hessian Brigade", "Gen-Maj Prince Emil of Hesse",
+         units=[u("ocs-foot-arty", "1st Hessian Foot Battery")],
+         regiments=[regt("Hessian Leib-Garde", bns("ocs-hessian-guard", "Hessian Leib-Garde", 2)),
+                    regt("Hessian Garde-Füsiliere", bns("ocs-hessian-guard-fusilier", "Hessian Garde-Füsiliere", 2))]),
+     bde("rb-infantry-brigade", "2nd Hessian Leib Regiment", "", regiments=[regt("2nd Hessian (Leib) Regiment", bns("rb-line-infantry", "2nd Hessian Leib", 2))])],
+    command=[cmd("cotr-div-cmd", "Gén. de Division Marchand")],
+    notes=["Built from A Clash of Eagles' Confederation of the Rhine 1812 list, the nearest to 1813.", KB_NOTE,
+           "The list's Hessian brigade takes only Guard regiments, so the 2nd Hessian (Leib) Regiment is a Rheinbund brigade, as at Lützen."])
+
+KB_BEURMANN = force(
+    "katzbach-beurmann", FR, "Beurmann's Light Cavalry", "23rd Light Cavalry Brigade, III Corps (Souham)", "French",
+    "Souham's corps cavalry, the 10th Hussars and the Baden Dragoons, which rode up onto the plateau with the infantry.",
+    [bde("fr-light-cavalry-brigade", "Beurmann's Brigade", "Gén. de Brigade Beurmann", units=[u("fr-hussar-regt", "10th Hussars", options=["large-cavalry"])]),
+     bde("fr-heavy-cavalry-brigade", "Baden Dragoons", "", units=[u("fr-dragoon", "Baden Dragoons")])],
+    command=[cmd("fr-div-cmd", "Gén. de Brigade Beurmann")],
+    notes=[LIST_FR, KB_NOTE, "The 10th Hussars had six squadrons, so they are Large, though the list allows Large on only half a brigade's regiments; the Baden Dragoons, five squadrons, are the list's Dragoons in a heavy brigade of their own.", CAV_ONLY])
+
+KB_MAISON = force(
+    "katzbach-maison", FR, "Maison's Division", "16th Division, V Corps (Lauriston)", "French",
+    "Lauriston's leading division on the French right, south of the Katzbach, which pushed Langeron's advance guard back towards Hennersdorf before the defeat on the plateau called it back.",
+    [bde("fr-infantry-brigade", "Penne's Brigade", "Gén. de Brigade Penne", regiments=[fr_bns(I_, "152nd Line", ["1", "2", "3"])]),
+     bde("fr-infantry-brigade", "2nd Brigade", "", regiments=[fr_bns(I_, "153rd Line", ["1", "2", "3"]), fr_bns(I_, "154th Line", ["1", "2", "3"])]),
+     foot("1/1st Foot Artillery", "3/1st Foot Artillery"),
+     bde("fr-artillery-brigade", "Attached Horse Artillery", units=[u("fr-horse-arty", "7/6th Horse Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Maison")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS, "The 151st Line was in Glogau and is left out.", TWO_BATTERIES,
+           "The horse battery attached to the division, with no cavalry to allow it, shows as a historical departure."])
+
+KB_ROCHAMBEAU = force(
+    "katzbach-rochambeau", FR, "Rochambeau's Division", "19th Division, V Corps (Lauriston)", "French",
+    "Lauriston's second division, which fought Langeron's Russians round Hennersdorf on the French right.",
+    [bde("fr-infantry-brigade", "Harlet's Brigade", "Gén. de Brigade Harlet", regiments=[fr_bns(I_, "135th Line", ["1", "2", "3"]), fr_bns(I_, "149th Line", ["1", "2", "3"])]),
+     bde("fr-infantry-brigade", "Lafitte's Brigade", "Gén. de Brigade Lafitte", regiments=[fr_bns(I_, "150th Line", ["1", "2", "3"]), fr_bns(I_, "155th Line", ["1", "2", "3"])]),
+     foot("12/5th Foot Artillery", "17/5th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Rochambeau")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS, TWO_BATTERIES])
+
+KB_DERMONCOURT = force(
+    "katzbach-dermoncourt", FR, "Dermoncourt's Light Cavalry", "6th Light Cavalry Brigade, V Corps (Lauriston)", "French",
+    "Lauriston's corps cavalry, three regiments of chasseurs, on the French right.",
+    [bde("fr-light-cavalry-brigade", "Dermoncourt's Brigade", "Gén. de Brigade Dermoncourt",
+         units=[u("fr-chasseur-a-cheval", "2nd Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "3rd Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "6th Chasseurs à Cheval")])],
+    command=[cmd("fr-div-cmd", "Gén. de Brigade Dermoncourt")],
+    notes=[LIST_FR, KB_NOTE, "The 2nd and 3rd Chasseurs had two squadrons each, the 6th three.", CAV_ONLY])
+
+KB_HENIN = force(
+    "katzbach-henin", FR, "D'Henin's Division", "35th Division, XI Corps (Gérard)", "French",
+    "Gérard's leading division, French and Zucchi's Italians, which crossed the Katzbach at Niederkrayn and fought on the plateau's southern edge before the rout carried it back.",
+    [bde("fr-infantry-brigade", "Senecal's Brigade", "Gén. de Brigade Senecal",
+         regiments=[fr_bns(I_, "6th Line", ["3", "4", "7"]), fr_bns(I_, "112th Line", ["1", "2", "3", "4"])]),
+     bde("fr-infantry-brigade", "Zucchi's Italian Brigade", "Gén. de Brigade Zucchi",
+         regiments=[fr_bns(L_, "2nd Italian Léger", ["3", "4"]), fr_bns(I_, "5th Italian Line", ["1", "2", "3", "4"])]),
+     foot("6/1st Foot Artillery"),
+     bde("fr-artillery-brigade", "Attached Horse Artillery", units=[u("fr-horse-arty", "3rd Italian Horse Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Brigade d'Henin")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS,
+           "Zucchi's Italians are shown as French Line and Light, so the division stays one force; the Italian list would rate them the same.",
+           "The Italian horse battery, with no cavalry to allow it, shows as a historical departure."])
+
+KB_CHARPENTIER = force(
+    "katzbach-charpentier", FR, "Charpentier's Division", "36th Division, XI Corps (Gérard)", "French",
+    "The first French division up onto the plateau, it pushed towards Eichholtz in the rain and was there when Blücher attacked; the Prussian and Russian charges drove it back over the edge into the flooded Wütende Neisse.",
+    [bde("fr-infantry-brigade", "Simmer's Brigade", "Gén. de Brigade Simmer",
+         regiments=[fr_bns(L_, "22nd Léger", ["1", "2", "3", "4"]), fr_bns(I_, "10th Line", ["4", "6"])]),
+     bde("fr-infantry-brigade", "Meunier's Brigade", "Gén. de Brigade Meunier",
+         regiments=[fr_bns(L_, "3rd Léger", ["3", "4"]), fr_bns(L_, "14th Léger", ["3", "4", "7"])]),
+     foot("5/1st Foot Artillery", "19/2nd Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Charpentier")],
+    notes=[LIST_FR, KB_NOTE, CONSCRIPTS, "Three light regiments, where the list allows one in a division, show as a historical departure.", TWO_BATTERIES])
+
+KB_XI_CAV = force(
+    "katzbach-xi-cavalry", FR, "Gérard's Corps Cavalry", "Corps Cavalry Brigade, XI Corps", "French",
+    "XI Corps' cavalry, Italian and Neapolitan chasseurs, with Gérard's divisions on the plateau's southern edge.",
+    [bde("fr-light-cavalry-brigade", "Corps Cavalry Brigade", "",
+         units=[u("fr-chasseur-a-cheval", "4th Italian Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "2nd Neapolitan Chasseurs à Cheval")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Gérard")],
+    notes=[LIST_FR, KB_NOTE, "The Italian and Neapolitan chasseurs are the list's Chasseurs à Cheval.", CAV_ONLY])
+KB_XI_CAV["missing"] = [{"name": "1/Würzburg Chevau-légers", "reason": "One squadron, too few for a unit of its own."}]
+
+KB_SEBASTIANI = force(
+    "katzbach-sebastiani", FR, "Sébastiani's Cavalry", "II Cavalry Corps", "French",
+    "Some 10,000 horsemen, who crowded up the narrow defiles onto the plateau with Charpentier's infantry and were caught there, half-formed, by the charges of Sacken's and Yorck's cavalry; driven back down into the swollen streams, they lost men and guns by the hundred.",
+    [bde("fr-light-cavalry-brigade", "Gérard's Brigade", "Gén. de Brigade Gérard",
+         units=[u("fr-hussar-regt", "9th Hussars"), u("fr-lancer", "4th Chevau-légers"), u("fr-hussar-regt", "5th Hussars")]),
+     bde("fr-light-cavalry-brigade", "Domanget's Brigade", "Gén. de Brigade Domanget",
+         units=[u("fr-lancer", "2nd Chevau-légers"), u("fr-chasseur-a-cheval", "11th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "12th Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Maurin's Brigade", "Gén. de Brigade Maurin",
+         units=[u("fr-lancer", "6th Chevau-légers"), u("fr-chasseur-a-cheval", "4th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "7th Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Wathier's Brigade", "Gén. de Brigade Wathier",
+         units=[u("fr-chasseur-a-cheval", "20th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "23rd Chasseurs à Cheval"),
+                u("fr-chasseur-a-cheval", "24th Chasseurs à Cheval"), u("fr-hussar-regt", "11th Hussars")]),
+     bde("fr-heavy-cavalry-brigade", "Daugeranville's Brigade", "Gén. de Brigade Daugeranville",
+         units=[u("fr-carabinier", "1st Carabiniers"), u("fr-carabinier", "2nd Carabiniers"), u("fr-cuirassier", "1st Cuirassiers")]),
+     bde("fr-heavy-cavalry-brigade", "Thiry's Brigade", "Gén. de Brigade Thiry",
+         units=[u("fr-cuirassier", "5th Cuirassiers"), u("fr-cuirassier", "8th Cuirassiers"), u("fr-cuirassier", "10th Cuirassiers")]),
+     bde("fr-divisional-artillery", "Horse Artillery", units=[u("fr-horse-arty", "7/1st Horse Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Sébastiani")],
+    notes=[LIST_FR, KB_NOTE, "The chevau-légers lanciers are the list's Lancers.", CAV_ONLY,
+           "The corps' other two horse batteries, more than the list takes, are on the Not in this force card."])
+KB_SEBASTIANI["missing"] = [{"name": "7/4th and 8/6th Horse Artillery", "reason": "The corps' other two horse batteries, more than the list takes."}]
+
+# --- Blücher's army
+
+KB_YORCK = force(
+    "katzbach-yorck", PR15, "Yorck's Corps", "I Corps, Army of Silesia", "Prussian",
+    "Blücher's centre. When the French came up onto the plateau Yorck's brigades went forward against them in the rain, the Landwehr with butt and bayonet as their muskets failed; Jürgass's cavalry charged with Sacken's, and the whole French mass was driven back over the edge into the flooded Katzbach and Wütende Neisse.",
+    [pi("1st Brigade (Steinmetz)", "Col von Steinmetz",
+        [("Grenadier Battalions", [("M", "East Prussian Grenadier Battalion"), ("M", "Leib Grenadier Battalion"),
+                                   ("M", "Silesian Grenadier Battalion"), ("M", "West Prussian Grenadier Battalion")]),
+         ("5th Silesian Landwehr", [("L", f"{r}/5th Silesian Landwehr") for r in ("I", "II", "III", "IV")]),
+         ("13th Silesian Landwehr", [("L", f"{r}/13th Silesian Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-jager-coy", "3rd Company, East Prussian Jäger"), u("pr15-jager-coy", "4th Company, East Prussian Jäger"),
+         u("pr15-hussar-attached", "2nd Silesian Hussars"), u("pr15-foot-arty", "6-pdr Foot Battery #2")], sub="Col von Hiller"),
+     pi("2nd Brigade (Mecklenburg)", "Gen-Maj Prince Karl of Mecklenburg",
+        [("1st East Prussian Infantry", [("M", "I/1st East Prussian Infantry"), ("M", "II/1st East Prussian Infantry"), ("F", "F/1st East Prussian Infantry")]),
+         ("2nd East Prussian Infantry", [("M", "I/2nd East Prussian Infantry"), ("M", "II/2nd East Prussian Infantry"), ("F", "F/2nd East Prussian Infantry")]),
+         ("6th Silesian Landwehr", [("L", f"{r}/6th Silesian Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-hussar-attached", "Mecklenburg-Strelitz Hussars"), u("pr15-foot-arty", "6-pdr Foot Battery #1")], sub="Lt-Col von Lobenthal"),
+     pi("7th Brigade (Horn)", "Gen-Maj von Horn",
+        [("Leib Infantry", [("M", "I/Leib Infantry"), ("M", "II/Leib Infantry"), ("F", "F/Leib Infantry")]),
+         ("Thuringian Battalion", [("M", "Thuringian Battalion")]),
+         ("4th Silesian Landwehr", [("L", f"{r}/4th Silesian Landwehr") for r in ("I", "II", "III", "IV")]),
+         ("15th Silesian Landwehr", [("L", f"{r}/15th Silesian Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-jager-coy", "3rd Company, Guard Jäger"), u("pr15-jager-coy", "4th Company, Guard Jäger"),
+         u("pr15-hussar-attached", "Brandenburg Hussars (3 squadrons)"), u("pr15-mounted-landwehr-attached", "3rd Silesian Landwehr Cavalry (2 squadrons)"),
+         u("pr15-foot-arty", "6-pdr Foot Battery #3")], sub="Lt-Col von Zepelin"),
+     pi("8th Brigade (Hünerbein)", "Gen-Maj von Hünerbein",
+        [("Brandenburg Infantry", [("M", "I/Brandenburg Infantry"), ("M", "II/Brandenburg Infantry"), ("F", "F/Brandenburg Infantry")]),
+         ("12th Reserve Infantry", [("M", "I/12th Reserve Infantry"), ("M", "II/12th Reserve Infantry"), ("F", "F/12th Reserve Infantry")]),
+         ("14th Silesian Landwehr", [("L", f"{r}/14th Silesian Landwehr") for r in ("I", "II", "III", "IV")])],
+        [u("pr15-hussar-attached", "Brandenburg Hussars (2 squadrons)"), u("pr15-mounted-landwehr-attached", "3rd Silesian Landwehr Cavalry (2 squadrons)"),
+         u("pr15-foot-arty", "6-pdr Foot Battery #15")], sub="Lt-Col von Bork"),
+     pc("Reserve Cavalry (Henckel)", "Col Graf Henckel von Donnersmarck",
+        [u("pr15-dragoon", "1st West Prussian Dragoons"), u("pr15-dragoon", "Lithuanian Dragoons"), u("pr15-horse-arty", "Horse Battery #1")]),
+     pc("Reserve Cavalry (Katzler)", "Col von Katzler",
+        [u("pr15-uhlan", "Brandenburg Uhlans"), u("pr15-hussar", "East Prussian National Cavalry"), u("pr15-horse-arty", "Horse Battery #2")]),
+     pc("Reserve Cavalry (Bieberstein)", "Maj von Bieberstein",
+        [u("pr15-mounted-landwehr", "1st Neumark Landwehr Cavalry"), u("pr15-mounted-landwehr", "5th Silesian Landwehr Cavalry"),
+         u("pr15-mounted-landwehr", "10th Silesian Landwehr Cavalry")], landwehr=True),
+     pres(u("pr15-heavy-arty", "12-pdr Foot Battery #1"), u("pr15-foot-arty", "6-pdr Foot Battery #12"), u("pr15-horse-arty", "Horse Battery #3"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Yorck")],
+    notes=[PR_LIST, KB_NOTE, KB_WET, PR_WHOLE, PR_GROUPED, PR_SUB,
+           "The grenadier battalions of Hiller's detachment are one regiment of four; the Landwehr regiments had four battalions each; Horn's brigade had four regiments and Steinmetz's no line regiment but the grenadiers. These, three or more attached hussar regiments where the list allows one, and line and Landwehr cavalry brigades together, show as historical departures.",
+           "The Brandenburg Hussars and 3rd Silesian Landwehr Cavalry were split between Horn and Hünerbein, each half shown as attached cavalry. The East Prussian National Cavalry, a volunteer regiment, is shown as Hussars.",
+           PR_ARTY])
+KB_YORCK["missing"] = [{"name": "12-pdr Foot Battery #2, 6-pdr Foot Battery #24, 3-pdr Foot Battery #1 and Horse Battery #12",
+                        "reason": "The rest of the corps' reserve artillery, more than the list's reserve takes."}]
+
+KB_SACKEN = force(
+    "katzbach-sacken", RU, "Sacken's Corps", "Right wing, Army of Silesia", "Russian",
+    "Blücher's right, on the plateau north of Eichholtz. Its batteries on the Taubenberg tore into the French columns as they came up, and its infantry went forward with Yorck's when the French broke.",
+    [bde("ru-infantry-brigade", "Agatin's Brigade", "Maj-Gen Agatin", units=[u("ru-position-arty", "Position Battery #13")],
+         regiments=[ru_regt("Yaroslavl Infantry", 2), regt("Okhotsk and Kamchatka Infantry", [u("ru-inf-combined-grenadier", "Okhotsk Infantry"), u("ru-inf-combined-grenadier", "Kamchatka Infantry")])]),
+     bde("ru-infantry-brigade", "Sass's Brigade", "Col Sass", units=[u("ru-light-arty", "Light Battery #24")],
+         regiments=[ru_regt("Crimea Infantry", 1), ru_regt("Belozersk Infantry", 2)]),
+     bde("ru-jager-brigade", "Akhlestyshev's Brigade", "Col Akhlestyshev",
+         regiments=[ru_regt("8th Jäger", 2, "ru-jager"), ru_regt("39th Jäger", 2, "ru-jager")]),
+     bde("ru-infantry-brigade", "Lewandowsky's Brigade", "Col Lewandowsky", units=[u("ru-position-arty", "Position Battery #28")],
+         regiments=[ru_regt("Odessa Infantry", 1), ru_regt("Vilna Infantry", 1)]),
+     bde("ru-infantry-brigade", "Alexeyev's Brigade", "Col Alexeyev", units=[u("ru-light-arty", "Light Battery #35")],
+         regiments=[ru_regt("Tarnopol Infantry", 1), ru_regt("Simbirsk Infantry", 1)]),
+     bde("ru-jager-brigade", "Kollogribov's Brigade", "Col Kollogribov",
+         regiments=[ru_regt("49th Jäger", 2, "ru-jager"), ru_regt("50th Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Baron Sacken")],
+    notes=[LIST_RU, KB_NOTE,
+           "Lieven's 10th Division (the first three brigades) and Neverovsky's 27th (the last three), with Repninsky's two battalions of the 16th Division, the Okhotsk and Kamchatka regiments, shown together as one regiment in Agatin's brigade.",
+           "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures."])
+
+KB_VASILCHIKOV = force(
+    "katzbach-vasilchikov", RU, "Vasilchikov's Cavalry", "Cavalry, Sacken's corps", "Russian",
+    "Sacken's hussars and dragoons, which swung round the French left on the plateau and, with Jürgass's Prussians, rode down Sébastiani's horsemen and broke the French infantry behind them.",
+    [bde("ru-heavy-cavalry-brigade", "Panchulidzev's Brigade", "Maj-Gen Panchulidzev", units=[u("ru-dragoon", "Courland Dragoons"), u("ru-dragoon", "Smolensk Dragoons")]),
+     bde("ru-light-cavalry-brigade", "Vasilchikov's Brigade", "Col Vasilchikov",
+         units=[u("ru-hussar", "Akhtyrka Hussars"), u("ru-hussar", "Mariupol Hussars"), u("ru-horse-arty", "Horse Battery #18")]),
+     bde("ru-light-cavalry-brigade", "Kozlovsky's Brigade", "Maj-Gen Kozlovsky", units=[u("ru-hussar", "Alexandria Hussars"), u("ru-hussar", "White Russia Hussars")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Vasilchikov")],
+    notes=[LIST_RU, KB_NOTE,
+           "Nafziger names Chaplitz as the corps' cavalry commander; Vasilchikov led it in the battle, and leads the force here.",
+           "Two light cavalry brigades, where the list allows one, and cavalry with no infantry brigade to allow it, show as historical departures."])
+
+KB_KARPOV = force(
+    "katzbach-karpov", RU, "Karpov's Cossacks", "Cossacks, Sacken's corps", "Russian",
+    "Sacken's Cossacks, Don regiments with Ukrainian, Kalmyk and Bashkir horse, which harried the French flank and joined the pursuit to the Bober.",
+    [bde("ru-cossack-brigade", "Karpov's Brigade", "Maj-Gen Karpov",
+         units=[u("ru-mounted-cossack", "Karpov #2 Don Cossacks"), u("ru-mounted-cossack", "Lukovkin Don Cossacks"),
+                u("ru-mounted-cossack", "Chernozubov #3 Don Cossacks"), u("ru-mounted-cossack", "Kuteinikov #4 Don Cossacks"),
+                u("ru-mounted-cossack", "Semenchenkov Don Cossacks")]),
+     bde("ru-cossack-brigade", "Irregulars", "",
+         units=[u("ru-mounted-cossack", "Grekov #2 Don Cossacks"), u("ru-mounted-cossack", "4th Ukrainian Cossacks"),
+                u("ru-irregular-mounted-cossack", "2nd Kalmyk Regiment"), u("ru-irregular-mounted-cossack", "2nd Bashkir Regiment")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Karpov")],
+    notes=[LIST_RU, KB_NOTE, "The Kalmyks and Bashkirs are the list's Irregular Cossacks.",
+           "Two Cossack brigades, where the list allows one, and Cossacks with no infantry brigade to allow them show as historical departures."])
+
+KB_OLSUFIEV = force(
+    "katzbach-olsufiev", RU, "Olsufiev's Corps", "IX Corps, Langeron's corps, Army of Silesia", "Russian",
+    "Part of Langeron's wing south of the Katzbach, which fell back before Lauriston towards Hennersdorf and the Jauer road, then came on again as the French drew off.",
+    [bde("ru-infantry-brigade", "Poltaratsky's and Ogryumov's Brigade", "Col Poltaratsky",
+         regiments=[ru_regt("Nasheburg Infantry", 1), ru_regt("Yakutsk Infantry", 1), ru_regt("Ryazhsk Infantry", 2)]),
+     bde("ru-jager-brigade", "Grimbladt's Brigade", "Maj Grimbladt", regiments=[ru_regt("10th Jäger", 1, "ru-jager"), ru_regt("38th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Tern's Brigade", "Col Tern", units=[u("ru-position-arty", "Position Battery #18")],
+         regiments=[ru_regt("Vitebsk Infantry", 1), ru_regt("Kozlov Infantry", 1)]),
+     bde("ru-infantry-brigade", "Anensur's Brigade", "Lt-Col Anensur", units=[u("ru-light-arty", "Light Battery #29")],
+         regiments=[ru_regt("Kura Infantry", 2), ru_regt("Kolyvan Infantry", 1)]),
+     bde("ru-jager-brigade", "Tikhanovsky's Brigade", "Col Tikhanovsky", units=[u("ru-light-arty", "Light Battery #34")],
+         regiments=[ru_regt("12th Jäger", 2, "ru-jager"), ru_regt("22nd Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Olsufiev")],
+    notes=[LIST_RU, KB_NOTE,
+           "Udom's 9th Division (the first two brigades) and Rudzevich's 15th (the last three). Udom's two infantry brigades, the Nasheburg regiment alone and the Yakutsk and Ryazhsk together, are shown as one.",
+           "Nafziger lists the 36th Jäger in both Udom's and Talyzin's divisions; it is shown with Talyzin's, in Shcherbatov's corps, so Udom's Jäger brigade here has the 10th and the 38th, from his Bautzen return.",
+           "Three infantry regiments in one brigade, where the list takes two, and two Jäger brigades, where it allows one, show as historical departures."])
+
+KB_KAPTSEVICH = force(
+    "katzbach-kaptsevich", RU, "Kaptsevich's Corps", "X Corps, Langeron's corps, Army of Silesia", "Russian",
+    "Langeron's reserve, which came up to stop Lauriston's advance at Hennersdorf in the afternoon and joined the pursuit as the French fell back.",
+    [bde("ru-infantry-brigade", "Shindshin's Brigade", "Lt-Col Shindshin",
+         regiments=[ru_regt("Arkhangelsk Infantry", 2), ru_regt("Old Ingermanland Infantry", 2)]),
+     bde("ru-jager-brigade", "Rerin's Brigade", "Col Rerin",
+         regiments=[ru_regt("7th Jäger", 2, "ru-jager"), ru_regt("37th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Shapskoy's Brigade", "Maj-Gen Shapskoy",
+         regiments=[ru_regt("Vyatka Infantry", 2), ru_regt("Staroskol Infantry", 2)]),
+     bde("ru-jager-brigade", "Durnov's Brigade", "Col Durnov",
+         regiments=[ru_regt("29th Jäger", 2, "ru-jager"), ru_regt("45th Jäger", 2, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Kaptsevich")],
+    notes=[LIST_RU, KB_NOTE,
+           "Urusov's 8th Division (the first two brigades) and Turchaninov's 22nd (the last two). Rerin's Schlusselburg regiment, a single battalion with two Jäger regiments, and Shapskoy's Olonets battalion are left out, as the list's brigades take them; see Not in this force.",
+           "Two Jäger brigades, where the list allows one, show as a historical departure.",
+           "Nafziger gives the corps no artillery of its own; Langeron's reserve artillery is left out."])
+KB_KAPTSEVICH["missing"] = [{"name": "Schlusselburg and Olonets Infantry", "reason": "Single battalions that don't fit the list's Jäger brigade or its two-regiment infantry brigade."}]
+
+KB_SHCHERBATOV = again(PW_SHCHERBATOV, "katzbach-shcherbatov",
+                       "Langeron's leading corps, which held Hennersdorf and the ground before Jauer against Lauriston's divisions through the afternoon.",
+                       [LIST_RU, KB_NOTE])
+KB_KORFF = again(PW_KORFF, "katzbach-korff",
+                 "Langeron's cavalry, which covered his wing as it fell back before Lauriston and then pushed the French back in the evening.",
+                 [LIST_RU, KB_NOTE])
+
+KATZBACH = battle(
+    "katzbach", "The Katzbach", "26 August 1813",
+    "With Napoleon gone to Dresden, Macdonald advanced against Blücher's army in Silesia, crossing the Katzbach and the Wütende Neisse in a downpour. Charpentier's division and Sébastiani's cavalry climbed the narrow defiles onto the plateau beyond and found Sacken's and Yorck's corps waiting for them. Muskets would hardly fire; the Prussian and Russian infantry came on with butt and bayonet, and their cavalry rode down the French horse and drove the whole mass back over the edge into the swollen streams. South of the river Lauriston pushed Langeron back, but fell back himself when the centre broke, and in the pursuit of the next days, Puthod's division among it, Macdonald lost some 30,000 men.",
+    [KB_FR, KB_AL, {"label": "Battle of the Katzbach (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Katzbach"}],
+    [KB_BRAYER, KB_DELMAS, KB_ALBERT, KB_RICARD, KB_MARCHAND, KB_BEURMANN, KB_MAISON, KB_ROCHAMBEAU, KB_DERMONCOURT,
+     KB_HENIN, KB_CHARPENTIER, KB_XI_CAV, KB_SEBASTIANI,
+     KB_YORCK, KB_SACKEN, KB_VASILCHIKOV, KB_KARPOV, KB_SHCHERBATOV, KB_OLSUFIEV, KB_KAPTSEVICH, KB_KORFF],
+    [], alliances=(("Prussian", "Russian"),))
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -1573,5 +1897,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
+    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
         write(b)

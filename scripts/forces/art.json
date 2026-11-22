@@ -322,6 +322,12 @@
       "date": "1813",
       "page": "https://commons.wikimedia.org/wiki/File:Bitwa_nad_Bobrem.jpg",
       "focus": "50% 72%"
+    },
+    "katzbach": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/KaempfferKatzbachschlacht.jpg/960px-KaempfferKatzbachschlacht.jpg",
+      "title": "The Battle of the Katzbach",
+      "artist": "Eduard Kaempffer",
+      "page": "https://commons.wikimedia.org/wiki/File:KaempfferKatzbachschlacht.jpg"
     }
   },
   "campaigns": {

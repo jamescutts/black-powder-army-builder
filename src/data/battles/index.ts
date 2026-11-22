@@ -18,6 +18,7 @@ import bautzen from "./bautzen.json";
 import grossbeeren from "./grossbeeren.json";
 import wartenburg from "./wartenburg.json";
 import hagelberg from "./hagelberg.json";
+import katzbach from "./katzbach.json";
 import plagwitz from "./plagwitz.json";
 import dennewitz from "./dennewitz.json";
 import hanau from "./hanau.json";
@@ -62,7 +63,6 @@ import {
   dresden,
   fereChampenoise,
   gohrde,
-  katzbach,
   kulm,
   laon,
   laRothiere,
@@ -414,7 +414,7 @@ const allBattles: HistoricalBattle[] = [
   lowenberg,
   grossbeeren as HistoricalBattle,
   goldberg,
-  katzbach,
+  katzbach as HistoricalBattle,
   dresden,
   hagelberg as HistoricalBattle,
   plagwitz as HistoricalBattle,

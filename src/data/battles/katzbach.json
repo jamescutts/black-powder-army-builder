@@ -1,0 +1,3227 @@
+{
+  "id": "katzbach",
+  "name": "The Katzbach",
+  "date": "26 August 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/KaempfferKatzbachschlacht.jpg/960px-KaempfferKatzbachschlacht.jpg",
+    "title": "The Battle of the Katzbach",
+    "artist": "Eduard Kaempffer",
+    "page": "https://commons.wikimedia.org/wiki/File:KaempfferKatzbachschlacht.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Marshal Macdonald",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/MacDonald_par_Antoine_Jean_Gros.jpg/250px-MacDonald_par_Antoine_Jean_Gros.jpg",
+        "title": "Marshal Jacques Macdonald",
+        "artist": "Antoine-Jean Gros",
+        "page": "https://commons.wikimedia.org/wiki/File:MacDonald_par_Antoine_Jean_Gros.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Prussian": {
+      "commander": "General Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Baron Sacken, with Langeron",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Fabian_Wilhelm_von_Osten-Sacken.jpg/250px-Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "title": "Fabian von der Osten-Sacken",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "focus": "50% 18%",
+        "date": "1820"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Prussian",
+      "Russian"
+    ]
+  ],
+  "summary": "With Napoleon gone to Dresden, Macdonald advanced against Blücher's army in Silesia, crossing the Katzbach and the Wütende Neisse in a downpour. Charpentier's division and Sébastiani's cavalry climbed the narrow defiles onto the plateau beyond and found Sacken's and Yorck's corps waiting for them. Muskets would hardly fire; the Prussian and Russian infantry came on with butt and bayonet, and their cavalry rode down the French horse and drove the whole mass back over the edge into the swollen streams. South of the river Lauriston pushed Langeron back, but fell back himself when the centre broke, and in the pursuit of the next days, Puthod's division among it, Macdonald lost some 30,000 men.",
+  "sources": [
+    {
+      "label": "French Forces, Battle of the Katzbach, 26 August 1813 (Nafziger Collection 813HIC)",
+      "url": "https://www.napoleon-series.org/nafzigger/813HIC.pdf"
+    },
+    {
+      "label": "Army of Silesia, Battle of the Katzbach, 26 August 1813 (Nafziger Collection 813HHB)",
+      "url": "https://www.napoleon-series.org/nafzigger/813HHB.pdf"
+    },
+    {
+      "label": "Battle of the Katzbach (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Katzbach"
+    }
+  ],
+  "forces": [
+    {
+      "id": "katzbach-brayer",
+      "nationId": "france",
+      "name": "Brayer's Division",
+      "formation": "8th Division, III Corps (Souham)",
+      "side": "French",
+      "summary": "Souham's leading division, which came up the defile from Kroitsch onto the plateau late in the afternoon as the first French troops there were giving way, and was fed into the fight in the rain against Yorck's and Sacken's lines.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Souham's old division, which he led at Lützen and Bautzen; Brayer commanded it under him here. Most of its regiments were provisional, two depot battalions of different regiments each.",
+        "Its two provisional light regiments, where the list allows one in a division, and the first brigade's four regiments, where it allows three, show as historical departures.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Brigade Brayer",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "1st Brigade",
+          "regiments": [
+            {
+              "name": "6th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/6th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/25th Léger"
+                }
+              ]
+            },
+            {
+              "name": "10th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/16th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/28th Léger"
+                }
+              ]
+            },
+            {
+              "name": "14th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/34th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/40th Line"
+                }
+              ]
+            },
+            {
+              "name": "19th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/32nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/58th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Charrière's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Charrière",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "22nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/22nd Line"
+                }
+              ]
+            },
+            {
+              "name": "21st Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/59th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/69th Line"
+                }
+              ]
+            },
+            {
+              "name": "24th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/88th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/103rd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "5/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-delmas",
+      "nationId": "france",
+      "name": "Delmas's Division",
+      "formation": "9th Division, III Corps (Souham)",
+      "side": "French",
+      "summary": "Souham's second division, which followed Brayer's up from the Katzbach and was caught in the crush on the plateau when the allied cavalry broke the French left.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Two light regiments, where the list allows one in a division, show as a historical departure.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Delmas",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "1st Brigade",
+          "regiments": [
+            {
+              "name": "2nd Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/4th Léger"
+                }
+              ]
+            },
+            {
+              "name": "29th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/29th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/29th Léger"
+                }
+              ]
+            },
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/136th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Vergez's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Vergez",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/138th Line"
+                }
+              ]
+            },
+            {
+              "name": "145th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/145th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "2/9th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "11/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-albert",
+      "nationId": "france",
+      "name": "Albert's Division",
+      "formation": "10th Division, III Corps (Souham)",
+      "side": "French",
+      "summary": "Girard's old division, under Albert since Girard was wounded at Lützen, part of Souham's corps marching up from Liegnitz to the plateau.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Albert",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Van Dedem's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Van Dedem",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/5th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/12th Léger"
+                }
+              ]
+            },
+            {
+              "name": "139th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/139th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/139th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/139th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Suden's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Suden",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "140th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/140th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/140th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/140th Line"
+                }
+              ]
+            },
+            {
+              "name": "141st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/141st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/141st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/141st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "3/7th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "4/7th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-ricard",
+      "nationId": "france",
+      "name": "Ricard's Division",
+      "formation": "11th Division, III Corps (Souham)",
+      "side": "French",
+      "summary": "Souham's last division, still marching up when the French on the plateau broke, and swept back with them over the flooded streams.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Nafziger gives the 5/9th Foot Artillery to both Brayer and Ricard; it is shown with each, as he gives it.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Ricard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "1st Brigade",
+          "regiments": [
+            {
+              "name": "9th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/9th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/9th Léger"
+                }
+              ]
+            },
+            {
+              "name": "17th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/43rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/75th Line"
+                }
+              ]
+            },
+            {
+              "name": "50th and 65th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/50th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/50th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/65th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Dumoulin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dumoulin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "142nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/142nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/142nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/142nd Line"
+                }
+              ]
+            },
+            {
+              "name": "144th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/144th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/144th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/144th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "19/7th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "5/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-marchand",
+      "nationId": "confederation-of-the-rhine",
+      "name": "Marchand's Division",
+      "formation": "39th Division, III Corps (Souham)",
+      "side": "French",
+      "summary": "Souham's German division, Baden and Hessian troops, which came up behind the French divisions and covered the retreat to the Katzbach.",
+      "notes": [
+        "Built from A Clash of Eagles' Confederation of the Rhine 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "The list's Hessian brigade takes only Guard regiments, so the 2nd Hessian (Leib) Regiment is a Rheinbund brigade, as at Lützen.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2nd Hessian Leib Regiment at 7, the most the list allows."
+      ],
+      "command": [
+        {
+          "unit": "cotr-div-cmd",
+          "name": "Gén. de Division Marchand",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ocs-baden-infantry-brigade",
+          "name": "Stockhorn's Baden Brigade",
+          "commander": {
+            "name": "Gen-Maj von Stockhorn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ocs-foot-arty",
+              "name": "1st Baden Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Baden Line",
+              "units": [
+                {
+                  "unit": "ocs-line-infantry",
+                  "name": "I/1st Baden Line"
+                },
+                {
+                  "unit": "ocs-line-infantry",
+                  "name": "II/1st Baden Line"
+                }
+              ]
+            },
+            {
+              "name": "3rd Baden Line",
+              "units": [
+                {
+                  "unit": "ocs-line-infantry",
+                  "name": "I/3rd Baden Line"
+                },
+                {
+                  "unit": "ocs-line-infantry",
+                  "name": "II/3rd Baden Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ocs-hessian-infantry-brigade",
+          "name": "Prince Emil's Hessian Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Emil of Hesse",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ocs-foot-arty",
+              "name": "1st Hessian Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Hessian Leib-Garde",
+              "units": [
+                {
+                  "unit": "ocs-hessian-guard",
+                  "name": "I/Hessian Leib-Garde"
+                },
+                {
+                  "unit": "ocs-hessian-guard",
+                  "name": "II/Hessian Leib-Garde"
+                }
+              ]
+            },
+            {
+              "name": "Hessian Garde-Füsiliere",
+              "units": [
+                {
+                  "unit": "ocs-hessian-guard-fusilier",
+                  "name": "I/Hessian Garde-Füsiliere"
+                },
+                {
+                  "unit": "ocs-hessian-guard-fusilier",
+                  "name": "II/Hessian Garde-Füsiliere"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "rb-infantry-brigade",
+          "name": "2nd Hessian Leib Regiment",
+          "regiments": [
+            {
+              "name": "2nd Hessian (Leib) Regiment",
+              "units": [
+                {
+                  "unit": "rb-line-infantry",
+                  "name": "I/2nd Hessian Leib"
+                },
+                {
+                  "unit": "rb-line-infantry",
+                  "name": "II/2nd Hessian Leib"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "katzbach-beurmann",
+      "nationId": "france",
+      "name": "Beurmann's Light Cavalry",
+      "formation": "23rd Light Cavalry Brigade, III Corps (Souham)",
+      "side": "French",
+      "summary": "Souham's corps cavalry, the 10th Hussars and the Baden Dragoons, which rode up onto the plateau with the infantry.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "The 10th Hussars had six squadrons, so they are Large, though the list allows Large on only half a brigade's regiments; the Baden Dragoons, five squadrons, are the list's Dragoons in a heavy brigade of their own.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Brigade Beurmann",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Beurmann's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Beurmann",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "10th Hussars",
+              "options": [
+                "large-cavalry"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Baden Dragoons",
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "Baden Dragoons"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "katzbach-maison",
+      "nationId": "france",
+      "name": "Maison's Division",
+      "formation": "16th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's leading division on the French right, south of the Katzbach, which pushed Langeron's advance guard back towards Hennersdorf before the defeat on the plateau called it back.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "The 151st Line was in Glogau and is left out.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "The horse battery attached to the division, with no cavalry to allow it, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Maison",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Penne's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Penne",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "152nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/152nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/152nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/152nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "2nd Brigade",
+          "regiments": [
+            {
+              "name": "153rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/153rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/153rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/153rd Line"
+                }
+              ]
+            },
+            {
+              "name": "154th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/154th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/154th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/154th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "1/1st Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "3/1st Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "7/6th Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Maison%2C_Nicolas-Joseph.jpg",
+        "title": "Nicolas Joseph Maison",
+        "artist": "Alois Senefelder",
+        "page": "https://commons.wikimedia.org/wiki/File:Maison%2C_Nicolas-Joseph.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "katzbach-rochambeau",
+      "nationId": "france",
+      "name": "Rochambeau's Division",
+      "formation": "19th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's second division, which fought Langeron's Russians round Hennersdorf on the French right.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Rochambeau",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Harlet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Harlet",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "135th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/135th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/135th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/135th Line"
+                }
+              ]
+            },
+            {
+              "name": "149th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/149th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/149th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/149th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Lafitte's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lafitte",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "150th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/150th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/150th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/150th Line"
+                }
+              ]
+            },
+            {
+              "name": "155th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/155th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/155th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/155th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "12/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "17/5th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-dermoncourt",
+      "nationId": "france",
+      "name": "Dermoncourt's Light Cavalry",
+      "formation": "6th Light Cavalry Brigade, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's corps cavalry, three regiments of chasseurs, on the French right.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "The 2nd and 3rd Chasseurs had two squadrons each, the 6th three.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Brigade Dermoncourt",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Dermoncourt's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dermoncourt",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "2nd Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "3rd Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "6th Chasseurs à Cheval"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-henin",
+      "nationId": "france",
+      "name": "D'Henin's Division",
+      "formation": "35th Division, XI Corps (Gérard)",
+      "side": "French",
+      "summary": "Gérard's leading division, French and Zucchi's Italians, which crossed the Katzbach at Niederkrayn and fought on the plateau's southern edge before the rout carried it back.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Zucchi's Italians are shown as French Line and Light, so the division stays one force; the Italian list would rate them the same.",
+        "The Italian horse battery, with no cavalry to allow it, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Brigade d'Henin",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Senecal's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Senecal",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/6th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/6th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "7/6th Line"
+                }
+              ]
+            },
+            {
+              "name": "112th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/112th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/112th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/112th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/112th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Zucchi's Italian Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Zucchi",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Italian Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/2nd Italian Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/2nd Italian Léger"
+                }
+              ]
+            },
+            {
+              "name": "5th Italian Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/5th Italian Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/5th Italian Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/5th Italian Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/5th Italian Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "6/1st Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "3rd Italian Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-charpentier",
+      "nationId": "france",
+      "name": "Charpentier's Division",
+      "formation": "36th Division, XI Corps (Gérard)",
+      "side": "French",
+      "summary": "The first French division up onto the plateau, it pushed towards Eichholtz in the rain and was there when Blücher attacked; the Prussian and Russian charges drove it back over the edge into the flooded Wütende Neisse.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Three light regiments, where the list allows one in a division, show as a historical departure.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Charpentier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Simmer's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Simmer",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "22nd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/22nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/22nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/22nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/22nd Léger"
+                }
+              ]
+            },
+            {
+              "name": "10th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/10th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/10th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Meunier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Meunier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/3rd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/3rd Léger"
+                }
+              ]
+            },
+            {
+              "name": "14th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/14th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/14th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "7/14th Léger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "5/1st Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "19/2nd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-xi-cavalry",
+      "nationId": "france",
+      "name": "Gérard's Corps Cavalry",
+      "formation": "Corps Cavalry Brigade, XI Corps",
+      "side": "French",
+      "summary": "XI Corps' cavalry, Italian and Neapolitan chasseurs, with Gérard's divisions on the plateau's southern edge.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "The Italian and Neapolitan chasseurs are the list's Chasseurs à Cheval.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Gérard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Corps Cavalry Brigade",
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "4th Italian Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "2nd Neapolitan Chasseurs à Cheval"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "missing": [
+        {
+          "name": "1/Würzburg Chevau-légers",
+          "reason": "One squadron, too few for a unit of its own."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/David_Etienne_Maurice_Gerard.jpg/250px-David_Etienne_Maurice_Gerard.jpg",
+        "title": "Étienne Maurice Gérard",
+        "artist": "Jacques-Louis David",
+        "page": "https://commons.wikimedia.org/wiki/File:David_Etienne_Maurice_Gerard.jpg",
+        "focus": "50% 14%",
+        "date": "1816"
+      }
+    },
+    {
+      "id": "katzbach-sebastiani",
+      "nationId": "france",
+      "name": "Sébastiani's Cavalry",
+      "formation": "II Cavalry Corps",
+      "side": "French",
+      "summary": "Some 10,000 horsemen, who crowded up the narrow defiles onto the plateau with Charpentier's infantry and were caught there, half-formed, by the charges of Sacken's and Yorck's cavalry; driven back down into the swollen streams, they lost men and guns by the hundred.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "The chevau-légers lanciers are the list's Lancers.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "The corps' other two horse batteries, more than the list takes, are on the Not in this force card.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Sébastiani",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Gérard's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gérard",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "9th Hussars"
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "4th Chevau-légers"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "5th Hussars"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Domanget's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Domanget",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-lancer",
+              "name": "2nd Chevau-légers"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "11th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "12th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Maurin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Maurin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-lancer",
+              "name": "6th Chevau-légers"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "4th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "7th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Wathier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Wathier",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "20th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "23rd Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "24th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "11th Hussars"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Daugeranville's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Daugeranville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-carabinier",
+              "name": "1st Carabiniers"
+            },
+            {
+              "unit": "fr-carabinier",
+              "name": "2nd Carabiniers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "1st Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Thiry's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thiry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "5th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "8th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "10th Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "7/1st Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "7/4th and 8/6th Horse Artillery",
+          "reason": "The corps' other two horse batteries, more than the list takes."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/S%C3%A9bastiani%2C_Horace_-_4.jpg/250px-S%C3%A9bastiani%2C_Horace_-_4.jpg",
+        "title": "Horace Sébastiani",
+        "artist": "Jean-Baptiste Paulin Guérin",
+        "page": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastiani%2C_Horace_-_4.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "katzbach-yorck",
+      "nationId": "prussians-1815",
+      "name": "Yorck's Corps",
+      "formation": "I Corps, Army of Silesia",
+      "side": "Prussian",
+      "summary": "Blücher's centre. When the French came up onto the plateau Yorck's brigades went forward against them in the rain, the Landwehr with butt and bayonet as their muskets failed; Jürgass's cavalry charged with Sacken's, and the whole French mass was driven back over the edge into the flooded Katzbach and Wütende Neisse.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "It rained all day: muskets would hardly fire, and much of the fighting on the plateau was done with bayonet, butt and sabre.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "The grenadier battalions of Hiller's detachment are one regiment of four; the Landwehr regiments had four battalions each; Horn's brigade had four regiments and Steinmetz's no line regiment but the grenadiers. These, three or more attached hussar regiments where the list allows one, and line and Landwehr cavalry brigades together, show as historical departures.",
+        "The Brandenburg Hussars and 3rd Silesian Landwehr Cavalry were split between Horn and Hünerbein, each half shown as attached cavalry. The East Prussian National Cavalry, a volunteer regiment, is shown as Hussars.",
+        "Batteries beyond the one each brigade takes are in the corps artillery, as the list's reserve takes them; more than it allows, or a reserve horse battery with fewer brigades than the list wants for it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Yorck",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "1st Brigade (Steinmetz)",
+          "commander": {
+            "name": "Col von Steinmetz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd",
+              "name": "Col von Hiller"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "3rd Company, East Prussian Jäger"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "4th Company, East Prussian Jäger"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "2nd Silesian Hussars"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #2"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Grenadier Battalions",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "East Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Leib Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Silesian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "West Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "5th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/5th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/5th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/5th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/5th Silesian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "13th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/13th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "2nd Brigade (Mecklenburg)",
+          "commander": {
+            "name": "Gen-Maj Prince Karl of Mecklenburg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd",
+              "name": "Lt-Col von Lobenthal"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "Mecklenburg-Strelitz Hussars"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #1"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st East Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/1st East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "2nd East Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/2nd East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/2nd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "6th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/6th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/6th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/6th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/6th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "7th Brigade (Horn)",
+          "commander": {
+            "name": "Gen-Maj von Horn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd",
+              "name": "Lt-Col von Zepelin"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "3rd Company, Guard Jäger"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "4th Company, Guard Jäger"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "Brandenburg Hussars (3 squadrons)"
+            },
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "3rd Silesian Landwehr Cavalry (2 squadrons)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #3"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Leib Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Leib Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Thuringian Battalion",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Thuringian Battalion"
+                }
+              ]
+            },
+            {
+              "name": "4th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/4th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/4th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/4th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/4th Silesian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "15th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/15th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/15th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/15th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/15th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "8th Brigade (Hünerbein)",
+          "commander": {
+            "name": "Gen-Maj von Hünerbein",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd",
+              "name": "Lt-Col von Bork"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "Brandenburg Hussars (2 squadrons)"
+            },
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "3rd Silesian Landwehr Cavalry (2 squadrons)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #15"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Brandenburg Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Brandenburg Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Brandenburg Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Brandenburg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "12th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/12th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/12th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/12th Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "14th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/14th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/14th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/14th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/14th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Henckel)",
+          "commander": {
+            "name": "Col Graf Henckel von Donnersmarck",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "1st West Prussian Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "Lithuanian Dragoons"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #1"
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Katzler)",
+          "commander": {
+            "name": "Col von Katzler",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-uhlan",
+              "name": "Brandenburg Uhlans"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "East Prussian National Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #2"
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Reserve Cavalry (Bieberstein)",
+          "commander": {
+            "name": "Maj von Bieberstein",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "1st Neumark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "5th Silesian Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "10th Silesian Landwehr Cavalry"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Foot Battery #1"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #12"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #3"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "12-pdr Foot Battery #2, 6-pdr Foot Battery #24, 3-pdr Foot Battery #1 and Horse Battery #12",
+          "reason": "The rest of the corps' reserve artillery, more than the list's reserve takes."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    },
+    {
+      "id": "katzbach-sacken",
+      "nationId": "russia",
+      "name": "Sacken's Corps",
+      "formation": "Right wing, Army of Silesia",
+      "side": "Russian",
+      "summary": "Blücher's right, on the plateau north of Eichholtz. Its batteries on the Taubenberg tore into the French columns as they came up, and its infantry went forward with Yorck's when the French broke.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Lieven's 10th Division (the first three brigades) and Neverovsky's 27th (the last three), with Repninsky's two battalions of the 16th Division, the Okhotsk and Kamchatka regiments, shown together as one regiment in Agatin's brigade.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Baron Sacken",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Agatin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Agatin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #13"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Yaroslavl Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Yaroslavl Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Yaroslavl Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Okhotsk and Kamchatka Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Okhotsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kamchatka Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Sass's Brigade",
+          "commander": {
+            "name": "Col Sass",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #24"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Crimea Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Crimea Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Belozersk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Belozersk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Belozersk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Akhlestyshev's Brigade",
+          "commander": {
+            "name": "Col Akhlestyshev",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "8th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/8th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/8th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "39th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/39th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/39th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Lewandowsky's Brigade",
+          "commander": {
+            "name": "Col Lewandowsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #28"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Odessa Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Odessa Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Vilna Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vilna Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Alexeyev's Brigade",
+          "commander": {
+            "name": "Col Alexeyev",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #35"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tarnopol Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tarnopol Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Simbirsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Simbirsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Kollogribov's Brigade",
+          "commander": {
+            "name": "Col Kollogribov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "49th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/49th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/49th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "50th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "50th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Fabian_Wilhelm_von_Osten-Sacken.jpg/250px-Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "title": "Fabian von der Osten-Sacken",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "focus": "50% 18%",
+        "date": "1820"
+      }
+    },
+    {
+      "id": "katzbach-vasilchikov",
+      "nationId": "russia",
+      "name": "Vasilchikov's Cavalry",
+      "formation": "Cavalry, Sacken's corps",
+      "side": "Russian",
+      "summary": "Sacken's hussars and dragoons, which swung round the French left on the plateau and, with Jürgass's Prussians, rode down Sébastiani's horsemen and broke the French infantry behind them.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Nafziger names Chaplitz as the corps' cavalry commander; Vasilchikov led it in the battle, and leads the force here.",
+        "Two light cavalry brigades, where the list allows one, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Vasilchikov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Panchulidzev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Panchulidzev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Courland Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Smolensk Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Vasilchikov's Brigade",
+          "commander": {
+            "name": "Col Vasilchikov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Akhtyrka Hussars"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Mariupol Hussars"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #18"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Kozlovsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Kozlovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Alexandria Hussars"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "White Russia Hussars"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-karpov",
+      "nationId": "russia",
+      "name": "Karpov's Cossacks",
+      "formation": "Cossacks, Sacken's corps",
+      "side": "Russian",
+      "summary": "Sacken's Cossacks, Don regiments with Ukrainian, Kalmyk and Bashkir horse, which harried the French flank and joined the pursuit to the Bober.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "The Kalmyks and Bashkirs are the list's Irregular Cossacks.",
+        "Two Cossack brigades, where the list allows one, and Cossacks with no infantry brigade to allow them show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Karpov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Karpov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Karpov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Karpov #2 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Lukovkin Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Chernozubov #3 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Kuteinikov #4 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Semenchenkov Don Cossacks"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Irregulars",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Grekov #2 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "4th Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "2nd Kalmyk Regiment"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "2nd Bashkir Regiment"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "katzbach-shcherbatov",
+      "nationId": "russia",
+      "name": "Shcherbatov's Corps",
+      "formation": "VI Corps, Langeron's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Langeron's leading corps, which held Hennersdorf and the ground before Jauer against Lauriston's divisions through the afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "After Nafziger's order of battle for the Katzbach three days before; Nafziger has none for Plagwitz, and Clash of Steel names the Russian VI Corps and I Cavalry Corps as the troops that caught Puthod.",
+        "Talyzin's 7th Division (the first three brigades) and Bernodossov's 18th (the last three), about 8,300 men in all at the Katzbach; regiments are shown with the battalions Nafziger gives them.",
+        "Nafziger also lists the 36th Jäger in Udom's 9th Division; it is shown here only.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Prince Shcherbatov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Kirschnitzky's Brigade",
+          "commander": {
+            "name": "Col Kirschnitzky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #15"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Pskov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Pskov Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Pskov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Moscow Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Moscow Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Moscow Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Augustov's Brigade",
+          "commander": {
+            "name": "Col Augustov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #17"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Sofia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Sofia Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Libau Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Libau Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Libau Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Dietrich's Brigade",
+          "commander": {
+            "name": "Col Dietrich",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/11th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/11th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "36th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "36th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Blagoveshchensky's Brigade",
+          "commander": {
+            "name": "Lt-Col Blagoveshchensky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #28"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Vladimir Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vladimir Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Dnieper Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Dnieper Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Tambov and Kostroma",
+          "regiments": [
+            {
+              "name": "Tambov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tambov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kostroma Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kostroma Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Meshcherinov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Meshcherinov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "32nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "32nd Jäger"
+                }
+              ]
+            },
+            {
+              "name": "28th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "28th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Langeron_A_F.jpg/250px-Langeron_A_F.jpg",
+        "title": "Count Alexandre de Langeron",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Langeron_A_F.jpg",
+        "focus": "50% 18%",
+        "date": "before 1825"
+      }
+    },
+    {
+      "id": "katzbach-olsufiev",
+      "nationId": "russia",
+      "name": "Olsufiev's Corps",
+      "formation": "IX Corps, Langeron's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Part of Langeron's wing south of the Katzbach, which fell back before Lauriston towards Hennersdorf and the Jauer road, then came on again as the French drew off.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Udom's 9th Division (the first two brigades) and Rudzevich's 15th (the last three). Udom's two infantry brigades, the Nasheburg regiment alone and the Yakutsk and Ryazhsk together, are shown as one.",
+        "Nafziger lists the 36th Jäger in both Udom's and Talyzin's divisions; it is shown with Talyzin's, in Shcherbatov's corps, so Udom's Jäger brigade here has the 10th and the 38th, from his Bautzen return.",
+        "Three infantry regiments in one brigade, where the list takes two, and two Jäger brigades, where it allows one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 5 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Olsufiev",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Poltaratsky's and Ogryumov's Brigade",
+          "commander": {
+            "name": "Col Poltaratsky",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Nasheburg Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Nasheburg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Yakutsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Yakutsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Ryazhsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Ryazhsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Ryazhsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Grimbladt's Brigade",
+          "commander": {
+            "name": "Maj Grimbladt",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "10th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "10th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "38th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "38th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Tern's Brigade",
+          "commander": {
+            "name": "Col Tern",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #18"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Vitebsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vitebsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kozlov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kozlov Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Anensur's Brigade",
+          "commander": {
+            "name": "Lt-Col Anensur",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #29"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kura Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Kura Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Kura Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kolyvan Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kolyvan Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Tikhanovsky's Brigade",
+          "commander": {
+            "name": "Col Tikhanovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #34"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "12th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/12th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/12th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "22nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "22nd Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "katzbach-kaptsevich",
+      "nationId": "russia",
+      "name": "Kaptsevich's Corps",
+      "formation": "X Corps, Langeron's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Langeron's reserve, which came up to stop Lauriston's advance at Hennersdorf in the afternoon and joined the pursuit as the French fell back.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "Urusov's 8th Division (the first two brigades) and Turchaninov's 22nd (the last two). Rerin's Schlusselburg regiment, a single battalion with two Jäger regiments, and Shapskoy's Olonets battalion are left out, as the list's brigades take them; see Not in this force.",
+        "Two Jäger brigades, where the list allows one, show as a historical departure.",
+        "Nafziger gives the corps no artillery of its own; Langeron's reserve artillery is left out.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Kaptsevich",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Shindshin's Brigade",
+          "commander": {
+            "name": "Lt-Col Shindshin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Arkhangelsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Arkhangelsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Arkhangelsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Old Ingermanland Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Old Ingermanland Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Old Ingermanland Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Rerin's Brigade",
+          "commander": {
+            "name": "Col Rerin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "7th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/7th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/7th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "37th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "37th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Shapskoy's Brigade",
+          "commander": {
+            "name": "Maj-Gen Shapskoy",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Vyatka Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Vyatka Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Vyatka Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Staroskol Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Staroskol Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Staroskol Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Durnov's Brigade",
+          "commander": {
+            "name": "Col Durnov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "29th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/29th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/29th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "45th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/45th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/45th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Schlusselburg and Olonets Infantry",
+          "reason": "Single battalions that don't fit the list's Jäger brigade or its two-regiment infantry brigade."
+        }
+      ]
+    },
+    {
+      "id": "katzbach-korff",
+      "nationId": "russia",
+      "name": "Korff's Cavalry",
+      "formation": "I Cavalry Corps, Langeron's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Langeron's cavalry, which covered his wing as it fell back before Lauriston and then pushed the French back in the evening.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Katzbach.",
+        "After Nafziger's order of battle for the Katzbach three days before; Nafziger has none for Plagwitz, and Clash of Steel names the Russian VI Corps and I Cavalry Corps as the troops that caught Puthod.",
+        "About 4,000 men at the Katzbach, its regiments of two or three squadrons each. The Chasseurs à Cheval are the list's Mounted Jäger, and the Ukrainian Cossack regiments, raised in 1812, its Mounted Cossacks.",
+        "Three mounted jäger regiments in Panchulidzev's brigade, where the list takes two, two light cavalry brigades where it allows one, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Lt-Gen Baron Korff",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Berdyaev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Berdyaev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Tver Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Kinburn Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Panchulidzev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Panchulidzev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Chernigov Mounted Jäger"
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Seversk Mounted Jäger"
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Arzamas Mounted Jäger"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Pahlen's Brigade",
+          "commander": {
+            "name": "Maj-Gen Count Pahlen",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Dorpat Mounted Jäger"
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Lithuania Mounted Jäger"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #6"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Witte's Ukrainian Cossacks",
+          "commander": {
+            "name": "Maj-Gen Count de Witte",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "1st Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "2nd Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "3rd Ukrainian Cossacks"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
