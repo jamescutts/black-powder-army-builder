@@ -246,6 +246,20 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
   const battle = battlesIn(campaign.id).find((b) => b.id === battleId)!;
   // Sides in the order the battle lists their first force
   const sides = [...new Set(battle.forces.map((f) => f.side))];
+  // Each side's forces together: their points, units and brigades
+  const totals = Object.fromEntries(
+    sides.map((side) => {
+      const t = { points: 0, units: 0, brigades: 0 };
+      for (const force of battle.forces.filter((f) => f.side === side)) {
+        const nation = nationForPeriod(getNation(force.nationId)!, force.period);
+        const { roster } = rosterFromForce(nation, force);
+        t.points += rosterTotal(nation, roster);
+        t.units += unitCount(roster);
+        t.brigades += roster.brigadeInstances.length;
+      }
+      return [side, t];
+    })
+  );
   return (
     <>
       <HistoryHero
@@ -258,13 +272,7 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
         dates={battle.date}
         summary={battle.summary}
         stats={sides.map((side) => {
-          const sideForces = battle.forces.filter((f) => f.side === side);
-          const units = sideForces.reduce((sum, force) => {
-            const base = getNation(force.nationId)!;
-            const nation = nationForPeriod(base, force.period);
-            const { roster } = rosterFromForce(nation, force);
-            return sum + unitCount(roster);
-          }, 0);
+          const units = totals[side].units;
           return { value: units, label: `${side} ${units === 1 ? "unit" : "units"}` };
         })}
       />
@@ -275,7 +283,7 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
         </Title>
         {sides.map((side) => (
           <Stack gap="sm" key={side}>
-            <SideHead side={side} info={battle.sides?.[side]} />
+            <SideHead side={side} info={battle.sides?.[side]} totals={totals[side]} />
             <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="md">
               {battle.forces
                 .filter((f) => f.side === side)
@@ -373,26 +381,53 @@ function HistoryHero({
   );
 }
 
-/** A side's head on a battle page: its commander's portrait and name, over the side's forces */
-function SideHead({ side, info }: { side: string; info?: { commander: string; portrait?: HistoricalArt } }) {
+/** A side's head on a battle page: its commander's portrait and name, and across from them its forces' totals */
+function SideHead({
+  side,
+  info,
+  totals,
+}: {
+  side: string;
+  info?: { commander: string; portrait?: HistoricalArt };
+  totals: { points: number; units: number; brigades: number };
+}) {
   const p = info?.portrait;
+  const figures: [string, string][] = [
+    [totals.points.toLocaleString("en-GB"), "points"],
+    [String(totals.units), totals.units === 1 ? "unit" : "units"],
+    [String(totals.brigades), totals.brigades === 1 ? "brigade" : "brigades"],
+  ];
   return (
-    <Group gap="sm" wrap="nowrap" className="side-head">
-      {p && (
-        <a href={p.page} target="_blank" rel="noreferrer" className="side-head-portrait" title={`${p.title}, ${p.artist}${p.date ? `, ${p.date}` : ""}`}>
-          <img src={p.src} alt={`${p.title}, ${p.artist}`} loading="lazy" style={{ objectPosition: p.focus ?? "50% 20%" }} />
-        </a>
-      )}
-      <div>
-        <Text size="xs" tt="uppercase" fw={700} c="brown.8" lts={0.6}>
-          {side}
-        </Text>
-        {info && (
-          <Text ff="heading" fw={600} fz="lg" lh={1.25} c="brown.9">
-            {info.commander}
-          </Text>
+    <Group justify="space-between" align="center" gap="sm" className="side-head">
+      <Group gap="sm" wrap="nowrap">
+        {p && (
+          <a href={p.page} target="_blank" rel="noreferrer" className="side-head-portrait" title={`${p.title}, ${p.artist}${p.date ? `, ${p.date}` : ""}`}>
+            <img src={p.src} alt={`${p.title}, ${p.artist}`} loading="lazy" style={{ objectPosition: p.focus ?? "50% 20%" }} />
+          </a>
         )}
-      </div>
+        <div>
+          <Text size="xs" tt="uppercase" fw={700} c="brown.8" lts={0.6}>
+            {side}
+          </Text>
+          {info && (
+            <Text ff="heading" fw={600} fz="lg" lh={1.25} c="brown.9">
+              {info.commander}
+            </Text>
+          )}
+        </div>
+      </Group>
+      <Group gap="lg" wrap="nowrap" className="side-head-totals">
+        {figures.map(([value, label]) => (
+          <div key={label}>
+            <Text ff="heading" fw={600} fz="lg" lh={1.1} c="brown.9">
+              {value}
+            </Text>
+            <Text size="xs" c="brown.8">
+              {label}
+            </Text>
+          </div>
+        ))}
+      </Group>
     </Group>
   );
 }
