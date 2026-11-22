@@ -23,6 +23,9 @@ export interface MapSide {
   colour: string;
   /** A dash pattern, so the sides can be told apart without colour */
   dash?: string;
+  /** How many pixels to the right of their direction of travel its routes run (3 if not given), so two
+   * sides on the same road run side by side */
+  lane?: number;
 }
 
 export interface MapRoute {
@@ -31,6 +34,8 @@ export interface MapRoute {
   dates: string;
   note: string;
   path: LatLng[];
+  /** A main army's march, drawn heavier so it can be followed through the rest */
+  main?: boolean;
   /** A name for where the route begins, shown beside its start; a line break as "\n" */
   start?: string;
   startLabel?: LabelSide;
@@ -121,7 +126,7 @@ const FRENCH_1812: MapSide = { id: "french", label: "Grande Armée", colour: "#2
 // The flanking corps, which fought campaigns of their own under their own commanders
 const PRUSSIAN_1812: MapSide = { id: "prussian", label: "Prussian corps (Riga)", colour: "#2e2b28", dash: "12 4 2 4" };
 const AUSTRIAN_1812: MapSide = { id: "austrian", label: "Austrians and Saxons", colour: "#b4561a", dash: "2 7" };
-const RUSSIAN_1812: MapSide = { id: "russian", label: "Russian armies", colour: "#2f6b3a", dash: "8 6" };
+const RUSSIAN_1812: MapSide = { id: "russian", label: "Russian armies", colour: "#2f6b3a", dash: "8 6", lane: 8 };
 
 /** Each campaign's map */
 export const campaignMaps: Record<string, CampaignMap> = {
@@ -223,6 +228,7 @@ export const campaignMaps: Record<string, CampaignMap> = {
       {
         side: "french",
         name: "The Grande Armée marches on Moscow",
+        main: true,
         dates: "24 June – 14 September 1812",
         note: "Gathered in East Prussia and the Duchy of Warsaw, the main army crossed the Niemen at Kovno on 24 June, then marched through Vilna and Vitebsk to Smolensk, and up the old post road past Vyazma to Borodino and Moscow.",
         start: "Crosses the Niemen\n24 June",
@@ -247,6 +253,7 @@ export const campaignMaps: Record<string, CampaignMap> = {
       {
         side: "french",
         name: "The retreat from Moscow",
+        main: true,
         dates: "19 October – 14 December 1812",
         note: "South to Maloyaroslavets, then, turned back, onto the ruined road by Borodino, Vyazma, Smolensk and Krasnoi, across the Berezina and back to the Niemen.",
         path: [

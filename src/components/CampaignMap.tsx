@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import type * as Leaflet from "leaflet";
 import { Text, UnstyledButton } from "@mantine/core";
 import { isPlanned, scheduleIn } from "@/data/battles";
-import { battlePlaces, campaignMaps, type LabelSide, type LatLng, type MapRoute } from "@/data/battles/geo";
+import { battlePlaces, campaignMaps, type LabelSide, type LatLng, type MapRoute, type MapSide } from "@/data/battles/geo";
 import { battleHref } from "@/lib/forces";
 
 // A campaign's theatre on a map, as on Fleet Ledger's war pages: each battle a marked, labelled point
@@ -35,10 +35,52 @@ const OFFSET: Record<LabelSide, [number, number]> = {
   right: [8, 0],
 };
 
-/** The bearing of a segment on a Web Mercator map, in degrees clockwise from north */
-function bearing(from: LatLng, to: LatLng): number {
-  const y = (lat: number) => Math.log(Math.tan(Math.PI / 4 + (lat * Math.PI) / 360));
-  return (Math.atan2(((to[1] - from[1]) * Math.PI) / 180, y(to[0]) - y(from[0])) * 180) / Math.PI;
+type Px = { x: number; y: number };
+
+/** A line moved d pixels to the right of its direction of travel, its corners mitred */
+function offsetLine(pts: Px[], d: number): [number, number][] {
+  const normals = pts.slice(1).map((p, i) => {
+    const dx = p.x - pts[i].x;
+    const dy = p.y - pts[i].y;
+    const len = Math.hypot(dx, dy) || 1;
+    return [-dy / len, dx / len];
+  });
+  return pts.map((p, i) => {
+    const a = normals[Math.max(0, i - 1)];
+    const b = normals[Math.min(normals.length - 1, i)];
+    let nx = a[0] + b[0];
+    let ny = a[1] + b[1];
+    const len = Math.hypot(nx, ny) || 1;
+    nx /= len;
+    ny /= len;
+    const cos = Math.max(0.5, nx * b[0] + ny * b[1]);
+    return [p.x + (nx * d) / cos, p.y + (ny * d) / cos];
+  });
+}
+
+/** Where along a line, in pixels, to put its chevrons every `every` pixels, and its arrowhead at the end;
+ * each with its heading in degrees clockwise from up */
+function chevrons(pts: [number, number][], every: number): { at: [number, number]; angle: number; end?: boolean }[] {
+  const heading = (a: [number, number], b: [number, number]) => (Math.atan2(b[0] - a[0], a[1] - b[1]) * 180) / Math.PI;
+  const lengths = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1]));
+  const total = lengths.reduce((a, b) => a + b, 0);
+  const out: { at: [number, number]; angle: number; end?: boolean }[] = [];
+  // Spread evenly, none too near either end
+  const count = Math.floor((total - 40) / every);
+  const gap = count > 0 ? (total - 40) / (count + 1) : 0;
+  let seg = 0;
+  let done = 0;
+  for (let k = 1; k <= count; k++) {
+    const want = 20 + gap * k;
+    while (seg < lengths.length - 1 && done + lengths[seg] < want) done += lengths[seg++];
+    const t = lengths[seg] ? (want - done) / lengths[seg] : 0;
+    const a = pts[seg];
+    const b = pts[seg + 1];
+    out.push({ at: [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t], angle: heading(a, b) });
+  }
+  const n = pts.length;
+  out.push({ at: pts[n - 1], angle: heading(pts[n - 2], pts[n - 1]), end: true });
+  return out;
 }
 
 function escape(s: string): string {
@@ -47,8 +89,8 @@ function escape(s: string): string {
 
 // A battle's mark is sized by the men engaged, against the largest battle of its campaign: by the square
 // root, so a skirmish still shows beside a Borodino
-const SMALLEST = 22;
-const LARGEST = 48;
+const SMALLEST = 20;
+const LARGEST = 44;
 const markSize = (engaged: number, most: number) =>
   Math.round(SMALLEST + (LARGEST - SMALLEST) * Math.sqrt(Math.min(1, engaged / most)));
 
@@ -220,22 +262,48 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       const routePopup = (r: MapRoute) =>
         `<div class="map-pop"><strong>${escape(r.name)}</strong><div class="map-pop-date">${escape(r.dates)}</div><p>${escape(r.note)}</p></div>`;
 
+      // Each route is drawn once and laid out afresh at every zoom (layout, below)
+      const drawn: {
+        route: MapRoute;
+        side: MapSide;
+        lines: Leaflet.Polyline[];
+        start: Leaflet.CircleMarker;
+        marks: Leaflet.LayerGroup;
+      }[] = [];
       for (const route of data.routes) {
         const side = sideOf.get(route.side)!;
         const group = routeGroups.get(route.side)!;
-        // A wide clear line under each route, so it's easy to tap
-        L.polyline(route.path, { color: side.colour, weight: 14, opacity: 0, interactive: true })
-          .bindPopup(routePopup(route))
-          .addTo(group);
-        L.polyline(route.path, {
-          color: side.colour,
-          weight: 3,
-          opacity: 0.85,
-          dashArray: side.dash,
-          lineCap: "round",
-          lineJoin: "round",
-          interactive: false,
-        }).addTo(group);
+        const lines: Leaflet.Polyline[] = [];
+        // A main army's march is drawn heavier, edged in parchment, so it can be followed through the rest
+        if (route.main) {
+          lines.push(
+            L.polyline(route.path, {
+              color: "#fbf6e9",
+              weight: 8,
+              opacity: 0.85,
+              lineCap: "round",
+              lineJoin: "round",
+              interactive: false,
+            }).addTo(group)
+          );
+        }
+        lines.push(
+          L.polyline(route.path, {
+            color: side.colour,
+            weight: route.main ? 4.5 : 3,
+            opacity: route.main ? 0.95 : 0.85,
+            dashArray: side.dash,
+            lineCap: "round",
+            lineJoin: "round",
+            interactive: false,
+          }).addTo(group)
+        );
+        // A wide clear line over each route, so it's easy to tap
+        lines.push(
+          L.polyline(route.path, { color: side.colour, weight: 14, opacity: 0, interactive: true })
+            .bindPopup(routePopup(route))
+            .addTo(group)
+        );
         // Where it begins: a dot in the side's colour, named where the data names it
         const start = L.circleMarker(route.path[0], {
           radius: 4.5,
@@ -257,20 +325,46 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
           });
         }
         start.addTo(group);
-        const end = route.path[route.path.length - 1];
-        const before = route.path[route.path.length - 2];
-        // Its head stops just short of where the route ends, clear of the battle or town there
-        L.marker(end, {
-          interactive: false,
-          keyboard: false,
-          icon: L.divIcon({
-            className: "map-arrow",
-            iconSize: [16, 16],
-            iconAnchor: [8, 8],
-            html: `<svg width="16" height="16" viewBox="0 0 14 14" style="transform: rotate(${bearing(before, end)}deg) translateY(12px)"><path d="M7 1 L12.5 12 L7 9 L1.5 12 Z" fill="${side.colour}" stroke="#fbf6e9" stroke-width="1"/></svg>`,
-          }),
-        }).addTo(group);
+        drawn.push({ route, side, lines, start, marks: L.layerGroup().addTo(group) });
       }
+
+      // Lay the routes out for the map's zoom. Each runs a few pixels to the right of its direction of travel
+      // (further for a side given a wider lane), so an advance and a retreat along the same road, or two
+      // armies on it, run side by side instead of on top of each other; and chevrons along it, at a steady
+      // spacing on screen, show which way it went, with an arrowhead where it ends
+      const layout = () => {
+        for (const { route, side, lines, start, marks } of drawn) {
+          const pts = offsetLine(
+            route.path.map((p) => map!.latLngToLayerPoint(p)),
+            side.lane ?? 3
+          );
+          const latlngs = pts.map((p) => map!.layerPointToLatLng(p));
+          for (const line of lines) line.setLatLngs(latlngs);
+          start.setLatLng(latlngs[0]);
+          marks.clearLayers();
+          for (const c of chevrons(pts, route.main ? 80 : 100)) {
+            const end = c.end;
+            const size = end ? 16 : 12;
+            marks.addLayer(
+              L.marker(map!.layerPointToLatLng(c.at), {
+                interactive: false,
+                keyboard: false,
+                icon: L.divIcon({
+                  className: "map-arrow",
+                  iconSize: [size, size],
+                  iconAnchor: [size / 2, size / 2],
+                  // The head stops just short of where the route ends, clear of the battle or town there
+                  html: end
+                    ? `<svg width="16" height="16" viewBox="0 0 14 14" style="transform: rotate(${c.angle}deg) translateY(12px)"><path d="M7 1 L12.5 12 L7 9 L1.5 12 Z" fill="${side.colour}" stroke="#fbf6e9" stroke-width="1"/></svg>`
+                    : `<svg width="12" height="12" viewBox="0 0 12 12" style="transform: rotate(${c.angle}deg)"><path d="M2.5 8.5 L6 4 L9.5 8.5" fill="none" stroke="#fbf6e9" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 8.5 L6 4 L9.5 8.5" fill="none" stroke="${side.colour}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+                }),
+              })
+            );
+          }
+        }
+      };
+      layout();
+      map.on("zoomend viewreset", layout);
       layers.clear();
       routeGroups.forEach((g, id) => layers.set(id, g));
 
@@ -370,9 +464,9 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
     routeLayers.current.forEach((group, id) => {
       if (hidden.has(id)) group.remove();
       else {
-        // Back under the battles and towns, where it was drawn
+        // Its lines in the order they were drawn, the parchment edge under the colour
         group.addTo(map);
-        group.eachLayer((l) => (l as Leaflet.Path).bringToBack?.());
+        group.eachLayer((l) => (l as Leaflet.Path).bringToFront?.());
       }
     });
   }, [hidden, ready]);
