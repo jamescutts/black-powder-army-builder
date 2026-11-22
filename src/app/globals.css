@@ -2512,8 +2512,74 @@ a.app-list-row:active {
 }
 
 .campaign-map-canvas[data-sparse] .map-label-soon,
-.campaign-map-canvas[data-sparse] .map-label-town {
+.campaign-map-canvas[data-sparse] .map-label-town,
+.campaign-map-canvas[data-sparse] .map-label-city,
+.campaign-map-canvas[data-sparse] .map-region-province,
+.campaign-map-canvas[data-sparse] .map-region-sea {
   display: none;
+}
+
+.leaflet-tooltip.map-label-start {
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
+  font-style: italic;
+  font-weight: 700;
+  color: #2b4a7e;
+  background: rgba(251, 246, 233, 0.85);
+}
+
+.leaflet-tooltip.map-label-city {
+  font-size: 12.5px;
+  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  color: var(--mantine-color-brown-9);
+  background: none;
+  text-shadow: 0 0 3px #f7f1e1, 0 0 3px #f7f1e1, 0 0 2px #f7f1e1;
+}
+
+/* States, provinces and seas, lettered across the map as on an old atlas */
+.map-region {
+  pointer-events: none;
+}
+
+.map-region span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-family: var(--mantine-font-family);
+  text-transform: uppercase;
+  text-shadow: 0 0 4px #f3ecd8, 0 0 2px #f3ecd8;
+}
+
+.map-region-state span {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  color: rgba(112, 22, 38, 0.62);
+}
+
+.map-region-province span {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: rgba(77, 44, 17, 0.55);
+}
+
+.map-region-sea span {
+  font-size: 12.5px;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.12em;
+  color: rgba(43, 74, 126, 0.7);
+  text-shadow: none;
+}
+
+@media (max-width: 47.99em) {
+  .map-region-state span {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+  }
 }
 
 .campaign-map .leaflet-tile-pane {

@@ -49,6 +49,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
   useEffect(() => {
     if (!data || !holder.current) return;
     let map: Leaflet.Map | undefined;
+    let resize: ResizeObserver | undefined;
     let cancelled = false;
     const layers = routeLayers.current;
 
@@ -58,12 +59,33 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       mapRef.current = map;
       const battles = scheduleIn(campaignId);
       const placed = battles.filter((b) => battlePlaces[b.id]);
-      // The view first: Leaflet can't draw a line on a map with none
-      const points: LatLng[] = [...placed.map((b) => battlePlaces[b.id].at), ...data.places.map((p) => p.at)];
-      map.fitBounds(L.latLngBounds(points), { paddingTopLeft: [24, 24], paddingBottomRight: [24, 56] });
+      // The view first, as Leaflet can't draw a line on a map with none: the battles, and the towns and
+      // frontiers around them too where there's room
+      const wide = holder.current.clientWidth >= 640;
+      const points: LatLng[] = [
+        ...placed.map((b) => battlePlaces[b.id].at),
+        ...(wide ? data.places.map((p) => p.at) : []),
+        ...data.routes.filter((r) => r.start).map((r) => r.path[0]),
+      ];
+      const bounds = L.latLngBounds(points);
+      let fitZoom = 0;
+      const fit = () => {
+        map!.fitBounds(bounds, { paddingTopLeft: [40, 24], paddingBottomRight: [24, 72], animate: false });
+        fitZoom = map!.getZoom();
+      };
+      fit();
+      // Fit again when its box settles or changes size (the page's layout, a turned phone), until it's
+      // been moved by hand
+      let moved = false;
+      map.on("dragstart", () => (moved = true));
+      holder.current.querySelector(".leaflet-control-zoom")?.addEventListener("click", () => (moved = true));
+      resize = new ResizeObserver(() => {
+        map!.invalidateSize({ animate: false });
+        if (!moved) fit();
+      });
+      resize.observe(holder.current);
       // On a narrow map the whole theatre is too small for every name: until it's zoomed in, only the
-      // battles with forces keep theirs
-      const fitZoom = map.getZoom();
+      // battles with forces and the states keep theirs
       const sparse = () => {
         const narrow = map!.getSize().x < 640 && map!.getZoom() < fitZoom + 0.75;
         holder.current?.toggleAttribute("data-sparse", narrow);
@@ -75,6 +97,45 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
         maxZoom: 9,
         attribution: "Tiles &copy; Esri, US National Park Service",
       }).addTo(map);
+
+      // The frontiers of the time, in their own pane under the routes; the names of states, provinces and
+      // seas under those
+      map.createPane("borders").style.zIndex = "390";
+      const regionPane = map.createPane("regions");
+      regionPane.style.zIndex = "380";
+      regionPane.style.pointerEvents = "none";
+      const borderRenderer = L.svg({ pane: "borders" });
+      for (const border of data.borders) {
+        L.polyline(border, {
+          renderer: borderRenderer,
+          color: "#a62b3c",
+          weight: 7,
+          opacity: 0.16,
+          lineJoin: "round",
+          interactive: false,
+        }).addTo(map);
+        L.polyline(border, {
+          renderer: borderRenderer,
+          color: "#701626",
+          weight: 1.6,
+          opacity: 0.75,
+          dashArray: "7 3 1.5 3",
+          lineJoin: "round",
+          interactive: false,
+        }).addTo(map);
+      }
+      for (const region of data.regions) {
+        L.marker(region.at, {
+          pane: "regions",
+          interactive: false,
+          keyboard: false,
+          icon: L.divIcon({
+            className: `map-region map-region-${region.kind}`,
+            iconSize: [0, 0],
+            html: `<span>${escape(region.name)}</span>`,
+          }),
+        }).addTo(map);
+      }
 
       const sideOf = new Map(data.sides.map((s) => [s.id, s]));
       const routeGroups = new Map<string, Leaflet.LayerGroup>();
@@ -99,6 +160,27 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
           lineJoin: "round",
           interactive: false,
         }).addTo(group);
+        // Where it begins: a dot in the side's colour, named where the data names it
+        const start = L.circleMarker(route.path[0], {
+          radius: 4.5,
+          color: "#fbf6e9",
+          weight: 1.5,
+          fillColor: side.colour,
+          fillOpacity: 1,
+          interactive: false,
+        });
+        if (route.start) {
+          const at = route.startLabel ?? "right";
+          // Beside the dot and a little below, clear of the line leaving it
+          const below = at === "left" || at === "right" ? 12 : 0;
+          start.bindTooltip(escape(route.start).replace(/\n/g, "<br>"), {
+            permanent: true,
+            direction: at,
+            offset: [OFFSET[at][0], OFFSET[at][1] + below],
+            className: "map-label map-label-start",
+          });
+        }
+        start.addTo(group);
         const end = route.path[route.path.length - 1];
         const before = route.path[route.path.length - 2];
         // Its head stops just short of where the route ends, clear of the battle or town there
@@ -116,13 +198,13 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
       layers.clear();
       routeGroups.forEach((g, id) => layers.set(id, g));
 
-      // Towns, for bearings
+      // Towns, for bearings, the great cities larger
       for (const place of data.places) {
         L.circleMarker(place.at, {
-          radius: 2.5,
-          color: "#4d3e2b",
-          weight: 1,
-          fillColor: "#4d3e2b",
+          radius: place.city ? 3.5 : 2.5,
+          color: place.city ? "#fbf6e9" : "#4d3e2b",
+          weight: place.city ? 1.5 : 1,
+          fillColor: place.city ? "#33200f" : "#4d3e2b",
           fillOpacity: 1,
           interactive: false,
         })
@@ -130,7 +212,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
             permanent: true,
             direction: place.label ?? "right",
             offset: OFFSET[place.label ?? "right"],
-            className: "map-label map-label-town",
+            className: place.city ? "map-label map-label-city" : "map-label map-label-town",
           })
           .addTo(map);
       }
@@ -182,6 +264,7 @@ export function CampaignMap({ campaignId }: { campaignId: string }) {
 
     return () => {
       cancelled = true;
+      resize?.disconnect();
       map?.remove();
       mapRef.current = null;
       layers.clear();
