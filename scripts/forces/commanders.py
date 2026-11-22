@@ -159,6 +159,8 @@ FORCE_PORTRAITS: dict[str, str] = {
     "eckau-lowis": "lowis", "mesoten-prussian-corps": "yorck", "dahlenkirchen-lowis": "lowis",
     "mir-rozniecki": "rozniecki", "mir-platov": "platov", "romanov-przebendowski": "latour_maubourg", "romanov-platov": "platov",
     "kobrin-tormasov": "tormasov", "gorodechno-bianchi": "bianchi", "gorodechno-lambert": "lambert",
+    "gorodechno-kamensky": "kamensky", "gorodechno-nazimov": "nazimov", "gorodechno-udom": "udom",
+    "gorodechno-frimont": "frimont", "gorodechno-funck": "funck", "gorodechno-lecoq": "lecoq",
     # Found on the second search
     "quatre-bras-bachelu": "bachelu", "waterloo-bachelu": "bachelu", "quatre-bras-pire": "pire",
     "waterloo-marcognet": "marcognet", "waterloo-durutte": "durutte", "waterloo-simmer": "simmer",
@@ -196,6 +198,16 @@ PORTRAITS.update({
     "kuteinikov": portrait("Kuteinikov D E.jpg", "Dmitry Kuteinikov", "George Dawe", focus="50% 18%"),
     "tormasov": portrait("Tormasov.jpg", "Alexander Tormasov", "workshop of George Dawe", focus="50% 18%"),
     "lambert": portrait("Lambert Karl Osipovich.jpg", "Karl de Lambert", "workshop of George Dawe", focus="50% 18%"),
+})
+
+# Gorodechno's divisional commanders
+PORTRAITS.update({
+    "kamensky": portrait("Kamensky Sergey Mihailovich.jpg", "Count Sergei Kamensky", "unknown artist", focus="50% 18%"),
+    "nazimov": portrait("Nazimov Fyodor Viktorovich.jpg", "Fyodor Nazimov", "workshop of George Dawe", focus="50% 18%"),
+    "udom": portrait("Udom 2 Evstafy Evstafyevich.jpg", "Yevstafy Udom", "George Dawe", focus="50% 18%"),
+    "frimont": portrait("Johann Frimont.jpg", "Johann Maria Philipp Frimont", "Josef Kriehuber", "1832", "50% 16%"),
+    "funck": portrait("Karl Wilhelm Ferdinand von Funck.jpg", "Karl Wilhelm Ferdinand von Funck", "Anton Graff", "1804", "50% 18%"),
+    "lecoq": portrait("Karl Christian Erdmann von Le Coq.jpg", "Karl Christian Erdmann von Le Coq", "M. Knäbig", focus="50% 18%"),
 })
 
 # The army lists' other named commanders, for the roster's head
@@ -249,7 +261,7 @@ NAMED_COMMANDERS = {
     "ru-cmd-platov": "platov", "ru-cmd-kutuzov": "kutuzov", "ru-cmd-barclay": "barclay", "ru-cmd-bagration": "bagration", "ru-cmd-raevsky": "raevsky",
     "ru-cmd-eugene-wurttemberg": "eugen_wurttemberg", "ru-cmd-denisov": "denisov", "ru-cmd-vorontsov": "vorontsov",
     "ru-cmd-stroganov": "stroganov", "ru-cmd-kutaisov": "kutaisov", "ru-cmd-bogdanovsky": "bogdanovsky",
-    "sax-cmd-reynier": "reynier", "wp-cmd-von-ochs": "ochs", "pr06-cmd-brunswick": "brunswick_1806",
+    "sax-cmd-reynier": "reynier", "sax-cmd-lecoq": "lecoq", "wp-cmd-von-ochs": "ochs", "pr06-cmd-brunswick": "brunswick_1806",
     "pr06-cmd-hohenlohe": "hohenlohe", "pr06-cmd-ruchel": "ruchel", "pr06-cmd-kalckreuth": "kalckreuth",
     "pr06-cmd-tauentzien": "tauentzien", "pr06-cmd-louisferdinand": "louis_ferdinand",
 }

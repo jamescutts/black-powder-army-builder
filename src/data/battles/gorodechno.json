@@ -418,7 +418,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Johann_Frimont.jpg/250px-Johann_Frimont.jpg",
+        "title": "Johann Maria Philipp Frimont",
+        "artist": "Josef Kriehuber",
+        "page": "https://commons.wikimedia.org/wiki/File:Johann_Frimont.jpg",
+        "focus": "50% 16%",
+        "date": "1832"
+      }
     },
     {
       "id": "gorodechno-lecoq",
@@ -539,7 +547,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Karl_Christian_Erdmann_von_Le_Coq.jpg/250px-Karl_Christian_Erdmann_von_Le_Coq.jpg",
+        "title": "Karl Christian Erdmann von Le Coq",
+        "artist": "M. Knäbig",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Christian_Erdmann_von_Le_Coq.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "gorodechno-funck",
@@ -628,7 +643,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Karl_Wilhelm_Ferdinand_von_Funck.jpg/250px-Karl_Wilhelm_Ferdinand_von_Funck.jpg",
+        "title": "Karl Wilhelm Ferdinand von Funck",
+        "artist": "Anton Graff",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Wilhelm_Ferdinand_von_Funck.jpg",
+        "focus": "50% 18%",
+        "date": "1804"
+      }
     },
     {
       "id": "gorodechno-kamensky",
@@ -817,7 +840,14 @@
             "variant": "Staff rating 7"
           }
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Kamensky_Sergey_Mihailovich.jpg/250px-Kamensky_Sergey_Mihailovich.jpg",
+        "title": "Count Sergei Kamensky",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Kamensky_Sergey_Mihailovich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "gorodechno-nazimov",
@@ -964,7 +994,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Nazimov_Fyodor_Viktorovich.jpg/250px-Nazimov_Fyodor_Viktorovich.jpg",
+        "title": "Fyodor Nazimov",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Nazimov_Fyodor_Viktorovich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "gorodechno-udom",
@@ -1132,7 +1169,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Udom_2_Evstafy_Evstafyevich.jpg/250px-Udom_2_Evstafy_Evstafyevich.jpg",
+        "title": "Yevstafy Udom",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Udom_2_Evstafy_Evstafyevich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "gorodechno-lambert",
