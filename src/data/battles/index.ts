@@ -300,7 +300,11 @@ const allCampaigns: HistoricalCampaign[] = [
 ];
 
 // Each campaign with its chief commanders' portraits, written by scripts/forces/commanders.py
-export const campaigns: HistoricalCampaign[] = allCampaigns.map((c) => ({
+// Campaigns hidden until they're ready to show (paintings and forces still to come), with their battles; their
+// data stays here. Remove an id to show it.
+const HIDDEN_CAMPAIGNS = new Set(["ulm-austerlitz-1805", "poland-1807", "danube-1809"]);
+
+export const campaigns: HistoricalCampaign[] = allCampaigns.filter((c) => !HIDDEN_CAMPAIGNS.has(c.id)).map((c) => ({
   ...c,
   commanders: (campaignCommanders as Record<string, HistoricalCampaign["commanders"]>)[c.id],
 }));
@@ -453,7 +457,7 @@ const allBattles: HistoricalBattle[] = [
   wavre as HistoricalBattle,
 ];
 
-const schedule = allBattles;
+const schedule = allBattles.filter((b) => !HIDDEN_CAMPAIGNS.has(b.campaign));
 
 // Only the forces whose army lists this build shows (community lists can be switched off)
 const shown = schedule.map((b) => ({ ...b, forces: b.forces.filter((f) => getNation(f.nationId)) }));
