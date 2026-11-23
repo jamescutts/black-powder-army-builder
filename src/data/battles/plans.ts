@@ -58,7 +58,29 @@ export const battlePlans: Record<string, BattlePlan[]> = {
       note: "Both days of the battle: the positions of the 20th coloured light, of the 21st dark; French blue, allies red. North is at the top.",
     },
     {
-      label: "Brügner and Jäck, c. 1824",
+      label: "French plan, 1813",
+      title: "Bataille de Wurtchen et tableau des opérations militaires jusqu'au mois d'octobre (Campagne de 1813), no. 2",
+      maker: "Published in Paris by Magimel, Goujon and Bance",
+      date: "1813",
+      collection: "Bibliothèque nationale de France",
+      page: "https://commons.wikimedia.org/wiki/File:Bataille_de_Wurtchen_et_tableau_des_op%C3%A9rations_militaires_jusqu%27au_mois_d%27octobre_(campagne_de_1813),_n%C2%B0_2_-_btv1b53047128n_(4_of_7).jpg",
+      licence: "Public domain",
+      src: commons(
+        "9/9d/Bataille_de_Wurtchen_et_tableau_des_op%C3%A9rations_militaires_jusqu%27au_mois_d%27octobre_%28campagne_de_1813%29%2C_n%C2%B0_2_-_btv1b53047128n_%284_of_7%29.jpg"
+      ),
+      width: 6909,
+      height: 5861,
+      preview: {
+        src: commons(
+          "thumb/9/9d/Bataille_de_Wurtchen_et_tableau_des_op%C3%A9rations_militaires_jusqu%27au_mois_d%27octobre_%28campagne_de_1813%29%2C_n%C2%B0_2_-_btv1b53047128n_%284_of_7%29.jpg/1920px-Bataille_de_Wurtchen_et_tableau_des_op%C3%A9rations_militaires_jusqu%27au_mois_d%27octobre_%28campagne_de_1813%29%2C_n%C2%B0_2_-_btv1b53047128n_%284_of_7%29.jpg"
+        ),
+        width: 1920,
+      },
+      crop: [590, 1030, 3160, 3140],
+      note: "The French view, published the year of the battle: the inset plan of the whole field from the corner of a sheet of the 1813 campaign, Bautzen and the Spree on the left, Würschen, which gave the battle its French name, on the right, with both armies' positions in colour.",
+    },
+    {
+      label: "Brügner and Jäck, c. 1824 (right sheet)",
       title: "Die Schlacht von Bautzen den 21ten May 1813",
       maker: "Drawn by Carl Brügner, engraved by Carl Jäck, printed by J. D. Hampe",
       date: "c. 1824",
@@ -73,7 +95,7 @@ export const battlePlans: Record<string, BattlePlan[]> = {
         width: 1280,
       },
       crop: [370, 790, 2910, 6930],
-      note: "The second day, with the troops' positions in colour. Only the right-hand sheet of the two survives in this copy: the northern flank, from Brösa and Gotta south to Gröditz, where Ney and Lauriston came round the allied right, with an inset of the country round Königswartha. North-west is at the top.",
+      note: "The second day, with the troops' positions in colour. Only the right-hand sheet of the two is in this copy, and the left, with Bautzen itself, isn't to be found online: the northern flank, from Brösa and Gotta south to Gröditz, where Ney and Lauriston came round the allied right, with an inset of the country round Königswartha. North-west is at the top.",
     },
   ],
 };
