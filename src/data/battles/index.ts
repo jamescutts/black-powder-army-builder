@@ -302,7 +302,7 @@ const allCampaigns: HistoricalCampaign[] = [
 // Each campaign with its chief commanders' portraits, written by scripts/forces/commanders.py
 // Campaigns hidden until they're ready to show (paintings and forces still to come), with their battles; their
 // data stays here. Remove an id to show it.
-const HIDDEN_CAMPAIGNS = new Set(["ulm-austerlitz-1805", "poland-1807", "danube-1809"]);
+const HIDDEN_CAMPAIGNS = new Set(["ulm-austerlitz-1805", "jena-1806", "poland-1807", "danube-1809"]);
 
 export const campaigns: HistoricalCampaign[] = allCampaigns.filter((c) => !HIDDEN_CAMPAIGNS.has(c.id)).map((c) => ({
   ...c,
