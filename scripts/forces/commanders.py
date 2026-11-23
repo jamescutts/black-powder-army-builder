@@ -675,7 +675,7 @@ FORCE_PORTRAITS.update({
     "hanau-sebastiani": "sebastiani", "katzbach-marchand": "marchand", "reichenbach-reinforcements": "miloradovich",
     # Found for 1813
     "bautzen-puthod": "puthod", "plagwitz-puthod": "puthod",
-    "bautzen-beaumont": "beaumont", "dennewitz-beaumont": "beaumont", "luckau-cavalry": "beaumont",
+    "bautzen-beaumont": "beaumont", "dennewitz-beaumont": "beaumont", "luckau-cavalry": "beaumont", "wartenburg-beaumont": "beaumont",
     "bautzen-delmas": "delmas", "katzbach-delmas": "delmas",
     "bautzen-franquemont": "franquemont", "dennewitz-franquemont": "franquemont", "wartenburg-franquemont": "franquemont",
     "bautzen-charpentier": "charpentier", "hanau-charpentier": "charpentier", "katzbach-charpentier": "charpentier",
