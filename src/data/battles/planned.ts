@@ -203,8 +203,6 @@ export const altenburg = planned("altenburg", "Altenburg", "28 September 1813", 
   "Thielmann's and Platov's raiders surprised Lefebvre-Desnouettes's cavalry at Altenburg behind the French lines and drove it back with heavy loss.");
 export const liebertwolkwitz = planned("liebertwolkwitz", "Liebertwolkwitz", "14 October 1813", L,
   "Two days before Leipzig, Murat's cavalry met Wittgenstein's and Pahlen's on the open plain south of the city in the greatest cavalry battle of the wars, charge and counter-charge through the day with nothing decided.");
-export const mockernLeipzig = planned("mockern-leipzig", "Möckern (Leipzig)", "16 October 1813", L,
-  "North of Leipzig, while the great battle raged at Wachau, Yorck's Prussian corps stormed Marmont's line at Möckern, taking and losing the village again and again until the Prussian cavalry broke through; the fiercest single fight of the battle.");
 export const torgau = planned("torgau", "Siege of Torgau", "18 October 1813 – 10 January 1814", L,
   "The Elbe fortress, crowded with sick and wounded from Leipzig and swept by typhus, was besieged by Tauentzien's Prussians and surrendered in January.");
 export const hamburg = planned("hamburg", "Siege of Hamburg", "3 December 1813 – 27 May 1814", L,
@@ -348,13 +346,6 @@ luneburg.art = {
   "title": "The Fight at Lüneburg, 2 April 1813",
   "artist": "F. A. Frenzel",
   "page": "https://commons.wikimedia.org/wiki/File:L%C3%BCneburg_Schlacht_1813.jpg"
-};
-mockernLeipzig.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png/960px-Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
-  "title": "The Brandenburg Hussars' Charge at Möckern",
-  "artist": "Richard Knötel",
-  "date": "1901",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern._October_16,_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png"
 };
 rippach.art = {
   "src": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Death_of_Marshal_Bessieres.png",

@@ -334,6 +334,13 @@
       "title": "The Death of Duroc",
       "artist": "unknown artist",
       "page": "https://commons.wikimedia.org/wiki/File:BOYER_935_-_Mort_de_Duroc.jpg"
+    },
+    "mockern-leipzig": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png/960px-Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
+      "title": "The Brandenburg Hussars' Charge at Möckern",
+      "artist": "Richard Knötel",
+      "date": "1901",
+      "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern._October_16,_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png"
     }
   },
   "campaigns": {

@@ -2009,6 +2009,135 @@ REICHENBACH = battle(
     [RB_GUARD, RB_DURUTTE, RB_SAXONS, RB_LATOUR, RB_LESSING, RB_EUGEN, RB_CAVALRY], [], alliances=())
 
 
+# ================================================================ Möckern (Leipzig), 16 October 1813
+
+ML_FR = {"label": "French Forces, Battle of Möckern, 16 October 1813 (Nafziger Collection 813JJG)", "url": NAF + "813JJG.pdf"}
+ML_PR = {"label": "1st Prussian Corps, after the Battle of Möckern, 17 October 1813 (Nafziger Collection 813JJH)", "url": NAF + "813JJH.pdf"}
+ML_NOTE = "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives."
+MARINES = ("Its marine regiments were sailors and naval gunners of the fleet's artillery, brought inland in 1813; they fought "
+           "well, and are shown as Line, the list's Veteran upgrade would suit them.")
+ML_WEAK = "Its battalions were down to three or four hundred men; they are shown at full size, and the list's Small upgrade would suit many of them."
+
+
+def marine(name, n):
+    return regt(name, [u("fr-line-infantry", f"{i}/{name}") for i in range(1, n + 1)])
+
+
+ML_COMPANS = force(
+    "mockern-leipzig-compans", FR, "Compans's Division", "20th Division, VI Corps (Marmont)", "French",
+    "Marmont's left, round Möckern itself, where the village by the Elster was taken and lost again and again through the afternoon; Compans was wounded, and the marines of his division fought house by house until the Prussian cavalry broke through.",
+    [bde("fr-infantry-brigade", "Pelleport's Brigade", "Gén. de Brigade Pelleport",
+         regiments=[bn_list("fr-light-infantry", "32nd Léger", ["2", "3"]), marine("1st Marine Regiment", 5)]),
+     bde("fr-infantry-brigade", "Joubert's Brigade", "Gén. de Brigade Joubert",
+         regiments=[marine("3rd Marine Regiment", 3), provisional("20th Provisional Line", ["5/66th Line", "3/122nd Line"]),
+                    provisional("25th Provisional Line", ["3/47th Line", "3/86th Line"])]),
+     foot("16/5th Foot Artillery", "10/8th Foot Artillery"),
+     bde("fr-artillery-brigade", "VI Corps Reserve Artillery",
+         units=[u("fr-heavy-foot-arty", "26/5th Foot Artillery (12-pdrs)"), u("fr-heavy-foot-arty", "7/9th Foot Artillery (12-pdrs)"),
+                u("fr-foot-arty", "3/5th Foot Artillery"), u("fr-horse-arty", "1/1st Horse Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Compans")],
+    notes=[LIST_FR, ML_NOTE, MARINES, ML_WEAK, TWO_BATTERIES,
+           "Marmont's corps reserve artillery, which formed the great battery between Möckern and Lindenthal, is with this division: two 12-pdr, a 6-pdr and a horse battery. Its two 12-pdr batteries, where the list allows one for the division's battalions, and its horse battery with no cavalry to allow it, show as historical departures."])
+ML_COMPANS["missing"] = [{"name": "3/4th Horse Artillery", "reason": "The corps reserve's second horse battery, more than the list takes."}]
+
+ML_LAGRANGE = force(
+    "mockern-leipzig-lagrange", FR, "Lagrange's Division", "21st Division, VI Corps (Marmont)", "French",
+    "Marmont's centre, on the open ground east of Möckern, where its marines and the Spanish Joseph Napoleon battalion stood in square under Yorck's guns and charges until the line gave way in the evening.",
+    [bde("fr-infantry-brigade", "Jamin's Brigade", "Gén. de Brigade Jamin",
+         regiments=[bn_list("fr-light-infantry", "37th Léger", ["1", "2", "3", "4"]), marine("4th Marine Regiment", 3),
+                    regt("Joseph Napoleon Regiment", [u("fr-spanish-infantry", "1/Joseph Napoleon Regiment")])]),
+     bde("fr-infantry-brigade", "Buquet's Brigade", "Gén. de Brigade Buquet", regiments=[marine("2nd Marine Regiment", 6)]),
+     foot("10/4th Foot Artillery", "18/5th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Lagrange")],
+    notes=[LIST_FR, ML_NOTE, MARINES, ML_WEAK,
+           "The Joseph Napoleon Regiment, raised from Spanish prisoners, is the list's Spanish infantry.",
+           "The 2nd Marine Regiment's six battalions, where the list takes five in a regiment, show as a historical departure.", TWO_BATTERIES])
+
+ML_FRIEDERICHS = force(
+    "mockern-leipzig-friederichs", FR, "Friederichs's Division", "22nd Division, VI Corps (Marmont)", "French",
+    "Marmont's right, towards Lindenthal and Wahren, provisional regiments of depot battalions, which held the line beside Lagrange's until it broke.",
+    [bde("fr-infantry-brigade", "Coehorn's Brigade", "Gén. de Brigade Coehorn",
+         regiments=[bn_list("fr-light-infantry", "23rd Léger", ["3", "4"]), provisional("11th Provisional Line", ["4/1st Line", "2/62nd Line"]),
+                    provisional("13th Provisional Line", ["3/14th Line", "4/16th Line"]), bn_list("fr-line-infantry", "15th Line", ["3", "4"])]),
+     bde("fr-infantry-brigade", "Choisy's Brigade", "Gén. de Brigade Choisy",
+         regiments=[provisional("16th Provisional Line", ["6/26th Line", "6/82nd Line"]), bn_list("fr-line-infantry", "70th Line", ["3", "4"]),
+                    bn_list("fr-line-infantry", "121st Line", ["3", "4"])]),
+     foot("14/4th Foot Artillery", "22/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Friederichs")],
+    notes=[LIST_FR, ML_NOTE, CONSCRIPTS, ML_WEAK,
+           "Coehorn's four regiments, where the list's brigade takes three, show as a historical departure.", TWO_BATTERIES])
+
+ML_NORMANN = force(
+    "mockern-leipzig-normann", WT, "Normann's Württembergers", "25th Light Cavalry Brigade, VI Corps (Marmont)", "French",
+    "Marmont's corps cavalry, the 2nd and 4th Württemberg Chevau-légers. Two days later, on the 18th, Normann took the brigade over to the allies in the middle of the battle.",
+    [bde("wt-cavalry-brigade", "Normann's Brigade", "Gen-Maj von Normann",
+         units=[u("wt-chevauleger", "2nd Chevau-légers 'Duke Louis'"), u("wt-chevauleger", "4th Chevau-légers 'King'")])],
+    command=[cmd("wt-div-cmd", "Gen-Maj von Normann")],
+    notes=["Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1813.", ML_NOTE,
+           "Each regiment had four squadrons of about 110 men.", "Cavalry with no infantry brigade to allow it shows as a historical departure."])
+
+ML_DOMBROWSKI = force(
+    "mockern-leipzig-dombrowski", GDW, "Dombrowski's Division", "27th (Polish) Division", "French",
+    "The Polish division on Marmont's right, round Klein-Wiederitzsch and Eutritzsch, which held Langeron's Russians off through the afternoon.",
+    [bde("gdw-infantry-brigade", "Zoltowski's Brigade", "Gén. de Brigade Zoltowski",
+         regiments=[regt("2nd Polish Infantry", bns("gdw-polish-infantry", "2nd Polish", 2)), regt("4th Polish Infantry", bns("gdw-polish-infantry", "4th Polish", 2)),
+                    regt("14th Polish Infantry", bns("gdw-polish-infantry", "14th Polish", 2))]),
+     bde("gdw-cavalry-brigade", "Krukowiecki's Brigade", "Gén. de Brigade Krukowiecki",
+         units=[u("gdw-uhlan", "2nd Uhlans"), u("gdw-chasseur-a-cheval", "4th Chasseurs à Cheval")]),
+     bde("gdw-divisional-artillery", "Foot Artillery", units=[u("gdw-foot-arty", "Polish Foot Battery")]),
+     bde("gdw-reserve-artillery", "Horse Artillery", units=[u("gdw-horse-arty", "1st Polish Horse Battery")])],
+    command=[cmd("gdw-div-cmd", "Gén. de Division Dombrowski")],
+    notes=["Built from A Clash of Eagles' Grand Duchy of Warsaw list, the nearest to 1813.", ML_NOTE,
+           "Nafziger notes that the Prussian General Staff puts the 14th Polish here, though it would have had to be detached from Poniatowski's corps to be present.",
+           "Three regiments in a brigade, where the list takes two, one infantry brigade for its cavalry brigade, where it wants two, and its foot and horse batteries with six battalions, where it wants seven and eight, show as historical departures."])
+
+ML_LORGE = force(
+    "mockern-leipzig-lorge", FR, "Lorge's Light Cavalry", "5th Light Cavalry Division, III Cavalry Corps", "French",
+    "Squadrons of chasseurs sent to Marmont's support, which met the Prussian cavalry's charges as the French line broke in the evening.",
+    [bde("fr-light-cavalry-brigade", "Jacquinot's Brigade", "Gén. de Brigade Jacquinot",
+         units=[u("fr-chasseur-a-cheval", "5th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "10th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "13th Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Merlin's Brigade", "Gén. de Brigade Merlin",
+         units=[u("fr-chasseur-a-cheval", "15th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "21st Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "22nd Chasseurs à Cheval")]),
+     bde("fr-divisional-artillery", "Horse Artillery", units=[u("fr-horse-arty", "Horse Artillery (half battery)", options=["half-battery"])])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Lorge")],
+    notes=[LIST_FR, ML_NOTE, "Most regiments sent only one or two squadrons.", CAV_ONLY])
+
+ML_DELMAS = force(
+    "mockern-leipzig-delmas", FR, "Delmas's Division", "9th Division, III Corps (Souham)", "French",
+    "Part of Souham's corps, marching south from Düben through the fighting on the northern front, which Nafziger lists with Marmont's at Möckern.",
+    [bde("fr-infantry-brigade", "Estève's Brigade", "Gén. de Brigade Estève",
+         regiments=[provisional("2nd Provisional Légère", ["3/2nd Léger", "3/4th Léger"], True), bn_list("fr-line-infantry", "136th Line", ["1", "2", "3"])]),
+     bde("fr-infantry-brigade", "Second Brigade", "",
+         regiments=[bn_list("fr-line-infantry", "138th Line", ["1", "2", "3"]), bn_list("fr-line-infantry", "145th Line", ["1", "2", "3"])]),
+     foot("2/9th Foot Artillery", "11/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Delmas")],
+    notes=[LIST_FR, ML_NOTE, CONSCRIPTS, "Nafziger gives about 4,200 men; the second brigade's commander's name is unclear in his return.", TWO_BATTERIES])
+
+ML_BRAYER = force(
+    "mockern-leipzig-brayer", FR, "Brayer's Division", "8th Division, III Corps (Souham)", "French",
+    "Souham's other division on the northern front, which Nafziger lists with Marmont's at Möckern.",
+    [bde("fr-infantry-brigade", "Fournier's Brigade", "Gén. de Brigade Fournier",
+         regiments=[bn_list("fr-light-infantry", "6th Léger", ["2", "3"]), bn_list("fr-light-infantry", "16th Léger", ["2", "3"]), bn_list("fr-line-infantry", "40th Line", ["3", "4"])]),
+     bde("fr-infantry-brigade", "Bony's Brigade", "Gén. de Brigade Bony",
+         regiments=[bn_list("fr-light-infantry", "28th Léger", ["1", "3"]), bn_list("fr-line-infantry", "22nd Line", ["1", "2", "4"]),
+                    regt("59th and 69th Line", [u("fr-line-infantry", "2/59th Line"), u("fr-line-infantry", "3/59th Line"), u("fr-line-infantry", "3/69th Line"), u("fr-line-infantry", "4/69th Line")])]),
+     foot("10/2nd Foot Artillery", "5/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Brayer")],
+    notes=[LIST_FR, ML_NOTE, CONSCRIPTS, "Nafziger gives about 4,400 men.",
+           "Three light regiments, where the list allows one in a division, show as a historical departure; Bony's 59th and 69th Line, two battalions each, are one regiment here to keep within the list's three.",
+           TWO_BATTERIES])
+
+ML_YORCK = again(WB_YORCK, "mockern-leipzig-yorck",
+                 "Yorck's corps attacked Marmont's line from the north in the early afternoon. Möckern was taken and lost five times; Hünerbein and Steinmetz were wounded and whole battalions shot away, until in the evening Yorck sent in the Brandenburg Hussars and the reserve cavalry, which broke through the French line. The corps lost nearly 8,000 men, a third of its strength, the costliest single fight of the battle.",
+                 [PR_LIST, "After Nafziger's order of battle for Wartenburg, a fortnight before: his return of the corps the day after Möckern shows its battalions merged by the losses there, so it doesn't show the corps as it began the fight."])
+
+MOCKERN_LEIPZIG = battle(
+    "mockern-leipzig", "Möckern (Leipzig)", "16 October 1813",
+    "North of Leipzig, while Napoleon fought the Army of Bohemia at Wachau, Blücher's Army of Silesia came down the Halle road. Marmont, ordered south to join the Emperor, turned back to hold a line from Möckern on the Elster to Lindenthal, with his reserve guns massed in the centre. Yorck's Prussians attacked in the afternoon: Möckern was stormed and retaken five times, his battalions melting under the French guns, until in the evening the Brandenburg Hussars and the reserve cavalry charged through and Marmont's line broke. It cost Yorck a third of his corps, and Marmont nearly as much; to the east Langeron's Russians drove back Dombrowski's Poles.",
+    [ML_FR, ML_PR, WB_PR, {"label": "First day of the battle of Leipzig, 16 October 1813 (History of War)", "url": "https://www.historyofwar.org/articles/battles_leipzig_16_october.html"}],
+    [ML_COMPANS, ML_LAGRANGE, ML_FRIEDERICHS, ML_NORMANN, ML_LORGE, ML_DOMBROWSKI, ML_DELMAS, ML_BRAYER, ML_YORCK], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -2026,5 +2155,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
+    for b in (MOCKERN_LEIPZIG, REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
         write(b)

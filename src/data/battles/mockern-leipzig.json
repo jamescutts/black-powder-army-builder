@@ -1,0 +1,1496 @@
+{
+  "id": "mockern-leipzig",
+  "name": "Möckern (Leipzig)",
+  "date": "16 October 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png/960px-Battle_of_M%C3%B6ckern._October_16%2C_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png",
+    "title": "The Brandenburg Hussars' Charge at Möckern",
+    "artist": "Richard Knötel",
+    "date": "1901",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_M%C3%B6ckern._October_16,_1813._The_attack_of_the_Brandenburg_Hussar_Regiment_brings_the_decisive_victory.png"
+  },
+  "sides": {
+    "French": {
+      "commander": "Marshal Marmont",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Marmont.jpg/250px-Marmont.jpg",
+        "title": "Marshal Auguste de Marmont",
+        "artist": "Jean-Baptiste Paulin Guérin",
+        "page": "https://commons.wikimedia.org/wiki/File:Marmont.jpg",
+        "focus": "50% 16%",
+        "date": "1837"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Lt von Yorck",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    }
+  },
+  "summary": "North of Leipzig, while Napoleon fought the Army of Bohemia at Wachau, Blücher's Army of Silesia came down the Halle road. Marmont, ordered south to join the Emperor, turned back to hold a line from Möckern on the Elster to Lindenthal, with his reserve guns massed in the centre. Yorck's Prussians attacked in the afternoon: Möckern was stormed and retaken five times, his battalions melting under the French guns, until in the evening the Brandenburg Hussars and the reserve cavalry charged through and Marmont's line broke. It cost Yorck a third of his corps, and Marmont nearly as much; to the east Langeron's Russians drove back Dombrowski's Poles.",
+  "sources": [
+    {
+      "label": "French Forces, Battle of Möckern, 16 October 1813 (Nafziger Collection 813JJG)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JJG.pdf"
+    },
+    {
+      "label": "1st Prussian Corps, after the Battle of Möckern, 17 October 1813 (Nafziger Collection 813JJH)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JJH.pdf"
+    },
+    {
+      "label": "Prussian Forces, Battle of Wartenberg, 3 October 1813 (Nafziger Collection 813JJA, after Mirus)",
+      "url": "https://www.napoleon-series.org/nafzigger/813JJA.pdf"
+    },
+    {
+      "label": "First day of the battle of Leipzig, 16 October 1813 (History of War)",
+      "url": "https://www.historyofwar.org/articles/battles_leipzig_16_october.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "mockern-leipzig-compans",
+      "nationId": "france",
+      "name": "Compans's Division",
+      "formation": "20th Division, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's left, round Möckern itself, where the village by the Elster was taken and lost again and again through the afternoon; Compans was wounded, and the marines of his division fought house by house until the Prussian cavalry broke through.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Its marine regiments were sailors and naval gunners of the fleet's artillery, brought inland in 1813; they fought well, and are shown as Line, the list's Veteran upgrade would suit them.",
+        "Its battalions were down to three or four hundred men; they are shown at full size, and the list's Small upgrade would suit many of them.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Marmont's corps reserve artillery, which formed the great battery between Möckern and Lindenthal, is with this division: two 12-pdr, a 6-pdr and a horse battery. Its two 12-pdr batteries, where the list allows one for the division's battalions, and its horse battery with no cavalry to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Compans",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pelleport's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelleport",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "32nd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/32nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/32nd Léger"
+                }
+              ]
+            },
+            {
+              "name": "1st Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/1st Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/1st Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/1st Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/1st Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "5/1st Marine Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Joubert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Joubert",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/3rd Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "20th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "5/66th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/122nd Line"
+                }
+              ]
+            },
+            {
+              "name": "25th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/47th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/86th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "16/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/8th Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "VI Corps Reserve Artillery",
+          "units": [
+            {
+              "unit": "fr-heavy-foot-arty",
+              "name": "26/5th Foot Artillery (12-pdrs)"
+            },
+            {
+              "unit": "fr-heavy-foot-arty",
+              "name": "7/9th Foot Artillery (12-pdrs)"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "3/5th Foot Artillery"
+            },
+            {
+              "unit": "fr-horse-arty",
+              "name": "1/1st Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "3/4th Horse Artillery",
+          "reason": "The corps reserve's second horse battery, more than the list takes."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg",
+        "title": "Jean Dominique Compans",
+        "artist": "Forestier",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg",
+        "focus": "50% 20%",
+        "date": "1820"
+      }
+    },
+    {
+      "id": "mockern-leipzig-lagrange",
+      "nationId": "france",
+      "name": "Lagrange's Division",
+      "formation": "21st Division, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's centre, on the open ground east of Möckern, where its marines and the Spanish Joseph Napoleon battalion stood in square under Yorck's guns and charges until the line gave way in the evening.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Its marine regiments were sailors and naval gunners of the fleet's artillery, brought inland in 1813; they fought well, and are shown as Line, the list's Veteran upgrade would suit them.",
+        "Its battalions were down to three or four hundred men; they are shown at full size, and the list's Small upgrade would suit many of them.",
+        "The Joseph Napoleon Regiment, raised from Spanish prisoners, is the list's Spanish infantry.",
+        "The 2nd Marine Regiment's six battalions, where the list takes five in a regiment, show as a historical departure.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Lagrange",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Jamin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jamin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "37th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/37th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/37th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/37th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/37th Léger"
+                }
+              ]
+            },
+            {
+              "name": "4th Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/4th Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "Joseph Napoleon Regiment",
+              "units": [
+                {
+                  "unit": "fr-spanish-infantry",
+                  "name": "1/Joseph Napoleon Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Buquet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Buquet",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "5/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/2nd Marine Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/4th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "18/5th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-leipzig-friederichs",
+      "nationId": "france",
+      "name": "Friederichs's Division",
+      "formation": "22nd Division, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's right, towards Lindenthal and Wahren, provisional regiments of depot battalions, which held the line beside Lagrange's until it broke.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Its battalions were down to three or four hundred men; they are shown at full size, and the list's Small upgrade would suit many of them.",
+        "Coehorn's four regiments, where the list's brigade takes three, show as a historical departure.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Friederichs",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Coehorn's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Coehorn",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "23rd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/23rd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4/23rd Léger"
+                }
+              ]
+            },
+            {
+              "name": "11th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/1st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/62nd Line"
+                }
+              ]
+            },
+            {
+              "name": "13th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/14th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/16th Line"
+                }
+              ]
+            },
+            {
+              "name": "15th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/15th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/15th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Choisy's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Choisy",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/26th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/82nd Line"
+                }
+              ]
+            },
+            {
+              "name": "70th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/70th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/70th Line"
+                }
+              ]
+            },
+            {
+              "name": "121st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/121st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/121st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "14/4th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "22/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-leipzig-normann",
+      "nationId": "wurttemberg",
+      "name": "Normann's Württembergers",
+      "formation": "25th Light Cavalry Brigade, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's corps cavalry, the 2nd and 4th Württemberg Chevau-légers. Two days later, on the 18th, Normann took the brigade over to the allies in the middle of the battle.",
+      "notes": [
+        "Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1813.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Each regiment had four squadrons of about 110 men.",
+        "Cavalry with no infantry brigade to allow it shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "wt-div-cmd",
+          "name": "Gen-Maj von Normann",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "wt-cavalry-brigade",
+          "name": "Normann's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Normann",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-chevauleger",
+              "name": "2nd Chevau-légers 'Duke Louis'"
+            },
+            {
+              "unit": "wt-chevauleger",
+              "name": "4th Chevau-légers 'King'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-leipzig-lorge",
+      "nationId": "france",
+      "name": "Lorge's Light Cavalry",
+      "formation": "5th Light Cavalry Division, III Cavalry Corps",
+      "side": "French",
+      "summary": "Squadrons of chasseurs sent to Marmont's support, which met the Prussian cavalry's charges as the French line broke in the evening.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Most regiments sent only one or two squadrons.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Lorge",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Jacquinot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jacquinot",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "5th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "10th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "13th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Merlin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Merlin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "15th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "21st Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "22nd Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "Horse Artillery (half battery)",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-leipzig-dombrowski",
+      "nationId": "grand-duchy-of-warsaw",
+      "name": "Dombrowski's Division",
+      "formation": "27th (Polish) Division",
+      "side": "French",
+      "summary": "The Polish division on Marmont's right, round Klein-Wiederitzsch and Eutritzsch, which held Langeron's Russians off through the afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' Grand Duchy of Warsaw list, the nearest to 1813.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Nafziger notes that the Prussian General Staff puts the 14th Polish here, though it would have had to be detached from Poniatowski's corps to be present.",
+        "Three regiments in a brigade, where the list takes two, one infantry brigade for its cavalry brigade, where it wants two, and its foot and horse batteries with six battalions, where it wants seven and eight, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "gdw-div-cmd",
+          "name": "Gén. de Division Dombrowski",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "gdw-infantry-brigade",
+          "name": "Zoltowski's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Zoltowski",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Polish Infantry",
+              "units": [
+                {
+                  "unit": "gdw-polish-infantry",
+                  "name": "I/2nd Polish"
+                },
+                {
+                  "unit": "gdw-polish-infantry",
+                  "name": "II/2nd Polish"
+                }
+              ]
+            },
+            {
+              "name": "4th Polish Infantry",
+              "units": [
+                {
+                  "unit": "gdw-polish-infantry",
+                  "name": "I/4th Polish"
+                },
+                {
+                  "unit": "gdw-polish-infantry",
+                  "name": "II/4th Polish"
+                }
+              ]
+            },
+            {
+              "name": "14th Polish Infantry",
+              "units": [
+                {
+                  "unit": "gdw-polish-infantry",
+                  "name": "I/14th Polish"
+                },
+                {
+                  "unit": "gdw-polish-infantry",
+                  "name": "II/14th Polish"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "gdw-cavalry-brigade",
+          "name": "Krukowiecki's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Krukowiecki",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "gdw-uhlan",
+              "name": "2nd Uhlans"
+            },
+            {
+              "unit": "gdw-chasseur-a-cheval",
+              "name": "4th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "gdw-divisional-artillery",
+          "name": "Foot Artillery",
+          "units": [
+            {
+              "unit": "gdw-foot-arty",
+              "name": "Polish Foot Battery"
+            }
+          ]
+        },
+        {
+          "type": "gdw-reserve-artillery",
+          "name": "Horse Artillery",
+          "units": [
+            {
+              "unit": "gdw-horse-arty",
+              "name": "1st Polish Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-leipzig-delmas",
+      "nationId": "france",
+      "name": "Delmas's Division",
+      "formation": "9th Division, III Corps (Souham)",
+      "side": "French",
+      "summary": "Part of Souham's corps, marching south from Düben through the fighting on the northern front, which Nafziger lists with Marmont's at Möckern.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Nafziger gives about 4,200 men; the second brigade's commander's name is unclear in his return.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Delmas",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Estève's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Estève",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/4th Léger"
+                }
+              ]
+            },
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/136th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/136th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Second Brigade",
+          "regiments": [
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/138th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/138th Line"
+                }
+              ]
+            },
+            {
+              "name": "145th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/145th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/145th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "2/9th Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "11/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-leipzig-brayer",
+      "nationId": "france",
+      "name": "Brayer's Division",
+      "formation": "8th Division, III Corps (Souham)",
+      "side": "French",
+      "summary": "Souham's other division on the northern front, which Nafziger lists with Marmont's at Möckern.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Möckern, from the Prussian General Staff's plans and the French archives.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Nafziger gives about 4,400 men.",
+        "Three light regiments, where the list allows one in a division, show as a historical departure; Bony's 59th and 69th Line, two battalions each, are one regiment here to keep within the list's three.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Brayer",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Fournier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fournier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/6th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/6th Léger"
+                }
+              ]
+            },
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/16th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/16th Léger"
+                }
+              ]
+            },
+            {
+              "name": "40th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/40th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/40th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Bony's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bony",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "28th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/28th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/28th Léger"
+                }
+              ]
+            },
+            {
+              "name": "22nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/22nd Line"
+                }
+              ]
+            },
+            {
+              "name": "59th and 69th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/59th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/59th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/69th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/69th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "5/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mockern-leipzig-yorck",
+      "nationId": "prussians-1815",
+      "name": "Yorck's Corps",
+      "formation": "I Corps, Army of Silesia",
+      "side": "Prussian",
+      "summary": "Yorck's corps attacked Marmont's line from the north in the early afternoon. Möckern was taken and lost five times; Hünerbein and Steinmetz were wounded and whole battalions shot away, until in the evening Yorck sent in the Brandenburg Hussars and the reserve cavalry, which broke through the French line. The corps lost nearly 8,000 men, a third of its strength, the costliest single fight of the battle.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for Wartenburg, a fortnight before: his return of the corps the day after Möckern shows its battalions merged by the losses there, so it doesn't show the corps as it began the fight.",
+        "After Nafziger's order of battle for Wartenburg, from Mirus's history of the fight.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "Nafziger's corps return of the same day has Hünerbein's Landwehr and half his battery detached to Halle; his Wartenburg order of battle, followed here, has the IV/14th Landwehr and the whole of Battery #15 with the brigade.",
+        "The East Prussian National Cavalry, a volunteer regiment, is shown as Hussars. The 5th Silesian Landwehr Cavalry is the advance guard infantry's attached Landwehr cavalry.",
+        "Mecklenburg's two hussar regiments are shown as attached small hussars; two of them, where the list allows one in the army, show as a historical departure. Battery #3 was split between Mecklenburg and Horn, so each has half of it, Mecklenburg's from the corps artillery.",
+        "One-battalion Landwehr regiments in Mecklenburg's and Hünerbein's brigades, Horn's four regiments, and Jürgass's line and Landwehr cavalry brigades together show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Yorck",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Advance Guard Infantry (Hiller)",
+          "commander": {
+            "name": "Maj Hiller von Gärtringen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "East Prussian Jäger (2 companies)"
+            },
+            {
+              "unit": "pr15-jager-coy",
+              "name": "Guard Jäger Company"
+            },
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "5th Silesian Landwehr Cavalry"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Grenadier Battalions",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Leib-Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "West Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Line and Reserve Battalions",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Brandenburg Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/12th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/2nd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/14th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/15th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Advance Guard Cavalry (Katzler)",
+          "commander": {
+            "name": "Col von Katzler",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-hussar",
+              "name": "Brandenburg Hussars"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "Brandenburg Uhlans"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "East Prussian National Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #2"
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "1st Brigade (Steinmetz)",
+          "commander": {
+            "name": "Col von Steinmetz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #2"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "East Prussian Grenadiers and 2nd East Prussian",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "1st East Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/2nd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "5th and 6th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/6th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/5th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/5th Silesian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "13th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/13th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "2nd Brigade (Mecklenburg)",
+          "commander": {
+            "name": "Gen-Maj Prince Karl of Mecklenburg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "2nd Leib Hussars"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "Mecklenburg-Strelitz Hussars"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #1"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st East Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st East Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/1st East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Silesian Grenadiers and 2nd East Prussian",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Silesian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd East Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "5th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/5th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "7th Brigade (Horn)",
+          "commander": {
+            "name": "Gen-Maj von Horn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "½ 6-pdr Foot Battery #3",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Leib Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Leib Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Thuringian Battalion",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Thuringian Battalion"
+                }
+              ]
+            },
+            {
+              "name": "15th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/15th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/15th Silesian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "4th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/4th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "Combined II & IV/Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "8th Brigade (Hünerbein)",
+          "commander": {
+            "name": "Gen-Maj von Hünerbein",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #15"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Brandenburg Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Brandenburg Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Brandenburg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "12th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/12th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/12th Reserve Infantry"
+                }
+              ]
+            },
+            {
+              "name": "14th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/14th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Jürgass)",
+          "commander": {
+            "name": "Col von Wahlen-Jürgass",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Lithuanian Dragoons"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "West Prussian Dragoons"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #1"
+            }
+          ]
+        },
+        {
+          "type": "pr15-landwehr-cavalry-brigade",
+          "name": "Reserve Cavalry (Jürgass, Landwehr)",
+          "commander": {
+            "name": "Col von Wahlen-Jürgass",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "10th Silesian Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-mounted-landwehr",
+              "name": "1st Neumark Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #3"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-foot-arty",
+              "name": "½ 6-pdr Foot Battery #3 (with Mecklenburg)",
+              "options": [
+                "half-battery"
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    }
+  ]
+}

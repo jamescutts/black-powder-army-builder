@@ -180,6 +180,12 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "60,000–75,000" },
     { label: "Prussian and Russian", men: "80,000–95,000" },
   ],
+  // No article gives Möckern's own strengths: the French figure is the men of Marmont's VI Corps on Nafziger's
+  // order of battle (813JJG); the Prussian, Yorck's on his return the day after (813JJH) and the 7,969 he lost
+  "mockern-leipzig": [
+    { label: "French", men: "c. 19,000", extra: "with Dombrowski's 2,350 Poles besides" },
+    { label: "Prussian", men: "c. 22,600" },
+  ],
   // Wikipedia gives the French army's total and no Russian figure; the Russian rearguard's is Clash of Steel's
   reichenbach: [
     { label: "French", men: "50,000" },

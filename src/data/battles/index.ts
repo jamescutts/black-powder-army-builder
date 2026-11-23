@@ -18,6 +18,7 @@ import bautzen from "./bautzen.json";
 import grossbeeren from "./grossbeeren.json";
 import wartenburg from "./wartenburg.json";
 import hagelberg from "./hagelberg.json";
+import mockernLeipzig from "./mockern-leipzig.json";
 import reichenbach from "./reichenbach.json";
 import katzbach from "./katzbach.json";
 import plagwitz from "./plagwitz.json";
@@ -91,7 +92,6 @@ import {
   goldberg,
   altenburg,
   liebertwolkwitz,
-  mockernLeipzig,
   torgau,
   hamburg,
   sehested,
@@ -424,7 +424,7 @@ const allBattles: HistoricalBattle[] = [
   altenburg,
   wartenburg as HistoricalBattle,
   liebertwolkwitz,
-  mockernLeipzig,
+  mockernLeipzig as HistoricalBattle,
   leipzig,
   torgau,
   hanau as HistoricalBattle,
