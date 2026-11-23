@@ -58,7 +58,7 @@ export const battlePlans: Record<string, BattlePlan[]> = {
       note: "Both days of the battle: the positions of the 20th coloured light, of the 21st dark; French blue, allies red. North is at the top.",
     },
     {
-      label: "French plan, 1813",
+      label: "Bataille de Wurtchen, 1813",
       title: "Bataille de Wurtchen et tableau des opérations militaires jusqu'au mois d'octobre (Campagne de 1813), no. 2",
       maker: "Published in Paris by Magimel, Goujon and Bance",
       date: "1813",
