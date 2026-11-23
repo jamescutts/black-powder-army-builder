@@ -180,6 +180,11 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "60,000–75,000" },
     { label: "Prussian and Russian", men: "80,000–95,000" },
   ],
+  // Wikipedia gives the French army's total and no Russian figure; the Russian rearguard's is Clash of Steel's
+  reichenbach: [
+    { label: "French", men: "50,000" },
+    { label: "Russian", men: "16,000", engaged: true },
+  ],
   // Plagwitz has no Wikipedia article; these are Clash of Steel's figures
   plagwitz: [
     { label: "French", men: "7,500" },

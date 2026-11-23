@@ -2005,7 +2005,7 @@ RB_CAVALRY["missing"] = [
 REICHENBACH = battle(
     "reichenbach", "Reichenbach", "22 May 1813",
     "The day after Bautzen, Napoleon pushed his army east after the allies, who retreated in good order behind a strong rearguard. Eugen of Württemberg's corps held the heights behind Reichenbach against Reynier's Saxons and Durutte's French through the afternoon, while Latour-Maubourg's weak cavalry and the Guard's light horse sparred with the Russian dragoons and hussars round Markersdorf. The rearguard got away; near Markersdorf a cannonball struck Napoleon's suite, killing General Kirgener and mortally wounding Duroc, the Grand Marshal of the Palace and the Emperor's closest friend.",
-    [RB_FR, RB_RU],
+    [RB_FR, RB_RU, {"label": "Battle of Reichenbach (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Reichenbach"}],
     [RB_GUARD, RB_DURUTTE, RB_SAXONS, RB_LATOUR, RB_LESSING, RB_EUGEN, RB_CAVALRY], [], alliances=())
 
 
