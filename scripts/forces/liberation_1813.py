@@ -2448,6 +2448,60 @@ BAUTZEN["forces"] += [BZ_MORAND, BZ_PEYRI, BZ_FRANQUEMONT, BZ_COMPANS, BZ_BONET,
                       BZ_EUGEN, BZ_EMMANUEL, BZ_BERG, BZ_ST_PRIEST, BZ_RU_GUARD]
 
 
+# ================================================================ Luckau, 4 June 1813
+
+LK_WIKI = {"label": "Battle of Luckau (Wikipedia, after Smith and Bodart)", "url": "https://en.wikipedia.org/wiki/Battle_of_Luckau"}
+LK_NOTE = "After Wikipedia's account of Luckau, from Smith's Napoleonic Wars Data Book, which names the battalions engaged."
+
+LK_PACTHOD = force(
+    "luckau-pacthod", FR, "Pacthod's Division", "13th Division, XII Corps (Oudinot)", "French",
+    "Oudinot's leading division, the only one he brought into action. It reached Luckau at nine in the morning, drove Bülow's outposts back into the walled town, and spent the day trying to break in, until Bülow's cavalry fell on its flanks and Oudinot drew off.",
+    [bde("fr-infantry-brigade", "Pourailly's Brigade", "Gén. de Brigade Pourailly",
+         regiments=[regt("1st Léger and 7th Line", [u("fr-line-infantry", "4/1st Léger"), u("fr-line-infantry", "3/7th Line"), u("fr-line-infantry", "4/7th Line")]),
+                    provisional("6th and 10th Line", ["7/6th Line", "4/10th Line"])]),
+     bde("fr-infantry-brigade", "Gruyer's Brigade", "Gén. de Brigade Gruyer",
+         regiments=[regt("1st Neapolitan Léger", [u("fr-light-infantry", "1/1st Neapolitan Léger"), u("fr-light-infantry", "2/1st Neapolitan Léger")]),
+                    bn_list("fr-line-infantry", "101st Line", ["2", "3", "4"])]),
+     foot("18/4th Foot Artillery", "20/4th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Pacthod")],
+    notes=[LIST_FR, LK_NOTE, CONSCRIPTS,
+           "The 1st Léger's one battalion is with the 7th Line as one regiment, shown as Line; the Neapolitan light battalions are shown as French Light. The batteries are as at Bautzen a fortnight before.",
+           TWO_BATTERIES])
+
+LK_CAVALRY = force(
+    "luckau-cavalry", WP, "Oudinot's Cavalry", "Corps cavalry, XII Corps (Oudinot)", "French",
+    "Two squadrons each of Bavarian and Hessian chevau-légers with Pacthod's attack, which were swept from the field when Bülow's cavalry came round the French flanks.",
+    [bde("wp-cavalry-brigade", "Chevau-légers", "", units=[u("wp-hussar", "Bavarian Chevau-légers (2 squadrons)"), u("wp-hussar", "Hessian Chevau-légers (2 squadrons)")])],
+    command=[cmd("wp-div-cmd", "Gén. de Division Beaumont")],
+    notes=["Built from A Clash of Eagles' Westphalian 1812 list, as Beaumont's brigade is at Bautzen and Dennewitz; the Bavarian and Hessian chevau-légers are its Hussars.", LK_NOTE,
+           "Beaumont commanded Oudinot's corps cavalry; Wikipedia doesn't say he was there, so his leading the force is ours.",
+           "Cavalry with no infantry brigade to allow it shows as a historical departure."])
+
+LK_BULOW = force(
+    "luckau-bulow", PR15, "Bülow's Corps", "Prussian III Corps, with Harpe's Russians", "Prussian",
+    "Bülow's Prussians, marching to rejoin his troops at Jüterbog, held the walled town of Luckau against Oudinot through the day; in the afternoon his cavalry, reinforced, struck the French flanks and Oudinot fell back, the day the armistice was agreed.",
+    [pi("Hesse-Homburg's Brigade", "Gen-Maj Prince Ludwig of Hesse-Homburg",
+        [("East Prussian Grenadiers and 1st East Prussian", [("M", "2nd East Prussian Grenadier Battalion"), ("M", "III/1st East Prussian Infantry")]),
+         ("2nd East Prussian Infantry", [("M", "I/2nd East Prussian Infantry"), ("M", "II/2nd East Prussian Infantry")]),
+         ("3rd East Prussian Infantry", [("M", "I/3rd East Prussian Infantry"), ("M", "II/3rd East Prussian Infantry"), ("M", "III/3rd East Prussian Infantry"), ("F", "F/3rd East Prussian Infantry")])],
+        [u("pr15-jager-coy", "East Prussian Jäger (2 companies)"), u("pr15-foot-arty", "6-pdr Foot Battery #5")]),
+     pc("Oppen's Cavalry", "Gen-Maj von Oppen",
+        [u("pr15-hussar", "1st Leib Hussars"), u("pr15-dragoon", "2nd West Prussian Dragoons"), u("pr15-horse-arty", "Horse Battery #6")])],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Bülow")],
+    notes=[PR_LIST, "After Nafziger's return of the Prussian army for 1 April 1813 (813DCA), the nearest that gives Bülow's brigades; Wikipedia gives his force at Luckau as 16½ battalions, ten squadrons, a Cossack regiment and 58 guns, 15,800 men.",
+           PR_SPRING, PR_GROUPED, PR_SUB,
+           "Three line regiments, the 3rd East Prussian's three musketeer battalions, no Landwehr, and Oppen's cavalry brigade with one infantry brigade to allow it show as historical departures."])
+LK_BULOW["missing"] = [
+    {"name": "Harpe's Russian brigade and the Cossacks", "reason": "Wikipedia names a Russian brigade under General-major Harpe and a Cossack regiment with Bülow, but no order of battle found gives their regiments."},
+    {"name": "The rest of Bülow's batteries", "reason": "Fifty-eight guns in all, more than one brigade and its cavalry take."}]
+
+LUCKAU = battle(
+    "luckau", "Luckau", "4 June 1813",
+    "After Bautzen Napoleon sent Oudinot's XII Corps north towards Berlin against Bülow, who had been gathering troops to cover the capital. Bülow, moving from Cottbus to rejoin his men at Jüterbog, stopped in the walled town of Luckau, and on the morning of 4 June Oudinot's leading division attacked it. Pacthod's battalions drove the allies back inside the walls but could not break in, and in the afternoon Bülow's reinforced cavalry fell on their flanks; Oudinot fell back south-west towards Dresden. The same day the armistice of Pläswitz was signed.",
+    [LK_WIKI, MK_PR_ARMY, BZ_FR],
+    [LK_PACTHOD, LK_CAVALRY, LK_BULOW], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -2465,5 +2519,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN_LEIPZIG, REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
+    for b in (LUCKAU, MOCKERN_LEIPZIG, REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
         write(b)

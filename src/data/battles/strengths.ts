@@ -180,6 +180,10 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "60,000–75,000" },
     { label: "Prussian and Russian", men: "80,000–95,000" },
   ],
+  luckau: [
+    { label: "French", men: "18,000" },
+    { label: "Prussian and Russian", men: "21,400" },
+  ],
   // No article gives Möckern's own strengths: the French figure is the men of Marmont's VI Corps on Nafziger's
   // order of battle (813JJG); the Prussian, Yorck's on his return the day after (813JJH) and the 7,969 he lost
   "mockern-leipzig": [

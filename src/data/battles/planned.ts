@@ -191,8 +191,6 @@ export const rippach = planned("rippach", "Rippach", "1 May 1813", L,
   "Napoleon's advance guard forced the Rippach defile against Winzingerode's cavalry the day before Lützen; Marshal Bessières, reconnoitring, was killed by a cannonball.");
 export const haynau = planned("haynau", "Haynau", "26 May 1813", L,
   "Blücher laid an ambush for the French advance guard in Silesia: Maison's division, marching carelessly through Haynau, was charged by Prussian cavalry hidden behind a ridge and lost its guns and hundreds of prisoners.");
-export const luckau = planned("luckau", "Luckau", "4 June 1813", L,
-  "Oudinot, sent towards Berlin, attacked Bülow's Prussians in the walled town of Luckau and its suburbs and was beaten off, on the day the armistice was agreed.");
 export const kitzen = planned("kitzen", "Kitzen", "17 June 1813", L,
   "During the armistice Lützow's Free Corps, marching back to Prussian lines, was surrounded at Kitzen by French and Württemberg cavalry who held it was outside the truce, and cut to pieces; the poet Theodor Körner was among the wounded.");
 export const lowenberg = planned("lowenberg", "Löwenberg", "21 August 1813", L,
@@ -353,13 +351,6 @@ rippach.art = {
   "artist": "unknown artist",
   "date": "19th century",
   "page": "https://commons.wikimedia.org/wiki/File:Death_of_Marshal_Bessieres.png"
-};
-luckau.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Battle_of_Luckau_on_4_June_1813_%28R._Knotel%29.png/960px-Battle_of_Luckau_on_4_June_1813_%28R._Knotel%29.png",
-  "title": "The Fight at Luckau, 4 June 1813",
-  "artist": "Richard Knötel",
-  "date": "1901",
-  "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Luckau_on_4_June_1813_(R._Knotel).png"
 };
 goldberg.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Das_Gefecht_bei_Goldberg%2C_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg/960px-Das_Gefecht_bei_Goldberg%2C_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg",
