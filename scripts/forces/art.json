@@ -328,6 +328,12 @@
       "title": "The Battle of the Katzbach",
       "artist": "Eduard Kaempffer",
       "page": "https://commons.wikimedia.org/wiki/File:KaempfferKatzbachschlacht.jpg"
+    },
+    "reichenbach": {
+      "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/BOYER_935_-_Mort_de_Duroc.jpg/960px-BOYER_935_-_Mort_de_Duroc.jpg",
+      "title": "The Death of Duroc",
+      "artist": "unknown artist",
+      "page": "https://commons.wikimedia.org/wiki/File:BOYER_935_-_Mort_de_Duroc.jpg"
     }
   },
   "campaigns": {

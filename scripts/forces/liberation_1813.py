@@ -1,5 +1,5 @@
 """
-Writes the forces of the War of Liberation (src/data/battles/{mockern,lutzen,bautzen,grossbeeren,katzbach,hagelberg,plagwitz,dennewitz,wartenburg,hanau}.json):
+Writes the forces of the War of Liberation (src/data/battles/{reichenbach,mockern,lutzen,bautzen,grossbeeren,katzbach,hagelberg,plagwitz,dennewitz,wartenburg,hanau}.json):
 the French, their German and Italian allies, and the Russians, from Nafziger's orders of battle. The Prussians
 are built from the 1815 Prussian list, one force a corps.
 
@@ -1880,6 +1880,135 @@ KATZBACH = battle(
     [], alliances=(("Prussian", "Russian"),))
 
 
+# ================================================================ Reichenbach, 22 May 1813
+
+RB_FR = {"label": "French Forces, Battle of Reichenbach, 22 May 1813 (Nafziger Collection 813ECL, after Foucart)", "url": NAF + "813ECL.pdf"}
+RB_RU = {"label": "Russian Forces, Battle of Reichenbach, 22 May 1813 (Nafziger Collection 813ECM, after Foucart and Fabry)", "url": NAF + "813ECM.pdf"}
+RB_NOTE = "After Nafziger's order of battle for Reichenbach, from Foucart's history of the pursuit after Bautzen."
+RB_WEAK = ("Nafziger notes that the French cavalry regiments here had little more than a company apiece; weak regiments of a "
+           "brigade are paired as one unit, as the list takes them.")
+
+RB_GUARD = force(
+    "reichenbach-guard-cavalry", FIG, "The Guard Cavalry", "Cavalry of the Imperial Guard", "French",
+    "The Guard's light horse, sent after the allied rearguard with Napoleon riding among them. Near Markersdorf a cannonball meant for the Emperor's party killed Kirgener and mortally wounded Duroc, Grand Marshal of the Palace.",
+    [bde("fig-light-cavalry-brigade", "Polish Lancers", "", units=[u("fig-polish-lancers", "1st (Polish) Guard Lancers"), u("fig-mamluke", "Mamelukes")]),
+     bde("fig-light-cavalry-brigade", "Dutch Lancers", "", units=[u("fig-dutch-red-lancers", "2nd (Dutch) Guard Lancers"), u("fig-gendarmes-elite", "Gendarmes d'Élite")]),
+     bde("fig-light-cavalry-brigade", "Chasseurs à Cheval", "", units=[u("fig-chasseurs-a-cheval", "Chasseurs à Cheval de la Garde"), u("fig-og-horse-arty", "Guard Horse Artillery")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Lefebvre-Desnouettes")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", RB_NOTE,
+           "Nafziger names no commanders for the Guard cavalry; Lefebvre-Desnouettes, who led its light horse that spring, leads the force here, our choice.",
+           CAV_ONLY])
+RB_GUARD["missing"] = [{"name": "Berg Lancers", "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."}]
+
+RB_DURUTTE = force(
+    "reichenbach-durutte", FR, "Durutte's Division", "32nd Division, VII Corps (Reynier)", "French",
+    "Reynier's French division, which led his corps' attack on the hills held by Eugen of Württemberg's rearguard behind Reichenbach.",
+    [bde("fr-infantry-brigade", "1st Brigade", "",
+         regiments=[bn_list("fr-light-infantry", "35th Léger", ["?", "4"]), bn_list("fr-light-infantry", "36th Léger", ["3", "4"]),
+                    bn_list("fr-line-infantry", "131st Line", ["3", "4"]), bn_list("fr-line-infantry", "132nd Line", ["3", "4"])]),
+     bde("fr-infantry-brigade", "2nd Brigade", "",
+         regiments=[bn_list("fr-line-infantry", "133rd Line", ["3", "4"]),
+                    regt("Würzburg Regiment", [u("fr-rheinbund-infantry", f"{b}/Würzburg") for b in ("1", "2", "3")])])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Durutte")],
+    notes=[LIST_FR, RB_NOTE, CONSCRIPTS,
+           "Nafziger can't number the 35th Léger's first battalion.",
+           "Four regiments in the first brigade, where the list takes three, two light regiments in a division, where it allows one, and three Würzburg battalions as Rheinbund infantry, where it allows one, show as historical departures.",
+           "Nafziger lists no artillery with the division."])
+
+RB_SAXONS = force(
+    "reichenbach-saxons", SAX, "Zeschau's Saxons", "Royal Saxon Corps, VII Corps (Reynier)", "French",
+    "The Saxon contingent, back with Napoleon after Lützen, which followed Durutte's attack on the rearguard's hills.",
+    [bde("sax-infantry-brigade", "1st Division (Brause)", "Oberst von Brause",
+         units=[u("sax-grenadier", "I/Guard Grenadiers"), u("sax-foot-arty", "Saxon Foot Battery")],
+         regiments=[regt("Prinz Friedrich Regiment", [u("sax-musketeer", "Prinz Friedrich")]), regt("von Steindel Regiment", [u("sax-musketeer", "von Steindel")]),
+                    regt("1st Light 'Le Coq'", [u("sax-light-infantry", "1st Light 'Le Coq'")])]),
+     bde("sax-infantry-brigade", "2nd Division (Sahr)", "Gen-Lt von Sahr",
+         units=[u("sax-grenadier", "Grenadier Battalion 'von Anger'"), u("sax-foot-arty", "Saxon Foot Battery")],
+         regiments=[regt("Prinz Anton Regiment", [u("sax-musketeer", "Prinz Anton")]), regt("von Löw Regiment", [u("sax-musketeer", "von Löw")])])],
+    command=[cmd("sax-div-cmd", "Gen-Lt von Zeschau")],
+    notes=[LIST_SAX, RB_NOTE,
+           "Brause's and Sahr's 'divisions' were a few battalions each, shown as the list's brigades; each foot battery, with fewer than the six battalions the list wants for it, shows as a historical departure."])
+RB_SAXONS["missing"] = [
+    {"name": "Saxon horse battery, light cavalry and Jäger company", "reason": "Nafziger gives the corps a horse battery and light cavalry he doesn't name, and one Jäger company, too small for a unit."},
+    {"name": "French artillery (12 guns)", "reason": "French batteries with the Saxon corps, which a force from the Saxon list can't take."}]
+
+RB_LATOUR = force(
+    "reichenbach-latour-maubourg", FR, "Latour-Maubourg's Cavalry", "I Cavalry Corps", "French",
+    "The French cavalry, rebuilt after Russia and still very weak, which led the pursuit from Bautzen and was held off by the Russian rearguard cavalry in the fields round Reichenbach and Markersdorf.",
+    [bde("fr-light-cavalry-brigade", "Bessières's Brigade", "Gén. de Brigade Bessières",
+         units=[u("fr-hussar-regt", "7th and 8th Hussars"), u("fr-lancer", "7th and 9th Chevau-légers"), u("fr-chasseur-a-cheval", "16th Chasseurs à Cheval")]),
+     bde("fr-light-cavalry-brigade", "Cambacérès's Brigade", "Gén. de Brigade Cambacérès",
+         units=[u("fr-lancer", "1st and 3rd Chevau-légers"), u("fr-lancer", "5th and 8th Chevau-légers")]),
+     bde("fr-light-cavalry-brigade", "Van Merlen's Brigade", "Gén. de Brigade Van Merlen",
+         units=[u("fr-chasseur-a-cheval", "6th and 25th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "8th Chasseurs and 6th Hussars"),
+                u("fr-chasseur-a-cheval", "Portuguese Legion Chasseurs")]),
+     bde("fr-light-cavalry-brigade", "Richter's Brigade", "Gén. de Brigade Richter",
+         units=[u("fr-chasseur-a-cheval", "9th and 19th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "2nd and 3rd Italian Chasseurs"),
+                u("fr-chasseur-a-cheval", "1st, 2nd and 3rd Chasseurs à Cheval")]),
+     bde("fr-heavy-cavalry-brigade", "Berkheim's Brigade", "Gén. de Brigade Berkheim",
+         units=[u("fr-cuirassier", "2nd Cuirassiers"), u("fr-cuirassier", "3rd Cuirassiers"), u("fr-cuirassier", "6th Cuirassiers")]),
+     bde("fr-heavy-cavalry-brigade", "Quinette's Brigade", "Gén. de Brigade Quinette",
+         units=[u("fr-cuirassier", "9th Cuirassiers"), u("fr-cuirassier", "11th Cuirassiers"), u("fr-cuirassier", "12th Cuirassiers")]),
+     bde("fr-divisional-artillery", "Horse Artillery", units=[u("fr-horse-arty", "French Horse Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Latour-Maubourg")],
+    notes=[LIST_FR, RB_NOTE, RB_WEAK,
+           "Bruyère's light division (Bessières's and Cambacérès's brigades), Chastel's (Van Merlen's and Richter's) and Bordesoulle's cuirassiers. The chevau-légers lanciers are the list's Lancers; the Italian and Portuguese chasseurs its Chasseurs à Cheval.",
+           "Lessing's Saxon cuirassiers, Bordesoulle's third brigade, are a force of their own from the Saxon list.", CAV_ONLY])
+RB_LATOUR["missing"] = [{"name": "A second French horse battery and the 4/1st Italian Horse Artillery", "reason": "More horse artillery than the list takes."}]
+
+RB_LESSING = force(
+    "reichenbach-lessing", SAX, "Lessing's Saxon Cuirassiers", "3rd Brigade, 1st Cuirassier Division (Bordesoulle), I Cavalry Corps", "French",
+    "The two Saxon heavy regiments, full strength beside the weak French squadrons, which charged the Russian cavalry in the evening near Reichenbach.",
+    [bde("sax-cavalry-reserve", "Lessing's Brigade", "Gen-Maj von Lessing",
+         units=[u("sax-garde-du-corps", "Leib Cuirassier Guard"), u("sax-cuirassier", "Zastrow Cuirassiers"), u("sax-horse-arty", "3rd Saxon Horse Battery")])],
+    command=[cmd("sax-div-cmd", "Gen-Maj von Lessing")],
+    notes=[LIST_SAX, RB_NOTE, "The Leib Cuirassier Guard, raised from the Garde du Corps, is the list's Garde du Corps.",
+           "Cavalry with no infantry brigade to allow it shows as a historical departure."])
+
+RB_EUGEN = force(
+    "reichenbach-eugen", RU, "Eugen of Württemberg's Corps", "II Corps, rearguard (Miloradovich)", "Russian",
+    "The rearguard of the allied retreat from Bautzen, posted on the heights behind Reichenbach. It held Reynier's attacks off through the afternoon and fell back in good order to Markersdorf and Görlitz.",
+    [bde("ru-infantry-brigade", "Wolff's Brigade", "Col Baron Wolff", units=[u("ru-position-arty", "Heavy Battery #1")],
+         regiments=[ru_bn("Murom"), ru_bn("Revel"), ru_bn("Chernigov")]),
+     bde("ru-jager-brigade", "Kapustin's Brigade", "Col Kapustin",
+         regiments=[regt("20th Jäger", [u("ru-jager", "20th Jäger")]), regt("21st Jäger", [u("ru-jager", "21st Jäger")])]),
+     bde("ru-infantry-brigade", "Treffurt's Brigade", "Col Treffurt", units=[u("ru-light-arty", "Light Battery #33")],
+         regiments=[ru_bn("Tobolsk"), ru_bn("Volhynia"), ru_bn("Ryazhsk")]),
+     bde("ru-jager-brigade", "Ivanov's Brigade", "Col Ivanov",
+         regiments=[regt("4th Jäger", [u("ru-jager", "4th Jäger")]), regt("34th Jäger", [u("ru-jager", "34th Jäger")])]),
+     bde("ru-light-cavalry-brigade", "Knorring's Brigade", "Maj-Gen Knorring",
+         units=[u("ru-hussar", "Sumy Hussars"), u("ru-uhlan", "Tatar Uhlans"), u("ru-dragoon", "Converged Dragoons"), u("ru-horse-arty", "Horse Battery #7")]),
+     bde("ru-light-cavalry-brigade", "Panchulidzev's Brigade", "Maj-Gen Panchulidzev",
+         units=[u("ru-mounted-jager", "Chernigov Mounted Jäger"), u("ru-dragoon", "New Russia Dragoons"), u("ru-uhlan", "Lithuanian Uhlans")])],
+    command=[{"unit": "ru-cmd-eugene-wurttemberg"}],
+    notes=[LIST_RU, RB_NOTE, ONE_BN, "Prince Eugen of Württemberg is the book's named commander. His corps was Shakhovskoy's 3rd and Pyshnitsky's 4th Divisions, shown together.",
+           "Nafziger lists the Tobolsk regiment in both of the 4th Division's brigades; it is shown once, with Treffurt.",
+           "Three-regiment infantry brigades, two Jäger brigades and two light cavalry brigades, more than the list allows, show as historical departures."])
+
+RB_CAVALRY = force(
+    "reichenbach-reinforcements", RU, "The Rearguard's Cavalry", "Cavalry sent to the rearguard (Miloradovich)", "Russian",
+    "Dragoons, hussars and Cossacks sent back to the rearguard in the afternoon, which met Latour-Maubourg's horse in the evening and covered Eugen's withdrawal.",
+    [bde("ru-heavy-cavalry-brigade", "Millesimo's Brigade", "Maj-Gen Millesimo",
+         units=[u("ru-dragoon", "Kiev Dragoons"), u("ru-dragoon", "Kharkov Dragoons"), u("ru-horse-arty", "Horse Battery #4")]),
+     bde("ru-heavy-cavalry-brigade", "Pahlen's Brigade", "Maj-Gen Pahlen", units=[u("ru-dragoon", "Tver Dragoons"), u("ru-dragoon", "Dorpat Dragoons")]),
+     bde("ru-heavy-cavalry-brigade", "Gengross's Brigade", "Maj-Gen Gengross", units=[u("ru-dragoon", "Mitau Dragoons"), u("ru-dragoon", "Moscow Dragoons")]),
+     bde("ru-light-cavalry-brigade", "Uvarov's Brigade", "Col Uvarov",
+         units=[u("ru-hussar", "Lubny Hussars"), u("ru-mounted-cossack", "3rd Ukrainian Cossacks (Obolensky)"), u("ru-horse-arty", "Horse Battery #3")])],
+    command=[cmd("ru-div-cmd", "General Miloradovich")],
+    notes=[LIST_RU, RB_NOTE,
+           "The cavalry Nafziger lists as reinforcements, under Miloradovich, who commanded the rearguard. Obolensky's 3rd Ukrainian Cossacks, one regiment, ride with Uvarov's hussars, as the list's Cossack brigade takes two at least.",
+           "Three heavy cavalry brigades, where the list allows one, and cavalry with no infantry brigade to allow it, show as historical departures."])
+RB_CAVALRY["missing"] = [
+    {"name": "A position battery and a light battery", "reason": "Unnamed batteries Nafziger lists with the reinforcements; Russian batteries go with infantry brigades in the list."},
+    {"name": "Lukov's 5th Division and Duka's 2nd Cuirassier Division", "reason": "The rearguard's reserve, which Nafziger lists but which wasn't engaged."}]
+
+REICHENBACH = battle(
+    "reichenbach", "Reichenbach", "22 May 1813",
+    "The day after Bautzen, Napoleon pushed his army east after the allies, who retreated in good order behind a strong rearguard. Eugen of Württemberg's corps held the heights behind Reichenbach against Reynier's Saxons and Durutte's French through the afternoon, while Latour-Maubourg's weak cavalry and the Guard's light horse sparred with the Russian dragoons and hussars round Markersdorf. The rearguard got away; near Markersdorf a cannonball struck Napoleon's suite, killing General Kirgener and mortally wounding Duroc, the Grand Marshal of the Palace and the Emperor's closest friend.",
+    [RB_FR, RB_RU],
+    [RB_GUARD, RB_DURUTTE, RB_SAXONS, RB_LATOUR, RB_LESSING, RB_EUGEN, RB_CAVALRY], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -1897,5 +2026,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
+    for b in (REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
         write(b)

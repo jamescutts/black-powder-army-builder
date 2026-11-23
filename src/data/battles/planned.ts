@@ -189,8 +189,6 @@ export const luneburg = planned("luneburg", "Lüneburg", "2 April 1813", L,
   "Dörnberg's and Chernyshev's flying columns stormed Lüneburg, held by Morand's small division, and took most of it prisoner after the townspeople helped them in: the first allied victory of the war in Germany.");
 export const rippach = planned("rippach", "Rippach", "1 May 1813", L,
   "Napoleon's advance guard forced the Rippach defile against Winzingerode's cavalry the day before Lützen; Marshal Bessières, reconnoitring, was killed by a cannonball.");
-export const reichenbach = planned("reichenbach", "Reichenbach", "22 May 1813", L,
-  "Pursuing the allies east from Bautzen, Napoleon's advance guard and cavalry were held by the Russian rearguard at Reichenbach; Duroc, Grand Marshal of the Palace, was mortally wounded by a shot that struck near the Emperor.");
 export const haynau = planned("haynau", "Haynau", "26 May 1813", L,
   "Blücher laid an ambush for the French advance guard in Silesia: Maison's division, marching carelessly through Haynau, was charged by Prussian cavalry hidden behind a ridge and lost its guns and hundreds of prisoners.");
 export const luckau = planned("luckau", "Luckau", "4 June 1813", L,
@@ -364,12 +362,6 @@ rippach.art = {
   "artist": "unknown artist",
   "date": "19th century",
   "page": "https://commons.wikimedia.org/wiki/File:Death_of_Marshal_Bessieres.png"
-};
-reichenbach.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/BOYER_935_-_Mort_de_Duroc.jpg/960px-BOYER_935_-_Mort_de_Duroc.jpg",
-  "title": "The Death of Duroc",
-  "artist": "unknown artist",
-  "page": "https://commons.wikimedia.org/wiki/File:BOYER_935_-_Mort_de_Duroc.jpg"
 };
 luckau.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Battle_of_Luckau_on_4_June_1813_%28R._Knotel%29.png/960px-Battle_of_Luckau_on_4_June_1813_%28R._Knotel%29.png",
