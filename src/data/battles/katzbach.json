@@ -217,7 +217,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/G%C3%A9n%C3%A9ral_Brayer_Michel_Sylvestre.jpg/250px-G%C3%A9n%C3%A9ral_Brayer_Michel_Sylvestre.jpg",
+        "title": "Michel Sylvestre Brayer",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Brayer_Michel_Sylvestre.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "katzbach-delmas",
@@ -353,7 +360,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Delmas.jpg/250px-Delmas.jpg",
+        "title": "Antoine Guillaume Delmas",
+        "artist": "19th-century engraving",
+        "page": "https://commons.wikimedia.org/wiki/File:Delmas.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "katzbach-albert",
@@ -612,7 +626,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Etienne_Pierre_Sylvestre_Ricard.jpg/250px-Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "title": "Étienne Pierre Sylvestre Ricard",
+        "artist": "from Panckoucke's portraits of French generals",
+        "page": "https://commons.wikimedia.org/wiki/File:Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
     },
     {
       "id": "katzbach-marchand",
@@ -741,7 +763,14 @@
             "variant": "Staff rating 7"
           }
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "title": "Jean-Gabriel Marchand",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Gabriel_Marchand.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "katzbach-beurmann",
@@ -1048,7 +1077,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Donatien_de_Rochambeau.jpg/250px-Donatien_de_Rochambeau.jpg",
+        "title": "Donatien de Rochambeau",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Donatien_de_Rochambeau.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "katzbach-dermoncourt",
@@ -1094,7 +1130,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Dermoncourt.jpg/250px-Dermoncourt.jpg",
+        "title": "Paul Ferdinand Dermoncourt",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Dermoncourt.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "katzbach-henin",
@@ -1354,7 +1397,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg/250px-Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "title": "Henri François Marie Charpentier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "katzbach-xi-cavalry",
@@ -2423,7 +2473,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/I.I._Vasilchikov.JPG/250px-I.I._Vasilchikov.JPG",
+        "title": "Illarion Vasilchikov",
+        "artist": "photograph by Ivan Gudovsky",
+        "page": "https://commons.wikimedia.org/wiki/File:I.I._Vasilchikov.JPG",
+        "focus": "50% 20%",
+        "date": "1850s"
+      }
     },
     {
       "id": "katzbach-karpov",
@@ -2731,12 +2789,11 @@
         }
       ],
       "portrait": {
-        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Langeron_A_F.jpg/250px-Langeron_A_F.jpg",
-        "title": "Count Alexandre de Langeron",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Scherbatov_1_Alexey_Grigoryevich.jpg/250px-Scherbatov_1_Alexey_Grigoryevich.jpg",
+        "title": "Alexei Shcherbatov",
         "artist": "George Dawe",
-        "page": "https://commons.wikimedia.org/wiki/File:Langeron_A_F.jpg",
-        "focus": "50% 18%",
-        "date": "before 1825"
+        "page": "https://commons.wikimedia.org/wiki/File:Scherbatov_1_Alexey_Grigoryevich.jpg",
+        "focus": "50% 18%"
       }
     },
     {
@@ -2941,7 +2998,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Olsufjev_1_Zahar_Dmitrievich.jpg/250px-Olsufjev_1_Zahar_Dmitrievich.jpg",
+        "title": "Zakhar Olsufiev",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Olsufjev_1_Zahar_Dmitrievich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "katzbach-kaptsevich",
@@ -3112,7 +3176,15 @@
           "name": "Schlusselburg and Olonets Infantry",
           "reason": "Single battalions that don't fit the list's Jäger brigade or its two-regiment infantry brigade."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kaptzevich_Petr.jpg/250px-Kaptzevich_Petr.jpg",
+        "title": "Pyotr Kaptsevich",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Kaptzevich_Petr.jpg",
+        "focus": "50% 18%",
+        "date": "1821"
+      }
     },
     {
       "id": "katzbach-korff",
@@ -3221,7 +3293,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Korf_Fyodor_Karlovich.jpg/250px-Korf_Fyodor_Karlovich.jpg",
+        "title": "Baron Fyodor Korff",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Korf_Fyodor_Karlovich.jpg",
+        "focus": "50% 18%"
+      }
     }
   ]
 }

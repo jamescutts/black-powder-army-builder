@@ -13,7 +13,14 @@
   },
   "sides": {
     "French": {
-      "commander": "Gén. de Division Puthod"
+      "commander": "Gén. de Division Puthod",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg/250px-Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg",
+        "title": "Jacques-Pierre-Louis Puthod",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg",
+        "focus": "50% 20%"
+      }
     },
     "Russian": {
       "commander": "General Langeron",
@@ -182,7 +189,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg/250px-Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg",
+        "title": "Jacques-Pierre-Louis Puthod",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "plagwitz-shcherbatov",
@@ -408,7 +422,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Scherbatov_1_Alexey_Grigoryevich.jpg/250px-Scherbatov_1_Alexey_Grigoryevich.jpg",
+        "title": "Alexei Shcherbatov",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Scherbatov_1_Alexey_Grigoryevich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "plagwitz-korff",
@@ -516,7 +537,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Korf_Fyodor_Karlovich.jpg/250px-Korf_Fyodor_Karlovich.jpg",
+        "title": "Baron Fyodor Korff",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Korf_Fyodor_Karlovich.jpg",
+        "focus": "50% 18%"
+      }
     }
   ]
 }

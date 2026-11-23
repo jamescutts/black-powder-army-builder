@@ -559,7 +559,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Karl_von_Normann-Ehrenfels.jpg/250px-Karl_von_Normann-Ehrenfels.jpg",
+        "title": "Karl von Normann-Ehrenfels",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_von_Normann-Ehrenfels.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "mockern-leipzig-lorge",
@@ -751,7 +758,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Jan_Henryk_D%C4%85browski_1.PNG/250px-Jan_Henryk_D%C4%85browski_1.PNG",
+        "title": "Jan Henryk Dąbrowski",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jan_Henryk_D%C4%85browski_1.PNG",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "mockern-leipzig-delmas",
@@ -873,7 +887,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Delmas.jpg/250px-Delmas.jpg",
+        "title": "Antoine Guillaume Delmas",
+        "artist": "19th-century engraving",
+        "page": "https://commons.wikimedia.org/wiki/File:Delmas.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "mockern-leipzig-brayer",
@@ -1023,7 +1044,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/G%C3%A9n%C3%A9ral_Brayer_Michel_Sylvestre.jpg/250px-G%C3%A9n%C3%A9ral_Brayer_Michel_Sylvestre.jpg",
+        "title": "Michel Sylvestre Brayer",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Brayer_Michel_Sylvestre.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "mockern-leipzig-yorck",

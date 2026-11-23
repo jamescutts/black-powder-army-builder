@@ -12,7 +12,15 @@
   },
   "sides": {
     "French": {
-      "commander": "Général Bertrand"
+      "commander": "Général Bertrand",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/General_Henri_Gatien%2C_count_Bertrand_by_Paul_Delaroche.png/250px-General_Henri_Gatien%2C_count_Bertrand_by_Paul_Delaroche.png",
+        "title": "Henri-Gatien Bertrand",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:General_Henri_Gatien%2C_count_Bertrand_by_Paul_Delaroche.png",
+        "focus": "50% 18%",
+        "date": "c. 1840"
+      }
     },
     "Prussian": {
       "commander": "Gen-Lt von Yorck",
@@ -314,7 +322,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/PORTRAIT_OF_ACHILLE_FONTANELLI.PNG/250px-PORTRAIT_OF_ACHILLE_FONTANELLI.PNG",
+        "title": "Achille Fontanelli",
+        "artist": "Andrea Appiani",
+        "page": "https://commons.wikimedia.org/wiki/File:PORTRAIT_OF_ACHILLE_FONTANELLI.PNG",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "wartenburg-franquemont",
@@ -407,7 +422,14 @@
           "name": "Jett's 24th Light Cavalry Brigade",
           "reason": "A squadron each of the 1st and 3rd Württemberg Chevau-légers, about a hundred men in all, too few for a unit."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Comte_Frederic_v._Franquemont.jpg/250px-Comte_Frederic_v._Franquemont.jpg",
+        "title": "Friedrich von Franquemont",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Comte_Frederic_v._Franquemont.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "wartenburg-beaumont",

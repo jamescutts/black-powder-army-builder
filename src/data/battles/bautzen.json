@@ -373,7 +373,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Delmas.jpg/250px-Delmas.jpg",
+        "title": "Antoine Guillaume Delmas",
+        "artist": "19th-century engraving",
+        "page": "https://commons.wikimedia.org/wiki/File:Delmas.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-maison",
@@ -471,7 +478,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Maison%2C_Nicolas-Joseph.jpg",
+        "title": "Nicolas Joseph Maison",
+        "artist": "Alois Senefelder",
+        "page": "https://commons.wikimedia.org/wiki/File:Maison%2C_Nicolas-Joseph.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-puthod",
@@ -594,7 +608,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg/250px-Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg",
+        "title": "Jacques-Pierre-Louis Puthod",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jacques_Pierre_Louis_Marie_Joseph_Puthod.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-chaplitz",
@@ -707,7 +728,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Chaplits_Yefim_Ignatyevich.jpg/250px-Chaplits_Yefim_Ignatyevich.jpg",
+        "title": "Yefim Chaplits",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Chaplits_Yefim_Ignatyevich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "bautzen-shcherbatov",
@@ -846,7 +874,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Scherbatov_1_Alexey_Grigoryevich.jpg/250px-Scherbatov_1_Alexey_Grigoryevich.jpg",
+        "title": "Alexei Shcherbatov",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Scherbatov_1_Alexey_Grigoryevich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "bautzen-insov",
@@ -958,7 +993,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Inzov_Ivan_Nikitich.jpg/250px-Inzov_Ivan_Nikitich.jpg",
+        "title": "Ivan Inzov",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Inzov_Ivan_Nikitich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "bautzen-kleist",
@@ -1782,7 +1824,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Portrait_%C3%A9questre_du_g%C3%A9n%C3%A9ral_Morand.jpg/250px-Portrait_%C3%A9questre_du_g%C3%A9n%C3%A9ral_Morand.jpg",
+        "title": "Charles-Antoine Morand",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Portrait_%C3%A9questre_du_g%C3%A9n%C3%A9ral_Morand.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-peyri",
@@ -2089,7 +2138,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Comte_Frederic_v._Franquemont.jpg/250px-Comte_Frederic_v._Franquemont.jpg",
+        "title": "Friedrich von Franquemont",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Comte_Frederic_v._Franquemont.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-compans",
@@ -2221,7 +2277,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg",
+        "title": "Jean Dominique Compans",
+        "artist": "Forestier",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Jean_Dominique_Compans_%282%29.jpg",
+        "focus": "50% 20%",
+        "date": "1820"
+      }
     },
     {
       "id": "bautzen-bonet",
@@ -2393,7 +2457,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Jean_Pierre_Fran%C3%A7ois_Bonet_%281768-1857%29.jpg/250px-Jean_Pierre_Fran%C3%A7ois_Bonet_%281768-1857%29.jpg",
+        "title": "Jean-Pierre-François Bonet",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean_Pierre_Fran%C3%A7ois_Bonet_%281768-1857%29.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "bautzen-friederichs",
@@ -2811,7 +2882,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/David_Etienne_Maurice_Gerard.jpg/250px-David_Etienne_Maurice_Gerard.jpg",
+        "title": "Étienne Maurice Gérard",
+        "artist": "Jacques-Louis David",
+        "page": "https://commons.wikimedia.org/wiki/File:David_Etienne_Maurice_Gerard.jpg",
+        "focus": "50% 14%",
+        "date": "1816"
+      }
     },
     {
       "id": "bautzen-charpentier",
@@ -2951,7 +3030,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg/250px-Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "title": "Henri François Marie Charpentier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-pacthod",
@@ -3196,7 +3282,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Guillaume_Latrille_de_Lorencez.jpg/250px-Guillaume_Latrille_de_Lorencez.jpg",
+        "title": "Guillaume Latrille de Lorencez",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Guillaume_Latrille_de_Lorencez.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-raglovich",
@@ -3319,7 +3412,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Barbara_Krafft_-_Generalleutnant_Clemens_Freiherr_von_Raglovich_%28ca.1813%29.jpg/250px-Barbara_Krafft_-_Generalleutnant_Clemens_Freiherr_von_Raglovich_%28ca.1813%29.jpg",
+        "title": "Clemens von Raglovich",
+        "artist": "Barbara Krafft",
+        "page": "https://commons.wikimedia.org/wiki/File:Barbara_Krafft_-_Generalleutnant_Clemens_Freiherr_von_Raglovich_%28ca.1813%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1813"
+      }
     },
     {
       "id": "bautzen-beaumont",
@@ -3366,7 +3467,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg/250px-Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg",
+        "title": "Louis Chrétien Carrière de Beaumont",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-old-guard",
@@ -3514,7 +3622,14 @@
           "name": "3rd Old Guard Battery (12-pdrs)",
           "reason": "The Guard's second 12-pdr battery, more than the list's reserve takes."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Fran%C3%A7ois_Roguet.jpg/250px-Fran%C3%A7ois_Roguet.jpg",
+        "title": "François Roguet",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Fran%C3%A7ois_Roguet.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-dumoustier",
@@ -3869,7 +3984,14 @@
           "name": "Berg Lancers",
           "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "title": "Charles Lefebvre-Desnouettes",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-eugen",
@@ -4085,7 +4207,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg/250px-Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+        "title": "Duke Eugen of Württemberg",
+        "artist": "Louis de Saint-Aubin",
+        "page": "https://commons.wikimedia.org/wiki/File:Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "bautzen-emmanuel",
@@ -4152,7 +4281,14 @@
             "variant": "Staff rating 7"
           }
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/EmmanuelGA.jpg/250px-EmmanuelGA.jpg",
+        "title": "Georgi Emmanuel",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:EmmanuelGA.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "bautzen-berg",
@@ -4319,7 +4455,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Berg_1_Grigory_Maximobich.jpg/250px-Berg_1_Grigory_Maximobich.jpg",
+        "title": "Grigory Berg",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Berg_1_Grigory_Maximobich.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "bautzen-st-priest",
@@ -4442,7 +4585,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Saint-Priest_E_F.jpg/250px-Saint-Priest_E_F.jpg",
+        "title": "Guillaume Emmanuel de Saint-Priest",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Saint-Priest_E_F.jpg",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "bautzen-russian-guard",

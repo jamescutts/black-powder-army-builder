@@ -127,7 +127,14 @@
           "name": "Berg Lancers",
           "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "title": "Charles Lefebvre-Desnouettes",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "reichenbach-durutte",
@@ -378,7 +385,15 @@
           "name": "French artillery (12 guns)",
           "reason": "French batteries with the Saxon corps, which a force from the Saxon list can't take."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Heinrich_Wilhelm_von_Zeschau_als_Vrijmetselaar.jpg",
+        "title": "Heinrich Wilhelm von Zeschau",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Heinrich_Wilhelm_von_Zeschau_als_Vrijmetselaar.jpg",
+        "focus": "50% 20%",
+        "date": "1866"
+      }
     },
     {
       "id": "reichenbach-latour-maubourg",
@@ -936,7 +951,14 @@
           "name": "Lukov's 5th Division and Duka's 2nd Cuirassier Division",
           "reason": "The rearguard's reserve, which Nafziger lists but which wasn't engaged."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Mikhail_Andreevitch_Miloradovitch_by_George_Dawe_-_Suvorov_museum.jpg/250px-Mikhail_Andreevitch_Miloradovitch_by_George_Dawe_-_Suvorov_museum.jpg",
+        "title": "Count Mikhail Miloradovich",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Mikhail_Andreevitch_Miloradovitch_by_George_Dawe_-_Suvorov_museum.jpg",
+        "focus": "50% 18%"
+      }
     }
   ]
 }

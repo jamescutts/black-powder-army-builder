@@ -207,7 +207,14 @@
             "variant": "Staff rating 8"
           }
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg/250px-Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg",
+        "title": "Louis Chrétien Carrière de Beaumont",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "luckau-bulow",

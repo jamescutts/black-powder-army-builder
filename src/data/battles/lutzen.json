@@ -372,7 +372,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Antoine_Fran%C3%A7ois_Brenier_de_Montmorand.jpg/250px-Antoine_Fran%C3%A7ois_Brenier_de_Montmorand.jpg",
+        "title": "Antoine-François Brenier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Antoine_Fran%C3%A7ois_Brenier_de_Montmorand.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "lutzen-girard",
@@ -654,7 +661,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Etienne_Pierre_Sylvestre_Ricard.jpg/250px-Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "title": "Étienne Pierre Sylvestre Ricard",
+        "artist": "from Panckoucke's portraits of French generals",
+        "page": "https://commons.wikimedia.org/wiki/File:Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
     },
     {
       "id": "lutzen-marchand",

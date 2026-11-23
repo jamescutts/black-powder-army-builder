@@ -384,7 +384,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/PORTRAIT_OF_ACHILLE_FONTANELLI.PNG/250px-PORTRAIT_OF_ACHILLE_FONTANELLI.PNG",
+        "title": "Achille Fontanelli",
+        "artist": "Andrea Appiani",
+        "page": "https://commons.wikimedia.org/wiki/File:PORTRAIT_OF_ACHILLE_FONTANELLI.PNG",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "dennewitz-franquemont",
@@ -541,7 +548,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Comte_Frederic_v._Franquemont.jpg/250px-Comte_Frederic_v._Franquemont.jpg",
+        "title": "Friedrich von Franquemont",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Comte_Frederic_v._Franquemont.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "dennewitz-dombrowski",
@@ -619,7 +633,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Jan_Henryk_D%C4%85browski_1.PNG/250px-Jan_Henryk_D%C4%85browski_1.PNG",
+        "title": "Jan Henryk Dąbrowski",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jan_Henryk_D%C4%85browski_1.PNG",
+        "focus": "50% 18%"
+      }
     },
     {
       "id": "dennewitz-sahr",
@@ -912,7 +933,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Heinrich_Adolf_Freiherr_von_Gablenz.jpg/250px-Heinrich_Adolf_Freiherr_von_Gablenz.jpg",
+        "title": "Heinrich Adolph von Gablenz",
+        "artist": "Ferdinand von Rayski",
+        "page": "https://commons.wikimedia.org/wiki/File:Heinrich_Adolf_Freiherr_von_Gablenz.jpg",
+        "focus": "50% 20%",
+        "date": "1841"
+      }
     },
     {
       "id": "dennewitz-durutte",
@@ -1324,7 +1353,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Le_g%C3%A9n%C3%A9ral_Guilleminot_%281774-1840%29_vers_1823.jpg/250px-Le_g%C3%A9n%C3%A9ral_Guilleminot_%281774-1840%29_vers_1823.jpg",
+        "title": "Armand Charles Guilleminot",
+        "artist": "Louise Adélaïde Desnos",
+        "page": "https://commons.wikimedia.org/wiki/File:Le_g%C3%A9n%C3%A9ral_Guilleminot_%281774-1840%29_vers_1823.jpg",
+        "focus": "50% 20%",
+        "date": "1843"
+      }
     },
     {
       "id": "dennewitz-raglovich",
@@ -1445,7 +1482,15 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Barbara_Krafft_-_Generalleutnant_Clemens_Freiherr_von_Raglovich_%28ca.1813%29.jpg/250px-Barbara_Krafft_-_Generalleutnant_Clemens_Freiherr_von_Raglovich_%28ca.1813%29.jpg",
+        "title": "Clemens von Raglovich",
+        "artist": "Barbara Krafft",
+        "page": "https://commons.wikimedia.org/wiki/File:Barbara_Krafft_-_Generalleutnant_Clemens_Freiherr_von_Raglovich_%28ca.1813%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1813"
+      }
     },
     {
       "id": "dennewitz-beaumont",
@@ -1491,7 +1536,14 @@
             }
           ]
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg/250px-Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg",
+        "title": "Louis Chrétien Carrière de Beaumont",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Louis_Chr%C3%A9tien_Carri%C3%A8re_de_Beaumont.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "dennewitz-arrighi",
@@ -1664,7 +1716,14 @@
           "name": "5/5th, 2/1st and 4/6th Horse Artillery",
           "reason": "The corps' other three horse batteries, more than the list takes."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Jean-Thomas_Arrighi_de_Casanova.jpg/250px-Jean-Thomas_Arrighi_de_Casanova.jpg",
+        "title": "Jean-Toussaint Arrighi de Casanova",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean-Thomas_Arrighi_de_Casanova.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "dennewitz-tauentzien",
@@ -1882,7 +1941,14 @@
           "name": "Ilovaisky #3 Don Cossacks",
           "reason": "A Russian Cossack regiment with the corps, which a force from the Prussian list can't take."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Bogislav_von_Tauentzien.jpg/250px-Bogislav_von_Tauentzien.jpg",
+        "title": "Bogislav von Tauentzien",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Bogislav_von_Tauentzien.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
       "id": "dennewitz-bulow",

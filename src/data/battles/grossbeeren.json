@@ -368,7 +368,15 @@
           "name": "2nd Horse Battery 'Probsthayn'",
           "reason": "The list allows one horse battery with a cavalry brigade, and the brigade's two regiments are its only ones."
         }
-      ]
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Heinrich_Adolf_Freiherr_von_Gablenz.jpg/250px-Heinrich_Adolf_Freiherr_von_Gablenz.jpg",
+        "title": "Heinrich Adolph von Gablenz",
+        "artist": "Ferdinand von Rayski",
+        "page": "https://commons.wikimedia.org/wiki/File:Heinrich_Adolf_Freiherr_von_Gablenz.jpg",
+        "focus": "50% 20%",
+        "date": "1841"
+      }
     },
     {
       "id": "grossbeeren-durutte",
