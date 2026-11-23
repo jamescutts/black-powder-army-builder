@@ -43,7 +43,66 @@ const bpl = (id: string, [x, y, w, h]: [number, number, number, number], width =
 // The French campaign sheet no. 1 of 1813, cut to its inset plan of Lützen
 const LUTZEN_INSET: [number, number, number, number] = [270, 325, 1890, 1405];
 
+// Johnston's one sheet with Großbeeren on its left and Dennewitz on its right, each battle cropped to its half
+const JOHNSTON_GB_DN = {
+  maker: "Alexander Keith Johnston, for the Atlas to Alison's History of Europe (William Blackwood and Sons)",
+  date: "1848",
+  collection: "David Rumsey Map Collection",
+  page: "https://commons.wikimedia.org/wiki/File:Battle_of_Gross_Beeren,_23_August_1813._Battle_of_Dennewitz,_6_September_1813._A.K._Johnston_F.R.G.S._William_Blackwood_and_(IA_dr_battle-of-gross-beeren-23-august-1813-battle-of-dennewitz-6-september-18-13200099).jpg",
+  licence: "Public domain",
+  src: commons(
+    "4/44/Battle_of_Gross_Beeren%2C_23_August_1813._Battle_of_Dennewitz%2C_6_September_1813._A.K._Johnston_F.R.G.S._William_Blackwood_and_%28IA_dr_battle-of-gross-beeren-23-august-1813-battle-of-dennewitz-6-september-18-13200099%29.jpg"
+  ),
+  width: 6109,
+  height: 4826,
+  preview: {
+    src: commons(
+      "thumb/4/44/Battle_of_Gross_Beeren%2C_23_August_1813._Battle_of_Dennewitz%2C_6_September_1813._A.K._Johnston_F.R.G.S._William_Blackwood_and_%28IA_dr_battle-of-gross-beeren-23-august-1813-battle-of-dennewitz-6-september-18-13200099%29.jpg/1920px-thumbnail.jpg"
+    ),
+    width: 1920,
+  },
+  // Photographed a little askew, less than Bautzen's and Lützen's: the border and the rule between the two plans
+  // lean 0.3°
+  rotate: 0.3,
+};
+
 export const battlePlans: Record<string, BattlePlan[]> = {
+  grossbeeren: [
+    {
+      label: "Rahden and Mare, 1821",
+      title: "Schlacht bei Gross Beeren den 23ten August 1813",
+      maker: "Wilhelm von Rahden and Carl Mare",
+      date: "1821",
+      collection: "Leibniz-Institut für Länderkunde, Leipzig",
+      page: "https://commons.wikimedia.org/wiki/File:Schlacht_bei_Gross-Beeren_Den_23ten_August_1813.jpg",
+      licence: "CC0",
+      src: commons("1/1e/Schlacht_bei_Gross-Beeren_Den_23ten_August_1813.jpg"),
+      width: 8093,
+      height: 6305,
+      preview: {
+        src: commons("thumb/1/1e/Schlacht_bei_Gross-Beeren_Den_23ten_August_1813.jpg/1920px-Schlacht_bei_Gross-Beeren_Den_23ten_August_1813.jpg"),
+        width: 1920,
+      },
+      crop: [385, 280, 7740, 5980],
+      note: "The whole field from Ruhlsdorf and Heinersdorf down to Blankenfelde and the Genshagen heath, with the troops' positions in colour, drawn by a Prussian officer eight years after. North is at the top.",
+    },
+    {
+      ...JOHNSTON_GB_DN,
+      label: "Johnston, 1848",
+      title: "Battle of Gross Beeren, 23rd August 1813",
+      crop: [800, 965, 2918, 4058],
+      note: "The left-hand plan of Johnston's sheet of Großbeeren and Dennewitz: Bülow's attack on Reynier's Saxons in Großbeeren, and Bertrand and Oudinot held off at Blankenfelde and Ahrensdorf; French blue, allies red. North is at the top.",
+    },
+  ],
+  dennewitz: [
+    {
+      ...JOHNSTON_GB_DN,
+      label: "Johnston, 1848",
+      title: "Battle of Dennewitz, 6th September 1813",
+      crop: [2898, 965, 5018, 4058],
+      note: "The right-hand plan of Johnston's sheet of Großbeeren and Dennewitz: Bertrand's, Reynier's and Oudinot's corps between Dennewitz, Göhlsdorf and Rohrbeck against Bülow and Tauentzien, with Jüterbog to the east; French blue, allies red. North is at the top. No other plan of the battle at a size to zoom into is to be found online.",
+    },
+  ],
   mockern: [
     {
       label: "Modern map, after Friederich",
