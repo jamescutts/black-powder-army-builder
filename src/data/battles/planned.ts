@@ -187,8 +187,6 @@ export const danzig = planned("danzig", "Siege of Danzig", "16 January – 29 No
   "Rapp held the Vistula fortress with the frozen remnants of the Grande Armée and a garrison of a dozen nations through the whole of 1813, beating off Russian and Prussian besiegers until hunger and disease forced him to terms in November.");
 export const luneburg = planned("luneburg", "Lüneburg", "2 April 1813", L,
   "Dörnberg's and Chernyshev's flying columns stormed Lüneburg, held by Morand's small division, and took most of it prisoner after the townspeople helped them in: the first allied victory of the war in Germany.");
-export const rippach = planned("rippach", "Rippach", "1 May 1813", L,
-  "Napoleon's advance guard forced the Rippach defile against Winzingerode's cavalry the day before Lützen; Marshal Bessières, reconnoitring, was killed by a cannonball.");
 export const haynau = planned("haynau", "Haynau", "26 May 1813", L,
   "Blücher laid an ambush for the French advance guard in Silesia: Maison's division, marching carelessly through Haynau, was charged by Prussian cavalry hidden behind a ridge and lost its guns and hundreds of prisoners.");
 export const kitzen = planned("kitzen", "Kitzen", "17 June 1813", L,
@@ -344,13 +342,6 @@ luneburg.art = {
   "title": "The Fight at Lüneburg, 2 April 1813",
   "artist": "F. A. Frenzel",
   "page": "https://commons.wikimedia.org/wiki/File:L%C3%BCneburg_Schlacht_1813.jpg"
-};
-rippach.art = {
-  "src": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Death_of_Marshal_Bessieres.png",
-  "title": "The Death of Marshal Bessières",
-  "artist": "unknown artist",
-  "date": "19th century",
-  "page": "https://commons.wikimedia.org/wiki/File:Death_of_Marshal_Bessieres.png"
 };
 goldberg.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Das_Gefecht_bei_Goldberg%2C_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg/960px-Das_Gefecht_bei_Goldberg%2C_den_23.n_August_1813_-_estampe_-_btv1b6953922v.jpg",

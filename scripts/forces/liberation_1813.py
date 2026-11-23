@@ -2502,6 +2502,54 @@ LUCKAU = battle(
     [LK_PACTHOD, LK_CAVALRY, LK_BULOW], [], alliances=())
 
 
+# ================================================================ Rippach, 1 May 1813
+
+RP_FR = {"label": "Grande Armée, 1 May 1813 (Nafziger Collection 813EXF)", "url": NAF + "813EXF.pdf"}
+RP_RU = {"label": "Russian Army, 1 May 1813 (Nafziger Collection 813ECC)", "url": NAF + "813ECC.pdf"}
+RP_HOW = {"label": "Action of Poserna, 1 May 1813 (History of War)", "url": "https://www.historyofwar.org/articles/action_poserna.html"}
+
+RP_SOUHAM = again(LZ_SOUHAM, "rippach-souham",
+                  "Ney's leading division, his raw conscripts formed in dense columns for steadiness, which forced the Rippach defile at Poserna under the fire of the Russian guns across the ravine and pushed on to Lützen by evening.",
+                  [LIST_FR, "Souham's division as at Lützen the next day, from Nafziger's order of battle there; History of War names it as the division that made the attack."])
+
+RP_GUARD = force(
+    "rippach-guard-cavalry", FIG, "Bessières's Guard Cavalry", "Cavalry of the Imperial Guard", "French",
+    "The Guard's horse, sent forward at noon to drive off the Russian batteries firing across the ravine. Bessières rode ahead to look at the ground; a roundshot killed one of his orderlies, and then the marshal himself, as he rode back to his men.",
+    [bde("fig-heavy-cavalry-brigade", "Heavy Cavalry", "",
+         units=[u("fig-grenadiers-a-cheval-regt", "Grenadiers à Cheval"), u("fig-empress-dragoons", "Empress Dragoons"), u("fig-og-horse-arty", "Guard Horse Artillery")]),
+     bde("fig-light-cavalry-brigade", "Polish Lancers", "", units=[u("fig-polish-lancers", "1st (Polish) Guard Lancers"), u("fig-gendarmes-elite", "Gendarmes d'Élite")]),
+     bde("fig-light-cavalry-brigade", "Dutch Lancers", "", units=[u("fig-dutch-red-lancers", "2nd (Dutch) Guard Lancers")]),
+     bde("fig-light-cavalry-brigade", "Chasseurs à Cheval", "", units=[u("fig-chasseurs-a-cheval", "Chasseurs à Cheval de la Garde")])],
+    command=[cmd("fig-div-cmd", "Maréchal Bessières")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.",
+           "After Nafziger's return of the Grande Armée for 1 May 1813, which puts the Guard cavalry under Walther, about 3,900 men in seven regiments; Bessières commanded the Guard's cavalry, and leads the force here.",
+           CAV_ONLY])
+RP_GUARD["missing"] = [{"name": "Chevau-légers of Berg", "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."}]
+
+RP_WINZINGERODE = force(
+    "rippach-winzingerode", RU, "Winzingerode's Cavalry", "Corps of Gen-Lt Winzingerode", "Russian",
+    "Lanskoi's hussars and uhlans and Winzingerode's Cossacks, the allied advance guard on the Rippach, which fell back before Souham's columns while their horse batteries fired on them across the ravine.",
+    [bde("ru-light-cavalry-brigade", "Vadbolsky's Brigade", "Col Prince Vadbolsky",
+         units=[u("ru-hussar", "Alexandria Hussars"), u("ru-hussar", "Sumy Hussars"), u("ru-hussar", "White Russia Hussars"), u("ru-horse-arty", "Horse Battery #7")]),
+     bde("ru-light-cavalry-brigade", "Knorring's Brigade", "Maj-Gen Knorring",
+         units=[u("ru-uhlan", "Tatar Uhlans"), u("ru-uhlan", "Lithuanian Uhlans"), u("ru-mounted-jager", "Lithuanian Mounted Jäger"), u("ru-horse-arty", "Horse Battery #8")]),
+     bde("ru-cossack-brigade", "Witte's Ukrainian Cossacks", "Maj-Gen Count de Witte",
+         units=[u("ru-mounted-cossack", "1st Ukrainian Cossacks"), u("ru-mounted-cossack", "3rd Ukrainian Cossacks")]),
+     bde("ru-cossack-brigade", "Don Cossacks", "",
+         units=[u("ru-mounted-cossack", "Grekov #3 Don Cossacks"), u("ru-mounted-cossack", "Grekov #9 Don Cossacks"),
+                u("ru-mounted-cossack", "Grekov #21 Don Cossacks"), u("ru-mounted-cossack", "Shurscherinov Don Cossacks")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Baron Winzingerode")],
+    notes=[LIST_RU, "After Nafziger's return of the Russian army for 1 May 1813, the day of the fight: Winzingerode's corps, Lanskoi's cavalry under him. History of War names Lanskoi's cavalry and the Russian guns across the ravine.",
+           "The Ukrainian Cossack regiments, raised in 1812, are shown as Mounted Cossacks; the Lithuanian Chasseurs à Cheval as Mounted Jäger.",
+           "Three hussar regiments and two uhlan regiments in a brigade, where the list takes two and one, two light cavalry brigades and two Cossack brigades, where it allows one each, and cavalry with no infantry brigade to allow it, show as historical departures."])
+
+RIPPACH = battle(
+    "rippach", "Rippach", "1 May 1813",
+    "Napoleon's new army, crossing the Saale towards Leipzig, sent Ney's corps over the Rippach, a stream in a ravine lined with villages, to cover its right. Lanskoi's Russian cavalry fell back from the far bank, but Winzingerode's guns fired across the ravine on Souham's conscripts, packed in dense columns. At noon Napoleon came up and sent the Guard cavalry forward to drive off the guns; Marshal Bessières, riding ahead to look at the ground, was killed by a roundshot. The Russians gave way, and by evening Ney's corps was round Lützen, where the allies attacked it the next day.",
+    [RP_FR, RP_RU, LZ_FR, RP_HOW],
+    [RP_SOUHAM, RP_GUARD, RP_WINZINGERODE], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -2519,5 +2567,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (LUCKAU, MOCKERN_LEIPZIG, REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
+    for b in (RIPPACH, LUCKAU, MOCKERN_LEIPZIG, REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
         write(b)

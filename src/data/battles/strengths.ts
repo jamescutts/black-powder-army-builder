@@ -190,6 +190,12 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "c. 19,000", extra: "with Dombrowski's 2,350 Poles besides" },
     { label: "Prussian", men: "c. 22,600" },
   ],
+  // No source gives Rippach's strengths: the French figure is Souham's division and the Guard cavalry on Nafziger's
+  // returns (813EAA, 813EXF); no figure for Winzingerode's cavalry has been found
+  rippach: [
+    { label: "French", men: "c. 16,000", engaged: true },
+    { label: "Russian", men: "not known" },
+  ],
   // Wikipedia gives the French army's total and no Russian figure; the Russian rearguard's is Clash of Steel's
   reichenbach: [
     { label: "French", men: "50,000" },

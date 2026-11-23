@@ -169,6 +169,7 @@ COMMANDERS.update({
     "reichenbach": {"French": ("Napoleon", "napoleon"), "Russian": ("General Miloradovich", "miloradovich")},
     "mockern-leipzig": {"French": ("Marshal Marmont", "marmont"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
     "luckau": {"French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
+    "rippach": {"French": ("Napoleon, with Marshal Ney", "napoleon"), "Russian": ("Gen-Lt Winzingerode", "winzingerode")},
     "plagwitz": {"French": ("Gén. de Division Puthod", "puthod"), "Russian": ("General Langeron", "langeron")},
     "hagelberg": {"French": ("Gén. de Division Girard", "girard"), "Prussian": ("Gen-Maj von Hirschfeld", "hirschfeld")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
@@ -663,6 +664,8 @@ PORTRAITS.update({
     "zeschau": portrait("Heinrich Wilhelm von Zeschau als Vrijmetselaar.jpg", "Heinrich Wilhelm von Zeschau", "unknown artist", "1866", small=True),
     "shcherbatov": portrait("Scherbatov 1 Alexey Grigoryevich.jpg", "Alexei Shcherbatov", "George Dawe", focus="50% 18%"),
     "olsufiev": portrait("Olsufjev 1 Zahar Dmitrievich.jpg", "Zakhar Olsufiev", "workshop of George Dawe", focus="50% 18%"),
+    "bessieres": portrait("Reisener - Portrait du maréchal Jean-Baptiste Bessières, duc d'Istries (1768-1813).jpg", "Marshal Jean-Baptiste Bessières", "Henri-François Riesener", focus="50% 15%"),
+    "winzingerode": portrait("Vinzingerode.jpg", "Ferdinand von Wintzingerode", "workshop of George Dawe", focus="50% 18%"),
     "kaptsevich": portrait("Kaptzevich Petr.jpg", "Pyotr Kaptsevich", "George Dawe", "1821", "50% 18%"),
 })
 
@@ -690,7 +693,7 @@ FORCE_PORTRAITS.update({
     "hanau-spleny": "spleny", "hanau-mensdorff": "mensdorff", "katzbach-brayer": "brayer", "mockern-leipzig-brayer": "brayer",
     "katzbach-rochambeau": "rochambeau", "katzbach-dermoncourt": "dermoncourt", "katzbach-vasilchikov": "ilarion_vasilchikov",
     "katzbach-olsufiev": "olsufiev", "katzbach-kaptsevich": "kaptsevich", "lutzen-brenier": "brenier",
-    "mockern-leipzig-normann": "normann", "reichenbach-saxons": "zeschau",
+    "mockern-leipzig-normann": "normann", "rippach-guard-cavalry": "bessieres", "rippach-winzingerode": "winzingerode", "reichenbach-saxons": "zeschau",
 })
 
 

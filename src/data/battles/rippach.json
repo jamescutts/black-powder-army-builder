@@ -1,0 +1,444 @@
+{
+  "id": "rippach",
+  "name": "Rippach",
+  "date": "1 May 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/0/01/Mort_du_mar%C3%A9chal_Bessi%C3%A8res.jpg",
+    "title": "The Death of Marshal Bessières at Rippach",
+    "artist": "Hippolyte Bellangé, for Saint-Hilaire's Histoire de la Garde impériale",
+    "date": "19th century",
+    "page": "https://commons.wikimedia.org/wiki/File:Mort_du_mar%C3%A9chal_Bessi%C3%A8res.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon, with Marshal Ney",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Winzingerode",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Vinzingerode.jpg/250px-Vinzingerode.jpg",
+        "title": "Ferdinand von Wintzingerode",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Vinzingerode.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "summary": "Napoleon's new army, crossing the Saale towards Leipzig, sent Ney's corps over the Rippach, a stream in a ravine lined with villages, to cover its right. Lanskoi's Russian cavalry fell back from the far bank, but Winzingerode's guns fired across the ravine on Souham's conscripts, packed in dense columns. At noon Napoleon came up and sent the Guard cavalry forward to drive off the guns; Marshal Bessières, riding ahead to look at the ground, was killed by a roundshot. The Russians gave way, and by evening Ney's corps was round Lützen, where the allies attacked it the next day.",
+  "sources": [
+    {
+      "label": "Grande Armée, 1 May 1813 (Nafziger Collection 813EXF)",
+      "url": "https://www.napoleon-series.org/nafzigger/813EXF.pdf"
+    },
+    {
+      "label": "Russian Army, 1 May 1813 (Nafziger Collection 813ECC)",
+      "url": "https://www.napoleon-series.org/nafzigger/813ECC.pdf"
+    },
+    {
+      "label": "French Forces at Gross Görschen or Lützen, 2 May 1813 (Nafziger Collection 813EAA)",
+      "url": "https://www.napoleon-series.org/nafzigger/813EAA.pdf"
+    },
+    {
+      "label": "Action of Poserna, 1 May 1813 (History of War)",
+      "url": "https://www.historyofwar.org/articles/action_poserna.html"
+    }
+  ],
+  "forces": [
+    {
+      "id": "rippach-souham",
+      "nationId": "france",
+      "name": "Souham's Division",
+      "formation": "8th Division, III Corps (Ney)",
+      "side": "French",
+      "summary": "Ney's leading division, his raw conscripts formed in dense columns for steadiness, which forced the Rippach defile at Poserna under the fire of the Russian guns across the ravine and pushed on to Lützen by evening.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "Souham's division as at Lützen the next day, from Nafziger's order of battle there; History of War names it as the division that made the attack.",
+        "After Nafziger's order of battle for Lützen, with strengths of 25 April.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Most of its regiments were provisional: two depot battalions of different regiments put together, each shown as its two battalions.",
+        "Its two provisional light regiments, where the list allows one light regiment in a division, and Chasseraux's four regiments, where the list allows three in a brigade, show as historical departures.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Souham",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chasseraux's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chasseraux",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/6th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/25th Léger"
+                }
+              ]
+            },
+            {
+              "name": "10th Provisional Légère",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/16th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/28th Léger"
+                }
+              ]
+            },
+            {
+              "name": "14th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/34th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/40th Line"
+                }
+              ]
+            },
+            {
+              "name": "19th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/32nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/58th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chemineau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chemineau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "21st Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/59th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/69th Line"
+                }
+              ]
+            },
+            {
+              "name": "24th Provisional Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/88th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/103rd Line"
+                }
+              ]
+            },
+            {
+              "name": "22nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/22nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/22nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "9/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/2nd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rippach-guard-cavalry",
+      "nationId": "french-imperial-guard",
+      "name": "Bessières's Guard Cavalry",
+      "formation": "Cavalry of the Imperial Guard",
+      "side": "French",
+      "summary": "The Guard's horse, sent forward at noon to drive off the Russian batteries firing across the ravine. Bessières rode ahead to look at the ground; a roundshot killed one of his orderlies, and then the marshal himself, as he rode back to his men.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.",
+        "After Nafziger's return of the Grande Armée for 1 May 1813, which puts the Guard cavalry under Walther, about 3,900 men in seven regiments; Bessières commanded the Guard's cavalry, and leads the force here.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Maréchal Bessières",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Guard Horse Artillery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Polish Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st (Polish) Guard Lancers"
+            },
+            {
+              "unit": "fig-gendarmes-elite",
+              "name": "Gendarmes d'Élite"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Dutch Lancers",
+          "units": [
+            {
+              "unit": "fig-dutch-red-lancers",
+              "name": "2nd (Dutch) Guard Lancers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Chasseurs à Cheval",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval de la Garde"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "missing": [
+        {
+          "name": "Chevau-légers of Berg",
+          "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Reisener_-_Portrait_du_mar%C3%A9chal_Jean-Baptiste_Bessi%C3%A8res%2C_duc_d%27Istries_%281768-1813%29.jpg/250px-Reisener_-_Portrait_du_mar%C3%A9chal_Jean-Baptiste_Bessi%C3%A8res%2C_duc_d%27Istries_%281768-1813%29.jpg",
+        "title": "Marshal Jean-Baptiste Bessières",
+        "artist": "Henri-François Riesener",
+        "page": "https://commons.wikimedia.org/wiki/File:Reisener_-_Portrait_du_mar%C3%A9chal_Jean-Baptiste_Bessi%C3%A8res%2C_duc_d%27Istries_%281768-1813%29.jpg",
+        "focus": "50% 15%"
+      }
+    },
+    {
+      "id": "rippach-winzingerode",
+      "nationId": "russia",
+      "name": "Winzingerode's Cavalry",
+      "formation": "Corps of Gen-Lt Winzingerode",
+      "side": "Russian",
+      "summary": "Lanskoi's hussars and uhlans and Winzingerode's Cossacks, the allied advance guard on the Rippach, which fell back before Souham's columns while their horse batteries fired on them across the ravine.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Russian army for 1 May 1813, the day of the fight: Winzingerode's corps, Lanskoi's cavalry under him. History of War names Lanskoi's cavalry and the Russian guns across the ravine.",
+        "The Ukrainian Cossack regiments, raised in 1812, are shown as Mounted Cossacks; the Lithuanian Chasseurs à Cheval as Mounted Jäger.",
+        "Three hussar regiments and two uhlan regiments in a brigade, where the list takes two and one, two light cavalry brigades and two Cossack brigades, where it allows one each, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Baron Winzingerode",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Vadbolsky's Brigade",
+          "commander": {
+            "name": "Col Prince Vadbolsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Alexandria Hussars"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Sumy Hussars"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "White Russia Hussars"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #7"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Knorring's Brigade",
+          "commander": {
+            "name": "Maj-Gen Knorring",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-uhlan",
+              "name": "Tatar Uhlans"
+            },
+            {
+              "unit": "ru-uhlan",
+              "name": "Lithuanian Uhlans"
+            },
+            {
+              "unit": "ru-mounted-jager",
+              "name": "Lithuanian Mounted Jäger"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #8"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Witte's Ukrainian Cossacks",
+          "commander": {
+            "name": "Maj-Gen Count de Witte",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "1st Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "3rd Ukrainian Cossacks"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Don Cossacks",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Grekov #3 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Grekov #9 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Grekov #21 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Shurscherinov Don Cossacks"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Vinzingerode.jpg/250px-Vinzingerode.jpg",
+        "title": "Ferdinand von Wintzingerode",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Vinzingerode.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  ]
+}

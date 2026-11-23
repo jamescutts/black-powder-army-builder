@@ -18,6 +18,7 @@ import bautzen from "./bautzen.json";
 import grossbeeren from "./grossbeeren.json";
 import wartenburg from "./wartenburg.json";
 import hagelberg from "./hagelberg.json";
+import rippach from "./rippach.json";
 import luckau from "./luckau.json";
 import mockernLeipzig from "./mockern-leipzig.json";
 import reichenbach from "./reichenbach.json";
@@ -85,7 +86,6 @@ import {
   tarragona,
   danzig,
   luneburg,
-  rippach,
   haynau,
   kitzen,
   lowenberg,
@@ -404,7 +404,7 @@ const allBattles: HistoricalBattle[] = [
   danzig,
   luneburg,
   mockern as HistoricalBattle,
-  rippach,
+  rippach as HistoricalBattle,
   lutzen as HistoricalBattle,
   bautzen as HistoricalBattle,
   reichenbach as HistoricalBattle,
