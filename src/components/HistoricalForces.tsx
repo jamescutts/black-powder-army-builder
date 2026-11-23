@@ -6,6 +6,7 @@ import { Anchor, Badge, Breadcrumbs, Card, Container, Group, SimpleGrid, Stack, 
 import { IconBook2, IconChevronLeft } from "@tabler/icons-react";
 import { getNation, getSupplement } from "@/data";
 import { CampaignCard } from "./CampaignCard";
+import { BattlePlans } from "./BattlePlans";
 import { CampaignMap, hasCampaignMap, routesAt } from "./CampaignMap";
 import { OrderOfBattle } from "./OrderOfBattle";
 import { battlePlaces, campaignMaps } from "@/data/battles/geo";
@@ -259,6 +260,7 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
           </Stack>
         ))}
         <BattleMap campaignId={campaign.id} battleId={battle.id} name={battle.name} />
+        <BattlePlans battleId={battle.id} name={battle.name} />
         <OrderOfBattle battle={battle} />
       </Stack>
     </Container>

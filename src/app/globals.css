@@ -2935,3 +2935,60 @@ a.app-list-row:active {
   height: 14px;
   border-radius: 2px;
 }
+
+/* A battle's period maps: a scan that pans and zooms, framed like the campaign map */
+.battle-plan {
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid var(--mantine-color-gray-3);
+  border-radius: var(--mantine-radius-md);
+  box-shadow: 0 2px 12px rgba(51, 32, 15, 0.12);
+  background: #e9dfc8;
+}
+
+.battle-plan .battle-plan-canvas {
+  height: clamp(440px, 72vh, 760px);
+  background: #e9dfc8;
+  font-family: var(--mantine-font-family);
+}
+
+.battle-plan[data-full] {
+  border: 0;
+  border-radius: 0;
+}
+
+.battle-plan[data-full] .battle-plan-canvas {
+  height: 100vh;
+}
+
+.battle-plan .battle-plan-full {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.battle-plan .battle-plan-detail {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 1000;
+  padding: 2px 8px;
+  border-radius: var(--mantine-radius-sm);
+  background: rgba(255, 250, 240, 0.85);
+  font-size: 12px;
+  color: var(--mantine-color-brown-9, #4a3420);
+}
+
+@media (max-width: 47.99em) {
+  .battle-plan {
+    margin-inline: calc(-1 * var(--mantine-spacing-md));
+    border-inline: 0;
+    border-radius: 0;
+  }
+  .battle-plan .battle-plan-canvas {
+    height: clamp(380px, 64dvh, 560px);
+  }
+}
