@@ -187,8 +187,6 @@ export const danzig = planned("danzig", "Siege of Danzig", "16 January – 29 No
   "Rapp held the Vistula fortress with the frozen remnants of the Grande Armée and a garrison of a dozen nations through the whole of 1813, beating off Russian and Prussian besiegers until hunger and disease forced him to terms in November.");
 export const luneburg = planned("luneburg", "Lüneburg", "2 April 1813", L,
   "Dörnberg's and Chernyshev's flying columns stormed Lüneburg, held by Morand's small division, and took most of it prisoner after the townspeople helped them in: the first allied victory of the war in Germany.");
-export const haynau = planned("haynau", "Haynau", "26 May 1813", L,
-  "Blücher laid an ambush for the French advance guard in Silesia: Maison's division, marching carelessly through Haynau, was charged by Prussian cavalry hidden behind a ridge and lost its guns and hundreds of prisoners.");
 export const kitzen = planned("kitzen", "Kitzen", "17 June 1813", L,
   "During the armistice Lützow's Free Corps, marching back to Prussian lines, was surrounded at Kitzen by French and Württemberg cavalry who held it was outside the truce, and cut to pieces; the poet Theodor Körner was among the wounded.");
 export const lowenberg = planned("lowenberg", "Löwenberg", "21 August 1813", L,
@@ -401,12 +399,6 @@ saintDizier.art = {
   "artist": "Édouard Detaille",
   "page": "https://commons.wikimedia.org/wiki/File:Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier,_1814.jpg",
   "focus": "50% 30%"
-};
-haynau.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Combat_d%27Haynau%2C_26_mai_1813.jpg/960px-Combat_d%27Haynau%2C_26_mai_1813.jpg",
-  "title": "Prussian Cavalry against Maison's Infantry at Haynau",
-  "artist": "Richard Knötel",
-  "page": "https://commons.wikimedia.org/wiki/File:Combat_d%27Haynau,_26_mai_1813.jpg"
 };
 lowenberg.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Pierwsza_bitwa_nad_Bobrem.png/960px-Pierwsza_bitwa_nad_Bobrem.png",

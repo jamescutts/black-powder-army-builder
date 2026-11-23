@@ -190,6 +190,10 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "c. 19,000", extra: "with Dombrowski's 2,350 Poles besides" },
     { label: "Prussian", men: "c. 22,600" },
   ],
+  haynau: [
+    { label: "French", men: "5,000" },
+    { label: "Prussian", men: "15,400" },
+  ],
   // No source gives Rippach's strengths: the French figure is Souham's division and the Guard cavalry on Nafziger's
   // returns (813EAA, 813EXF); no figure for Winzingerode's cavalry has been found
   rippach: [

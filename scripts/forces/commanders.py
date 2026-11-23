@@ -170,6 +170,7 @@ COMMANDERS.update({
     "mockern-leipzig": {"French": ("Marshal Marmont", "marmont"), "Prussian": ("Gen-Lt von Yorck", "yorck")},
     "luckau": {"French": ("Marshal Oudinot", "oudinot"), "Prussian": ("Gen-Lt von Bülow", "bulow")},
     "rippach": {"French": ("Napoleon, with Marshal Ney", "napoleon"), "Russian": ("Gen-Lt Winzingerode", "winzingerode")},
+    "haynau": {"French": ("Gén. de Division Maison", "maison"), "Prussian": ("General Blücher", "blucher")},
     "plagwitz": {"French": ("Gén. de Division Puthod", "puthod"), "Russian": ("General Langeron", "langeron")},
     "hagelberg": {"French": ("Gén. de Division Girard", "girard"), "Prussian": ("Gen-Maj von Hirschfeld", "hirschfeld")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},

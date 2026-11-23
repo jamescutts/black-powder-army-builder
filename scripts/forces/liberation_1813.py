@@ -2550,6 +2550,68 @@ RIPPACH = battle(
     [RP_SOUHAM, RP_GUARD, RP_WINZINGERODE], [], alliances=())
 
 
+# ================================================================ Haynau, 26 May 1813
+
+HY_FR = {"label": "French Forces, Battle of Michelsdorf, 26 May 1813 (Nafziger Collection 813ECN, after Plotho)", "url": NAF + "813ECN.pdf"}
+HY_PR = {"label": "Prussian Forces, Battle of Michelsdorf or Hainau, 26 May 1813 (Nafziger Collection 813ECO, after Plotho)", "url": NAF + "813ECO.pdf"}
+HY_WIKI = {"label": "Battle of Haynau (Wikipedia)", "url": "https://en.wikipedia.org/wiki/Battle_of_Haynau"}
+HY_NOTE = "After Nafziger's order of battle for Haynau, which he calls Michelsdorf, from Plotho."
+
+HY_MAISON = force(
+    "haynau-maison", FR, "Maison's Division", "16th Division, V Corps (Lauriston)", "French",
+    "Lauriston's advance guard, marching east from Haynau after the allies without its cavalry ahead of it. Near Michelsdorf, in the late afternoon, Dolffs's cuirassiers and the Guard cavalry came over the rise of the Baudmannsdorf heights where they had lain hidden and rode the division down before it could form square; it lost its guns and hundreds of prisoners, and Maison barely escaped.",
+    [bde("fr-infantry-brigade", "Avril's Brigade", "Gén. de Brigade Avril", regiments=[bn_list("fr-line-infantry", "151st Line", ["1", "2", "3"])]),
+     bde("fr-infantry-brigade", "Penne's Brigade", "Gén. de Brigade Penne", regiments=[bn_list("fr-line-infantry", "153rd Line", ["1", "2", "3"])]),
+     foot("Foot Battery", "Foot Battery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Maison")],
+    notes=[LIST_FR, HY_NOTE, CONSCRIPTS,
+           "Nafziger gives the division three foot batteries with 22 guns but doesn't name them; two are here, the list allowing one.",
+           NO_REGT_GUNS])
+HY_MAISON["missing"] = [{"name": "A third foot battery", "reason": "Maison's batteries had 22 guns in all, more than the list takes for six battalions."}]
+
+HY_PUTHOD = force(
+    "haynau-puthod", FR, "Puthod's Division", "17th Division, V Corps (Lauriston)", "French",
+    "Lauriston's second division, halted in Michelsdorf behind Maison's, which never came forward into the fight.",
+    [bde("fr-infantry-brigade", "Vachot's Brigade", "Gén. de Brigade Vachot",
+         regiments=[bn_list("fr-line-infantry", "146th Line", ["1", "2", "3", "4"]), bn_list("fr-line-infantry", "147th Line", ["1", "2", "3", "4"])]),
+     bde("fr-infantry-brigade", "Pastol's Brigade", "Gén. de Brigade Pastol", regiments=[bn_list("fr-line-infantry", "148th Line", ["1", "2", "3", "4"])]),
+     foot("Foot Battery", "Foot Battery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Puthod")],
+    notes=[LIST_FR, HY_NOTE, CONSCRIPTS,
+           "Nafziger names the division's commander as Pacthod, but its brigades and regiments are those of Puthod's 17th Division, which Puthod led through the spring.",
+           NO_REGT_GUNS, TWO_BATTERIES])
+
+HY_PRUSSIANS = force(
+    "haynau-blucher", PR15, "Blücher's Ambush", "Zieten's brigade and Dolffs's reserve cavalry", "Prussian",
+    "Blücher, retreating east after Bautzen, hid his reserve cavalry behind the heights south of Haynau with Zieten's Silesians, and let the French advance guard march past. At the signal of a burning windmill, Dolffs led the Garde du Corps and the cuirassiers down on Maison's columns; he was killed in the charge, but the division was broken, and Zieten's hussars and uhlans came up to join the pursuit after it was decided.",
+    [pi("Upper Silesian Brigade (Zieten)", "Gen-Maj von Zieten",
+        [("2nd Silesian Infantry", [("M", "Offenay's Battalion (I/2nd Silesian?)"), ("M", "Koschitzky's Battalion (III/2nd Silesian?)")]),
+         ("Leib Infantry Reserve", [("M", "Reichenbach's Battalion (3rd Reserve, Leib?)"), ("M", "Bülow's Battalion (5th Reserve, Leib?)")]),
+         ("1st Silesian Infantry", [("M", "Silesian Grenadier Battalion"), ("M", "Bentheim's Battalion (1st Silesian)"), ("F", "F/1st Silesian Infantry")])],
+        [u("pr15-schutzen", "Silesian Schützen (2 companies)")], sub="Col von Pirch"),
+     pc("Reserve Cavalry (Werder)", "Lt-Col von Werder",
+        [u("pr15-dragoon", "Garde du Corps", options=["veteran-cavalry"]), u("pr15-hussar", "Guard Light Cavalry", options=["veteran-cavalry"]),
+         u("pr15-horse-arty", "Guard Horse Battery #4", options=["veteran-artillery"])]),
+     pc("Reserve Cavalry (Jürgass)", "Col von Jürgass",
+        [u("pr15-dragoon", "East Prussian Cuirassiers"), u("pr15-dragoon", "Silesian Cuirassiers"), u("pr15-dragoon", "Brandenburg Cuirassiers"),
+         u("pr15-horse-arty", "Horse Battery #10")]),
+     pc("Rearguard Cavalry (Mutius)", "Col von Mutius", [u("pr15-dragoon", "Neumark Dragoons (3 squadrons)"), u("pr15-horse-arty", "Horse Battery #7")]),
+     pc("Upper Silesian Cavalry", "Maj von Blücher",
+        [u("pr15-hussar", "1st Silesian Hussars (2 squadrons)"), u("pr15-hussar", "2nd Silesian Hussars (2 squadrons)"),
+         u("pr15-uhlan", "Silesian Uhlans (2 squadrons)"), u("pr15-horse-arty", "Horse Battery #9")]),
+     pres(u("pr15-horse-arty", "Horse Battery #8"))],
+    command=[{"unit": "pr15-cmd-blucher"}],
+    notes=[PR_LIST, HY_NOTE, "Blücher, who planned the ambush, is the book's named commander; Dolffs led the charge.", PR_GROUPED, PR_SUB, CUIRASSIERS,
+           "Nafziger identifies Zieten's battalions only by their commanders' names, and guesses at their regiments; they're grouped here by his guesses. The Garde du Corps, Guard Light Cavalry and Guard horse battery have the list's Veteran upgrades, as at Lützen and Bautzen.",
+           "The Silesian hussars and uhlans joined after the fight was decided. Three line regiments and no Landwehr in Zieten's brigade, Mutius's one regiment with its horse battery, both Guard regiments Veteran where the list allows half a brigade's, more cavalry brigades than the infantry allows, and a reserve horse battery with too few brigades show as historical departures."])
+
+HAYNAU = battle(
+    "haynau", "Haynau", "26 May 1813",
+    "After Bautzen the allies fell back east into Silesia with Napoleon's corps pressing after them, their advance guards pushing on without cavalry ahead. Blücher laid an ambush: he hid his reserve cavalry behind the heights south of Haynau and let Maison's division march past towards Michelsdorf. In the late afternoon, at the signal of a burning windmill, Dolffs led the Garde du Corps and three regiments of cuirassiers down on the French columns and rode them over before they could form square. Dolffs was killed, but Maison lost his guns and hundreds of prisoners, and the French advance went more carefully afterwards.",
+    [HY_FR, HY_PR, HY_WIKI],
+    [HY_MAISON, HY_PUTHOD, HY_PRUSSIANS], [], alliances=())
+
+
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
 MISSING = [
     (LZ_MARCHAND, [{"name": "Laboissière's and Jett's cavalry",
@@ -2567,5 +2629,5 @@ for f, items in MISSING:
 
 
 if __name__ == "__main__":
-    for b in (RIPPACH, LUCKAU, MOCKERN_LEIPZIG, REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
+    for b in (HAYNAU, RIPPACH, LUCKAU, MOCKERN_LEIPZIG, REICHENBACH, MOCKERN, LUTZEN, BAUTZEN, GROSSBEEREN, KATZBACH, HAGELBERG, PLAGWITZ, DENNEWITZ, WARTENBURG, HANAU):
         write(b)

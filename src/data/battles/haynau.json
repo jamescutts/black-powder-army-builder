@@ -1,0 +1,476 @@
+{
+  "id": "haynau",
+  "name": "Haynau",
+  "date": "26 May 1813",
+  "campaign": "liberation-1813",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Combat_d%27Haynau%2C_26_mai_1813.jpg/960px-Combat_d%27Haynau%2C_26_mai_1813.jpg",
+    "title": "Prussian Cavalry against Maison's Infantry at Haynau",
+    "artist": "Richard Knötel",
+    "page": "https://commons.wikimedia.org/wiki/File:Combat_d%27Haynau,_26_mai_1813.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Gén. de Division Maison",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Maison%2C_Nicolas-Joseph.jpg",
+        "title": "Nicolas Joseph Maison",
+        "artist": "Alois Senefelder",
+        "page": "https://commons.wikimedia.org/wiki/File:Maison%2C_Nicolas-Joseph.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Prussian": {
+      "commander": "General Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  },
+  "summary": "After Bautzen the allies fell back east into Silesia with Napoleon's corps pressing after them, their advance guards pushing on without cavalry ahead. Blücher laid an ambush: he hid his reserve cavalry behind the heights south of Haynau and let Maison's division march past towards Michelsdorf. In the late afternoon, at the signal of a burning windmill, Dolffs led the Garde du Corps and three regiments of cuirassiers down on the French columns and rode them over before they could form square. Dolffs was killed, but Maison lost his guns and hundreds of prisoners, and the French advance went more carefully afterwards.",
+  "sources": [
+    {
+      "label": "French Forces, Battle of Michelsdorf, 26 May 1813 (Nafziger Collection 813ECN, after Plotho)",
+      "url": "https://www.napoleon-series.org/nafzigger/813ECN.pdf"
+    },
+    {
+      "label": "Prussian Forces, Battle of Michelsdorf or Hainau, 26 May 1813 (Nafziger Collection 813ECO, after Plotho)",
+      "url": "https://www.napoleon-series.org/nafzigger/813ECO.pdf"
+    },
+    {
+      "label": "Battle of Haynau (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Haynau"
+    }
+  ],
+  "forces": [
+    {
+      "id": "haynau-maison",
+      "nationId": "france",
+      "name": "Maison's Division",
+      "formation": "16th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's advance guard, marching east from Haynau after the allies without its cavalry ahead of it. Near Michelsdorf, in the late afternoon, Dolffs's cuirassiers and the Guard cavalry came over the rise of the Baudmannsdorf heights where they had lain hidden and rode the division down before it could form square; it lost its guns and hundreds of prisoners, and Maison barely escaped.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Haynau, which he calls Michelsdorf, from Plotho.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Nafziger gives the division three foot batteries with 22 guns but doesn't name them; two are here, the list allowing one.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Maison",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Avril's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Avril",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "151st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/151st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/151st Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/151st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Penne's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Penne",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "153rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/153rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/153rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/153rd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "Foot Battery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "A third foot battery",
+          "reason": "Maison's batteries had 22 guns in all, more than the list takes for six battalions."
+        }
+      ]
+    },
+    {
+      "id": "haynau-puthod",
+      "nationId": "france",
+      "name": "Puthod's Division",
+      "formation": "17th Division, V Corps (Lauriston)",
+      "side": "French",
+      "summary": "Lauriston's second division, halted in Michelsdorf behind Maison's, which never came forward into the fight.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1813: there is no list for the army Napoleon raised after Russia, largely of conscripts and of battalions drawn from depots all over the Empire.",
+        "After Nafziger's order of battle for Haynau, which he calls Michelsdorf, from Plotho.",
+        "Its battalions were mostly young conscripts of the classes of 1813 and 1814. They are rated as ordinary Line, as they fought: the list's Wavering or Morale 5 would suit those who broke more readily.",
+        "Nafziger names the division's commander as Pacthod, but its brigades and regiments are those of Puthod's 17th Division, which Puthod led through the spring.",
+        "Regimental guns were lost in Russia and not replaced, so the division has none.",
+        "The division's two foot batteries, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Puthod",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Vachot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Vachot",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "146th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/146th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/146th Line"
+                }
+              ]
+            },
+            {
+              "name": "147th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/147th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/147th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pastol's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pastol",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "148th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/148th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/148th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "Foot Battery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haynau-blucher",
+      "nationId": "prussians-1815",
+      "name": "Blücher's Ambush",
+      "formation": "Zieten's brigade and Dolffs's reserve cavalry",
+      "side": "Prussian",
+      "summary": "Blücher, retreating east after Bautzen, hid his reserve cavalry behind the heights south of Haynau with Zieten's Silesians, and let the French advance guard march past. At the signal of a burning windmill, Dolffs led the Garde du Corps and the cuirassiers down on Maison's columns; he was killed in the charge, but the division was broken, and Zieten's hussars and uhlans came up to join the pursuit after it was decided.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for Haynau, which he calls Michelsdorf, from Plotho.",
+        "Blücher, who planned the ambush, is the book's named commander; Dolffs led the charge.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "The list has no cuirassiers or Guard cavalry: the Garde du Corps and the East Prussian, Silesian and Brandenburg Cuirassiers are its Dragoons, its only heavy cavalry, and the Guard Light Cavalry its Hussars. Jürgass's three cuirassier regiments, where the list's brigade takes two Dragoons, show as a historical departure.",
+        "Nafziger identifies Zieten's battalions only by their commanders' names, and guesses at their regiments; they're grouped here by his guesses. The Garde du Corps, Guard Light Cavalry and Guard horse battery have the list's Veteran upgrades, as at Lützen and Bautzen.",
+        "The Silesian hussars and uhlans joined after the fight was decided. Three line regiments and no Landwehr in Zieten's brigade, Mutius's one regiment with its horse battery, both Guard regiments Veteran where the list allows half a brigade's, more cavalry brigades than the infantry allows, and a reserve horse battery with too few brigades show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Field Marshal Prince Blücher, with his own rating."
+      ],
+      "command": [
+        {
+          "unit": "pr15-cmd-blucher"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Upper Silesian Brigade (Zieten)",
+          "commander": {
+            "name": "Gen-Maj von Zieten",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd",
+              "name": "Col von Pirch"
+            },
+            {
+              "unit": "pr15-schutzen",
+              "name": "Silesian Schützen (2 companies)"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "2nd Silesian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Offenay's Battalion (I/2nd Silesian?)"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Koschitzky's Battalion (III/2nd Silesian?)"
+                }
+              ]
+            },
+            {
+              "name": "Leib Infantry Reserve",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Reichenbach's Battalion (3rd Reserve, Leib?)"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Bülow's Battalion (5th Reserve, Leib?)"
+                }
+              ]
+            },
+            {
+              "name": "1st Silesian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Silesian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Bentheim's Battalion (1st Silesian)"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/1st Silesian Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Werder)",
+          "commander": {
+            "name": "Lt-Col von Werder",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Garde du Corps",
+              "options": [
+                "veteran-cavalry"
+              ]
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "Guard Light Cavalry",
+              "options": [
+                "veteran-cavalry"
+              ]
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Guard Horse Battery #4",
+              "options": [
+                "veteran-artillery"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Jürgass)",
+          "commander": {
+            "name": "Col von Jürgass",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "East Prussian Cuirassiers"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "Silesian Cuirassiers"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "Brandenburg Cuirassiers"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #10"
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Rearguard Cavalry (Mutius)",
+          "commander": {
+            "name": "Col von Mutius",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Neumark Dragoons (3 squadrons)"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #7"
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Upper Silesian Cavalry",
+          "commander": {
+            "name": "Maj von Blücher",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-hussar",
+              "name": "1st Silesian Hussars (2 squadrons)"
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "2nd Silesian Hussars (2 squadrons)"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "Silesian Uhlans (2 squadrons)"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #9"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Horse Battery #8"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
