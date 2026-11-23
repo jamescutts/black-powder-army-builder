@@ -47,7 +47,24 @@ function PlanViewer({ plan }: { plan: BattlePlan }) {
         maxBounds: crop.pad(0.08),
         maxBoundsViscosity: 0.9,
       });
-      L.imageOverlay(plan.preview.src, whole, { alt: plan.title }).addTo(map);
+      // A scan that sits askew on its page is drawn turned, as an image inside an SVG laid over the scan's own
+      // pixels, so it pans and zooms like any other; the crop is then of the scan as turned
+      const scan = (src: string) => {
+        if (!plan.rotate) return L.imageOverlay(src, whole, { alt: plan.title });
+        const NS = "http://www.w3.org/2000/svg";
+        const svg = document.createElementNS(NS, "svg");
+        svg.setAttribute("viewBox", `0 0 ${plan.width} ${plan.height}`);
+        svg.setAttribute("preserveAspectRatio", "none");
+        const image = document.createElementNS(NS, "image");
+        image.setAttribute("href", src);
+        image.setAttribute("width", String(plan.width));
+        image.setAttribute("height", String(plan.height));
+        image.setAttribute("preserveAspectRatio", "none");
+        image.setAttribute("transform", `rotate(${-plan.rotate} ${plan.width / 2} ${plan.height / 2})`);
+        svg.appendChild(image);
+        return L.svgOverlay(svg, whole, { interactive: false });
+      };
+      scan(plan.preview.src).addTo(map);
       // Everything outside the crop (binding, margins, blank paper) painted over in the frame's colour, above
       // the scans in their own pane
       const mask = map.createPane("mask");
@@ -78,7 +95,7 @@ function PlanViewer({ plan }: { plan: BattlePlan }) {
       map.on("zoomend", () => {
         if (loaded || !map || map.getZoom() <= previewNative + 0.25) return;
         loaded = true;
-        L.imageOverlay(plan.src, whole, { alt: plan.title }).addTo(map);
+        scan(plan.src).addTo(map);
         setDetail(true);
       });
 

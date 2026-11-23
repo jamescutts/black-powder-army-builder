@@ -27,6 +27,9 @@ export interface BattlePlan {
   /** The part of the scan the viewer opens on and keeps within, in the full scan's pixels: [left, top, right,
    *  bottom]. Leaves out the binding, margins and blank paper round the map itself. */
   crop?: [number, number, number, number];
+  /** Degrees to turn the scan counter-clockwise, for one photographed a little askew on its page; the crop is of
+   *  the scan as turned */
+  rotate?: number;
   /** Anything the reader should know: what it covers, which way is north */
   note?: string;
 }
@@ -54,7 +57,9 @@ export const battlePlans: Record<string, BattlePlan[]> = {
         ),
         width: 1920,
       },
-      crop: [790, 790, 4880, 3960],
+      // The page was photographed a little clockwise of square: the map's border drops 36px across 3,300
+      rotate: 0.65,
+      crop: [782, 818, 4882, 3952],
       note: "Both days of the battle: the positions of the 20th coloured light, of the 21st dark; French blue, allies red. North is at the top.",
     },
     {

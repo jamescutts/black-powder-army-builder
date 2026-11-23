@@ -260,8 +260,8 @@ export function BattleForces({ campaignId, battleId }: { campaignId: string; bat
           </Stack>
         ))}
         <BattleMap campaignId={campaign.id} battleId={battle.id} name={battle.name} />
-        <BattlePlans battleId={battle.id} name={battle.name} />
         <OrderOfBattle battle={battle} />
+        <BattlePlans battleId={battle.id} name={battle.name} />
       </Stack>
     </Container>
     </>
