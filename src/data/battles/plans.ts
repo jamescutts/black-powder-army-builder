@@ -36,7 +36,71 @@ export interface BattlePlan {
 
 const commons = (path: string) => `https://upload.wikimedia.org/wikipedia/commons/${path}`;
 
+// The Boston Public Library's IIIF image server: a region of a scan, at a width, cut out by the server
+const bpl = (id: string, [x, y, w, h]: [number, number, number, number], width = "full") =>
+  `https://iiif.digitalcommonwealth.org/iiif/2/commonwealth:${id}/${x},${y},${w},${h}/${width === "full" ? "full" : `${width},`}/0/default.jpg`;
+
+// The French campaign sheet no. 1 of 1813, cut to its inset plan of Lützen
+const LUTZEN_INSET: [number, number, number, number] = [270, 325, 1890, 1405];
+
 export const battlePlans: Record<string, BattlePlan[]> = {
+  mockern: [
+    {
+      label: "Modern map, after Friederich",
+      title: "Gefechte bei Möckern, 5. April 1813",
+      maker: "Drawn by Memnon335bc after the sketch in Rudolf Friederich's Die Befreiungskriege 1813–1815 (1911)",
+      date: "2010",
+      collection: "Drawn for Wikipedia",
+      page: "https://commons.wikimedia.org/wiki/File:Karte_-_Gefechte_bei_M%C3%B6ckern_(5._April_1813).png",
+      licence: "CC BY-SA 3.0",
+      src: commons("b/bf/Karte_-_Gefechte_bei_M%C3%B6ckern_%285._April_1813%29.png"),
+      width: 1582,
+      height: 925,
+      preview: { src: commons("b/bf/Karte_-_Gefechte_bei_M%C3%B6ckern_%285._April_1813%29.png"), width: 1582 },
+      note: "A modern map: no plan of the April fight from the time is to be found online. The three fights at Dannigkow, Vehlitz and Zeddenick east of Magdeburg; French red, allies blue. North is at the top.",
+    },
+  ],
+  lutzen: [
+    {
+      label: "Johnston, 1848",
+      title: "Battle of Lutzen, 2nd May 1813",
+      maker: "Alexander Keith Johnston, for the Atlas to Alison's History of Europe (William Blackwood and Sons)",
+      date: "1848",
+      collection: "David Rumsey Map Collection",
+      page: "https://commons.wikimedia.org/wiki/File:Battle_of_Lutzen,_2_May_1813._A.K._Johnston_F.R.G.S._William_Blackwood_and_Sons,_Edinburgh_and_London._(to_accompany)_Atlas_to_(IA_dr_battle-of-lutzen-2-may-1813-ak-johnston-frgs-william-blackwood-and-13200091).jpg",
+      licence: "Public domain",
+      src: commons(
+        "f/fe/Battle_of_Lutzen%2C_2_May_1813._A.K._Johnston_F.R.G.S._William_Blackwood_and_Sons%2C_Edinburgh_and_London._%28to_accompany%29_Atlas_to_%28IA_dr_battle-of-lutzen-2-may-1813-ak-johnston-frgs-william-blackwood-and-13200091%29.jpg"
+      ),
+      width: 6125,
+      height: 4822,
+      preview: {
+        src: commons(
+          "thumb/f/fe/Battle_of_Lutzen%2C_2_May_1813._A.K._Johnston_F.R.G.S._William_Blackwood_and_Sons%2C_Edinburgh_and_London._%28to_accompany%29_Atlas_to_%28IA_dr_battle-of-lutzen-2-may-1813-ak-johnston-frgs-william-blackwood-and-13200091%29.jpg/1920px-thumbnail.jpg"
+        ),
+        width: 1920,
+      },
+      // Photographed askew like Bautzen's, from the same atlas: the border drops 37px across 3,300
+      rotate: 0.65,
+      crop: [800, 915, 4982, 3972],
+      note: "Ney's villages south of Lützen, Gross- and Klein-Görschen, Rahna and Kaja, and the allied attack on them; French blue, allies red. North is at the top.",
+    },
+    {
+      label: "Bataille de Lutzen, 1813",
+      title: "Situation des armées françaises depuis le 10 mars jusqu'à la bataille de Wurtchen (Campagne de 1813), no. 1",
+      maker: "Published in Paris by Lenormant",
+      date: "1813",
+      collection: "Norman B. Leventhal Map & Education Center, Boston Public Library",
+      page: "https://collections.leventhalmap.org/search/commonwealth:6w924q50f",
+      licence: "No known copyright restrictions",
+      src: bpl("6w924q51q", LUTZEN_INSET),
+      width: LUTZEN_INSET[2],
+      height: LUTZEN_INSET[3],
+      preview: { src: bpl("6w924q51q", LUTZEN_INSET, "1280"), width: 1280 },
+      crop: [8, 8, 1882, 1397],
+      note: "The French view, published the year of the battle, from the inset in the corner of the first sheet of the 1813 campaign: the whole country from Naumburg and Weissenfels to Leipzig, with the armies' marches before and after the battle; French blue, allies green. North is at the top.",
+    },
+  ],
   bautzen: [
     {
       label: "Johnston, 1848",

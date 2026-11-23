@@ -175,7 +175,7 @@ export function BattlePlans({ battleId, name }: { battleId: string; name: string
         </Text>
         {` · ${plan.maker}, ${plan.date} · ${plan.collection} · `}
         <Anchor href={plan.page} target="_blank" rel="noopener noreferrer" size="sm">
-          {plan.licence}, on Wikimedia Commons
+          {plan.licence}, {plan.page.includes("commons.wikimedia.org") ? "on Wikimedia Commons" : "at the collection"}
         </Anchor>
       </Text>
       {plan.note && (
