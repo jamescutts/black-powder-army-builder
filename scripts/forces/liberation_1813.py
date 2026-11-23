@@ -611,7 +611,7 @@ BZ_FR = {"label": "French Forces at Bautzen 20/21 May 1813 (Nafziger Collection 
 BZ_III = {"label": "French III Corps at Bautzen, 20/21 May 1813 (Nafziger Collection 813ECJ)", "url": NAF + "813ECJ.pdf"}
 BZ_AL = {"label": "Russo-Prussian Forces at Bautzen 20/21 May 1813 (Nafziger Collection 813ECE)", "url": NAF + "813ECE.pdf"}
 BZ_NOTE = "After Nafziger's order of battle for Bautzen, with strengths of mid-May."
-BZ_SECTOR = "Bautzen's forces are those of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz."
+BZ_SECTOR = "A force of the northern flank on 21 May, where Ney's and Lauriston's corps fought Barclay's Russians and Kleist's Prussians round Gleina and Preititz."
 
 BZ_SOUHAM = souham(
     "bautzen-souham",
@@ -2136,6 +2136,316 @@ MOCKERN_LEIPZIG = battle(
     "North of Leipzig, while Napoleon fought the Army of Bohemia at Wachau, Blücher's Army of Silesia came down the Halle road. Marmont, ordered south to join the Emperor, turned back to hold a line from Möckern on the Elster to Lindenthal, with his reserve guns massed in the centre. Yorck's Prussians attacked in the afternoon: Möckern was stormed and retaken five times, his battalions melting under the French guns, until in the evening the Brandenburg Hussars and the reserve cavalry charged through and Marmont's line broke. It cost Yorck a third of his corps, and Marmont nearly as much; to the east Langeron's Russians drove back Dombrowski's Poles.",
     [ML_FR, ML_PR, WB_PR, {"label": "First day of the battle of Leipzig, 16 October 1813 (History of War)", "url": "https://www.historyofwar.org/articles/battles_leipzig_16_october.html"}],
     [ML_COMPANS, ML_LAGRANGE, ML_FRIEDERICHS, ML_NORMANN, ML_LORGE, ML_DOMBROWSKI, ML_DELMAS, ML_BRAYER, ML_YORCK], [], alliances=())
+
+
+# ================================================================ Bautzen: the centre and the south
+
+BZ_C_NOTE = "After Nafziger's order of battle for Bautzen, with the strengths he gives for early or mid May."
+BZ_C_FRONT = ("The centre and south of the battle, where Napoleon pinned the allies along the Spree and the heights behind it "
+              "while Ney came round their right.")
+REG_ARTY = "Its regiments still had their artillery detachments, two 3-pdrs each, shown as sections of regimental guns."
+
+
+def sec(reg):
+    return u("fr-regimental-arty-section", f"Artillery Detachment, {reg}")
+
+
+BZ_MORAND = force(
+    "bautzen-morand", FR, "Morand's Division", "12th Division, IV Corps (Bertrand)", "French",
+    "Bertrand's French division, which crossed the Spree below Bautzen on the 20th and on the 21st attacked Blücher's Prussians on the Kreckwitz heights.",
+    [bde("fr-infantry-brigade", "Belair's Brigade", "Gén. de Brigade Ligier-Belair",
+         units=[sec("13th Line")],
+         regiments=[bn_list("fr-line-infantry", "13th Line", ["1", "2", "3", "4", "6"]), provisional("3rd Provisional Légère", ["3/3rd Léger", "4/8th Léger"], True)]),
+     bde("fr-infantry-brigade", "Sicard's Brigade", "Gén. de Brigade Sicard",
+         units=[sec("23rd Line")],
+         regiments=[provisional("2nd Provisional Croatian", ["2/3rd Croatian", "1/4th Croatian"]), bn_list("fr-line-infantry", "23rd Line", ["1", "2", "4", "6"])]),
+     foot("1/2nd Foot Artillery", "3/2nd Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Morand")],
+    notes=[LIST_FR, BZ_C_NOTE, REG_ARTY, "The Croatian battalions are shown as Line.", TWO_BATTERIES])
+
+BZ_PEYRI = force(
+    "bautzen-peyri", IT, "Peyri's Italian Division", "15th Division, IV Corps (Bertrand)", "French",
+    "Bertrand's Italians, the division Fontanelli later led, which followed Morand's over the Spree against Blücher's Prussians.",
+    [bde("it-infantry-brigade", "Martel's Brigade", "Gén. de Brigade Martel",
+         units=[u("it-regimental-arty-section", "Artillery Detachment, 1st Line"), u("it-regimental-arty-section", "Artillery Detachment, 4th Line")],
+         regiments=[bn_list("it-line-infantry", "1st Italian Line", ["3", "4"]), bn_list("it-line-infantry", "4th Italian Line", ["1", "2", "3", "4"])]),
+     bde("it-infantry-brigade", "Saint-Andrea's Brigade", "Gén. de Brigade Saint-Andrea",
+         units=[u("it-regimental-arty-section", "Artillery Detachment, 6th Line")], regiments=[bn_list("it-line-infantry", "6th Italian Line", ["3", "4"])]),
+     bde("it-infantry-brigade", "Moroni's Brigade", "Gén. de Brigade Moroni",
+         units=[u("it-regimental-arty-section", "Artillery Detachment, 7th Line")],
+         regiments=[regt("Milan Guard", [u("it-line-infantry", "1st Milan Guard Battalion")]), bn_list("it-line-infantry", "7th Italian Line", ["1", "2", "3", "4"])]),
+     bde("it-cavalry-brigade", "Briche's Brigade", "Gén. de Brigade Briche", units=[u("it-chasseurs-a-cheval", "2nd Neapolitan Chasseurs à Cheval")]),
+     bde("it-divisional-artillery", "Divisional Artillery", units=[u("it-foot-arty", "1st Italian Foot Artillery"), u("it-foot-arty", "13th Italian Foot Artillery")])],
+    command=[cmd("it-div-cmd", "Gén. de Division Peyri")],
+    notes=["Built from A Clash of Eagles' Italian list, the nearest to 1813.", BZ_C_NOTE, REG_ARTY.replace("two 3-pdrs each, ", ""),
+           "The Milan Guard Battalion, a city guard, is shown as Line; the Neapolitan chasseurs, Bertrand's corps cavalry, as the list's Italian Chasseurs.",
+           "Two foot batteries, where the list allows one, show as a historical departure."])
+
+BZ_FRANQUEMONT = force(
+    "bautzen-franquemont", WT, "Franquemont's Division", "38th (Württemberg) Division, IV Corps (Bertrand)", "French",
+    "The Württembergers of Bertrand's corps, with Jett's chevau-légers, at Bertrand's crossing of the Spree and in the attack on the Kreckwitz heights.",
+    [bde("wt-light-infantry-brigade", "Stockmayer's Brigade", "Gen-Maj von Stockmayer",
+         units=[u("wt-light-infantry", "I/9th Light"), u("wt-light-infantry", "I/10th Light")], regiments=[regt("7th Line", bns("wt-line-infantry", "7th Line", 2))]),
+     bde("wt-infantry-brigade", "Neuffer's Brigade", "Gen-Maj von Neuffer",
+         regiments=[regt("1st Line", bns("wt-line-infantry", "1st Line", 2)), regt("2nd Line", bns("wt-line-infantry", "2nd Line", 2))]),
+     bde("wt-cavalry-brigade", "Jett's Brigade", "Gen-Maj von Jett",
+         units=[u("wt-chevauleger", "1st Chevau-légers 'Prince Adam'"), u("wt-chevauleger", "3rd Chevau-légers 'Duke Louis'"), u("wt-horse-arty", "1st Horse Battery 'Bürgi'")]),
+     bde("wt-divisional-artillery", "Divisional Artillery", units=[u("wt-light-arty", "1st Foot Battery 'Toikede'")])],
+    command=[cmd("wt-div-cmd", "Gen-Lt Graf Franquemont")],
+    notes=["Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1813.", BZ_C_NOTE,
+           "Nafziger doubts his strengths for the division, the same as those of 25 April.", "The foot battery is the list's Light Artillery."])
+
+BZ_COMPANS = force(
+    "bautzen-compans", FR, "Compans's Division", "20th Division, VI Corps (Marmont)", "French",
+    "Marmont's marines, who crossed the Spree above Bautzen on the 20th and on the 21st held the centre against the allied batteries on the heights.",
+    [bde("fr-infantry-brigade", "Cacault's Brigade", "Gén. de Brigade Cacault", regiments=[marine("1st Marine Regiment", 4), marine("3rd Marine Regiment", 2)]),
+     bde("fr-infantry-brigade", "Joubert's Brigade", "Gén. de Brigade Joubert",
+         regiments=[provisional("25th Provisional Line", ["3/47th Line", "3/86th Line"]), provisional("20th Provisional Line", ["5/66th Line", "3/122nd Line"]),
+                    bn_list("fr-light-infantry", "32nd Léger", ["2", "3"])]),
+     foot("16/5th Foot Artillery", "10/8th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Compans")],
+    notes=[LIST_FR, BZ_C_NOTE, MARINES, CONSCRIPTS, TWO_BATTERIES])
+
+BZ_BONET = force(
+    "bautzen-bonet", FR, "Bonet's Division", "21st Division, VI Corps (Marmont)", "French",
+    "Marmont's second division, marines with a provisional brigade of depot battalions, beside Compans's in the centre.",
+    [bde("fr-infantry-brigade", "Buquet's Brigade", "Gén. de Brigade Buquet", regiments=[marine("2nd Marine Regiment", 6), marine("4th Marine Regiment", 2)]),
+     bde("fr-infantry-brigade", "Jamin's Brigade", "Gén. de Brigade Jamin",
+         regiments=[bn_list("fr-light-infantry", "37th Léger", ["1", "2", "3"]), regt("Joseph Napoleon Regiment", [u("fr-spanish-infantry", "1/Joseph Napoleon Regiment")])]),
+     bde("fr-infantry-brigade", "Provisional Brigade", "",
+         regiments=[regt("36th Léger", [u("fr-light-infantry", "4/36th Léger")]),
+                    regt("131st, 132nd and 133rd Line", [u("fr-line-infantry", "4/131st Line"), u("fr-line-infantry", "4/132nd Line"), u("fr-line-infantry", "4/133rd Line")]),
+                    regt("Würzburg Regiment", [u("fr-rheinbund-infantry", "2/Würzburg")])]),
+     foot("10/4th Foot Artillery", "18/5th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Bonet")],
+    notes=[LIST_FR, BZ_C_NOTE, MARINES,
+           "The Joseph Napoleon Regiment is the list's Spanish infantry, the Würzburg battalion its Rheinbund. The provisional brigade's battalions of three regiments are one regiment here.",
+           "The 2nd Marine Regiment's six battalions, where the list takes five, and two light regiments in the division, where it allows one, show as historical departures.",
+           TWO_BATTERIES])
+
+BZ_FRIEDERICHS = force(
+    "bautzen-friederichs", FR, "Friederichs's Division", "22nd Division, VI Corps (Marmont)", "French",
+    "Marmont's third division, provisional regiments of depot battalions, in the centre beside the marines.",
+    [bde("fr-infantry-brigade", "Coehorn's Brigade", "Gén. de Brigade Coehorn",
+         regiments=[bn_list("fr-light-infantry", "23rd Léger", ["3", "4"]), provisional("11th Provisional Line", ["4/1st Line", "2/62nd Line"]),
+                    provisional("13th Provisional Line", ["3/14th Line", "4/16th Line"])]),
+     bde("fr-infantry-brigade", "Ficatier's Brigade", "Gén. de Brigade Ficatier",
+         regiments=[provisional("16th Provisional Line", ["6/26th Line", "6/82nd Line"]), bn_list("fr-line-infantry", "121st Line", ["3", "4"]),
+                    regt("15th and 70th Line", [u("fr-line-infantry", "3/15th Line"), u("fr-line-infantry", "4/15th Line"), u("fr-line-infantry", "3/70th Line"), u("fr-line-infantry", "4/70th Line")])]),
+     foot("14/4th Foot Artillery", "22/9th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Friederichs")],
+    notes=[LIST_FR, BZ_C_NOTE, CONSCRIPTS,
+           "Nafziger gives the division's regiments to Ficatier's and Coehorn's brigades together; how they're divided here is ours, with the 15th and 70th Line as one regiment to keep within the list's three.",
+           TWO_BATTERIES])
+
+BZ_LEDRU = force(
+    "bautzen-ledru", FR, "Ledru's Division", "31st Division, XI Corps (Macdonald)", "French",
+    "Macdonald's smallest division, provisional battalions and Neapolitans, which crossed the Spree at Bautzen with the rest of his corps.",
+    [bde("fr-infantry-brigade", "Provisional Demi-brigades", "",
+         regiments=[provisional("11th Provisional Demi-brigade", ["4/27th Léger", "4/50th Line"]), provisional("13th Provisional Demi-brigade", ["4/5th Line", "4/79th Line"])]),
+     bde("fr-infantry-brigade", "Bardet's Brigade", "Gén. de Brigade Bardet",
+         regiments=[regt("Neapolitan Elite Regiment", [u("fr-line-infantry", "1/Neapolitan Elite Regiment"), u("fr-line-infantry", "2/Neapolitan Elite Regiment")])]),
+     bde("fr-divisional-artillery", "Divisional Artillery",
+         units=[u("fr-foot-arty", "16/5th Foot Artillery"), u("fr-horse-arty", "Neapolitan Horse Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Ledru")],
+    notes=[LIST_FR, BZ_C_NOTE, CONSCRIPTS,
+           "The provisional demi-brigades' battalions, light and line together, are shown as Line; the Neapolitan Elite Regiment's two battalions, of a few hundred men each, as Line.",
+           "Nafziger also gives the 16/5th Foot Artillery to Compans's division.",
+           "The Neapolitan horse battery, with no cavalry to allow it, shows as a historical departure."])
+
+BZ_GERARD = force(
+    "bautzen-gerard", FR, "Gérard's Division", "35th Division, XI Corps (Macdonald)", "French",
+    "Macdonald's leading division, French and Zucchi's Italians, which crossed at Bautzen and on the 21st attacked the allied left on the wooded hills towards the Bohemian border.",
+    [bde("fr-infantry-brigade", "Senecal's Brigade", "Gén. de Brigade Senecal",
+         units=[sec("6th Line"), sec("112th Line")],
+         regiments=[bn_list("fr-line-infantry", "6th Line", ["3", "4"]), bn_list("fr-line-infantry", "112th Line", ["1", "2", "3", "4"])]),
+     bde("fr-infantry-brigade", "Zucchi's Italian Brigade", "Gén. de Brigade Zucchi",
+         units=[sec("2nd Italian Léger"), sec("5th Italian Line")],
+         regiments=[bn_list("fr-light-infantry", "2nd Italian Léger", ["3", "4"]), bn_list("fr-line-infantry", "5th Italian Line", ["1", "2", "3", "4"])]),
+     bde("fr-light-cavalry-brigade", "Cavalry Brigade", "",
+         units=[u("fr-chasseur-a-cheval", "4th Italian Chasseurs à Cheval"), u("fr-wurttemberg-horse-jager", "Würzburg Jäger zu Pferd")]),
+     foot("6/1st Foot Artillery", "20/5th Foot Artillery"),
+     bde("fr-artillery-brigade", "Attached Horse Artillery", units=[u("fr-horse-arty", "3rd Italian Horse Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Gérard")],
+    notes=[LIST_FR, BZ_C_NOTE, REG_ARTY,
+           "Zucchi's Italians are shown as French Line and Light, so the division stays one force. The Würzburg Jäger zu Pferd, a squadron, are the list's Württemberg Horse-Jäger, the nearest it has.",
+           "The cavalry brigade, with one infantry brigade for it where the list wants two, and the horse battery, with two cavalry regiments where it wants four, show as historical departures.", TWO_BATTERIES])
+
+BZ_CHARPENTIER = force(
+    "bautzen-charpentier", FR, "Charpentier's Division", "36th Division, XI Corps (Macdonald)", "French",
+    "Macdonald's second division, in the attack on the allied left beside Gérard's.",
+    [bde("fr-infantry-brigade", "Simmer's Brigade", "Gén. de Brigade Simmer",
+         units=[sec("14th Léger"), sec("22nd Léger")],
+         regiments=[bn_list("fr-light-infantry", "14th Léger", ["3", "4"]), bn_list("fr-light-infantry", "22nd Léger", ["1", "2", "3", "4"])]),
+     bde("fr-infantry-brigade", "Meunier's Brigade", "Gén. de Brigade Meunier",
+         units=[sec("102nd Line")],
+         regiments=[provisional("14th Provisional Demi-brigade", ["6/10th Line", "6/20th Line", "3/67th Line"]),
+                    provisional("15th Provisional Demi-brigade", ["4/3rd Léger", "4/102nd Line"])]),
+     foot("5/1st Foot Artillery", "19/2nd Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Charpentier")],
+    notes=[LIST_FR, BZ_C_NOTE, CONSCRIPTS, REG_ARTY,
+           "Two light regiments, where the list allows one in a division, show as a historical departure; the 15th Provisional's light and line battalions are shown as Line.", TWO_BATTERIES])
+
+BZ_PACTHOD = force(
+    "bautzen-pacthod", FR, "Pacthod's Division", "13th Division, XII Corps (Oudinot)", "French",
+    "Oudinot's leading division on the French right, which climbed into the wooded hills of the allied left and fought Miloradovich's Russians there through both days.",
+    [bde("fr-infantry-brigade", "Pourailly's Brigade", "Gén. de Brigade Pourailly",
+         regiments=[regt("1st Léger and 7th Line", [u("fr-line-infantry", "4/1st Léger"), u("fr-line-infantry", "3/7th Line"), u("fr-line-infantry", "4/7th Line")]),
+                    provisional("12th Provisional Line", ["4/10th Line", "4/42nd Line"]), provisional("23rd Provisional Line", ["7/6th Line", "4/67th Line"])]),
+     bde("fr-infantry-brigade", "Gruyer's Brigade", "Gén. de Brigade Gruyer",
+         regiments=[regt("1st Neapolitan Léger", [u("fr-light-infantry", "1/1st Neapolitan Léger"), u("fr-light-infantry", "2/1st Neapolitan Léger")]),
+                    bn_list("fr-line-infantry", "101st Line", ["2", "3", "4"])]),
+     foot("18/4th Foot Artillery", "20/4th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Pacthod")],
+    notes=[LIST_FR, BZ_C_NOTE, CONSCRIPTS,
+           "The single battalion of the 1st Léger is with the 7th Line as one regiment, shown as Line, to keep within the list's three; the Neapolitan light battalions are shown as French Light.",
+           TWO_BATTERIES])
+
+BZ_LORENCZ = force(
+    "bautzen-lorencz", FR, "Lorencz's Division", "14th Division, XII Corps (Oudinot)", "French",
+    "Oudinot's second French division, which followed Pacthod's into the hills against the allied left.",
+    [bde("fr-infantry-brigade", "Leclerc's Brigade", "Gén. de Brigade Leclerc",
+         regiments=[bn_list("fr-line-infantry", "52nd Line", ["3", "4"]), bn_list("fr-line-infantry", "137th Line", ["1", "2", "3", "4"])]),
+     bde("fr-infantry-brigade", "d'Henin's Brigade", "Gén. de Brigade d'Henin", regiments=[bn_list("fr-line-infantry", "156th Line", ["1", "2", "3", "4"])]),
+     foot("2/4th Foot Artillery", "25/4th Foot Artillery")],
+    command=[cmd("fr-div-cmd", "Gén. de Division Lorencz")],
+    notes=[LIST_FR, BZ_C_NOTE, CONSCRIPTS, TWO_BATTERIES])
+
+BZ_RAGLOVICH = again(DN_RAGLOVICH, "bautzen-raglovich",
+                     "Oudinot's Bavarians, on the far right of the French line in the hills towards Bohemia.",
+                     [LIST_BAV.replace("; Bavaria had changed sides a fortnight before", ", still on the French side"), BZ_C_NOTE,
+                      "Built as at Dennewitz: Nafziger's Bautzen return, from 25 April, gives the same battalions under Becker and Maillot de la Traille, with a reserve 12-pdr battery besides."])
+BZ_BEAUMONT = again(DN_BEAUMONT, "bautzen-beaumont",
+                    "Oudinot's corps cavalry, German light horse, with his corps on the French right.",
+                    ["Built from A Clash of Eagles' Westphalian 1812 list, for its Guard Chevau-légers.", BZ_C_NOTE])
+
+BZ_OLD_GUARD = force(
+    "bautzen-old-guard", FIG, "Roguet's Old Guard", "1st Division, Imperial Guard", "French",
+    "Napoleon's reserve behind the centre. In the afternoon of the 21st, with Ney round the allied right, the Guard and its batteries went forward against the Kreckwitz heights and the allied centre, and the allies began their retreat.",
+    [bde("fig-old-guard-brigade", "Grenadiers", "Gén. de Brigade Decouz",
+         units=[u("fig-og-foot-arty", "1st Old Guard Battery")],
+         regiments=[regt("1st Grenadiers à Pied", bns("fig-old-guard-grenadiers", "1st Grenadiers à Pied", 2)),
+                    regt("2nd Grenadiers à Pied", bns("fig-middle-guard-grenadiers", "2nd Grenadiers à Pied", 2))]),
+     bde("fig-old-guard-brigade", "Chasseurs", "",
+         units=[u("fig-og-foot-arty", "4th Old Guard Battery")],
+         regiments=[regt("1st Chasseurs à Pied", bns("fig-old-guard-chasseurs", "1st Chasseurs à Pied", 2)),
+                    regt("2nd Chasseurs à Pied", bns("fig-middle-guard-chasseurs", "2nd Chasseurs à Pied", 2))]),
+     bde("fig-italian-brigade", "Vélites", "", units=[u("fig-velites-turin", "Vélites of Turin"), u("fig-velites-florence", "Vélites of Florence")]),
+     bde("fig-artillery-reserve", "Guard Artillery (Devaux)",
+         units=[u("fig-og-heavy-foot-arty", "2nd Old Guard Battery (12-pdrs)"), u("fig-og-horse-arty", "1st Old Guard Horse Battery"), u("fig-og-horse-arty", "2nd Old Guard Horse Battery")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Roguet")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", BZ_C_NOTE,
+           "Decouz's one brigade is split into its grenadiers and chasseurs, as the list's Old Guard brigade takes one Old and two Middle Guard regiments; the 1st regiments are the Old Guard, the 2nd the Middle.",
+           "The Guard artillery's 6-pdr batteries are with the brigades and the 12-pdr in the reserve."])
+BZ_OLD_GUARD["missing"] = [{"name": "3rd Old Guard Battery (12-pdrs)", "reason": "The Guard's second 12-pdr battery, more than the list's reserve takes."}]
+
+BZ_DUMOUSTIER = force(
+    "bautzen-dumoustier", FIG, "Dumoustier's Young Guard", "1st Young Guard Division, Imperial Guard", "French",
+    "The Young Guard division that had retaken the villages at Lützen, in Napoleon's reserve behind the centre until the final attack of the 21st.",
+    [bde("fig-young-guard-brigade", "Mouton-Duvernet's Brigade", "Gén. de Brigade Mouton-Duvernet",
+         regiments=[regt("Fusilier-Grenadiers", bns("fig-fusilier-grenadiers", "Fusilier-Grenadiers", 2)), regt("Fusilier-Chasseurs", bns("fig-fusilier-chasseurs", "Fusilier-Chasseurs", 2))]),
+     bde("fig-young-guard-brigade", "Tindal's Brigade", "Gén. de Brigade Tindal",
+         regiments=[regt("1st Voltigeurs", bns("fig-yg-voltigeurs", "1st Voltigeurs", 2)), regt("2nd Voltigeurs", bns("fig-yg-voltigeurs", "2nd Voltigeurs", 2))]),
+     bde("fig-young-guard-brigade", "Lanusse's Brigade", "Gén. de Brigade Lanusse",
+         units=[u("fig-yg-foot-arty", "1st Young Guard Battery")],
+         regiments=[regt("3rd Voltigeurs", bns("fig-yg-voltigeurs", "3rd Voltigeurs", 2)), regt("6th Voltigeurs", bns("fig-yg-voltigeurs", "6th Voltigeurs", 2)),
+                    regt("7th Voltigeurs", bns("fig-yg-voltigeurs", "7th Voltigeurs", 2))])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Dumoustier")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", BZ_C_NOTE,
+           "The Fusilier brigade with no Young Guard regiment, which the list's brigade wants beside them, and three Young Guard brigades, where it allows two without Old Guard, show as historical departures."])
+
+BZ_BARROIS = force(
+    "bautzen-barrois", FIG, "Barrois's Young Guard", "2nd Young Guard Division, Imperial Guard", "French",
+    "The second Young Guard division, tirailleurs, in the reserve behind the centre with Dumoustier's.",
+    [bde("fig-young-guard-brigade", "Rottembourg's Brigade", "Gén. de Brigade Rottembourg",
+         regiments=[regt("1st Tirailleurs", bns("fig-yg-tirailleurs", "1st Tirailleurs", 2)), regt("2nd Tirailleurs", bns("fig-yg-tirailleurs", "2nd Tirailleurs", 2))]),
+     bde("fig-young-guard-brigade", "Berthezène's Brigade", "Gén. de Brigade Berthezène",
+         units=[u("fig-yg-foot-arty", "2nd Young Guard Battery")],
+         regiments=[regt("3rd Tirailleurs", bns("fig-yg-tirailleurs", "3rd Tirailleurs", 2)), regt("6th Tirailleurs", bns("fig-yg-tirailleurs", "6th Tirailleurs", 2)),
+                    regt("7th Tirailleurs", bns("fig-yg-tirailleurs", "7th Tirailleurs", 2))])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Barrois")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", BZ_C_NOTE])
+
+BZ_GUARD_CAV = force(
+    "bautzen-guard-cavalry", FIG, "The Guard Cavalry", "Cavalry of the Imperial Guard", "French",
+    "Lefebvre-Desnouettes's lancers and Ornano's heavy and light regiments, in Napoleon's reserve behind the centre.",
+    [bde("fig-light-cavalry-brigade", "Polish Lancers", "Gén. de Division Lefebvre-Desnouettes", units=[u("fig-polish-lancers", "1st (Polish) Guard Lancers")]),
+     bde("fig-light-cavalry-brigade", "Dutch Lancers", "", units=[u("fig-dutch-red-lancers", "2nd (Dutch) Guard Lancers")]),
+     bde("fig-light-cavalry-brigade", "Chasseurs à Cheval", "Gén. de Division Ornano",
+         units=[u("fig-chasseurs-a-cheval", "Chasseurs à Cheval de la Garde"), u("fig-gendarmes-elite", "Gendarmes d'Élite")]),
+     bde("fig-heavy-cavalry-brigade", "Heavy Cavalry", "",
+         units=[u("fig-grenadiers-a-cheval-regt", "Grenadiers à Cheval"), u("fig-empress-dragoons", "Empress Dragoons")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Lefebvre-Desnouettes")],
+    notes=["Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1813.", BZ_C_NOTE,
+           "Nafziger gives the two lancer regiments 1,500 men together, the Chasseurs 1,500 and the Grenadiers and Dragoons 1,200 each.", CAV_ONLY])
+BZ_GUARD_CAV["missing"] = [{"name": "Berg Lancers", "reason": "A line regiment of the Grand Duchy of Berg riding with the Guard, which the Guard list can't take."}]
+
+# --- the allies
+
+BZ_EUGEN = again(RB_EUGEN, "bautzen-eugen",
+                 "The advance guard of the allied left under Miloradovich, in the wooded hills south of Bautzen, which held Oudinot's and Macdonald's attacks through both days and covered the retreat.",
+                 [LIST_RU, BZ_C_NOTE, "Built as at Reichenbach the next day, from Nafziger's order of battle there; his Bautzen return gives the corps the same, with Shilvinsky for Wolff and the Kremenchug regiment for the Tobolsk."])
+
+BZ_EMMANUEL = force(
+    "bautzen-emmanuel", RU, "Emmanuel's Cavalry", "Corps of Gen-Maj Emmanuel, Miloradovich's advance guard", "Russian",
+    "Dragoons and Cossacks with Miloradovich's advance guard on the allied left.",
+    [bde("ru-heavy-cavalry-brigade", "Millesimo's Brigade", "Maj-Gen Millesimo",
+         units=[u("ru-dragoon", "Kiev Dragoons"), u("ru-dragoon", "Kharkov Dragoons"), u("ru-horse-arty", "Horse Battery #4")]),
+     bde("ru-cossack-brigade", "Cossacks", "",
+         units=[u("ru-mounted-cossack", "Rebrikov #3 Cossacks"), u("ru-irregular-mounted-cossack", "Stavropol Kalmyks"), u("ru-mounted-cossack", "Orlov's Streifkorps")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Emmanuel")],
+    notes=[LIST_RU, BZ_C_NOTE, "The Kalmyks are the list's Irregular Cossacks.", "Cavalry with no infantry brigade to allow it shows as a historical departure."])
+
+BZ_BERG = force(
+    "bautzen-berg", RU, "Berg's Corps", "1st Line, Gorchakov's corps", "Russian",
+    "Wittgenstein's veterans of the Dvina in the allied centre, on the heights behind Bautzen between Miloradovich and Blücher.",
+    [bde("ru-infantry-brigade", "Prince of Siberia's Brigade", "Maj-Gen Prince of Siberia", units=[u("ru-position-arty", "Position Battery #5")],
+         regiments=[ru_bn("Perm"), ru_bn("Mogilev")]),
+     bde("ru-infantry-brigade", "Kasatschkovsky's Brigade", "Maj-Gen Kasatschkovsky",
+         regiments=[ru_bn("Kaluga"), ru_bn("Sevsk", u("ru-volunteer-jager", "Grand Duchess Catherine's Battalion"))]),
+     bde("ru-infantry-brigade", "Helfreich's Brigade", "Maj-Gen Helfreich", regiments=[ru_bn("Tenginsk"), ru_bn("Estonia")]),
+     bde("ru-light-cavalry-brigade", "Uvarov's Brigade", "Col Uvarov",
+         units=[u("ru-hussar", "Lubny Hussars"), u("ru-dragoon", "Moscow Dragoons"), u("ru-dragoon", "Mitau Dragoons"), u("ru-horse-arty", "Horse Battery #3")]),
+     bde("ru-light-cavalry-brigade", "Lissanevich's Brigade", "Maj-Gen Lissanevich",
+         units=[u("ru-hussar", "Akhtyrka Hussars"), u("ru-uhlan", "Chuguev Uhlans"), u("ru-dragoon", "Kargopol Dragoons")])],
+    command=[cmd("ru-div-cmd", "Lt-Gen Berg")],
+    notes=[LIST_RU, BZ_C_NOTE, ONE_BN, "Lukov's 5th Division and Lalin's 14th, with the corps cavalry; the Grand Duchess Catherine's Battalion is Volunteer Jäger with the Sevsk regiment, as at Lützen.",
+           "Two light cavalry brigades, where the list allows one, and the position battery with seven battalions, where the list wants nine, show as historical departures."])
+
+BZ_ST_PRIEST = force(
+    "bautzen-st-priest", RU, "St Priest's Corps", "2nd Line, Gorchakov's corps", "Russian",
+    "The second line of the allied centre, behind Berg's corps on the heights.",
+    [bde("ru-infantry-brigade", "Talyzin's Brigade", "Maj-Gen Talyzin",
+         regiments=[ru_bn("Sofia"), ru_bn("Pskov", u("ru-jager", "11th Jäger"))]),
+     bde("ru-infantry-brigade", "Schindschin's Brigade", "Col Schindschin",
+         regiments=[ru_bn("Arkhangelsk"), ru_bn("Schlusselburg"), ru_bn("Old Ingermanland")]),
+     bde("ru-infantry-brigade", "Stegeman's Brigade", "Col Stegeman", units=[u("ru-position-arty", "Heavy Battery #7")],
+         regiments=[ru_bn("Koporye", u("ru-jager", "37th Jäger"))])],
+    command=[cmd("ru-div-cmd", "Lt-Gen Count St Priest")],
+    notes=[LIST_RU, BZ_C_NOTE, ONE_BN, "Talyzin's 7th Division and Engelhardt's 8th. The 11th and 37th Jäger, single battalions in line brigades, are attached to their brigades' regiments, as the list takes them.",
+           "Schindschin's three regiments, where the list's brigade takes two, and the heavy battery with eight battalions, where the list wants nine for a position battery, show as historical departures."])
+
+BZ_RU_GUARD = force(
+    "bautzen-russian-guard", RU, "The Russian Guard", "1st and 2nd Guard Divisions, the Grand Duke Constantine's reserve", "Russian",
+    "The Tsar's Guard, in the allied reserve behind the centre, barely engaged, which covered the retreat from the field in the evening.",
+    [bde("ru-guard-infantry-brigade", "Potemkin's Brigade", "Maj-Gen Potemkin", units=[u("ru-guard-position-arty", "Guard Heavy Battery #1")],
+         regiments=[regt("Preobrazhensky Guard", bns("ru-life-guard-infantry", "Preobrazhensky Guard", 2)), regt("Semenovsky Guard", bns("ru-life-guard-infantry", "Semenovsky Guard", 2))]),
+     bde("ru-guard-infantry-brigade", "Krapovitzky's Brigade", "Maj-Gen Krapovitzky", units=[u("ru-guard-light-arty", "Guard Light Battery #1")],
+         regiments=[regt("Guard Jäger", bns("ru-life-guard-jager", "Guard Jäger", 2)), regt("Izmailovsky Guard", bns("ru-life-guard-infantry", "Izmailovsky Guard", 2))]),
+     bde("ru-guard-infantry-brigade", "Krischanovsky's Brigade", "Col Krischanovsky", units=[u("ru-guard-light-arty", "Guard Light Battery #2")],
+         regiments=[regt("Lithuanian Guard", bns("ru-life-guard-infantry", "Lithuanian Guard", 2)), regt("Finland Guard", bns("ru-life-guard-infantry", "Finland Guard", 2))]),
+     bde("ru-grenadier-brigade", "Scheltuchin's Brigade", "Maj-Gen Scheltuchin",
+         units=[u("ru-position-arty", "Guard Heavy Battery #2")],
+         regiments=[regt("Pavlov Grenadiers", bns("ru-grenadier", "Pavlov Grenadiers", 2)), regt("Leib Grenadiers", bns("ru-grenadier", "Leib Grenadiers", 2))])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Lavrov")],
+    notes=[LIST_RU, BZ_C_NOTE,
+           "Rosen's 1st Guard Division and Yermolov's 2nd under Lavrov. The Pavlov and Leib Grenadiers, of the 2nd Guard Division, are the list's Grenadiers; their Guard heavy battery is a Position Battery.",
+           "Three Guard infantry brigades and a Grenadier brigade show the list's limits on the Guard as historical departures."])
+BZ_RU_GUARD["missing"] = [{"name": "The Grenadier and Cuirassier divisions, and the Guard cavalry", "reason": "The rest of the Grand Duke Constantine's reserve, which Nafziger lists but which was barely engaged."}]
+
+BAUTZEN["forces"] += [BZ_MORAND, BZ_PEYRI, BZ_FRANQUEMONT, BZ_COMPANS, BZ_BONET, BZ_FRIEDERICHS, BZ_LEDRU, BZ_GERARD, BZ_CHARPENTIER,
+                      BZ_PACTHOD, BZ_LORENCZ, BZ_RAGLOVICH, BZ_BEAUMONT, BZ_OLD_GUARD, BZ_DUMOUSTIER, BZ_BARROIS, BZ_GUARD_CAV,
+                      BZ_EUGEN, BZ_EMMANUEL, BZ_BERG, BZ_ST_PRIEST, BZ_RU_GUARD]
 
 
 # What fought with each force but isn't in it, shown at the foot of its brigades in the builder
