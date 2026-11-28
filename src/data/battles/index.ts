@@ -15,6 +15,7 @@ import klyastitsy from "./klyastitsy.json";
 import krasnoi from "./krasnoi.json";
 import kobrin from "./kobrin.json";
 import bautzen from "./bautzen.json";
+import brienne from "./brienne.json";
 import grossbeeren from "./grossbeeren.json";
 import wartenburg from "./wartenburg.json";
 import hagelberg from "./hagelberg.json";
@@ -61,7 +62,6 @@ import {
   almeida,
   arcis,
   badajoz,
-  brienne,
   chateauThierry,
   champaubert,
   craonne,
@@ -431,7 +431,7 @@ const allBattles: HistoricalBattle[] = [
   hamburg,
   sehested,
   // The Campaign in France
-  brienne,
+  brienne as HistoricalBattle,
   laRothiere,
   champaubert,
   montmirail,

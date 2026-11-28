@@ -155,8 +155,6 @@ export const leipzig = planned("leipzig", "Leipzig", "16–19 October 1813", L,
 
 const F = "france-1814";
 
-export const brienne = planned("brienne", "Brienne", "29 January 1814", F,
-  "Napoleon caught Blücher at Brienne, where he had been a cadet at the military school; Ney's infantry stormed the town and château by night, and Blücher, nearly taken, fell back on the Aube.");
 export const laRothiere = planned("la-rothiere", "La Rothière", "1 February 1814", F,
   "Blücher, joined by much of Schwarzenberg's army, attacked Napoleon's outnumbered army at La Rothière in the snow; the village changed hands until nightfall, and the French drew off to Troyes, the first defeat on French soil.");
 export const champaubert = planned("champaubert", "Champaubert", "10 February 1814", F,
@@ -238,13 +236,6 @@ leipzig.art = {
   "artist": "Alexander Sauerweid",
   "date": "1844",
   "page": "https://commons.wikimedia.org/wiki/File:Sauerweid_A.I._Battle_of_Leipzig,_from_2_to_7_october_1813.jpg"
-};
-brienne.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg/960px-Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg",
-  "title": "The Battle of Brienne",
-  "artist": "Jean-Antoine-Siméon Fort",
-  "date": "c. 1850",
-  "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Brienne_(1814),_Sim%C3%A9on_Fort.jpg"
 };
 laRothiere.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Wigand_%28circle%29_Schlacht_bei_Rothiere_1814.jpg/960px-Wigand_%28circle%29_Schlacht_bei_Rothiere_1814.jpg",

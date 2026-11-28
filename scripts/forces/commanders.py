@@ -173,6 +173,7 @@ COMMANDERS.update({
     "haynau": {"French": ("Gén. de Division Maison", "maison"), "Prussian": ("General Blücher", "blucher")},
     "plagwitz": {"French": ("Gén. de Division Puthod", "puthod"), "Russian": ("General Langeron", "langeron")},
     "hagelberg": {"French": ("Gén. de Division Girard", "girard"), "Prussian": ("Gen-Maj von Hirschfeld", "hirschfeld")},
+    "brienne": {"French": ("Napoleon", "napoleon"), "Russian": ("Field Marshal Blücher", "blucher")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
 })
 
@@ -695,6 +696,8 @@ FORCE_PORTRAITS.update({
     "katzbach-rochambeau": "rochambeau", "katzbach-dermoncourt": "dermoncourt", "katzbach-vasilchikov": "ilarion_vasilchikov",
     "katzbach-olsufiev": "olsufiev", "katzbach-kaptsevich": "kaptsevich", "lutzen-brenier": "brenier",
     "mockern-leipzig-normann": "normann", "rippach-guard-cavalry": "bessieres", "rippach-winzingerode": "winzingerode", "reichenbach-saxons": "zeschau",
+    # 1814
+    "brienne-guard-cavalry": "lefebvre_desnouettes",
 })
 
 

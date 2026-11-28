@@ -1,0 +1,731 @@
+{
+  "id": "brienne",
+  "name": "Brienne",
+  "date": "29 January 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg/960px-Bataille_de_Brienne_%281814%29%2C_Sim%C3%A9on_Fort.jpg",
+    "title": "The Battle of Brienne",
+    "artist": "Jean-Antoine-Siméon Fort",
+    "date": "c. 1850",
+    "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Brienne_(1814),_Sim%C3%A9on_Fort.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Field Marshal Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  },
+  "summary": "Napoleon took the field at the end of January to strike Blücher before he could join Schwarzenberg, and found him at Brienne, where the Emperor had been a cadet. Grouchy's cavalry drove in the Russian horse in the afternoon; Victor's and Ney's infantry then attacked Olsufiev's corps in the town as Sacken's came up from Lesmont. Russian cavalry rode down Duhesme's division on the open left, and Cossacks nearly took Napoleon himself; but after dark a party of Victor's men slipped into the château and nearly took Blücher. The Young Guard's night assault on the town failed, Decouz was mortally wounded, and the fighting went on until midnight. Blücher drew off before dawn, leaving the field to the French but free to join Schwarzenberg for La Rothière three days later.",
+  "sources": [
+    {
+      "label": "French Army under Napoleon at Châlons, 25 January 1814 (Nafziger Collection 814ABH)",
+      "url": "https://www.napoleon-series.org/nafzigger/814ABH.pdf"
+    },
+    {
+      "label": "Battle of La Rothière order of battle (Wikipedia, after Nafziger and Petre)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re_order_of_battle"
+    },
+    {
+      "label": "Battle of Brienne (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Brienne"
+    }
+  ],
+  "forces": [
+    {
+      "id": "brienne-duhesme",
+      "nationId": "france",
+      "name": "Duhesme's Division",
+      "formation": "1st Division, II Corps (Victor)",
+      "side": "French",
+      "summary": "Victor's leading division, which reached the field at half past three and attacked Olsufiev's Russians in the town, fighting them to a standstill for an hour. With no cavalry on its flank it was ridden over by Pahlen's and Vasilchikov's squadrons and lost eight guns; but after dark Huguet-Chateau led four hundred men of the 37th and 56th up an unguarded road into the château, and nearly took Blücher and Gneisenau there.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's return of the army under Napoleon at Châlons on 25 January, four days before the battle.",
+        "Each regiment had a single battalion here, of five to nine hundred men; each is shown as its one battalion.",
+        "Nafziger gives the division without its brigades. Huguet-Chateau's brigade of the 37th and 56th, which took the château, is from Petre; the 24th Léger and 19th Line are the other, whose commander isn't known.",
+        "Nafziger gives the II Corps' batteries together, not by division: four 6-pdr foot batteries, a 12-pdr battery and three horse batteries. One of the 6-pdr foot batteries is with each division here.",
+        "Its foot battery, with four battalions where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Duhesme",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Duhesme's First Brigade",
+          "regiments": [
+            {
+              "name": "24th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/24th Léger"
+                }
+              ]
+            },
+            {
+              "name": "19th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/19th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Huguet-Chateau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Huguet-Chateau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "37th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/37th Line"
+                }
+              ]
+            },
+            {
+              "name": "56th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/56th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "7/2nd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brienne-forestier",
+      "nationId": "france",
+      "name": "Forestier's Division",
+      "formation": "2nd Division, II Corps (Victor)",
+      "side": "French",
+      "summary": "Victor's second division, which came up behind Duhesme's into the fight for the town. Forestier was mortally wounded, and the 26th Line was cut to pieces.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's return of the army under Napoleon at Châlons on 25 January, four days before the battle.",
+        "Its battalions were well below strength, a few hundred men each; they are shown at full size, and the list's Small upgrade would suit many of them.",
+        "Nafziger gives the division's battalions without its brigades or their commanders; they are split into two brigades here, in his order.",
+        "Nafziger gives the II Corps' batteries together, not by division: four 6-pdr foot batteries, a 12-pdr battery and three horse batteries. One of the 6-pdr foot batteries is with each division here.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Forestier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Forestier's First Brigade",
+          "regiments": [
+            {
+              "name": "26th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/26th Line"
+                }
+              ]
+            },
+            {
+              "name": "18th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/18th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/18th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/18th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Forestier's Second Brigade",
+          "regiments": [
+            {
+              "name": "46th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/46th Line"
+                }
+              ]
+            },
+            {
+              "name": "93rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/93rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/93rd Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "19/2nd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brienne-meunier",
+      "nationId": "french-imperial-guard",
+      "name": "Meunier's Division",
+      "formation": "1st Young Guard (1st Voltigeur) Division (Ney)",
+      "side": "French",
+      "summary": "One of Ney's two new divisions of the Young Guard, which Napoleon sent with Decouz's against the town after dark. The night assault failed in the streets, against Sacken's Russians coming up from Lesmont.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the army under Napoleon at Châlons on 25 January, four days before the battle.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "Each regiment had two battalions of three to six hundred men; they are shown at full size.",
+        "Nafziger gives the division a few guns, with 129 gunners and train, shown as a Young Guard foot battery; with four battalions in its brigade, where the list wants six for one, it shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Meunier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Lacoste's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lacoste",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/1st Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/1st Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "2nd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/2nd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/2nd Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Rousseau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rousseau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/3rd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/3rd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "4th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/4th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/4th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brienne-decouz",
+      "nationId": "french-imperial-guard",
+      "name": "Decouz's Division",
+      "formation": "2nd Young Guard (2nd Voltigeur) Division (Ney)",
+      "side": "French",
+      "summary": "Ney's second Young Guard division, which reached the field between four and five and was put in on Duhesme's right, pushing deep into the town until Ney halted it. In the night assault Decouz was mortally wounded and Rear Admiral Baste, who took his place, was killed; Pelet took command.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the army under Napoleon at Châlons on 25 January, four days before the battle.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "Each regiment had two battalions of about three hundred and fifty men; they are shown at full size, and the list's Small upgrade would suit them.",
+        "Nafziger gives the division a few guns, with 140 gunners and train, shown as a Young Guard foot battery; with four battalions in its brigade, where the list wants six for one, it shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Decouz",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Pelet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/5th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/6th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/6th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Bigarré's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bigarré",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/8th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brienne-guard-cavalry",
+      "nationId": "french-imperial-guard",
+      "name": "Lefebvre-Desnouettes's Guard Cavalry",
+      "formation": "Guard Cavalry Division (Ney)",
+      "side": "French",
+      "summary": "The Guard horse marching with Ney, which joined in the cavalry fight on the plain north-east of the town, where Lefebvre-Desnouettes was wounded, and supported the Young Guard's night assault.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the army under Napoleon at Châlons on 25 January, four days before the battle.",
+        "Each Guard regiment had four to six hundred men here; each is shown as one unit.",
+        "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them.",
+        "Nafziger gives the horse artillery as three hundred gunners and train, shown as one battery.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Lefebvre-Desnouettes",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Guard Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Dragoons of the Guard"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Guard Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Guard Chasseurs",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Polish Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st (Polish) Chevau-légers Lanciers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "missing": [
+        {
+          "name": "2nd Éclaireurs",
+          "reason": "A regiment of Guard scouts raised that winter, three hundred strong, which the 1812 list doesn't have."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "title": "Charles Lefebvre-Desnouettes",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "brienne-v-cavalry",
+      "nationId": "france",
+      "name": "Milhaud's Cavalry",
+      "formation": "V Cavalry Corps, under Grouchy",
+      "side": "French",
+      "summary": "The army's advance guard, Piré's light horse leading, which drove Shcherbatov's Cossacks out of Maizières. Grouchy brought up the rest of the corps and pressed Pahlen's cavalry back through Brienne, until L'Héritier's and Briche's dragoons were stopped by the Russian Jäger in square. That night Grouchy sent L'Héritier's dragoons into the town itself, to no purpose.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's return of the army under Napoleon at Châlons on 25 January, four days before the battle.",
+        "Piré's 9th Light Cavalry Division is the two light brigades, Briche's 5th Heavy Division Montélégier's and Ludot's dragoons, and L'Héritier's 6th Heavy Division Lamotte's and Mermet's. Grouchy, who commanded the army's cavalry, led them on the day.",
+        "Its regiments were weak, a hundred and fifty to four hundred men each; they are shown at full size, and the list's Small upgrade would suit many of them.",
+        "The dragoon divisions were veterans brought from Spain that winter.",
+        "The corps' two horse batteries, of four 6-pdrs and two howitzers each, are one in its divisional artillery and one in its reserve, as the list takes them.",
+        "Four heavy cavalry brigades, where the list takes one, and more heavy cavalry than its half of the army for corps support, show as historical departures.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Milhaud",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Subervie's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Subervie",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "3rd Hussars"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "26th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Pacz's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pacz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "14th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "27th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Montélégier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Montélégier",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "2nd Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "6th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "11th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Ludot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ludot",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "13th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "15th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Lamotte's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lamotte",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "18th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "19th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "20th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Mermet's Brigade",
+          "commander": {
+            "name": "Col. Mermet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "22nd Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "25th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "4/2nd Horse Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Corps Artillery (Etchegoyen)",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "2/3rd Horse Artillery"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "toCome": [
+    {
+      "side": "Russian",
+      "name": "Olsufiev's Corps",
+      "formation": "IX Infantry Corps, Langeron's corps, Army of Silesia",
+      "summary": "Udom's 9th and Kornilov's 15th Divisions, about six thousand infantry, which held Brienne town through the afternoon and failed to retake the château at night.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Sacken's Corps",
+      "formation": "Army of Silesia",
+      "summary": "Lieven's XI and Shcherbatov's VI Infantry Corps, recalled from Lesmont, which reached the field from mid-afternoon and drove the Young Guard out of most of the town that night.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Vasilchikov's Cavalry",
+      "formation": "Sacken's corps, Army of Silesia",
+      "summary": "Lanskoy's 2nd Hussar Division and Panchulidzev's dragoons, which with Pahlen's squadrons, forty in all, rode down Duhesme's division and took eight of its guns.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Pahlen's Cavalry",
+      "formation": "Wittgenstein's VI Corps, Army of Bohemia",
+      "summary": "Pahlen's three thousand horse, ahead of Wittgenstein's corps, with Shcherbatov's Cossacks and the 4th and 34th Jäger, which gave ground before Grouchy across the plain until the Jäger's squares stopped the French dragoons.",
+      "flag": "/flags/russia.svg"
+    }
+  ]
+}

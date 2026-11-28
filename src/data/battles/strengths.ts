@@ -219,6 +219,12 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "Prussian", men: "16,000", guns: "64" },
   ],
 
+  // The Campaign in France
+  brienne: [
+    { label: "French", men: "36,000" },
+    { label: "Russian", men: "28,000–30,000" },
+  ],
+
   // The Hundred Days
   ligny: [
     { label: "French", men: "62,882", guns: "210" },
