@@ -17,7 +17,8 @@ from pathlib import Path
 import commanders
 import ratings
 from hundred_days import bde, cmd, force, u
-from liberation_1813 import CAV_ONLY, FIG, FR, MARINES, NAF, bn_list, marine, regt
+from liberation_1813 import (CAV_ONLY, FIG, FR, LIST_RU, MARINES, NAF, PR15, PR_GROUPED, PR_LIST, PR_SUB, PR_WHOLE, RU,
+                             bn_list, marine, pc, pi, pres, regt, ru_regt)
 
 OUT = Path(__file__).resolve().parents[2] / "src" / "data" / "battles"
 ART = json.loads((Path(__file__).parent / "art.json").read_text())["battles"]
@@ -961,16 +962,70 @@ VC_FRIANT = at_vauchamps(
     "came into action.",
     extra=["Nafziger notes that the Guard infantry, his order of battle's other three divisions with it, wasn't seriously engaged."])
 
+# --- Vauchamps: the allies
+
+VC_KLEIST = force(
+    "vauchamps-kleist", PR15, "Kleist's Corps", "II Corps, Army of Silesia", "Prussian",
+    "Blücher's leading corps, marching west on Montmirail to fall on Marmont, which met Napoleon's whole army instead. "
+    "Zieten's brigade, ahead at Vauchamps, was broken and lost two thousand prisoners; the rest of the corps fell back "
+    "along the high road to Étoges in squares, with Grouchy's horsemen riding round and through them, and Kleist and "
+    "Prince August were nearly taken.",
+    [pi("10th Brigade (Pirch I)", "Gen-Maj von Pirch I",
+        [("2nd West Prussian Infantry", [("M", "I/2nd West Prussian Infantry"), ("M", "II/2nd West Prussian Infantry"), ("M", "III/2nd West Prussian Infantry")]),
+         ("7th Reserve Infantry", [("M", "I/7th Reserve Infantry"), ("M", "II/7th Reserve Infantry"), ("M", "III/7th Reserve Infantry")])],
+        [u("pr15-mounted-landwehr-attached", "8th Silesian Landwehr Cavalry (5 squadrons)"), u("pr15-foot-arty", "6-pdr Foot Battery #8")]),
+     pi("11th Brigade (Zieten)", "Gen-Maj von Zieten",
+        [("1st Silesian Infantry", [("M", "I/1st Silesian Infantry"), ("M", "II/1st Silesian Infantry"), ("F", "F/1st Silesian Infantry")]),
+         ("10th Reserve Infantry", [("M", "I/10th Reserve Infantry"), ("M", "II/10th Reserve Infantry"), ("F", "F/10th Reserve Infantry")])],
+        [u("pr15-schutzen", "Silesian Schützen (2 companies)"), u("pr15-hussar-attached", "1st Silesian Hussars (4 squadrons)"),
+         u("pr15-foot-arty", "6-pdr Foot Battery #9")]),
+     pi("12th Brigade (Prince August)", "Gen-Maj Prince August of Prussia",
+        [("2nd Silesian Infantry", [("M", "I/2nd Silesian Infantry"), ("M", "II/2nd Silesian Infantry"), ("F", "F/2nd Silesian Infantry")]),
+         ("11th Reserve Infantry", [("M", "I/11th Reserve Infantry"), ("M", "II/11th Reserve Infantry")])],
+        [u("pr15-mounted-landwehr-attached", "7th Silesian Landwehr Cavalry (4 squadrons)"), u("pr15-foot-arty", "6-pdr Foot Battery #21")]),
+     pc("Reserve Cavalry (Hacke)", "Col von Hacke",
+        [u("pr15-dragoon", "Silesian Cuirassiers"), u("pr15-uhlan", "Silesian Uhlans"), u("pr15-horse-arty", "6-pdr Horse Battery #8")]),
+     pc("Reserve Cavalry (Röder)", "Gen-Maj von Röder",
+        [u("pr15-dragoon", "East Prussian Cuirassiers"), u("pr15-dragoon", "Brandenburg Cuirassiers")]),
+     pres(u("pr15-heavy-arty", "12-pdr Foot Battery #3"), u("pr15-heavy-arty", "12-pdr Foot Battery #6"),
+          u("pr15-foot-arty", "6-pdr Foot Battery #11"), u("pr15-foot-arty", "6-pdr Foot Battery #13"),
+          u("pr15-horse-arty", "6-pdr Horse Battery #9"), u("pr15-horse-arty", "6-pdr Horse Battery #10"),
+          u("pr15-foot-arty", "Howitzer Battery #1"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Kleist")],
+    notes=[PR_LIST, VC_NOTE, PR_WHOLE, PR_GROUPED, PR_SUB,
+           "Nafziger gives the corps 13,500 men. The 7th Reserve Infantry's third battalion was taken whole in the retreat.",
+           "Each brigade's cavalry regiment, Landwehr or hussars, is attached to it as the list's small regiment. The list has no "
+           "cuirassiers: the Silesian, East Prussian and Brandenburg Cuirassiers are its Dragoons, its only heavy cavalry.",
+           "Braun's reserve artillery is the list's: the 12-pdr batteries its Heavy Artillery, and the howitzer battery its Foot Artillery.",
+           "Nafziger numbers the 2nd West Prussian's battalions 1 to 3, without a fusilier battalion; all three are Musketeers here. "
+           "Pirch's two regiments of three musketeer battalions, where the list's take two, brigades without Landwehr "
+           "infantry, and more reserve artillery or cavalry brigades than the list allows for the corps, show as historical "
+           "departures."])
+
+VC_KAPTSEVICH = force(
+    "vauchamps-kaptsevich", RU, "Kaptsevich's Corps", "X Infantry Corps, Army of Silesia", "Russian",
+    "Langeron's corps marching with Kleist's, about 6,500 men, which fell back beside the Prussians in squares along the "
+    "high road. Urusov's division, left at Étoges as a rearguard, was surprised there after dark and taken with eight guns.",
+    [bde("ru-infantry-brigade", "Schenschin's Brigade", "Col Schenschin", units=[u("ru-position-arty", "Position Battery #39")],
+         regiments=[ru_regt("Arkhangelsk Infantry", 2), ru_regt("Schlüsselburg Infantry", 2), ru_regt("Old Ingermanland Infantry", 2)]),
+     bde("ru-jager-brigade", "Suthof's Brigade", "Col Suthof", regiments=[ru_regt("7th Jäger", 2, "ru-jager"), ru_regt("37th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Shapskoy's Brigade", "Maj-Gen Shapskoy", units=[u("ru-light-arty", "Light Battery #3")],
+         regiments=[ru_regt("Olonets Infantry", 1), ru_regt("Vyatka Infantry", 2), ru_regt("Staroskol Infantry", 1)]),
+     bde("ru-jager-brigade", "Vasilchikov's Brigade", "Maj-Gen Vasilchikov", units=[u("ru-light-arty", "Light Battery #56")],
+         regiments=[ru_regt("29th Jäger", 1, "ru-jager"), ru_regt("45th Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Kaptsevich")],
+    notes=[LIST_RU, VC_NOTE,
+           "Urusov's 8th Division (the first two brigades) and Turchaninov's 22nd (the last two). Its regiments had one or two "
+           "battalions each, a few hundred men; each is shown at full size, and the list's Small upgrade would suit them.",
+           "Its three batteries, a position and two light, are with the brigades, as the list takes them.",
+           "Three infantry regiments in a brigade, where the list takes two, and two Jäger brigades, where it allows one, show "
+           "as historical departures."])
+
 VAUCHAMPS = fought("vauchamps", [VC_FR, SIX_DAYS, wiki("Battle of Vauchamps", "Battle_of_Vauchamps")],
-    [VC_RICARD, VC_LAGRANGE, VC_LEVAL, VC_ST_GERMAIN, VC_BORDESOULLE, VC_LEFEBVRE, VC_LAFERRIERE, VC_FRIANT], [
-    pr("Kleist's Corps", "Pirch's 10th, Zieten's 11th and Prince August's 12th Brigades, II Corps, Army of Silesia",
-       "About thirteen thousand five hundred men. Zieten's brigade, caught at Vauchamps, lost two thousand prisoners, and "
-       "the corps fought its way back to Étoges in squares through the French cavalry; Kleist and Prince August were nearly taken."),
-    ru("Kaptsevich's Corps", "X Infantry Corps, Army of Silesia",
-       "About six thousand five hundred men, falling back beside Kleist's; Urusov's 8th Division, left at Étoges, was taken "
-       "there with eight guns."),
+    [VC_RICARD, VC_LAGRANGE, VC_LEVAL, VC_ST_GERMAIN, VC_BORDESOULLE, VC_LEFEBVRE, VC_LAFERRIERE, VC_FRIANT, VC_KLEIST, VC_KAPTSEVICH], [
     ru("Udom's Division", "9th Division, IX Infantry Corps",
-       "The fifteen hundred who had got away from Champaubert, surprised at Étoges after dark by Doumerc's cuirassiers.")],
+       "The fifteen hundred who had got away from Champaubert, made up into three or four combined battalions with a single "
+       "battery, and surprised at Étoges after dark by Doumerc's cuirassiers; Nafziger notes their organisation isn't known.")],
     alliances=(("Prussian", "Russian"),))
 
 # ---------------------------------------------------------------- Mormant and Montereau, 17 and 18 February 1814, written

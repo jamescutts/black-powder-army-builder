@@ -721,7 +721,7 @@ FORCE_PORTRAITS.update({
     "montmirail-lefebvre-desnouettes": "lefebvre_desnouettes", "chateau-thierry-friant": "friant",
     "chateau-thierry-lefebvre-desnouettes": "lefebvre_desnouettes", "vauchamps-ricard": "ricard", "vauchamps-friant": "friant",
     "vauchamps-lefebvre-desnouettes": "lefebvre_desnouettes", "craonne-friant": "friant", "craonne-charpentier": "charpentier",
-    "craonne-pac": "nansouty",
+    "craonne-pac": "nansouty", "vauchamps-kleist": "kleist", "vauchamps-kaptsevich": "kaptsevich",
 })
 
 

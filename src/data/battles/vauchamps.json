@@ -1162,28 +1162,488 @@
         "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
         "focus": "50% 20%"
       }
+    },
+    {
+      "id": "vauchamps-kleist",
+      "nationId": "prussians-1815",
+      "name": "Kleist's Corps",
+      "formation": "II Corps, Army of Silesia",
+      "side": "Prussian",
+      "summary": "Blücher's leading corps, marching west on Montmirail to fall on Marmont, which met Napoleon's whole army instead. Zieten's brigade, ahead at Vauchamps, was broken and lost two thousand prisoners; the rest of the corps fell back along the high road to Étoges in squares, with Grouchy's horsemen riding round and through them, and Kleist and Prince August were nearly taken.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for Vauchamps, from the French archives and Clerc's history of Soult's campaign; its strengths are of 1 February.",
+        "A Prussian brigade was the size of another army's division, so the whole corps is here. Take the brigades you want; each is a force in itself.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "Nafziger gives the corps 13,500 men. The 7th Reserve Infantry's third battalion was taken whole in the retreat.",
+        "Each brigade's cavalry regiment, Landwehr or hussars, is attached to it as the list's small regiment. The list has no cuirassiers: the Silesian, East Prussian and Brandenburg Cuirassiers are its Dragoons, its only heavy cavalry.",
+        "Braun's reserve artillery is the list's: the 12-pdr batteries its Heavy Artillery, and the howitzer battery its Foot Artillery.",
+        "Nafziger numbers the 2nd West Prussian's battalions 1 to 3, without a fusilier battalion; all three are Musketeers here. Pirch's two regiments of three musketeer battalions, where the list's take two, brigades without Landwehr infantry, and more reserve artillery or cavalry brigades than the list allows for the corps, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Kleist",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "10th Brigade (Pirch I)",
+          "commander": {
+            "name": "Gen-Maj von Pirch I",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "8th Silesian Landwehr Cavalry (5 squadrons)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #8"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "2nd West Prussian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/2nd West Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd West Prussian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "III/2nd West Prussian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "7th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/7th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/7th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "III/7th Reserve Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "11th Brigade (Zieten)",
+          "commander": {
+            "name": "Gen-Maj von Zieten",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-schutzen",
+              "name": "Silesian Schützen (2 companies)"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "1st Silesian Hussars (4 squadrons)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #9"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Silesian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st Silesian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st Silesian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/1st Silesian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "10th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/10th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/10th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/10th Reserve Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "12th Brigade (Prince August)",
+          "commander": {
+            "name": "Gen-Maj Prince August of Prussia",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "7th Silesian Landwehr Cavalry (4 squadrons)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #21"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "2nd Silesian Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/2nd Silesian Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd Silesian Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/2nd Silesian Infantry"
+                }
+              ]
+            },
+            {
+              "name": "11th Reserve Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/11th Reserve Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/11th Reserve Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Hacke)",
+          "commander": {
+            "name": "Col von Hacke",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Silesian Cuirassiers"
+            },
+            {
+              "unit": "pr15-uhlan",
+              "name": "Silesian Uhlans"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "6-pdr Horse Battery #8"
+            }
+          ]
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Reserve Cavalry (Röder)",
+          "commander": {
+            "name": "Gen-Maj von Röder",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "East Prussian Cuirassiers"
+            },
+            {
+              "unit": "pr15-dragoon",
+              "name": "Brandenburg Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "pr15-army-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Foot Battery #3"
+            },
+            {
+              "unit": "pr15-heavy-arty",
+              "name": "12-pdr Foot Battery #6"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #11"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #13"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "6-pdr Horse Battery #9"
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "6-pdr Horse Battery #10"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "Howitzer Battery #1"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg/250px-Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
+        "title": "Friedrich Kleist von Nollendorf",
+        "artist": "Hermann Scherenberg",
+        "page": "https://commons.wikimedia.org/wiki/File:Hermann_Scherenberg-Friedrich_Graf_Kleist_von_Nollendorf.jpg",
+        "focus": "50% 20%",
+        "date": "1863"
+      }
+    },
+    {
+      "id": "vauchamps-kaptsevich",
+      "nationId": "russia",
+      "name": "Kaptsevich's Corps",
+      "formation": "X Infantry Corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Langeron's corps marching with Kleist's, about 6,500 men, which fell back beside the Prussians in squares along the high road. Urusov's division, left at Étoges as a rearguard, was surprised there after dark and taken with eight guns.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Vauchamps, from the French archives and Clerc's history of Soult's campaign; its strengths are of 1 February.",
+        "Urusov's 8th Division (the first two brigades) and Turchaninov's 22nd (the last two). Its regiments had one or two battalions each, a few hundred men; each is shown at full size, and the list's Small upgrade would suit them.",
+        "Its three batteries, a position and two light, are with the brigades, as the list takes them.",
+        "Three infantry regiments in a brigade, where the list takes two, and two Jäger brigades, where it allows one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Kaptsevich",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Schenschin's Brigade",
+          "commander": {
+            "name": "Col Schenschin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #39"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Arkhangelsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Arkhangelsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Arkhangelsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Schlüsselburg Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Schlüsselburg Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Schlüsselburg Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Old Ingermanland Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Old Ingermanland Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Old Ingermanland Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Suthof's Brigade",
+          "commander": {
+            "name": "Col Suthof",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "7th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/7th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/7th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "37th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "37th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Shapskoy's Brigade",
+          "commander": {
+            "name": "Maj-Gen Shapskoy",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #3"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Olonets Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Olonets Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Vyatka Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Vyatka Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Vyatka Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Staroskol Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Staroskol Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Vasilchikov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Vasilchikov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #56"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "29th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "29th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "45th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "45th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kaptzevich_Petr.jpg/250px-Kaptzevich_Petr.jpg",
+        "title": "Pyotr Kaptsevich",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Kaptzevich_Petr.jpg",
+        "focus": "50% 18%",
+        "date": "1821"
+      }
     }
   ],
   "toCome": [
     {
-      "side": "Prussian",
-      "name": "Kleist's Corps",
-      "formation": "Pirch's 10th, Zieten's 11th and Prince August's 12th Brigades, II Corps, Army of Silesia",
-      "summary": "About thirteen thousand five hundred men. Zieten's brigade, caught at Vauchamps, lost two thousand prisoners, and the corps fought its way back to Étoges in squares through the French cavalry; Kleist and Prince August were nearly taken.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Russian",
-      "name": "Kaptsevich's Corps",
-      "formation": "X Infantry Corps, Army of Silesia",
-      "summary": "About six thousand five hundred men, falling back beside Kleist's; Urusov's 8th Division, left at Étoges, was taken there with eight guns.",
-      "flag": "/flags/russia.svg"
-    },
-    {
       "side": "Russian",
       "name": "Udom's Division",
       "formation": "9th Division, IX Infantry Corps",
-      "summary": "The fifteen hundred who had got away from Champaubert, surprised at Étoges after dark by Doumerc's cuirassiers.",
+      "summary": "The fifteen hundred who had got away from Champaubert, made up into three or four combined battalions with a single battery, and surprised at Étoges after dark by Doumerc's cuirassiers; Nafziger notes their organisation isn't known.",
       "flag": "/flags/russia.svg"
     }
   ]
