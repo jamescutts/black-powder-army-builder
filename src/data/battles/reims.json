@@ -45,38 +45,1075 @@
   "summary": "Napoleon fell on Saint-Priest's Russian and Prussian corps, which had taken Reims; Saint-Priest, an émigré Frenchman in Russian service, was mortally wounded, and the city was retaken.",
   "sources": [
     {
+      "label": "French II & VI Corps, 12 March 1814 (Nafziger Collection 814CZA)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CZA.pdf"
+    },
+    {
+      "label": "French Army under Napoleon on the Aisne, 17 March 1814 (Nafziger Collection 814CAE)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAE.pdf"
+    },
+    {
+      "label": "French Forces, Battle of Craone, 7 March 1814 (Nafziger Collection 814CAB)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAB.pdf"
+    },
+    {
+      "label": "Allied and French Forces, Battle of Montmirail, 11 February 1814 (Nafziger Collection 814BAA)",
+      "url": "https://www.napoleon-series.org/nafzigger/814BAA.pdf"
+    },
+    {
       "label": "Battle of Reims (1814) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Reims_(1814)"
     }
   ],
-  "forces": [],
+  "forces": [
+    {
+      "id": "reims-ricard",
+      "nationId": "france",
+      "name": "Ricard's Division",
+      "formation": "8th Division, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's leading infantry, which crossed the ravine of La Muire and took the heights of Sainte-Geneviève before the town; Pelleport's brigade overwhelmed the Prussian Landwehr in the cemetery at Ormes. Its attack on the Soissons gate failed until the Guard's guns blew it in.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "On Nafziger's return of 17 March the division had 940 men, in Pelleport's and Clavel's brigades; its battalions here are those of 12 March.",
+        "After Athies the division had about 650 men in seven battalions, fifty to a hundred and sixty each. They are shown at full size; the list's Small upgrade would suit them all.",
+        "Nafziger gives the battalions without brigades; they are split here, light and line, as the list takes them.",
+        "A brigade of four light battalions, where the list takes three regiments and one light regiment in the division, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Ricard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Ricard's Light Battalions",
+          "regiments": [
+            {
+              "name": "2nd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2nd Léger"
+                }
+              ]
+            },
+            {
+              "name": "4th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "4th Léger"
+                }
+              ]
+            },
+            {
+              "name": "9th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/9th Léger"
+                }
+              ]
+            },
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/16th Léger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Ricard's Line Battalions",
+          "regiments": [
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "136th Line"
+                }
+              ]
+            },
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "138th Line"
+                }
+              ]
+            },
+            {
+              "name": "144th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "144th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Etienne_Pierre_Sylvestre_Ricard.jpg/250px-Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "title": "Étienne Pierre Sylvestre Ricard",
+        "artist": "from Panckoucke's portraits of French generals",
+        "page": "https://commons.wikimedia.org/wiki/File:Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
+    },
+    {
+      "id": "reims-lagrange",
+      "nationId": "france",
+      "name": "Lagrange's Division",
+      "formation": "3rd Division, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's other division, which followed Ricard's on the road from Berry-au-Bac and joined the attack on the town.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "On Nafziger's return of 17 March the division had 2,060 men, in Joubert's and Fournier's brigades; its battalions here are those of 12 March, as its brigades are of February.",
+        "Its marine regiments were sailors and naval gunners of the fleet's artillery, brought inland in 1813; they fought well, and are shown as Line, the list's Veteran upgrade would suit them.",
+        "Nafziger gives the division as one brigade; its regiments are brigaded here as at La Rothière, after Nafziger's history as Wikipedia's order of battle has it. Battalion numbers he leaves out, and the division's artillery, are from his returns of 25 January and La Rothière.",
+        "Nafziger gives the 37th Line, but it is the 37th Léger, which served in the division at Leipzig; the 37th Line was in Duhesme's division of Victor's corps.",
+        "After Athies the division had about 1,400 men in twenty-one battalions; they are shown at full size, and the list's Small upgrade would suit them all.",
+        "Nafziger gives Marmont's artillery on this return only as a foot and a horse company of January; the batteries here are those of the 25 January return. Clavel's four regiments, where the list's brigade takes three, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Lagrange",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Joubert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Joubert",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "23rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/23rd Line"
+                }
+              ]
+            },
+            {
+              "name": "37th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/37th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/37th Léger"
+                }
+              ]
+            },
+            {
+              "name": "1st Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/1st Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/1st Marine Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pelleport's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelleport",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/2nd Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "3rd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/3rd Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "4th Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/4th Marine Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Lefol's Brigade",
+          "regiments": [
+            {
+              "name": "1st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/1st Line"
+                }
+              ]
+            },
+            {
+              "name": "15th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/15th Line"
+                }
+              ]
+            },
+            {
+              "name": "132nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "132nd Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Clavel's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Clavel",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/16th Line"
+                }
+              ]
+            },
+            {
+              "name": "62nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "62nd Line"
+                }
+              ]
+            },
+            {
+              "name": "70th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/70th Line"
+                }
+              ]
+            },
+            {
+              "name": "121st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "121st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "6/3rd Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "VI Corps Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "25/3rd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "26/3rd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reims-arrighi",
+      "nationId": "france",
+      "name": "Arrighi's Division",
+      "formation": "Paris Reserve division, with Marmont",
+      "side": "French",
+      "summary": "Arrighi's depot battalions from Paris, which marched on Reims with Marmont's corps.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "On Nafziger's return of 17 March the infantry had 2,080 men, in Lucotte's brigade and another; its battalions here are those of 12 March.",
+        "On 12 March the division had about 1,800 men in twelve battalions. Nafziger gives them without brigades; they are split between two here, in his order, the first under Lucotte as on his return of 17 March. The provisional cavalry Nafziger gives Arrighi at Laon is with Bordesoulle's here.",
+        "Brigades of four regiments, where the list's take three, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Arrighi",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Lucotte's Brigade",
+          "regiments": [
+            {
+              "name": "65th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/65th Line"
+                }
+              ]
+            },
+            {
+              "name": "66th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/66th Line"
+                }
+              ]
+            },
+            {
+              "name": "70th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/70th Line"
+                }
+              ]
+            },
+            {
+              "name": "85th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/85th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/85th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/85th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "name": "Gén. de Brigade Lucotte",
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Arrighi's Second Brigade",
+          "regiments": [
+            {
+              "name": "43rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/43rd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/43rd Line"
+                }
+              ]
+            },
+            {
+              "name": "50th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/50th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/50th Line"
+                }
+              ]
+            },
+            {
+              "name": "7th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/7th Line"
+                }
+              ]
+            },
+            {
+              "name": "88th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/88th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Jean-Thomas_Arrighi_de_Casanova.jpg/250px-Jean-Thomas_Arrighi_de_Casanova.jpg",
+        "title": "Jean-Toussaint Arrighi de Casanova",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean-Thomas_Arrighi_de_Casanova.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "reims-bordesoulle",
+      "nationId": "france",
+      "name": "Bordesoulle's Cavalry",
+      "formation": "I Cavalry Corps",
+      "side": "French",
+      "summary": "The cavalry of Marmont's column, which caught the Prussian horse at Rosnay on the way to Reims; Merlin's division led the thrust towards Bezannes as the infantry attacked the town.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "Merlin's light division is the first two brigades, Bordesoulle's own heavy division Thiry's and Laville's.",
+        "Each brigade was made up of squadrons from the depots of many regiments: Nafziger names their parent regiments but not their strengths. They are grouped here as one unit for each kind of horse in a brigade, or two where a brigade had many, as they were formed into provisional regiments.",
+        "On 17 March each of these detachments had fifty to a hundred and twenty men, about 2,400 in all; they are shown at full size, and the list's Small upgrade would suit them all.",
+        "Two heavy cavalry brigades, where the list takes one, and cuirassiers and dragoons in one brigade show as historical departures.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Bordesoulle",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Merlin's Hussars and Chevau-légers",
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "Hussar detachments (6th, 7th and 8th Hussars)"
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "Chevau-léger detachments (1st, 3rd, 5th, 7th and 8th Chevau-légers)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Latour-Foissac's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Latour-Foissac",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "Chasseur detachments (1st, 2nd, 3rd and 6th Chasseurs)"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "Chasseur detachments (8th, 9th, 16th and 25th Chasseurs)"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Thiry's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thiry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (2nd, 3rd and 6th Cuirassiers)"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (9th, 11th and 12th Cuirassiers)"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Laville's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Laville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (4th, 7th and 14th Cuirassiers)"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "Dragoon detachments (7th, 23rd, 28th and 30th Dragoons)"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/1st Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": []
+    },
+    {
+      "id": "reims-defrance",
+      "nationId": "france",
+      "name": "Defrance's Gardes d'Honneur",
+      "formation": "Cavalry Division, attached to the Guard",
+      "side": "French",
+      "summary": "The Gardes d'Honneur, which led the assault on the town with Ricard's division; Piquet's brigade cut down the Prussians at Ormes, and Ségur's, with the 3rd Gardes d'Honneur, was trapped in the streets and largely destroyed.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "The Gardes d'Honneur, raised in 1813 from young men of means who equipped themselves and rode dressed as hussars, are the list's Hussars.",
+        "The division had only 896 men in five regiments; they are shown at full size, and the list's Small upgrade would suit them.",
+        "Nafziger gives the division without brigades. Piquet's brigade of the 10th Hussars and the 1st Gardes d'Honneur, and Ségur's of the 3rd and 4th, are as at La Rothière; the 2nd Gardes d'Honneur are with Ségur's here, three hussar regiments where the list's brigade takes two, a historical departure.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Defrance",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Piquet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Piquet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "10th Hussars"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "1st Gardes d'Honneur"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Ségur's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ségur",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "2nd Gardes d'Honneur"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "3rd Gardes d'Honneur"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "4th Gardes d'Honneur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reims-colbert",
+      "nationId": "french-imperial-guard",
+      "name": "Colbert's Guard Cavalry",
+      "formation": "1st Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The Guard horse under Sébastiani, which advanced on Ricard's flanks as the infantry went in.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "The division had 1,100 men.",
+        "The division had 2,582 men. Each Guard cavalry regiment had squadrons in each of the three divisions; each division's are shown as one unit of each regiment.",
+        "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Colbert",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Guard Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Guard Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Guard Chasseurs",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Polish Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st (Polish) Chevau-légers Lanciers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "reims-friant",
+      "nationId": "french-imperial-guard",
+      "name": "Friant's Old Guard",
+      "formation": "1st Old Guard Division, Old Guard (Mortier)",
+      "side": "French",
+      "summary": "The Old Guard, marched from Soissons, which reached Reims at four in the afternoon and was held in reserve.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "The division had 3,800 men in eight battalions. The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, and the 2nd, raised in 1811, its Middle Guard.",
+        "Nafziger gives Michel as the commander of the chasseurs' brigade as well as of the 2nd Old Guard Division; the brigade is shown here without him.",
+        "Nafziger gives the Guard artillery together, seven foot and four horse batteries, not by division; the batteries here are those the list's brigades take.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Friant",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Chasseurs à Pied",
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "1/1st Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "2/1st Chasseurs à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "1/2nd Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "2/2nd Chasseurs à Pied"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Cambronne's Brigade",
+          "commander": {
+            "name": "Gén. de Division Cambronne",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "1/1st Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "2/1st Grenadiers à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "1/2nd Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "2/2nd Grenadiers à Pied"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-marines-brigade",
+          "name": "Attached",
+          "units": [
+            {
+              "unit": "fig-marines",
+              "name": "3/Marines of the Guard"
+            }
+          ]
+        },
+        {
+          "type": "fig-artillery-reserve",
+          "name": "Guard Artillery",
+          "units": [
+            {
+              "unit": "fig-og-heavy-foot-arty",
+              "name": "Old Guard 12-pdr Foot Battery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "title": "Louis Friant",
+        "artist": "Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "reims-boyer-de-rebeval",
+      "nationId": "france",
+      "name": "Boyer de Rébeval's Division",
+      "formation": "9th Division, Victor's corps",
+      "side": "French",
+      "summary": "The division that had been Victor's, held in reserve with Friant's Old Guard.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.",
+        "The division had 3,800 men in eleven battalions.",
+        "Nafziger gives these line battalions to Boyer de Rébeval as Victor's 9th Division, and Pierre Boyer a division of unknown battalions under Ney. Wikipedia's account has it the other way about: Pierre Boyer's 9th Division with Ney, and Boyer de Rébeval a provisional Young Guard division of conscripts with Victor. This follows Nafziger.",
+        "Its two foot batteries, eight 6-pdrs and four howitzers, are one in its divisional artillery and one in its reserve, as the list takes them.",
+        "Brigades of four regiments, where the list's take three, and two light regiments, where it allows one in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Boyer de Rébeval",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Gruyère's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gruyère",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "6/2nd Léger"
+                }
+              ]
+            },
+            {
+              "name": "24th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/24th Line"
+                }
+              ]
+            },
+            {
+              "name": "36th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/36th Line"
+                }
+              ]
+            },
+            {
+              "name": "122nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/122nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/122nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chassé's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chassé",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/16th Léger"
+                }
+              ]
+            },
+            {
+              "name": "8th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "28th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/28th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/28th Line"
+                }
+              ]
+            },
+            {
+              "name": "54th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/54th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "22/5th Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/8th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "toCome": [
     {
       "side": "French",
-      "name": "Marmont's Corps",
-      "formation": "Ricard's division and Pelleport's brigade, VI Corps, with Bordesoulle's I Cavalry Corps",
-      "summary": "Led the march on Reims, catching Prussian cavalry at Rosnay and Jagow's Landwehr at Ormes; Ricard's division took the Sainte-Geneviève heights before the town and failed to storm the Soissons gate.",
+      "name": "Exelmans's Division",
+      "formation": "Guard cavalry, under Sébastiani",
+      "summary": "Advanced on Ricard's flanks with Colbert's, crossed the Vesle by the bridging train and led the pursuit; Nafziger doesn't identify its regiments.",
       "flag": "/flags/france.svg"
     },
     {
       "side": "French",
-      "name": "Defrance's Gardes d'Honneur",
-      "formation": "Cavalry Division, with Piquet's and Ségur's brigades",
-      "summary": "Led the assault with Ricard's division; Ségur's brigade, with the 3rd Gardes d'Honneur, was trapped and largely destroyed.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Sébastiani's Guard Cavalry",
-      "formation": "Exelmans's and Colbert's divisions",
-      "summary": "Advanced on Ricard's flanks; Exelmans's division crossed the Vesle and led the pursuit.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "The Guard and Ney's Infantry",
-      "formation": "Friant's Old Guard and Boyer de Rébeval's divisions",
-      "summary": "Came up in the afternoon and were held back; sixteen of the Guard's guns blew in the Soissons gate.",
+      "name": "Ney's Infantry",
+      "formation": "Ney's corps",
+      "summary": "Reached Reims before four in the afternoon; no return of it for March has been found.",
       "flag": "/flags/france.svg"
     },
     {

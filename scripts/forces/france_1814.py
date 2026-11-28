@@ -1616,16 +1616,75 @@ LAON = fought("laon", [LA_FR, CR_FR, LA_VI, wiki("Battle of Laon", "Battle_of_La
     ru("Langeron's and Sacken's Corps", "Army of Silesia", "In reserve.")],
     alliances=(("Prussian", "Russian"),))
 
-REIMS = armies("reims", [wiki("Battle of Reims (1814)", "Battle_of_Reims_(1814)")], [
-    fr("Marmont's Corps", "Ricard's division and Pelleport's brigade, VI Corps, with Bordesoulle's I Cavalry Corps",
-       "Led the march on Reims, catching Prussian cavalry at Rosnay and Jagow's Landwehr at Ormes; Ricard's division took the "
-       "Sainte-Geneviève heights before the town and failed to storm the Soissons gate."),
-    fr("Defrance's Gardes d'Honneur", "Cavalry Division, with Piquet's and Ségur's brigades",
-       "Led the assault with Ricard's division; Ségur's brigade, with the 3rd Gardes d'Honneur, was trapped and largely destroyed."),
-    fr("Sébastiani's Guard Cavalry", "Exelmans's and Colbert's divisions",
-       "Advanced on Ricard's flanks; Exelmans's division crossed the Vesle and led the pursuit."),
-    fr("The Guard and Ney's Infantry", "Friant's Old Guard and Boyer de Rébeval's divisions",
-       "Came up in the afternoon and were held back; sixteen of the Guard's guns blew in the Soissons gate."),
+# ---------------------------------------------------------------- Reims, 13 March 1814, written
+
+RE_AISNE = {"label": "French Army under Napoleon on the Aisne, 17 March 1814 (Nafziger Collection 814CAE)", "url": NAF + "814CAE.pdf"}
+RE_NOTE = ("Nafziger has no order of battle for Reims. Marmont's infantry is from his VI Corps return of 12 March, the day "
+           "before; Bordesoulle's cavalry from his return of the army on the Aisne of 17 March; and the Guard and Defrance's "
+           "Gardes d'Honneur, which marched with Napoleon, from his returns for Craonne and Montmirail.")
+
+
+def at_reims(f, id_, summary, extra=()):
+    keep = [n for n in f["notes"][2:] if n not in (LA_NOTE, LA_VI_NOTE, CR_NOTE, MM_NOTE)]
+    return again(f, id_, summary, [f["notes"][0], RE_NOTE] + list(extra) + keep)
+
+
+RE_RICARD = at_reims(LA_RICARD, "reims-ricard",
+    "Marmont's leading infantry, which crossed the ravine of La Muire and took the heights of Sainte-Geneviève before the "
+    "town; Pelleport's brigade overwhelmed the Prussian Landwehr in the cemetery at Ormes. Its attack on the Soissons gate "
+    "failed until the Guard's guns blew it in.",
+    ["On Nafziger's return of 17 March the division had 940 men, in Pelleport's and Clavel's brigades; its battalions here "
+     "are those of 12 March."])
+RE_LAGRANGE = at_reims(LA_LAGRANGE, "reims-lagrange",
+    "Marmont's other division, which followed Ricard's on the road from Berry-au-Bac and joined the attack on the town.",
+    ["On Nafziger's return of 17 March the division had 2,060 men, in Joubert's and Fournier's brigades; its battalions here "
+     "are those of 12 March, as its brigades are of February."])
+RE_ARRIGHI = at_reims(LA_ARRIGHI, "reims-arrighi",
+    "Arrighi's depot battalions from Paris, which marched on Reims with Marmont's corps.",
+    ["On Nafziger's return of 17 March the infantry had 2,080 men, in Lucotte's brigade and another; its battalions here "
+     "are those of 12 March."])
+RE_ARRIGHI["brigades"] = [b for b in RE_ARRIGHI["brigades"] if b["type"] != "fr-light-cavalry-brigade"]
+RE_ARRIGHI["notes"] = [n for n in RE_ARRIGHI["notes"] if "provisional regiments are" not in n and "I Cavalry Corps" not in n
+                      and "four provisional regiments" not in n] + [
+    "On 12 March the division had about 1,800 men in twelve battalions. Nafziger gives them without brigades; they are split "
+    "between two here, in his order, the first under Lucotte as on his return of 17 March. The provisional cavalry Nafziger "
+    "gives Arrighi at Laon is with Bordesoulle's here."]
+RE_ARRIGHI["notes"] = RE_ARRIGHI["notes"][:-2] + RE_ARRIGHI["notes"][-1:] + RE_ARRIGHI["notes"][-2:-1]
+brigade_of(RE_ARRIGHI, "Arrighi's First Brigade").update(name="Lucotte's Brigade", commander={"name": "Gén. de Brigade Lucotte"})
+RE_ARRIGHI["name"], RE_ARRIGHI["formation"] = "Arrighi's Division", "Paris Reserve division, with Marmont"
+
+RE_BORDESOULLE = again(
+    CH_BORDESOULLE, "reims-bordesoulle",
+    "The cavalry of Marmont's column, which caught the Prussian horse at Rosnay on the way to Reims; Merlin's division led "
+    "the thrust towards Bezannes as the infantry attacked the town.",
+    [LIST_FR, RE_NOTE,
+     "Merlin's light division is the first two brigades, Bordesoulle's own heavy division Thiry's and Laville's.",
+     CH_DEPOTS,
+     "On 17 March each of these detachments had fifty to a hundred and twenty men, about 2,400 in all; they are shown at full "
+     "size, and the list's Small upgrade would suit them all.",
+     "Two heavy cavalry brigades, where the list takes one, and cuirassiers and dragoons in one brigade show as "
+     "historical departures.", CAV_ONLY])
+brigade_of(RE_BORDESOULLE, "Guyon's Brigade").update(name="Latour-Foissac's Brigade", commander={"name": "Gén. de Brigade Latour-Foissac"})
+brigade_of(RE_BORDESOULLE, "Wathier's Brigade").pop("commander", None)
+brigade_of(RE_BORDESOULLE, "Wathier's Brigade")["name"] = "Merlin's Hussars and Chevau-légers"
+RE_BORDESOULLE["missing"] = []
+
+RE_DEFRANCE = at_reims(MM_DEFRANCE, "reims-defrance",
+    "The Gardes d'Honneur, which led the assault on the town with Ricard's division; Piquet's brigade cut down the "
+    "Prussians at Ormes, and Ségur's, with the 3rd Gardes d'Honneur, was trapped in the streets and largely destroyed.")
+RE_COLBERT = at_reims(CR_COLBERT, "reims-colbert",
+    "The Guard horse under Sébastiani, which advanced on Ricard's flanks as the infantry went in.")
+RE_FRIANT = at_reims(CR_FRIANT, "reims-friant",
+    "The Old Guard, marched from Soissons, which reached Reims at four in the afternoon and was held in reserve.")
+RE_BOYER_DE_REBEVAL = at_reims(CR_BOYER_DE_REBEVAL, "reims-boyer-de-rebeval",
+    "The division that had been Victor's, held in reserve with Friant's Old Guard.")
+
+REIMS = fought("reims", [LA_VI, RE_AISNE, CR_FR, MM_FR, wiki("Battle of Reims (1814)", "Battle_of_Reims_(1814)")],
+    [RE_RICARD, RE_LAGRANGE, RE_ARRIGHI, RE_BORDESOULLE, RE_DEFRANCE, RE_COLBERT, RE_FRIANT, RE_BOYER_DE_REBEVAL], [
+    fr("Exelmans's Division", "Guard cavalry, under Sébastiani",
+       "Advanced on Ricard's flanks with Colbert's, crossed the Vesle by the bridging train and led the pursuit; Nafziger "
+       "doesn't identify its regiments."),
+    fr("Ney's Infantry", "Ney's corps", "Reached Reims before four in the afternoon; no return of it for March has been found."),
     ru("Saint-Priest's Corps", "Gurgalov's 11th and Pillar's 17th Divisions, with Emmanuel's dragoons, VIII Infantry Corps",
        "About eight thousand men, who had taken Reims the day before. Saint-Priest was mortally wounded by a shell, and the corps "
        "fell back through the town in disorder."),
