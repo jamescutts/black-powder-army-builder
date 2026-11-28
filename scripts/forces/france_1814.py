@@ -2528,6 +2528,113 @@ ARCIS.update(fought("arcis-sur-aube", [AR_FR15, MM_FR, CR_FR, TR_FR, AR_BAV, RO_
     alliances=(("Bavarian", "Austrian", "Württemberg", "Russian", "Prussian"),)))
 
 
+# ================================================================ Fère-Champenoise, 25 March 1814, written
+
+FC_NOTE = ("Nafziger has no order of battle for Fère-Champenoise. Marmont's and Mortier's corps are from his return of the "
+           "army on the Aisne on 17 March, eight days before, with Marmont's battalions from his 12 March return.")
+FC_AL_NOTE = "After Wikipedia's order of battle for La Rothière; Fère-Champenoise's own gives the allied cavalry only by division."
+
+
+def at_fere(f, id_, summary, note=FC_NOTE, extra=()):
+    keep = [n for n in f["notes"][2:] if n not in (RE_NOTE, LA_NOTE, LA_VI_NOTE, CR_NOTE, MM_NOTE, PA_NOTE)]
+    return again(f, id_, summary, [f["notes"][0], note] + list(extra) + keep)
+
+
+def yg1(name, unit="fig-yg-voltigeurs"):
+    return regt(name, [u(unit, name)])
+
+
+FC_RICARD = at_fere(RE_RICARD, "fere-champenoise-ricard",
+    "Marmont's division, caught with the rest of his corps on the open plain by the allied cavalry on its way to Paris, and "
+    "driven back with heavy loss.")
+FC_LAGRANGE = at_fere(RE_LAGRANGE, "fere-champenoise-lagrange",
+    "Marmont's other division, driven back across the plain in squares under the allied cavalry's charges.")
+FC_ARRIGHI = at_fere(RE_ARRIGHI, "fere-champenoise-arrighi",
+    "Arrighi's division, Marmont's third, which fell back with the corps through the allied charges.")
+FC_BORDESOULLE = at_fere(RE_BORDESOULLE, "fere-champenoise-bordesoulle",
+    "Marmont's cavalry, Merlin's and Bordesoulle's divisions, which tried to stand against the allied horse and was routed.")
+
+FC_CURIAL = force(
+    "fere-champenoise-curial", FIG, "Curial's Division", "Young Guard Division, Mortier's corps", "French",
+    "Mortier's Young Guard, which fell back beside Marmont's corps under the allied charges.",
+    [bde("fig-young-guard-brigade", "Lagrange's Brigade", "Gén. de Brigade Lagrange",
+         regiments=[yg1("1st Voltigeurs"), yg1("2nd Voltigeurs"), yg1("3rd Voltigeurs"), yg1("4th Voltigeurs"),
+                    yg1("Converged Tirailleurs (13th and 14th)", "fig-yg-tirailleurs")]),
+     bde("fig-young-guard-brigade", "Le Capitaine's Brigade", "Gén. de Brigade Le Capitaine",
+         regiments=[yg1("2/14th Tirailleurs", "fig-yg-tirailleurs"), yg1("Converged Tirailleurs (11th and 14th)", "fig-yg-tirailleurs"),
+                    yg1("Converged Tirailleurs (3rd, 4th and 10th)", "fig-yg-tirailleurs")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Curial")],
+    notes=[LIST_FIG, FC_NOTE, NEW_YG,
+           "The division had some 2,800 men. Its voltigeur regiments had a hundred to three hundred men each; the converged "
+           "tirailleur battalions, made up from the remnants of several regiments, five hundred or so. Each is shown as one "
+           "battalion at full size.",
+           "On Nafziger's Paris return of 30 March these brigades are Charpentier's, and Charpentier's here are Curial's; each "
+           "battle follows its own return.",
+           "Lagrange's five regiments, where the list's brigade takes three, show as a historical departure."])
+
+FC_CHARPENTIER = force(
+    "fere-champenoise-charpentier", FIG, "Charpentier's Division", "Young Guard Division, Mortier's corps", "French",
+    "Mortier's other Young Guard division, which fell back across the plain with the rest of the two marshals' corps.",
+    [bde("fig-young-guard-brigade", "Jamin's Brigade", "Gén. de Brigade Jamin",
+         regiments=[yg1("5th Voltigeurs"), yg1("6th Voltigeurs"), yg1("7th Voltigeurs"),
+                    regt("Converged 8th Voltigeurs", [u("fig-yg-voltigeurs", "4th Voltigeurs"), u("fig-yg-voltigeurs", "8th Voltigeurs")])]),
+     bde("fig-young-guard-brigade", "Bigarré's Brigade", "Gén. de Brigade Bigarré",
+         regiments=[yg1("3/3rd Voltigeurs"), yg1("3/14th Voltigeurs"), yg1("2/11th Voltigeurs"), yg1("9th Tirailleurs", "fig-yg-tirailleurs")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Charpentier")],
+    notes=[LIST_FIG, FC_NOTE, NEW_YG,
+           "The division had some 2,750 men, its battalions a hundred and fifty to five hundred each; each is shown at full size.",
+           "On Nafziger's Paris return of 30 March, Bigarré's brigade is Curial's; each battle follows its own return.",
+           "Brigades of four regiments, where the list's take three, show as historical departures."])
+FC_CHARPENTIER["missing"] = [{"name": "Artillery and sappers", "reason": "Six hundred gunners and train and 150 sappers, whose batteries Nafziger doesn't give."}]
+
+FC_CHRISTIANI = at_fere(LA_CHRISTIANI, "fere-champenoise-christiani",
+    "The Guard's fusiliers, flanqueurs and vélites, with Mortier's corps on the plain.",
+    extra=["On 17 March the fusilier and flanqueur regiments had four to six hundred men each and the vélites a few dozen."])
+FC_ROUSSEL = at_fere(CR_ROUSSEL, "fere-champenoise-roussel",
+    "Mortier's cavalry, the dragoons from Spain, with Ghigny's horse; Belliard led the cavalry that pushed Pahlen's aside.",
+    extra=["On 17 March its four regiments had three to five hundred men each."])
+FC_ROUSSEL["missing"] = [{"name": "Two march regiments", "reason": "Drafts under Colonel Ghigny and another, whose make-up isn't known."}]
+
+FC_VASILCHIKOV = at_fere(MM_VASILCHIKOV, "fere-champenoise-vasilchikov",
+    "Sacken's hussars and dragoons, with the Army of Silesia's cavalry, which came on across the plain against the French squares.",
+    FC_AL_NOTE.replace("La Rothière", "Montmirail and La Rothière"))
+FC_KRETOV = force(
+    "fere-champenoise-kretov", RU, "Kretov's Cuirassiers", "2nd Cuirassier Division, Russian Reserve", "Russian",
+    "Russian cuirassiers, which with the Guard and the Austrian cuirassiers broke into Marmont's and Mortier's squares on "
+    "the plain.",
+    [bde("ru-heavy-cavalry-brigade", "Leontyev's Brigade", "Maj-Gen Leontyev",
+         units=[u("ru-cuirassier", "Glukhov Cuirassiers (5 squadrons)"), u("ru-cuirassier", "Pskov Cuirassiers (5 squadrons)")]),
+     bde("ru-heavy-cavalry-brigade", "Karatheff's Brigade", "Maj-Gen Karatheff",
+         units=[u("ru-cuirassier", "Ekaterinoslav Cuirassiers (2 squadrons)"), u("ru-cuirassier", "Astrakhan Cuirassiers (4 squadrons)")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Kretov")],
+    notes=[LIST_RU, FC_AL_NOTE,
+           "Wikipedia's order of battle gives the division 1,600 men and twelve guns at Fère-Champenoise; its battery isn't named.",
+           "Two heavy cavalry brigades, where the list allows one, and cavalry with no infantry brigade to allow it, show as "
+           "historical departures."])
+FC_WURTTEMBERG_CAV = force(
+    "fere-champenoise-wurttemberg", WT, "Prince Adam's Cavalry", "Cavalry Division, IV Corps (Württemberg)", "Württemberg",
+    "The Crown Prince of Württemberg's horse, about two thousand, which rode with the allied cavalry against the French corps.",
+    [b for b in copy.deepcopy(RO_WURTTEMBERG["brigades"]) if b["type"] == "wt-cavalry-brigade"],
+    command=[cmd("wt-div-cmd", "Gen-Lt Prince Adam of Württemberg")],
+    notes=[LIST_WT14, FC_AL_NOTE,
+           "The horse chasseur regiments are the list's Jäger zu Pferde, and the Crown Prince's dragoons its Chevau-légers.",
+           "Two cavalry brigades, and cavalry with no infantry brigade to allow it, show as historical departures."])
+
+FERE_CHAMPENOISE.update(fought("fere-champenoise", [RE_AISNE, LA_VI, RO_AL, wiki("Battle of Fère-Champenoise", "Battle_of_F%C3%A8re-Champenoise")],
+    [FC_RICARD, FC_LAGRANGE, FC_ARRIGHI, FC_BORDESOULLE, FC_CURIAL, FC_CHARPENTIER, FC_CHRISTIANI, FC_ROUSSEL,
+     FC_VASILCHIKOV, FC_KRETOV, FC_WURTTEMBERG_CAV], [
+    fr("Pacthod's National Guards", "Pacthod's and Amey's divisions",
+       "About 5,800 men and sixteen guns, escorting a convoy, who formed squares and fought on until surrounded; Pacthod, "
+       "Amey and their brigadiers were taken. No return of them for March has been found."),
+    ru("The Russian Guard Cavalry", "Grand Duke Constantine",
+       "The Guard cuirassiers and light cavalry, with Depreradovich's 1st Cuirassier Division, which made the decisive charge."),
+    ru("Pahlen's Cavalry", "VI Corps, Army of Bohemia", "Some three thousand five hundred horse, with Ilovaisky's Cossacks."),
+    ru("Korff's Cavalry and Seslavin's Cossacks", "Army of Silesia and Army of Bohemia",
+       "The cavalry of Langeron's corps, with Seslavin's Don Cossacks."),
+    at("Nostitz's Cuirassiers", "Austrian Cuirassier Division", "About three thousand seven hundred, with Desfours's brigade.")],
+    alliances=(("Russian", "Austrian", "Württemberg"),)))
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)
