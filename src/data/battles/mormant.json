@@ -54,6 +54,10 @@
     {
       "label": "Battle of Mormant (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Mormant"
+    },
+    {
+      "label": "Battle of La Rothière order of battle: the Coalition army (Wikipedia, after Nafziger)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re_order_of_battle"
     }
   ],
   "forces": [
@@ -724,6 +728,239 @@
           ]
         }
       ]
+    },
+    {
+      "id": "mormant-hardegg",
+      "nationId": "austria",
+      "name": "Hardegg's Division",
+      "formation": "1st Austrian Division, V Corps (Wrede)",
+      "side": "Austrian",
+      "summary": "Hardegg's Austrians of Wrede's corps, which fell back through Nangis and were mauled at Valjouan.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Wikipedia's order of battle for La Rothière, a fortnight before; Mormant's own gives the allies only by division.",
+        "The division is Geramb's and Mengen's brigades; Splény's division isn't named at Mormant.",
+        "Two advanced guard brigades, where the list allows one, and Grenz battalions, with no line infantry brigade or battalions to allow them, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Count Hardegg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Geramb's Brigade",
+          "commander": {
+            "name": "Col Geramb",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/1st Szekler Grenz (IR 14)"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "II/1st Szekler Grenz (IR 14)"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Archduke Joseph Hussars (6 squadrons)"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Mengen's Brigade",
+          "commander": {
+            "name": "Col Mengen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-jager",
+              "name": "3rd Jäger Battalion"
+            },
+            {
+              "unit": "at-uhlan",
+              "name": "Schwarzenberg Uhlans (6 squadrons)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mormant-lamotte",
+      "nationId": "bavaria",
+      "name": "Lamotte's Division",
+      "formation": "3rd Bavarian Division, V Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Lamotte's Bavarians of Wrede's corps, routed at Valjouan by Gérard's infantry and Bordesoulle's horse.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1814; Bavaria had joined the allies in October.",
+        "After Wikipedia's order of battle for La Rothière, a fortnight before; Mormant's own gives the allies only by division.",
+        "The Landwehr battalions, national field battalions raised from the districts' militia, are shown as Line. Brigades of single battalions of several regiments have more regiments than the list's brigade takes, which shows as a historical departure.",
+        "Each division's cavalry battery, light 6-pdrs with the gunners riding, is the list's Light Artillery, with its chevau-légers; its 6-pdr battery is its Foot Battery, and one of the corps' four 12-pdr batteries is with each division as its Position Battery.",
+        "The order of battle is unsure of the cavalry brigade's commander, naming Elbracht with a query; it is shown without him.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt Freiherr von Lamotte",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Habermann's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Habermann",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/11th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/11th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/7th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/7th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/Unterdonau Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Unterdonau Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "I/Iller Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Iller Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Deroy's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Deroy",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "I/5th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/5th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/8th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/9th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/9th Line"
+                }
+              ]
+            },
+            {
+              "name": "II/Iller Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/Iller Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "I/Isar Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Isar Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Lamotte's Cavalry",
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "4th Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "5th Chevau-légers"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "Cavalry Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "6-pdr Battery"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "12-pdr Battery"
+            }
+          ]
+        }
+      ]
     }
   ],
   "toCome": [
@@ -747,20 +984,6 @@
       "formation": "Wittgenstein's VI Corps, Army of Bohemia",
       "summary": "Pahlen's hussars and Cossacks with a few battalions of the 3rd, 4th and 14th Divisions, caught in the open at Mormant; the cavalry was broken and the infantry's squares ridden over.",
       "flag": "/flags/russia.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "Hardegg's Division",
-      "formation": "1st Austrian Division, Wrede's V Corps",
-      "summary": "Fell back through Nangis and was mauled at Valjouan.",
-      "flag": "/flags/austria.svg"
-    },
-    {
-      "side": "Bavarian",
-      "name": "Lamotte's Division",
-      "formation": "3rd Bavarian Division, Wrede's V Corps",
-      "summary": "Routed at Valjouan by Gérard's infantry and Bordesoulle's horse.",
-      "flag": "/flags/bavaria.svg"
     }
   ]
 }

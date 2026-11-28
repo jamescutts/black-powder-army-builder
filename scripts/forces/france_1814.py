@@ -2635,6 +2635,47 @@ FERE_CHAMPENOISE.update(fought("fere-champenoise", [RE_AISNE, LA_VI, RO_AL, wiki
     alliances=(("Russian", "Austrian", "Württemberg"),)))
 
 
+# ================================================================ The allies of Brienne and Mormant
+
+BR_AL_NOTE = ("After Wikipedia's order of battle for La Rothière, three days later, which its page says may be used for "
+              "Brienne too.")
+MO_AL_NOTE = "After Wikipedia's order of battle for La Rothière, a fortnight before; Mormant's own gives the allies only by division."
+
+
+def ally_at(f, id_, summary, note):
+    return again(f, id_, summary, [f["notes"][0], note] + f["notes"][2:])
+
+
+BR_OLSUFIEV = ally_at(RO_OLSUFIEV, "brienne-olsufiev",
+    "About six thousand infantry, part of Langeron's corps, which held Brienne town through the afternoon and failed to "
+    "retake the château at night.", BR_AL_NOTE)
+BR_LIEVEN = ally_at(RO_LIEVEN, "brienne-lieven",
+    "Half of Sacken's corps, recalled from Lesmont, which reached the field from mid-afternoon and drove the Young Guard out "
+    "of most of the town that night.", BR_AL_NOTE)
+BR_SHCHERBATOV = ally_at(RO_SHCHERBATOV, "brienne-shcherbatov",
+    "The other half of Sacken's corps, which came up from Lesmont with Lieven's and joined the night fighting in the town.", BR_AL_NOTE)
+BR_VASILCHIKOV = ally_at(RO_VASILCHIKOV, "brienne-vasilchikov",
+    "Lanskoy's hussars and Panchulidzev's dragoons, which with Pahlen's squadrons, forty in all, rode down Duhesme's division "
+    "and took eight of its guns.", BR_AL_NOTE)
+BRIENNE["forces"] += [BR_OLSUFIEV, BR_LIEVEN, BR_SHCHERBATOV, BR_VASILCHIKOV]
+BRIENNE["sources"].append(RO_AL)
+BRIENNE["toCome"] = [t for t in BRIENNE["toCome"] if t["name"] == "Pahlen's Cavalry"]
+
+MO_HARDEGG = ally_at(RO_WREDE_AU, "mormant-hardegg",
+    "Hardegg's Austrians of Wrede's corps, which fell back through Nangis and were mauled at Valjouan.", MO_AL_NOTE)
+MO_HARDEGG["name"], MO_HARDEGG["formation"] = "Hardegg's Division", "1st Austrian Division, V Corps (Wrede)"
+MO_HARDEGG["brigades"] = [b for b in MO_HARDEGG["brigades"] if b["name"] in ("Geramb's Brigade", "Mengen's Brigade")]
+MO_HARDEGG["notes"] = [n for n in MO_HARDEGG["notes"] if not n.startswith(("Hardegg's 1st Division", "Regiments of four"))] + [
+    "The division is Geramb's and Mengen's brigades; Splény's division isn't named at Mormant.",
+    "Two advanced guard brigades, where the list allows one, and Grenz battalions, with no line infantry brigade or "
+    "battalions to allow them, show as historical departures."]
+MO_LAMOTTE = ally_at(RO_LAMOTTE, "mormant-lamotte",
+    "Lamotte's Bavarians of Wrede's corps, routed at Valjouan by Gérard's infantry and Bordesoulle's horse.", MO_AL_NOTE)
+MORMANT["forces"] += [MO_HARDEGG, MO_LAMOTTE]
+MORMANT["sources"].append(RO_AL)
+MORMANT["toCome"] = [t for t in MORMANT["toCome"] if t["side"] in ("French", "Russian")]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)
