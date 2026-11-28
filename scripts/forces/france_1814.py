@@ -2676,6 +2676,109 @@ MORMANT["sources"].append(RO_AL)
 MORMANT["toCome"] = [t for t in MORMANT["toCome"] if t["side"] in ("French", "Russian")]
 
 
+# ================================================================ Craonne: Vorontsov's Russians
+
+CR_RU = {"label": "Russian Forces, Battle of Craone, 7 March 1814 (Nafziger Collection 814CAC)", "url": NAF + "814CAC.pdf"}
+CR_RU_NOTE = "After Nafziger's order of battle for the Russians at Craonne, from Koch's and Bogdanovich's histories."
+CR_RU_BN = ("Its regiments had one or two battalions each, a few hundred men; each is shown at full size, and the list's "
+            "Small upgrade would suit them.")
+
+CR_VORONTSOV = force(
+    "craonne-vorontsov", RU, "Vorontsov's First Line", "Vorontsov's corps, Army of Silesia", "Russian",
+    "The first of Vorontsov's lines across the Chemin des Dames, with Benckendorff's horse on the right towards Paissy. "
+    "Benckendorff charged Nansouty's cavalry and was overwhelmed; Krasovsky's Jäger held the farm of Heurtebise and then "
+    "drew back, and the line gave ground only when ordered.",
+    [bde("ru-light-cavalry-brigade", "Benckendorff's Detachment", "Maj-Gen Benckendorff",
+         units=[u("ru-hussar", "Pavlograd Hussars (6 squadrons)"), u("ru-mounted-cossack", "Bug Cossacks")]),
+     bde("ru-jager-brigade", "Krasovsky's Brigade", "Maj-Gen Krasovsky",
+         units=[u("ru-position-arty", "Position Battery #31"), u("ru-light-arty", "Light Battery #21"), u("ru-light-arty", "Light Battery #26")],
+         regiments=[ru_regt("14th Jäger", 1, "ru-jager"), ru_regt("15th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Harpe's Brigade", "Maj-Gen Harpe",
+         regiments=[ru_regt("Navaginsk Infantry", 2), ru_regt("Converged Grenadiers (9th, 15th and 18th Divisions)", 3)])],
+    command=[{"unit": "ru-cmd-vorontsov"}],
+    notes=[LIST_RU, CR_RU_NOTE,
+           "Vorontsov, one of the list's named commanders, leads it; his corps is split here by its lines, as Nafziger gives it.",
+           "Benckendorff's detachment had a thousand men, Krasovsky's brigade 1,250 and Harpe's 2,154; each regiment is shown at "
+           "full size.",
+           "Nafziger lists the Navaginsk regiment both here and in Poncet's division; it is shown in both, as he gives it.",
+           "Two light batteries and a position battery with seven battalions, where the list allows one light battery and no "
+           "position battery, show as historical departures."])
+
+CR_VUICH = force(
+    "craonne-vuich", RU, "Vuich's Corps", "Left Wing, Vorontsov's first line", "Russian",
+    "The left of Vorontsov's first line, about 4,300 infantry, in front of Ailles and the ravines on the plateau's northern "
+    "edge, which Ney's men attacked up the slopes from Vauclair.",
+    [bde("ru-infantry-brigade", "Swarikin's Brigade", "Gen Swarikin",
+         regiments=[regt("Shirvan Infantry", [u("ru-inf-combined-grenadier", "I/Shirvan Infantry"), u("ru-inf-combined-grenadier", "III/Shirvan Infantry")]),
+                    regt("Butyrki Infantry", [u("ru-inf-combined-grenadier", "I/Butyrki Infantry"), u("ru-inf-combined-grenadier", "III/Butyrki Infantry")])]),
+     bde("ru-jager-brigade", "19th Jäger", regiments=[regt("19th Jäger", [u("ru-jager", "I/19th Jäger"), u("ru-jager", "III/19th Jäger")])]),
+     bde("ru-infantry-brigade", "Poncet's Brigade", "Gen Poncet",
+         regiments=[regt("Tula Infantry", [u("ru-inf-combined-grenadier", "I/Tula Infantry"), u("ru-inf-combined-grenadier", "III/Tula Infantry")]),
+                    regt("Navaginsk Infantry", [u("ru-inf-combined-grenadier", "I/Navaginsk Infantry"), u("ru-inf-combined-grenadier", "III/Navaginsk Infantry")])])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Vuich")],
+    notes=[LIST_RU, CR_RU_NOTE,
+           "Swarikin's 24th Division (the first two brigades) and Poncet's 14th; the 19th Jäger are a brigade of their own here, "
+           "as the list takes Jäger.", CR_RU_BN,
+           "A Jäger brigade of one regiment, where the list wants two, shows as a historical departure."])
+
+CR_LAPTEV = force(
+    "craonne-laptev", RU, "Laptev's Division", "21st Division, Vorontsov's second line", "Russian",
+    "Vorontsov's second line, 3,500 infantry and thirty-six guns; its 2nd Jäger fought for Ailles, and Laptev was wounded.",
+    [bde("ru-infantry-brigade", "Laptev's First Brigade", units=[u("ru-position-arty", "Position Battery #28")],
+         regiments=[ru_regt("Lithuania Infantry", 1), ru_regt("Podolsk Infantry", 1)]),
+     bde("ru-infantry-brigade", "Laptev's Second Brigade", units=[u("ru-light-arty", "Light Battery #42")],
+         regiments=[ru_regt("Petrovsk Infantry", 1), ru_regt("Neva Infantry", 1)]),
+     bde("ru-jager-brigade", "Laptev's Jäger", units=[u("ru-light-arty", "Light Battery #46")],
+         regiments=[ru_regt("2nd Jäger", 1, "ru-jager"), ru_regt("44th Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Laptev")],
+    notes=[LIST_RU, CR_RU_NOTE,
+           "Nafziger gives the division's six regiments without brigades; they are brigaded here in pairs, in his order, with "
+           "one of its batteries each.", CR_RU_BN,
+           "Two light batteries and a position battery with six battalions, where the list allows one light battery and no "
+           "position battery, show as historical departures."])
+
+CR_STROGANOV = force(
+    "craonne-stroganov", RU, "Stroganov's Third Line", "Khovansky's 12th and Zheltukhin's 13th Divisions", "Russian",
+    "Vorontsov's third line under Stroganov, which stood behind the others on the plateau; Khovansky was wounded.",
+    [bde("ru-infantry-brigade", "Khovansky's First Brigade", regiments=[ru_regt("Smolensk Infantry", 1), ru_regt("Narva Infantry", 1)]),
+     bde("ru-infantry-brigade", "Khovansky's Second Brigade", regiments=[ru_regt("New Ingermanland Infantry", 1), ru_regt("Alexopol Infantry", 1)]),
+     bde("ru-jager-brigade", "Khovansky's Jäger", regiments=[ru_regt("6th Jäger", 1, "ru-jager"), ru_regt("41st Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Zheltukhin's Division",
+         units=[u("ru-position-arty", "Position Battery #53"), u("ru-light-arty", "Light Battery #48"), u("ru-light-arty", "Light Battery #56")],
+         regiments=[regt("Saratov Infantry", [u("ru-inf-combined-grenadier", "I/Saratov Infantry"), u("ru-inf-combined-grenadier", "III/Saratov Infantry")]),
+                    regt("Penza Infantry", [u("ru-inf-combined-grenadier", "I/Penza Infantry"), u("ru-inf-combined-grenadier", "III/Penza Infantry")])])],
+    command=[{"unit": "ru-cmd-stroganov"}],
+    notes=[LIST_RU, CR_RU_NOTE,
+           "Stroganov, one of the list's named commanders, leads it. Khovansky's division had 1,800 men and Zheltukhin's 3,300; "
+           "Nafziger gives Zheltukhin's only two regiments and its three batteries, and Khovansky's regiments without brigades, "
+           "brigaded here in pairs.", CR_RU_BN,
+           "Two light batteries in Zheltukhin's brigade, where the list allows one, show as a historical departure."])
+
+CR_VASILCHIKOV = again(MM_VASILCHIKOV, "craonne-vasilchikov",
+    "Vasilchikov's hussars and dragoons, which charged Colbert's and Grouchy's squadrons; Lanskoy was mortally wounded, and "
+    "Ushakov of the dragoons killed.",
+    [LIST_RU, CR_RU_NOTE,
+     "Lanskoy's 2nd Hussar Division, 1,500 men, is the light brigades, and Panchulidzev's 3rd Dragoon Division, 1,200, the "
+     "dragoons.",
+     "Two light and two heavy cavalry brigades, where the list allows one of each, and cavalry with no infantry brigade to "
+     "allow it, show as historical departures."])
+for b in CR_VASILCHIKOV["brigades"]:
+    b["units"] = [x for x in b.get("units", []) if x["name"] not in ("Horse Battery #6", "Horse Battery #7")]
+
+CR_KARPOV = force(
+    "craonne-karpov", RU, "Karpov's Cossacks", "Cossacks, Army of Silesia", "Russian",
+    "Twelve hundred Cossacks with Vorontsov's cavalry on the plateau.",
+    [bde("ru-cossack-brigade", "Karpov's Brigade", "Maj-Gen Karpov II",
+         units=[u("ru-mounted-cossack", "Karpov #2 Don Cossacks")] + [u("ru-mounted-cossack", "Cossack Regiment (unnamed)") for _ in range(3)])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Karpov II")],
+    notes=[LIST_RU, CR_RU_NOTE, "Nafziger names only Karpov's own regiment; the other three aren't known.",
+           "Cossacks with no infantry brigade to allow them show as a historical departure."])
+
+CRAONNE["forces"] += [CR_VORONTSOV, CR_VUICH, CR_LAPTEV, CR_STROGANOV, CR_VASILCHIKOV, CR_KARPOV]
+CRAONNE["sources"].append(CR_RU)
+CRAONNE["toCome"] = [t for t in CRAONNE["toCome"] if t["side"] == "French" or t["name"] == "Sacken's Corps"]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)

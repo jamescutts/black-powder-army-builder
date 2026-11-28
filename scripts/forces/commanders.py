@@ -728,6 +728,7 @@ FORCE_PORTRAITS.update({
     "laubressel-brayer": "brayer", "laubressel-leval": "leval",
     "la-rothiere-gyulai": "gyulai", "la-rothiere-olsufiev": "olsufiev", "la-rothiere-vasilchikov": "ilarion_vasilchikov",
     "la-rothiere-wurttemberg": "wurttemberg_crown_prince", "la-rothiere-paskevich": "paskevich",
+    "craonne-vasilchikov": "ilarion_vasilchikov", "craonne-stroganov": "stroganov",
     "laon-pac": "nansouty", "reims-ricard": "ricard", "reims-arrighi": "arrighi", "reims-friant": "friant",
     "champaubert-olsufiev": "olsufiev", "montmirail-yorck": "yorck", "chateau-thierry-yorck": "yorck",
     "montmirail-vasilchikov": "ilarion_vasilchikov", "chateau-thierry-vasilchikov": "ilarion_vasilchikov",

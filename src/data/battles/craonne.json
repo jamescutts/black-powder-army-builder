@@ -41,6 +41,10 @@
     {
       "label": "Battle of Craonne (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Craonne"
+    },
+    {
+      "label": "Russian Forces, Battle of Craone, 7 March 1814 (Nafziger Collection 814CAC)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAC.pdf"
     }
   ],
   "forces": [
@@ -939,6 +943,691 @@
           }
         }
       ]
+    },
+    {
+      "id": "craonne-vorontsov",
+      "nationId": "russia",
+      "name": "Vorontsov's First Line",
+      "formation": "Vorontsov's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "The first of Vorontsov's lines across the Chemin des Dames, with Benckendorff's horse on the right towards Paissy. Benckendorff charged Nansouty's cavalry and was overwhelmed; Krasovsky's Jäger held the farm of Heurtebise and then drew back, and the line gave ground only when ordered.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Russians at Craonne, from Koch's and Bogdanovich's histories.",
+        "Vorontsov, one of the list's named commanders, leads it; his corps is split here by its lines, as Nafziger gives it.",
+        "Benckendorff's detachment had a thousand men, Krasovsky's brigade 1,250 and Harpe's 2,154; each regiment is shown at full size.",
+        "Nafziger lists the Navaginsk regiment both here and in Poncet's division; it is shown in both, as he gives it.",
+        "Two light batteries and a position battery with seven battalions, where the list allows one light battery and no position battery, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major General Mikhail Vorontsov, with his own rating; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-cmd-vorontsov"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Benckendorff's Detachment",
+          "commander": {
+            "name": "Maj-Gen Benckendorff",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Pavlograd Hussars (6 squadrons)"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Bug Cossacks"
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Krasovsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Krasovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #31"
+            },
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #21"
+            },
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #26"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "14th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "14th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "15th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "15th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Harpe's Brigade",
+          "commander": {
+            "name": "Maj-Gen Harpe",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Navaginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Navaginsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Navaginsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Converged Grenadiers (9th, 15th and 18th Divisions)",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Converged Grenadiers (9th, 15th and 18th Divisions)"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Converged Grenadiers (9th, 15th and 18th Divisions)"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "III/Converged Grenadiers (9th, 15th and 18th Divisions)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "craonne-vuich",
+      "nationId": "russia",
+      "name": "Vuich's Corps",
+      "formation": "Left Wing, Vorontsov's first line",
+      "side": "Russian",
+      "summary": "The left of Vorontsov's first line, about 4,300 infantry, in front of Ailles and the ravines on the plateau's northern edge, which Ney's men attacked up the slopes from Vauclair.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Russians at Craonne, from Koch's and Bogdanovich's histories.",
+        "Swarikin's 24th Division (the first two brigades) and Poncet's 14th; the 19th Jäger are a brigade of their own here, as the list takes Jäger.",
+        "Its regiments had one or two battalions each, a few hundred men; each is shown at full size, and the list's Small upgrade would suit them.",
+        "A Jäger brigade of one regiment, where the list wants two, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Vuich",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Swarikin's Brigade",
+          "commander": {
+            "name": "Gen Swarikin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Shirvan Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Shirvan Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "III/Shirvan Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Butyrki Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Butyrki Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "III/Butyrki Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "19th Jäger",
+          "regiments": [
+            {
+              "name": "19th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/19th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "III/19th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Poncet's Brigade",
+          "commander": {
+            "name": "Gen Poncet",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Tula Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Tula Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "III/Tula Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Navaginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Navaginsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "III/Navaginsk Infantry"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "craonne-laptev",
+      "nationId": "russia",
+      "name": "Laptev's Division",
+      "formation": "21st Division, Vorontsov's second line",
+      "side": "Russian",
+      "summary": "Vorontsov's second line, 3,500 infantry and thirty-six guns; its 2nd Jäger fought for Ailles, and Laptev was wounded.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Russians at Craonne, from Koch's and Bogdanovich's histories.",
+        "Nafziger gives the division's six regiments without brigades; they are brigaded here in pairs, in his order, with one of its batteries each.",
+        "Its regiments had one or two battalions each, a few hundred men; each is shown at full size, and the list's Small upgrade would suit them.",
+        "Two light batteries and a position battery with six battalions, where the list allows one light battery and no position battery, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Laptev",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Laptev's First Brigade",
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #28"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Lithuania Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Lithuania Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Podolsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Podolsk Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Laptev's Second Brigade",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #42"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Petrovsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Petrovsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Neva Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Neva Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Laptev's Jäger",
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #46"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "2nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "2nd Jäger"
+                }
+              ]
+            },
+            {
+              "name": "44th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "44th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "craonne-stroganov",
+      "nationId": "russia",
+      "name": "Stroganov's Third Line",
+      "formation": "Khovansky's 12th and Zheltukhin's 13th Divisions",
+      "side": "Russian",
+      "summary": "Vorontsov's third line under Stroganov, which stood behind the others on the plateau; Khovansky was wounded.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Russians at Craonne, from Koch's and Bogdanovich's histories.",
+        "Stroganov, one of the list's named commanders, leads it. Khovansky's division had 1,800 men and Zheltukhin's 3,300; Nafziger gives Zheltukhin's only two regiments and its three batteries, and Khovansky's regiments without brigades, brigaded here in pairs.",
+        "Its regiments had one or two battalions each, a few hundred men; each is shown at full size, and the list's Small upgrade would suit them.",
+        "Two light batteries in Zheltukhin's brigade, where the list allows one, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major General Pavel Stroganov, with his own rating; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-cmd-stroganov"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Khovansky's First Brigade",
+          "regiments": [
+            {
+              "name": "Smolensk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Smolensk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Narva Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Narva Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Khovansky's Second Brigade",
+          "regiments": [
+            {
+              "name": "New Ingermanland Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "New Ingermanland Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Alexopol Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Alexopol Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Khovansky's Jäger",
+          "regiments": [
+            {
+              "name": "6th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "6th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "41st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "41st Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Zheltukhin's Division",
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #53"
+            },
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #48"
+            },
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #56"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Saratov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Saratov Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "III/Saratov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Penza Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Penza Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "III/Penza Infantry"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Stroganov_P_A.jpg/250px-Stroganov_P_A.jpg",
+        "title": "Pavel Stroganov",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Stroganov_P_A.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    {
+      "id": "craonne-vasilchikov",
+      "nationId": "russia",
+      "name": "Vasilchikov's Cavalry",
+      "formation": "Cavalry Corps, Sacken's corps",
+      "side": "Russian",
+      "summary": "Vasilchikov's hussars and dragoons, which charged Colbert's and Grouchy's squadrons; Lanskoy was mortally wounded, and Ushakov of the dragoons killed.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Russians at Craonne, from Koch's and Bogdanovich's histories.",
+        "Lanskoy's 2nd Hussar Division, 1,500 men, is the light brigades, and Panchulidzev's 3rd Dragoon Division, 1,200, the dragoons.",
+        "Two light and two heavy cavalry brigades, where the list allows one of each, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Vasilchikov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Vodbolsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Vodbolsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Akhtyrka Hussars (6 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Mariupol Hussars (5 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Vasilchikov's Brigade",
+          "commander": {
+            "name": "Col Vasilchikov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "White Russia Hussars (4 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Alexandria Hussars (5 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Ushakov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Ushakov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Smolensk Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Courland Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Umanets's Brigade",
+          "commander": {
+            "name": "Maj-Gen Umanets",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Tver Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Kinburn Dragoons"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #18"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/I.I._Vasilchikov.JPG/250px-I.I._Vasilchikov.JPG",
+        "title": "Illarion Vasilchikov",
+        "artist": "photograph by Ivan Gudovsky",
+        "page": "https://commons.wikimedia.org/wiki/File:I.I._Vasilchikov.JPG",
+        "focus": "50% 20%",
+        "date": "1850s"
+      }
+    },
+    {
+      "id": "craonne-karpov",
+      "nationId": "russia",
+      "name": "Karpov's Cossacks",
+      "formation": "Cossacks, Army of Silesia",
+      "side": "Russian",
+      "summary": "Twelve hundred Cossacks with Vorontsov's cavalry on the plateau.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for the Russians at Craonne, from Koch's and Bogdanovich's histories.",
+        "Nafziger names only Karpov's own regiment; the other three aren't known.",
+        "Cossacks with no infantry brigade to allow them show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but the brigade commander at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Karpov II",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Karpov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Karpov II",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Karpov #2 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Cossack Regiment (unnamed)"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Cossack Regiment (unnamed)"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Cossack Regiment (unnamed)"
+            }
+          ]
+        }
+      ]
     }
   ],
   "toCome": [
@@ -955,20 +1644,6 @@
       "formation": "2nd Old Guard and Tirailleur Divisions, Mortier's reserve",
       "summary": "The fusiliers, flanqueurs and vélites of the Old Guard's second division, and a division of Young Guard tirailleurs, some eight thousand men who weren't engaged.",
       "flag": "/flags/france.svg"
-    },
-    {
-      "side": "Russian",
-      "name": "Vorontsov's Corps",
-      "formation": "Vuich's 24th, Laptev's 21st, Khovansky's 12th and Zheltukhin's 13th Divisions, with Krasovsky's Jäger and Benckendorff's brigade",
-      "summary": "Held the narrow plateau of the Chemin des Dames in lines across it through the day, and withdrew in good order.",
-      "flag": "/flags/russia.svg"
-    },
-    {
-      "side": "Russian",
-      "name": "Vasilchikov's Cavalry",
-      "formation": "Lanskoy's 2nd Hussar and Panchulidzev's 3rd Dragoon Divisions, with Karpov's Cossacks",
-      "summary": "Charged Colbert's and Grouchy's squadrons; Lanskoy was mortally wounded.",
-      "flag": "/flags/russia.svg"
     },
     {
       "side": "Russian",
