@@ -3317,6 +3317,132 @@ for f in PARIS["forces"][-3:]:
     f["formation"] = f["formation"].replace("VI Corps (Wittgenstein)", "VI Corps (Raevsky)")
 
 
+# ================================================================ The Guards and reserves of the Army of Bohemia
+
+GD_NOTE = "After Nafziger's return of the Army of Bohemia in January 1814, the nearest he gives of the Guards and reserves."
+
+
+def gd(id_, nation, name, formation, side, brigades, commander, notes):
+    return force(id_, nation, name, formation, side, "", brigades, command=[commander], notes=notes)
+
+
+RU_GUARD_INF = gd("russian-guard", RU, "The Russian Guard Infantry", "Guard Infantry (Yermolov), Russian Reserve", "Russian",
+    [bde("ru-guard-infantry-brigade", "Potemkin's Brigade", "Maj-Gen Potemkin", units=[u("ru-guard-position-arty", "1st Guard Position Battery")],
+         regiments=[ru_regt("Preobrazhensky Guard", 3, "ru-life-guard-infantry"), ru_regt("Semenovsky Guard", 3, "ru-life-guard-infantry")]),
+     bde("ru-guard-infantry-brigade", "Bistrom's Brigade", "Maj-Gen Bistrom I", units=[u("ru-guard-light-arty", "1st Guard Light Battery")],
+         regiments=[ru_regt("Izmailovsky Guard", 3, "ru-life-guard-infantry"), ru_regt("Guard Jäger", 3, "ru-life-guard-jager"),
+                    ru_regt("Guard Equipage", 1, "ru-life-guard-infantry")]),
+     bde("ru-guard-infantry-brigade", "Richter's Brigade", "Maj-Gen Richter", units=[u("ru-guard-light-arty", "2nd Guard Light Battery")],
+         regiments=[ru_regt("Lithuania Guard", 3, "ru-life-guard-infantry"), ru_regt("Finland Guard", 2, "ru-life-guard-infantry")]),
+     bde("ru-guard-infantry-brigade", "Zheltukhin's Brigade", "Maj-Gen Zheltukhin II",
+         regiments=[ru_regt("Leib Grenadiers", 2, "ru-life-guard-infantry"), ru_regt("Pavlov Grenadiers", 2, "ru-life-guard-infantry")])],
+    cmd("ru-div-cmd", "Gen-Lt Yermolov"),
+    [LIST_RU, GD_NOTE,
+     "Rosen's 1st Guard Division (the first two brigades) and Udom's 2nd (the last two). The Leib and Pavlov Grenadiers, raised "
+     "to the Guard in 1813, and the Guard Equipage, the naval guard, are shown as Life Guard infantry.",
+     "Four Guard brigades with no line brigades to allow them, three regiments in Bistrom's, where the list takes two, and "
+     "the Guard making up more than a quarter of the force, show as historical departures."])
+
+RU_GUARD_CAV = gd("russian-guard-cavalry", RU, "The Russian Guard Cavalry", "Golitsyn's cavalry, Russian Reserve", "Russian",
+    [bde("ru-guard-heavy-cavalry-brigade", "Arsenyev's Brigade", "Maj-Gen Arsenyev",
+         units=[u("ru-chevalier-guard", "Chevalier Guard (4 squadrons)"), u("ru-life-guard-horse", "Horse Guard (4 squadrons)")]),
+     bde("ru-guard-heavy-cavalry-brigade", "Rosen's Brigade", "Maj-Gen Rosen",
+         units=[u("ru-life-guard-cuirassier", "Leib Cuirassiers (4 squadrons)"), u("ru-life-guard-cuirassier", "Empress's Cuirassiers (4 squadrons)")]),
+     bde("ru-guard-light-cavalry-brigade", "Chaikovsky's Brigade", "Maj-Gen Chaikovsky",
+         units=[u("ru-lg-hussar", "Guard Hussars (4 squadrons)"), u("ru-lg-dragoon", "Guard Dragoons (4 squadrons)"), u("ru-guard-horse-arty", "1st Guard Horse Battery")]),
+     bde("ru-guard-light-cavalry-brigade", "Orlov-Denisov's Brigade", "Gen-Lt Orlov-Denisov",
+         units=[u("ru-life-guard-cossack", "Life Guard Cossacks (4 squadrons)"), u("ru-guard-horse-arty", "2nd Guard Horse Battery")])],
+    cmd("ru-div-cmd", "Gen-Lt Depreradovich"),
+    [LIST_RU, GD_NOTE,
+     "Depreradovich's 1st Cuirassier Division, the Guard's heavy horse (the first two brigades), and the Guard Light Division. "
+     "The Leib and Empress's Cuirassiers, raised to the Guard in 1813, are the list's Life Guard Cuirassiers; the Guard Black "
+     "Sea Cossack squadron is left out.",
+     "Two Guard heavy and two Guard light brigades with no line brigades to allow them, and the Guard making up more than a "
+     "quarter of the force, show as historical departures."])
+
+RU_DUKA = gd("duka", RU, "Duka's Cuirassiers", "3rd Cuirassier Division, Russian Reserve", "Russian",
+    [bde("ru-heavy-cavalry-brigade", "Protasov's Brigade", "Maj-Gen Protasov",
+         units=[u("ru-cuirassier", "Military Order Cuirassiers (4 squadrons)"), u("ru-cuirassier", "Little Russia Cuirassiers (4 squadrons)")]),
+     bde("ru-heavy-cavalry-brigade", "Levashov's Brigade", "Maj-Gen Levashov",
+         units=[u("ru-cuirassier", "Novgorod Cuirassiers (4 squadrons)"), u("ru-cuirassier", "Starodub Cuirassiers (4 squadrons)")])],
+    cmd("ru-div-cmd", "Gen-Lt Duka"),
+    [LIST_RU, GD_NOTE, "Two heavy cavalry brigades, where the list allows one, and cavalry with no infantry brigade show as historical departures."])
+
+PR_GUARD = gd("prussian-guard", PR15, "The Prussian Guard", "Guard Infantry and Cavalry, Russo-Prussian Reserve", "Prussian",
+    [pi("Guard Infantry", "",
+        [("1st Garde zu Fuss", [("M", "I/1st Garde zu Fuss (Guard)"), ("M", "II/1st Garde zu Fuss (Guard)")]),
+         ("2nd Garde zu Fuss", [("M", "I/2nd Garde zu Fuss (Guard)"), ("M", "II/2nd Garde zu Fuss (Guard)")])],
+        [u("pr15-schutzen", "Garde Jäger Battalion"), u("pr15-foot-arty", "Guard Foot Battery", options=["veteran-artillery"])]),
+     pc("Guard Cavalry (LaRoche-Starkenfels)", "Col von LaRoche-Starkenfels",
+        [u("pr15-dragoon", "Garde du Corps (4 squadrons)", options=["veteran-cavalry"]), u("pr15-hussar", "Guard Light Cavalry (4 squadrons)", options=["veteran-cavalry"]),
+         u("pr15-horse-arty", "Guard Horse Battery", options=["veteran-artillery"])])],
+    cmd("pr15-corps-cmd", "Gen-Maj von Alvensleben"),
+    [PR_LIST, GD_NOTE,
+     "The list has no Guard: the Garde zu Fuss are Musketeers with its Veteran upgrade, the Garde Jäger its Schützen, "
+     "the Garde du Corps its Dragoons and the Guard Light Cavalry its Hussars, with the guns Veteran too.",
+     "Alvensleben, who commanded the Guard infantry at Arcis by Wikipedia's account, leads the force; Nafziger names only "
+     "LaRoche-Starkenfels. The Baden Guard battalion and horse battery with the Prussian Guard are left out.",
+     "Both Guard cavalry regiments Veteran, where the list allows half a brigade's, a cavalry brigade the infantry doesn't "
+     "allow, and a brigade without Landwehr, show as historical departures."])
+
+AU_NOSTITZ = gd("nostitz", AU, "Nostitz's Cuirassiers", "Austrian Reserve Cavalry", "Austrian",
+    [bde("at-heavy-cavalry-brigade", "Auersperg's Brigade", "Gen-Maj Count Auersperg",
+         units=[u("at-cuirassier", "Grand Duke Constantine Cuirassiers"), u("at-cuirassier", "Sommariva Cuirassiers")]),
+     bde("at-heavy-cavalry-brigade", "Desfours's Brigade", "Gen-Maj Count Desfours",
+         units=[u("at-cuirassier", "Kaiser Cuirassiers"), u("at-cuirassier", "Liechtenstein Cuirassiers")]),
+     bde("at-heavy-cavalry-brigade", "Rothkirch's Brigade", "Gen-Maj Rothkirch",
+         units=[u("at-cuirassier", "Albert Cuirassiers"), u("at-cuirassier", "Franz Cuirassiers")]),
+     bde("at-heavy-cavalry-brigade", "Kuttalek's Brigade", "Gen-Maj Kuttalek",
+         units=[u("at-cuirassier", "Kronprinz Cuirassiers"), u("at-cuirassier", "Lothringen Cuirassiers")])],
+    cmd("at-inf-div-cmd", "FML Count Nostitz"),
+    [LIST_AU14, GD_NOTE,
+     "Klebelsberg's 1st Cuirassier Division (the first two brigades) and Lederer's 2nd; each regiment had five squadrons.",
+     "Four heavy cavalry brigades with no line infantry brigade to allow them show as historical departures."])
+
+AU_GRENADIERS = gd("austrian-grenadiers", AU, "Weissenwolf's Grenadiers", "Grenadier Division, Austrian Reserve", "Austrian",
+    [bde("at-grenadier-brigade", "Fürstenwerther's Brigade", "Gen-Maj Fürstenwerther",
+         units=[u("at-grenadier", f"{n} Grenadier Battalion") for n in ("Czarnotzi", "Obermayer", "Berger", "Oklopsia")] + [u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")]),
+     bde("at-grenadier-brigade", "Beigel's Brigade", "Gen-Maj Beigel",
+         units=[u("at-grenadier", f"{n} Grenadier Battalion") for n in ("Habinay", "Portner", "Fischer", "Rüber")] + [u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")]),
+     bde("at-grenadier-brigade", "Klenau's Brigade", "Gen-Maj Klenau",
+         units=[u("at-grenadier", f"{n} Grenadier Battalion") for n in ("Frisch", "Mosel", "Putheany")] + [u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")]),
+     bde("at-grenadier-brigade", "Luz's Brigade", "Gen-Maj Luz",
+         units=[u("at-grenadier", f"{n} Grenadier Battalion") for n in ("Rosmann", "Lany", "Hormada")] + [u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")])],
+    cmd("at-inf-div-cmd", "FML Weissenwolf"),
+    [LIST_AU14, GD_NOTE,
+     "Fifteen grenadier battalions, each named for its commander, with five brigade batteries; four are with the brigades here.",
+     "Four grenadier brigades and their brigade batteries, with no line infantry brigade or battalions to allow them, show "
+     "as historical departures."])
+
+
+def reserve_at(f, battle, summary):
+    g = again(f, f"{battle}-{f['id']}", summary, f["notes"])
+    return g
+
+
+add(ARCIS, [reserve_at(RU_GUARD_INF, "arcis-sur-aube", "The Russian Guard infantry under Yermolov, part of the army that closed on Arcis on the second day."),
+            reserve_at(RU_GUARD_CAV, "arcis-sur-aube", "The Russian Guard cavalry, with the army that closed on Arcis on the second day."),
+            reserve_at(RO_PASKEVICH, "arcis-sur-aube", "Paskevich's grenadiers of Barclay's reserve, with the army before Arcis."),
+            reserve_at(RU_DUKA, "arcis-sur-aube", "Duka's cuirassiers, with the Württembergers in the second day's attack."),
+            reserve_at(PR_GUARD, "arcis-sur-aube", "The Prussian Guard, in the allied reserve before Arcis."),
+            reserve_at(AU_GRENADIERS, "arcis-sur-aube", "The Austrian grenadiers of Barclay's reserve, before Arcis.")],
+    ["Barclay's Reserve and the Russian Guard", "The Prussian Guard"])
+ARCIS["forces"][-3]["notes"] = [n for n in ARCIS["forces"][-3]["notes"] if "Alvensleben, who" not in n] + [
+    "Alvensleben commanded the Guard infantry and LaRoche-Starkenfels its cavalry at Arcis, by Wikipedia's account. The Baden "
+    "Guard battalion and horse battery with the Prussian Guard are left out."]
+add(FERE_CHAMPENOISE, [reserve_at(RU_GUARD_CAV, "fere-champenoise",
+        "The Russian Guard cavalry under Grand Duke Constantine; Depreradovich's Guard cuirassiers made the decisive charge."),
+    reserve_at(AU_NOSTITZ, "fere-champenoise", "Nostitz's Austrian cuirassiers, about 3,700, with Desfours's brigade among them.")],
+    ["The Russian Guard Cavalry", "Nostitz's Cuirassiers"])
+add(PARIS, [reserve_at(RU_GUARD_INF, "paris", "Yermolov's Guard infantry, which came up late on the allied centre."),
+            reserve_at(RU_GUARD_CAV, "paris", "The Russian Guard cavalry, in reserve behind the centre."),
+            reserve_at(AR_CHOGLOKOV, "paris", "Choglokov's grenadiers of Barclay's reserve, on the allied centre."),
+            reserve_at(RO_PASKEVICH, "paris", "Paskevich's grenadiers of Barclay's reserve, on the allied centre."),
+            reserve_at(PR_GUARD, "paris", "The Prussian Guard, thrown back at Pantin before taking the French guns there."),
+            reserve_at(AU_GRENADIERS, "paris", "The Austrian grenadiers, with the Württembergers at the bridges of Saint-Maur and Charenton.")],
+    ["The Russian Guard and Reserve", "The Prussian Guard", "The Austrian Grenadiers"])
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)

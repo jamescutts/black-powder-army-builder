@@ -3289,6 +3289,833 @@
         "page": "https://commons.wikimedia.org/wiki/File:Peter_Graf_von_der_Pahlen.jpg",
         "focus": "50% 18%"
       }
+    },
+    {
+      "id": "paris-russian-guard",
+      "nationId": "russia",
+      "name": "The Russian Guard Infantry",
+      "formation": "Guard Infantry (Yermolov), Russian Reserve",
+      "side": "Russian",
+      "summary": "Yermolov's Guard infantry, which came up late on the allied centre.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Army of Bohemia in January 1814, the nearest he gives of the Guards and reserves.",
+        "Rosen's 1st Guard Division (the first two brigades) and Udom's 2nd (the last two). The Leib and Pavlov Grenadiers, raised to the Guard in 1813, and the Guard Equipage, the naval guard, are shown as Life Guard infantry.",
+        "Four Guard brigades with no line brigades to allow them, three regiments in Bistrom's, where the list takes two, and the Guard making up more than a quarter of the force, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Yermolov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-guard-infantry-brigade",
+          "name": "Potemkin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Potemkin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-guard-position-arty",
+              "name": "1st Guard Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Preobrazhensky Guard",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "I/Preobrazhensky Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "II/Preobrazhensky Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "III/Preobrazhensky Guard"
+                }
+              ]
+            },
+            {
+              "name": "Semenovsky Guard",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "I/Semenovsky Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "II/Semenovsky Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "III/Semenovsky Guard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-infantry-brigade",
+          "name": "Bistrom's Brigade",
+          "commander": {
+            "name": "Maj-Gen Bistrom I",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-guard-light-arty",
+              "name": "1st Guard Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Izmailovsky Guard",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "I/Izmailovsky Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "II/Izmailovsky Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "III/Izmailovsky Guard"
+                }
+              ]
+            },
+            {
+              "name": "Guard Jäger",
+              "units": [
+                {
+                  "unit": "ru-life-guard-jager",
+                  "name": "I/Guard Jäger"
+                },
+                {
+                  "unit": "ru-life-guard-jager",
+                  "name": "II/Guard Jäger"
+                },
+                {
+                  "unit": "ru-life-guard-jager",
+                  "name": "III/Guard Jäger"
+                }
+              ]
+            },
+            {
+              "name": "Guard Equipage",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "Guard Equipage"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-infantry-brigade",
+          "name": "Richter's Brigade",
+          "commander": {
+            "name": "Maj-Gen Richter",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-guard-light-arty",
+              "name": "2nd Guard Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Lithuania Guard",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "I/Lithuania Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "II/Lithuania Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "III/Lithuania Guard"
+                }
+              ]
+            },
+            {
+              "name": "Finland Guard",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "I/Finland Guard"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "II/Finland Guard"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-infantry-brigade",
+          "name": "Zheltukhin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Zheltukhin II",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Leib Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "I/Leib Grenadiers"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "II/Leib Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Pavlov Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "I/Pavlov Grenadiers"
+                },
+                {
+                  "unit": "ru-life-guard-infantry",
+                  "name": "II/Pavlov Grenadiers"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-russian-guard-cavalry",
+      "nationId": "russia",
+      "name": "The Russian Guard Cavalry",
+      "formation": "Golitsyn's cavalry, Russian Reserve",
+      "side": "Russian",
+      "summary": "The Russian Guard cavalry, in reserve behind the centre.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Army of Bohemia in January 1814, the nearest he gives of the Guards and reserves.",
+        "Depreradovich's 1st Cuirassier Division, the Guard's heavy horse (the first two brigades), and the Guard Light Division. The Leib and Empress's Cuirassiers, raised to the Guard in 1813, are the list's Life Guard Cuirassiers; the Guard Black Sea Cossack squadron is left out.",
+        "Two Guard heavy and two Guard light brigades with no line brigades to allow them, and the Guard making up more than a quarter of the force, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Depreradovich",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-guard-heavy-cavalry-brigade",
+          "name": "Arsenyev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Arsenyev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-chevalier-guard",
+              "name": "Chevalier Guard (4 squadrons)"
+            },
+            {
+              "unit": "ru-life-guard-horse",
+              "name": "Horse Guard (4 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-heavy-cavalry-brigade",
+          "name": "Rosen's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rosen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-life-guard-cuirassier",
+              "name": "Leib Cuirassiers (4 squadrons)"
+            },
+            {
+              "unit": "ru-life-guard-cuirassier",
+              "name": "Empress's Cuirassiers (4 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-light-cavalry-brigade",
+          "name": "Chaikovsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Chaikovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-lg-hussar",
+              "name": "Guard Hussars (4 squadrons)"
+            },
+            {
+              "unit": "ru-lg-dragoon",
+              "name": "Guard Dragoons (4 squadrons)"
+            },
+            {
+              "unit": "ru-guard-horse-arty",
+              "name": "1st Guard Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-light-cavalry-brigade",
+          "name": "Orlov-Denisov's Brigade",
+          "commander": {
+            "name": "Gen-Lt Orlov-Denisov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-life-guard-cossack",
+              "name": "Life Guard Cossacks (4 squadrons)"
+            },
+            {
+              "unit": "ru-guard-horse-arty",
+              "name": "2nd Guard Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-arcis-choglokov",
+      "nationId": "russia",
+      "name": "Choglokov's Grenadiers",
+      "formation": "1st Grenadier Division, with Wrede",
+      "side": "Russian",
+      "summary": "Choglokov's grenadiers of Barclay's reserve, on the allied centre.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Wikipedia's order of battle for La Rothière, seven weeks before; Arcis's own order of battle gives the allied corps only by division.",
+        "Three grenadier brigades, where the list allows one, and grenadiers with no infantry brigade to allow them, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Choglokov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Knyazhnin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Knyazhnin II",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Arakcheyev Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Arakcheyev Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Arakcheyev Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Ekaterinoslav Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Ekaterinoslav Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Ekaterinoslav Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Yemelyanov's Brigade",
+          "commander": {
+            "name": "Col Yemelyanov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Tauride Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "Tauride Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "St Petersburg Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/St Petersburg Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/St Petersburg Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Sulima's Brigade",
+          "commander": {
+            "name": "Col Sulima",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Kexholm Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Kexholm Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Kexholm Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Pernau Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Pernau Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Pernau Grenadiers"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-la-rothiere-paskevich",
+      "nationId": "russia",
+      "name": "Paskevich's Grenadiers",
+      "formation": "2nd Grenadier Division, Raevsky's Grenadier Corps",
+      "side": "Russian",
+      "summary": "Paskevich's grenadiers of Barclay's reserve, on the allied centre.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Wikipedia's order of battle for La Rothière, from Nafziger's history of the campaign.",
+        "The order of battle doesn't name the third brigade's commander.",
+        "Three grenadier brigades, where the list allows one, three regiments in one of them, where it takes two, and grenadiers with no infantry brigade to allow them, show as historical departures.",
+        "The corps' three batteries are left out: the order of battle gives them to Raevsky's corps as a whole.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Paskevich",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Pisarev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Pisarev",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Kiev Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Kiev Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Kiev Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Moscow Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Moscow Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Moscow Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Damas's Brigade",
+          "commander": {
+            "name": "Maj-Gen Damas",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Astrakhan Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "Astrakhan Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Fanagoria Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "Fanagoria Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Paskevich's Third Brigade",
+          "regiments": [
+            {
+              "name": "Siberia Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Siberia Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Siberia Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Little Russia Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Little Russia Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Little Russia Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Emperor Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "Emperor Grenadiers"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "paris-prussian-guard",
+      "nationId": "prussians-1815",
+      "name": "The Prussian Guard",
+      "formation": "Guard Infantry and Cavalry, Russo-Prussian Reserve",
+      "side": "Prussian",
+      "summary": "The Prussian Guard, thrown back at Pantin before taking the French guns there.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's return of the Army of Bohemia in January 1814, the nearest he gives of the Guards and reserves.",
+        "The list has no Guard: the Garde zu Fuss are Musketeers with its Veteran upgrade, the Garde Jäger its Schützen, the Garde du Corps its Dragoons and the Guard Light Cavalry its Hussars, with the guns Veteran too.",
+        "Alvensleben, who commanded the Guard infantry at Arcis by Wikipedia's account, leads the force; Nafziger names only LaRoche-Starkenfels. The Baden Guard battalion and horse battery with the Prussian Guard are left out.",
+        "Both Guard cavalry regiments Veteran, where the list allows half a brigade's, a cavalry brigade the infantry doesn't allow, and a brigade without Landwehr, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Maj von Alvensleben",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Guard Infantry",
+          "units": [
+            {
+              "unit": "pr15-schutzen",
+              "name": "Garde Jäger Battalion"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "Guard Foot Battery",
+              "options": [
+                "veteran-artillery"
+              ]
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Garde zu Fuss",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/1st Garde zu Fuss (Guard)",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/1st Garde zu Fuss (Guard)",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "2nd Garde zu Fuss",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/2nd Garde zu Fuss (Guard)",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/2nd Garde zu Fuss (Guard)",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "pr15-cavalry-brigade",
+          "name": "Guard Cavalry (LaRoche-Starkenfels)",
+          "commander": {
+            "name": "Col von LaRoche-Starkenfels",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-dragoon",
+              "name": "Garde du Corps (4 squadrons)",
+              "options": [
+                "veteran-cavalry"
+              ]
+            },
+            {
+              "unit": "pr15-hussar",
+              "name": "Guard Light Cavalry (4 squadrons)",
+              "options": [
+                "veteran-cavalry"
+              ]
+            },
+            {
+              "unit": "pr15-horse-arty",
+              "name": "Guard Horse Battery",
+              "options": [
+                "veteran-artillery"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-austrian-grenadiers",
+      "nationId": "austria",
+      "name": "Weissenwolf's Grenadiers",
+      "formation": "Grenadier Division, Austrian Reserve",
+      "side": "Austrian",
+      "summary": "The Austrian grenadiers, with the Württembergers at the bridges of Saint-Maur and Charenton.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the Army of Bohemia in January 1814, the nearest he gives of the Guards and reserves.",
+        "Fifteen grenadier battalions, each named for its commander, with five brigade batteries; four are with the brigades here.",
+        "Four grenadier brigades and their brigade batteries, with no line infantry brigade or battalions to allow them, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Weissenwolf",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-grenadier-brigade",
+          "name": "Fürstenwerther's Brigade",
+          "commander": {
+            "name": "Gen-Maj Fürstenwerther",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenadier",
+              "name": "Czarnotzi Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Obermayer Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Berger Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Oklopsia Grenadier Battalion"
+            },
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-grenadier-brigade",
+          "name": "Beigel's Brigade",
+          "commander": {
+            "name": "Gen-Maj Beigel",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenadier",
+              "name": "Habinay Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Portner Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Fischer Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Rüber Grenadier Battalion"
+            },
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-grenadier-brigade",
+          "name": "Klenau's Brigade",
+          "commander": {
+            "name": "Gen-Maj Klenau",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenadier",
+              "name": "Frisch Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Mosel Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Putheany Grenadier Battalion"
+            },
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-grenadier-brigade",
+          "name": "Luz's Brigade",
+          "commander": {
+            "name": "Gen-Maj Luz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenadier",
+              "name": "Rosmann Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Lany Grenadier Battalion"
+            },
+            {
+              "unit": "at-grenadier",
+              "name": "Hormada Grenadier Battalion"
+            },
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ]
+        }
+      ]
     }
   ],
   "toCome": [
@@ -3329,31 +4156,10 @@
     },
     {
       "side": "Russian",
-      "name": "The Russian Guard and Reserve",
-      "formation": "Barclay de Tolly",
-      "summary": "Yermolov's Guard came up late; the Russians took Bagnolet and Charonne.",
-      "flag": "/flags/russia.svg"
-    },
-    {
-      "side": "Prussian",
-      "name": "The Prussian Guard",
-      "formation": "Army of Bohemia",
-      "summary": "Thrown back at Pantin, then took the French guns there.",
-      "flag": "/flags/prussia.png"
-    },
-    {
-      "side": "Russian",
       "name": "Langeron's Corps",
       "formation": "Army of Silesia",
       "summary": "Came on by Le Bourget on Blücher's wing.",
       "flag": "/flags/russia.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "The Austrian Grenadiers",
-      "formation": "Army of Bohemia",
-      "summary": "With the Württembergers at the bridges of Saint-Maur and Charenton.",
-      "flag": "/flags/austria.svg"
     }
   ]
 }

@@ -1458,6 +1458,202 @@
         "page": "https://commons.wikimedia.org/wiki/File:Peter_Graf_von_der_Pahlen.jpg",
         "focus": "50% 18%"
       }
+    },
+    {
+      "id": "fere-champenoise-russian-guard-cavalry",
+      "nationId": "russia",
+      "name": "The Russian Guard Cavalry",
+      "formation": "Golitsyn's cavalry, Russian Reserve",
+      "side": "Russian",
+      "summary": "The Russian Guard cavalry under Grand Duke Constantine; Depreradovich's Guard cuirassiers made the decisive charge.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Army of Bohemia in January 1814, the nearest he gives of the Guards and reserves.",
+        "Depreradovich's 1st Cuirassier Division, the Guard's heavy horse (the first two brigades), and the Guard Light Division. The Leib and Empress's Cuirassiers, raised to the Guard in 1813, are the list's Life Guard Cuirassiers; the Guard Black Sea Cossack squadron is left out.",
+        "Two Guard heavy and two Guard light brigades with no line brigades to allow them, and the Guard making up more than a quarter of the force, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Depreradovich",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-guard-heavy-cavalry-brigade",
+          "name": "Arsenyev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Arsenyev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-chevalier-guard",
+              "name": "Chevalier Guard (4 squadrons)"
+            },
+            {
+              "unit": "ru-life-guard-horse",
+              "name": "Horse Guard (4 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-heavy-cavalry-brigade",
+          "name": "Rosen's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rosen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-life-guard-cuirassier",
+              "name": "Leib Cuirassiers (4 squadrons)"
+            },
+            {
+              "unit": "ru-life-guard-cuirassier",
+              "name": "Empress's Cuirassiers (4 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-light-cavalry-brigade",
+          "name": "Chaikovsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Chaikovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-lg-hussar",
+              "name": "Guard Hussars (4 squadrons)"
+            },
+            {
+              "unit": "ru-lg-dragoon",
+              "name": "Guard Dragoons (4 squadrons)"
+            },
+            {
+              "unit": "ru-guard-horse-arty",
+              "name": "1st Guard Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "ru-guard-light-cavalry-brigade",
+          "name": "Orlov-Denisov's Brigade",
+          "commander": {
+            "name": "Gen-Lt Orlov-Denisov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-life-guard-cossack",
+              "name": "Life Guard Cossacks (4 squadrons)"
+            },
+            {
+              "unit": "ru-guard-horse-arty",
+              "name": "2nd Guard Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fere-champenoise-nostitz",
+      "nationId": "austria",
+      "name": "Nostitz's Cuirassiers",
+      "formation": "Austrian Reserve Cavalry",
+      "side": "Austrian",
+      "summary": "Nostitz's Austrian cuirassiers, about 3,700, with Desfours's brigade among them.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the Army of Bohemia in January 1814, the nearest he gives of the Guards and reserves.",
+        "Klebelsberg's 1st Cuirassier Division (the first two brigades) and Lederer's 2nd; each regiment had five squadrons.",
+        "Four heavy cavalry brigades with no line infantry brigade to allow them show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Count Nostitz",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-heavy-cavalry-brigade",
+          "name": "Auersperg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Count Auersperg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-cuirassier",
+              "name": "Grand Duke Constantine Cuirassiers"
+            },
+            {
+              "unit": "at-cuirassier",
+              "name": "Sommariva Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "at-heavy-cavalry-brigade",
+          "name": "Desfours's Brigade",
+          "commander": {
+            "name": "Gen-Maj Count Desfours",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-cuirassier",
+              "name": "Kaiser Cuirassiers"
+            },
+            {
+              "unit": "at-cuirassier",
+              "name": "Liechtenstein Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "at-heavy-cavalry-brigade",
+          "name": "Rothkirch's Brigade",
+          "commander": {
+            "name": "Gen-Maj Rothkirch",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-cuirassier",
+              "name": "Albert Cuirassiers"
+            },
+            {
+              "unit": "at-cuirassier",
+              "name": "Franz Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "at-heavy-cavalry-brigade",
+          "name": "Kuttalek's Brigade",
+          "commander": {
+            "name": "Gen-Maj Kuttalek",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-cuirassier",
+              "name": "Kronprinz Cuirassiers"
+            },
+            {
+              "unit": "at-cuirassier",
+              "name": "Lothringen Cuirassiers"
+            }
+          ]
+        }
+      ]
     }
   ],
   "toCome": [
@@ -1470,24 +1666,10 @@
     },
     {
       "side": "Russian",
-      "name": "The Russian Guard Cavalry",
-      "formation": "Grand Duke Constantine",
-      "summary": "The Guard cuirassiers and light cavalry, with Depreradovich's 1st Cuirassier Division, which made the decisive charge.",
-      "flag": "/flags/russia.svg"
-    },
-    {
-      "side": "Russian",
       "name": "Korff's Cavalry and Seslavin's Cossacks",
       "formation": "Army of Silesia and Army of Bohemia",
       "summary": "The cavalry of Langeron's corps, with Seslavin's Don Cossacks.",
       "flag": "/flags/russia.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "Nostitz's Cuirassiers",
-      "formation": "Austrian Cuirassier Division",
-      "summary": "About three thousand seven hundred, with Desfours's brigade.",
-      "flag": "/flags/austria.svg"
     }
   ]
 }
