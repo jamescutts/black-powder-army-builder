@@ -63,6 +63,10 @@
     {
       "label": "Battle of Reims (1814) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Reims_(1814)"
+    },
+    {
+      "label": "Battle of Reims (1814) (Wikipedia, after Nafziger's Prussian returns)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Reims_(1814)"
     }
   ],
   "forces": [
@@ -1099,6 +1103,153 @@
           ]
         }
       ]
+    },
+    {
+      "id": "reims-jagow",
+      "nationId": "prussians-1815",
+      "name": "Jagow's Brigade",
+      "formation": "Prussian Landwehr, with Saint-Priest's corps",
+      "side": "Prussian",
+      "summary": "Pomeranian, Kurmark and Neumark Landwehr, which stormed Reims through the Paris gate on the 12th. On the 13th its outposts were surprised at Rosnay, Gueux and Muizon by Marmont's advance, one battalion overwhelmed in the cemetery at Ormes; its retreat through the suburbs fell into confusion, and Exelmans's horsemen caught its column on the road to Berry-au-Bac.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Wikipedia's account of Reims, from Nafziger's history and his Prussian returns.",
+        "The 1st Pomeranian had 919 men and the 5th Kurmark 810, three battalions each; the 3rd Pomeranian 380 and the 2nd Neumark 263, a battalion each, grouped here as one regiment. The two Landwehr cavalry detachments, 118 sabres on the return, are shown together.",
+        "A battery of eight 6-pdrs and one of six howitzers; the howitzers are the list's Foot Artillery.",
+        "A brigade without line regiments, three Landwehr regiments where the list's takes two, and a second battery, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Maj von Jagow",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "Jagow's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Jagow",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "7th Kurmark and 1st West Prussian Landwehr Cavalry"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "7-pdr Howitzer Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Pomeranian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/1st Pomeranian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/1st Pomeranian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/1st Pomeranian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "5th Kurmark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/5th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/5th Kurmark Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/5th Kurmark Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "3rd Pomeranian and 2nd Neumark Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "3rd Pomeranian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "2nd Neumark Landwehr"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reims-emmanuel",
+      "nationId": "russia",
+      "name": "Emmanuel's Dragoons",
+      "formation": "Saint-Priest's corps",
+      "side": "Russian",
+      "summary": "Two dragoon regiments under Emmanuel, which led one of the columns into Reims on the 12th and held La Neuvillette against Defrance's horse; on the 13th they stood on the Sainte-Geneviève plateau with Bistrom's infantry, and Ségur's charge drove some of them into the Vesle.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Wikipedia's account of Reims, from Nafziger's history and his Prussian returns.",
+        "Cavalry with no infantry brigade to allow it shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but the brigade commander at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Emmanuel",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Emmanuel's Brigade",
+          "commander": {
+            "name": "Maj-Gen Emmanuel",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Kiev Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Kharkov Dragoons"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/EmmanuelGA.jpg/250px-EmmanuelGA.jpg",
+        "title": "Georgi Emmanuel",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:EmmanuelGA.jpg",
+        "focus": "50% 18%"
+      }
     }
   ],
   "toCome": [
@@ -1118,17 +1269,17 @@
     },
     {
       "side": "Russian",
-      "name": "Saint-Priest's Corps",
-      "formation": "Gurgalov's 11th and Pillar's 17th Divisions, with Emmanuel's dragoons, VIII Infantry Corps",
-      "summary": "About eight thousand men, who had taken Reims the day before. Saint-Priest was mortally wounded by a shell, and the corps fell back through the town in disorder.",
+      "name": "Saint-Priest's Infantry",
+      "formation": "Gurgalov's 11th and Pillar's 17th Divisions, VIII Infantry Corps",
+      "summary": "Twelve battalions, which had taken Reims the day before. Saint-Priest was mortally wounded by a shell, and the corps fell back through the town; the Ryazan regiment, carrying him, kept its order. Wikipedia names only a few of the regiments.",
       "flag": "/flags/russia.svg"
     },
     {
-      "side": "Prussian",
-      "name": "Jagow's Brigade",
-      "formation": "Pomeranian, Kurmark and Neumark Landwehr",
-      "summary": "About five thousand men, surprised and broken at Gueux, Muizon and Thillois.",
-      "flag": "/flags/prussia.png"
+      "side": "Russian",
+      "name": "Panchulidzev's Horse Chasseurs",
+      "formation": "1st Horse Chasseur Division",
+      "summary": "Three regiments, which Wikipedia doesn't name.",
+      "flag": "/flags/russia.svg"
     }
   ]
 }

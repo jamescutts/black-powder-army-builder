@@ -2939,6 +2939,52 @@ MONTEREAU["sources"].append(MT_AL)
 MONTEREAU["toCome"] = [t for t in MONTEREAU["toCome"] if t["side"] == "French"]
 
 
+# ================================================================ Reims: Jagow's Prussians and Emmanuel's dragoons
+
+RE_AL = {"label": "Battle of Reims (1814) (Wikipedia, after Nafziger's Prussian returns)", "url": "https://en.wikipedia.org/wiki/Battle_of_Reims_(1814)"}
+RE_AL_NOTE = "After Wikipedia's account of Reims, from Nafziger's history and his Prussian returns."
+
+RE_JAGOW = force(
+    "reims-jagow", PR15, "Jagow's Brigade", "Prussian Landwehr, with Saint-Priest's corps", "Prussian",
+    "Pomeranian, Kurmark and Neumark Landwehr, which stormed Reims through the Paris gate on the 12th. On the 13th its "
+    "outposts were surprised at Rosnay, Gueux and Muizon by Marmont's advance, one battalion overwhelmed in the cemetery "
+    "at Ormes; its retreat through the suburbs fell into confusion, and Exelmans's horsemen caught its column on the road "
+    "to Berry-au-Bac.",
+    [pi("Jagow's Brigade", "Gen-Maj von Jagow",
+        [("1st Pomeranian Landwehr", [("L", f"{i}/1st Pomeranian Landwehr") for i in ("I", "II", "III")]),
+         ("5th Kurmark Landwehr", [("L", f"{i}/5th Kurmark Landwehr") for i in ("I", "II", "III")]),
+         ("3rd Pomeranian and 2nd Neumark Landwehr", [("L", "3rd Pomeranian Landwehr"), ("L", "2nd Neumark Landwehr")])],
+        [u("pr15-mounted-landwehr-attached", "7th Kurmark and 1st West Prussian Landwehr Cavalry"),
+         u("pr15-foot-arty", "6-pdr Foot Battery"), u("pr15-foot-arty", "7-pdr Howitzer Battery")])],
+    command=[cmd("pr15-corps-cmd", "Gen-Maj von Jagow")],
+    notes=[PR_LIST, RE_AL_NOTE,
+           "The 1st Pomeranian had 919 men and the 5th Kurmark 810, three battalions each; the 3rd Pomeranian 380 and the 2nd "
+           "Neumark 263, a battalion each, grouped here as one regiment. The two Landwehr cavalry detachments, 118 sabres on "
+           "the return, are shown together.",
+           "A battery of eight 6-pdrs and one of six howitzers; the howitzers are the list's Foot Artillery.",
+           "A brigade without line regiments, three Landwehr regiments where the list's takes two, and a second battery, show "
+           "as historical departures."])
+
+RE_EMMANUEL = force(
+    "reims-emmanuel", RU, "Emmanuel's Dragoons", "Saint-Priest's corps", "Russian",
+    "Two dragoon regiments under Emmanuel, which led one of the columns into Reims on the 12th and held La Neuvillette "
+    "against Defrance's horse; on the 13th they stood on the Sainte-Geneviève plateau with Bistrom's infantry, and Ségur's "
+    "charge drove some of them into the Vesle.",
+    [bde("ru-heavy-cavalry-brigade", "Emmanuel's Brigade", "Maj-Gen Emmanuel",
+         units=[u("ru-dragoon", "Kiev Dragoons"), u("ru-dragoon", "Kharkov Dragoons")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Emmanuel")],
+    notes=[LIST_RU, RE_AL_NOTE, "Cavalry with no infantry brigade to allow it shows as a historical departure."])
+
+REIMS["forces"] += [RE_JAGOW, RE_EMMANUEL]
+REIMS["sources"].append(RE_AL)
+REIMS["toCome"] = [t for t in REIMS["toCome"] if t["side"] == "French"] + [
+    ru("Saint-Priest's Infantry", "Gurgalov's 11th and Pillar's 17th Divisions, VIII Infantry Corps",
+       "Twelve battalions, which had taken Reims the day before. Saint-Priest was mortally wounded by a shell, and the corps "
+       "fell back through the town; the Ryazan regiment, carrying him, kept its order. Wikipedia names only a few of the "
+       "regiments."),
+    ru("Panchulidzev's Horse Chasseurs", "1st Horse Chasseur Division", "Three regiments, which Wikipedia doesn't name.")]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)
