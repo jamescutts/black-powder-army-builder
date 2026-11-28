@@ -794,15 +794,224 @@
           ]
         }
       ]
-    }
-  ],
-  "toCome": [
+    },
     {
-      "side": "Russian",
+      "id": "champaubert-olsufiev",
+      "nationId": "russia",
       "name": "Olsufiev's Corps",
-      "formation": "Udom's 9th and Kornilov's 15th Divisions, IX Infantry Corps, Army of Silesia",
-      "summary": "About four thousand men and twenty-four guns, strung out along Blücher's line of march. Most were killed or taken, Olsufiev and Poltoratsky among them; Kornilov brought some fifteen hundred away through the woods.",
-      "flag": "/flags/russia.svg"
+      "formation": "IX Infantry Corps, Langeron's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "About four thousand men and twenty-four guns, strung out along Blücher's line of march and left without cavalry, which Napoleon fell on out of the marshes of Saint-Gond. Udom's division held Baye and Bannay until Marmont's men took them; the corps was then cut off by the French cavalry, and most of it was killed or taken, Olsufiev and Poltoratsky among them. Kornilov brought some fifteen hundred away through the woods.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Champaubert, from Bogdanovich's history of the campaign and the French archives; its strengths are of 1 February.",
+        "Udom's 9th Division (the first three brigades) and Kornilov's 15th (the last three). Each regiment had a single battalion of three to six hundred men; each is shown as its one battalion.",
+        "Nafziger gives two light batteries and a position battery he thinks probably wasn't there; the light batteries are with the brigades, as the list takes them.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Olsufiev",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Poltoratsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Poltoratsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #13"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Apsheron Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Apsheron Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Nasheburg Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Nasheburg Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Yushkov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Yushkov II",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Ryazhsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Ryazhsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Yakutsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Yakutsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Melnik's Brigade",
+          "commander": {
+            "name": "Maj Melnik",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "10th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "10th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "38th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "38th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Anensur's Brigade",
+          "commander": {
+            "name": "Lt-Col Anensur",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #29"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Vitebsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vitebsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kozlov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kozlov Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Musin-Pushkin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Musin-Pushkin",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Kolyvan Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kolyvan Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kura Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kura Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Tikhanovsky's Brigade",
+          "commander": {
+            "name": "Col Tikhanovsky",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "12th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "12th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "22nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "22nd Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Position Battery #15",
+          "reason": "Nafziger thinks it probably wasn't present."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Olsufjev_1_Zahar_Dmitrievich.jpg/250px-Olsufjev_1_Zahar_Dmitrievich.jpg",
+        "title": "Zakhar Olsufiev",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Olsufjev_1_Zahar_Dmitrievich.jpg",
+        "focus": "50% 18%"
+      }
     }
   ]
 }

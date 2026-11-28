@@ -650,11 +650,33 @@ CH_DECOUZ = again(
      "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
      "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure."])
 
+CH_OLSUFIEV = force(
+    "champaubert-olsufiev", RU, "Olsufiev's Corps", "IX Infantry Corps, Langeron's corps, Army of Silesia", "Russian",
+    "About four thousand men and twenty-four guns, strung out along Blücher's line of march and left without cavalry, "
+    "which Napoleon fell on out of the marshes of Saint-Gond. Udom's division held Baye and Bannay until Marmont's men "
+    "took them; the corps was then cut off by the French cavalry, and most of it was killed or taken, Olsufiev and "
+    "Poltoratsky among them. Kornilov brought some fifteen hundred away through the woods.",
+    [bde("ru-infantry-brigade", "Poltoratsky's Brigade", "Maj-Gen Poltoratsky", units=[u("ru-light-arty", "Light Battery #13")],
+         regiments=[ru_regt("Apsheron Infantry", 1), ru_regt("Nasheburg Infantry", 1)]),
+     bde("ru-infantry-brigade", "Yushkov's Brigade", "Maj-Gen Yushkov II",
+         regiments=[ru_regt("Ryazhsk Infantry", 1), ru_regt("Yakutsk Infantry", 1)]),
+     bde("ru-jager-brigade", "Melnik's Brigade", "Maj Melnik", regiments=[ru_regt("10th Jäger", 1, "ru-jager"), ru_regt("38th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Anensur's Brigade", "Lt-Col Anensur", units=[u("ru-light-arty", "Light Battery #29")],
+         regiments=[ru_regt("Vitebsk Infantry", 1), ru_regt("Kozlov Infantry", 1)]),
+     bde("ru-infantry-brigade", "Musin-Pushkin's Brigade", "Maj-Gen Musin-Pushkin",
+         regiments=[ru_regt("Kolyvan Infantry", 1), ru_regt("Kura Infantry", 1)]),
+     bde("ru-jager-brigade", "Tikhanovsky's Brigade", "Col Tikhanovsky", regiments=[ru_regt("12th Jäger", 1, "ru-jager"), ru_regt("22nd Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Olsufiev")],
+    notes=[LIST_RU, CH_NOTE,
+           "Udom's 9th Division (the first three brigades) and Kornilov's 15th (the last three). Each regiment had a single "
+           "battalion of three to six hundred men; each is shown as its one battalion.",
+           "Nafziger gives two light batteries and a position battery he thinks probably wasn't there; the light batteries are "
+           "with the brigades, as the list takes them.",
+           "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures."])
+CH_OLSUFIEV["missing"] = [{"name": "Position Battery #15", "reason": "Nafziger thinks it probably wasn't present."}]
+
 CHAMPAUBERT = fought("champaubert", [CH_FR, SIX_DAYS, wiki("Battle of Champaubert", "Battle_of_Champaubert")],
-    [CH_LAGRANGE, CH_RICARD, CH_BORDESOULLE, CH_MEUNIER, CH_DECOUZ],
-    [ru("Olsufiev's Corps", "Udom's 9th and Kornilov's 15th Divisions, IX Infantry Corps, Army of Silesia",
-        "About four thousand men and twenty-four guns, strung out along Blücher's line of march. Most were killed or taken, "
-        "Olsufiev and Poltoratsky among them; Kornilov brought some fifteen hundred away through the woods.")])
+    [CH_LAGRANGE, CH_RICARD, CH_BORDESOULLE, CH_MEUNIER, CH_DECOUZ, CH_OLSUFIEV], [])
 
 # ---------------------------------------------------------------- Montmirail, 11 February 1814, written
 
@@ -798,15 +820,114 @@ MM_DEFRANCE = force(
            "Ségur's of the 3rd and 4th, are as at La Rothière; the 2nd Gardes d'Honneur are with Ségur's here, three hussar "
            "regiments where the list's brigade takes two, a historical departure.", CAV_ONLY])
 
+MM_RU_BN = ("Its regiments had one or two field battalions each, a few hundred men; each is shown at full size, and the "
+            "list's Small upgrade would suit them.")
+
+MM_LIEVEN = force(
+    "montmirail-lieven", RU, "Lieven's Corps", "XI Infantry Corps, Sacken's corps, Army of Silesia", "Russian",
+    "Sacken's right, north of the high road, marching back east to rejoin Blücher when it found Napoleon across its path. "
+    "It joined the fight for Marchais and was driven north with the rest of the corps when Friant's Old Guard broke the centre.",
+    [bde("ru-infantry-brigade", "Sokolovsky's Brigade", "Maj-Gen Sokolovsky", units=[u("ru-position-arty", "Position Battery #18")],
+         regiments=[ru_regt("Yaroslavl Infantry", 1), ru_regt("Kursk Infantry", 1), ru_regt("Belozersk Infantry", 2)]),
+     bde("ru-jager-brigade", "Achlestyshev's Brigade", "Col Achlestyshev", regiments=[ru_regt("8th Jäger", 1, "ru-jager"), ru_regt("39th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Selivanov's Brigade", "Lt-Col Selivanov",
+         regiments=[ru_regt("Kamchatka Infantry", 1), ru_regt("Okhotsk Infantry", 1)]),
+     bde("ru-infantry-brigade", "Levandovsky's Brigade", "Col Levandovsky", units=[u("ru-light-arty", "Light Battery #34")],
+         regiments=[ru_regt("Odessa Infantry", 1), ru_regt("Vilna Infantry", 1)]),
+     bde("ru-infantry-brigade", "Alexeyev's Brigade", "Col Alexeyev", units=[u("ru-light-arty", "Light Battery #35")],
+         regiments=[ru_regt("Simbirsk Infantry", 1), ru_regt("Tarnopol Infantry", 1)]),
+     bde("ru-jager-brigade", "Kalogrivov's Brigade", "Col Kalogrivov", regiments=[ru_regt("49th Jäger", 1, "ru-jager"), ru_regt("50th Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Lieven III")],
+    notes=[LIST_RU, MM_NOTE,
+           "Zass's 10th Division (the first two brigades), Selivanov's brigade of the 16th, and Stavitsky's 27th (the last three).",
+           MM_RU_BN, "The corps' three batteries are with the brigades, as the list takes them.",
+           "Four infantry brigades and two Jäger brigades, where the list allows three and one, and three regiments in "
+           "Sokolovsky's brigade, where it takes two, show as historical departures."])
+
+MM_TALYZIN = force(
+    "montmirail-talyzin", RU, "Talyzin's Corps", "VI Infantry Corps, Sacken's corps, Army of Silesia", "Russian",
+    "Sacken's left, south of the high road, under Talyzin while Shcherbatov was sick. Its brigades took Marchais in the "
+    "morning and lost it again; Defrance's Gardes d'Honneur cut up Dieterich's and Blagoveshchensky's men west of the ravine, "
+    "and the Sophia regiment had to fight its way out.",
+    [bde("ru-infantry-brigade", "Krichinikov's Brigade", "Col Krichinikov", units=[u("ru-position-arty", "Position Battery #10")],
+         regiments=[ru_regt("Pskov Infantry", 1), ru_regt("Moscow Infantry", 1)]),
+     bde("ru-infantry-brigade", "Augustov's Brigade", "Col Augustov", regiments=[ru_regt("Sophia Infantry", 1), ru_regt("Libau Infantry", 1)]),
+     bde("ru-jager-brigade", "Dieterich's Brigade", "Col Dieterich", regiments=[ru_regt("11th Jäger", 1, "ru-jager"), ru_regt("36th Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Blagoveshchensky's Brigade", "Lt-Col Blagoveshchensky", units=[u("ru-light-arty", "Light Battery #19")],
+         regiments=[ru_regt("Vladimir Infantry", 1), ru_regt("Dnieper Infantry", 1)]),
+     bde("ru-infantry-brigade", "Heidenreich's Brigade", "Maj-Gen Heidenreich", units=[u("ru-light-arty", "Light Battery #24")],
+         regiments=[ru_regt("Tambov Infantry", 1), ru_regt("Kostroma Infantry", 1)]),
+     bde("ru-jager-brigade", "Metcherinov's Brigade", "Maj-Gen Metcherinov", regiments=[ru_regt("28th Jäger", 1, "ru-jager"), ru_regt("32nd Jäger", 1, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Talyzin II")],
+    notes=[LIST_RU, MM_NOTE,
+           "Prince Shcherbatov's 7th Division (the first three brigades) and Bernodessov's 18th (the last three). Nafziger names "
+           "Talyzin as the corps' commander; Wikipedia's account has Shcherbatov sick and Talyzin acting for him.",
+           "Each regiment had a single battalion; each is shown as its one battalion, at full size.",
+           "The corps' three batteries are with the brigades, as the list takes them.",
+           "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures."])
+
+MM_VASILCHIKOV = force(
+    "montmirail-vasilchikov", RU, "Vasilchikov's Cavalry", "Cavalry Corps, Sacken's corps", "Russian",
+    "Sacken's hussars and dragoons, which counter-attacked Nansouty's Guard cavalry and covered the corps' retreat north "
+    "towards the Marne.",
+    [bde("ru-light-cavalry-brigade", "Vodbolsky's Brigade", "Maj-Gen Vodbolsky",
+         units=[u("ru-hussar", "Akhtyrka Hussars (6 squadrons)"), u("ru-hussar", "Mariupol Hussars (5 squadrons)"), u("ru-horse-arty", "Horse Battery #6")]),
+     bde("ru-light-cavalry-brigade", "Vasilchikov's Brigade", "Col Vasilchikov",
+         units=[u("ru-hussar", "White Russia Hussars (4 squadrons)"), u("ru-hussar", "Alexandria Hussars (5 squadrons)"), u("ru-horse-arty", "Horse Battery #7")]),
+     bde("ru-heavy-cavalry-brigade", "Ushakov's Brigade", "Maj-Gen Ushakov", units=[u("ru-dragoon", "Smolensk Dragoons"), u("ru-dragoon", "Courland Dragoons")]),
+     bde("ru-heavy-cavalry-brigade", "Umanets's Brigade", "Maj-Gen Umanets",
+         units=[u("ru-dragoon", "Tver Dragoons"), u("ru-dragoon", "Kinburn Dragoons"), u("ru-horse-arty", "Horse Battery #18")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Vasilchikov")],
+    notes=[LIST_RU, MM_NOTE,
+           "Lanskoy's 2nd Hussar Division (the light brigades) and Panchulidzev's 3rd Dragoon Division (the dragoons), with "
+           "its three horse batteries.",
+           "Two light and two heavy cavalry brigades, where the list allows one of each, three horse batteries, where it allows "
+           "two for eight regiments, and cavalry with no infantry brigade to allow it, show as historical departures."])
+
+MM_KARPOV = force(
+    "montmirail-karpov", RU, "Karpov's Cossacks", "Cossacks, Sacken's corps", "Russian",
+    "Sacken's Cossacks, driven out of Montmirail early on the 11th as Napoleon's army came up.",
+    [bde("ru-cossack-brigade", "Karpov's Brigade", "Maj-Gen Karpov II",
+         units=[u("ru-mounted-cossack", "Karpov #2 Don Cossacks"), u("ru-mounted-cossack", "Semenchikov #4 Don Cossacks"),
+                u("ru-mounted-cossack", "Lukovkin #2 Don Cossacks"), u("ru-mounted-cossack", "Kuteinikov #4 Don Cossacks")]),
+     bde("ru-cossack-brigade", "Karpov's Other Regiments", "",
+         units=[u("ru-mounted-cossack", "Grekov #1 Don Cossacks"), u("ru-irregular-mounted-cossack", "St Petersburg Opolchenie Cossacks"),
+                u("ru-mounted-cossack", "4th Ukrainian Cossacks"), u("ru-irregular-mounted-cossack", "2nd Kalmyk Regiment")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Karpov II")],
+    notes=[LIST_RU, MM_NOTE,
+           "Nafziger gives Karpov's eight regiments as one brigade; they are split into two here, the Don regiments first, as "
+           "the list's brigades take four. The St Petersburg Opolchenie Cossacks and the Kalmyks are the list's Irregular Cossacks.",
+           "Two Cossack brigades, where the list allows one, and Cossacks with no infantry brigade to allow them, show as "
+           "historical departures."])
+
+MM_YORCK = force(
+    "montmirail-yorck", PR15, "Yorck's Corps", "Pirch II's and Horn's brigades, I Corps, Army of Silesia", "Prussian",
+    "The part of Yorck's corps that came up late from Château-Thierry to help Sacken. Pirch's brigade attacked the Bois de "
+    "Bailly and the woods round Plénois and was thrown back, Pirch wounded; Horn's brigade came up behind it at Fontenelle "
+    "and covered the retreat.",
+    [pi("1st Brigade (Pirch II)", "Gen-Maj von Pirch II",
+        [("Grenadier Battalions", [("M", "1st East Prussian Grenadier Battalion"), ("M", "Silesian Grenadier Battalion")]),
+         ("Grenadier Battalions (Leib and West Prussian)", [("M", "Leib Grenadier Battalion"), ("M", "West Prussian Grenadier Battalion")]),
+         ("13th Silesian Landwehr", [("L", f"{i}/13th Silesian Landwehr") for i in ("I", "II", "III", "IV")])],
+        [u("pr15-mounted-landwehr-attached", "East Prussian National Cavalry (4 squadrons, with volunteer Jäger)"),
+         u("pr15-foot-arty", "6-pdr Foot Battery #2")]),
+     pi("7th Brigade (Horn)", "Gen-Maj von Horn",
+        [("Leib Infantry", [("M", "I/Leib Infantry"), ("M", "II/Leib Infantry"), ("F", "F/Leib Infantry")]),
+         ("4th Silesian Landwehr", [("L", "I/4th Silesian Landwehr"), ("L", "II/4th Silesian Landwehr")]),
+         ("15th Silesian Landwehr", [("L", "I/15th Silesian Landwehr"), ("L", "II/15th Silesian Landwehr")])],
+        [u("pr15-hussar-attached", "Brandenburg Hussars (with volunteer Jäger)"), u("pr15-foot-arty", "6-pdr Foot Battery #3")])],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Yorck")],
+    notes=[PR_LIST, MM_NOTE, PR_GROUPED, PR_SUB,
+           "Only these two of Yorck's brigades are on Nafziger's return. Its four grenadier battalions, each of a different "
+           "regiment, are grouped in pairs as regiments, as the list takes them; they have its Veteran upgrade.",
+           "The East Prussian National Cavalry, a volunteer regiment, is the list's small Landwehr cavalry regiment, and the "
+           "Brandenburg Hussars its small hussar regiment, each attached to its brigade.",
+           "Each brigade's battalions are shown at full size, though most were well under strength by now.",
+           "The 13th Silesian Landwehr's four battalions, where the list's Landwehr regiment takes three, show as a historical departure."])
+
 MONTMIRAIL = fought("montmirail", [MM_FR, SIX_DAYS, wiki("Battle of Montmirail", "Battle_of_Montmirail")],
-    [MM_RICARD, MM_MEUNIER, MM_CURIAL, MM_FRIANT, MM_MICHEL, MM_COLBERT, MM_LEFEBVRE, MM_LAFERRIERE, MM_DEFRANCE], [
-    ru("Sacken's Corps", "Shcherbatov's VI and Lieven's XI Infantry Corps, Army of Silesia",
-       "Some eighteen thousand men and eighty to ninety guns, marching back east to join Blücher. It took Marchais and lost it, "
-       "and was driven north towards Château-Thierry."),
-    ru("Vasilchikov's Cavalry", "Lanskoy's 2nd Hussar and Panchulidzev's 3rd Dragoon Divisions, with Karpov's Cossacks",
-       "Counter-attacked Nansouty's horse and covered Sacken's retreat."),
-    pr("Yorck's Corps", "Pirch's 1st and Horn's 7th Brigades, I Corps, Army of Silesia",
-       "Reached Viffort late in the day. Pirch's brigade attacked the Bois de Bailly and was thrown back, Pirch wounded.")],
+    [MM_RICARD, MM_MEUNIER, MM_CURIAL, MM_FRIANT, MM_MICHEL, MM_COLBERT, MM_LEFEBVRE, MM_LAFERRIERE, MM_DEFRANCE,
+     MM_LIEVEN, MM_TALYZIN, MM_VASILCHIKOV, MM_KARPOV, MM_YORCK], [],
     alliances=(("Russian", "Prussian"),))
 
 # ---------------------------------------------------------------- Château-Thierry, 12 February 1814, written
@@ -850,13 +971,24 @@ CT_LAFERRIERE = next_day(MM_LAFERRIERE, "chateau-thierry-laferriere",
 CT_DEFRANCE = next_day(MM_DEFRANCE, "chateau-thierry-defrance",
     "The Gardes d'Honneur, who charged the Prussian columns with Laferrière's dragoons.")
 
+CT_YORCK = next_day(MM_YORCK, "chateau-thierry-yorck",
+    "Yorck's brigades, covering Sacken's crossing of the Marne. Katzler's advance guard held Montfaucon and Viffort until "
+    "the Guard drove it in; Horn's brigade, blocking the high road, was broken before the town by Letort's squadrons, and "
+    "two East Prussian battalions were cut off and taken.")
+CT_YORCK["formation"] = "I Corps, Army of Silesia"
+CT_YORCK["missing"] = [{"name": "Katzler's advance guard and Jürgass's reserve cavalry",
+                        "reason": "Not on Nafziger's Montmirail return, which this is built from; Wikipedia's account has them in the fight."}]
+
+CT_LIEVEN = next_day(MM_LIEVEN, "chateau-thierry-lieven",
+    "Lieven's corps, already beaten at Montmirail, falling back over the Marne at Château-Thierry behind Yorck's rearguard.")
+CT_TALYZIN = next_day(MM_TALYZIN, "chateau-thierry-talyzin",
+    "Talyzin's corps, falling back over the Marne behind Yorck's rearguard; Heidenreich's brigade, with the Tambov and "
+    "Kostroma regiments, was overrun and mostly taken.")
+CT_VASILCHIKOV = next_day(MM_VASILCHIKOV, "chateau-thierry-vasilchikov",
+    "Sacken's horse, covering the retreat to the Marne; a dragoon regiment was routed by the Guard cavalry.")
+
 CHATEAU_THIERRY = fought("chateau-thierry", [MM_FR, SIX_DAYS, wiki("Battle of Château-Thierry (1814)", "Battle_of_Ch%C3%A2teau-Thierry_(1814)")],
-    [CT_CHRISTIANI, CT_MEUNIER, CT_FRIANT, CT_COLBERT, CT_LEFEBVRE, CT_LAFERRIERE, CT_DEFRANCE], [
-    pr("Yorck's Corps", "Katzler's advance guard, Horn's 7th Brigade and Jürgass's reserve cavalry, I Corps, Army of Silesia",
-       "Covered Sacken's crossing of the Marne. Horn's brigade was broken before Château-Thierry, and two East Prussian "
-       "battalions were cut off and taken."),
-    ru("Sacken's Corps", "Army of Silesia",
-       "Already beaten at Montmirail, it got back over the Marne at Château-Thierry; Heidenreich's brigade was overrun and mostly taken.")],
+    [CT_CHRISTIANI, CT_MEUNIER, CT_FRIANT, CT_COLBERT, CT_LEFEBVRE, CT_LAFERRIERE, CT_DEFRANCE, CT_YORCK, CT_LIEVEN, CT_TALYZIN, CT_VASILCHIKOV], [],
     alliances=(("Prussian", "Russian"),))
 
 # ---------------------------------------------------------------- Vauchamps, 14 February 1814, written

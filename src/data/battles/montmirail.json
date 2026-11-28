@@ -991,29 +991,818 @@
           ]
         }
       ]
-    }
-  ],
-  "toCome": [
-    {
-      "side": "Russian",
-      "name": "Sacken's Corps",
-      "formation": "Shcherbatov's VI and Lieven's XI Infantry Corps, Army of Silesia",
-      "summary": "Some eighteen thousand men and eighty to ninety guns, marching back east to join Blücher. It took Marchais and lost it, and was driven north towards Château-Thierry.",
-      "flag": "/flags/russia.svg"
     },
     {
+      "id": "montmirail-lieven",
+      "nationId": "russia",
+      "name": "Lieven's Corps",
+      "formation": "XI Infantry Corps, Sacken's corps, Army of Silesia",
       "side": "Russian",
+      "summary": "Sacken's right, north of the high road, marching back east to rejoin Blücher when it found Napoleon across its path. It joined the fight for Marchais and was driven north with the rest of the corps when Friant's Old Guard broke the centre.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Zass's 10th Division (the first two brigades), Selivanov's brigade of the 16th, and Stavitsky's 27th (the last three).",
+        "Its regiments had one or two field battalions each, a few hundred men; each is shown at full size, and the list's Small upgrade would suit them.",
+        "The corps' three batteries are with the brigades, as the list takes them.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, and three regiments in Sokolovsky's brigade, where it takes two, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Lieven III",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Sokolovsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Sokolovsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #18"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Yaroslavl Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Yaroslavl Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kursk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kursk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Belozersk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Belozersk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Belozersk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Achlestyshev's Brigade",
+          "commander": {
+            "name": "Col Achlestyshev",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "8th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "8th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "39th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "39th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Selivanov's Brigade",
+          "commander": {
+            "name": "Lt-Col Selivanov",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Kamchatka Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kamchatka Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Okhotsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Okhotsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Levandovsky's Brigade",
+          "commander": {
+            "name": "Col Levandovsky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #34"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Odessa Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Odessa Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Vilna Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vilna Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Alexeyev's Brigade",
+          "commander": {
+            "name": "Col Alexeyev",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #35"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Simbirsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Simbirsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Tarnopol Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tarnopol Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Kalogrivov's Brigade",
+          "commander": {
+            "name": "Col Kalogrivov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "49th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "49th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "50th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "50th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "montmirail-talyzin",
+      "nationId": "russia",
+      "name": "Talyzin's Corps",
+      "formation": "VI Infantry Corps, Sacken's corps, Army of Silesia",
+      "side": "Russian",
+      "summary": "Sacken's left, south of the high road, under Talyzin while Shcherbatov was sick. Its brigades took Marchais in the morning and lost it again; Defrance's Gardes d'Honneur cut up Dieterich's and Blagoveshchensky's men west of the ravine, and the Sophia regiment had to fight its way out.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Prince Shcherbatov's 7th Division (the first three brigades) and Bernodessov's 18th (the last three). Nafziger names Talyzin as the corps' commander; Wikipedia's account has Shcherbatov sick and Talyzin acting for him.",
+        "Each regiment had a single battalion; each is shown as its one battalion, at full size.",
+        "The corps' three batteries are with the brigades, as the list takes them.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Talyzin II",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Krichinikov's Brigade",
+          "commander": {
+            "name": "Col Krichinikov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery #10"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Pskov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Pskov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Moscow Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Moscow Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Augustov's Brigade",
+          "commander": {
+            "name": "Col Augustov",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Sophia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Sophia Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Libau Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Libau Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Dieterich's Brigade",
+          "commander": {
+            "name": "Col Dieterich",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "11th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "36th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "36th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Blagoveshchensky's Brigade",
+          "commander": {
+            "name": "Lt-Col Blagoveshchensky",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #19"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Vladimir Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Vladimir Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Dnieper Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Dnieper Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Heidenreich's Brigade",
+          "commander": {
+            "name": "Maj-Gen Heidenreich",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery #24"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tambov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Tambov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kostroma Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Kostroma Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Metcherinov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Metcherinov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "28th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "28th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "32nd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "32nd Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "montmirail-vasilchikov",
+      "nationId": "russia",
       "name": "Vasilchikov's Cavalry",
-      "formation": "Lanskoy's 2nd Hussar and Panchulidzev's 3rd Dragoon Divisions, with Karpov's Cossacks",
-      "summary": "Counter-attacked Nansouty's horse and covered Sacken's retreat.",
-      "flag": "/flags/russia.svg"
+      "formation": "Cavalry Corps, Sacken's corps",
+      "side": "Russian",
+      "summary": "Sacken's hussars and dragoons, which counter-attacked Nansouty's Guard cavalry and covered the corps' retreat north towards the Marne.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Lanskoy's 2nd Hussar Division (the light brigades) and Panchulidzev's 3rd Dragoon Division (the dragoons), with its three horse batteries.",
+        "Two light and two heavy cavalry brigades, where the list allows one of each, three horse batteries, where it allows two for eight regiments, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Vasilchikov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Vodbolsky's Brigade",
+          "commander": {
+            "name": "Maj-Gen Vodbolsky",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Akhtyrka Hussars (6 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Mariupol Hussars (5 squadrons)"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #6"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Vasilchikov's Brigade",
+          "commander": {
+            "name": "Col Vasilchikov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "White Russia Hussars (4 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Alexandria Hussars (5 squadrons)"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #7"
+            }
+          ]
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Ushakov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Ushakov",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Smolensk Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Courland Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "ru-heavy-cavalry-brigade",
+          "name": "Umanets's Brigade",
+          "commander": {
+            "name": "Maj-Gen Umanets",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-dragoon",
+              "name": "Tver Dragoons"
+            },
+            {
+              "unit": "ru-dragoon",
+              "name": "Kinburn Dragoons"
+            },
+            {
+              "unit": "ru-horse-arty",
+              "name": "Horse Battery #18"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/I.I._Vasilchikov.JPG/250px-I.I._Vasilchikov.JPG",
+        "title": "Illarion Vasilchikov",
+        "artist": "photograph by Ivan Gudovsky",
+        "page": "https://commons.wikimedia.org/wiki/File:I.I._Vasilchikov.JPG",
+        "focus": "50% 20%",
+        "date": "1850s"
+      }
     },
     {
-      "side": "Prussian",
+      "id": "montmirail-karpov",
+      "nationId": "russia",
+      "name": "Karpov's Cossacks",
+      "formation": "Cossacks, Sacken's corps",
+      "side": "Russian",
+      "summary": "Sacken's Cossacks, driven out of Montmirail early on the 11th as Napoleon's army came up.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Nafziger gives Karpov's eight regiments as one brigade; they are split into two here, the Don regiments first, as the list's brigades take four. The St Petersburg Opolchenie Cossacks and the Kalmyks are the list's Irregular Cossacks.",
+        "Two Cossack brigades, where the list allows one, and Cossacks with no infantry brigade to allow them, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 1 of the 2 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Karpov II",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Karpov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Karpov II",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Karpov #2 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Semenchikov #4 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Lukovkin #2 Don Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Kuteinikov #4 Don Cossacks"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Karpov's Other Regiments",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Grekov #1 Don Cossacks"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "St Petersburg Opolchenie Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "4th Ukrainian Cossacks"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "2nd Kalmyk Regiment"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "montmirail-yorck",
+      "nationId": "prussians-1815",
       "name": "Yorck's Corps",
-      "formation": "Pirch's 1st and Horn's 7th Brigades, I Corps, Army of Silesia",
-      "summary": "Reached Viffort late in the day. Pirch's brigade attacked the Bois de Bailly and was thrown back, Pirch wounded.",
-      "flag": "/flags/prussia.png"
+      "formation": "Pirch II's and Horn's brigades, I Corps, Army of Silesia",
+      "side": "Prussian",
+      "summary": "The part of Yorck's corps that came up late from Château-Thierry to help Sacken. Pirch's brigade attacked the Bois de Bailly and the woods round Plénois and was thrown back, Pirch wounded; Horn's brigade came up behind it at Fontenelle and covered the retreat.",
+      "notes": [
+        "Built from Albion Triumphant's Prussian 1815 list, the nearest to 1813: its Prussian Infantry Brigade is the 1813 brigade, the size of another army's division, with line, reserve and Landwehr battalions.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Battalions of different regiments that served together are grouped as a regiment, as the list takes them. Reserve battalions are the list's Musketeers; grenadier battalions are Musketeers with its Veteran upgrade.",
+        "Brigades of three regiments or more have a Subordinate Commander, named where the order of battle names the brigade's infantry commander.",
+        "Only these two of Yorck's brigades are on Nafziger's return. Its four grenadier battalions, each of a different regiment, are grouped in pairs as regiments, as the list takes them; they have its Veteran upgrade.",
+        "The East Prussian National Cavalry, a volunteer regiment, is the list's small Landwehr cavalry regiment, and the Brandenburg Hussars its small hussar regiment, each attached to its brigade.",
+        "Each brigade's battalions are shown at full size, though most were well under strength by now.",
+        "The 13th Silesian Landwehr's four battalions, where the list's Landwehr regiment takes three, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "pr15-corps-cmd",
+          "name": "Gen-Lt von Yorck",
+          "variant": "Staff rating 8 (4 re-rolls)"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "1st Brigade (Pirch II)",
+          "commander": {
+            "name": "Gen-Maj von Pirch II",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-mounted-landwehr-attached",
+              "name": "East Prussian National Cavalry (4 squadrons, with volunteer Jäger)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #2"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Grenadier Battalions",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "1st East Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Silesian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Grenadier Battalions (Leib and West Prussian)",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "Leib Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "West Prussian Grenadier Battalion",
+                  "options": [
+                    "veteran-infantry"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "13th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "III/13th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "IV/13th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "pr15-infantry-brigade",
+          "name": "7th Brigade (Horn)",
+          "commander": {
+            "name": "Gen-Maj von Horn",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "pr15-sub-cmd"
+            },
+            {
+              "unit": "pr15-hussar-attached",
+              "name": "Brandenburg Hussars (with volunteer Jäger)"
+            },
+            {
+              "unit": "pr15-foot-arty",
+              "name": "6-pdr Foot Battery #3"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Leib Infantry",
+              "units": [
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "I/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-musketeer",
+                  "name": "II/Leib Infantry"
+                },
+                {
+                  "unit": "pr15-fusilier",
+                  "name": "F/Leib Infantry"
+                }
+              ]
+            },
+            {
+              "name": "4th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/4th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/4th Silesian Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "15th Silesian Landwehr",
+              "units": [
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "I/15th Silesian Landwehr"
+                },
+                {
+                  "unit": "pr15-landwehr",
+                  "name": "II/15th Silesian Landwehr"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
     }
   ]
 }
