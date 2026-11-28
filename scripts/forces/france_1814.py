@@ -973,15 +973,118 @@ VAUCHAMPS = fought("vauchamps", [VC_FR, SIX_DAYS, wiki("Battle of Vauchamps", "B
        "The fifteen hundred who had got away from Champaubert, surprised at Étoges after dark by Doumerc's cuirassiers.")],
     alliances=(("Prussian", "Russian"),))
 
-MORMANT = armies("mormant", [wiki("Battle of Mormant", "Battle_of_Mormant")], [
-    fr("Victor's Corps", "Huguet-Chateau's 1st and Duhesme's 2nd Divisions, II Corps",
-       "Advanced on Mormant at dawn, Chateau's division on the right and Duhesme's on the left, and closed on Pahlen's infantry."),
-    fr("Gérard's Paris Reserve", "Dufour's 1st and Hamelinaye's 2nd Divisions",
-       "Went on to Valjouan in the afternoon, where Hamelinaye's division stormed Villeneuve and Grand-Maison and routed the Bavarians."),
-    fr("Milhaud's Cavalry", "Piré's light and Briche's heavy divisions, V Cavalry Corps",
-       "Their charges broke Pahlen's cavalry; Briche's dragoons rode into the Russian squares and closed the road at Grandpuits."),
-    fr("Kellermann's Cavalry", "L'Héritier's and Trelliard's dragoon divisions, VI Cavalry Corps",
-       "L'Héritier's dragoons routed the Cossacks."),
+# ---------------------------------------------------------------- Mormant and Montereau, 17 and 18 February 1814, written
+
+MT_FR = {"label": "French Order of Battle, Montereau, 17/18 February 1814 (Nafziger Collection 814BDI)", "url": NAF + "814BDI.pdf"}
+MT_NOTE = ("After Nafziger's order of battle for the army on 17 and 18 February, from the French archives; Victor's corps is "
+           "as of 15 February and the cavalry corps as of 9 February.")
+MT_ONE_BN = "Each regiment had one or two battalions here; each is shown as its battalions."
+II_NO_ARTY = "Nafziger gives the corps no artillery on this return; it is left out."
+GERARD_ARTY = ("Nafziger gives Gérard's artillery as four foot companies; one is with each division here, the others in its "
+               "missing units.")
+
+
+def mt_force(id_, name, formation, summary, brigades, commander, notes, nation=FR):
+    return force(id_, nation, name, formation, "French", summary, brigades, command=[commander], notes=notes)
+
+
+def chateau(id_, summary):
+    return mt_force(id_, "Chateau's Division", "1st Division, II Corps (Victor)", summary,
+        [bde("fr-infantry-brigade", "Chateau's First Brigade",
+             regiments=[bn("fr-light-infantry", "1/24th Léger"), bn("fr-line-infantry", "1/19th Line"), bn("fr-line-infantry", "1/37th Line")]),
+         bde("fr-infantry-brigade", "Chateau's Second Brigade",
+             regiments=[bn("fr-line-infantry", "1/2nd Line"), bn("fr-line-infantry", "1/56th Line"), bn("fr-light-infantry", "1/11th Léger")])],
+        cmd("fr-div-cmd", "Gén. de Division Huguet-Chateau"),
+        [LIST_FR, MT_NOTE, MT_ONE_BN, "Nafziger names neither brigade's commander.", II_NO_ARTY,
+         "Two light regiments, where the list allows one in the division, show as a historical departure."])
+
+
+def duhesme(id_, summary):
+    return mt_force(id_, "Duhesme's Division", "2nd Division, II Corps (Victor)", summary,
+        [bde("fr-infantry-brigade", "Duhesme's First Brigade",
+             regiments=[bn("fr-light-infantry", "1/26th Léger"), bn_list("fr-line-infantry", "4th Line", ["1", "2"]),
+                        bn_list("fr-line-infantry", "18th Line", ["1", "2"])]),
+         bde("fr-infantry-brigade", "Duhesme's Second Brigade",
+             regiments=[bn_list("fr-line-infantry", "46th Line", ["1", "2"]), bn("fr-line-infantry", "1/72nd Line"), bn("fr-line-infantry", "1/93rd Line")])],
+        cmd("fr-div-cmd", "Gén. de Division Duhesme"),
+        [LIST_FR, MT_NOTE, MT_ONE_BN, "Nafziger names neither brigade's commander.", II_NO_ARTY])
+
+
+def dufour(id_, summary):
+    f = mt_force(id_, "Dufour's Division", "1st Division, Paris Reserve (Gérard)", summary,
+        [bde("fr-infantry-brigade", "Dufour's First Brigade",
+             regiments=[bn("fr-light-infantry", "3/12th Léger"), bn("fr-light-infantry", "6/29th Léger"),
+                        bn("fr-line-infantry", "8/32nd Line"), bn("fr-line-infantry", "6/58th Line")]),
+         bde("fr-infantry-brigade", "Dufour's Second Brigade",
+             regiments=[bn("fr-line-infantry", "3/135th Line"), bn("fr-light-infantry", "7/15th Léger"), bn("fr-light-infantry", "2/5th Léger")]),
+         bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "10/6th Foot Artillery")])],
+        cmd("fr-div-cmd", "Gén. de Division Dufour"),
+        [LIST_FR, MT_NOTE,
+         "Its battalions were from the depots of a dozen regiments, mostly one from each; each is shown as a regiment of its one "
+         "battalion. Nafziger names neither the division's commander nor its brigades'; Dufour is from Wikipedia's account.",
+         GERARD_ARTY,
+         "A brigade of four regiments, where the list takes three, and four light battalions, where it allows one light "
+         "regiment in the division, show as historical departures."])
+    f["missing"] = [{"name": "Two more foot companies", "reason": "The 24/9th and another company of Gérard's artillery, more than the list takes."}]
+    return f
+
+
+def hamelinaye(id_, summary):
+    return mt_force(id_, "Hamelinaye's Division", "2nd Division, Paris Reserve (Gérard)", summary,
+        [bde("fr-infantry-brigade", "Hamelinaye's First Brigade",
+             regiments=[bn("fr-line-infantry", "4/26th Line"), one("fr-line-infantry", "86th Line"), one("fr-line-infantry", "82nd Line")]),
+         bde("fr-infantry-brigade", "Hamelinaye's Second Brigade",
+             regiments=[one("fr-line-infantry", "121st Line"), bn("fr-line-infantry", "3/122nd Line"), bn("fr-line-infantry", "2/142nd Line")]),
+         bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "8/9th Foot Artillery")])],
+        cmd("fr-div-cmd", "Gén. de Division La Hamelinaye"),
+        [LIST_FR, MT_NOTE, MT_ONE_BN,
+         "Nafziger names neither the division's commander nor its brigades'; La Hamelinaye is from Wikipedia's account.",
+         GERARD_ARTY])
+
+
+MO_CHATEAU = chateau("mormant-chateau",
+    "Victor's first division, which advanced on Mormant at dawn on the right of the road and closed on Pahlen's infantry "
+    "as the cavalry broke it.")
+MO_DUHESME = duhesme("mormant-duhesme",
+    "Victor's second division, which advanced on the left of the road beside Chateau's.")
+MO_DUFOUR = dufour("mormant-dufour",
+    "Gérard's first division, which went on with him to Valjouan in the afternoon against Wrede's Bavarians and Austrians.")
+MO_HAMELINAYE = hamelinaye("mormant-hamelinaye",
+    "Gérard's second division, which stormed Villeneuve and Grand-Maison at Valjouan and routed Lamotte's Bavarians.")
+
+MO_V_CAVALRY = again(
+    RO_V_CAVALRY, "mormant-v-cavalry",
+    "Piré's chasseurs and hussars broke Pahlen's cavalry in the open, and Briche's dragoons rode into the Russian squares "
+    "and closed the road at Grandpuits; L'Héritier's dragoons routed the Cossacks.",
+    [LIST_FR, MT_NOTE,
+     "Piré's light division is Subervie's and Du Coëtlosquet's brigades, Briche's heavy division Montélégier's and Ludot's "
+     "dragoons, and L'Héritier's Lamotte's and Collaert's. Nafziger names L'Héritier as the corps' commander on 9 February; "
+     "Wikipedia's account has Milhaud leading it at Mormant, with L'Héritier's division under Kellermann.",
+     "The dragoon divisions were veterans brought from Spain that winter.",
+     "Its two horse batteries are from Nafziger's return of 25 January, one in its divisional artillery and one in its "
+     "reserve, as the list takes them.",
+     "Four heavy cavalry brigades, where the list takes one, and more heavy cavalry than its half of the army for corps "
+     "support, show as historical departures.", CAV_ONLY])
+for b in MO_V_CAVALRY["brigades"]:
+    if b["name"] == "Pacz's Brigade":
+        b["name"], b["commander"] = "Du Coëtlosquet's Brigade", {"name": "Gén. de Brigade Du Coëtlosquet"}
+
+MO_TRELLIARD = mt_force("mormant-trelliard", "Trelliard's Dragoons", "5th Heavy Cavalry Division, VI Cavalry Corps (Kellermann)",
+    "Dragoons brought from Spain, which rode with L'Héritier's division under Kellermann against Pahlen's horse and the Cossacks.",
+    [bde("fr-heavy-cavalry-brigade", "Ismert's Brigade", "Gén. de Brigade Ismert",
+         units=[u("fr-dragoon", "4th Dragoons"), u("fr-dragoon", "14th Dragoons"), u("fr-dragoon", "16th Dragoons")]),
+     bde("fr-heavy-cavalry-brigade", "Ormancy's Brigade", "Gén. de Brigade Ormancy",
+         units=[u("fr-dragoon", "17th Dragoons"), u("fr-dragoon", "24th Dragoons"), u("fr-dragoon", "27th Dragoons")])],
+    cmd("fr-div-cmd", "Gén. de Division Trelliard"),
+    [LIST_FR, MT_NOTE,
+     "Veteran regiments of the army in Spain, sent to Napoleon that winter.",
+     "What it did at Mormant is from Wikipedia's account, which doesn't say.",
+     "Two heavy cavalry brigades, where the list takes one, more heavy cavalry than its half of the army for corps "
+     "support, and a cavalry force with no infantry, show as historical departures. Play it alongside infantry, or agree "
+     "it with your opponent."])
+
+MORMANT = fought("mormant", [MT_FR, wiki("Battle of Mormant", "Battle_of_Mormant")],
+    [MO_CHATEAU, MO_DUHESME, MO_DUFOUR, MO_HAMELINAYE, MO_V_CAVALRY, MO_TRELLIARD], [
     fr("Bordesoulle's Detachment", "I Cavalry Corps",
        "About five hundred horse, which with Gérard's infantry mauled the Bavarians and Austrians at Valjouan."),
     fr("The Guard Artillery", "Drouot",
@@ -995,13 +1098,35 @@ MORMANT = armies("mormant", [wiki("Battle of Mormant", "Battle_of_Mormant")], [
         "Routed at Valjouan by Gérard's infantry and Bordesoulle's horse.")],
     alliances=(("Russian", "Austrian", "Bavarian"),))
 
-MONTEREAU = armies("montereau", [wiki("Battle of Montereau", "Battle_of_Montereau")], [
-    fr("Victor's Corps", "Huguet-Chateau's and Duhesme's divisions, II Corps",
-       "Its attacks on the heights stalled in the morning, and Napoleon gave its command to Gérard."),
-    fr("Gérard's Paris Reserve", "Dufour's and Hamelinaye's divisions",
-       "Led the afternoon's assaults up the heights under Gérard, taking Les Ormeaux and Surville."),
-    fr("Pajol's Cavalry", "Delort's, Grouvel's and Du Coëtlosquet's brigades",
-       "Charged down the Paris road as the allied line broke, and seized the bridges over the Seine and the Yonne before they could be blown."),
+MT_CHATEAU = chateau("montereau-chateau",
+    "Victor's first division, whose attacks on the heights before Montereau stalled in the morning; Napoleon gave Victor's "
+    "command to Gérard.")
+MT_DUHESME = duhesme("montereau-duhesme",
+    "Victor's second division, in the morning's failed attacks on the heights and then under Gérard in the afternoon's.")
+MT_DUFOUR = dufour("montereau-dufour",
+    "Gérard's first division, which led the afternoon's assaults up the heights and took Les Ormeaux and Surville.")
+MT_HAMELINAYE = hamelinaye("montereau-hamelinaye",
+    "Gérard's second division, beside Dufour's in the assaults on the heights.")
+
+MT_PAJOL = mt_force("montereau-pajol", "Pajol's Cavalry", "Provisional Cavalry Corps", 
+    "Detachments from the depots, which charged down the Paris road as the allied line broke and seized the bridges "
+    "over the Seine and the Yonne before they could be blown, cutting off the Württembergers' retreat.",
+    [bde("fr-light-cavalry-brigade", "Delort's Brigade", "Gén. de Brigade Delort",
+         units=[u("fr-chasseur-a-cheval", "Chasseur detachments (5th, 10th, 11th, 13th, 21st and 29th Chasseurs)")]),
+     bde("fr-light-cavalry-brigade", "Du Coëtlosquet's Brigade", "Gén. de Brigade Du Coëtlosquet",
+         units=[u("fr-hussar-regt", "Hussar detachments (2nd, 4th and 12th Hussars)")]),
+     bde("fr-heavy-cavalry-brigade", "Grouvel's Brigade", "Gén. de Brigade Grouvel",
+         units=[u("fr-dragoon", "Dragoon detachments (12th, 16th, 21st, 24th, 26th and 29th Dragoons)")])],
+    cmd("fr-div-cmd", "Gén. de Division Pajol"),
+    [LIST_FR, MT_NOTE,
+     "Each brigade was squadrons from the depots of many regiments, four to five hundred men; each is shown as one unit.",
+     "Some of the regiments' numbers are hard to read on Nafziger's return.",
+     "A cavalry force with no infantry shows as a historical departure. Play it alongside Gérard's or Victor's infantry, "
+     "or agree it with your opponent."])
+MT_PAJOL["missing"] = [{"name": "2nd Garde Nationale de Cherbourg", "reason": "A detachment of National Guard infantry with the corps."}]
+
+MONTEREAU = fought("montereau", [MT_FR, wiki("Battle of Montereau", "Battle_of_Montereau")],
+    [MT_CHATEAU, MT_DUHESME, MT_DUFOUR, MT_HAMELINAYE, MT_PAJOL], [
     fr("Pacthod's National Guards", "About three thousand National Guards, with eight hundred gendarmes",
        "Made no impression on the allied line."),
     fr("The Guard", "Friant's Old Guard and Ney's Young Guard divisions, Nansouty's Guard cavalry and the Guard artillery",

@@ -48,40 +48,685 @@
   "summary": "Turning back south after the Six Days, Napoleon's cavalry and Gérard's infantry caught Pahlen's Russian advance guard in the open at Mormant and cut it to pieces.",
   "sources": [
     {
+      "label": "French Order of Battle, Montereau, 17/18 February 1814 (Nafziger Collection 814BDI)",
+      "url": "https://www.napoleon-series.org/nafzigger/814BDI.pdf"
+    },
+    {
       "label": "Battle of Mormant (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Mormant"
     }
   ],
-  "forces": [],
-  "toCome": [
+  "forces": [
     {
+      "id": "mormant-chateau",
+      "nationId": "france",
+      "name": "Chateau's Division",
+      "formation": "1st Division, II Corps (Victor)",
       "side": "French",
-      "name": "Victor's Corps",
-      "formation": "Huguet-Chateau's 1st and Duhesme's 2nd Divisions, II Corps",
-      "summary": "Advanced on Mormant at dawn, Chateau's division on the right and Duhesme's on the left, and closed on Pahlen's infantry.",
-      "flag": "/flags/france.svg"
+      "summary": "Victor's first division, which advanced on Mormant at dawn on the right of the road and closed on Pahlen's infantry as the cavalry broke it.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for the army on 17 and 18 February, from the French archives; Victor's corps is as of 15 February and the cavalry corps as of 9 February.",
+        "Each regiment had one or two battalions here; each is shown as its battalions.",
+        "Nafziger names neither brigade's commander.",
+        "Nafziger gives the corps no artillery on this return; it is left out.",
+        "Two light regiments, where the list allows one in the division, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Huguet-Chateau",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chateau's First Brigade",
+          "regiments": [
+            {
+              "name": "24th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/24th Léger"
+                }
+              ]
+            },
+            {
+              "name": "19th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/19th Line"
+                }
+              ]
+            },
+            {
+              "name": "37th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/37th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chateau's Second Brigade",
+          "regiments": [
+            {
+              "name": "2nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/2nd Line"
+                }
+              ]
+            },
+            {
+              "name": "56th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/56th Line"
+                }
+              ]
+            },
+            {
+              "name": "11th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/11th Léger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
     },
     {
+      "id": "mormant-duhesme",
+      "nationId": "france",
+      "name": "Duhesme's Division",
+      "formation": "2nd Division, II Corps (Victor)",
       "side": "French",
-      "name": "Gérard's Paris Reserve",
-      "formation": "Dufour's 1st and Hamelinaye's 2nd Divisions",
-      "summary": "Went on to Valjouan in the afternoon, where Hamelinaye's division stormed Villeneuve and Grand-Maison and routed the Bavarians.",
-      "flag": "/flags/france.svg"
+      "summary": "Victor's second division, which advanced on the left of the road beside Chateau's.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for the army on 17 and 18 February, from the French archives; Victor's corps is as of 15 February and the cavalry corps as of 9 February.",
+        "Each regiment had one or two battalions here; each is shown as its battalions.",
+        "Nafziger names neither brigade's commander.",
+        "Nafziger gives the corps no artillery on this return; it is left out.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Duhesme",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Duhesme's First Brigade",
+          "regiments": [
+            {
+              "name": "26th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/26th Léger"
+                }
+              ]
+            },
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/4th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/4th Line"
+                }
+              ]
+            },
+            {
+              "name": "18th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/18th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/18th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Duhesme's Second Brigade",
+          "regiments": [
+            {
+              "name": "46th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/46th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/46th Line"
+                }
+              ]
+            },
+            {
+              "name": "72nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/72nd Line"
+                }
+              ]
+            },
+            {
+              "name": "93rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/93rd Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
     },
     {
+      "id": "mormant-dufour",
+      "nationId": "france",
+      "name": "Dufour's Division",
+      "formation": "1st Division, Paris Reserve (Gérard)",
       "side": "French",
+      "summary": "Gérard's first division, which went on with him to Valjouan in the afternoon against Wrede's Bavarians and Austrians.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for the army on 17 and 18 February, from the French archives; Victor's corps is as of 15 February and the cavalry corps as of 9 February.",
+        "Its battalions were from the depots of a dozen regiments, mostly one from each; each is shown as a regiment of its one battalion. Nafziger names neither the division's commander nor its brigades'; Dufour is from Wikipedia's account.",
+        "Nafziger gives Gérard's artillery as four foot companies; one is with each division here, the others in its missing units.",
+        "A brigade of four regiments, where the list takes three, and four light battalions, where it allows one light regiment in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Dufour",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Dufour's First Brigade",
+          "regiments": [
+            {
+              "name": "12th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/12th Léger"
+                }
+              ]
+            },
+            {
+              "name": "29th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "6/29th Léger"
+                }
+              ]
+            },
+            {
+              "name": "32nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "8/32nd Line"
+                }
+              ]
+            },
+            {
+              "name": "58th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/58th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Dufour's Second Brigade",
+          "regiments": [
+            {
+              "name": "135th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/135th Line"
+                }
+              ]
+            },
+            {
+              "name": "15th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "7/15th Léger"
+                }
+              ]
+            },
+            {
+              "name": "5th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/5th Léger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/6th Foot Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Two more foot companies",
+          "reason": "The 24/9th and another company of Gérard's artillery, more than the list takes."
+        }
+      ]
+    },
+    {
+      "id": "mormant-hamelinaye",
+      "nationId": "france",
+      "name": "Hamelinaye's Division",
+      "formation": "2nd Division, Paris Reserve (Gérard)",
+      "side": "French",
+      "summary": "Gérard's second division, which stormed Villeneuve and Grand-Maison at Valjouan and routed Lamotte's Bavarians.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for the army on 17 and 18 February, from the French archives; Victor's corps is as of 15 February and the cavalry corps as of 9 February.",
+        "Each regiment had one or two battalions here; each is shown as its battalions.",
+        "Nafziger names neither the division's commander nor its brigades'; La Hamelinaye is from Wikipedia's account.",
+        "Nafziger gives Gérard's artillery as four foot companies; one is with each division here, the others in its missing units.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division La Hamelinaye",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Hamelinaye's First Brigade",
+          "regiments": [
+            {
+              "name": "26th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/26th Line"
+                }
+              ]
+            },
+            {
+              "name": "86th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "86th Line"
+                }
+              ]
+            },
+            {
+              "name": "82nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "82nd Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Hamelinaye's Second Brigade",
+          "regiments": [
+            {
+              "name": "121st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "121st Line"
+                }
+              ]
+            },
+            {
+              "name": "122nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/122nd Line"
+                }
+              ]
+            },
+            {
+              "name": "142nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/142nd Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "8/9th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mormant-v-cavalry",
+      "nationId": "france",
       "name": "Milhaud's Cavalry",
-      "formation": "Piré's light and Briche's heavy divisions, V Cavalry Corps",
-      "summary": "Their charges broke Pahlen's cavalry; Briche's dragoons rode into the Russian squares and closed the road at Grandpuits.",
-      "flag": "/flags/france.svg"
+      "formation": "V Cavalry Corps, under Grouchy",
+      "side": "French",
+      "summary": "Piré's chasseurs and hussars broke Pahlen's cavalry in the open, and Briche's dragoons rode into the Russian squares and closed the road at Grandpuits; L'Héritier's dragoons routed the Cossacks.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for the army on 17 and 18 February, from the French archives; Victor's corps is as of 15 February and the cavalry corps as of 9 February.",
+        "Piré's light division is Subervie's and Du Coëtlosquet's brigades, Briche's heavy division Montélégier's and Ludot's dragoons, and L'Héritier's Lamotte's and Collaert's. Nafziger names L'Héritier as the corps' commander on 9 February; Wikipedia's account has Milhaud leading it at Mormant, with L'Héritier's division under Kellermann.",
+        "The dragoon divisions were veterans brought from Spain that winter.",
+        "Its two horse batteries are from Nafziger's return of 25 January, one in its divisional artillery and one in its reserve, as the list takes them.",
+        "Four heavy cavalry brigades, where the list takes one, and more heavy cavalry than its half of the army for corps support, show as historical departures.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Milhaud",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Subervie's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Subervie",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "3rd Hussars"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "26th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Du Coëtlosquet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Du Coëtlosquet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "14th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "27th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Montélégier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Montélégier",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "2nd Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "6th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "11th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Ludot's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ludot",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "13th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "15th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Lamotte's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lamotte",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "18th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "19th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "20th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Collaert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Collaert",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "22nd Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "25th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "4/2nd Horse Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Corps Artillery (Etchegoyen)",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "2/3rd Horse Artillery"
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": "mormant-trelliard",
+      "nationId": "france",
+      "name": "Trelliard's Dragoons",
+      "formation": "5th Heavy Cavalry Division, VI Cavalry Corps (Kellermann)",
       "side": "French",
-      "name": "Kellermann's Cavalry",
-      "formation": "L'Héritier's and Trelliard's dragoon divisions, VI Cavalry Corps",
-      "summary": "L'Héritier's dragoons routed the Cossacks.",
-      "flag": "/flags/france.svg"
-    },
+      "summary": "Dragoons brought from Spain, which rode with L'Héritier's division under Kellermann against Pahlen's horse and the Cossacks.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for the army on 17 and 18 February, from the French archives; Victor's corps is as of 15 February and the cavalry corps as of 9 February.",
+        "Veteran regiments of the army in Spain, sent to Napoleon that winter.",
+        "What it did at Mormant is from Wikipedia's account, which doesn't say.",
+        "Two heavy cavalry brigades, where the list takes one, more heavy cavalry than its half of the army for corps support, and a cavalry force with no infantry, show as historical departures. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Trelliard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Ismert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ismert",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "4th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "14th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "16th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Ormancy's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ormancy",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "17th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "24th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "27th Dragoons"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "toCome": [
     {
       "side": "French",
       "name": "Bordesoulle's Detachment",
