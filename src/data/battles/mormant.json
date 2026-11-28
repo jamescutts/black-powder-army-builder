@@ -58,6 +58,10 @@
     {
       "label": "Battle of La Rothière order of battle: the Coalition army (Wikipedia, after Nafziger)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re_order_of_battle"
+    },
+    {
+      "label": "Allied Army of Bohemia, January 1814 (Nafziger Collection 814ACF)",
+      "url": "https://www.napoleon-series.org/nafzigger/814ACF.pdf"
     }
   ],
   "forces": [
@@ -961,6 +965,121 @@
           ]
         }
       ]
+    },
+    {
+      "id": "mormant-pahlen",
+      "nationId": "russia",
+      "name": "Pahlen's Cavalry",
+      "formation": "Cavalry Division, VI Corps (Wittgenstein)",
+      "side": "Russian",
+      "summary": "Pahlen's horse, the advance guard of Wittgenstein's corps, caught in the open at Mormant; Rüdiger's cavalry was broken and the infantry battalions with it ridden over.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Army of Bohemia in January 1814; the corps was much weaker by the time of this battle.",
+        "Three light cavalry brigades, where the list allows one, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Count Pahlen II",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Rüdiger's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rüdiger",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Grodno Hussars (6 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Sumy Hussars (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Dechterev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Dechterev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Lubny Hussars (4 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Olviopol Hussars (4 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Lissanevich's Brigade",
+          "commander": {
+            "name": "Maj-Gen Lissanevich",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-uhlan",
+              "name": "Chuguev Uhlans (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Pahlen's Cossacks",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Vlasov #2 Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Ilovaisky #12 Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Rebrikov #3 Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Chernozubov #2 Cossacks"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "Yaroslavl Cossacks"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "missing": [
+        {
+          "name": "The advance guard's infantry",
+          "reason": "Single battalions of the 3rd, 4th and 14th Divisions, which are in Gorchakov's and Eugen's corps at other battles."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Peter_Graf_von_der_Pahlen.jpg/250px-Peter_Graf_von_der_Pahlen.jpg",
+        "title": "Count Peter von der Pahlen",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Peter_Graf_von_der_Pahlen.jpg",
+        "focus": "50% 18%"
+      }
     }
   ],
   "toCome": [
@@ -977,13 +1096,6 @@
       "formation": "Drouot",
       "summary": "Thirty-six guns pushed up into the front line; the Guard's infantry and cavalry were kept back.",
       "flag": "/flags/france.svg"
-    },
-    {
-      "side": "Russian",
-      "name": "Pahlen's Advance Guard",
-      "formation": "Wittgenstein's VI Corps, Army of Bohemia",
-      "summary": "Pahlen's hussars and Cossacks with a few battalions of the 3rd, 4th and 14th Divisions, caught in the open at Mormant; the cavalry was broken and the infantry's squares ridden over.",
-      "flag": "/flags/russia.svg"
     }
   ]
 }

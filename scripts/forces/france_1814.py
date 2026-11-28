@@ -3219,6 +3219,104 @@ LIMONEST["toCome"] = [t for t in LIMONEST["toCome"] if t["side"] == "French"] + 
        "Moved up from Les Chères to Dommartin.")]
 
 
+# ================================================================ Wittgenstein's (later Raevsky's) corps, from the Army of Bohemia in January
+
+BO_AL = {"label": "Allied Army of Bohemia, January 1814 (Nafziger Collection 814ACF)", "url": NAF + "814ACF.pdf"}
+WG_NOTE = "After Nafziger's return of the Army of Bohemia in January 1814; the corps was much weaker by the time of this battle."
+
+WG_PAHLEN = force(
+    "pahlen", RU, "Pahlen's Cavalry", "Cavalry Division, VI Corps (Wittgenstein)", "Russian",
+    "", 
+    [bde("ru-light-cavalry-brigade", "Rüdiger's Brigade", "Maj-Gen Rüdiger",
+         units=[u("ru-hussar", "Grodno Hussars (6 squadrons)"), u("ru-hussar", "Sumy Hussars (6 squadrons)")]),
+     bde("ru-light-cavalry-brigade", "Dechterev's Brigade", "Maj-Gen Dechterev",
+         units=[u("ru-hussar", "Lubny Hussars (4 squadrons)"), u("ru-hussar", "Olviopol Hussars (4 squadrons)")]),
+     bde("ru-light-cavalry-brigade", "Lissanevich's Brigade", "Maj-Gen Lissanevich", units=[u("ru-uhlan", "Chuguev Uhlans (6 squadrons)")]),
+     bde("ru-cossack-brigade", "Pahlen's Cossacks",
+         units=[u("ru-mounted-cossack", n) for n in ("Vlasov #2 Cossacks", "Ilovaisky #12 Cossacks", "Rebrikov #3 Cossacks", "Chernozubov #2 Cossacks")]
+               + [u("ru-irregular-mounted-cossack", "Yaroslavl Cossacks")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Count Pahlen II")],
+    notes=[LIST_RU, WG_NOTE,
+           "Three light cavalry brigades, where the list allows one, and cavalry with no infantry brigade to allow it, show as "
+           "historical departures."])
+
+WG_GORCHAKOV = force(
+    "gorchakov", RU, "Gorchakov's Corps", "I Infantry Corps, VI Corps (Wittgenstein)", "Russian", "",
+    [bde("ru-infantry-brigade", "Malivanov's Brigade", "Col Malivanov", units=[u("ru-light-arty", "Light Battery")],
+         regiments=[ru_regt("Perm Infantry", 2), ru_regt("Mogilev Infantry", 2)]),
+     bde("ru-infantry-brigade", "Nobokov's Brigade", "Maj-Gen Nobokov", regiments=[ru_regt("Sevsk Infantry", 2), ru_regt("Kaluga Infantry", 2)]),
+     bde("ru-jager-brigade", "Vlastov's Brigade", "Maj-Gen Vlastov", regiments=[ru_regt("23rd Jäger", 2, "ru-jager"), ru_regt("24th Jäger", 2, "ru-jager")]),
+     bde("ru-infantry-brigade", "Helfreich's Brigade", "Maj-Gen Helfreich", units=[u("ru-position-arty", "Position Battery")],
+         regiments=[ru_regt("Tula Infantry", 2), ru_regt("Navaginsk Infantry", 2)]),
+     bde("ru-infantry-brigade", "Lyalin's Brigade", "Maj-Gen Lyalin", regiments=[ru_regt("Tenginsk Infantry", 2), ru_regt("Estonia Infantry", 2)]),
+     bde("ru-jager-brigade", "Roth's Brigade", "Maj-Gen Roth", regiments=[ru_regt("25th Jäger", 2, "ru-jager"), ru_regt("26th Jäger", 2, "ru-jager")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Prince Gorchakov II")],
+    notes=[LIST_RU, WG_NOTE,
+           "Mezentsov's 5th Division (the first three brigades) and Helfreich's 14th (the last three), with a light and a position "
+           "battery. Nafziger's Craonne and Laon returns give the Tula and Navaginsk regiments to Vorontsov's corps in March.",
+           "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures."])
+
+WG_EUGEN = force(
+    "eugen", RU, "Eugen of Württemberg's Corps", "II Infantry Corps, VI Corps (Wittgenstein)", "Russian", "",
+    [bde("ru-infantry-brigade", "Wolff's Brigade", "Col Wolff", units=[u("ru-light-arty", "Light Battery")],
+         regiments=[ru_regt("Chernigov Infantry", 2), ru_regt("Murom Infantry", 2)]),
+     bde("ru-infantry-brigade", "Schelwinsky's Brigade", "Col Schelwinsky", regiments=[ru_regt("Reval Infantry", 2), ru_regt("Selenginsk Infantry", 1)]),
+     bde("ru-jager-brigade", "Kapustin's Brigade", "Col Kapustin", regiments=[ru_regt("20th Jäger", 2, "ru-jager"), ru_regt("21st Jäger", 1, "ru-jager")]),
+     bde("ru-infantry-brigade", "Rosen's Brigade", "Col Rosen", units=[u("ru-position-arty", "Position Battery")],
+         regiments=[ru_regt("Tobolsk Infantry", 2), ru_regt("Minsk Infantry", 1)]),
+     bde("ru-infantry-brigade", "Kursonov's Brigade", "Col Kursonov", regiments=[ru_regt("Kremenchug Infantry", 2), ru_regt("Volhynia Infantry", 2)]),
+     bde("ru-jager-brigade", "Pyshnitsky's Jäger", regiments=[ru_regt("4th Jäger", 2, "ru-jager"), ru_regt("34th Jäger", 1, "ru-jager")])],
+    command=[{"unit": "ru-cmd-eugene-wurttemberg"}],
+    notes=[LIST_RU, WG_NOTE,
+           "Prince Eugen of Württemberg, one of the list's named commanders, leads it. Shakhovsky's 3rd Division (the first three "
+           "brigades) and Pyshnitsky's 4th (the last three), with a light and a position battery; the 4th Division's Jäger "
+           "brigade has no named commander.",
+           "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures."])
+
+
+def wg_at(f, battle, summary, when=""):
+    g = again(f, f"{battle}-{f['id']}", summary, [f["notes"][0], WG_NOTE + when] + f["notes"][2:])
+    return g
+
+
+def add(b, forces, drop=()):
+    b["forces"] += forces
+    if BO_AL not in b["sources"]:
+        b["sources"].append(BO_AL)
+    b["toCome"] = [t for t in b.get("toCome", []) if t["name"] not in drop]
+
+
+add(BRIENNE, [wg_at(WG_PAHLEN, "brienne",
+    "Pahlen's three thousand horse, ahead of Wittgenstein's corps, with Shcherbatov's Cossacks and Jäger; they gave ground "
+    "before Grouchy across the plain, then rode with Vasilchikov's squadrons against Duhesme's flank.")], ["Pahlen's Cavalry"])
+add(MORMANT, [wg_at(WG_PAHLEN, "mormant",
+    "Pahlen's horse, the advance guard of Wittgenstein's corps, caught in the open at Mormant; Rüdiger's cavalry was broken "
+    "and the infantry battalions with it ridden over.")], ["Pahlen's Advance Guard"])
+MORMANT["forces"][-1]["missing"] = [{"name": "The advance guard's infantry", "reason": "Single battalions of the 3rd, 4th and 14th Divisions, which are in Gorchakov's and Eugen's corps at other battles."}]
+add(BAR_SUR_AUBE, [wg_at(f, "bar-sur-aube", summ) for f, summ in (
+    (WG_GORCHAKOV, "Gorchakov's infantry, in Wittgenstein's attack on Oudinot's position before Bar-sur-Aube; Wittgenstein was wounded leading it."),
+    (WG_EUGEN, "Eugen of Württemberg's infantry, in Wittgenstein's attack on Oudinot's position."),
+    (WG_PAHLEN, "Wittgenstein's cavalry, with the attack on Oudinot's corps."))], ["Wittgenstein's Corps"])
+add(LAUBRESSEL, [wg_at(f, "laubressel", summ) for f, summ in (
+    (WG_GORCHAKOV, "Gorchakov's infantry, which attacked Laubressel and took the plateau."),
+    (WG_EUGEN, "Eugen of Württemberg's infantry, which took Bouranton and attacked the slopes of Laubressel."),
+    (WG_PAHLEN, "Pahlen's horse, which raided the French artillery park at Thennelières."))], ["Wittgenstein's Corps"])
+add(ARCIS, [wg_at(f, "arcis-sur-aube", summ) for f, summ in (
+    (WG_GORCHAKOV, "Gorchakov's infantry of Raevsky's corps, part of the army that closed on Arcis for the second day."),
+    (WG_EUGEN, "Eugen of Württemberg's infantry of Raevsky's corps, with the army that closed on Arcis."),
+    (WG_PAHLEN, "Pahlen's horse, which Sébastiani's cavalry struck on the 21st."))], ["Raevsky's Corps"])
+for f in ARCIS["forces"][-3:]:
+    f["formation"] = f["formation"].replace("VI Corps (Wittgenstein)", "VI Corps (Raevsky)")
+add(FERE_CHAMPENOISE, [wg_at(WG_PAHLEN, "fere-champenoise",
+    "Pahlen's horse, with Ilovaisky's Cossacks, in the charges that drove Marmont's and Mortier's corps across the plain.")], ["Pahlen's Cavalry"])
+add(PARIS, [wg_at(f, "paris", summ) for f, summ in (
+    (WG_GORCHAKOV, "Gorchakov's infantry of Raevsky's corps, which took Montreuil."),
+    (WG_EUGEN, "Eugen of Württemberg's infantry of Raevsky's corps, in the attack on the heights of Romainville."),
+    (WG_PAHLEN, "Pahlen's horse, with Raevsky's corps on the allied centre."))], ["Raevsky's Corps"])
+for f in PARIS["forces"][-3:]:
+    f["formation"] = f["formation"].replace("VI Corps (Wittgenstein)", "VI Corps (Raevsky)")
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)

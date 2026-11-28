@@ -82,6 +82,10 @@
     {
       "label": "Battle of La Rothière order of battle: the Coalition army (Wikipedia, after Nafziger)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re_order_of_battle"
+    },
+    {
+      "label": "Allied Army of Bohemia, January 1814 (Nafziger Collection 814ACF)",
+      "url": "https://www.napoleon-series.org/nafzigger/814ACF.pdf"
     }
   ],
   "forces": [
@@ -2684,6 +2688,607 @@
           ]
         }
       ]
+    },
+    {
+      "id": "paris-gorchakov",
+      "nationId": "russia",
+      "name": "Gorchakov's Corps",
+      "formation": "I Infantry Corps, VI Corps (Raevsky)",
+      "side": "Russian",
+      "summary": "Gorchakov's infantry of Raevsky's corps, which took Montreuil.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Army of Bohemia in January 1814; the corps was much weaker by the time of this battle.",
+        "Mezentsov's 5th Division (the first three brigades) and Helfreich's 14th (the last three), with a light and a position battery. Nafziger's Craonne and Laon returns give the Tula and Navaginsk regiments to Vorontsov's corps in March.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Prince Gorchakov II",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Malivanov's Brigade",
+          "commander": {
+            "name": "Col Malivanov",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Perm Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Perm Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Perm Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Mogilev Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Mogilev Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Mogilev Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Nobokov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Nobokov",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Sevsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Sevsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Sevsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Kaluga Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Kaluga Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Kaluga Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Vlastov's Brigade",
+          "commander": {
+            "name": "Maj-Gen Vlastov",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "23rd Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/23rd Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/23rd Jäger"
+                }
+              ]
+            },
+            {
+              "name": "24th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/24th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/24th Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Helfreich's Brigade",
+          "commander": {
+            "name": "Maj-Gen Helfreich",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tula Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Tula Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Tula Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Navaginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Navaginsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Navaginsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Lyalin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Lyalin",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Tenginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Tenginsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Tenginsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Estonia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Estonia Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Estonia Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Roth's Brigade",
+          "commander": {
+            "name": "Maj-Gen Roth",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "25th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/25th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/25th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "26th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/26th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/26th Jäger"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-eugen",
+      "nationId": "russia",
+      "name": "Eugen of Württemberg's Corps",
+      "formation": "II Infantry Corps, VI Corps (Raevsky)",
+      "side": "Russian",
+      "summary": "Eugen of Württemberg's infantry of Raevsky's corps, in the attack on the heights of Romainville.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Army of Bohemia in January 1814; the corps was much weaker by the time of this battle.",
+        "Prince Eugen of Württemberg, one of the list's named commanders, leads it. Shakhovsky's 3rd Division (the first three brigades) and Pyshnitsky's 4th (the last three), with a light and a position battery; the 4th Division's Jäger brigade has no named commander.",
+        "Four infantry brigades and two Jäger brigades, where the list allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces, except the book's named Major General Eugene von Württemberg, with his own rating; but 3 of the 6 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-cmd-eugene-wurttemberg"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Wolff's Brigade",
+          "commander": {
+            "name": "Col Wolff",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-light-arty",
+              "name": "Light Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Chernigov Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Chernigov Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Chernigov Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Murom Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Murom Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Murom Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Schelwinsky's Brigade",
+          "commander": {
+            "name": "Col Schelwinsky",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Reval Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Reval Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Reval Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Selenginsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Selenginsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Kapustin's Brigade",
+          "commander": {
+            "name": "Col Kapustin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "20th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/20th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/20th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "21st Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "21st Jäger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Rosen's Brigade",
+          "commander": {
+            "name": "Col Rosen",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-position-arty",
+              "name": "Position Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Tobolsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Tobolsk Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Tobolsk Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Minsk Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "Minsk Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-infantry-brigade",
+          "name": "Kursonov's Brigade",
+          "commander": {
+            "name": "Col Kursonov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Kremenchug Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Kremenchug Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Kremenchug Infantry"
+                }
+              ]
+            },
+            {
+              "name": "Volhynia Infantry",
+              "units": [
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "I/Volhynia Infantry"
+                },
+                {
+                  "unit": "ru-inf-combined-grenadier",
+                  "name": "II/Volhynia Infantry"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-jager-brigade",
+          "name": "Pyshnitsky's Jäger",
+          "regiments": [
+            {
+              "name": "4th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "I/4th Jäger"
+                },
+                {
+                  "unit": "ru-jager",
+                  "name": "II/4th Jäger"
+                }
+              ]
+            },
+            {
+              "name": "34th Jäger",
+              "units": [
+                {
+                  "unit": "ru-jager",
+                  "name": "34th Jäger"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg/250px-Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+        "title": "Duke Eugen of Württemberg",
+        "artist": "Louis de Saint-Aubin",
+        "page": "https://commons.wikimedia.org/wiki/File:Eugen_von_W%C3%BCrttemberg_%281788%E2%80%931857%29_by_Louis_de_Saint-Aubin_-_Hermitage.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "paris-pahlen",
+      "nationId": "russia",
+      "name": "Pahlen's Cavalry",
+      "formation": "Cavalry Division, VI Corps (Raevsky)",
+      "side": "Russian",
+      "summary": "Pahlen's horse, with Raevsky's corps on the allied centre.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Nafziger's return of the Army of Bohemia in January 1814; the corps was much weaker by the time of this battle.",
+        "Three light cavalry brigades, where the list allows one, and cavalry with no infantry brigade to allow it, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 4 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Gen-Lt Count Pahlen II",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Rüdiger's Brigade",
+          "commander": {
+            "name": "Maj-Gen Rüdiger",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Grodno Hussars (6 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Sumy Hussars (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Dechterev's Brigade",
+          "commander": {
+            "name": "Maj-Gen Dechterev",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "ru-hussar",
+              "name": "Lubny Hussars (4 squadrons)"
+            },
+            {
+              "unit": "ru-hussar",
+              "name": "Olviopol Hussars (4 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-light-cavalry-brigade",
+          "name": "Lissanevich's Brigade",
+          "commander": {
+            "name": "Maj-Gen Lissanevich",
+            "variant": "Staff rating 7"
+          },
+          "units": [
+            {
+              "unit": "ru-uhlan",
+              "name": "Chuguev Uhlans (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "ru-cossack-brigade",
+          "name": "Pahlen's Cossacks",
+          "units": [
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Vlasov #2 Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Ilovaisky #12 Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Rebrikov #3 Cossacks"
+            },
+            {
+              "unit": "ru-mounted-cossack",
+              "name": "Chernozubov #2 Cossacks"
+            },
+            {
+              "unit": "ru-irregular-mounted-cossack",
+              "name": "Yaroslavl Cossacks"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 7"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Peter_Graf_von_der_Pahlen.jpg/250px-Peter_Graf_von_der_Pahlen.jpg",
+        "title": "Count Peter von der Pahlen",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Peter_Graf_von_der_Pahlen.jpg",
+        "focus": "50% 18%"
+      }
     }
   ],
   "toCome": [
@@ -2721,13 +3326,6 @@
       "formation": "Paris Guard (Marshal Moncey)",
       "summary": "Some six thousand National Guards on the heights from Montmartre round to the Bercy, with 780 gunners of veteran battalions and the École Polytechnique on the city walls, and naval gunners serving the batteries at Pré-Saint-Gervais.",
       "flag": "/flags/france.svg"
-    },
-    {
-      "side": "Russian",
-      "name": "Raevsky's Corps",
-      "formation": "VI Corps, Army of Bohemia",
-      "summary": "Took Montreuil.",
-      "flag": "/flags/russia.svg"
     },
     {
       "side": "Russian",
