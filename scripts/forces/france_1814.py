@@ -2779,6 +2779,109 @@ CRAONNE["sources"].append(CR_RU)
 CRAONNE["toCome"] = [t for t in CRAONNE["toCome"] if t["side"] == "French" or t["name"] == "Sacken's Corps"]
 
 
+# ================================================================ Laon: the Prussians
+
+LA_AL = {"label": "Allied Army, Battle of Laon, 9–10 March 1814 (Nafziger Collection 814CFJ)", "url": NAF + "814CFJ.pdf"}
+LA_AL_NOTE = "After Nafziger's order of battle for the allied army at Laon, from Damitz's history and the Prussian archives."
+PR_14 = ("Built from Albion Triumphant's Prussian 1815 list, the nearest to 1814: its Prussian Infantry Brigade is the "
+         "brigade of 1813 and 1814, the size of another army's division, with line, reserve and Landwehr battalions.")
+COMBINED = ("After a month's fighting several brigades had been put together, and their weakest battalions into combined "
+            "ones; each combined battalion is shown as one unit.")
+PR_CORPS_DEP = ("More cavalry, reserve artillery and Schützen than the list allows for the corps' brigades, regiments of more "
+                "battalions than it takes, and brigades without Landwehr, show as historical departures.")
+
+LA_YORCK = force(
+    "laon-yorck", PR15, "Yorck's Corps", "I Corps, Army of Silesia", "Prussian",
+    "Blücher's eastern wing, which with Kleist's corps fell on Marmont's bivouacs at Athies in the night of the 9th and "
+    "routed his corps, Jürgass's horse riding through the camps and taking forty-five guns.",
+    [pi("Combined 1st and 7th Brigade (Horn)", "Gen-Maj von Horn",
+        [("Combined Grenadiers (Leib and West Prussian)", [("M", "Combined Leib and West Prussian Grenadier Battalion")]),
+         ("Combined Grenadiers (Silesian and 1st East Prussian)", [("M", "Combined Silesian and East Prussian Grenadier Battalion")]),
+         ("Leib Infantry", [("M", "I/Leib Infantry"), ("M", "II/Leib Infantry"), ("F", "F/Leib Infantry")]),
+         ("Combined Landwehr", [("L", "Combined 5th and 13th Silesian Landwehr"), ("L", "Combined 4th and 15th Silesian Landwehr")])],
+        [u("pr15-schutzen", "East Prussian Jäger (2 companies)")]),
+     pi("Combined 2nd and 8th Brigade (Prince Wilhelm)", "Gen-Maj Prince Wilhelm of Prussia",
+        [("1st East Prussian Infantry", [("M", "I/1st East Prussian Infantry"), ("M", "II/1st East Prussian Infantry"), ("F", "F/1st East Prussian Infantry")]),
+         ("Brandenburg and 2nd East Prussian Infantry", [("M", "I/Brandenburg Infantry"), ("M", "II/Brandenburg Infantry"), ("M", "II/2nd East Prussian Infantry")]),
+         ("12th Reserve Infantry", [("M", "I/12th Reserve Infantry"), ("M", "II/12th Reserve Infantry"), ("F", "Combined Fusiliers (12th Reserve and Brandenburg)")]),
+         ("Silesian Landwehr", [("L", "6th Silesian Landwehr"), ("L", "14th Silesian Landwehr")])]),
+     pc("Reserve Cavalry (Jürgass)", "Gen-Maj von Jürgass",
+        [u("pr15-hussar", "Mecklenburg-Strelitz Hussars"), u("pr15-hussar", "Brandenburg Hussars"), u("pr15-hussar", "2nd Leib Hussars"),
+         u("pr15-dragoon", "Lithuanian Dragoons"), u("pr15-dragoon", "1st West Prussian Dragoons"), u("pr15-uhlan", "Brandenburg Uhlans"),
+         u("pr15-horse-arty", "6-pdr Horse Battery #1")]),
+     pc("Landwehr Cavalry", "", [u("pr15-mounted-landwehr", "East Prussian National Cavalry"), u("pr15-mounted-landwehr", "3rd, 4th and 5th Silesian Landwehr Cavalry"),
+                                 u("pr15-horse-arty", "6-pdr Horse Battery #2")], landwehr=True),
+     pres(u("pr15-heavy-arty", "12-pdr Foot Battery #1"), u("pr15-heavy-arty", "12-pdr Foot Battery #2"),
+          u("pr15-foot-arty", "6-pdr Foot Battery #1"), u("pr15-foot-arty", "6-pdr Foot Battery #2"), u("pr15-foot-arty", "6-pdr Foot Battery #3"),
+          u("pr15-foot-arty", "6-pdr Foot Battery #15"), u("pr15-horse-arty", "6-pdr Horse Battery #3"), u("pr15-horse-arty", "6-pdr Horse Battery #12"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Yorck")],
+    notes=[PR_14, LA_AL_NOTE, PR_WHOLE, PR_GROUPED, PR_SUB, COMBINED,
+           "Nafziger gives the 2nd East Prussian's two battalions as one regiment; the one here is grouped with the Brandenburg "
+           "regiment, as the list takes three regiments in a brigade. The East Prussian National Cavalry, a volunteer regiment, "
+           "and the Silesian Landwehr cavalry are the list's Mounted Landwehr.",
+           "Schmidt's corps artillery is the list's reserve, with a horse battery with each cavalry brigade.", PR_CORPS_DEP])
+
+LA_KLEIST = force(
+    "laon-kleist", PR15, "Kleist's Corps", "II Corps, Army of Silesia", "Prussian",
+    "Blücher's eastern wing with Yorck's, much reduced since Vauchamps, which joined the night attack on Marmont at Athies.",
+    [pi("9th Brigade (Klüx)", "Gen-Maj von Klüx",
+        [("1st West Prussian Infantry", [("M", "I/1st West Prussian Infantry"), ("M", "II/1st West Prussian Infantry"), ("F", "F/1st West Prussian Infantry")]),
+         ("6th Reserve Infantry", [("M", "I/6th Reserve Infantry"), ("F", "F/6th Reserve Infantry")])],
+        [u("pr15-schutzen", "Silesian Schützen (2 companies)")]),
+     pi("10th Brigade (Pirch I)", "Gen-Maj von Pirch I",
+        [("2nd West Prussian Infantry", [("M", "I/2nd West Prussian Infantry"), ("M", "II/2nd West Prussian Infantry"), ("F", "F/2nd West Prussian Infantry")]),
+         ("Combined Battalions", [("M", "Combined 2nd and 7th Infantry"), ("M", "Combined Battalion"), ("M", "Combined Battalion"), ("M", "Combined Battalion")])],
+        [u("pr15-schutzen", "Silesian Schützen (2 companies)")]),
+     pc("Reserve Cavalry (Zieten)", "Gen-Maj von Zieten",
+        [u("pr15-dragoon", "East Prussian Cuirassiers"), u("pr15-dragoon", "Brandenburg Cuirassiers"), u("pr15-dragoon", "Silesian Cuirassiers"),
+         u("pr15-dragoon", "Neumark Dragoons"), u("pr15-horse-arty", "6-pdr Horse Battery #7")]),
+     pc("Light Cavalry", "", [u("pr15-hussar", "1st Silesian Hussars"), u("pr15-hussar", "2nd Silesian Hussars"), u("pr15-uhlan", "Silesian Uhlans"),
+                              u("pr15-horse-arty", "6-pdr Horse Battery #8")]),
+     pc("Landwehr Cavalry", "", [u("pr15-mounted-landwehr", "Silesian National Cavalry (2 squadrons)"),
+                                 u("pr15-mounted-landwehr", "7th and 8th Silesian Landwehr Cavalry (2 squadrons)")], landwehr=True),
+     pres(u("pr15-heavy-arty", "12-pdr Foot Battery #3"), u("pr15-heavy-arty", "12-pdr Foot Battery #6"), u("pr15-foot-arty", "7-pdr Howitzer Battery #1"),
+          u("pr15-foot-arty", "6-pdr Foot Battery #7"), u("pr15-foot-arty", "6-pdr Foot Battery #8"), u("pr15-foot-arty", "6-pdr Foot Battery #9"),
+          u("pr15-horse-arty", "6-pdr Horse Battery #9"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Kleist")],
+    notes=[PR_14, LA_AL_NOTE, PR_WHOLE, PR_GROUPED, PR_SUB, COMBINED,
+           "Nafziger gives only the 9th and 10th Brigades; the 11th and 12th, broken at Vauchamps, are not on his return. The "
+           "6th Reserve's third battalion was at Erfurt. The 10th Brigade's three combined battalions aren't named.",
+           "Zieten's cuirassiers and dragoons are the list's Dragoons, its only heavy cavalry; his light regiments are a brigade "
+           "of their own here. The Silesian National Cavalry and Landwehr cavalry are the list's Mounted Landwehr.",
+           "Braun's corps artillery is the list's reserve, with a horse battery with each regular cavalry brigade.", PR_CORPS_DEP])
+
+LA_BULOW = force(
+    "laon-bulow", PR15, "Bülow's Corps", "III Corps, Army of the North", "Prussian",
+    "The corps that held the hill and town of Laon itself through both days, against Ney's and Mortier's attacks from the "
+    "south-west.",
+    [pi("3rd Brigade (Hesse-Homburg)", "Gen-Maj Prince of Hesse-Homburg",
+        [("3rd East Prussian Infantry", [("M", "I/3rd East Prussian Infantry"), ("M", "II/3rd East Prussian Infantry"), ("F", "F/3rd East Prussian Infantry")]),
+         ("4th Reserve Infantry", [("M", "I/4th Reserve Infantry"), ("M", "II/4th Reserve Infantry"), ("F", "F/4th Reserve Infantry")]),
+         ("2nd East Prussian Grenadiers", [("M", "2nd East Prussian Grenadier Battalion")])]),
+     pi("4th Brigade (Thümen)", "Gen-Maj von Thümen",
+        [("4th East Prussian Infantry", [("M", "I/4th East Prussian Infantry"), ("M", "II/4th East Prussian Infantry"), ("F", "F/4th East Prussian Infantry")]),
+         ("5th Reserve Infantry", [("M", "II/5th Reserve Infantry"), ("M", "III/5th Reserve Infantry")])]),
+     pi("6th Brigade (Krafft)", "Col von Krafft",
+        [("Colberg Infantry", [("M", "I/Colberg Infantry"), ("M", "II/Colberg Infantry"), ("F", "F/Colberg Infantry")]),
+         ("9th Reserve Infantry", [("M", "I/9th Reserve Infantry"), ("M", "II/9th Reserve Infantry"), ("F", "F/9th Reserve Infantry")]),
+         ("1st Neumark Landwehr", [("L", "I/1st Neumark Landwehr"), ("L", "III/1st Neumark Landwehr")])]),
+     pc("Reserve Cavalry (Oppen)", "Gen-Maj von Oppen",
+        [u("pr15-dragoon", "Queen's Dragoons (with volunteer Jäger)"), u("pr15-dragoon", "2nd West Prussian Dragoons"),
+         u("pr15-dragoon", "Prince Wilhelm Dragoons (2 squadrons)"), u("pr15-horse-arty", "6-pdr Horse Battery #11")]),
+     pc("Landwehr Cavalry", "", [u("pr15-mounted-landwehr", "1st Pomeranian Landwehr Cavalry"), u("pr15-mounted-landwehr", "2nd Pomeranian Landwehr Cavalry")], landwehr=True),
+     pres(u("pr15-heavy-arty", "12-pdr Foot Battery #4"), u("pr15-heavy-arty", "12-pdr Foot Battery #5"),
+          u("pr15-foot-arty", "6-pdr Foot Battery #5"), u("pr15-foot-arty", "6-pdr Foot Battery #6"), u("pr15-foot-arty", "6-pdr Foot Battery #19"))],
+    command=[cmd("pr15-corps-cmd", "Gen-Lt von Bülow")],
+    notes=[PR_14, LA_AL_NOTE, PR_WHOLE, PR_GROUPED, PR_SUB,
+           "Holzendorf's corps artillery is the list's reserve; the two Russian 12-pdr batteries with it are left out.",
+           "The 2nd East Prussian Grenadier Battalion has the list's Veteran upgrade.", PR_CORPS_DEP])
+LA_BULOW["missing"] = [{"name": "Two Russian 12-pdr batteries", "reason": "Russian guns with the corps, which a force from the Prussian list can't take."}]
+
+LAON["forces"] += [LA_YORCK, LA_KLEIST, LA_BULOW]
+LAON["sources"].append(LA_AL)
+LAON["toCome"] = [t for t in LAON["toCome"] if t["side"] != "Prussian"]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)
