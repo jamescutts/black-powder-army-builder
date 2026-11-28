@@ -124,9 +124,12 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
                 </Card>
               );
             }
-            // Each side with its number of forces and the flag of its first force's army
-            const sides = [...new Set(battle.forces.map((f) => f.side))].map((side) => {
+            // Each side with its number of forces and the flag of its first force's army; a side whose forces are all
+            // still to come, by its name and its first one's flag
+            const toCome = battle.toCome ?? [];
+            const sides = [...new Set([...battle.forces.map((f) => f.side), ...toCome.map((f) => f.side)])].map((side) => {
               const forces = battle.forces.filter((f) => f.side === side);
+              if (forces.length === 0) return { side, label: side, flag: toCome.find((f) => f.side === side)?.flag };
               const nation = getNation(forces[0].nationId);
               return { side, label: plural(forces.length, side, side), flag: forces[0].flag ?? nation?.flagFile ?? nation?.flagFiles?.[0] };
             });
@@ -171,9 +174,15 @@ export function CampaignBattles({ campaignId }: { campaignId: string }) {
                       </Group>
                     ))}
                   </Group>
-                  <Badge color="brown" variant="filled" size="lg">
-                    {plural(battle.forces.length, "force", "forces")}
-                  </Badge>
+                  {battle.forces.length > 0 ? (
+                    <Badge color="brown" variant="filled" size="lg">
+                      {plural(battle.forces.length, "force", "forces")}
+                    </Badge>
+                  ) : (
+                    <Badge color="gray" variant="light" size="lg">
+                      Forces to come
+                    </Badge>
+                  )}
                 </Group>
               </Card>
             );

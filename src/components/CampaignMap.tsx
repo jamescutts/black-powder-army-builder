@@ -533,7 +533,7 @@ export function CampaignMap({ campaignId, focus }: { campaignId: string; focus?:
           link.href = href;
           link.className = "map-pop-link";
           const n = battle.forces.length;
-          link.textContent = `Open the ${n} ${n === 1 ? "force" : "forces"} →`;
+          link.textContent = n > 0 ? `Open the ${n} ${n === 1 ? "force" : "forces"} →` : "See its armies →";
           link.addEventListener("click", (e) => {
             if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
             e.preventDefault();

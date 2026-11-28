@@ -1,0 +1,77 @@
+{
+  "id": "champaubert",
+  "name": "Champaubert",
+  "date": "10 February 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Combat_de_Champaubert%2C_10_f%C3%A9vrier_1814%2C_dans_la_soir%C3%A9e.jpg/960px-Combat_de_Champaubert%2C_10_f%C3%A9vrier_1814%2C_dans_la_soir%C3%A9e.jpg",
+    "title": "Champaubert, the evening of 10 February 1814",
+    "artist": "Jean-Antoine-Siméon Fort",
+    "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Champaubert,_10_f%C3%A9vrier_1814,_dans_la_soir%C3%A9e.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Olsufiev",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Olsufjev_1_Zahar_Dmitrievich.jpg/250px-Olsufjev_1_Zahar_Dmitrievich.jpg",
+        "title": "Zakhar Olsufiev",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Olsufjev_1_Zahar_Dmitrievich.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "summary": "The first of the Six Days: marching north through the mud, Napoleon fell on Olsufiev's isolated Russian corps strung out along Blücher's line of march, and destroyed it; Olsufiev was taken.",
+  "sources": [
+    {
+      "label": "Six Days' Campaign order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Six_Days%27_Campaign_order_of_battle"
+    },
+    {
+      "label": "Battle of Champaubert (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Champaubert"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Marmont's Corps",
+      "formation": "Lagrange's 3rd and Ricard's 8th Divisions, VI Corps",
+      "summary": "Led the march over the Petit Morin at Saint-Prix: Lagrange's division, Pelleport's brigade leading, took Bannay, and Ricard's took Baye and then fought for Champaubert itself.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Ney's Young Guard",
+      "formation": "Meunier's 1st and Curial's 2nd Young Guard Divisions",
+      "summary": "Came up while the fight went on, and their guns joined the bombardment of Bannay.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Doumerc's and Bordesoulle's Cavalry",
+      "formation": "I Cavalry Corps",
+      "summary": "Bordesoulle's cuirassiers rode round the Russian right and split Olsufiev's corps in two, while Doumerc's horse went round its left and closed the road at Fromentières.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Olsufiev's Corps",
+      "formation": "Udom's 9th and Kornilov's 15th Divisions, IX Infantry Corps, Army of Silesia",
+      "summary": "About four thousand men and twenty-four guns, strung out along Blücher's line of march. Most were killed or taken, Olsufiev and Poltoratsky among them; Kornilov brought some fifteen hundred away through the woods.",
+      "flag": "/flags/russia.svg"
+    }
+  ]
+}

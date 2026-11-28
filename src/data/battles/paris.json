@@ -1,0 +1,140 @@
+{
+  "id": "paris",
+  "name": "Paris",
+  "date": "30 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Battle_of_Paris_1814_by_Villevalde.jpg/960px-Battle_of_Paris_1814_by_Villevalde.jpg",
+    "title": "The Battle of Paris",
+    "artist": "Bogdan Willewalde",
+    "date": "1834",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Paris_1814_by_Villevalde.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "King Joseph, with Marshals Marmont and Mortier",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Joseph-Bonaparte.jpg/250px-Joseph-Bonaparte.jpg",
+        "title": "Joseph Bonaparte, King of Spain",
+        "artist": "François Gérard",
+        "page": "https://commons.wikimedia.org/wiki/File:Joseph-Bonaparte.jpg",
+        "focus": "50% 14%"
+      }
+    },
+    "Russian": {
+      "commander": "General Barclay de Tolly",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg/250px-Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "title": "Michael Barclay de Tolly",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Barclay_de_Tolly_%28Dawe%29_%28cropped%29.jpg",
+        "focus": "50% 16%",
+        "date": "1829"
+      }
+    },
+    "Prussian": {
+      "commander": "Field Marshal Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Württemberg": {
+      "commander": "The Crown Prince of Württemberg"
+    },
+    "Austrian": {
+      "commander": "Under the Crown Prince"
+    }
+  },
+  "alliances": [
+    [
+      "Russian",
+      "Prussian",
+      "Württemberg",
+      "Austrian"
+    ]
+  ],
+  "summary": "The allied armies attacked the heights of Belleville, Romainville and Montmartre, held by Marmont and Mortier with conscripts, National Guards and the pupils of the École Polytechnique; that night Marmont signed the capitulation, and the allies entered the city next day.",
+  "sources": [
+    {
+      "label": "Battle of Paris (1814) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Paris_(1814)"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Marmont's Wing",
+      "formation": "Arrighi's, Ricard's and Lagrange's divisions, Compans's, Ledru des Essarts's and Boyer de Rébeval's provisional divisions, and Bordesoulle's, Merlin's and Chastel's cavalry",
+      "summary": "Held the heights of Romainville and Belleville on the right; Arrighi's division held Bagnolet and Montreuil.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Mortier's Wing",
+      "formation": "Michel's Guard depots, Charpentier's and Curial's Young Guard and Christiani's Old Guard divisions, with Ornano's and Roussel d'Hurbal's cavalry",
+      "summary": "Held the plain on the left, from Pantin and Aubervilliers to La Villette and La Chapelle.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Moncey's National Guard",
+      "formation": "The National Guard of Paris",
+      "summary": "About twelve thousand men, under Marshal Moncey.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Raevsky's Corps",
+      "formation": "VI Corps, Army of Bohemia",
+      "summary": "Took Montreuil.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "The Russian Guard and Reserve",
+      "formation": "Barclay de Tolly",
+      "summary": "Yermolov's Guard came up late; the Russians took Bagnolet and Charonne.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Langeron's and Vorontsov's Corps",
+      "formation": "Army of Silesia",
+      "summary": "Came on by Le Bourget on Blücher's wing.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Prussian",
+      "name": "Yorck's and Kleist's Corps",
+      "formation": "I and II Corps, Army of Silesia",
+      "summary": "Took La Villette, Kleist's corps storming La Chapelle.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "The Prussian Guard",
+      "formation": "Army of Bohemia",
+      "summary": "Thrown back at Pantin, then took the French guns there.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Württemberg",
+      "name": "The Crown Prince of Württemberg's Corps",
+      "formation": "IV Corps, with the Austrian grenadiers",
+      "summary": "Took the bridges of Saint-Maur and Charenton, and Saint-Mandé.",
+      "flag": "/flags/wurttemberg.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Gyulai's Corps",
+      "formation": "III Corps, Army of Bohemia",
+      "summary": "Sent against the forest of Vincennes.",
+      "flag": "/flags/austria.svg"
+    }
+  ]
+}

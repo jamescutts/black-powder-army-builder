@@ -1,0 +1,163 @@
+{
+  "id": "arcis-sur-aube",
+  "name": "Arcis-sur-Aube",
+  "date": "20–21 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Battle_of_Arcis-sur-Aube._Austrian_battle_for_possession_of_the_village_of_Grand-Torcy_on_March_20%2C_1814.png/960px-Battle_of_Arcis-sur-Aube._Austrian_battle_for_possession_of_the_village_of_Grand-Torcy_on_March_20%2C_1814.png",
+    "title": "Austrians at Grand-Torcy, Arcis-sur-Aube",
+    "artist": "Richard Knötel",
+    "date": "1901",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Arcis-sur-Aube._Austrian_battle_for_possession_of_the_village_of_Grand-Torcy_on_March_20,_1814.png"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Bavarian": {
+      "commander": "General Wrede",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Karl_Philipp_Wrede.jpg/250px-Karl_Philipp_Wrede.jpg",
+        "title": "Karl Philipp von Wrede",
+        "artist": "Franz Hanfstaengl",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Philipp_Wrede.jpg",
+        "focus": "50% 20%",
+        "date": "1828"
+      }
+    },
+    "Austrian": {
+      "commander": "Field Marshal Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    "Württemberg": {
+      "commander": "Under Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    "Russian": {
+      "commander": "Under Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    "Prussian": {
+      "commander": "Under Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Bavarian",
+      "Austrian",
+      "Württemberg",
+      "Russian",
+      "Prussian"
+    ]
+  ],
+  "summary": "Expecting a rearguard, Napoleon found Schwarzenberg's whole army before Arcis; the Guard held on through two days, Napoleon riding over a smoking shell, before the French crossed back over the Aube and he turned east against the allies' communications.",
+  "sources": [
+    {
+      "label": "Battle of Arcis-sur-Aube (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Arcis-sur-Aube"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Ney's Infantry",
+      "formation": "Friant's Old Guard, Henrion's Provisional Guard, Janssens's and Boyer's divisions",
+      "summary": "Held Arcis and Torcy against Wrede's attacks; Janssens was wounded on the first day.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Sébastiani's Cavalry",
+      "formation": "Colbert's, Lefebvre-Desnouettes's and Letort's Guard divisions, Defrance's Gardes d'Honneur, and Exelmans's and Berckheim's divisions",
+      "summary": "Fought the allied horse on the plain: Kaisarov's Cossacks drove back Colbert and Exelmans on the 20th, and on the 21st Sébastiani struck Pahlen's cavalry.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Oudinot's Corps",
+      "formation": "Leval's division of the VII Corps, with Saint-Germain's II Cavalry Corps",
+      "summary": "Came up for the second day and covered the crossing back over the Aube; Leval was wounded in the retreat.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Bavarian",
+      "name": "Wrede's Corps",
+      "formation": "Bavarian and Austrian divisions with Choglokov's Russian grenadiers, V Corps, Army of Bohemia",
+      "summary": "Attacked Torcy-le-Grand again and again on the 20th.",
+      "flag": "/flags/bavaria.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Gyulai's Corps",
+      "formation": "III Corps, Army of Bohemia",
+      "summary": "Crenneville's and Fresnel's divisions and Nostitz's cavalry.",
+      "flag": "/flags/austria.svg"
+    },
+    {
+      "side": "Württemberg",
+      "name": "The Crown Prince of Württemberg's Corps",
+      "formation": "IV Corps, with Duka's Russian cuirassiers",
+      "summary": "Took part in the second day's attack.",
+      "flag": "/flags/wurttemberg.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Raevsky's Corps",
+      "formation": "Gorchakov's and Eugen of Württemberg's infantry corps and Pahlen's cavalry, VI Corps",
+      "summary": "Pahlen's cavalry was struck by Sébastiani's on the 21st.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Barclay's Reserve and the Russian Guard",
+      "formation": "Grenadiers, cuirassiers and the Guard infantry and cavalry",
+      "summary": "With Kaisarov's and Seslavin's Cossacks, who drove back Colbert's and Exelmans's horse on the 20th.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Prussian",
+      "name": "The Prussian Guard",
+      "formation": "Alvensleben's infantry and LaRoche's cavalry",
+      "summary": "In the allied reserve.",
+      "flag": "/flags/prussia.png"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "fere-champenoise",
+  "name": "Fère-Champenoise",
+  "date": "25 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/A.I.Dmitriev-Mamonov-Fere-Champenoise.jpg/960px-A.I.Dmitriev-Mamonov-Fere-Champenoise.jpg",
+    "title": "The Battle of Fère-Champenoise",
+    "artist": "Alexander Dmitriev-Mamonov",
+    "date": "before 1836",
+    "page": "https://commons.wikimedia.org/wiki/File:A.I.Dmitriev-Mamonov-Fere-Champenoise.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Marshal Marmont",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Marmont.jpg/250px-Marmont.jpg",
+        "title": "Marshal Auguste de Marmont",
+        "artist": "Jean-Baptiste Paulin Guérin",
+        "page": "https://commons.wikimedia.org/wiki/File:Marmont.jpg",
+        "focus": "50% 16%",
+        "date": "1837"
+      }
+    },
+    "Russian": {
+      "commander": "Tsar Alexander, with Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    "Austrian": {
+      "commander": "Under Schwarzenberg",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg/250px-Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "title": "Karl Philipp, Prince Schwarzenberg",
+        "artist": "Carl Hummel",
+        "page": "https://commons.wikimedia.org/wiki/File:Carl_Hummel%2C_F%C3%BCrst_Karl_Philipp_zu_Schwarzenberg_%28um_1816%29.jpg",
+        "focus": "50% 20%",
+        "date": "c. 1816"
+      }
+    },
+    "Württemberg": {
+      "commander": "The Crown Prince of Württemberg"
+    }
+  },
+  "alliances": [
+    [
+      "Russian",
+      "Austrian",
+      "Württemberg"
+    ]
+  ],
+  "summary": "The allied cavalry, marching on Paris, rode down Marmont's and Mortier's corps on the plain, and then Pacthod's and Amey's National Guard divisions, which formed squares and fought on until the Tsar himself rode in to accept their surrender.",
+  "sources": [
+    {
+      "label": "Battle of Fère-Champenoise (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_F%C3%A8re-Champenoise"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Marmont's Corps",
+      "formation": "Ricard's, Lagrange's and Arrighi's divisions, with Bordesoulle's and Merlin's cavalry",
+      "summary": "Caught on the open plain by the allied cavalry marching on Paris, and driven back with heavy loss; Bordesoulle's horse was routed.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Mortier's Corps",
+      "formation": "Christiani's, Curial's and Charpentier's Guard divisions, with Roussel d'Hurbal's and Ghigny's cavalry",
+      "summary": "Fell back beside Marmont's under the allied charges; Belliard's horse pushed Pahlen's aside.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Pacthod's National Guards",
+      "formation": "Pacthod's and Amey's divisions",
+      "summary": "About five thousand eight hundred men and sixteen guns, escorting a convoy, who formed squares and fought on until surrounded; Pacthod, Amey and their brigadiers were taken.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "The Russian Guard Cavalry",
+      "formation": "Grand Duke Constantine",
+      "summary": "The Guard cuirassiers and light cavalry, with Depreradovich's 1st Cuirassier Division, which made the decisive charge.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Pahlen's Cavalry",
+      "formation": "VI Corps, Army of Bohemia",
+      "summary": "Some three thousand five hundred horse, with Ilovaisky's Cossacks and Kretov's 2nd Cuirassier Division.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Korff's and Vasilchikov's Cavalry",
+      "formation": "Army of Silesia",
+      "summary": "The cavalry of Langeron's and Sacken's corps, with Seslavin's Cossacks.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Nostitz's Cuirassiers",
+      "formation": "Austrian Cuirassier Division",
+      "summary": "About three thousand seven hundred, with Desfours's brigade.",
+      "flag": "/flags/austria.svg"
+    },
+    {
+      "side": "Württemberg",
+      "name": "The Crown Prince of Württemberg's Cavalry",
+      "formation": "Prince Adam of Württemberg",
+      "summary": "About two thousand horse of the IV Corps.",
+      "flag": "/flags/wurttemberg.svg"
+    }
+  ]
+}

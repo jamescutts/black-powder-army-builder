@@ -1,0 +1,97 @@
+{
+  "id": "montereau",
+  "name": "Montereau",
+  "date": "18 February 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Bataille_de_Montereau%2C_18_f%C3%A9vrier_1814.jpg/960px-Bataille_de_Montereau%2C_18_f%C3%A9vrier_1814.jpg",
+    "title": "The Battle of Montereau",
+    "artist": "Jean-Charles Langlois",
+    "date": "1840",
+    "page": "https://commons.wikimedia.org/wiki/File:Bataille_de_Montereau,_18_f%C3%A9vrier_1814.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Württemberg": {
+      "commander": "The Crown Prince of Württemberg"
+    },
+    "Austrian": {
+      "commander": "Under the Crown Prince"
+    }
+  },
+  "alliances": [
+    [
+      "Württemberg",
+      "Austrian"
+    ]
+  ],
+  "summary": "Turning south on Schwarzenberg's army, Napoleon attacked the Crown Prince of Württemberg's corps holding the heights before Montereau; Pajol's cavalry charged down the road and over the bridges before they could be blown, and Napoleon himself laid guns, saying the ball that would kill him had not been cast.",
+  "sources": [
+    {
+      "label": "Battle of Montereau (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Montereau"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Victor's Corps",
+      "formation": "Huguet-Chateau's and Duhesme's divisions, II Corps",
+      "summary": "Its attacks on the heights stalled in the morning, and Napoleon gave its command to Gérard.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Gérard's Paris Reserve",
+      "formation": "Dufour's and Hamelinaye's divisions",
+      "summary": "Led the afternoon's assaults up the heights under Gérard, taking Les Ormeaux and Surville.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Pajol's Cavalry",
+      "formation": "Delort's, Grouvel's and Du Coëtlosquet's brigades",
+      "summary": "Charged down the Paris road as the allied line broke, and seized the bridges over the Seine and the Yonne before they could be blown.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Pacthod's National Guards",
+      "formation": "About three thousand National Guards, with eight hundred gendarmes",
+      "summary": "Made no impression on the allied line.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "The Guard",
+      "formation": "Friant's Old Guard and Ney's Young Guard divisions, Nansouty's Guard cavalry and the Guard artillery",
+      "summary": "The Guard's forty guns were decisive in the afternoon; how far its infantry fought is not clear.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Württemberg",
+      "name": "The Crown Prince of Württemberg's Corps",
+      "formation": "Koch's infantry and Prince Adam's cavalry divisions, IV Corps, Army of Bohemia",
+      "summary": "Held the heights on the north bank before Montereau, with four batteries, until the line broke in the afternoon; Jett's cavalry brigade covered the retreat.",
+      "flag": "/flags/wurttemberg.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Schäffer's Brigade",
+      "formation": "Attached to the IV Corps",
+      "summary": "Four Austrian infantry regiments and the Archduke Ferdinand Hussars, which held the park of Surville; Schäffer was taken.",
+      "flag": "/flags/austria.svg"
+    }
+  ]
+}

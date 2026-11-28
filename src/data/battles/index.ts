@@ -20,6 +20,22 @@ import grossbeeren from "./grossbeeren.json";
 import wartenburg from "./wartenburg.json";
 import hagelberg from "./hagelberg.json";
 import laRothiere from "./la-rothiere.json";
+import champaubert from "./champaubert.json";
+import montmirail from "./montmirail.json";
+import chateauThierry from "./chateau-thierry.json";
+import vauchamps from "./vauchamps.json";
+import mormant from "./mormant.json";
+import montereau from "./montereau.json";
+import barSurAube from "./bar-sur-aube.json";
+import laubressel from "./laubressel.json";
+import craonne from "./craonne.json";
+import laon from "./laon.json";
+import reims from "./reims.json";
+import limonest from "./limonest.json";
+import arcis from "./arcis-sur-aube.json";
+import fereChampenoise from "./fere-champenoise.json";
+import saintDizier from "./saint-dizier.json";
+import paris from "./paris.json";
 import haynau from "./haynau.json";
 import rippach from "./rippach.json";
 import luckau from "./luckau.json";
@@ -61,22 +77,11 @@ import {
   somosierra,
   toulouse,
   almeida,
-  arcis,
   badajoz,
-  chateauThierry,
-  champaubert,
-  craonne,
   dresden,
-  fereChampenoise,
   gohrde,
   kulm,
-  laon,
   leipzig,
-  montereau,
-  montmirail,
-  paris,
-  reims,
-  vauchamps,
   burgos,
   ciudadRodrigo,
   gerona,
@@ -95,12 +100,7 @@ import {
   torgau,
   hamburg,
   sehested,
-  mormant,
-  barSurAube,
-  laubressel,
   soissons,
-  limonest,
-  saintDizier,
   wertingen,
   haslach,
   elchingen,
@@ -433,23 +433,23 @@ const allBattles: HistoricalBattle[] = [
   // The Campaign in France
   brienne as HistoricalBattle,
   laRothiere as HistoricalBattle,
-  champaubert,
-  montmirail,
-  chateauThierry,
-  vauchamps,
-  mormant,
-  montereau,
-  barSurAube,
-  laubressel,
+  champaubert as HistoricalBattle,
+  montmirail as HistoricalBattle,
+  chateauThierry as HistoricalBattle,
+  vauchamps as HistoricalBattle,
+  mormant as HistoricalBattle,
+  montereau as HistoricalBattle,
+  barSurAube as HistoricalBattle,
+  laubressel as HistoricalBattle,
   soissons,
-  craonne,
-  laon,
-  reims,
-  limonest,
-  arcis,
-  fereChampenoise,
-  saintDizier,
-  paris,
+  craonne as HistoricalBattle,
+  laon as HistoricalBattle,
+  reims as HistoricalBattle,
+  limonest as HistoricalBattle,
+  arcis as HistoricalBattle,
+  fereChampenoise as HistoricalBattle,
+  saintDizier as HistoricalBattle,
+  paris as HistoricalBattle,
   // The Hundred Days
   ligny as HistoricalBattle,
   quatreBras as HistoricalBattle,
@@ -462,17 +462,18 @@ const schedule = allBattles.filter((b) => !HIDDEN_CAMPAIGNS.has(b.campaign));
 // Only the forces whose army lists this build shows (community lists can be switched off)
 const shown = schedule.map((b) => ({ ...b, forces: b.forces.filter((f) => getNation(f.nationId)) }));
 
-/** The battles with forces to open, each with a page of its own */
-export const battles: HistoricalBattle[] = shown.filter((b) => b.forces.length > 0);
+/** The battles with a page of their own: those with forces to open, and those whose forces are all still to come
+ *  but whose order of battle is written */
+export const battles: HistoricalBattle[] = shown.filter((b) => b.forces.length > 0 || (b.toCome?.length ?? 0) > 0);
 
 /** A campaign's battles in order, those still to come (with no forces yet) among them */
 export function scheduleIn(campaignId: string): HistoricalBattle[] {
   return shown.filter((b) => b.campaign === campaignId);
 }
 
-/** A battle still to come: in its campaign's list, without forces or a page yet */
+/** A battle still to come: in its campaign's list, without forces, forces to come or a page yet */
 export function isPlanned(battle: HistoricalBattle): boolean {
-  return battle.forces.length === 0;
+  return battle.forces.length === 0 && (battle.toCome?.length ?? 0) === 0;
 }
 
 export function getCampaign(id: string): HistoricalCampaign | undefined {

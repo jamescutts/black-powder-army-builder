@@ -45,7 +45,7 @@ export function GET() {
           t: b.name,
           d: `${c.name} · ${b.date}`,
           h: battleHref(b),
-          x: b.forces.map((f) => `${f.name} ${f.formation ?? ""}`).join(" "),
+          x: [...b.forces, ...(b.toCome ?? [])].map((f) => `${f.name} ${f.formation ?? ""}`).join(" "),
         })),
         // Battles still to come, so searching for one says so, on its campaign's page
         ...scheduleIn(c.id)

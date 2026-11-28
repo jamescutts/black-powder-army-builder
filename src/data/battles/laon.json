@@ -1,0 +1,104 @@
+{
+  "id": "laon",
+  "name": "Laon",
+  "date": "9–10 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Battle_of_Laon._The_Neumark_Dragoon_Regiment_ambushes_the_fleeing_enemy_near_Athies_on_the_night_of_March_9-10%2C_1814.png/960px-Battle_of_Laon._The_Neumark_Dragoon_Regiment_ambushes_the_fleeing_enemy_near_Athies_on_the_night_of_March_9-10%2C_1814.png",
+    "title": "The Neumark Dragoons at Athies, Laon",
+    "artist": "Richard Knötel",
+    "date": "1901",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Laon._The_Neumark_Dragoon_Regiment_ambushes_the_fleeing_enemy_near_Athies_on_the_night_of_March_9-10,_1814.png"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Prussian": {
+      "commander": "Field Marshal Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Russian": {
+      "commander": "Under Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Prussian",
+      "Russian"
+    ]
+  ],
+  "summary": "Blücher, with twice Napoleon's numbers, held the hill of Laon against him; on the night of the 9th Yorck and Kleist fell on Marmont's corps at Athies and routed it, and Napoleon, attacking again next day to no purpose, withdrew.",
+  "sources": [
+    {
+      "label": "Battle of Laon (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Laon"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Napoleon's Army",
+      "formation": "The Guard, with Ney's and Mortier's infantry",
+      "summary": "Some forty thousand men, who attacked the hill of Laon from the south-west on the 9th and again on the 10th without carrying it.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Marmont's Corps",
+      "formation": "VI Corps",
+      "summary": "About ten thousand men, coming up the Berry-au-Bac road to Athies. Yorck's and Kleist's Prussians fell on it in the night and routed it, taking forty-five guns; Fabvier's men and an Old Guard escort held open its road back.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Prussian",
+      "name": "Bülow's Corps",
+      "formation": "III Corps, Army of the North",
+      "summary": "Held Laon itself.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Prussian",
+      "name": "Yorck's and Kleist's Corps",
+      "formation": "I and II Corps, Army of Silesia",
+      "summary": "Held the eastern wing, and routed Marmont at Athies in the night of the 9th.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Russian",
+      "name": "Winzingerode's Corps",
+      "formation": "Army of the North",
+      "summary": "Covered Blücher's western wing.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Langeron's and Sacken's Corps",
+      "formation": "Army of Silesia",
+      "summary": "In reserve.",
+      "flag": "/flags/russia.svg"
+    }
+  ]
+}

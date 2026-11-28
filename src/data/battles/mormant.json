@@ -1,0 +1,121 @@
+{
+  "id": "mormant",
+  "name": "Mormant",
+  "date": "17 February 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Combat_de_Mormant_le_17_f%C3%A9vrier_1814%2C_%C3%A0_dix_heures_du_matin_%28d%C3%A9tail%29.jpg/960px-Combat_de_Mormant_le_17_f%C3%A9vrier_1814%2C_%C3%A0_dix_heures_du_matin_%28d%C3%A9tail%29.jpg",
+    "title": "Mormant, 17 February 1814, at Ten in the Morning",
+    "artist": "Jean-Antoine-Siméon Fort",
+    "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Mormant_le_17_f%C3%A9vrier_1814,_%C3%A0_dix_heures_du_matin_(d%C3%A9tail).jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Count Pahlen",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Peter_Graf_von_der_Pahlen.jpg/250px-Peter_Graf_von_der_Pahlen.jpg",
+        "title": "Count Peter von der Pahlen",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Peter_Graf_von_der_Pahlen.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Austrian": {
+      "commander": "FML Hardegg"
+    },
+    "Bavarian": {
+      "commander": "Gen-Lt Lamotte"
+    }
+  },
+  "alliances": [
+    [
+      "Russian",
+      "Austrian",
+      "Bavarian"
+    ]
+  ],
+  "summary": "Turning back south after the Six Days, Napoleon's cavalry and Gérard's infantry caught Pahlen's Russian advance guard in the open at Mormant and cut it to pieces.",
+  "sources": [
+    {
+      "label": "Battle of Mormant (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Mormant"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Victor's Corps",
+      "formation": "Huguet-Chateau's 1st and Duhesme's 2nd Divisions, II Corps",
+      "summary": "Advanced on Mormant at dawn, Chateau's division on the right and Duhesme's on the left, and closed on Pahlen's infantry.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Gérard's Paris Reserve",
+      "formation": "Dufour's 1st and Hamelinaye's 2nd Divisions",
+      "summary": "Went on to Valjouan in the afternoon, where Hamelinaye's division stormed Villeneuve and Grand-Maison and routed the Bavarians.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Milhaud's Cavalry",
+      "formation": "Piré's light and Briche's heavy divisions, V Cavalry Corps",
+      "summary": "Their charges broke Pahlen's cavalry; Briche's dragoons rode into the Russian squares and closed the road at Grandpuits.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Kellermann's Cavalry",
+      "formation": "L'Héritier's and Trelliard's dragoon divisions, VI Cavalry Corps",
+      "summary": "L'Héritier's dragoons routed the Cossacks.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Bordesoulle's Detachment",
+      "formation": "I Cavalry Corps",
+      "summary": "About five hundred horse, which with Gérard's infantry mauled the Bavarians and Austrians at Valjouan.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "The Guard Artillery",
+      "formation": "Drouot",
+      "summary": "Thirty-six guns pushed up into the front line; the Guard's infantry and cavalry were kept back.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Pahlen's Advance Guard",
+      "formation": "Wittgenstein's VI Corps, Army of Bohemia",
+      "summary": "Pahlen's hussars and Cossacks with a few battalions of the 3rd, 4th and 14th Divisions, caught in the open at Mormant; the cavalry was broken and the infantry's squares ridden over.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Hardegg's Division",
+      "formation": "1st Austrian Division, Wrede's V Corps",
+      "summary": "Fell back through Nangis and was mauled at Valjouan.",
+      "flag": "/flags/austria.svg"
+    },
+    {
+      "side": "Bavarian",
+      "name": "Lamotte's Division",
+      "formation": "3rd Bavarian Division, Wrede's V Corps",
+      "summary": "Routed at Valjouan by Gérard's infantry and Bordesoulle's horse.",
+      "flag": "/flags/bavaria.svg"
+    }
+  ]
+}

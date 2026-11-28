@@ -1,0 +1,97 @@
+{
+  "id": "reims",
+  "name": "Reims",
+  "date": "13 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Szeptycki_capture_des_Prussiens_%C3%A0_Reims_%281814%29.jpg/960px-Szeptycki_capture_des_Prussiens_%C3%A0_Reims_%281814%29.jpg",
+    "title": "Szeptycki's Lancers Taking Prussians at Reims",
+    "artist": "Juliusz Kossak",
+    "date": "1882",
+    "page": "https://commons.wikimedia.org/wiki/File:Szeptycki_capture_des_Prussiens_%C3%A0_Reims_(1814).jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Count Saint-Priest",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Saint-Priest_E_F.jpg/250px-Saint-Priest_E_F.jpg",
+        "title": "Guillaume Emmanuel de Saint-Priest",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Saint-Priest_E_F.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Maj von Jagow"
+    }
+  },
+  "alliances": [
+    [
+      "Russian",
+      "Prussian"
+    ]
+  ],
+  "summary": "Napoleon fell on Saint-Priest's Russian and Prussian corps, which had taken Reims; Saint-Priest, an émigré Frenchman in Russian service, was mortally wounded, and the city was retaken.",
+  "sources": [
+    {
+      "label": "Battle of Reims (1814) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Reims_(1814)"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Marmont's Corps",
+      "formation": "Ricard's division and Pelleport's brigade, VI Corps, with Bordesoulle's I Cavalry Corps",
+      "summary": "Led the march on Reims, catching Prussian cavalry at Rosnay and Jagow's Landwehr at Ormes; Ricard's division took the Sainte-Geneviève heights before the town and failed to storm the Soissons gate.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Defrance's Gardes d'Honneur",
+      "formation": "Cavalry Division, with Piquet's and Ségur's brigades",
+      "summary": "Led the assault with Ricard's division; Ségur's brigade, with the 3rd Gardes d'Honneur, was trapped and largely destroyed.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Sébastiani's Guard Cavalry",
+      "formation": "Exelmans's and Colbert's divisions",
+      "summary": "Advanced on Ricard's flanks; Exelmans's division crossed the Vesle and led the pursuit.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "The Guard and Ney's Infantry",
+      "formation": "Friant's Old Guard and Boyer de Rébeval's divisions",
+      "summary": "Came up in the afternoon and were held back; sixteen of the Guard's guns blew in the Soissons gate.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Saint-Priest's Corps",
+      "formation": "Gurgalov's 11th and Pillar's 17th Divisions, with Emmanuel's dragoons, VIII Infantry Corps",
+      "summary": "About eight thousand men, who had taken Reims the day before. Saint-Priest was mortally wounded by a shell, and the corps fell back through the town in disorder.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Prussian",
+      "name": "Jagow's Brigade",
+      "formation": "Pomeranian, Kurmark and Neumark Landwehr",
+      "summary": "About five thousand men, surprised and broken at Gueux, Muizon and Thillois.",
+      "flag": "/flags/prussia.png"
+    }
+  ]
+}

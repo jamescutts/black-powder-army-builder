@@ -1,0 +1,139 @@
+{
+  "id": "laubressel",
+  "name": "Laubressel",
+  "date": "3 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Combat_de_Laubressel_Jean_Charles_Langlois_%28d%C3%A9tail%29.jpg/960px-Combat_de_Laubressel_Jean_Charles_Langlois_%28d%C3%A9tail%29.jpg",
+    "title": "The Fight at Laubressel",
+    "artist": "Jean-Charles Langlois",
+    "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Laubressel_Jean_Charles_Langlois_(d%C3%A9tail).jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Marshal Macdonald",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/MacDonald_par_Antoine_Jean_Gros.jpg/250px-MacDonald_par_Antoine_Jean_Gros.jpg",
+        "title": "Marshal Jacques Macdonald",
+        "artist": "Antoine-Jean Gros",
+        "page": "https://commons.wikimedia.org/wiki/File:MacDonald_par_Antoine_Jean_Gros.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Russian": {
+      "commander": "General Wittgenstein",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Pjotr-christianowitsch-wittgenstein.jpg/250px-Pjotr-christianowitsch-wittgenstein.jpg",
+        "title": "Count Peter Wittgenstein",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Pjotr-christianowitsch-wittgenstein.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Bavarian": {
+      "commander": "General Wrede",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Karl_Philipp_Wrede.jpg/250px-Karl_Philipp_Wrede.jpg",
+        "title": "Karl Philipp von Wrede",
+        "artist": "Franz Hanfstaengl",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Philipp_Wrede.jpg",
+        "focus": "50% 20%",
+        "date": "1828"
+      }
+    },
+    "Württemberg": {
+      "commander": "The Crown Prince of Württemberg"
+    },
+    "Austrian": {
+      "commander": "FZM Gyulai"
+    }
+  },
+  "alliances": [
+    [
+      "Russian",
+      "Bavarian",
+      "Württemberg",
+      "Austrian"
+    ]
+  ],
+  "summary": "The allied army of Bohemia followed up its success at Bar-sur-Aube and beat Macdonald and Oudinot again at Laubressel, east of Troyes.",
+  "sources": [
+    {
+      "label": "Battle of Laubressel (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Laubressel"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Gérard's Corps",
+      "formation": "Duhesme's and Hamelinaye's divisions and Jarry's brigade, II Corps",
+      "summary": "Held the bridge of La Guillotière, where Duhesme lost two guns and four hundred men; Bellair's brigade of Hamelinaye's division was routed, and Gérard drew back into Troyes.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Oudinot's Corps",
+      "formation": "Rothembourg's, Leval's, Chassé's and Pacthod's divisions, VII Corps",
+      "summary": "Rothembourg's Young Guard held the plateau of Laubressel until Wittgenstein's Russians came round its flank.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Macdonald's Corps",
+      "formation": "Albert's, Brayer's and Amey's divisions, XI Corps (Molitor)",
+      "summary": "Fell back on Troyes without being pressed.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Saint-Germain's Cavalry",
+      "formation": "Maurin's and Delort's divisions, II Cavalry Corps",
+      "summary": "Maurin's horse retook most of the artillery park Pahlen's cavalry had overrun at Thennelières.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Milhaud's Cavalry",
+      "formation": "Piré's, Briche's and L'Héritier's divisions, V Cavalry Corps",
+      "summary": "Fell back with the infantry without being engaged.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Kellermann's Cavalry",
+      "formation": "Jacquinot's and Trelliard's divisions, VI Cavalry Corps",
+      "summary": "Trelliard's dragoons counter-attacked the Russians at Thennelières; Jacquinot's division stampeded at La Chapelle-Saint-Luc.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Wittgenstein's Corps",
+      "formation": "Gorchakov's I and Eugen of Württemberg's II Infantry Corps and Pahlen's cavalry, VI Corps",
+      "summary": "About fourteen thousand men, who took Bouranton and the Laubressel plateau while Pahlen's horse raided the French artillery park.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Bavarian",
+      "name": "Wrede's Corps",
+      "formation": "Three Bavarian and two Austrian divisions, V Corps",
+      "summary": "About twenty thousand men, whose guns opened the attack; they pushed on towards Troyes.",
+      "flag": "/flags/bavaria.svg"
+    },
+    {
+      "side": "Württemberg",
+      "name": "The Crown Prince of Württemberg's Corps",
+      "formation": "Koch's and Döring's divisions and Prince Adam's cavalry, IV Corps",
+      "summary": "About fifteen thousand men on the allied left, who followed Macdonald towards Sens.",
+      "flag": "/flags/wurttemberg.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Gyulai's Corps",
+      "formation": "Crenneville's, Fresnel's and Hohenlohe's divisions, III Corps",
+      "summary": "About ten thousand Austrians, who attacked at Silvarouvres.",
+      "flag": "/flags/austria.svg"
+    }
+  ]
+}

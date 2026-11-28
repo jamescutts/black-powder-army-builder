@@ -1,0 +1,101 @@
+{
+  "id": "craonne",
+  "name": "Craonne",
+  "date": "7 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Jung_theodore.jpg/960px-Jung_theodore.jpg",
+    "title": "The Battle of Craonne",
+    "artist": "Théodore Jung",
+    "page": "https://commons.wikimedia.org/wiki/File:Jung_theodore.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Count Vorontsov",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Dawe%2C_Mikhail_Vorontsov.jpg/250px-Dawe%2C_Mikhail_Vorontsov.jpg",
+        "title": "Mikhail Vorontsov",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Dawe%2C_Mikhail_Vorontsov.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "summary": "Napoleon attacked Vorontsov's and Sacken's Russians on the narrow Chemin des Dames plateau; Ney and Victor's Young Guard came on in costly frontal assaults until the Russians withdrew in good order, one of the bloodiest days of the campaign.",
+  "sources": [
+    {
+      "label": "Battle of Craonne (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Craonne"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Ney's Infantry",
+      "formation": "Boyer's 9th Division and Meunier's and Curial's Young Guard Divisions",
+      "summary": "Attacked the Russian left up onto the plateau from Vauclair; Boyer's division took Ailles by three, and Curial's pressed the last attack with Friant's.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Victor's Young Guard",
+      "formation": "Charpentier's 7th and Boyer de Rébeval's 2nd Provisional Young Guard Divisions",
+      "summary": "Boyer de Rébeval's conscripts took the Bois Marion at noon and were thrown out by a dragoon charge; Charpentier's took the Bois des Quatre Heures. Victor was wounded early in the day.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Grouchy's Cavalry",
+      "formation": "Laferrière's 3rd Guard Cavalry and Roussel d'Hurbal's 6th Heavy Divisions",
+      "summary": "Charged the Russian centre and its battery and were driven back by the squares; Grouchy and Laferrière were wounded.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Nansouty's Cavalry",
+      "formation": "Exelmans's division and Pac's brigade",
+      "summary": "Went up the Paissy spur on the Russian right and drove back Benckendorff's horse until the guns stopped them.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Mortier's Reserve",
+      "formation": "Friant's and Christiani's Old Guard, Poret de Morvan's Young Guard and Colbert's Guard Cavalry Divisions",
+      "summary": "Friant's division came up behind the final attack; Colbert's horse, sent to the left, was driven off by the Russian hussars. Drouot massed eighty-eight guns against the Russian lines.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Vorontsov's Corps",
+      "formation": "Vuich's 24th, Laptev's 21st, Khovansky's 12th and Zheltukhin's 13th Divisions, with Krasovsky's Jäger and Benckendorff's brigade",
+      "summary": "Held the narrow plateau of the Chemin des Dames in lines across it through the day, and withdrew in good order.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Vasilchikov's Cavalry",
+      "formation": "Lanskoy's 2nd Hussar and Panchulidzev's 3rd Dragoon Divisions, with Karpov's Cossacks",
+      "summary": "Charged Colbert's and Grouchy's squadrons; Lanskoy was mortally wounded.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Sacken's Corps",
+      "formation": "Army of Silesia",
+      "summary": "Its cavalry and Nikitin's guns covered Vorontsov's retreat; its infantry was too far off to fight.",
+      "flag": "/flags/russia.svg"
+    }
+  ]
+}

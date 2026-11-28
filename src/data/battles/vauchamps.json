@@ -1,0 +1,116 @@
+{
+  "id": "vauchamps",
+  "name": "Vauchamps",
+  "date": "14 February 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Battle_of_Etoges_%28Vauchamps%29%2C_14_January_1813_%28R._Knotel%29.jpg/960px-Battle_of_Etoges_%28Vauchamps%29%2C_14_January_1813_%28R._Knotel%29.jpg",
+    "title": "Prussian infantry at Étoges, during Vauchamps",
+    "artist": "Richard Knötel",
+    "date": "1901",
+    "page": "https://commons.wikimedia.org/wiki/File:Battle_of_Etoges_(Vauchamps),_14_January_1813_(R._Knotel).jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Prussian": {
+      "commander": "Field Marshal Blücher",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bl%C3%BCcher_%28nach_Gebauer%29.jpg/250px-Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "title": "Gebhard Leberecht von Blücher",
+        "artist": "after Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Bl%C3%BCcher_%28nach_Gebauer%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Kaptsevich",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Kaptzevich_Petr.jpg/250px-Kaptzevich_Petr.jpg",
+        "title": "Pyotr Kaptsevich",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Kaptzevich_Petr.jpg",
+        "focus": "50% 18%",
+        "date": "1821"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Prussian",
+      "Russian"
+    ]
+  ],
+  "summary": "Blücher, coming on with Kleist's and Kapzevich's corps against Marmont, met Napoleon instead; Grouchy's cavalry rode round the retreating allied squares, which fought their way back through the French horsemen to Étoges with heavy loss.",
+  "sources": [
+    {
+      "label": "Six Days' Campaign order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Six_Days%27_Campaign_order_of_battle"
+    },
+    {
+      "label": "Battle of Vauchamps (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Vauchamps"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Marmont's Corps",
+      "formation": "Lagrange's 3rd and Ricard's 8th Divisions, VI Corps",
+      "summary": "Ricard's division attacked Zieten's brigade in Vauchamps; Lagrange's followed the retreat and took Étoges after dark.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Grouchy's Cavalry",
+      "formation": "Saint-Germain's, Doumerc's and Bordesoulle's divisions",
+      "summary": "Rode round Zieten's flank and cut off his retreat, then charged again and again at the allied squares as they fell back along the road; Doumerc's cuirassiers surprised Udom's Russians at Étoges in the night.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Nansouty's Guard Cavalry",
+      "formation": "Lefebvre-Desnouettes's and Laferrière's Guard Cavalry Divisions",
+      "summary": "Pressed Zieten's left as Grouchy came round his right.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Friant's Old Guard",
+      "formation": "1st Old Guard Division",
+      "summary": "Marched up behind the cavalry; only one battalion came into action.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Prussian",
+      "name": "Kleist's Corps",
+      "formation": "Pirch's 10th, Zieten's 11th and Prince August's 12th Brigades, II Corps, Army of Silesia",
+      "summary": "About thirteen thousand five hundred men. Zieten's brigade, caught at Vauchamps, lost two thousand prisoners, and the corps fought its way back to Étoges in squares through the French cavalry; Kleist and Prince August were nearly taken.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Russian",
+      "name": "Kaptsevich's Corps",
+      "formation": "X Infantry Corps, Army of Silesia",
+      "summary": "About six thousand five hundred men, falling back beside Kleist's; Urusov's 8th Division, left at Étoges, was taken there with eight guns.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Udom's Division",
+      "formation": "9th Division, IX Infantry Corps",
+      "summary": "The fifteen hundred who had got away from Champaubert, surprised at Étoges after dark by Doumerc's cuirassiers.",
+      "flag": "/flags/russia.svg"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "saint-dizier",
+  "name": "Saint-Dizier",
+  "date": "26 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier%2C_1814.jpg/960px-Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier%2C_1814.jpg",
+    "title": "The Guard Dragoons' Charge at Saint-Dizier",
+    "artist": "Édouard Detaille",
+    "page": "https://commons.wikimedia.org/wiki/File:Charge_des_dragons_de_l%27Imp%C3%A9ratrice_%C3%A0_Saint-Dizier,_1814.jpg",
+    "focus": "50% 30%"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Winzingerode",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Vinzingerode.jpg/250px-Vinzingerode.jpg",
+        "title": "Ferdinand von Wintzingerode",
+        "artist": "workshop of George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Vinzingerode.jpg",
+        "focus": "50% 18%"
+      }
+    }
+  },
+  "summary": "Napoleon, striking at the allies' communications, turned on Winzingerode's cavalry screen at Saint-Dizier and routed it, then learned it had been sent to deceive him while the allied armies marched on Paris: his last victory.",
+  "sources": [
+    {
+      "label": "Battle of Saint-Dizier (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Saint-Dizier"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Napoleon's Army",
+      "formation": "Napoleon, with Macdonald",
+      "summary": "Turned back on the allies' communications; its cavalry, ten thousand or more, crossed the Marne and drove Winzingerode's horse away, taking eighteen guns.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Winzingerode's Cavalry",
+      "formation": "Army of the North",
+      "summary": "Some eight to ten thousand men, mostly cavalry, left to screen the allies' march on Paris. Driven out of Saint-Dizier, it fell back on Bar-le-Duc that evening.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Tettenborn's Advance Guard",
+      "formation": "Hussars and Cossacks",
+      "summary": "About a thousand horse, which charged the massed French cavalry and got away to Vitry.",
+      "flag": "/flags/russia.svg"
+    }
+  ]
+}

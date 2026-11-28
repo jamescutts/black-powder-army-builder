@@ -1,0 +1,96 @@
+{
+  "id": "chateau-thierry",
+  "name": "Château-Thierry",
+  "date": "12 February 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Combat_de_Ch%C3%A2teau-Thierry%2C_12_f%C3%A9vrier_1814%2C_%C3%A0_3_ou_4_heures_du_soir.jpg/960px-Combat_de_Ch%C3%A2teau-Thierry%2C_12_f%C3%A9vrier_1814%2C_%C3%A0_3_ou_4_heures_du_soir.jpg",
+    "title": "Château-Thierry, 12 February 1814",
+    "artist": "Jean-Antoine-Siméon Fort",
+    "date": "1842–43",
+    "page": "https://commons.wikimedia.org/wiki/File:Combat_de_Ch%C3%A2teau-Thierry,_12_f%C3%A9vrier_1814,_%C3%A0_3_ou_4_heures_du_soir.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Lt von Yorck",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Baron Sacken",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Fabian_Wilhelm_von_Osten-Sacken.jpg/250px-Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "title": "Fabian von der Osten-Sacken",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "focus": "50% 18%",
+        "date": "1820"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Prussian",
+      "Russian"
+    ]
+  ],
+  "summary": "Pursuing Sacken and Yorck to the Marne, the Guard cavalry and Ney's infantry caught their rearguards before Château-Thierry and drove them over the river, but the bridge was burnt behind them.",
+  "sources": [
+    {
+      "label": "Six Days' Campaign order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Six_Days%27_Campaign_order_of_battle"
+    },
+    {
+      "label": "Battle of Château-Thierry (1814) (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Ch%C3%A2teau-Thierry_(1814)"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Mortier's Infantry",
+      "formation": "Christiani's 2nd Old Guard and Meunier's 1st Young Guard Divisions",
+      "summary": "Pressed the allied rearguard up the high road towards the Marne, Christiani's six Old Guard battalions attacking head on; two battalions of the Chasseurs à Pied and Guyot's duty squadrons fell on Katzler at Viffort.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "The Guard Cavalry",
+      "formation": "Colbert's, Lefebvre-Desnouettes's and Laferrière's Guard divisions, with Defrance's Gardes d'Honneur",
+      "summary": "Laferrière's Guard dragoons and Defrance's Gardes d'Honneur rode at the Prussian columns, and Letort's squadrons broke Horn's brigade before the town and took its guns.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Prussian",
+      "name": "Yorck's Corps",
+      "formation": "Katzler's advance guard, Horn's 7th Brigade and Jürgass's reserve cavalry, I Corps, Army of Silesia",
+      "summary": "Covered Sacken's crossing of the Marne. Horn's brigade was broken before Château-Thierry, and two East Prussian battalions were cut off and taken.",
+      "flag": "/flags/prussia.png"
+    },
+    {
+      "side": "Russian",
+      "name": "Sacken's Corps",
+      "formation": "Army of Silesia",
+      "summary": "Already beaten at Montmirail, it got back over the Marne at Château-Thierry; Heidenreich's brigade was overrun and mostly taken.",
+      "flag": "/flags/russia.svg"
+    }
+  ]
+}

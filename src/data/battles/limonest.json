@@ -1,0 +1,93 @@
+{
+  "id": "limonest",
+  "name": "Limonest",
+  "date": "20 March 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Charge_du_13e_r%C3%A9giment_de_cuirassiers_%C3%A0_la_bataille_de_Limonest%2C_20_mars_1814.png/960px-Charge_du_13e_r%C3%A9giment_de_cuirassiers_%C3%A0_la_bataille_de_Limonest%2C_20_mars_1814.png",
+    "title": "An Episode of the Battle of Limonest",
+    "artist": "Théodore Jung",
+    "page": "https://commons.wikimedia.org/wiki/File:Charge_du_13e_r%C3%A9giment_de_cuirassiers_%C3%A0_la_bataille_de_Limonest,_20_mars_1814.png"
+  },
+  "sides": {
+    "French": {
+      "commander": "Marshal Augereau"
+    },
+    "Austrian": {
+      "commander": "Prince Philipp of Hesse-Homburg"
+    }
+  },
+  "summary": "Augereau's army, which had held the Rhône valley against the Austrians since January, was beaten before Lyon at Limonest by the Prince of Hesse-Homburg, and Lyon fell next day.",
+  "sources": [
+    {
+      "label": "Battle of Limonest (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Limonest"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Musnier's Division",
+      "formation": "1st Division, Army of the Rhône (Augereau)",
+      "summary": "Withdrew when the Austrians got behind it.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Pannetier's Division",
+      "formation": "2nd Division, Army of the Rhône",
+      "summary": "Held Dardilly, and gave it up when its flank was turned, losing its six guns.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Bardet's Division",
+      "formation": "3rd Division, Army of the Rhône",
+      "summary": "On the east bank of the Saône; it covered the retreat.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Digeon's Division",
+      "formation": "Cavalry Division, Army of the Rhône",
+      "summary": "The army's cavalry, with infantry besides, covering Grange-Blanche and the withdrawal.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Rémond's Reserve",
+      "formation": "Army of the Rhône",
+      "summary": "National Guards, three and a half thousand with nine guns.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Bianchi's Column",
+      "formation": "Army of the South",
+      "summary": "Advanced to La Tour-de-Salvagny; Wied-Runkel's division attacked Pannetier's and drove back Beurmann's brigade.",
+      "flag": "/flags/austria.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Wimpffen's Column",
+      "formation": "Army of the South",
+      "summary": "Pressed on Limonest; Mumb's brigade took the heights, Mont Thoux among them.",
+      "flag": "/flags/austria.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Hardegg's Column",
+      "formation": "Army of the South",
+      "summary": "On the east bank of the Saône; its hussars charged near Caluire and were driven off.",
+      "flag": "/flags/austria.svg"
+    },
+    {
+      "side": "Austrian",
+      "name": "Hesse-Homburg's Reserve",
+      "formation": "Army of the South",
+      "summary": "Hessians and Austrians, moving up from Les Chères to Dommartin.",
+      "flag": "/flags/austria.svg"
+    }
+  ]
+}

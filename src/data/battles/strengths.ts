@@ -229,6 +229,78 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "Allied", men: "78,000–123,000", guns: "200" },
   ],
 
+  // The Six Days, and on: infobox figures. Where Wikipedia leaves a row unlabelled (Montmirail, Château-Thierry,
+  // Vauchamps), the first figure is taken as the French, as the page lays the sides out
+  champaubert: [
+    { label: "French", men: "5,000–15,000" },
+    { label: "Russian", men: "3,700–5,000", guns: "24" },
+  ],
+  montmirail: [
+    { label: "French", men: "13,000–20,000" },
+    { label: "Russian", men: "18,000", guns: "90" },
+    { label: "Prussian", men: "9,000", guns: "16" },
+  ],
+  "chateau-thierry": [
+    { label: "French", men: "20,000" },
+    { label: "Prussian", men: "17,000" },
+    { label: "Russian", men: "17,000" },
+  ],
+  vauchamps: [
+    { label: "French", men: "10,000" },
+    { label: "Prussian and Russian", men: "21,500" },
+  ],
+  mormant: [
+    { label: "French", men: "18,000–20,000" },
+    { label: "Allied", men: "4,300–9,000" },
+  ],
+  montereau: [
+    { label: "French", men: "30,000", guns: "70–80" },
+    { label: "Württemberg and Austrian", men: "15,000–18,000", guns: "40" },
+  ],
+  "bar-sur-aube": [
+    { label: "French", men: "18,000–22,000", guns: "60" },
+    { label: "Allied", men: "27,000–30,000", guns: "70" },
+  ],
+  laubressel: [
+    { label: "French", men: "20,000" },
+    { label: "Allied", men: "32,000" },
+  ],
+  craonne: [
+    { label: "French", men: "30,000", guns: "102" },
+    { label: "Russian", men: "22,300", guns: "96" },
+  ],
+  laon: [
+    { label: "French", men: "47,000–54,000", guns: "260" },
+    { label: "Allied", men: "85,000–100,000", guns: "480" },
+  ],
+  // The fight of the 13th, when Napoleon retook the city
+  reims: [
+    { label: "French", men: "8,000–10,000" },
+    { label: "Russian", men: "7,800–9,000" },
+    { label: "Prussian", men: "4,000–5,600" },
+  ],
+  // Nafziger's figures, the higher of the two the page gives
+  limonest: [
+    { label: "French", men: "20,000–24,269", guns: "33–36" },
+    { label: "Austrian and Hessian", men: "30,000–56,000", guns: "124" },
+  ],
+  "arcis-sur-aube": [
+    { label: "French", men: "28,000–30,000", extra: "18,000 on the first day" },
+    { label: "Allied", men: "74,000–107,900" },
+  ],
+  "fere-champenoise": [
+    { label: "French", men: "16,600–21,000", guns: "84" },
+    { label: "Allied", men: "26,400–28,000", guns: "128" },
+  ],
+  "saint-dizier": [
+    { label: "French", men: "10,000–34,000" },
+    { label: "Russian", men: "8,000–10,000", extra: "mostly cavalry" },
+  ],
+  paris: [
+    { label: "French", men: "37,526–42,000" },
+    { label: "Allied", men: "100,000–145,500" },
+  ],
+
   // The Hundred Days
   ligny: [
     { label: "French", men: "62,882", guns: "210" },

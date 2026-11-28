@@ -1,0 +1,124 @@
+{
+  "id": "montmirail",
+  "name": "Montmirail",
+  "date": "11 February 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/The_battle_of_Montmirail_in_1814_%281822%29%2C_by_Horace_Vernet.jpg/960px-The_battle_of_Montmirail_in_1814_%281822%29%2C_by_Horace_Vernet.jpg",
+    "title": "The Battle of Montmirail",
+    "artist": "Horace Vernet",
+    "date": "1822",
+    "page": "https://commons.wikimedia.org/wiki/File:The_battle_of_Montmirail_in_1814_(1822),_by_Horace_Vernet.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Napoleon",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg/250px-Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "title": "Napoleon at Fontainebleau",
+        "artist": "Paul Delaroche",
+        "page": "https://commons.wikimedia.org/wiki/File:Napoleon_at_Fontainebleau%2C_31_March_1814_%28by_Hippolyte_Paul_Delaroche%29.jpg",
+        "focus": "50% 22%",
+        "date": "1840"
+      }
+    },
+    "Russian": {
+      "commander": "Gen-Lt Baron Sacken",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Fabian_Wilhelm_von_Osten-Sacken.jpg/250px-Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "title": "Fabian von der Osten-Sacken",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Fabian_Wilhelm_von_Osten-Sacken.jpg",
+        "focus": "50% 18%",
+        "date": "1820"
+      }
+    },
+    "Prussian": {
+      "commander": "Gen-Lt von Yorck",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ludwig_Yorck_von_Wartenburg.jpg/250px-Ludwig_Yorck_von_Wartenburg.jpg",
+        "title": "Ludwig Yorck von Wartenburg",
+        "artist": "Ernst Gebauer",
+        "page": "https://commons.wikimedia.org/wiki/File:Ludwig_Yorck_von_Wartenburg.jpg",
+        "focus": "50% 28%",
+        "date": "1835"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Russian",
+      "Prussian"
+    ]
+  ],
+  "summary": "Napoleon turned west on Sacken's Russians and the leading brigades of Yorck's Prussians, coming back towards Montmirail; Ney and the Guard stormed the farm of Marchais, and the allies were driven north towards the Marne.",
+  "sources": [
+    {
+      "label": "Six Days' Campaign order of battle (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Six_Days%27_Campaign_order_of_battle"
+    },
+    {
+      "label": "Battle of Montmirail (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Montmirail"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Ricard's Division",
+      "formation": "8th Division, VI Corps (Marmont)",
+      "summary": "Fought for the farm of Marchais through the day, with two battalions holding the Bois de Bailly.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Ney's Young Guard",
+      "formation": "Meunier's 1st and Curial's 2nd Young Guard Divisions",
+      "summary": "Meunier's division joined the fight for Marchais; Curial's stood behind Ricard's.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "The Old Guard",
+      "formation": "Friant's 1st and Michel's 2nd Old Guard Divisions",
+      "summary": "Friant's battalions attacked towards the farm of Haute-Épine, and Michel's counter-attacked when they came up in the afternoon; Michel was wounded. Two battalions of the Chasseurs à Pied under Marshal Lefebvre took L'Épine-aux-Bois.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Nansouty's Guard Cavalry",
+      "formation": "Colbert's, Lefebvre-Desnouettes's and Laferrière's Guard Cavalry Divisions, with Guyot's squadrons",
+      "summary": "Colbert's and Laferrière's divisions charged down the high road, Guyot's squadrons turned the Russian left, and the Polish lancers pushed on to Viels-Maisons.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Defrance's Gardes d'Honneur",
+      "formation": "Cavalry Division, Imperial Guard",
+      "summary": "Charged west of the ravine, cutting up the Russian brigades caught there; seven of its squadrons supported Friant's right.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Sacken's Corps",
+      "formation": "Shcherbatov's VI and Lieven's XI Infantry Corps, Army of Silesia",
+      "summary": "Some eighteen thousand men and eighty to ninety guns, marching back east to join Blücher. It took Marchais and lost it, and was driven north towards Château-Thierry.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Vasilchikov's Cavalry",
+      "formation": "Lanskoy's 2nd Hussar and Panchulidzev's 3rd Dragoon Divisions, with Karpov's Cossacks",
+      "summary": "Counter-attacked Nansouty's horse and covered Sacken's retreat.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Prussian",
+      "name": "Yorck's Corps",
+      "formation": "Pirch's 1st and Horn's 7th Brigades, I Corps, Army of Silesia",
+      "summary": "Reached Viffort late in the day. Pirch's brigade attacked the Bois de Bailly and was thrown back, Pirch wounded.",
+      "flag": "/flags/prussia.png"
+    }
+  ]
+}

@@ -21,7 +21,10 @@ export async function generateMetadata({
   if (!campaign || !battle) return {};
   return pageMeta({
     title: `${battle.name}, ${battle.date} · Historical forces`,
-    description: `Black Powder forces as they fought at ${battle.name} (${battle.date}), in ${campaign.name}: ${battle.forces.map((f) => f.name).slice(0, 6).join(", ")}${battle.forces.length > 6 ? " and more" : ""}. Open one as a list of your own.`,
+    description:
+      battle.forces.length > 0
+        ? `Black Powder forces as they fought at ${battle.name} (${battle.date}), in ${campaign.name}: ${battle.forces.map((f) => f.name).slice(0, 6).join(", ")}${battle.forces.length > 6 ? " and more" : ""}. Open one as a list of your own.`
+        : `The armies at ${battle.name} (${battle.date}), in ${campaign.name}: ${(battle.toCome ?? []).map((f) => f.name).slice(0, 6).join(", ")}${(battle.toCome ?? []).length > 6 ? " and more" : ""}. Their Black Powder forces are still to come.`,
     path: battleHref(battle),
   });
 }

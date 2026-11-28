@@ -1,0 +1,91 @@
+{
+  "id": "bar-sur-aube",
+  "name": "Bar-sur-Aube",
+  "date": "27 February 1814",
+  "campaign": "france-1814",
+  "art": {
+    "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Johann_Lorenz_Rugendas_Schlacht_bei_Bar-sur-Aube.jpg/960px-Johann_Lorenz_Rugendas_Schlacht_bei_Bar-sur-Aube.jpg",
+    "title": "The Battle of Bar-sur-Aube",
+    "artist": "Johann Lorenz Rugendas",
+    "date": "c. 1814",
+    "page": "https://commons.wikimedia.org/wiki/File:Johann_Lorenz_Rugendas_Schlacht_bei_Bar-sur-Aube.jpg"
+  },
+  "sides": {
+    "French": {
+      "commander": "Marshal Oudinot",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg/250px-Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg",
+        "title": "Marshal Nicolas Oudinot",
+        "artist": "Robert Lefèvre",
+        "page": "https://commons.wikimedia.org/wiki/File:Nicolas_Charles_Oudinot_by_Robert_Lef%C3%A8vre.jpg",
+        "focus": "50% 16%",
+        "date": "1811"
+      }
+    },
+    "Russian": {
+      "commander": "General Wittgenstein",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Pjotr-christianowitsch-wittgenstein.jpg/250px-Pjotr-christianowitsch-wittgenstein.jpg",
+        "title": "Count Peter Wittgenstein",
+        "artist": "George Dawe",
+        "page": "https://commons.wikimedia.org/wiki/File:Pjotr-christianowitsch-wittgenstein.jpg",
+        "focus": "50% 18%"
+      }
+    },
+    "Bavarian": {
+      "commander": "General Wrede",
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Karl_Philipp_Wrede.jpg/250px-Karl_Philipp_Wrede.jpg",
+        "title": "Karl Philipp von Wrede",
+        "artist": "Franz Hanfstaengl",
+        "page": "https://commons.wikimedia.org/wiki/File:Karl_Philipp_Wrede.jpg",
+        "focus": "50% 20%",
+        "date": "1828"
+      }
+    }
+  },
+  "alliances": [
+    [
+      "Russian",
+      "Bavarian"
+    ]
+  ],
+  "summary": "Schwarzenberg turned on Oudinot's and Macdonald's rearguard at Bar-sur-Aube and drove it back over the Aube; Wittgenstein was wounded leading the attack.",
+  "sources": [
+    {
+      "label": "Battle of Bar-sur-Aube (Wikipedia)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Bar-sur-Aube"
+    }
+  ],
+  "forces": [],
+  "toCome": [
+    {
+      "side": "French",
+      "name": "Oudinot's Corps",
+      "formation": "VII Corps",
+      "summary": "Holding the heights before Bar-sur-Aube for Macdonald's army, it took the weight of Schwarzenberg's attack and was driven back over the Aube.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Gérard's Corps",
+      "formation": "II Corps",
+      "summary": "With Oudinot's before the town; much of Macdonald's army, and most of its guns, were on the far side of the Aube and could take no part.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "Russian",
+      "name": "Wittgenstein's Corps",
+      "formation": "VI Corps, Army of Bohemia",
+      "summary": "Attacked Oudinot's position; Wittgenstein was wounded leading it.",
+      "flag": "/flags/russia.svg"
+    },
+    {
+      "side": "Bavarian",
+      "name": "Wrede's Corps",
+      "formation": "V Corps, Army of Bohemia",
+      "summary": "Wrede's Bavarians and Austrians, who came on against Oudinot beside Wittgenstein's Russians.",
+      "flag": "/flags/bavaria.svg"
+    }
+  ]
+}
