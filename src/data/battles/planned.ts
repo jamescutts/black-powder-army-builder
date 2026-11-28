@@ -155,8 +155,6 @@ export const leipzig = planned("leipzig", "Leipzig", "16–19 October 1813", L,
 
 const F = "france-1814";
 
-export const laRothiere = planned("la-rothiere", "La Rothière", "1 February 1814", F,
-  "Blücher, joined by much of Schwarzenberg's army, attacked Napoleon's outnumbered army at La Rothière in the snow; the village changed hands until nightfall, and the French drew off to Troyes, the first defeat on French soil.");
 export const champaubert = planned("champaubert", "Champaubert", "10 February 1814", F,
   "The first of the Six Days: marching north through the mud, Napoleon fell on Olsufiev's isolated Russian corps strung out along Blücher's line of march, and destroyed it; Olsufiev was taken.");
 export const montmirail = planned("montmirail", "Montmirail", "11 February 1814", F,
@@ -236,13 +234,6 @@ leipzig.art = {
   "artist": "Alexander Sauerweid",
   "date": "1844",
   "page": "https://commons.wikimedia.org/wiki/File:Sauerweid_A.I._Battle_of_Leipzig,_from_2_to_7_october_1813.jpg"
-};
-laRothiere.art = {
-  "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Wigand_%28circle%29_Schlacht_bei_Rothiere_1814.jpg/960px-Wigand_%28circle%29_Schlacht_bei_Rothiere_1814.jpg",
-  "title": "The Battle of La Rothière",
-  "artist": "circle of Balthasar Wigand",
-  "date": "c. 1830",
-  "page": "https://commons.wikimedia.org/wiki/File:Wigand_(circle)_Schlacht_bei_Rothiere_1814.jpg"
 };
 champaubert.art = {
   "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Combat_de_Champaubert%2C_10_f%C3%A9vrier_1814%2C_dans_la_soir%C3%A9e.jpg/960px-Combat_de_Champaubert%2C_10_f%C3%A9vrier_1814%2C_dans_la_soir%C3%A9e.jpg",

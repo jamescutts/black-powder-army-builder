@@ -19,6 +19,7 @@ import brienne from "./brienne.json";
 import grossbeeren from "./grossbeeren.json";
 import wartenburg from "./wartenburg.json";
 import hagelberg from "./hagelberg.json";
+import laRothiere from "./la-rothiere.json";
 import haynau from "./haynau.json";
 import rippach from "./rippach.json";
 import luckau from "./luckau.json";
@@ -70,7 +71,6 @@ import {
   gohrde,
   kulm,
   laon,
-  laRothiere,
   leipzig,
   montereau,
   montmirail,
@@ -432,7 +432,7 @@ const allBattles: HistoricalBattle[] = [
   sehested,
   // The Campaign in France
   brienne as HistoricalBattle,
-  laRothiere,
+  laRothiere as HistoricalBattle,
   champaubert,
   montmirail,
   chateauThierry,

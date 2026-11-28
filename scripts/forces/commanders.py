@@ -174,6 +174,8 @@ COMMANDERS.update({
     "plagwitz": {"French": ("Gén. de Division Puthod", "puthod"), "Russian": ("General Langeron", "langeron")},
     "hagelberg": {"French": ("Gén. de Division Girard", "girard"), "Prussian": ("Gen-Maj von Hirschfeld", "hirschfeld")},
     "brienne": {"French": ("Napoleon", "napoleon"), "Russian": ("Field Marshal Blücher", "blucher")},
+    "la-rothiere": {"French": ("Napoleon", "napoleon"), "Russian": ("Field Marshal Blücher", "blucher"), "Austrian": ("Under Blücher", "blucher"),
+                    "Württemberg": ("Under Blücher", "blucher"), "Bavarian": ("Under Blücher", "blucher")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
 })
 
@@ -698,6 +700,7 @@ FORCE_PORTRAITS.update({
     "mockern-leipzig-normann": "normann", "rippach-guard-cavalry": "bessieres", "rippach-winzingerode": "winzingerode", "reichenbach-saxons": "zeschau",
     # 1814
     "brienne-guard-cavalry": "lefebvre_desnouettes",
+    "la-rothiere-guard-cavalry": "nansouty", "la-rothiere-ricard": "ricard",
 })
 
 

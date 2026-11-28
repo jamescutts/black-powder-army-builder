@@ -224,6 +224,10 @@ export const battleStrengths: Record<string, SideStrength[]> = {
     { label: "French", men: "36,000" },
     { label: "Russian", men: "28,000–30,000" },
   ],
+  "la-rothiere": [
+    { label: "French", men: "36,140–50,460", guns: "128" },
+    { label: "Allied", men: "78,000–123,000", guns: "200" },
+  ],
 
   // The Hundred Days
   ligny: [
