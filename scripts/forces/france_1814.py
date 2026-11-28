@@ -808,13 +808,49 @@ MONTMIRAIL = fought("montmirail", [MM_FR, SIX_DAYS, wiki("Battle of Montmirail",
        "Reached Viffort late in the day. Pirch's brigade attacked the Bois de Bailly and was thrown back, Pirch wounded.")],
     alliances=(("Russian", "Prussian"),))
 
-CHATEAU_THIERRY = armies("chateau-thierry", [SIX_DAYS, wiki("Battle of Château-Thierry (1814)", "Battle_of_Ch%C3%A2teau-Thierry_(1814)")], [
-    fr("Mortier's Infantry", "Christiani's 2nd Old Guard and Meunier's 1st Young Guard Divisions",
-       "Pressed the allied rearguard up the high road towards the Marne, Christiani's six Old Guard battalions attacking head on; "
-       "two battalions of the Chasseurs à Pied and Guyot's duty squadrons fell on Katzler at Viffort."),
-    fr("The Guard Cavalry", "Colbert's, Lefebvre-Desnouettes's and Laferrière's Guard divisions, with Defrance's Gardes d'Honneur",
-       "Laferrière's Guard dragoons and Defrance's Gardes d'Honneur rode at the Prussian columns, and Letort's squadrons broke "
-       "Horn's brigade before the town and took its guns."),
+# ---------------------------------------------------------------- Château-Thierry, 12 February 1814, written
+
+CT_NOTE = ("Built from Nafziger's order of battle for Montmirail the day before; he has none for Château-Thierry. Who was "
+           "engaged is from Wikipedia's account of the battle.")
+
+
+def next_day(f, id_, summary, extra=()):
+    """A Montmirail force as it fought the next day, its notes the same but for their source"""
+    notes = [CT_NOTE if n == MM_NOTE else n for n in f["notes"]]
+    return again(f, id_, summary, notes[:2] + list(extra) + notes[2:])
+
+
+CT_CHRISTIANI = next_day(
+    MM_MICHEL, "chateau-thierry-christiani",
+    "The Guard's second division, under Christiani now that Michel had been wounded, which led Mortier's pursuit up the "
+    "high road towards the Marne and came on head on at the allied rearguard.",
+    ["Michel was wounded at Montmirail; Christiani led the division from the next day, as Wikipedia's account has it."])
+CT_CHRISTIANI["name"] = "Christiani's Division"
+CT_CHRISTIANI["command"] = [cmd("fig-div-cmd", "Gén. de Division Christiani")]
+
+CT_MEUNIER = next_day(MM_MEUNIER, "chateau-thierry-meunier",
+    "Ney's first Young Guard division, which followed Christiani's up the high road behind the allied rearguard.")
+
+CT_FRIANT = next_day(MM_FRIANT, "chateau-thierry-friant",
+    "The Old Guard's first division, which followed the pursuit; two battalions of its Chasseurs à Pied, with Guyot's "
+    "duty squadrons, fell on Katzler's Prussians at Viffort, and two hundred grenadiers took Petite-Noue.")
+
+CT_COLBERT = next_day(MM_COLBERT, "chateau-thierry-colbert",
+    "Ney led the Guard's cavalry after the allied rearguard; Colbert's division rode with Laferrière's and "
+    "Lefebvre-Desnouettes's against the Prussian columns.")
+
+CT_LEFEBVRE = next_day(MM_LEFEBVRE, "chateau-thierry-lefebvre-desnouettes",
+    "With the rest of the Guard's cavalry under Ney in the pursuit to the Marne.")
+
+CT_LAFERRIERE = next_day(MM_LAFERRIERE, "chateau-thierry-laferriere",
+    "The division that did most in the pursuit: its Guard dragoons rode at the Prussian columns, and Letort's squadrons "
+    "broke Horn's brigade before the town and took its guns.")
+
+CT_DEFRANCE = next_day(MM_DEFRANCE, "chateau-thierry-defrance",
+    "The Gardes d'Honneur, who charged the Prussian columns with Laferrière's dragoons.")
+
+CHATEAU_THIERRY = fought("chateau-thierry", [MM_FR, SIX_DAYS, wiki("Battle of Château-Thierry (1814)", "Battle_of_Ch%C3%A2teau-Thierry_(1814)")],
+    [CT_CHRISTIANI, CT_MEUNIER, CT_FRIANT, CT_COLBERT, CT_LEFEBVRE, CT_LAFERRIERE, CT_DEFRANCE], [
     pr("Yorck's Corps", "Katzler's advance guard, Horn's 7th Brigade and Jürgass's reserve cavalry, I Corps, Army of Silesia",
        "Covered Sacken's crossing of the Marne. Horn's brigade was broken before Château-Thierry, and two East Prussian "
        "battalions were cut off and taken."),
@@ -822,16 +858,111 @@ CHATEAU_THIERRY = armies("chateau-thierry", [SIX_DAYS, wiki("Battle of Château-
        "Already beaten at Montmirail, it got back over the Marne at Château-Thierry; Heidenreich's brigade was overrun and mostly taken.")],
     alliances=(("Prussian", "Russian"),))
 
-VAUCHAMPS = armies("vauchamps", [SIX_DAYS, wiki("Battle of Vauchamps", "Battle_of_Vauchamps")], [
-    fr("Marmont's Corps", "Lagrange's 3rd and Ricard's 8th Divisions, VI Corps",
-       "Ricard's division attacked Zieten's brigade in Vauchamps; Lagrange's followed the retreat and took Étoges after dark."),
-    fr("Grouchy's Cavalry", "Saint-Germain's, Doumerc's and Bordesoulle's divisions",
-       "Rode round Zieten's flank and cut off his retreat, then charged again and again at the allied squares as they fell "
-       "back along the road; Doumerc's cuirassiers surprised Udom's Russians at Étoges in the night."),
-    fr("Nansouty's Guard Cavalry", "Lefebvre-Desnouettes's and Laferrière's Guard Cavalry Divisions",
-       "Pressed Zieten's left as Grouchy came round his right."),
-    fr("Friant's Old Guard", "1st Old Guard Division",
-       "Marched up behind the cavalry; only one battalion came into action."),
+# ---------------------------------------------------------------- Vauchamps, 14 February 1814, written
+
+VC_FR = {"label": "French and Allied Forces, Battle of Vauchamps, 14 February 1814 (Nafziger Collection 814BAC)", "url": NAF + "814BAC.pdf"}
+VC_NOTE = ("After Nafziger's order of battle for Vauchamps, from the French archives and Clerc's history of Soult's "
+           "campaign; its strengths are of 1 February.")
+VC_VI = "Nafziger notes that Ricard's and Lagrange's divisions together had only about three thousand men by now."
+VC_CAV = "Nafziger gives the I and II Cavalry Corps together about 3,600 men."
+
+
+def at_vauchamps(f, id_, summary, keep_from=2, extra=()):
+    """A force from the Six Days' earlier battles, as Nafziger gives it again at Vauchamps"""
+    return again(f, id_, summary, [f["notes"][0], VC_NOTE] + list(extra) + f["notes"][keep_from:])
+
+
+VC_RICARD = at_vauchamps(
+    MM_RICARD, "vauchamps-ricard",
+    "Marmont's division, which led the counter-attack on Zieten's brigade in Vauchamps as Blücher's advance ran into the "
+    "Emperor's army, and followed it back along the road.", extra=[VC_VI])
+
+VC_LAGRANGE = at_vauchamps(
+    CH_LAGRANGE, "vauchamps-lagrange",
+    "Marmont's other division, which followed the allied retreat along the high road through the afternoon and took "
+    "Étoges after dark.", extra=[VC_VI])
+brigade_of(VC_LAGRANGE, "VI Corps Artillery")["units"] = [u("fr-foot-arty", "23/3rd Foot Artillery"), u("fr-foot-arty", "25/3rd Foot Artillery")]
+VC_LAGRANGE["notes"] = [n.replace("three companies of the 3rd Foot Artillery, one with the division and two in the corps artillery",
+                                  "three companies of the 3rd Foot Artillery from Nafziger's Vauchamps return, one with the division and two in the corps artillery")
+                        for n in VC_LAGRANGE["notes"]]
+VC_LAGRANGE["missing"] = [
+    {"name": "Eight more foot companies and three horse companies",
+     "reason": "The rest of Marmont's corps artillery on Nafziger's return, the companies of the 2nd, 4th and 5th Foot and of three horse regiments, a few dozen gunners each."}]
+
+VC_LEVAL = force(
+    "vauchamps-leval", FR, "Leval's Division", "7th Division, attached to Marmont", "French",
+    "Veterans brought from Soult's army in the Pyrenees that winter, just arrived and lent to Marmont, which moved out to "
+    "come round the allied flank as Grouchy's cavalry did.",
+    [bde("fr-infantry-brigade", "Pinoteau's Brigade", "Gén. de Brigade Pinoteau",
+         regiments=[one("fr-light-infantry", "10th Léger"), one("fr-line-infantry", "3rd Line"), one("fr-line-infantry", "45th Line")]),
+     bde("fr-infantry-brigade", "Montfort's Brigade", "Gén. de Brigade Montfort",
+         regiments=[one("fr-light-infantry", "17th Léger"), bn_list("fr-line-infantry", "101st Line", ["1", "2"]),
+                    bn_list("fr-line-infantry", "105th Line", ["1", "2"])]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "Foot Battery")]),
+     bde("fr-artillery-brigade", "Attached Artillery", units=[u("fr-foot-arty", "Foot Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Leval")],
+    notes=[LIST_FR, VC_NOTE,
+           "The division had about 4,500 men in eight battalions, among the best in the army.",
+           "Nafziger gives the division two foot batteries and a horse battery; the second foot battery is in the reserve "
+           "artillery here, as the list takes it.",
+           "Two light regiments, where the list allows one in the division, show as a historical departure. How far the "
+           "division came into action isn't clear from Wikipedia's account."])
+VC_LEVAL["missing"] = [{"name": "Horse Battery", "reason": "With no cavalry in the division to allow it."}]
+
+VC_BORDESOULLE = at_vauchamps(
+    CH_BORDESOULLE, "vauchamps-bordesoulle",
+    "Grouchy's heavy horse, which came up late and joined in the last charges on the allied squares; in the night "
+    "Doumerc's cuirassiers surprised Udom's Russians at Étoges.",
+    extra=[VC_CAV])
+VC_BORDESOULLE["notes"] = [n for n in VC_BORDESOULLE["notes"] if "round the Russian left" not in n]
+
+VC_ST_GERMAIN = force(
+    "vauchamps-saint-germain", FR, "Saint-Germain's Cavalry", "II Cavalry Corps, under Grouchy", "French",
+    "Grouchy's leading horse, which rode round Zieten's flank, cut off his brigade's retreat, and then charged again and "
+    "again at the Prussian and Russian squares as they fell back along the road to Étoges.",
+    [bde("fr-light-cavalry-brigade", "Dommanget's Brigade", "Gén. de Brigade Dommanget",
+         units=[u("fr-hussar-regt", "5th Hussars"), u("fr-hussar-regt", "9th Hussars"), u("fr-chasseur-a-cheval", "11th Chasseurs à Cheval"),
+                u("fr-chasseur-a-cheval", "12th Chasseurs à Cheval"), u("fr-lancer", "2nd Chevau-légers"), u("fr-lancer", "4th Chevau-légers")]),
+     bde("fr-light-cavalry-brigade", "Jamin's Brigade", "Gén. de Brigade Jamin",
+         units=[u("fr-hussar-regt", "10th Hussars"), u("fr-lancer", "6th Chevau-légers"), u("fr-chasseur-a-cheval", "7th Chasseurs à Cheval"),
+                u("fr-chasseur-a-cheval", "20th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "23rd Chasseurs à Cheval"),
+                u("fr-chasseur-a-cheval", "24th Chasseurs à Cheval")]),
+     bde("fr-heavy-cavalry-brigade", "Blancard's Brigade", "Gén. de Brigade Blancard",
+         units=[u("fr-carabinier", "1st Carabiniers"), u("fr-carabinier", "2nd Carabiniers"), u("fr-cuirassier", "1st Cuirassiers")]),
+     bde("fr-heavy-cavalry-brigade", "Sopransy's Brigade", "Gén. de Brigade Sopransy",
+         units=[u("fr-cuirassier", "5th Cuirassiers"), u("fr-cuirassier", "8th Cuirassiers"), u("fr-cuirassier", "10th Cuirassiers"),
+                u("fr-cuirassier", "13th Cuirassiers")]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-horse-arty", "Horse Battery")]),
+     bde("fr-artillery-brigade", "Corps Artillery", units=[u("fr-horse-arty", "Horse Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Saint-Germain")],
+    notes=[LIST_FR, VC_NOTE, VC_CAV,
+           "Berckheim's 2nd Light Cavalry Division is Dommanget's and Jamin's brigades, and Saint-Germain's own 2nd Heavy "
+           "Division Blancard's and Sopransy's. They were the regiments of Sébastiani's corps of 1813, a hundred or so men "
+           "each by now; each is shown as one unit at full size, and the list's Small upgrade would suit them all.",
+           "The chevau-légers lanciers are the list's Lancers. Its two horse batteries are one in its divisional artillery and "
+           "one in its reserve, as the list takes them.",
+           "Light brigades of six regiments and a heavy brigade of four, where the list's take four and three, and two heavy "
+           "brigades, where it takes one, show as historical departures.",
+           CAV_ONLY])
+
+VC_LEFEBVRE = at_vauchamps(
+    MM_LEFEBVRE, "vauchamps-lefebvre-desnouettes",
+    "With Laferrière's division under Nansouty, it pressed Zieten's left as Grouchy came round his right.",
+    extra=["Nafziger gives the two Guard cavalry divisions together about 3,500 men."])
+
+VC_LAFERRIERE = at_vauchamps(
+    MM_LAFERRIERE, "vauchamps-laferriere",
+    "With Lefebvre-Desnouettes's division under Nansouty, it pressed Zieten's left as Grouchy came round his right.",
+    extra=["Nafziger gives the two Guard cavalry divisions together about 3,500 men."])
+
+VC_FRIANT = at_vauchamps(
+    MM_FRIANT, "vauchamps-friant",
+    "The Old Guard, marched up behind the cavalry from Château-Thierry and held in reserve; only one of its battalions "
+    "came into action.",
+    extra=["Nafziger notes that the Guard infantry, his order of battle's other three divisions with it, wasn't seriously engaged."])
+
+VAUCHAMPS = fought("vauchamps", [VC_FR, SIX_DAYS, wiki("Battle of Vauchamps", "Battle_of_Vauchamps")],
+    [VC_RICARD, VC_LAGRANGE, VC_LEVAL, VC_ST_GERMAIN, VC_BORDESOULLE, VC_LEFEBVRE, VC_LAFERRIERE, VC_FRIANT], [
     pr("Kleist's Corps", "Pirch's 10th, Zieten's 11th and Prince August's 12th Brigades, II Corps, Army of Silesia",
        "About thirteen thousand five hundred men. Zieten's brigade, caught at Vauchamps, lost two thousand prisoners, and "
        "the corps fought its way back to Étoges in squares through the French cavalry; Kleist and Prince August were nearly taken."),
