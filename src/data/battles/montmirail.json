@@ -54,6 +54,10 @@
   "summary": "Napoleon turned west on Sacken's Russians and the leading brigades of Yorck's Prussians, coming back towards Montmirail; Ney and the Guard stormed the farm of Marchais, and the allies were driven north towards the Marne.",
   "sources": [
     {
+      "label": "Allied and French Forces, Battle of Montmirail, 11 February 1814 (Nafziger Collection 814BAA)",
+      "url": "https://www.napoleon-series.org/nafzigger/814BAA.pdf"
+    },
+    {
       "label": "Six Days' Campaign order of battle (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Six_Days%27_Campaign_order_of_battle"
     },
@@ -62,43 +66,934 @@
       "url": "https://en.wikipedia.org/wiki/Battle_of_Montmirail"
     }
   ],
-  "forces": [],
-  "toCome": [
+  "forces": [
     {
-      "side": "French",
+      "id": "montmirail-ricard",
+      "nationId": "france",
       "name": "Ricard's Division",
       "formation": "8th Division, VI Corps (Marmont)",
-      "summary": "Fought for the farm of Marchais through the day, with two battalions holding the Bois de Bailly.",
-      "flag": "/flags/france.svg"
+      "side": "French",
+      "summary": "The one division of Marmont's corps with Napoleon, which fought for the farm of Marchais through the day against Sacken's Russians, taking it and losing it again, with two battalions holding the Bois de Bailly.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Its fourteen battalions were what was left of whole regiments after Leipzig, 2,917 men in all, a couple of hundred each. They are shown at full size; the list's Small upgrade would suit them all.",
+        "Nafziger gives the division without its brigades. Its battalions are split between Fournier and Boudin as at La Rothière: the light battalions and the older line regiments with Fournier, the regiments raised in 1813 with Boudin.",
+        "Fournier's nine regiments and Boudin's five, where the list's brigade takes three, and five light battalions, where it allows one light regiment in the division, show as historical departures. Nafziger gives the division no guns.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Ricard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Fournier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fournier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/2nd Léger"
+                }
+              ]
+            },
+            {
+              "name": "4th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "7/4th Léger"
+                }
+              ]
+            },
+            {
+              "name": "6th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/6th Léger"
+                }
+              ]
+            },
+            {
+              "name": "9th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "9th Léger"
+                }
+              ]
+            },
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "16th Léger"
+                }
+              ]
+            },
+            {
+              "name": "22nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "22nd Line"
+                }
+              ]
+            },
+            {
+              "name": "40th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/40th Line"
+                }
+              ]
+            },
+            {
+              "name": "50th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/50th Line"
+                }
+              ]
+            },
+            {
+              "name": "65th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/65th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Boudin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Boudin de Roville",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/136th Line"
+                }
+              ]
+            },
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/138th Line"
+                }
+              ]
+            },
+            {
+              "name": "142nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/142nd Line"
+                }
+              ]
+            },
+            {
+              "name": "144th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/144th Line"
+                }
+              ]
+            },
+            {
+              "name": "145th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/145th Line"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Etienne_Pierre_Sylvestre_Ricard.jpg/250px-Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "title": "Étienne Pierre Sylvestre Ricard",
+        "artist": "from Panckoucke's portraits of French generals",
+        "page": "https://commons.wikimedia.org/wiki/File:Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
     },
     {
+      "id": "montmirail-meunier",
+      "nationId": "french-imperial-guard",
+      "name": "Meunier's Division",
+      "formation": "1st Young Guard (1st Voltigeur) Division (Ney)",
       "side": "French",
-      "name": "Ney's Young Guard",
-      "formation": "Meunier's 1st and Curial's 2nd Young Guard Divisions",
-      "summary": "Meunier's division joined the fight for Marchais; Curial's stood behind Ricard's.",
-      "flag": "/flags/france.svg"
+      "summary": "Ney's first Young Guard division, which joined Ricard's in the fight for Marchais.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "The division had 4,133 men in eight battalions; they are shown at full size.",
+        "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+        "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Meunier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Lacoste's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lacoste",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/1st Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/1st Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "2nd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/2nd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/2nd Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Rousseau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rousseau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/3rd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/3rd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "4th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/4th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/4th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": "montmirail-curial",
+      "nationId": "french-imperial-guard",
+      "name": "Curial's Division",
+      "formation": "2nd Young Guard (2nd Voltigeur) Division (Ney)",
       "side": "French",
-      "name": "The Old Guard",
-      "formation": "Friant's 1st and Michel's 2nd Old Guard Divisions",
-      "summary": "Friant's battalions attacked towards the farm of Haute-Épine, and Michel's counter-attacked when they came up in the afternoon; Michel was wounded. Two battalions of the Chasseurs à Pied under Marshal Lefebvre took L'Épine-aux-Bois.",
-      "flag": "/flags/france.svg"
+      "summary": "Ney's second Young Guard division, now Curial's, which stood behind Ricard's division through the fight for Marchais.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "Nafziger now names Curial as the division's commander; Wikipedia's order of battle has Pelet leading it on the 10th and 11th.",
+        "The division had 2,840 men in eight battalions; they are shown at full size, and the list's Small upgrade would suit them.",
+        "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+        "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Curial",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Pelet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/5th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/6th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/6th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Bigarré's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bigarré",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/8th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
+      "id": "montmirail-friant",
+      "nationId": "french-imperial-guard",
+      "name": "Friant's Old Guard",
+      "formation": "1st Old Guard Division, Old Guard (Mortier)",
       "side": "French",
-      "name": "Nansouty's Guard Cavalry",
-      "formation": "Colbert's, Lefebvre-Desnouettes's and Laferrière's Guard Cavalry Divisions, with Guyot's squadrons",
-      "summary": "Colbert's and Laferrière's divisions charged down the high road, Guyot's squadrons turned the Russian left, and the Polish lancers pushed on to Viels-Maisons.",
-      "flag": "/flags/france.svg"
+      "summary": "The Old Guard's grenadiers and chasseurs, held in reserve behind Marchais until the afternoon, when Friant's battalions went forward against the farm of Haute-Épine and broke the Russian centre. Two battalions of the Chasseurs à Pied under Marshal Lefebvre took L'Épine-aux-Bois.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "The division had 4,796 men in eight battalions. The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, and the 2nd, raised in 1811, its Middle Guard.",
+        "Nafziger gives Michel as the commander of the chasseurs' brigade as well as of the 2nd Old Guard Division; the brigade is shown here without him.",
+        "Nafziger gives the Guard artillery together, seven foot and four horse batteries, not by division; the batteries here are those the list's brigades take.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Friant",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Chasseurs à Pied",
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "1/1st Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "2/1st Chasseurs à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "1/2nd Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "2/2nd Chasseurs à Pied"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Cambronne's Brigade",
+          "commander": {
+            "name": "Gén. de Division Cambronne",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "1/1st Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "2/1st Grenadiers à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "1/2nd Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "2/2nd Grenadiers à Pied"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-marines-brigade",
+          "name": "Attached",
+          "units": [
+            {
+              "unit": "fig-marines",
+              "name": "3/Marines of the Guard"
+            }
+          ]
+        },
+        {
+          "type": "fig-artillery-reserve",
+          "name": "Guard Artillery",
+          "units": [
+            {
+              "unit": "fig-og-heavy-foot-arty",
+              "name": "Old Guard 12-pdr Foot Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Guard Sappers (three companies) and engineer train",
+          "reason": "Too small for a unit of their own; the list's one engineer or marine battalion is the marines."
+        },
+        {
+          "name": "The rest of the Guard artillery",
+          "reason": "Four more foot and four horse batteries, more than the Guard's brigades here take."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "title": "Louis Friant",
+        "artist": "Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "focus": "50% 20%"
+      }
     },
     {
+      "id": "montmirail-michel",
+      "nationId": "french-imperial-guard",
+      "name": "Michel's Division",
+      "formation": "2nd Old Guard Division, Old Guard (Mortier)",
       "side": "French",
+      "summary": "The Guard's second division, the flanqueurs, fusiliers and vélites, which came up in the afternoon and counter-attacked beside Friant's; Michel was wounded leading it.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "The division had 3,878 men. Nafziger gives it without brigades: the chasseur and grenadier regiments are brigaded here as the list takes them, flanqueurs with fusiliers, and the vélites as its Italian brigade.",
+        "The Flanqueurs-Chasseurs and Flanqueurs-Grenadiers, the Young Guard's light infantry, are the list's Tirailleurs.",
+        "Nafziger gives the Guard artillery together, seven foot and four horse batteries, not by division; the batteries here are those the list's brigades take.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Michel",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Chasseur Brigade",
+          "regiments": [
+            {
+              "name": "Flanqueurs-Chasseurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "1/Flanqueurs-Chasseurs"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "2/Flanqueurs-Chasseurs"
+                }
+              ]
+            },
+            {
+              "name": "Fusilier-Chasseurs",
+              "units": [
+                {
+                  "unit": "fig-fusilier-chasseurs",
+                  "name": "1/Fusilier-Chasseurs"
+                },
+                {
+                  "unit": "fig-fusilier-chasseurs",
+                  "name": "2/Fusilier-Chasseurs"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Grenadier Brigade",
+          "regiments": [
+            {
+              "name": "Flanqueurs-Grenadiers",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "1/Flanqueurs-Grenadiers"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "2/Flanqueurs-Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Fusilier-Grenadiers",
+              "units": [
+                {
+                  "unit": "fig-fusilier-grenadiers",
+                  "name": "1/Fusilier-Grenadiers"
+                },
+                {
+                  "unit": "fig-fusilier-grenadiers",
+                  "name": "2/Fusilier-Grenadiers"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-italian-brigade",
+          "name": "Vélites",
+          "units": [
+            {
+              "unit": "fig-velites-florence",
+              "name": "Vélites of Florence"
+            },
+            {
+              "unit": "fig-velites-turin",
+              "name": "Vélites of Turin"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "montmirail-colbert",
+      "nationId": "french-imperial-guard",
+      "name": "Colbert's Guard Cavalry",
+      "formation": "1st Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "One of Nansouty's three Guard cavalry divisions, which charged down the high road at the Russian centre as Friant's infantry broke it; the Polish lancers pushed on to Viels-Maisons.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "The division had 2,582 men. Each Guard cavalry regiment had squadrons in each of the three divisions; each division's are shown as one unit of each regiment.",
+        "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Colbert",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Guard Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Guard Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Guard Chasseurs",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Polish Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st (Polish) Chevau-légers Lanciers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "missing": [
+        {
+          "name": "2nd Éclaireurs",
+          "reason": "A regiment of Guard scouts raised that winter, which the 1812 list doesn't have."
+        },
+        {
+          "name": "Guyot's escort squadrons",
+          "reason": "One squadron each of the Polish lancers, chasseurs, grenadiers and dragoons, riding with Napoleon; they turned the Russian left."
+        }
+      ]
+    },
+    {
+      "id": "montmirail-lefebvre-desnouettes",
+      "nationId": "french-imperial-guard",
+      "name": "Lefebvre-Desnouettes's Guard Cavalry",
+      "formation": "2nd Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The largest of the Guard's cavalry divisions, with Nansouty's other two in the charges against the Russian centre and left.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Its strengths are of 28 January: some 3,300 men, the grenadiers about nine hundred and the other regiments six to seven hundred each.",
+        "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them, the Gendarmes d'Élite as the small unit the chasseurs' brigade may have with it.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Lefebvre-Desnouettes",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Guard Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval (6 squadrons)"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Dragoons of the Guard (6 squadrons)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Old Guard Chasseurs",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval (6 squadrons)"
+            },
+            {
+              "unit": "fig-gendarmes-elite",
+              "name": "Gendarmes d'Élite (2 squadrons)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Guard Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st Chevau-légers Lanciers (7 squadrons)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "title": "Charles Lefebvre-Desnouettes",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Charles_Lefebvre_Desnouettes_%282%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "montmirail-laferriere",
+      "nationId": "french-imperial-guard",
+      "name": "Laferrière's Guard Cavalry",
+      "formation": "3rd Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The Guard's third cavalry division, which charged down the high road with Colbert's at the Russian centre.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "Lion's brigade was the chasseurs, about five hundred, and the Empress Dragoons, about seven hundred; Letort's the grenadiers, about eight hundred and fifty. The dragoons are with Letort's grenadiers here, as the list's heavy brigade takes them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Laferrière",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Letort's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Letort",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Lion's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lion",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "montmirail-defrance",
+      "nationId": "france",
       "name": "Defrance's Gardes d'Honneur",
-      "formation": "Cavalry Division, Imperial Guard",
-      "summary": "Charged west of the ravine, cutting up the Russian brigades caught there; seven of its squadrons supported Friant's right.",
-      "flag": "/flags/france.svg"
-    },
+      "formation": "Cavalry Division, attached to the Guard",
+      "side": "French",
+      "summary": "The Gardes d'Honneur, who charged west of the ravine and cut up the Russian brigades caught there; seven of their squadrons supported Friant's right.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the French archives; its strengths are of 1 February.",
+        "The Gardes d'Honneur, raised in 1813 from young men of means who equipped themselves and rode dressed as hussars, are the list's Hussars.",
+        "The division had only 896 men in five regiments; they are shown at full size, and the list's Small upgrade would suit them.",
+        "Nafziger gives the division without brigades. Piquet's brigade of the 10th Hussars and the 1st Gardes d'Honneur, and Ségur's of the 3rd and 4th, are as at La Rothière; the 2nd Gardes d'Honneur are with Ségur's here, three hussar regiments where the list's brigade takes two, a historical departure.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Defrance",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Piquet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Piquet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "10th Hussars"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "1st Gardes d'Honneur"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Ségur's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ségur",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "2nd Gardes d'Honneur"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "3rd Gardes d'Honneur"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "4th Gardes d'Honneur"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "toCome": [
     {
       "side": "Russian",
       "name": "Sacken's Corps",

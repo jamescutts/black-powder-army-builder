@@ -171,8 +171,7 @@ BR_GUARD_CAV = force(
     notes=[LIST_FIG, BR_NOTE,
            "Each Guard regiment had four to six hundred men here; each is shown as one unit.",
            "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them.",
-           "Nafziger gives the horse artillery as three hundred gunners and train, shown as one battery.",
-           CAV_ONLY])
+           "Nafziger gives the horse artillery as three hundred gunners and train, shown as one battery."])
 BR_GUARD_CAV["missing"] = [{"name": "2nd Éclaireurs", "reason": "A regiment of Guard scouts raised that winter, three hundred strong, which the 1812 list doesn't have."}]
 
 BR_V_CAVALRY = force(
@@ -366,8 +365,7 @@ RO_GUARD_CAV = force(
            "service squadrons drawn from both; each regiment's squadrons are shown together as one unit, as at Hanau. The three "
            "divisions had about two thousand men.",
            "Nansouty, who commanded the Guard cavalry, is from Wikipedia's account; Nafziger gives the divisions on their own.",
-           "Two horse batteries, one with each division, are here; the Guard lost twenty-four horse guns in the fight.",
-           CAV_ONLY])
+           "Two horse batteries, one with each division, are here; the Guard lost twenty-four horse guns in the fight."])
 RO_GUARD_CAV["missing"] = [{"name": "2nd Éclaireurs", "reason": "A regiment of Guard scouts raised that winter, with squadrons in both divisions, which the 1812 list doesn't have."}]
 
 RO_V_CAVALRY = again(
@@ -544,32 +542,263 @@ def armies(id_, sources, to_come, alliances=()):
 
 SIX_DAYS = wiki("Six Days' Campaign order of battle", "Six_Days%27_Campaign_order_of_battle")
 
-CHAMPAUBERT = armies("champaubert", [SIX_DAYS, wiki("Battle of Champaubert", "Battle_of_Champaubert")], [
-    fr("Marmont's Corps", "Lagrange's 3rd and Ricard's 8th Divisions, VI Corps",
-       "Led the march over the Petit Morin at Saint-Prix: Lagrange's division, Pelleport's brigade leading, took Bannay, and "
-       "Ricard's took Baye and then fought for Champaubert itself."),
-    fr("Ney's Young Guard", "Meunier's 1st and Curial's 2nd Young Guard Divisions",
-       "Came up while the fight went on, and their guns joined the bombardment of Bannay."),
-    fr("Doumerc's and Bordesoulle's Cavalry", "I Cavalry Corps",
-       "Bordesoulle's cuirassiers rode round the Russian right and split Olsufiev's corps in two, while Doumerc's horse went "
-       "round its left and closed the road at Fromentières."),
-    ru("Olsufiev's Corps", "Udom's 9th and Kornilov's 15th Divisions, IX Infantry Corps, Army of Silesia",
-       "About four thousand men and twenty-four guns, strung out along Blücher's line of march. Most were killed or taken, "
-       "Olsufiev and Poltoratsky among them; Kornilov brought some fifteen hundred away through the woods.")])
+# ---------------------------------------------------------------- Champaubert, 10 February 1814, written
 
-MONTMIRAIL = armies("montmirail", [SIX_DAYS, wiki("Battle of Montmirail", "Battle_of_Montmirail")], [
-    fr("Ricard's Division", "8th Division, VI Corps (Marmont)",
-       "Fought for the farm of Marchais through the day, with two battalions holding the Bois de Bailly."),
-    fr("Ney's Young Guard", "Meunier's 1st and Curial's 2nd Young Guard Divisions",
-       "Meunier's division joined the fight for Marchais; Curial's stood behind Ricard's."),
-    fr("The Old Guard", "Friant's 1st and Michel's 2nd Old Guard Divisions",
-       "Friant's battalions attacked towards the farm of Haute-Épine, and Michel's counter-attacked when they came up in the "
-       "afternoon; Michel was wounded. Two battalions of the Chasseurs à Pied under Marshal Lefebvre took L'Épine-aux-Bois."),
-    fr("Nansouty's Guard Cavalry", "Colbert's, Lefebvre-Desnouettes's and Laferrière's Guard Cavalry Divisions, with Guyot's squadrons",
-       "Colbert's and Laferrière's divisions charged down the high road, Guyot's squadrons turned the Russian left, and the "
-       "Polish lancers pushed on to Viels-Maisons."),
-    fr("Defrance's Gardes d'Honneur", "Cavalry Division, Imperial Guard",
-       "Charged west of the ravine, cutting up the Russian brigades caught there; seven of its squadrons supported Friant's right."),
+CH_FR = {"label": "French and Russian Forces, Battle of Champaubert, 9 February 1814 (Nafziger Collection 814BAB)", "url": NAF + "814BAB.pdf"}
+CH_NOTE = ("After Nafziger's order of battle for Champaubert, from Bogdanovich's history of the campaign and the French "
+           "archives; its strengths are of 1 February.")
+CH_DEPOTS = ("Each brigade was made up of squadrons from the depots of many regiments: Nafziger names their parent regiments "
+             "but not their strengths. They are grouped here as one unit for each kind of horse in a brigade, or two where a "
+             "brigade had many, as they were formed into provisional regiments.")
+
+
+def fought(id_, sources, forces, to_come, alliances=()):
+    """A battle from the planned list, now with forces written"""
+    name, date, summary = PLANNED[id_]
+    return battle(id_, name, date, summary, sources, forces, to_come, alliances)
+
+
+def brigade_of(f, name):
+    return next(b for b in f["brigades"] if b["name"] == name)
+
+
+CH_LAGRANGE = again(
+    RO_LAGRANGE, "champaubert-lagrange",
+    "Marmont's leading division, which crossed the Petit Morin at Saint-Prix behind Ricard's. Its first attacks on the "
+    "Russian right stalled until the Guard's guns came up; then Pelleport's brigade took Bannay.",
+    [LIST_FR, CH_NOTE, MARINES,
+     "Nafziger gives the division as one brigade; its regiments are brigaded here as at La Rothière, after Nafziger's "
+     "history as Wikipedia's order of battle has it. Battalion numbers he leaves out, and the division's artillery, are from "
+     "his returns of 25 January and La Rothière.",
+     "Nafziger gives the 37th Line, but it is the 37th Léger, which served in the division at Leipzig; the 37th Line was "
+     "in Duhesme's division of Victor's corps.",
+     "The division had 4,868 men in twenty-one battalions; they are shown at full size, and the list's Small upgrade would "
+     "suit them all.",
+     "Marmont's artillery: three companies of the 3rd Foot Artillery, one with the division and two in the corps artillery, "
+     "as the list takes them. Clavel's four regiments, where the list's brigade takes three, show as a historical departure."])
+brigade_of(CH_LAGRANGE, "Joubert's Brigade")["regiments"][1] = bn_list("fr-light-infantry", "37th Léger", ["1", "3"])
+brigade_of(CH_LAGRANGE, "Pelleport's Brigade")["regiments"][2] = marine("4th Marine Regiment", 3)
+brigade_of(CH_LAGRANGE, "Lefol's Brigade")["regiments"].pop()   # no 132nd Line here
+CH_LAGRANGE["missing"] = RO_LAGRANGE["missing"]
+
+CH_RICARD = force(
+    "champaubert-ricard", FR, "Ricard's Division", "8th Division, VI Corps (Marmont)", "French",
+    "Marmont's other division, which led the way over the Petit Morin, took Baye and then fought its way into "
+    "Champaubert itself, with a squadron of lancers under Piquet beside it.",
+    [bde("fr-infantry-brigade", "Fournier's Brigade", "Gén. de Brigade Fournier",
+         regiments=[bn("fr-light-infantry", "2/2nd Léger"), bn("fr-light-infantry", "7/4th Léger"), bn("fr-light-infantry", "2/6th Léger"),
+                    one("fr-light-infantry", "9th Léger"), one("fr-light-infantry", "16th Léger"), one("fr-line-infantry", "22nd Line"),
+                    bn("fr-line-infantry", "2/40th Line"), bn("fr-line-infantry", "1/50th Line"), one("fr-line-infantry", "69th Line")]),
+     bde("fr-infantry-brigade", "Boudin's Brigade", "Gén. de Brigade Boudin de Roville",
+         regiments=[bn("fr-line-infantry", "1/136th Line"), bn("fr-line-infantry", "1/138th Line"), bn("fr-line-infantry", "1/142nd Line"),
+                    bn("fr-line-infantry", "1/144th Line"), bn("fr-line-infantry", "1/145th Line")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Ricard")],
+    notes=[LIST_FR, CH_NOTE,
+           "Its fourteen battalions were what was left of whole regiments after Leipzig, 2,917 men in all, a couple of hundred "
+           "each. They are shown at full size; the list's Small upgrade would suit them all.",
+           "Nafziger gives the division without its brigades. Its battalions are split between Fournier and Boudin as at La "
+           "Rothière: the light battalions and the older line regiments with Fournier, the regiments raised in 1813 with Boudin.",
+           "Fournier's nine regiments and Boudin's five, where the list's brigade takes three, and five light battalions, where "
+           "it allows one light regiment in the division, show as historical departures. Nafziger gives the division no guns."])
+
+CH_BORDESOULLE = force(
+    "champaubert-bordesoulle", FR, "Bordesoulle's Cavalry", "I Cavalry Corps", "French",
+    "The cavalry of Marmont's column. Bordesoulle's cuirassiers rode round the Russian right and split Olsufiev's corps "
+    "in two, while horse went round its left to close the high road at Fromentières, so that few of the Russians got away.",
+    [bde("fr-light-cavalry-brigade", "Wathier's Brigade", "Gén. de Brigade Wathier",
+         units=[u("fr-hussar-regt", "Hussar detachments (6th, 7th and 8th Hussars)"),
+                u("fr-lancer", "Chevau-léger detachments (1st, 3rd, 5th, 7th and 8th Chevau-légers)")]),
+     bde("fr-light-cavalry-brigade", "Guyon's Brigade", "Gén. de Brigade Guyon",
+         units=[u("fr-chasseur-a-cheval", "Chasseur detachments (1st, 2nd, 3rd and 6th Chasseurs)"),
+                u("fr-chasseur-a-cheval", "Chasseur detachments (8th, 9th, 16th and 25th Chasseurs)")]),
+     bde("fr-heavy-cavalry-brigade", "Thiry's Brigade", "Gén. de Brigade Thiry",
+         units=[u("fr-cuirassier", "Cuirassier detachments (2nd, 3rd and 6th Cuirassiers)"),
+                u("fr-cuirassier", "Cuirassier detachments (9th, 11th and 12th Cuirassiers)")]),
+     bde("fr-heavy-cavalry-brigade", "Laville's Brigade", "Gén. de Brigade Laville",
+         units=[u("fr-cuirassier", "Cuirassier detachments (4th, 7th and 14th Cuirassiers)"),
+                u("fr-dragoon", "Dragoon detachments (7th, 23rd, 28th and 30th Dragoons)")]),
+     bde("fr-divisional-artillery", "Corps Artillery", units=[u("fr-horse-arty", "3/1st Horse Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Bordesoulle")],
+    notes=[LIST_FR, CH_NOTE,
+           "Merlin's 1st Light Cavalry Division is Wathier's and Guyon's brigades; Bordesoulle's own 2nd Heavy Cavalry Division, "
+           "about twelve hundred men, Thiry's and Laville's.",
+           CH_DEPOTS,
+           "Nafziger names Bordesoulle as the corps' commander; Wikipedia's account has Doumerc leading the horse that went round "
+           "the Russian left.",
+           "Two heavy cavalry brigades, where the list takes one, and cuirassiers and dragoons in one brigade show as "
+           "historical departures.",
+           CAV_ONLY])
+CH_BORDESOULLE["missing"] = [{"name": "1/6th Horse Artillery", "reason": "The corps' second horse battery, detached on the day."}]
+
+CH_MEUNIER = again(
+    RO_MEUNIER, "champaubert-meunier",
+    "Ney's first Young Guard division, which came up behind Marmont's while the fight went on; its guns joined the "
+    "bombardment of Bannay.",
+    [LIST_FIG, CH_NOTE, NEW_YG,
+     "The division had 4,133 men in eight battalions; they are shown at full size.",
+     "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+     "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure."])
+
+CH_DECOUZ = again(
+    RO_DECOUZ, "champaubert-decouz",
+    "Ney's second Young Guard division, which came up with Meunier's behind Marmont's.",
+    [LIST_FIG, CH_NOTE, NEW_YG,
+     "Nafziger still names Decouz, mortally wounded at Brienne; Wikipedia's order of battle has Pelet leading the division "
+     "on the 10th and 11th, and Curial taking it over.",
+     "The division had 2,840 men in eight battalions; they are shown at full size, and the list's Small upgrade would suit them.",
+     "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+     "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure."])
+
+CHAMPAUBERT = fought("champaubert", [CH_FR, SIX_DAYS, wiki("Battle of Champaubert", "Battle_of_Champaubert")],
+    [CH_LAGRANGE, CH_RICARD, CH_BORDESOULLE, CH_MEUNIER, CH_DECOUZ],
+    [ru("Olsufiev's Corps", "Udom's 9th and Kornilov's 15th Divisions, IX Infantry Corps, Army of Silesia",
+        "About four thousand men and twenty-four guns, strung out along Blücher's line of march. Most were killed or taken, "
+        "Olsufiev and Poltoratsky among them; Kornilov brought some fifteen hundred away through the woods.")])
+
+# ---------------------------------------------------------------- Montmirail, 11 February 1814, written
+
+MM_FR = {"label": "Allied and French Forces, Battle of Montmirail, 11 February 1814 (Nafziger Collection 814BAA)", "url": NAF + "814BAA.pdf"}
+MM_NOTE = ("After Nafziger's order of battle for Montmirail, from Damitz's, Plotho's and Sporschil's histories and the "
+           "French archives; its strengths are of 1 February.")
+GUARD_ARTY = ("Nafziger gives the Guard artillery together, seven foot and four horse batteries, not by division; the "
+              "batteries here are those the list's brigades take.")
+
+
+def og(reg, unit):
+    """A Guard regiment of two battalions, as "1/1st Chasseurs à Pied" and "2/1st Chasseurs à Pied" """
+    return regt(reg, [u(unit, f"{i}/{reg}") for i in (1, 2)])
+
+
+MM_RICARD = force(
+    "montmirail-ricard", FR, "Ricard's Division", "8th Division, VI Corps (Marmont)", "French",
+    "The one division of Marmont's corps with Napoleon, which fought for the farm of Marchais through the day against "
+    "Sacken's Russians, taking it and losing it again, with two battalions holding the Bois de Bailly.",
+    [bde("fr-infantry-brigade", "Fournier's Brigade", "Gén. de Brigade Fournier",
+         regiments=[bn("fr-light-infantry", "2/2nd Léger"), bn("fr-light-infantry", "7/4th Léger"), bn("fr-light-infantry", "2/6th Léger"),
+                    one("fr-light-infantry", "9th Léger"), one("fr-light-infantry", "16th Léger"), one("fr-line-infantry", "22nd Line"),
+                    bn("fr-line-infantry", "2/40th Line"), bn("fr-line-infantry", "2/50th Line"), bn("fr-line-infantry", "3/65th Line")]),
+     bde("fr-infantry-brigade", "Boudin's Brigade", "Gén. de Brigade Boudin de Roville",
+         regiments=[bn("fr-line-infantry", "1/136th Line"), bn("fr-line-infantry", "1/138th Line"), bn("fr-line-infantry", "1/142nd Line"),
+                    bn("fr-line-infantry", "1/144th Line"), bn("fr-line-infantry", "1/145th Line")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Ricard")],
+    notes=[LIST_FR, MM_NOTE, CH_RICARD["notes"][2], CH_RICARD["notes"][3], CH_RICARD["notes"][4]])
+
+MM_MEUNIER = again(
+    CH_MEUNIER, "montmirail-meunier",
+    "Ney's first Young Guard division, which joined Ricard's in the fight for Marchais.",
+    [LIST_FIG, MM_NOTE] + CH_MEUNIER["notes"][2:])
+
+MM_CURIAL = again(
+    CH_DECOUZ, "montmirail-curial",
+    "Ney's second Young Guard division, now Curial's, which stood behind Ricard's division through the fight for Marchais.",
+    [LIST_FIG, MM_NOTE, NEW_YG,
+     "Nafziger now names Curial as the division's commander; Wikipedia's order of battle has Pelet leading it on the 10th and 11th."]
+    + CH_DECOUZ["notes"][4:])
+MM_CURIAL["name"] = "Curial's Division"
+MM_CURIAL["command"] = [cmd("fig-div-cmd", "Gén. de Division Curial")]
+
+MM_FRIANT = force(
+    "montmirail-friant", FIG, "Friant's Old Guard", "1st Old Guard Division, Old Guard (Mortier)", "French",
+    "The Old Guard's grenadiers and chasseurs, held in reserve behind Marchais until the afternoon, when Friant's "
+    "battalions went forward against the farm of Haute-Épine and broke the Russian centre. Two battalions of the Chasseurs "
+    "à Pied under Marshal Lefebvre took L'Épine-aux-Bois.",
+    [bde("fig-old-guard-brigade", "Chasseurs à Pied",
+         units=[u("fig-og-foot-arty", "Old Guard Foot Battery")],
+         regiments=[og("1st Chasseurs à Pied", "fig-old-guard-chasseurs"), og("2nd Chasseurs à Pied", "fig-middle-guard-chasseurs")]),
+     bde("fig-old-guard-brigade", "Cambronne's Brigade", "Gén. de Division Cambronne",
+         units=[u("fig-og-foot-arty", "Old Guard Foot Battery")],
+         regiments=[og("1st Grenadiers à Pied", "fig-old-guard-grenadiers"), og("2nd Grenadiers à Pied", "fig-middle-guard-grenadiers")]),
+     bde("fig-marines-brigade", "Attached", units=[u("fig-marines", "3/Marines of the Guard")]),
+     bde("fig-artillery-reserve", "Guard Artillery", units=[u("fig-og-heavy-foot-arty", "Old Guard 12-pdr Foot Battery")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Friant")],
+    notes=[LIST_FIG, MM_NOTE,
+           "The division had 4,796 men in eight battalions. The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, and "
+           "the 2nd, raised in 1811, its Middle Guard.",
+           "Nafziger gives Michel as the commander of the chasseurs' brigade as well as of the 2nd Old Guard Division; the brigade "
+           "is shown here without him.",
+           GUARD_ARTY])
+MM_FRIANT["missing"] = [
+    {"name": "Guard Sappers (three companies) and engineer train", "reason": "Too small for a unit of their own; the list's one engineer or marine battalion is the marines."},
+    {"name": "The rest of the Guard artillery", "reason": "Four more foot and four horse batteries, more than the Guard's brigades here take."}]
+
+MM_MICHEL = force(
+    "montmirail-michel", FIG, "Michel's Division", "2nd Old Guard Division, Old Guard (Mortier)", "French",
+    "The Guard's second division, the flanqueurs, fusiliers and vélites, which came up in the afternoon and counter-"
+    "attacked beside Friant's; Michel was wounded leading it.",
+    [bde("fig-young-guard-brigade", "Chasseur Brigade",
+         regiments=[og("Flanqueurs-Chasseurs", "fig-yg-tirailleurs"), og("Fusilier-Chasseurs", "fig-fusilier-chasseurs")]),
+     bde("fig-young-guard-brigade", "Grenadier Brigade",
+         regiments=[og("Flanqueurs-Grenadiers", "fig-yg-tirailleurs"), og("Fusilier-Grenadiers", "fig-fusilier-grenadiers")]),
+     bde("fig-italian-brigade", "Vélites", units=[u("fig-velites-florence", "Vélites of Florence"), u("fig-velites-turin", "Vélites of Turin")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Michel")],
+    notes=[LIST_FIG, MM_NOTE,
+           "The division had 3,878 men. Nafziger gives it without brigades: the chasseur and grenadier regiments are brigaded "
+           "here as the list takes them, flanqueurs with fusiliers, and the vélites as its Italian brigade.",
+           "The Flanqueurs-Chasseurs and Flanqueurs-Grenadiers, the Young Guard's light infantry, are the list's Tirailleurs.",
+           GUARD_ARTY])
+
+MM_COLBERT = force(
+    "montmirail-colbert", FIG, "Colbert's Guard Cavalry", "1st Guard Cavalry Division (Nansouty)", "French",
+    "One of Nansouty's three Guard cavalry divisions, which charged down the high road at the Russian centre as Friant's "
+    "infantry broke it; the Polish lancers pushed on to Viels-Maisons.",
+    [bde("fig-heavy-cavalry-brigade", "Guard Heavy Cavalry",
+         units=[u("fig-grenadiers-a-cheval-regt", "Grenadiers à Cheval"), u("fig-empress-dragoons", "Empress Dragoons"),
+                u("fig-og-horse-arty", "Guard Horse Battery")]),
+     bde("fig-light-cavalry-brigade", "Guard Chasseurs", units=[u("fig-chasseurs-a-cheval", "Chasseurs à Cheval")]),
+     bde("fig-light-cavalry-brigade", "Polish Lancers", units=[u("fig-polish-lancers", "1st (Polish) Chevau-légers Lanciers")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Colbert")],
+    notes=[LIST_FIG, MM_NOTE,
+           "The division had 2,582 men. Each Guard cavalry regiment had squadrons in each of the three divisions; each division's "
+           "are shown as one unit of each regiment.",
+           "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them."])
+MM_COLBERT["missing"] = [
+    {"name": "2nd Éclaireurs", "reason": "A regiment of Guard scouts raised that winter, which the 1812 list doesn't have."},
+    {"name": "Guyot's escort squadrons", "reason": "One squadron each of the Polish lancers, chasseurs, grenadiers and dragoons, riding with Napoleon; they turned the Russian left."}]
+
+MM_LEFEBVRE = force(
+    "montmirail-lefebvre-desnouettes", FIG, "Lefebvre-Desnouettes's Guard Cavalry", "2nd Guard Cavalry Division (Nansouty)", "French",
+    "The largest of the Guard's cavalry divisions, with Nansouty's other two in the charges against the Russian centre and left.",
+    [bde("fig-heavy-cavalry-brigade", "Guard Heavy Cavalry",
+         units=[u("fig-grenadiers-a-cheval-regt", "Grenadiers à Cheval (6 squadrons)"), u("fig-empress-dragoons", "Dragoons of the Guard (6 squadrons)")]),
+     bde("fig-light-cavalry-brigade", "Old Guard Chasseurs",
+         units=[u("fig-chasseurs-a-cheval", "Chasseurs à Cheval (6 squadrons)"), u("fig-gendarmes-elite", "Gendarmes d'Élite (2 squadrons)")]),
+     bde("fig-light-cavalry-brigade", "Guard Lancers", units=[u("fig-polish-lancers", "1st Chevau-légers Lanciers (7 squadrons)")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Lefebvre-Desnouettes")],
+    notes=[LIST_FIG, MM_NOTE,
+           "Its strengths are of 28 January: some 3,300 men, the grenadiers about nine hundred and the other regiments six to "
+           "seven hundred each.",
+           "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them, the Gendarmes "
+           "d'Élite as the small unit the chasseurs' brigade may have with it."])
+
+MM_LAFERRIERE = force(
+    "montmirail-laferriere", FIG, "Laferrière's Guard Cavalry", "3rd Guard Cavalry Division (Nansouty)", "French",
+    "The Guard's third cavalry division, which charged down the high road with Colbert's at the Russian centre.",
+    [bde("fig-heavy-cavalry-brigade", "Letort's Brigade", "Gén. de Brigade Letort",
+         units=[u("fig-grenadiers-a-cheval-regt", "Grenadiers à Cheval"), u("fig-empress-dragoons", "Empress Dragoons")]),
+     bde("fig-light-cavalry-brigade", "Lion's Brigade", "Gén. de Brigade Lion", units=[u("fig-chasseurs-a-cheval", "Chasseurs à Cheval")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Laferrière")],
+    notes=[LIST_FIG, MM_NOTE,
+           "Lion's brigade was the chasseurs, about five hundred, and the Empress Dragoons, about seven hundred; Letort's the "
+           "grenadiers, about eight hundred and fifty. The dragoons are with Letort's grenadiers here, as the list's heavy "
+           "brigade takes them."])
+
+MM_DEFRANCE = force(
+    "montmirail-defrance", FR, "Defrance's Gardes d'Honneur", "Cavalry Division, attached to the Guard", "French",
+    "The Gardes d'Honneur, who charged west of the ravine and cut up the Russian brigades caught there; seven of their "
+    "squadrons supported Friant's right.",
+    [bde("fr-light-cavalry-brigade", "Piquet's Brigade", "Gén. de Brigade Piquet",
+         units=[u("fr-hussar-regt", "10th Hussars"), u("fr-hussar-regt", "1st Gardes d'Honneur")]),
+     bde("fr-light-cavalry-brigade", "Ségur's Brigade", "Gén. de Brigade Ségur",
+         units=[u("fr-hussar-regt", "2nd Gardes d'Honneur"), u("fr-hussar-regt", "3rd Gardes d'Honneur"), u("fr-hussar-regt", "4th Gardes d'Honneur")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Defrance")],
+    notes=[LIST_FR, MM_NOTE, GARDES,
+           "The division had only 896 men in five regiments; they are shown at full size, and the list's Small upgrade would suit them.",
+           "Nafziger gives the division without brigades. Piquet's brigade of the 10th Hussars and the 1st Gardes d'Honneur, and "
+           "Ségur's of the 3rd and 4th, are as at La Rothière; the 2nd Gardes d'Honneur are with Ségur's here, three hussar "
+           "regiments where the list's brigade takes two, a historical departure.", CAV_ONLY])
+
+MONTMIRAIL = fought("montmirail", [MM_FR, SIX_DAYS, wiki("Battle of Montmirail", "Battle_of_Montmirail")],
+    [MM_RICARD, MM_MEUNIER, MM_CURIAL, MM_FRIANT, MM_MICHEL, MM_COLBERT, MM_LEFEBVRE, MM_LAFERRIERE, MM_DEFRANCE], [
     ru("Sacken's Corps", "Shcherbatov's VI and Lieven's XI Infantry Corps, Army of Silesia",
        "Some eighteen thousand men and eighty to ninety guns, marching back east to join Blücher. It took Marchais and lost it, "
        "and was driven north towards Château-Thierry."),

@@ -35,6 +35,10 @@
   "summary": "The first of the Six Days: marching north through the mud, Napoleon fell on Olsufiev's isolated Russian corps strung out along Blücher's line of march, and destroyed it; Olsufiev was taken.",
   "sources": [
     {
+      "label": "French and Russian Forces, Battle of Champaubert, 9 February 1814 (Nafziger Collection 814BAB)",
+      "url": "https://www.napoleon-series.org/nafzigger/814BAB.pdf"
+    },
+    {
       "label": "Six Days' Campaign order of battle (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Six_Days%27_Campaign_order_of_battle"
     },
@@ -43,29 +47,756 @@
       "url": "https://en.wikipedia.org/wiki/Battle_of_Champaubert"
     }
   ],
-  "forces": [],
-  "toCome": [
+  "forces": [
     {
+      "id": "champaubert-lagrange",
+      "nationId": "france",
+      "name": "Lagrange's Division",
+      "formation": "3rd Division, VI Corps (Marmont)",
       "side": "French",
-      "name": "Marmont's Corps",
-      "formation": "Lagrange's 3rd and Ricard's 8th Divisions, VI Corps",
-      "summary": "Led the march over the Petit Morin at Saint-Prix: Lagrange's division, Pelleport's brigade leading, took Bannay, and Ricard's took Baye and then fought for Champaubert itself.",
-      "flag": "/flags/france.svg"
+      "summary": "Marmont's leading division, which crossed the Petit Morin at Saint-Prix behind Ricard's. Its first attacks on the Russian right stalled until the Guard's guns came up; then Pelleport's brigade took Bannay.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Champaubert, from Bogdanovich's history of the campaign and the French archives; its strengths are of 1 February.",
+        "Its marine regiments were sailors and naval gunners of the fleet's artillery, brought inland in 1813; they fought well, and are shown as Line, the list's Veteran upgrade would suit them.",
+        "Nafziger gives the division as one brigade; its regiments are brigaded here as at La Rothière, after Nafziger's history as Wikipedia's order of battle has it. Battalion numbers he leaves out, and the division's artillery, are from his returns of 25 January and La Rothière.",
+        "Nafziger gives the 37th Line, but it is the 37th Léger, which served in the division at Leipzig; the 37th Line was in Duhesme's division of Victor's corps.",
+        "The division had 4,868 men in twenty-one battalions; they are shown at full size, and the list's Small upgrade would suit them all.",
+        "Marmont's artillery: three companies of the 3rd Foot Artillery, one with the division and two in the corps artillery, as the list takes them. Clavel's four regiments, where the list's brigade takes three, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Lagrange",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Joubert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Joubert",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "23rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/23rd Line"
+                }
+              ]
+            },
+            {
+              "name": "37th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/37th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "3/37th Léger"
+                }
+              ]
+            },
+            {
+              "name": "1st Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/1st Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/1st Marine Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pelleport's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelleport",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/2nd Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "3rd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/3rd Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "4th Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/4th Marine Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Lefol's Brigade",
+          "regiments": [
+            {
+              "name": "1st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/1st Line"
+                }
+              ]
+            },
+            {
+              "name": "15th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/15th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Clavel's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Clavel",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/16th Line"
+                }
+              ]
+            },
+            {
+              "name": "62nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "62nd Line"
+                }
+              ]
+            },
+            {
+              "name": "70th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/70th Line"
+                }
+              ]
+            },
+            {
+              "name": "121st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "121st Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "6/3rd Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "VI Corps Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "25/3rd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "26/3rd Foot Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "13/ and 16/5th Foot Artillery",
+          "reason": "The rest of Marmont's foot companies, more batteries than the list takes."
+        },
+        {
+          "name": "2/1st Horse Artillery",
+          "reason": "Marmont's horse company, with no cavalry in the division to allow it."
+        }
+      ]
     },
     {
+      "id": "champaubert-ricard",
+      "nationId": "france",
+      "name": "Ricard's Division",
+      "formation": "8th Division, VI Corps (Marmont)",
       "side": "French",
-      "name": "Ney's Young Guard",
-      "formation": "Meunier's 1st and Curial's 2nd Young Guard Divisions",
-      "summary": "Came up while the fight went on, and their guns joined the bombardment of Bannay.",
-      "flag": "/flags/france.svg"
+      "summary": "Marmont's other division, which led the way over the Petit Morin, took Baye and then fought its way into Champaubert itself, with a squadron of lancers under Piquet beside it.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Champaubert, from Bogdanovich's history of the campaign and the French archives; its strengths are of 1 February.",
+        "Its fourteen battalions were what was left of whole regiments after Leipzig, 2,917 men in all, a couple of hundred each. They are shown at full size; the list's Small upgrade would suit them all.",
+        "Nafziger gives the division without its brigades. Its battalions are split between Fournier and Boudin as at La Rothière: the light battalions and the older line regiments with Fournier, the regiments raised in 1813 with Boudin.",
+        "Fournier's nine regiments and Boudin's five, where the list's brigade takes three, and five light battalions, where it allows one light regiment in the division, show as historical departures. Nafziger gives the division no guns.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Ricard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Fournier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fournier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/2nd Léger"
+                }
+              ]
+            },
+            {
+              "name": "4th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "7/4th Léger"
+                }
+              ]
+            },
+            {
+              "name": "6th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/6th Léger"
+                }
+              ]
+            },
+            {
+              "name": "9th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "9th Léger"
+                }
+              ]
+            },
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "16th Léger"
+                }
+              ]
+            },
+            {
+              "name": "22nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "22nd Line"
+                }
+              ]
+            },
+            {
+              "name": "40th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/40th Line"
+                }
+              ]
+            },
+            {
+              "name": "50th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/50th Line"
+                }
+              ]
+            },
+            {
+              "name": "69th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "69th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Boudin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Boudin de Roville",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/136th Line"
+                }
+              ]
+            },
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/138th Line"
+                }
+              ]
+            },
+            {
+              "name": "142nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/142nd Line"
+                }
+              ]
+            },
+            {
+              "name": "144th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/144th Line"
+                }
+              ]
+            },
+            {
+              "name": "145th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/145th Line"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Etienne_Pierre_Sylvestre_Ricard.jpg/250px-Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "title": "Étienne Pierre Sylvestre Ricard",
+        "artist": "from Panckoucke's portraits of French generals",
+        "page": "https://commons.wikimedia.org/wiki/File:Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
     },
     {
-      "side": "French",
-      "name": "Doumerc's and Bordesoulle's Cavalry",
+      "id": "champaubert-bordesoulle",
+      "nationId": "france",
+      "name": "Bordesoulle's Cavalry",
       "formation": "I Cavalry Corps",
-      "summary": "Bordesoulle's cuirassiers rode round the Russian right and split Olsufiev's corps in two, while Doumerc's horse went round its left and closed the road at Fromentières.",
-      "flag": "/flags/france.svg"
+      "side": "French",
+      "summary": "The cavalry of Marmont's column. Bordesoulle's cuirassiers rode round the Russian right and split Olsufiev's corps in two, while horse went round its left to close the high road at Fromentières, so that few of the Russians got away.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Champaubert, from Bogdanovich's history of the campaign and the French archives; its strengths are of 1 February.",
+        "Merlin's 1st Light Cavalry Division is Wathier's and Guyon's brigades; Bordesoulle's own 2nd Heavy Cavalry Division, about twelve hundred men, Thiry's and Laville's.",
+        "Each brigade was made up of squadrons from the depots of many regiments: Nafziger names their parent regiments but not their strengths. They are grouped here as one unit for each kind of horse in a brigade, or two where a brigade had many, as they were formed into provisional regiments.",
+        "Nafziger names Bordesoulle as the corps' commander; Wikipedia's account has Doumerc leading the horse that went round the Russian left.",
+        "Two heavy cavalry brigades, where the list takes one, and cuirassiers and dragoons in one brigade show as historical departures.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Bordesoulle",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Wathier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Wathier",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "Hussar detachments (6th, 7th and 8th Hussars)"
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "Chevau-léger detachments (1st, 3rd, 5th, 7th and 8th Chevau-légers)"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Guyon's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Guyon",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "Chasseur detachments (1st, 2nd, 3rd and 6th Chasseurs)"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "Chasseur detachments (8th, 9th, 16th and 25th Chasseurs)"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Thiry's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thiry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (2nd, 3rd and 6th Cuirassiers)"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (9th, 11th and 12th Cuirassiers)"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Laville's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Laville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (4th, 7th and 14th Cuirassiers)"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "Dragoon detachments (7th, 23rd, 28th and 30th Dragoons)"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/1st Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "1/6th Horse Artillery",
+          "reason": "The corps' second horse battery, detached on the day."
+        }
+      ]
     },
+    {
+      "id": "champaubert-meunier",
+      "nationId": "french-imperial-guard",
+      "name": "Meunier's Division",
+      "formation": "1st Young Guard (1st Voltigeur) Division (Ney)",
+      "side": "French",
+      "summary": "Ney's first Young Guard division, which came up behind Marmont's while the fight went on; its guns joined the bombardment of Bannay.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Champaubert, from Bogdanovich's history of the campaign and the French archives; its strengths are of 1 February.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "The division had 4,133 men in eight battalions; they are shown at full size.",
+        "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+        "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Meunier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Lacoste's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lacoste",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/1st Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/1st Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "2nd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/2nd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/2nd Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Rousseau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rousseau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/3rd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/3rd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "4th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/4th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/4th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "champaubert-decouz",
+      "nationId": "french-imperial-guard",
+      "name": "Decouz's Division",
+      "formation": "2nd Young Guard (2nd Voltigeur) Division (Ney)",
+      "side": "French",
+      "summary": "Ney's second Young Guard division, which came up with Meunier's behind Marmont's.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Champaubert, from Bogdanovich's history of the campaign and the French archives; its strengths are of 1 February.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "Nafziger still names Decouz, mortally wounded at Brienne; Wikipedia's order of battle has Pelet leading the division on the 10th and 11th, and Curial taking it over.",
+        "The division had 2,840 men in eight battalions; they are shown at full size, and the list's Small upgrade would suit them.",
+        "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+        "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Decouz",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Pelet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/5th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/6th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/6th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Bigarré's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bigarré",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/8th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "toCome": [
     {
       "side": "Russian",
       "name": "Olsufiev's Corps",

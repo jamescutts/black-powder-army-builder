@@ -717,6 +717,8 @@ FORCE_PORTRAITS.update({
     # 1814
     "brienne-guard-cavalry": "lefebvre_desnouettes",
     "la-rothiere-guard-cavalry": "nansouty", "la-rothiere-ricard": "ricard",
+    "champaubert-ricard": "ricard", "montmirail-ricard": "ricard", "montmirail-friant": "friant",
+    "montmirail-lefebvre-desnouettes": "lefebvre_desnouettes",
 })
 
 
