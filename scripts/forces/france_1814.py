@@ -1460,7 +1460,7 @@ CR_PAC["missing"] = [{"name": "Exelmans's division", "reason": "About 1,350 hors
 
 CR_LAFERRIERE = at_craonne(MM_LAFERRIERE, "craonne-laferriere",
     "The Guard horse with Grouchy, which charged the Russian centre and its great battery and was driven back by the "
-    "squares; Laferrière lost a leg and Grouchy was wounded.",
+    "squares; Laferrière and Grouchy were both wounded.",
     ["The division had 1,250 men by now; the regiments' strengths that follow are of 1 February."])
 
 CR_FRIANT = at_craonne(MM_FRIANT, "craonne-friant",
@@ -1488,12 +1488,127 @@ CRAONNE = fought("craonne", [CR_FR, wiki("Battle of Craonne", "Battle_of_Craonne
     ru("Sacken's Corps", "Army of Silesia",
        "Its cavalry and Nikitin's guns covered Vorontsov's retreat; its infantry was too far off to fight.")])
 
-LAON = armies("laon", [wiki("Battle of Laon", "Battle_of_Laon")], [
-    fr("Napoleon's Army", "The Guard, with Ney's and Mortier's infantry",
-       "Some forty thousand men, who attacked the hill of Laon from the south-west on the 9th and again on the 10th without carrying it."),
-    fr("Marmont's Corps", "VI Corps",
-       "About ten thousand men, coming up the Berry-au-Bac road to Athies. Yorck's and Kleist's Prussians fell on it in the night "
-       "and routed it, taking forty-five guns; Fabvier's men and an Old Guard escort held open its road back."),
+# ---------------------------------------------------------------- Laon, 9–10 March 1814, written
+
+LA_FR = {"label": "Abstract, French Army at Battle of Laon, 9–10 March 1814 (Nafziger Collection 814CFK)", "url": NAF + "814CFK.pdf"}
+LA_VI = {"label": "French II & VI Corps, 12 March 1814 (Nafziger Collection 814CZA)", "url": NAF + "814CZA.pdf"}
+LA_NOTE = ("Nafziger's Laon return gives only the army's divisions; their units are from his Craonne return two days "
+           "before, and Marmont's from his return of the VI Corps on 12 March.")
+LA_VI_NOTE = ("After Nafziger's return of Marmont's corps on 12 March, two days after Laon and the rout at Athies, from the "
+              "French archives.")
+
+
+def at_laon(f, id_, summary):
+    notes = [LA_NOTE if n == CR_NOTE else n for n in f["notes"]]
+    return again(f, id_, summary, notes)
+
+
+LA_MEUNIER = at_laon(CR_MEUNIER, "laon-meunier",
+    "Ney's first Young Guard division, under eight hundred men after Craonne, in the attacks on the hill of Laon from the "
+    "south-west on the 9th and 10th.")
+LA_CURIAL = at_laon(CR_CURIAL, "laon-curial",
+    "Ney's second Young Guard division, about a thousand men, in the attacks on the hill of Laon.")
+LA_BOYER_DE_REBEVAL = at_laon(CR_BOYER_DE_REBEVAL, "laon-boyer-de-rebeval",
+    "The division of Victor's corps, now without Victor, in the attacks on Laon from the south-west.")
+LA_CHARPENTIER = at_laon(CR_CHARPENTIER, "laon-charpentier",
+    "Victor's Young Guard, with the main army in the attacks on the hill of Laon on the 9th and 10th.")
+LA_ROUSSEL = at_laon(CR_ROUSSEL, "laon-roussel",
+    "Grouchy's dragoons from Spain, with the main army before Laon.")
+LA_LAFERRIERE = at_laon(CR_LAFERRIERE, "laon-laferriere",
+    "The Guard's third cavalry division, now without Laferrière, who had been wounded at Craonne.")
+LA_FRIANT = at_laon(CR_FRIANT, "laon-friant",
+    "The Old Guard, in Mortier's reserve before Laon.")
+LA_COLBERT = at_laon(CR_COLBERT, "laon-colbert",
+    "The Guard horse with Mortier's reserve before Laon.")
+LA_PAC = at_laon(CR_PAC, "laon-pac",
+    "Nansouty's horse, with the main army before Laon.")
+
+LA_CHRISTIANI = force(
+    "laon-christiani", FIG, "Christiani's Division", "2nd Old Guard Division, Mortier's reserve", "French",
+    "The Guard's fusiliers, flanqueurs and vélites, held back at Craonne, with Mortier's reserve before Laon.",
+    [bde("fig-young-guard-brigade", "Fusilier Brigade",
+         regiments=[og("Fusilier-Chasseurs", "fig-fusilier-chasseurs"), og("Fusilier-Grenadiers", "fig-fusilier-grenadiers")]),
+     bde("fig-young-guard-brigade", "Gros's Brigade", "Gén. de Division Gros",
+         regiments=[og("Flanqueurs-Chasseurs", "fig-yg-tirailleurs"), og("Flanqueurs-Grenadiers", "fig-yg-tirailleurs")]),
+     bde("fig-italian-brigade", "Vélites", units=[u("fig-velites-turin", "Vélites of Turin"), u("fig-velites-florence", "Vélites of Florence")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Christiani")],
+    notes=[LIST_FIG, LA_NOTE,
+           "The division had 3,300 men at Craonne. Nafziger gives its regiments without their battalions; each has two here, "
+           "as at Montmirail.",
+           "Nafziger brigades the fusiliers together, each with a vélite battalion, and the flanqueurs with Gros; the vélites are "
+           "the list's Italian brigade here. The Flanqueurs-Chasseurs and Flanqueurs-Grenadiers are the list's Tirailleurs.",
+           "A fusilier brigade with no Young Guard regiment, which the list's brigade wants, shows as a historical departure."])
+LA_CHRISTIANI["missing"] = [{"name": "25/3rd Foot Artillery and 2/7th Horse Artillery",
+                             "reason": "Line artillery companies with the division, which the Guard list can't take."}]
+
+LA_PORET = force(
+    "laon-poret-de-morvan", FIG, "Poret de Morvan's Division", "Tirailleur Division, Young Guard, Mortier's reserve", "French",
+    "A division of Young Guard tirailleurs, newly come up and held back at Craonne, with Mortier's reserve before Laon.",
+    [bde("fig-young-guard-brigade", "Poret de Morvan's First Brigade", regiments=[yg("2nd Tirailleurs"), yg("3rd Tirailleurs")]),
+     bde("fig-young-guard-brigade", "Poret de Morvan's Second Brigade", regiments=[yg("4th Tirailleurs"), yg("12th Voltigeurs")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Poret de Morvan")],
+    notes=[LIST_FIG, LA_NOTE, NEW_YG,
+           "The division had 4,800 men in eight battalions. Nafziger gives it without brigades; its regiments are split "
+           "between two here, in his order. He gives it no guns."])
+
+LA_RICARD = force(
+    "laon-ricard", FR, "Ricard's Division", "8th Division, VI Corps (Marmont)", "French",
+    "Marmont's division on the Berry-au-Bac road, which came up to Athies on the 9th. In the night Yorck's and Kleist's "
+    "Prussians fell on Marmont's bivouacs and routed the corps, taking forty-five guns; Fabvier's men and an Old Guard "
+    "escort kept the road back open.",
+    [bde("fr-infantry-brigade", "Ricard's Light Battalions",
+         regiments=[one("fr-light-infantry", "2nd Léger"), one("fr-light-infantry", "4th Léger"), bn("fr-light-infantry", "3/9th Léger"),
+                    bn("fr-light-infantry", "2/16th Léger")]),
+     bde("fr-infantry-brigade", "Ricard's Line Battalions",
+         regiments=[one("fr-line-infantry", "136th Line"), one("fr-line-infantry", "138th Line"), one("fr-line-infantry", "144th Line")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Ricard")],
+    notes=[LIST_FR, LA_VI_NOTE,
+           "After Athies the division had about 650 men in seven battalions, fifty to a hundred and sixty each. They are shown at "
+           "full size; the list's Small upgrade would suit them all.",
+           "Nafziger gives the battalions without brigades; they are split here, light and line, as the list takes them.",
+           "A brigade of four light battalions, where the list takes three regiments and one light regiment in the division, "
+           "shows as a historical departure."])
+
+LA_LAGRANGE = again(
+    CH_LAGRANGE, "laon-lagrange",
+    "Marmont's other division, with Ricard's at Athies when the Prussians fell on the corps in the night of the 9th; Marmont "
+    "lost forty-five guns and the corps fell back in disorder.",
+    [LIST_FR, LA_VI_NOTE, MARINES] + CH_LAGRANGE["notes"][3:5] +
+    ["After Athies the division had about 1,400 men in twenty-one battalions; they are shown at full size, and the list's "
+     "Small upgrade would suit them all.",
+     "Nafziger gives Marmont's artillery on this return only as a foot and a horse company of January; the batteries here "
+     "are those of the 25 January return. Clavel's four regiments, where the list's brigade takes three, show as a historical "
+     "departure."])
+brigade_of(LA_LAGRANGE, "Lefol's Brigade")["regiments"].append(one("fr-line-infantry", "132nd Line"))
+LA_LAGRANGE["missing"] = [{"name": "The rest of Marmont's guns", "reason": "Forty-five of them were lost at Athies."}]
+
+LA_ARRIGHI = force(
+    "laon-arrighi", FR, "Arrighi's Command", "Paris Reserve division and provisional cavalry, with Marmont", "French",
+    "Depot battalions from Paris and the provisional horse of the I Cavalry Corps, which marched with Marmont to Athies and "
+    "were swept up in the night rout.",
+    [bde("fr-infantry-brigade", "Arrighi's First Brigade",
+         regiments=[bn("fr-line-infantry", "3/65th Line"), bn("fr-line-infantry", "4/66th Line"), bn("fr-line-infantry", "2/70th Line"),
+                    bn_list("fr-line-infantry", "85th Line", ["2", "4", "6"])]),
+     bde("fr-infantry-brigade", "Arrighi's Second Brigade",
+         regiments=[bn_list("fr-line-infantry", "43rd Line", ["3", "4"]), bn_list("fr-line-infantry", "50th Line", ["2", "4"]),
+                    bn("fr-line-infantry", "4/7th Line"), bn("fr-line-infantry", "3/88th Line")]),
+     bde("fr-light-cavalry-brigade", "Provisional Cavalry Brigade",
+         units=[u("fr-hussar-regt", "1st Provisional Regiment"), u("fr-chasseur-a-cheval", "2nd Provisional Regiment"),
+                u("fr-chasseur-a-cheval", "3rd Provisional Regiment"), u("fr-chasseur-a-cheval", "4th Provisional Regiment")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Arrighi")],
+    notes=[LIST_FR, LA_VI_NOTE,
+           "Nafziger's Laon return gives Arrighi the I Cavalry Corps and the 2nd Paris Reserve Division; his 12 March return "
+           "calls it the 1st Division of the Paris Reserve, with a provisional cavalry brigade of the I Cavalry Corps.",
+           "The division had about 1,800 men in twelve battalions, and the cavalry about 1,600 in four provisional regiments. "
+           "Nafziger gives the infantry without brigades; it is split between two here, in his order.",
+           "The provisional regiments are as at La Rothière, a hussar regiment and three of chasseurs, made up from the squadrons "
+           "left at the depots of many regiments.",
+           "Brigades of four regiments, where the list's take three, show as historical departures."])
+
+LAON = fought("laon", [LA_FR, CR_FR, LA_VI, wiki("Battle of Laon", "Battle_of_Laon")],
+    [LA_MEUNIER, LA_CURIAL, LA_BOYER_DE_REBEVAL, LA_CHARPENTIER, LA_ROUSSEL, LA_LAFERRIERE, LA_FRIANT, LA_CHRISTIANI,
+     LA_PORET, LA_COLBERT, LA_PAC, LA_RICARD, LA_LAGRANGE, LA_ARRIGHI], [
+    fr("Pierre Boyer's Division", "Ney's corps", "About 1,900 men at Craonne, whose battalions Nafziger couldn't identify."),
     pr("Bülow's Corps", "III Corps, Army of the North", "Held Laon itself."),
     pr("Yorck's and Kleist's Corps", "I and II Corps, Army of Silesia",
        "Held the eastern wing, and routed Marmont at Athies in the night of the 9th."),
