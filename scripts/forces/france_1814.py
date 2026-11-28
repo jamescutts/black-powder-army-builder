@@ -3150,6 +3150,75 @@ LIMONEST.update(fought("limonest", [LI_FR, wiki("Battle of Limonest", "Battle_of
     + [t for t in LIMONEST["toCome"] if t["side"] != "French"]))
 
 
+# ================================================================ Limonest: the Austrian Army of the South
+
+LI_AU = {"label": "Austrian Army of the South, 1 March 1814 (Nafziger Collection 814CAF)", "url": NAF + "814CAF.pdf"}
+LI_AU_NOTE = "After Nafziger's return of the Austrian Army of the South on 1 March, nearly three weeks before Limonest, from Koch's history."
+AU_DEP = ("Regiments of three and four battalions, where the list takes two Large ones, and more batteries or brigades than "
+          "it allows, show as historical departures.")
+
+
+def au_regt(name, n, hungarian=False):
+    return regt(name, bns("at-infantry-hungarian" if hungarian else "at-infantry-german", name.split(" Infantry")[0], n))
+
+
+LI_WIED = force(
+    "limonest-wied-runkel", AU, "Wied-Runkel's Division", "Bianchi's column, Army of the South", "Austrian",
+    "The division of Bianchi's column that attacked Pannetier's veterans at Dardilly and drove them out when their flank was turned.",
+    [bde("at-line-infantry-brigade", "Wied-Runkel's First Brigade", units=[u("at-6pdr-brigade-battery", "Brigade Battery")],
+         regiments=[au_regt("Prince de Ligne Infantry", 3), au_regt("Czartoryski Infantry", 3)]),
+     bde("at-line-infantry-brigade", "Quasdanovich's Brigade", "Gen-Maj Quasdanovich", units=[u("at-6pdr-brigade-battery", "Brigade Battery")],
+         regiments=[au_regt("Albert Gyulai Infantry", 3), au_regt("Reuss-Plauen Infantry", 3)])],
+    command=[cmd("at-inf-div-cmd", "Gen-Maj Prince Wied-Runkel")],
+    notes=[LIST_AU14, LI_AU_NOTE, AU_DEP])
+
+LI_BIANCHI = force(
+    "limonest-bianchi", AU, "Bianchi's Division", "Bianchi's column, Army of the South", "Austrian",
+    "Bianchi's own division, the mass of his column advancing on Lyon from the west through La Tour-de-Salvagny.",
+    [bde("at-line-infantry-brigade", "Hirsch's Brigade", "Gen-Maj Hirsch", units=[u("at-6pdr-brigade-battery", "Brigade Battery")],
+         regiments=[au_regt("Hiller Infantry", 2), au_regt("J. Colloredo Infantry", 2)]),
+     bde("at-line-infantry-brigade", "Haugwitz's Brigade", "Gen-Maj Haugwitz", units=[u("at-6pdr-brigade-battery", "Brigade Battery")],
+         regiments=[au_regt("Hesse-Homburg Infantry", 2), au_regt("Simbschen Infantry", 2)]),
+     bde("at-line-infantry-brigade", "Quallenberg's Brigade", "Gen-Maj Quallenberg", units=[u("at-6pdr-brigade-battery", "Brigade Battery")],
+         regiments=[au_regt("Esterházy Infantry", 2, True), au_regt("Davidovich Infantry", 2, True)])],
+    command=[cmd("at-inf-div-cmd", "FML Bianchi")],
+    notes=[LIST_AU14, LI_AU_NOTE, "The Esterházy and Davidovich regiments, recruited in Hungary, are the list's Hungarian infantry.", AU_DEP])
+
+LI_WIMPFFEN = force(
+    "limonest-wimpffen", AU, "Wimpffen's Division", "Wimpffen's column, Army of the South", "Austrian",
+    "The column that pressed on Limonest itself; Mumb's brigade took the heights, Mont Thoux among them.",
+    [bde("at-line-infantry-brigade", "Mumb's Brigade", "Gen-Maj Mumb", units=[u("at-6pdr-brigade-battery", "Brigade Battery")],
+         regiments=[au_regt("Froon Infantry", 3), au_regt("Devaux Infantry", 3)]),
+     bde("at-line-infantry-brigade", "Wimpffen's Second Brigade", units=[u("at-6pdr-brigade-battery", "Brigade Battery")],
+         regiments=[au_regt("Argenteau Infantry", 4), au_regt("Erbach Infantry", 3)])],
+    command=[cmd("at-inf-div-cmd", "FML Wimpffen")],
+    notes=[LIST_AU14, LI_AU_NOTE, "Nafziger doesn't name the second brigade's commander.", AU_DEP])
+
+LI_HARDEGG = force(
+    "limonest-hardegg", AU, "Hardegg's Division", "Light division, with Coburg's brigade, east of the Saône", "Austrian",
+    "The Austrians on the east bank of the Saône; Prince Ferdinand of Saxe-Coburg sent the Kienmayer Hussars to charge "
+    "near Caluire, and they were driven off.",
+    [bde("at-advanced-guard-brigade", "Raigecourt's Brigade", "Gen-Maj Raigecourt",
+         units=[u("at-grenz", "I/Deutsch-Banat Grenz"), u("at-grenz", "II/Deutsch-Banat Grenz"), u("at-hussar", "Hesse-Homburg Hussars"),
+                u("at-dragoon", "Riesch Dragoons"), u("at-cavalry-arty", "Light Battery")]),
+     bde("at-advanced-guard-brigade", "Scheither's Brigade", "Gen-Maj Scheither",
+         units=[u("at-jager", "5th Jäger Battalion"), u("at-grenz", "Warasdin-Kreuz Grenz"), u("at-hussar", "Kaiser Hussars"),
+                u("at-chevauleger", "Vincent Chevau-légers"), u("at-cavalry-arty", "Light Battery")]),
+     bde("at-advanced-guard-brigade", "Coburg's Brigade", "Gen-Maj Prince Ferdinand of Saxe-Coburg",
+         units=[u("at-grenz", "Gradiska Grenz"), u("at-grenz", "1st Wallachian Grenz"), u("at-hussar", "Kienmayer Hussars")])],
+    command=[cmd("at-inf-div-cmd", "FML Count Hardegg")],
+    notes=[LIST_AU14, LI_AU_NOTE,
+           "Coburg's brigade belonged to Wimpffen's lieutenancy on the return; Wikipedia's account has it with Hardegg on the east bank.",
+           "Three advanced guard brigades with no line infantry brigade, and more Grenz and cavalry than they take, show as "
+           "historical departures."])
+
+LIMONEST["forces"] += [LI_WIED, LI_BIANCHI, LI_WIMPFFEN, LI_HARDEGG]
+LIMONEST["sources"].append(LI_AU)
+LIMONEST["toCome"] = [t for t in LIMONEST["toCome"] if t["side"] == "French"] + [
+    at("Hesse-Homburg's Reserve", "Prince Emil of Hesse's Hessians and Lederer's Austrian grenadiers and cuirassiers",
+       "Moved up from Les Chères to Dommartin.")]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)

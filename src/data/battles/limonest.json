@@ -26,6 +26,10 @@
     {
       "label": "Battle of Limonest (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Limonest"
+    },
+    {
+      "label": "Austrian Army of the South, 1 March 1814 (Nafziger Collection 814CAF)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAF.pdf"
     }
   ],
   "forces": [
@@ -353,6 +357,511 @@
           ]
         }
       ]
+    },
+    {
+      "id": "limonest-wied-runkel",
+      "nationId": "austria",
+      "name": "Wied-Runkel's Division",
+      "formation": "Bianchi's column, Army of the South",
+      "side": "Austrian",
+      "summary": "The division of Bianchi's column that attacked Pannetier's veterans at Dardilly and drove them out when their flank was turned.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the Austrian Army of the South on 1 March, nearly three weeks before Limonest, from Koch's history.",
+        "Regiments of three and four battalions, where the list takes two Large ones, and more batteries or brigades than it allows, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "Gen-Maj Prince Wied-Runkel",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Wied-Runkel's First Brigade",
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Prince de Ligne Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Prince de Ligne"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Prince de Ligne"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Prince de Ligne"
+                }
+              ]
+            },
+            {
+              "name": "Czartoryski Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Czartoryski"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Czartoryski"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Czartoryski"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Quasdanovich's Brigade",
+          "commander": {
+            "name": "Gen-Maj Quasdanovich",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Albert Gyulai Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Albert Gyulai"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Albert Gyulai"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Albert Gyulai"
+                }
+              ]
+            },
+            {
+              "name": "Reuss-Plauen Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Reuss-Plauen"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Reuss-Plauen"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Reuss-Plauen"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "limonest-bianchi",
+      "nationId": "austria",
+      "name": "Bianchi's Division",
+      "formation": "Bianchi's column, Army of the South",
+      "side": "Austrian",
+      "summary": "Bianchi's own division, the mass of his column advancing on Lyon from the west through La Tour-de-Salvagny.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the Austrian Army of the South on 1 March, nearly three weeks before Limonest, from Koch's history.",
+        "The Esterházy and Davidovich regiments, recruited in Hungary, are the list's Hungarian infantry.",
+        "Regiments of three and four battalions, where the list takes two Large ones, and more batteries or brigades than it allows, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Bianchi",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Hirsch's Brigade",
+          "commander": {
+            "name": "Gen-Maj Hirsch",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Hiller Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Hiller"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Hiller"
+                }
+              ]
+            },
+            {
+              "name": "J. Colloredo Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/J. Colloredo"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/J. Colloredo"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Haugwitz's Brigade",
+          "commander": {
+            "name": "Gen-Maj Haugwitz",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Hesse-Homburg Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Hesse-Homburg"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Hesse-Homburg"
+                }
+              ]
+            },
+            {
+              "name": "Simbschen Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Simbschen"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Simbschen"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Quallenberg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Quallenberg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Esterházy Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Esterházy"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Esterházy"
+                }
+              ]
+            },
+            {
+              "name": "Davidovich Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Davidovich"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Davidovich"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "limonest-wimpffen",
+      "nationId": "austria",
+      "name": "Wimpffen's Division",
+      "formation": "Wimpffen's column, Army of the South",
+      "side": "Austrian",
+      "summary": "The column that pressed on Limonest itself; Mumb's brigade took the heights, Mont Thoux among them.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the Austrian Army of the South on 1 March, nearly three weeks before Limonest, from Koch's history.",
+        "Nafziger doesn't name the second brigade's commander.",
+        "Regiments of three and four battalions, where the list takes two Large ones, and more batteries or brigades than it allows, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Wimpffen",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Mumb's Brigade",
+          "commander": {
+            "name": "Gen-Maj Mumb",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Froon Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Froon"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Froon"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Froon"
+                }
+              ]
+            },
+            {
+              "name": "Devaux Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Devaux"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Devaux"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Devaux"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Wimpffen's Second Brigade",
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Argenteau Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Argenteau"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Argenteau"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Argenteau"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Argenteau"
+                }
+              ]
+            },
+            {
+              "name": "Erbach Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Erbach"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Erbach"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Erbach"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "limonest-hardegg",
+      "nationId": "austria",
+      "name": "Hardegg's Division",
+      "formation": "Light division, with Coburg's brigade, east of the Saône",
+      "side": "Austrian",
+      "summary": "The Austrians on the east bank of the Saône; Prince Ferdinand of Saxe-Coburg sent the Kienmayer Hussars to charge near Caluire, and they were driven off.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the Austrian Army of the South on 1 March, nearly three weeks before Limonest, from Koch's history.",
+        "Coburg's brigade belonged to Wimpffen's lieutenancy on the return; Wikipedia's account has it with Hardegg on the east bank.",
+        "Three advanced guard brigades with no line infantry brigade, and more Grenz and cavalry than they take, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Count Hardegg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Raigecourt's Brigade",
+          "commander": {
+            "name": "Gen-Maj Raigecourt",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/Deutsch-Banat Grenz"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "II/Deutsch-Banat Grenz"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Hesse-Homburg Hussars"
+            },
+            {
+              "unit": "at-dragoon",
+              "name": "Riesch Dragoons"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Light Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Scheither's Brigade",
+          "commander": {
+            "name": "Gen-Maj Scheither",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-jager",
+              "name": "5th Jäger Battalion"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "Warasdin-Kreuz Grenz"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Kaiser Hussars"
+            },
+            {
+              "unit": "at-chevauleger",
+              "name": "Vincent Chevau-légers"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Light Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Coburg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Ferdinand of Saxe-Coburg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "Gradiska Grenz"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "1st Wallachian Grenz"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Kienmayer Hussars"
+            }
+          ]
+        }
+      ]
     }
   ],
   "toCome": [
@@ -365,30 +874,9 @@
     },
     {
       "side": "Austrian",
-      "name": "Bianchi's Column",
-      "formation": "Army of the South",
-      "summary": "Advanced to La Tour-de-Salvagny; Wied-Runkel's division attacked Pannetier's and drove back Beurmann's brigade.",
-      "flag": "/flags/austria.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "Wimpffen's Column",
-      "formation": "Army of the South",
-      "summary": "Pressed on Limonest; Mumb's brigade took the heights, Mont Thoux among them.",
-      "flag": "/flags/austria.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "Hardegg's Column",
-      "formation": "Army of the South",
-      "summary": "On the east bank of the Saône; its hussars charged near Caluire and were driven off.",
-      "flag": "/flags/austria.svg"
-    },
-    {
-      "side": "Austrian",
       "name": "Hesse-Homburg's Reserve",
-      "formation": "Army of the South",
-      "summary": "Hessians and Austrians, moving up from Les Chères to Dommartin.",
+      "formation": "Prince Emil of Hesse's Hessians and Lederer's Austrian grenadiers and cuirassiers",
+      "summary": "Moved up from Les Chères to Dommartin.",
       "flag": "/flags/austria.svg"
     }
   ]
