@@ -182,7 +182,7 @@ BR_V_CAVALRY = force(
     "the town itself, to no purpose.",
     [bde("fr-light-cavalry-brigade", "Subervie's Brigade", "Gén. de Brigade Subervie",
          units=[u("fr-hussar-regt", "3rd Hussars"), u("fr-chasseur-a-cheval", "26th Chasseurs à Cheval")]),
-     bde("fr-light-cavalry-brigade", "Pacz's Brigade", "Gén. de Brigade Pacz",
+     bde("fr-light-cavalry-brigade", "Pac's Brigade", "Gén. de Brigade Pac",
          units=[u("fr-chasseur-a-cheval", "14th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "27th Chasseurs à Cheval")]),
      bde("fr-heavy-cavalry-brigade", "Montélégier's Brigade", "Gén. de Brigade Montélégier",
          units=[u("fr-dragoon", "2nd Dragoons"), u("fr-dragoon", "6th Dragoons"), u("fr-dragoon", "11th Dragoons")]),
@@ -1066,7 +1066,7 @@ MO_V_CAVALRY = again(
      "Four heavy cavalry brigades, where the list takes one, and more heavy cavalry than its half of the army for corps "
      "support, show as historical departures.", CAV_ONLY])
 for b in MO_V_CAVALRY["brigades"]:
-    if b["name"] == "Pacz's Brigade":
+    if b["name"] == "Pac's Brigade":
         b["name"], b["commander"] = "Du Coëtlosquet's Brigade", {"name": "Gén. de Brigade Du Coëtlosquet"}
 
 MO_TRELLIARD = mt_force("mormant-trelliard", "Trelliard's Dragoons", "5th Heavy Cavalry Division, VI Cavalry Corps (Kellermann)",
@@ -1175,20 +1175,125 @@ LAUBRESSEL = armies("laubressel", [wiki("Battle of Laubressel", "Battle_of_Laubr
        "About ten thousand Austrians, who attacked at Silvarouvres.")],
     alliances=(("Russian", "Bavarian", "Württemberg", "Austrian"),))
 
-CRAONNE = armies("craonne", [wiki("Battle of Craonne", "Battle_of_Craonne")], [
-    fr("Ney's Infantry", "Boyer's 9th Division and Meunier's and Curial's Young Guard Divisions",
-       "Attacked the Russian left up onto the plateau from Vauclair; Boyer's division took Ailles by three, and Curial's "
-       "pressed the last attack with Friant's."),
-    fr("Victor's Young Guard", "Charpentier's 7th and Boyer de Rébeval's 2nd Provisional Young Guard Divisions",
-       "Boyer de Rébeval's conscripts took the Bois Marion at noon and were thrown out by a dragoon charge; Charpentier's took "
-       "the Bois des Quatre Heures. Victor was wounded early in the day."),
-    fr("Grouchy's Cavalry", "Laferrière's 3rd Guard Cavalry and Roussel d'Hurbal's 6th Heavy Divisions",
-       "Charged the Russian centre and its battery and were driven back by the squares; Grouchy and Laferrière were wounded."),
-    fr("Nansouty's Cavalry", "Exelmans's division and Pac's brigade",
-       "Went up the Paissy spur on the Russian right and drove back Benckendorff's horse until the guns stopped them."),
-    fr("Mortier's Reserve", "Friant's and Christiani's Old Guard, Poret de Morvan's Young Guard and Colbert's Guard Cavalry Divisions",
-       "Friant's division came up behind the final attack; Colbert's horse, sent to the left, was driven off by the Russian "
-       "hussars. Drouot massed eighty-eight guns against the Russian lines."),
+# ---------------------------------------------------------------- Craonne, 7 March 1814, written
+
+CR_FR = {"label": "French Forces, Battle of Craone, 7 March 1814 (Nafziger Collection 814CAB)", "url": NAF + "814CAB.pdf"}
+CR_NOTE = "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives."
+
+
+def at_craonne(f, id_, summary, extra):
+    return again(f, id_, summary, [f["notes"][0], CR_NOTE] + list(extra) + [n for n in f["notes"][2:] if "full size" not in n and "men in" not in n])
+
+
+CR_MEUNIER = at_craonne(MM_MEUNIER, "craonne-meunier",
+    "Ney's first Young Guard division, which had taken the abbey of Vauclair the day before and went up onto the plateau "
+    "beside Boyer's men in the afternoon.",
+    ["The division was down to 865 men; its eight battalions are shown at full size, and the list's Small upgrade would suit them all."])
+
+CR_CURIAL = at_craonne(MM_CURIAL, "craonne-curial",
+    "Ney's second Young Guard division, which pressed the last attack on the Russian lines beside Friant's Old Guard.",
+    ["The division was down to 1,022 men; its eight battalions are shown at full size, and the list's Small upgrade would suit them all."])
+CR_CURIAL["notes"] = [n for n in CR_CURIAL["notes"] if "Pelet" not in n]
+
+CR_BOYER_DE_REBEVAL = force(
+    "craonne-boyer-de-rebeval", FR, "Boyer de Rébeval's Division", "9th Division, Victor's corps", "French",
+    "Victor's left, which took the Bois Marion at noon and was thrown out of it by a Russian dragoon charge; Victor was "
+    "wounded early in the day, and both brigadiers were hit.",
+    [bde("fr-infantry-brigade", "Gruyère's Brigade", "Gén. de Brigade Gruyère",
+         regiments=[bn_list("fr-light-infantry", "2nd Léger", ["1", "2", "6"]), bn("fr-line-infantry", "1/24th Line"),
+                    bn("fr-line-infantry", "6/36th Line"), bn_list("fr-line-infantry", "122nd Line", ["1", "4"])]),
+     bde("fr-infantry-brigade", "Chassé's Brigade", "Gén. de Brigade Chassé",
+         regiments=[bn("fr-light-infantry", "1/16th Léger"), bn("fr-line-infantry", "1/8th Line"),
+                    bn_list("fr-line-infantry", "28th Line", ["1", "3"]), bn("fr-line-infantry", "1/54th Line")]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "22/5th Foot Artillery")]),
+     bde("fr-artillery-brigade", "Attached Artillery", units=[u("fr-foot-arty", "10/8th Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Boyer de Rébeval")],
+    notes=[LIST_FR, CR_NOTE,
+           "The division had 3,800 men in eleven battalions.",
+           "Nafziger gives these line battalions to Boyer de Rébeval as Victor's 9th Division, and Pierre Boyer a division of "
+           "unknown battalions under Ney. Wikipedia's account has it the other way about: Pierre Boyer's 9th Division with "
+           "Ney, and Boyer de Rébeval a provisional Young Guard division of conscripts with Victor. This follows Nafziger.",
+           "Its two foot batteries, eight 6-pdrs and four howitzers, are one in its divisional artillery and one in its reserve, "
+           "as the list takes them.",
+           "Brigades of four regiments, where the list's take three, and two light regiments, where it allows one in the "
+           "division, show as historical departures."])
+
+def yg3(*bns_):
+    """Third battalions of two Young Guard regiments, grouped as one regiment as the list takes them"""
+    units = [u("fig-yg-voltigeurs" if "Voltigeur" in b else "fig-yg-tirailleurs", b) for b in bns_]
+    return regt(" and ".join(b.split("/", 1)[1] for b in bns_), units)
+
+
+CR_CHARPENTIER = force(
+    "craonne-charpentier", FIG, "Charpentier's Division", "7th Young Guard Division, Victor's corps", "French",
+    "Victor's Young Guard, which came up late on the right of his line and took the Bois des Quatre Heures in the early "
+    "afternoon.",
+    [bde("fig-young-guard-brigade", "Charpentier's First Brigade",
+         regiments=[yg3("3/3rd Tirailleurs", "3/3rd Voltigeurs"), yg3("3/4th Tirailleurs", "3/4th Voltigeurs"),
+                    yg3("3/5th Voltigeurs", "3/6th Voltigeurs")]),
+     bde("fig-young-guard-brigade", "Charpentier's Second Brigade",
+         regiments=[yg3("3/10th Tirailleurs", "3/11th Tirailleurs"), yg3("3/12th Tirailleurs", "3/7th Voltigeurs"),
+                    yg3("3/8th Voltigeurs", "3/11th Voltigeurs")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Charpentier")],
+    notes=[LIST_FIG, CR_NOTE, NEW_YG,
+           "The division was twelve third battalions of the Young Guard's regiments, 3,600 men. Nafziger gives them without "
+           "brigades; they are paired here as regiments of two battalions, in his order, and split into two brigades, as the "
+           "list takes them. Nafziger gives the division no guns."])
+
+CR_ROUSSEL = force(
+    "craonne-roussel", FR, "Roussel d'Hurbal's Dragoons", "6th Heavy Cavalry Division, under Grouchy", "French",
+    "Dragoons from Spain, which charged with Grouchy at the Russian centre: Sparre's brigade drove off the Pavlograd Hussars "
+    "and cut down a Russian battery before it was forced back. The division was then moved to the left.",
+    [bde("fr-heavy-cavalry-brigade", "Sparre's Brigade", "Gén. de Brigade Sparre",
+         units=[u("fr-dragoon", "5th Dragoons"), u("fr-dragoon", "12th Dragoons")]),
+     bde("fr-heavy-cavalry-brigade", "Rigaud's Brigade", "Gén. de Brigade Rigaud",
+         units=[u("fr-dragoon", "21st Dragoons"), u("fr-dragoon", "26th Dragoons")]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-horse-arty", "3/3rd Horse Artillery")]),
+     bde("fr-artillery-brigade", "Attached Artillery", units=[u("fr-horse-arty", "3/2nd Horse Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Roussel d'Hurbal")],
+    notes=[LIST_FR, CR_NOTE,
+           "The division had 2,200 men in four regiments, veterans of the army in Spain sent to Napoleon that winter.",
+           "Its two horse batteries are one in its divisional artillery and one in its reserve, as the list takes them.",
+           "Two heavy cavalry brigades, where the list takes one, more heavy cavalry than its half of the army for corps "
+           "support, and a cavalry force with no infantry, show as historical departures. Play it alongside infantry, or agree "
+           "it with your opponent."])
+
+CR_PAC = force(
+    "craonne-pac", FR, "Nansouty's Cavalry", "Left Wing (Nansouty)", "French",
+    "Nansouty's horse on the far right of the Russian line, which went up the Paissy spur and drove back Benckendorff's "
+    "hussars and Cossacks until the Russian guns stopped it.",
+    [bde("fr-light-cavalry-brigade", "Pac's Brigade", "Gén. de Brigade Pac",
+         units=[u("fr-hussar-regt", "3rd Hussars"), u("fr-chasseur-a-cheval", "14th Chasseurs à Cheval"),
+                u("fr-chasseur-a-cheval", "26th Chasseurs à Cheval"), u("fr-chasseur-a-cheval", "27th Chasseurs à Cheval")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Nansouty")],
+    notes=[LIST_FR, CR_NOTE,
+           "Pac's brigade, 450 men of Piré's old regiments, is the one Nafziger identifies of Nansouty's wing; its four "
+           "regiments are shown at full size, and the list's Small upgrade would suit them all.", CAV_ONLY])
+CR_PAC["missing"] = [{"name": "Exelmans's division", "reason": "About 1,350 horse, whose regiments Nafziger couldn't identify."}]
+
+CR_LAFERRIERE = at_craonne(MM_LAFERRIERE, "craonne-laferriere",
+    "The Guard horse with Grouchy, which charged the Russian centre and its great battery and was driven back by the "
+    "squares; Laferrière lost a leg and Grouchy was wounded.",
+    ["The division had 1,250 men by now; the regiments' strengths that follow are of 1 February."])
+
+CR_FRIANT = at_craonne(MM_FRIANT, "craonne-friant",
+    "The Old Guard, in Mortier's reserve, which came up behind the final attack in the afternoon as Drouot's eighty-eight "
+    "guns battered the Russian lines.",
+    ["The division had 3,800 men in eight battalions. The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, "
+     "and the 2nd, raised in 1811, its Middle Guard."])
+
+CR_COLBERT = at_craonne(MM_COLBERT, "craonne-colbert",
+    "The Guard horse in Mortier's reserve, sent to the left in the afternoon and driven off there by the Russian hussars.",
+    ["The division had 1,100 men."])
+
+CRAONNE = fought("craonne", [CR_FR, wiki("Battle of Craonne", "Battle_of_Craonne")],
+    [CR_MEUNIER, CR_CURIAL, CR_BOYER_DE_REBEVAL, CR_CHARPENTIER, CR_ROUSSEL, CR_LAFERRIERE, CR_PAC, CR_FRIANT, CR_COLBERT], [
+    fr("Pierre Boyer's Division", "Ney's wing",
+       "About 1,900 men with two foot batteries, whose battalions Nafziger couldn't identify; Wikipedia's account has it "
+       "attacking Ailles and taking it by three in the afternoon."),
+    fr("Christiani's and Poret de Morvan's Divisions", "2nd Old Guard and Tirailleur Divisions, Mortier's reserve",
+       "The fusiliers, flanqueurs and vélites of the Old Guard's second division, and a division of Young Guard tirailleurs, "
+       "some eight thousand men who weren't engaged."),
     ru("Vorontsov's Corps", "Vuich's 24th, Laptev's 21st, Khovansky's 12th and Zheltukhin's 13th Divisions, with Krasovsky's Jäger and Benckendorff's brigade",
        "Held the narrow plateau of the Chemin des Dames in lines across it through the day, and withdrew in good order."),
     ru("Vasilchikov's Cavalry", "Lanskoy's 2nd Hussar and Panchulidzev's 3rd Dragoon Divisions, with Karpov's Cossacks",

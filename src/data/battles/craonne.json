@@ -35,45 +35,925 @@
   "summary": "Napoleon attacked Vorontsov's and Sacken's Russians on the narrow Chemin des Dames plateau; Ney and Victor's Young Guard came on in costly frontal assaults until the Russians withdrew in good order, one of the bloodiest days of the campaign.",
   "sources": [
     {
+      "label": "French Forces, Battle of Craone, 7 March 1814 (Nafziger Collection 814CAB)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAB.pdf"
+    },
+    {
       "label": "Battle of Craonne (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Craonne"
     }
   ],
-  "forces": [],
+  "forces": [
+    {
+      "id": "craonne-meunier",
+      "nationId": "french-imperial-guard",
+      "name": "Meunier's Division",
+      "formation": "1st Young Guard (1st Voltigeur) Division (Ney)",
+      "side": "French",
+      "summary": "Ney's first Young Guard division, which had taken the abbey of Vauclair the day before and went up onto the plateau beside Boyer's men in the afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "The division was down to 865 men; its eight battalions are shown at full size, and the list's Small upgrade would suit them all.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+        "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Meunier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Lacoste's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lacoste",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/1st Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/1st Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "2nd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/2nd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/2nd Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Rousseau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rousseau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "3rd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/3rd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/3rd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "4th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/4th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/4th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "craonne-curial",
+      "nationId": "french-imperial-guard",
+      "name": "Curial's Division",
+      "formation": "2nd Young Guard (2nd Voltigeur) Division (Ney)",
+      "side": "French",
+      "summary": "Ney's second Young Guard division, which pressed the last attack on the Russian lines beside Friant's Old Guard.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "The division was down to 1,022 men; its eight battalions are shown at full size, and the list's Small upgrade would suit them all.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "Battalion numbers, brigades and guns, which this return leaves out, are as at La Rothière.",
+        "Its foot battery, with four battalions in its brigade, where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Curial",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Pelet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "Young Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/5th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/6th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/6th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Bigarré's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bigarré",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/8th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "craonne-boyer-de-rebeval",
+      "nationId": "france",
+      "name": "Boyer de Rébeval's Division",
+      "formation": "9th Division, Victor's corps",
+      "side": "French",
+      "summary": "Victor's left, which took the Bois Marion at noon and was thrown out of it by a Russian dragoon charge; Victor was wounded early in the day, and both brigadiers were hit.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "The division had 3,800 men in eleven battalions.",
+        "Nafziger gives these line battalions to Boyer de Rébeval as Victor's 9th Division, and Pierre Boyer a division of unknown battalions under Ney. Wikipedia's account has it the other way about: Pierre Boyer's 9th Division with Ney, and Boyer de Rébeval a provisional Young Guard division of conscripts with Victor. This follows Nafziger.",
+        "Its two foot batteries, eight 6-pdrs and four howitzers, are one in its divisional artillery and one in its reserve, as the list takes them.",
+        "Brigades of four regiments, where the list's take three, and two light regiments, where it allows one in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Boyer de Rébeval",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Gruyère's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gruyère",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/2nd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "6/2nd Léger"
+                }
+              ]
+            },
+            {
+              "name": "24th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/24th Line"
+                }
+              ]
+            },
+            {
+              "name": "36th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/36th Line"
+                }
+              ]
+            },
+            {
+              "name": "122nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/122nd Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/122nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chassé's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chassé",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/16th Léger"
+                }
+              ]
+            },
+            {
+              "name": "8th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "28th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/28th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/28th Line"
+                }
+              ]
+            },
+            {
+              "name": "54th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/54th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "22/5th Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/8th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "craonne-charpentier",
+      "nationId": "french-imperial-guard",
+      "name": "Charpentier's Division",
+      "formation": "7th Young Guard Division, Victor's corps",
+      "side": "French",
+      "summary": "Victor's Young Guard, which came up late on the right of his line and took the Bois des Quatre Heures in the early afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "The division was twelve third battalions of the Young Guard's regiments, 3,600 men. Nafziger gives them without brigades; they are paired here as regiments of two battalions, in his order, and split into two brigades, as the list takes them. Nafziger gives the division no guns.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Charpentier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Charpentier's First Brigade",
+          "regiments": [
+            {
+              "name": "3rd Tirailleurs and 3rd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "3/3rd Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/3rd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "4th Tirailleurs and 4th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "3/4th Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/4th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "5th Voltigeurs and 6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/5th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/6th Voltigeurs"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Charpentier's Second Brigade",
+          "regiments": [
+            {
+              "name": "10th Tirailleurs and 11th Tirailleurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "3/10th Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "3/11th Tirailleurs"
+                }
+              ]
+            },
+            {
+              "name": "12th Tirailleurs and 7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "3/12th Tirailleurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "8th Voltigeurs and 11th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/11th Voltigeurs"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg/250px-Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "title": "Henri François Marie Charpentier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "craonne-roussel",
+      "nationId": "france",
+      "name": "Roussel d'Hurbal's Dragoons",
+      "formation": "6th Heavy Cavalry Division, under Grouchy",
+      "side": "French",
+      "summary": "Dragoons from Spain, which charged with Grouchy at the Russian centre: Sparre's brigade drove off the Pavlograd Hussars and cut down a Russian battery before it was forced back. The division was then moved to the left.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "The division had 2,200 men in four regiments, veterans of the army in Spain sent to Napoleon that winter.",
+        "Its two horse batteries are one in its divisional artillery and one in its reserve, as the list takes them.",
+        "Two heavy cavalry brigades, where the list takes one, more heavy cavalry than its half of the army for corps support, and a cavalry force with no infantry, show as historical departures. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Roussel d'Hurbal",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Sparre's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sparre",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "5th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "12th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Rigaud's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rigaud",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "21st Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "26th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/3rd Horse Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/2nd Horse Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "craonne-laferriere",
+      "nationId": "french-imperial-guard",
+      "name": "Laferrière's Guard Cavalry",
+      "formation": "3rd Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The Guard horse with Grouchy, which charged the Russian centre and its great battery and was driven back by the squares; Laferrière lost a leg and Grouchy was wounded.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "The division had 1,250 men by now; the regiments' strengths that follow are of 1 February.",
+        "Lion's brigade was the chasseurs, about five hundred, and the Empress Dragoons, about seven hundred; Letort's the grenadiers, about eight hundred and fifty. The dragoons are with Letort's grenadiers here, as the list's heavy brigade takes them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Laferrière",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Letort's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Letort",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Lion's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lion",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "craonne-pac",
+      "nationId": "france",
+      "name": "Nansouty's Cavalry",
+      "formation": "Left Wing (Nansouty)",
+      "side": "French",
+      "summary": "Nansouty's horse on the far right of the Russian line, which went up the Paissy spur and drove back Benckendorff's hussars and Cossacks until the Russian guns stopped it.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "Pac's brigade, 450 men of Piré's old regiments, is the one Nafziger identifies of Nansouty's wing; its four regiments are shown at full size, and the list's Small upgrade would suit them all.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Nansouty",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Pac's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pac",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "3rd Hussars"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "14th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "26th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "27th Chasseurs à Cheval"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Exelmans's division",
+          "reason": "About 1,350 horse, whose regiments Nafziger couldn't identify."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Etienne-Marie-Antoine_Champion_de_Nansouty.jpg/250px-Etienne-Marie-Antoine_Champion_de_Nansouty.jpg",
+        "title": "Étienne de Nansouty",
+        "artist": "L. Lanta, engraved by Paul Petit",
+        "page": "https://commons.wikimedia.org/wiki/File:Etienne-Marie-Antoine_Champion_de_Nansouty.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "craonne-friant",
+      "nationId": "french-imperial-guard",
+      "name": "Friant's Old Guard",
+      "formation": "1st Old Guard Division, Old Guard (Mortier)",
+      "side": "French",
+      "summary": "The Old Guard, in Mortier's reserve, which came up behind the final attack in the afternoon as Drouot's eighty-eight guns battered the Russian lines.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "The division had 3,800 men in eight battalions. The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, and the 2nd, raised in 1811, its Middle Guard.",
+        "Nafziger gives Michel as the commander of the chasseurs' brigade as well as of the 2nd Old Guard Division; the brigade is shown here without him.",
+        "Nafziger gives the Guard artillery together, seven foot and four horse batteries, not by division; the batteries here are those the list's brigades take.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Friant",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Chasseurs à Pied",
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "1/1st Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "2/1st Chasseurs à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "1/2nd Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "2/2nd Chasseurs à Pied"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Cambronne's Brigade",
+          "commander": {
+            "name": "Gén. de Division Cambronne",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "1/1st Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "2/1st Grenadiers à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "1/2nd Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "2/2nd Grenadiers à Pied"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-marines-brigade",
+          "name": "Attached",
+          "units": [
+            {
+              "unit": "fig-marines",
+              "name": "3/Marines of the Guard"
+            }
+          ]
+        },
+        {
+          "type": "fig-artillery-reserve",
+          "name": "Guard Artillery",
+          "units": [
+            {
+              "unit": "fig-og-heavy-foot-arty",
+              "name": "Old Guard 12-pdr Foot Battery"
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg/250px-G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "title": "Louis Friant",
+        "artist": "Ambroise Tardieu",
+        "page": "https://commons.wikimedia.org/wiki/File:G%C3%A9n%C3%A9ral_Louis_Friant_%282%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "craonne-colbert",
+      "nationId": "french-imperial-guard",
+      "name": "Colbert's Guard Cavalry",
+      "formation": "1st Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The Guard horse in Mortier's reserve, sent to the left in the afternoon and driven off there by the Russian hussars.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Craonne, from Koch's history of the campaign and the French archives.",
+        "The division had 1,100 men.",
+        "The division had 2,582 men. Each Guard cavalry regiment had squadrons in each of the three divisions; each division's are shown as one unit of each regiment.",
+        "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Colbert",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Guard Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Guard Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Guard Chasseurs",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Polish Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st (Polish) Chevau-légers Lanciers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    }
+  ],
   "toCome": [
     {
       "side": "French",
-      "name": "Ney's Infantry",
-      "formation": "Boyer's 9th Division and Meunier's and Curial's Young Guard Divisions",
-      "summary": "Attacked the Russian left up onto the plateau from Vauclair; Boyer's division took Ailles by three, and Curial's pressed the last attack with Friant's.",
+      "name": "Pierre Boyer's Division",
+      "formation": "Ney's wing",
+      "summary": "About 1,900 men with two foot batteries, whose battalions Nafziger couldn't identify; Wikipedia's account has it attacking Ailles and taking it by three in the afternoon.",
       "flag": "/flags/france.svg"
     },
     {
       "side": "French",
-      "name": "Victor's Young Guard",
-      "formation": "Charpentier's 7th and Boyer de Rébeval's 2nd Provisional Young Guard Divisions",
-      "summary": "Boyer de Rébeval's conscripts took the Bois Marion at noon and were thrown out by a dragoon charge; Charpentier's took the Bois des Quatre Heures. Victor was wounded early in the day.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Grouchy's Cavalry",
-      "formation": "Laferrière's 3rd Guard Cavalry and Roussel d'Hurbal's 6th Heavy Divisions",
-      "summary": "Charged the Russian centre and its battery and were driven back by the squares; Grouchy and Laferrière were wounded.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Nansouty's Cavalry",
-      "formation": "Exelmans's division and Pac's brigade",
-      "summary": "Went up the Paissy spur on the Russian right and drove back Benckendorff's horse until the guns stopped them.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Mortier's Reserve",
-      "formation": "Friant's and Christiani's Old Guard, Poret de Morvan's Young Guard and Colbert's Guard Cavalry Divisions",
-      "summary": "Friant's division came up behind the final attack; Colbert's horse, sent to the left, was driven off by the Russian hussars. Drouot massed eighty-eight guns against the Russian lines.",
+      "name": "Christiani's and Poret de Morvan's Divisions",
+      "formation": "2nd Old Guard and Tirailleur Divisions, Mortier's reserve",
+      "summary": "The fusiliers, flanqueurs and vélites of the Old Guard's second division, and a division of Young Guard tirailleurs, some eight thousand men who weren't engaged.",
       "flag": "/flags/france.svg"
     },
     {

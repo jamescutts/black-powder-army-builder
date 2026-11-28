@@ -578,9 +578,9 @@
         },
         {
           "type": "fr-light-cavalry-brigade",
-          "name": "Pacz's Brigade",
+          "name": "Pac's Brigade",
           "commander": {
-            "name": "Gén. de Brigade Pacz",
+            "name": "Gén. de Brigade Pac",
             "variant": "Staff rating 8"
           },
           "units": [

@@ -720,7 +720,8 @@ FORCE_PORTRAITS.update({
     "champaubert-ricard": "ricard", "montmirail-ricard": "ricard", "montmirail-friant": "friant",
     "montmirail-lefebvre-desnouettes": "lefebvre_desnouettes", "chateau-thierry-friant": "friant",
     "chateau-thierry-lefebvre-desnouettes": "lefebvre_desnouettes", "vauchamps-ricard": "ricard", "vauchamps-friant": "friant",
-    "vauchamps-lefebvre-desnouettes": "lefebvre_desnouettes",
+    "vauchamps-lefebvre-desnouettes": "lefebvre_desnouettes", "craonne-friant": "friant", "craonne-charpentier": "charpentier",
+    "craonne-pac": "nansouty",
 })
 
 
