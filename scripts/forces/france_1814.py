@@ -3018,6 +3018,74 @@ PARIS["toCome"] = [t for t in PARIS["toCome"] if t["side"] == "French" or t["nam
     at("The Austrian Grenadiers", "Army of Bohemia", "With the Württembergers at the bridges of Saint-Maur and Charenton.")]
 
 
+# ================================================================ Laon: Winzingerode's Russians
+
+LA_RU_NOTE = "After Nafziger's order of battle for the allied army at Laon, from the Prussian General Staff's plans."
+LA_RU_AGAIN = ("After Nafziger's order of battle for the allied army at Laon, which gives these divisions as at Craonne two "
+               "days before, with the same regiments and batteries.")
+
+
+def ru_at_laon(f, id_, summary):
+    return again(f, id_, summary, [f["notes"][0], LA_RU_AGAIN] + f["notes"][2:])
+
+
+LA_VUICH = ru_at_laon(CR_VUICH, "laon-vuich", "Vuich's corps of Winzingerode's army, on Blücher's western wing at Laon.")
+LA_KRASOVSKY = ru_at_laon(CR_VORONTSOV, "laon-krasovsky",
+    "Krasovsky's Jäger and Benckendorff's horse, on Blücher's western wing with the rest of Winzingerode's army.")
+LA_KRASOVSKY["brigades"] = [b for b in LA_KRASOVSKY["brigades"] if b["name"] != "Harpe's Brigade"]
+LA_KRASOVSKY["name"], LA_KRASOVSKY["formation"] = "Krasovsky's and Benckendorff's Brigades", "Vuich's corps and Winzingerode's cavalry"
+LA_KRASOVSKY["command"] = [cmd("ru-div-cmd", "Maj-Gen Krasovsky")]
+LA_KRASOVSKY["notes"] = [LIST_RU, LA_RU_AGAIN,
+    "Krasovsky's 15th Division, the 14th and 15th Jäger with three batteries, and Benckendorff's detachment of the Pavlograd "
+    "Hussars and Bug Cossacks; Harpe's brigade, with Vorontsov's corps at Craonne, isn't on the Laon return.",
+    "Three batteries with two battalions, where the list allows none, and no infantry brigade to allow the Jäger and "
+    "cavalry, show as historical departures."]
+LA_LAPTEV = ru_at_laon(CR_LAPTEV, "laon-laptev", "Laptev's division of Stroganov's corps, on Blücher's western wing.")
+LA_STROGANOV = ru_at_laon(CR_STROGANOV, "laon-stroganov", "Stroganov's corps, on Blücher's western wing at Laon.")
+LA_STROGANOV["formation"] = "Khovansky's 12th and Zheltukhin's 13th Divisions, Winzingerode's army"
+
+LA_CHERNYSHEV = force(
+    "laon-chernyshev", RU, "Chernyshev's Advance Guard", "Winzingerode's army", "Russian",
+    "Winzingerode's advance guard of uhlans and Cossacks, out on Blücher's western wing.",
+    [bde("ru-light-cavalry-brigade", "Volhynia Uhlans", units=[u("ru-uhlan", "Volhynia Uhlans (4 squadrons)"), u("ru-horse-arty", "Horse Battery #12")]),
+     bde("ru-cossack-brigade", "Chernyshev's Cossacks",
+         units=[u("ru-mounted-cossack", n) for n in ("Balabin #2 Cossacks", "Diatchkin Cossacks", "Vlasov #3 Cossacks", "Sysoev Cossacks", "Chirov Cossacks")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Chernyshev")],
+    notes=[LIST_RU, LA_RU_NOTE,
+           "Cavalry with no infantry brigade to allow it shows as a historical departure."])
+
+LA_ORURK = force(
+    "laon-orurk", RU, "Orurk's Cavalry", "Reserve Cavalry, Winzingerode's army", "Russian",
+    "Winzingerode's reserve cavalry, hussars, dragoons and horse chasseurs, on Blücher's western wing.",
+    [bde("ru-light-cavalry-brigade", "Light Regiments",
+         units=[u("ru-hussar", "Izyum Hussars"), u("ru-hussar", "Elisavetgrad Hussars"), u("ru-mounted-jager", "Nezhin Horse Chasseurs"),
+                u("ru-irregular-mounted-cossack", "Yaroslavl Opolchenie Cossacks")]),
+     bde("ru-heavy-cavalry-brigade", "Dragoons",
+         units=[u("ru-dragoon", "St Petersburg Dragoons"), u("ru-dragoon", "Riga Dragoons"), u("ru-dragoon", "Finland Dragoons")])],
+    command=[cmd("ru-div-cmd", "Gen-Lt Count Orurk")],
+    notes=[LIST_RU, LA_RU_NOTE,
+           "Each regiment had four squadrons. Nafziger gives them without brigades; they are brigaded here, light and dragoons, "
+           "as the list takes them. The Nezhin regiment is the list's Mounted Jäger, and the Yaroslavl Opolchenie Cossacks its "
+           "Irregular Cossacks.",
+           "Four regiments in the light brigade, where the list's takes three, with three hussars and horse chasseurs, where it "
+           "takes two, and cavalry with no infantry brigade to allow it, show as historical departures."])
+
+LA_COSSACKS = force(
+    "laon-cossacks", RU, "Winzingerode's Cossacks", "Marischkin's and Melnikov's detachments", "Russian",
+    "Two Cossack detachments of Winzingerode's army, out on the western wing.",
+    [bde("ru-cossack-brigade", "Marischkin's Detachment", "Maj-Gen Marischkin",
+         units=[u("ru-mounted-cossack", n) for n in ("Grekov #9 Cossacks", "Barabanshchikov #2 Cossacks", "Lochilin #1 Cossacks")]),
+     bde("ru-cossack-brigade", "Melnikov's Detachment", "Col Melnikov",
+         units=[u("ru-mounted-cossack", n) for n in ("Melnikov #4 Cossacks", "Melnikov #5 Cossacks", "Ilovaisky #4 Cossacks", "Panteleev Cossacks")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Marischkin")],
+    notes=[LIST_RU, LA_RU_NOTE,
+           "Nafziger lists Grekov #9 in both detachments; it is shown once, with Marischkin's.",
+           "Two Cossack brigades and no infantry brigade to allow them show as historical departures."])
+
+LAON["forces"] += [LA_VUICH, LA_KRASOVSKY, LA_LAPTEV, LA_STROGANOV, LA_CHERNYSHEV, LA_ORURK, LA_COSSACKS]
+LAON["toCome"] = [t for t in LAON["toCome"] if t["name"] != "Winzingerode's Corps"]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)
