@@ -2985,6 +2985,39 @@ REIMS["toCome"] = [t for t in REIMS["toCome"] if t["side"] == "French"] + [
     ru("Panchulidzev's Horse Chasseurs", "1st Horse Chasseur Division", "Three regiments, which Wikipedia doesn't name.")]
 
 
+# ================================================================ Paris: the allied corps from their latest returns
+
+PA_AL_NOTE = ("Nafziger has no allied order of battle for Paris; this is the corps as on his latest return of it, some weeks "
+              "before, and much weaker by the 30th.")
+
+
+def at_paris(f, id_, summary, when):
+    return again(f, id_, summary, [f["notes"][0], PA_AL_NOTE + " " + when] + f["notes"][2:])
+
+
+PA_YORCK = at_paris(LA_YORCK, "paris-yorck",
+    "Yorck's Prussians on Blücher's wing, which came down from the north and took La Villette.", "This is his Laon return.")
+PA_KLEIST = at_paris(LA_KLEIST, "paris-kleist",
+    "Kleist's Prussians beside Yorck's, which stormed La Chapelle.", "This is his Laon return.")
+PA_VORONTSOV = [at_paris(f, f["id"].replace("craonne", "paris"), summ, "This is his Craonne return.") for f, summ in (
+    (CR_VORONTSOV, "Vorontsov's corps, fifteen thousand infantry on Blücher's wing; its first line, with Benckendorff's horse."),
+    (CR_VUICH, "Vuich's corps of Vorontsov's, on Blücher's wing."),
+    (CR_LAPTEV, "Laptev's division of Vorontsov's corps, on Blücher's wing."),
+    (CR_STROGANOV, "Stroganov's divisions of Vorontsov's corps, on Blücher's wing."))]
+PA_WURTTEMBERG = at_paris(MT_WURTTEMBERG, "paris-wurttemberg",
+    "The Crown Prince's corps on the allied left, which with the Austrian grenadiers took the bridges of Saint-Maur and "
+    "Charenton and Saint-Mandé.", "This is his return of 15 February.")
+PA_GYULAI = at_paris(RO_GYULAI, "paris-gyulai",
+    "Gyulai's Austrians on the allied left, sent against the forest of Vincennes.", "This is Wikipedia's La Rothière order of battle.")
+
+PARIS["forces"] += [PA_YORCK, PA_KLEIST] + PA_VORONTSOV + [PA_WURTTEMBERG, PA_GYULAI]
+PARIS["sources"] += [LA_AL, CR_RU, MT_AL, RO_AL]
+PARIS["toCome"] = [t for t in PARIS["toCome"] if t["side"] == "French" or t["name"] in (
+    "Raevsky's Corps", "The Russian Guard and Reserve", "The Prussian Guard")] + [
+    ru("Langeron's Corps", "Army of Silesia", "Came on by Le Bourget on Blücher's wing."),
+    at("The Austrian Grenadiers", "Army of Bohemia", "With the Württembergers at the bridges of Saint-Maur and Charenton.")]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)
