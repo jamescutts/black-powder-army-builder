@@ -1325,33 +1325,205 @@ MONTEREAU = fought("montereau", [MT_FR, wiki("Battle of Montereau", "Battle_of_M
        "Four Austrian infantry regiments and the Archduke Ferdinand Hussars, which held the park of Surville; Schäffer was taken.")],
     alliances=(("Württemberg", "Austrian"),))
 
-BAR_SUR_AUBE = armies("bar-sur-aube", [wiki("Battle of Bar-sur-Aube", "Battle_of_Bar-sur-Aube")], [
-    fr("Oudinot's Corps", "VII Corps",
-       "Holding the heights before Bar-sur-Aube for Macdonald's army, it took the weight of Schwarzenberg's attack and was "
-       "driven back over the Aube."),
-    fr("Gérard's Corps", "II Corps",
-       "With Oudinot's before the town; much of Macdonald's army, and most of its guns, were on the far side of the Aube and "
-       "could take no part."),
-    ru("Wittgenstein's Corps", "VI Corps, Army of Bohemia",
-       "Attacked Oudinot's position; Wittgenstein was wounded leading it."),
-    bav("Wrede's Corps", "V Corps, Army of Bohemia",
-        "Wrede's Bavarians and Austrians, who came on against Oudinot beside Wittgenstein's Russians.")],
-    alliances=(("Russian", "Bavarian"),))
+# ---------------------------------------------------------------- Bar-sur-Aube and Laubressel, 27 February and 3 March 1814, written
 
-LAUBRESSEL = armies("laubressel", [wiki("Battle of Laubressel", "Battle_of_Laubressel")], [
-    fr("Gérard's Corps", "Duhesme's and Hamelinaye's divisions and Jarry's brigade, II Corps",
-       "Held the bridge of La Guillotière, where Duhesme lost two guns and four hundred men; Bellair's brigade of Hamelinaye's "
-       "division was routed, and Gérard drew back into Troyes."),
-    fr("Oudinot's Corps", "Rothembourg's, Leval's, Chassé's and Pacthod's divisions, VII Corps",
-       "Rothembourg's Young Guard held the plateau of Laubressel until Wittgenstein's Russians came round its flank."),
-    fr("Macdonald's Corps", "Albert's, Brayer's and Amey's divisions, XI Corps (Molitor)",
-       "Fell back on Troyes without being pressed."),
-    fr("Saint-Germain's Cavalry", "Maurin's and Delort's divisions, II Cavalry Corps",
-       "Maurin's horse retook most of the artillery park Pahlen's cavalry had overrun at Thennelières."),
-    fr("Milhaud's Cavalry", "Piré's, Briche's and L'Héritier's divisions, V Cavalry Corps",
-       "Fell back with the infantry without being engaged."),
-    fr("Kellermann's Cavalry", "Jacquinot's and Trelliard's divisions, VI Cavalry Corps",
-       "Trelliard's dragoons counter-attacked the Russians at Thennelières; Jacquinot's division stampeded at La Chapelle-Saint-Luc."),
+TR_FR = {"label": "French Army before Troyes under Macdonald, 2 March 1814 (Nafziger Collection 814CAD)", "url": NAF + "814CAD.pdf"}
+TR_VI = {"label": "French II & VI Corps, 12 March 1814 (Nafziger Collection 814CZA)", "url": NAF + "814CZA.pdf"}
+TR_NOTE = ("After Nafziger's return of Macdonald's army before Troyes on 2 March, from Koch's history and the French archives; "
+           "its strengths are of 1 to 10 March.")
+TR_II_NOTE = ("Gérard's corps isn't on Nafziger's return of 2 March; it is from his return of the II Corps on 12 March, nine "
+              "days after Laubressel.")
+TR_NG = ("Its National Guards, raised that winter from the departments, are shown as Line; the list's Wavering or Morale 5 "
+         "would suit them better.")
+
+
+def ones(unit, *names):
+    return [one(unit, n) for n in names]
+
+
+LB_DUHESME = force(
+    "laubressel-duhesme", FR, "Duhesme's Division", "1st Division, II Corps (Gérard)", "French",
+    "Gérard's division at the bridge of La Guillotière on the Barse, which held it until it was turned and lost two guns and "
+    "four hundred men.",
+    [bde("fr-infantry-brigade", "Dornier's Brigade", "Gén. de Brigade Dornier",
+         regiments=ones("fr-light-infantry", "26th Léger") + ones("fr-line-infantry", "72nd Line", "93rd Line", "2nd Line", "37th Line", "56th Line")),
+     bde("fr-infantry-brigade", "Matesse's Brigade", "Gén. de Brigade Matesse",
+         regiments=ones("fr-light-infantry", "11th Léger", "24th Léger") + ones("fr-line-infantry", "4th Line", "18th Line", "46th Line", "Bataillon de l'Aisne")),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "9/2nd Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Duhesme")],
+    notes=[LIST_FR, TR_II_NOTE,
+           "Its twelve battalions had twenty to three hundred and fifty men each, 1,900 or so in all; each regiment is shown as "
+           "one battalion at full size, and the list's Small upgrade would suit them all.",
+           "The corps' artillery, four foot companies and a horse company, is one with each division here.",
+           "Brigades of six regiments, where the list's take three, and three light regiments, where it allows one in the "
+           "division, show as historical departures."])
+
+LB_HAMELINAYE = force(
+    "laubressel-hamelinaye", FR, "Hamelinaye's Division", "2nd Division, II Corps (Gérard)", "French",
+    "Gérard's other division, linking Duhesme's to Rottembourg's. Bellair's brigade was routed; Jarry's covered Duhesme's left "
+    "and drew off in order, and Gérard fell back into Troyes.",
+    [bde("fr-infantry-brigade", "Jarry's Brigade", "Gén. de Brigade Jarry",
+         regiments=ones("fr-light-infantry", "12th Léger", "29th Léger", "5th Léger", "15th Léger") + ones("fr-line-infantry", "32nd Line", "58th Line", "135th Line", "155th Line")),
+     bde("fr-infantry-brigade", "Bellair's Brigade", "Gén. de Brigade Bellair",
+         regiments=ones("fr-line-infantry", "26th Line", "82nd Line", "86th Line", "122nd Line", "142nd Line")),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "10/6th Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division La Hamelinaye")],
+    notes=[LIST_FR, TR_II_NOTE,
+           "Nafziger names it Hamelinaye's or Dufour's division. Its thirteen battalions had fifty to two hundred men each, some "
+           "1,600 in all; each regiment is shown as one battalion at full size, and the list's Small upgrade would suit them all.",
+           "The corps' artillery is one company with each division here.",
+           "Brigades of eight and five regiments, where the list's take three, and four light regiments, where it allows one in "
+           "the division, show as historical departures."])
+LB_HAMELINAYE["missing"] = [{"name": "22/8th, 17/5th and 2/9th Foot and 6/3rd Horse Artillery", "reason": "The rest of Gérard's corps artillery."}]
+
+LB_ROTTEMBOURG = force(
+    "laubressel-rottembourg", FIG, "Rottembourg's Division", "5th Young Guard Division, VII Corps (Oudinot)", "French",
+    "Oudinot's Young Guard on the plateau of Laubressel, which held it until Wittgenstein's Russians came round its flank and "
+    "forced it back.",
+    [bde("fig-young-guard-brigade", "Charrière's Brigade", "Gén. de Brigade Charrière", regiments=[yg("5th Voltigeurs"), yg("6th Voltigeurs")]),
+     bde("fig-young-guard-brigade", "Baudin's Brigade", "Gén. de Brigade Baudin",
+         units=[u("fig-yg-foot-arty", "11th Young Guard Foot Company")],
+         regiments=[yg("7th Voltigeurs", 3), yg("8th Voltigeurs", 3)])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Rottembourg")],
+    notes=[LIST_FIG, TR_NOTE, NEW_YG,
+           "The division had some seven hundred men in ten battalions by 5 March; they are shown at full size, and the list's "
+           "Small upgrade would suit them all. Its regiments are voltigeurs now, where at La Rothière they were tirailleurs.",
+           "Its foot company, five 6-pdrs and two howitzers, is with Baudin's brigade.",
+           "Regiments of three battalions, where the list's take two, show as historical departures."])
+
+LB_LEVAL = force(
+    "laubressel-leval", FR, "Leval's Division", "7th Division, VII Corps (Oudinot)", "French",
+    "Veterans from Spain, the strongest division of Oudinot's corps, which fell back on Troyes with it as Wittgenstein "
+    "turned the plateau.",
+    [bde("fr-infantry-brigade", "Pinoteau's Brigade", "Gén. de Brigade Pinoteau",
+         regiments=[bn_list("fr-light-infantry", "10th Léger", ["1", "6"]), bn("fr-line-infantry", "1/3rd Line"), bn("fr-line-infantry", "1/15th Line"),
+                    bn_list("fr-line-infantry", "130th Line", ["1", "2"])]),
+     bde("fr-infantry-brigade", "Montfort's Brigade", "Gén. de Brigade Montfort",
+         regiments=[bn("fr-light-infantry", "1/17th Léger"), bn("fr-line-infantry", "1/101st Line"), bn_list("fr-line-infantry", "105th Line", ["1", "2"]),
+                    bn("fr-line-infantry", "6/118th Line")]),
+     bde("fr-infantry-brigade", "Chassé's Brigade", "Gén. de Brigade Chassé",
+         regiments=[bn("fr-light-infantry", "1/16th Léger"), bn("fr-line-infantry", "1/8th Line"), bn_list("fr-line-infantry", "28th Line", ["1", "3", "6"]),
+                    bn("fr-line-infantry", "1/54th Line")]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "19/1st Foot Artillery")]),
+     bde("fr-artillery-brigade", "Attached Artillery", units=[u("fr-foot-arty", "22/5th Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Leval")],
+    notes=[LIST_FR, TR_NOTE,
+           "The division had some 5,800 men in seventeen battalions, three to nine hundred each. Nafziger gives Chassé's brigade "
+           "as its third on 5 March, and as the 9th Division's on 1 March; Wikipedia's account has Chassé leading a division.",
+           "Its foot company of eight 6-pdrs and four howitzers is its divisional artillery, and the 9th Division's company is in "
+           "its reserve.",
+           "Brigades of four regiments, where the list's take three, and three light regiments, where it allows one in the "
+           "division, show as historical departures."])
+
+LB_PACTHOD = force(
+    "laubressel-pacthod", FR, "Pacthod's National Guards", "National Guard Division, VII Corps (Oudinot)", "French",
+    "National Guards raised that winter in the departments, which marched with Oudinot's corps and fell back on Troyes with it.",
+    [bde("fr-infantry-brigade", "Rost's Brigade", "Gén. de Brigade Rost",
+         regiments=ones("fr-line-infantry", "1st Sarthe", "3rd Indre-et-Loire")),
+     bde("fr-infantry-brigade", "Bonté's Brigade", "Gén. de Brigade Bonté",
+         regiments=ones("fr-line-infantry", "2nd Loir-et-Cher", "5th Seine-et-Marne")),
+     bde("fr-infantry-brigade", "Konzinsky's Brigade", "Gén. de Brigade Konzinsky", regiments=ones("fr-line-infantry", "4th Maine-et-Loire")),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "26/6th Foot Artillery")]),
+     bde("fr-artillery-brigade", "Reserve Artillery",
+         units=[u("fr-heavy-foot-arty", "24/6th Foot Artillery (12-pdrs)"), u("fr-foot-arty", "12/8th Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Pacthod")],
+    notes=[LIST_FR, TR_NOTE, TR_NG,
+           "The division had some 3,900 men in five regiments, three to a thousand men each; each regiment is shown as one "
+           "unit.",
+           "Its own foot company and the VII Corps' reserve companies are with it here; the reserve's horse company is left out.",
+           "With five units of infantry, the division's battery and its reserve batteries show as historical departures."])
+
+LB_ALBERT = force(
+    "laubressel-albert", FR, "Albert's Division", "XI Corps (Molitor)", "French",
+    "Macdonald's corps, which fell back on Troyes without being pressed while Oudinot's and Gérard's were beaten.",
+    [bde("fr-infantry-brigade", "Schaeffer's Brigade", "Gén. de Brigade Schaeffer",
+         regiments=[bn("fr-line-infantry", "3/139th Line"), bn_list("fr-line-infantry", "1st Regiment of Brest", ["1", "2"])]),
+     bde("fr-infantry-brigade", "Albert's Second Brigade",
+         regiments=[bn("fr-line-infantry", "1/140th Line"), bn_list("fr-line-infantry", "Regiment of Rochefort", ["1", "2"])]),
+     bde("fr-light-cavalry-brigade", "Corps Cavalry", units=[u("fr-hussar-regt", "13th Hussars (2 squadrons)")]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "15/4th Foot Artillery")]),
+     bde("fr-artillery-brigade", "Attached Artillery", units=[u("fr-foot-arty", "18/6th Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Albert")],
+    notes=[LIST_FR, TR_NOTE,
+           "The division had some 3,200 men; the regiments of Brest and Rochefort, National Guards of the naval ports, had three "
+           "to eight hundred a battalion. " + TR_NG,
+           "The XI Corps' cavalry, two squadrons of the 13th Hussars, is with the division here.",
+           "With six battalions, the second foot battery shows as a historical departure; the division's horse company is left out."])
+
+LB_AMEY = force(
+    "laubressel-amey", FR, "Amey's Division", "XI Corps (Molitor)", "French",
+    "A small division of Macdonald's corps, which fell back on Troyes without being pressed.",
+    [bde("fr-infantry-brigade", "Amey's Brigade",
+         regiments=[bn_list("fr-line-infantry", "149th Line", ["1", "2"]), one("fr-line-infantry", "1st Battalion of Calvados"),
+                    one("fr-line-infantry", "1st Battalion of La Manche")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Amey")],
+    notes=[LIST_FR, TR_NOTE,
+           "The division had about seven hundred men in four battalions. The battalions of Calvados and La Manche were National "
+           "Guards. " + TR_NG])
+LB_AMEY["missing"] = [{"name": "6/4th Horse Artillery", "reason": "Four 8-pdrs and a howitzer, with no cavalry in the division to allow them."}]
+
+LB_BRAYER = force(
+    "laubressel-brayer", FR, "Brayer's Division", "XI Corps (Molitor)", "French",
+    "The third division of Macdonald's corps, which fell back on Troyes without being pressed.",
+    [bde("fr-infantry-brigade", "Brayer's First Brigade",
+         regiments=[bn_list("fr-light-infantry", "19th Léger", ["2", "6"]), bn("fr-line-infantry", "3/5th Line"), bn("fr-line-infantry", "3/11th Line")]),
+     bde("fr-infantry-brigade", "Brayer's Second Brigade",
+         regiments=[bn("fr-line-infantry", "7/107th Line"), bn_list("fr-line-infantry", "Garde Nationale du Nord", ["1", "2"])]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "6/1st Foot Artillery")]),
+     bde("fr-artillery-brigade", "Attached Artillery", units=[u("fr-foot-arty", "19/2nd Foot Artillery"), u("fr-foot-arty", "20/5th Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Brayer")],
+    notes=[LIST_FR, TR_NOTE,
+           "The division had about 2,000 men in seven battalions; by the end of March they were Guye's brigade of Boyer de "
+           "Rébeval's division at Paris. " + TR_NG,
+           "Its three foot companies are one in its divisional artillery and two in its reserve; with seven battalions, where "
+           "the list wants eight for each reserve battery, the two show as a historical departure."])
+
+LB_ST_GERMAIN = again(
+    VC_ST_GERMAIN, "laubressel-saint-germain",
+    "Maurin's light horse retook most of the artillery park Pahlen's cavalry had overrun at Thennelières.",
+    [LIST_FR, TR_NOTE,
+     "Maurin's 2nd Light Cavalry Division is Dommanget's and Jamin's brigades, and Delort's 2nd Cuirassier Division Blancard's "
+     "and Sopransy's: the regiments of Sébastiani's corps of 1813, fifty to a hundred and fifty men each by now. Each is shown "
+     "as one unit at full size, and the list's Small upgrade would suit them all.",
+     "The chevau-légers lanciers are the list's Lancers. Its two horse detachments are one in its divisional artillery and "
+     "one in its reserve.",
+     "Light brigades of six and five regiments and a heavy brigade of four, where the list's take four and three, and two "
+     "heavy brigades, where it takes one, show as historical departures.", CAV_ONLY])
+brigade_of(LB_ST_GERMAIN, "Jamin's Brigade")["units"] = [u for u in brigade_of(LB_ST_GERMAIN, "Jamin's Brigade")["units"] if u["name"] != "10th Hussars"]
+LB_ST_GERMAIN["formation"] = "II Cavalry Corps"
+LB_ST_GERMAIN["missing"] = [{"name": "10th Hussars", "reason": "Detached."}]
+
+LB_V_CAVALRY = again(
+    MO_V_CAVALRY, "laubressel-v-cavalry",
+    "Milhaud's corps, which fell back with the infantry without being engaged.",
+    [LIST_FR, TR_NOTE,
+     "Piré's light division, 1,421 men, is Subervie's and the second light brigades; Briche's dragoons, 1,700, Montélégier's and "
+     "Ludot's; and L'Héritier's, 1,269, Lamotte's and Collaert's. Their regiments had a hundred to four hundred men; they are "
+     "shown at full size.",
+     "Its three horse companies are one in its divisional artillery and one in its reserve, as the list takes them.",
+     "Four heavy cavalry brigades, where the list takes one, and more heavy cavalry than its half of the army for corps "
+     "support, show as historical departures.", CAV_ONLY])
+brigade_of(LB_V_CAVALRY, "Du Coëtlosquet's Brigade").update(name="Piré's Second Brigade")
+brigade_of(LB_V_CAVALRY, "Piré's Second Brigade").pop("commander", None)
+LB_V_CAVALRY["missing"] = [{"name": "8/6th Horse Artillery", "reason": "The corps' third horse company, more than the list takes."}]
+
+LB_TRELLIARD = again(
+    MO_TRELLIARD, "laubressel-trelliard",
+    "Trelliard's dragoons from Spain, which counter-attacked the Russians at Thennelières.",
+    [LIST_FR, TR_NOTE,
+     "Its strengths are of 7 March: each regiment had three or four battalion-sized squadrons, a hundred to five hundred men "
+     "in all; each is shown as one unit.",
+     "Its horse company is its divisional artillery.",
+     "Two heavy cavalry brigades, where the list takes one, more heavy cavalry than its half of the army for corps support, "
+     "and a cavalry force with no infantry, show as historical departures. Play it alongside infantry, or agree it with your "
+     "opponent."])
+LB_TRELLIARD["brigades"].append(bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-horse-arty", "6/2nd Horse Artillery")]))
+
+LAUBRESSEL = fought("laubressel", [TR_FR, TR_VI, wiki("Battle of Laubressel", "Battle_of_Laubressel")],
+    [LB_DUHESME, LB_HAMELINAYE, LB_ROTTEMBOURG, LB_LEVAL, LB_PACTHOD, LB_ALBERT, LB_AMEY, LB_BRAYER, LB_ST_GERMAIN,
+     LB_V_CAVALRY, LB_TRELLIARD], [
+    fr("Jacquinot's Division", "VI Cavalry Corps (Kellermann)",
+       "Light horse that stampeded at La Chapelle-Saint-Luc; it isn't on Nafziger's return."),
     ru("Wittgenstein's Corps", "Gorchakov's I and Eugen of Württemberg's II Infantry Corps and Pahlen's cavalry, VI Corps",
        "About fourteen thousand men, who took Bouranton and the Laubressel plateau while Pahlen's horse raided the French artillery park."),
     bav("Wrede's Corps", "Three Bavarian and two Austrian divisions, V Corps",
@@ -1361,6 +1533,33 @@ LAUBRESSEL = armies("laubressel", [wiki("Battle of Laubressel", "Battle_of_Laubr
     at("Gyulai's Corps", "Crenneville's, Fresnel's and Hohenlohe's divisions, III Corps",
        "About ten thousand Austrians, who attacked at Silvarouvres.")],
     alliances=(("Russian", "Bavarian", "Württemberg", "Austrian"),))
+
+BA_NOTE = ("Nafziger has no order of battle for Bar-sur-Aube. Wikipedia's account names Oudinot's and Gérard's corps; their "
+           "divisions are from Nafziger's returns of 2 and 12 March, a few days after the battle.")
+
+
+def at_bar(f, id_, summary):
+    return again(f, id_, summary, [f["notes"][0], BA_NOTE] + [n for n in f["notes"][2:]])
+
+
+BA_LEVAL = at_bar(LB_LEVAL, "bar-sur-aube-leval",
+    "Oudinot's strongest division, on the heights before Bar-sur-Aube, which took the weight of Wittgenstein's attack and "
+    "was driven back over the Aube.")
+BA_ROTTEMBOURG = at_bar(LB_ROTTEMBOURG, "bar-sur-aube-rottembourg",
+    "Oudinot's Young Guard, beside Leval's on the heights before the town.")
+BA_DUHESME = at_bar(LB_DUHESME, "bar-sur-aube-duhesme",
+    "Gérard's leading division, with Oudinot's before the town; much of Macdonald's army, and most of its guns, were on the "
+    "far side of the Aube and could take no part.")
+BA_HAMELINAYE = at_bar(LB_HAMELINAYE, "bar-sur-aube-hamelinaye",
+    "Gérard's other division, with Duhesme's before Bar-sur-Aube.")
+
+BAR_SUR_AUBE = fought("bar-sur-aube", [TR_FR, TR_VI, wiki("Battle of Bar-sur-Aube", "Battle_of_Bar-sur-Aube")],
+    [BA_LEVAL, BA_ROTTEMBOURG, BA_DUHESME, BA_HAMELINAYE], [
+    ru("Wittgenstein's Corps", "VI Corps, Army of Bohemia",
+       "Attacked Oudinot's position; Wittgenstein was wounded leading it."),
+    bav("Wrede's Corps", "V Corps, Army of Bohemia",
+        "Wrede's Bavarians and Austrians, who came on against Oudinot beside Wittgenstein's Russians.")],
+    alliances=(("Russian", "Bavarian"),))
 
 # ---------------------------------------------------------------- Craonne, 7 March 1814, written
 

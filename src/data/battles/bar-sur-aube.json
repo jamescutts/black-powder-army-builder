@@ -53,26 +53,671 @@
   "summary": "Schwarzenberg turned on Oudinot's and Macdonald's rearguard at Bar-sur-Aube and drove it back over the Aube; Wittgenstein was wounded leading the attack.",
   "sources": [
     {
+      "label": "French Army before Troyes under Macdonald, 2 March 1814 (Nafziger Collection 814CAD)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAD.pdf"
+    },
+    {
+      "label": "French II & VI Corps, 12 March 1814 (Nafziger Collection 814CZA)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CZA.pdf"
+    },
+    {
       "label": "Battle of Bar-sur-Aube (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Bar-sur-Aube"
     }
   ],
-  "forces": [],
+  "forces": [
+    {
+      "id": "bar-sur-aube-leval",
+      "nationId": "france",
+      "name": "Leval's Division",
+      "formation": "7th Division, VII Corps (Oudinot)",
+      "side": "French",
+      "summary": "Oudinot's strongest division, on the heights before Bar-sur-Aube, which took the weight of Wittgenstein's attack and was driven back over the Aube.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Bar-sur-Aube. Wikipedia's account names Oudinot's and Gérard's corps; their divisions are from Nafziger's returns of 2 and 12 March, a few days after the battle.",
+        "The division had some 5,800 men in seventeen battalions, three to nine hundred each. Nafziger gives Chassé's brigade as its third on 5 March, and as the 9th Division's on 1 March; Wikipedia's account has Chassé leading a division.",
+        "Its foot company of eight 6-pdrs and four howitzers is its divisional artillery, and the 9th Division's company is in its reserve.",
+        "Brigades of four regiments, where the list's take three, and three light regiments, where it allows one in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Leval",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pinoteau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pinoteau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "10th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/10th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "6/10th Léger"
+                }
+              ]
+            },
+            {
+              "name": "3rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/3rd Line"
+                }
+              ]
+            },
+            {
+              "name": "15th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/15th Line"
+                }
+              ]
+            },
+            {
+              "name": "130th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/130th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/130th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Montfort's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Montfort",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "17th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/17th Léger"
+                }
+              ]
+            },
+            {
+              "name": "101st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/101st Line"
+                }
+              ]
+            },
+            {
+              "name": "105th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/105th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/105th Line"
+                }
+              ]
+            },
+            {
+              "name": "118th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/118th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chassé's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chassé",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/16th Léger"
+                }
+              ]
+            },
+            {
+              "name": "8th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "28th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/28th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/28th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/28th Line"
+                }
+              ]
+            },
+            {
+              "name": "54th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/54th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "19/1st Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "22/5th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar-sur-aube-rottembourg",
+      "nationId": "french-imperial-guard",
+      "name": "Rottembourg's Division",
+      "formation": "5th Young Guard Division, VII Corps (Oudinot)",
+      "side": "French",
+      "summary": "Oudinot's Young Guard, beside Leval's on the heights before the town.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no order of battle for Bar-sur-Aube. Wikipedia's account names Oudinot's and Gérard's corps; their divisions are from Nafziger's returns of 2 and 12 March, a few days after the battle.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "The division had some seven hundred men in ten battalions by 5 March; they are shown at full size, and the list's Small upgrade would suit them all. Its regiments are voltigeurs now, where at La Rothière they were tirailleurs.",
+        "Its foot company, five 6-pdrs and two howitzers, is with Baudin's brigade.",
+        "Regiments of three battalions, where the list's take two, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Rottembourg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Charrière's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Charrière",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/5th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/6th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/6th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Baudin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Baudin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "11th Young Guard Foot Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/8th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar-sur-aube-duhesme",
+      "nationId": "france",
+      "name": "Duhesme's Division",
+      "formation": "1st Division, II Corps (Gérard)",
+      "side": "French",
+      "summary": "Gérard's leading division, with Oudinot's before the town; much of Macdonald's army, and most of its guns, were on the far side of the Aube and could take no part.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Bar-sur-Aube. Wikipedia's account names Oudinot's and Gérard's corps; their divisions are from Nafziger's returns of 2 and 12 March, a few days after the battle.",
+        "Its twelve battalions had twenty to three hundred and fifty men each, 1,900 or so in all; each regiment is shown as one battalion at full size, and the list's Small upgrade would suit them all.",
+        "The corps' artillery, four foot companies and a horse company, is one with each division here.",
+        "Brigades of six regiments, where the list's take three, and three light regiments, where it allows one in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Duhesme",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Dornier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dornier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "26th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "26th Léger"
+                }
+              ]
+            },
+            {
+              "name": "72nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "72nd Line"
+                }
+              ]
+            },
+            {
+              "name": "93rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "93rd Line"
+                }
+              ]
+            },
+            {
+              "name": "2nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2nd Line"
+                }
+              ]
+            },
+            {
+              "name": "37th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "37th Line"
+                }
+              ]
+            },
+            {
+              "name": "56th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "56th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Matesse's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Matesse",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "11th Léger"
+                }
+              ]
+            },
+            {
+              "name": "24th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "24th Léger"
+                }
+              ]
+            },
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4th Line"
+                }
+              ]
+            },
+            {
+              "name": "18th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "18th Line"
+                }
+              ]
+            },
+            {
+              "name": "46th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "46th Line"
+                }
+              ]
+            },
+            {
+              "name": "Bataillon de l'Aisne",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "Bataillon de l'Aisne"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "9/2nd Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bar-sur-aube-hamelinaye",
+      "nationId": "france",
+      "name": "Hamelinaye's Division",
+      "formation": "2nd Division, II Corps (Gérard)",
+      "side": "French",
+      "summary": "Gérard's other division, with Duhesme's before Bar-sur-Aube.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no order of battle for Bar-sur-Aube. Wikipedia's account names Oudinot's and Gérard's corps; their divisions are from Nafziger's returns of 2 and 12 March, a few days after the battle.",
+        "Nafziger names it Hamelinaye's or Dufour's division. Its thirteen battalions had fifty to two hundred men each, some 1,600 in all; each regiment is shown as one battalion at full size, and the list's Small upgrade would suit them all.",
+        "The corps' artillery is one company with each division here.",
+        "Brigades of eight and five regiments, where the list's take three, and four light regiments, where it allows one in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division La Hamelinaye",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Jarry's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jarry",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "12th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "12th Léger"
+                }
+              ]
+            },
+            {
+              "name": "29th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "29th Léger"
+                }
+              ]
+            },
+            {
+              "name": "5th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "5th Léger"
+                }
+              ]
+            },
+            {
+              "name": "15th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "15th Léger"
+                }
+              ]
+            },
+            {
+              "name": "32nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "32nd Line"
+                }
+              ]
+            },
+            {
+              "name": "58th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "58th Line"
+                }
+              ]
+            },
+            {
+              "name": "135th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "135th Line"
+                }
+              ]
+            },
+            {
+              "name": "155th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "155th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Bellair's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bellair",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "26th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "26th Line"
+                }
+              ]
+            },
+            {
+              "name": "82nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "82nd Line"
+                }
+              ]
+            },
+            {
+              "name": "86th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "86th Line"
+                }
+              ]
+            },
+            {
+              "name": "122nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "122nd Line"
+                }
+              ]
+            },
+            {
+              "name": "142nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "142nd Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "10/6th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "toCome": [
-    {
-      "side": "French",
-      "name": "Oudinot's Corps",
-      "formation": "VII Corps",
-      "summary": "Holding the heights before Bar-sur-Aube for Macdonald's army, it took the weight of Schwarzenberg's attack and was driven back over the Aube.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Gérard's Corps",
-      "formation": "II Corps",
-      "summary": "With Oudinot's before the town; much of Macdonald's army, and most of its guns, were on the far side of the Aube and could take no part.",
-      "flag": "/flags/france.svg"
-    },
     {
       "side": "Russian",
       "name": "Wittgenstein's Corps",
