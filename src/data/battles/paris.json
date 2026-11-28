@@ -60,31 +60,1154 @@
   "summary": "The allied armies attacked the heights of Belleville, Romainville and Montmartre, held by Marmont and Mortier with conscripts, National Guards and the pupils of the École Polytechnique; that night Marmont signed the capitulation, and the allies entered the city next day.",
   "sources": [
     {
+      "label": "French Army, Battle of Paris, 30 March 1814 (Nafziger Collection 814CAG)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAG.pdf"
+    },
+    {
       "label": "Battle of Paris (1814) (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Paris_(1814)"
     }
   ],
-  "forces": [],
+  "forces": [
+    {
+      "id": "paris-arrighi",
+      "nationId": "france",
+      "name": "Arrighi's Division",
+      "formation": "VI Corps (Marmont), right wing",
+      "side": "French",
+      "summary": "Lucotte's brigade of depot and veteran battalions, which held Montreuil and covered Bagnolet on the Malassise plateau on Marmont's right; the Russians took Montreuil and Bagnolet as the day went on.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "The brigade had 1,250 men. The 1st Veteran Battalion had over six hundred; the other battalions a few dozen to a hundred and sixty. They are shown at full size, and the list's Small upgrade would suit most of them.",
+        "The veteran battalions are shown as Line.",
+        "Nine battalions in one brigade, where the list's takes three regiments, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Arrighi",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Lucotte's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lucotte",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Veteran Battalion",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1st Veteran Battalion"
+                }
+              ]
+            },
+            {
+              "name": "2nd Veteran Battalion",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2nd Veteran Battalion"
+                }
+              ]
+            },
+            {
+              "name": "45th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/45th Line"
+                }
+              ]
+            },
+            {
+              "name": "50th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/50th Line"
+                }
+              ]
+            },
+            {
+              "name": "65th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/65th Line"
+                }
+              ]
+            },
+            {
+              "name": "66th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/66th Line"
+                }
+              ]
+            },
+            {
+              "name": "72nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/72nd Line"
+                }
+              ]
+            },
+            {
+              "name": "85th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/85th Line"
+                }
+              ]
+            },
+            {
+              "name": "88th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/88th Line"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Jean-Thomas_Arrighi_de_Casanova.jpg/250px-Jean-Thomas_Arrighi_de_Casanova.jpg",
+        "title": "Jean-Toussaint Arrighi de Casanova",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Jean-Thomas_Arrighi_de_Casanova.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "paris-ricard",
+      "nationId": "france",
+      "name": "Ricard's Division",
+      "formation": "8th Division, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's reserve, massed by battalions before the Tourelles ridge behind the line from Romainville to Belleville.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "The division had 726 men in seven battalions. Its battalions had a few dozen to a couple of hundred men each; they are shown at full size, and the list's Small upgrade would suit them all.",
+        "Nafziger lists the 6th Léger in both brigades; it is shown once, with Pelleport's.",
+        "A brigade of four regiments, where the list's takes three, and two light regiments, where it allows one in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Ricard",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pelleport's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pelleport",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "6th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "6th Léger"
+                }
+              ]
+            },
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4th Line"
+                }
+              ]
+            },
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6th Line"
+                }
+              ]
+            },
+            {
+              "name": "136th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "136th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Clavel's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Clavel",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "19th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "19th Léger"
+                }
+              ]
+            },
+            {
+              "name": "138th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "138th Line"
+                }
+              ]
+            },
+            {
+              "name": "144th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "144th Line"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Etienne_Pierre_Sylvestre_Ricard.jpg/250px-Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "title": "Étienne Pierre Sylvestre Ricard",
+        "artist": "from Panckoucke's portraits of French generals",
+        "page": "https://commons.wikimedia.org/wiki/File:Etienne_Pierre_Sylvestre_Ricard.jpg",
+        "focus": "50% 20%",
+        "date": "1818"
+      }
+    },
+    {
+      "id": "paris-lagrange",
+      "nationId": "france",
+      "name": "Lagrange's Division",
+      "formation": "3rd Division, VI Corps (Marmont)",
+      "side": "French",
+      "summary": "Marmont's centre, its two brigades either side of the road from Belleville to Romainville, holding the heights against Raevsky's Russians until Marmont asked for terms in the afternoon.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "Its marine regiments were sailors and naval gunners of the fleet's artillery, brought inland in 1813; they fought well, and are shown as Line, the list's Veteran upgrade would suit them.",
+        "The division had 1,395 men. Its battalions had a few dozen to a couple of hundred men each; they are shown at full size, and the list's Small upgrade would suit them all.",
+        "Nafziger gives the regiments without their battalions; the marine regiments' are those of his 12 March return, and the others are one battalion each.",
+        "Brigades of seven and six regiments, where the list's take three, fifteen battalions in Fournier's, where it takes ten, and two light regiments, where it allows one in the division, show as historical departures. Nafziger gives the division no guns.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Lagrange",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Fournier's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Fournier",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1st Line"
+                }
+              ]
+            },
+            {
+              "name": "62nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "62nd Line"
+                }
+              ]
+            },
+            {
+              "name": "132nd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "132nd Line"
+                }
+              ]
+            },
+            {
+              "name": "1st Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/1st Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/1st Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "2nd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/2nd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "4/2nd Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "3rd Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/3rd Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/3rd Marine Regiment"
+                }
+              ]
+            },
+            {
+              "name": "4th Marine Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/4th Marine Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/4th Marine Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Joubert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Joubert",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "23rd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "23rd Léger"
+                }
+              ]
+            },
+            {
+              "name": "37th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "37th Léger"
+                }
+              ]
+            },
+            {
+              "name": "15th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "15th Line"
+                }
+              ]
+            },
+            {
+              "name": "16th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "16th Line"
+                }
+              ]
+            },
+            {
+              "name": "70th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "70th Line"
+                }
+              ]
+            },
+            {
+              "name": "121st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "121st Line"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-bordesoulle",
+      "nationId": "france",
+      "name": "Bordesoulle's Cavalry",
+      "formation": "I Cavalry Corps",
+      "side": "French",
+      "summary": "The remnant of the I Cavalry Corps, in a second line behind the road to Montreuil on Marmont's right.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "Merlin's light division, 850 men, is Hubert's and Foissac-Latour's brigades; Bordesoulle's heavy division, 895 men, Thiry's and Laville's. Their strengths are of 5 April.",
+        "Each brigade was made up of squadrons from the depots of many regiments: Nafziger names their parent regiments but not their strengths. They are grouped here as one unit for each kind of horse in a brigade, or two where a brigade had many, as they were formed into provisional regiments.",
+        "Each detachment had a few dozen men, the 8th Chasseurs and 4th Cuirassiers over a hundred; they are shown at full size, and the list's Small upgrade would suit them all.",
+        "Two heavy cavalry brigades, where the list takes one, cuirassiers and dragoons in one brigade, and more heavy cavalry than its half of the army for corps support, show as historical departures. Nafziger gives the corps no guns.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Bordesoulle",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Hubert's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Hubert",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "Hussar detachments (6th, 7th and 8th Hussars)"
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "Chevau-léger detachments (1st, 3rd, 5th and 7th Chevau-légers)"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Foissac-Latour's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Foissac-Latour",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "Chasseur detachments (1st, 3rd and 8th Chasseurs)"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "Chasseur detachments (9th and 16th Chasseurs)"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Thiry's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Thiry",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (2nd, 3rd and 6th Cuirassiers)"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (9th, 11th and 12th Cuirassiers)"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Laville's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Laville",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "Cuirassier detachments (4th, 7th and 14th Cuirassiers)"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "Dragoon detachments (7th, 23rd, 28th and 30th Dragoons)"
+            }
+          ]
+        }
+      ],
+      "missing": []
+    },
+    {
+      "id": "paris-boyer-de-rebeval",
+      "nationId": "france",
+      "name": "Boyer de Rébeval's Division",
+      "formation": "Provisional Corps (Compans)",
+      "side": "French",
+      "summary": "Part deployed and part massed before the village of Pré-Saint-Gervais, on the left of Marmont's line, where the allied attacks on the plain came in.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "Guye's brigade had 1,850 men. The National Guards of the Nord are shown as Line.",
+        "Its three foot batteries are one in its divisional artillery and two in its reserve, as the list takes them; with seven battalions, where the list wants eight for each reserve battery, the two show as a historical departure.",
+        "This is a different division from the one Nafziger gives Boyer de Rébeval at Craonne.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Boyer de Rébeval",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Guye's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Guye",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "19th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/19th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "6/19th Léger"
+                }
+              ]
+            },
+            {
+              "name": "5th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/5th Line"
+                }
+              ]
+            },
+            {
+              "name": "11th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/11th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Boyer de Rébeval's Second Brigade",
+          "regiments": [
+            {
+              "name": "107th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "7/107th Line"
+                }
+              ]
+            },
+            {
+              "name": "Garde Nationale du Nord",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/Garde Nationale du Nord"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/Garde Nationale du Nord"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "6/1st Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "19/2nd Foot Artillery"
+            },
+            {
+              "unit": "fr-foot-arty",
+              "name": "20/5th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-charpentier",
+      "nationId": "french-imperial-guard",
+      "name": "Charpentier's Division",
+      "formation": "7th Young Guard Division, Guard Corps (Mortier)",
+      "side": "French",
+      "summary": "Mortier's reserve on the left, massed at the foot of the Chaumont ridge behind the line from Pantin to La Villette.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "The division had 1,500 men, the regiments seventy-five to two hundred and seventy each; each is shown as one battalion at full size, and the list's Small upgrade would suit them all.",
+        "Nafziger names the first brigade's commander as Lagrange, from a return of 15 April; it is shown here without him.",
+        "Brigades of six and four regiments, where the list's take three, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Charpentier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Charpentier's First Brigade",
+          "regiments": [
+            {
+              "name": "1st Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1st Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "2nd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2nd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "3rd Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3rd Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "4th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "4th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "7th Voltigeurs"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Le Capitaine's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Le Capitaine",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "10th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "10th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "11th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "11th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "14th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "14th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "15th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "15th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Cadres of the 12th and 13th Voltigeurs",
+          "reason": "Thirty men or so each, too few for units of their own."
+        }
+      ],
+      "portrait": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg/250px-Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "title": "Henri François Marie Charpentier",
+        "artist": "unknown artist",
+        "page": "https://commons.wikimedia.org/wiki/File:Comte_g%C3%A9n%C3%A9ral_Henri_Fran%C3%A7ois_Marie_Charpentier_%281769-1831%29.jpg",
+        "focus": "50% 20%"
+      }
+    },
+    {
+      "id": "paris-curial",
+      "nationId": "french-imperial-guard",
+      "name": "Curial's Division",
+      "formation": "2nd Young Guard Division, Guard Corps (Mortier)",
+      "side": "French",
+      "summary": "Bigarré's brigade, massed in reserve behind Pantin, ready to support Sécrétant's Guard depot battalions holding the village.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "Bigarré's brigade had 1,820 men. The third and second battalions of other regiments that served in it are grouped as one regiment here; each unit is shown at full size.",
+        "Six regiments in one brigade, where the list's takes three, and one of three battalions, where it takes two, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Curial",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Bigarré's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Bigarré",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "6th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "Converged 8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "4th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "8th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "Third and Second Battalions",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/3rd Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/14th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/11th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "9th Tirailleurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "9th Tirailleurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paris-christiani",
+      "nationId": "french-imperial-guard",
+      "name": "Christiani's Division",
+      "formation": "2nd Old Guard Division, Mortier's reserve",
+      "side": "French",
+      "summary": "Gros's brigade of the Guard's fusiliers, flanqueurs and vélites, massed in reserve between La Villette and La Chapelle to support Robert's Guard depot battalions.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "The brigade had 1,630 men. Nafziger gives all six of its corps in one brigade under Gros; they are brigaded here as at Laon, the fusiliers and the flanqueurs, with the vélites as the list's Italian brigade. Each regiment has two battalions, as at Montmirail.",
+        "The Flanqueurs-Chasseurs and Flanqueurs-Grenadiers are the list's Tirailleurs.",
+        "A fusilier brigade with no Young Guard regiment, which the list's brigade wants, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Christiani",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Fusilier Brigade",
+          "regiments": [
+            {
+              "name": "Fusilier-Chasseurs",
+              "units": [
+                {
+                  "unit": "fig-fusilier-chasseurs",
+                  "name": "1/Fusilier-Chasseurs"
+                },
+                {
+                  "unit": "fig-fusilier-chasseurs",
+                  "name": "2/Fusilier-Chasseurs"
+                }
+              ]
+            },
+            {
+              "name": "Fusilier-Grenadiers",
+              "units": [
+                {
+                  "unit": "fig-fusilier-grenadiers",
+                  "name": "1/Fusilier-Grenadiers"
+                },
+                {
+                  "unit": "fig-fusilier-grenadiers",
+                  "name": "2/Fusilier-Grenadiers"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Gros's Brigade",
+          "commander": {
+            "name": "Gén. de Division Gros",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Flanqueurs-Chasseurs",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "1/Flanqueurs-Chasseurs"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "2/Flanqueurs-Chasseurs"
+                }
+              ]
+            },
+            {
+              "name": "Flanqueurs-Grenadiers",
+              "units": [
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "1/Flanqueurs-Grenadiers"
+                },
+                {
+                  "unit": "fig-yg-tirailleurs",
+                  "name": "2/Flanqueurs-Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-italian-brigade",
+          "name": "Vélites",
+          "units": [
+            {
+              "unit": "fig-velites-turin",
+              "name": "Vélites of Turin"
+            },
+            {
+              "unit": "fig-velites-florence",
+              "name": "Vélites of Florence"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "paris-roussel",
+      "nationId": "france",
+      "name": "Roussel d'Hurbal's Dragoons",
+      "formation": "6th Heavy Cavalry Division, under Grouchy",
+      "side": "French",
+      "summary": "Belliard's dragoons on Mortier's far left, out on the plain between the road to Saint-Denis and the Maillot gate.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's histories and the French archives; most of its strengths are of early April.",
+        "The division had 1,900 men, with two march regiments besides.",
+        "Its two horse batteries are one in its divisional artillery and one in its reserve, as the list takes them.",
+        "Two heavy cavalry brigades, where the list takes one, more heavy cavalry than its half of the army for corps support, and a cavalry force with no infantry, show as historical departures. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Roussel d'Hurbal",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Sparre's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sparre",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "5th Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "12th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Rigaud's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rigaud",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-dragoon",
+              "name": "21st Dragoons"
+            },
+            {
+              "unit": "fr-dragoon",
+              "name": "26th Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/3rd Horse Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "3/2nd Horse Artillery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Two march regiments",
+          "reason": "Regiments of drafts with Rigaud's brigade, whose make-up isn't known."
+        }
+      ]
+    }
+  ],
   "toCome": [
     {
       "side": "French",
-      "name": "Marmont's Wing",
-      "formation": "Arrighi's, Ricard's and Lagrange's divisions, Compans's, Ledru des Essarts's and Boyer de Rébeval's provisional divisions, and Bordesoulle's, Merlin's and Chastel's cavalry",
-      "summary": "Held the heights of Romainville and Belleville on the right; Arrighi's division held Bagnolet and Montreuil.",
+      "name": "Compans's and Ledru des Essarts's Divisions",
+      "formation": "Provisional Corps (Compans)",
+      "summary": "Chabert's brigade, 2,200 men, in skirmish order in the Romainville woods, and Bongars's, 1,600, on the Beauregard ridge; Nafziger doesn't know their battalions.",
       "flag": "/flags/france.svg"
     },
     {
       "side": "French",
-      "name": "Mortier's Wing",
-      "formation": "Michel's Guard depots, Charpentier's and Curial's Young Guard and Christiani's Old Guard divisions, with Ornano's and Roussel d'Hurbal's cavalry",
-      "summary": "Held the plain on the left, from Pantin and Aubervilliers to La Villette and La Chapelle.",
+      "name": "Chastel's Cavalry",
+      "formation": "Provisional Cavalry Corps (Compans)",
+      "summary": "Vincent's brigade, 1,600 horse, in line between Charonne and Montreuil; its regiments aren't known.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Michel's Guard Depots",
+      "formation": "Mortier's wing",
+      "summary": "Four thousand men from the Guard's depots, Sécrétant's brigade behind Pantin and Robert's before Aubervilliers.",
+      "flag": "/flags/france.svg"
+    },
+    {
+      "side": "French",
+      "name": "Belliard's Other Cavalry and Ornano's",
+      "formation": "Cavalry Corps (Belliard)",
+      "summary": "Ghigny's, Christophe's and Leclerc's brigades, along the old entrenchments between the road to Saint-Denis and the Maillot gate, and Dautencourt's 320 Guard horse on the far left; their regiments aren't known.",
       "flag": "/flags/france.svg"
     },
     {
       "side": "French",
       "name": "Moncey's National Guard",
-      "formation": "The National Guard of Paris",
-      "summary": "About twelve thousand men, under Marshal Moncey.",
+      "formation": "Paris Guard (Marshal Moncey)",
+      "summary": "Some six thousand National Guards on the heights from Montmartre round to the Bercy, with 780 gunners of veteran battalions and the École Polytechnique on the city walls, and naval gunners serving the batteries at Pré-Saint-Gervais.",
       "flag": "/flags/france.svg"
     },
     {

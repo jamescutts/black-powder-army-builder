@@ -1752,12 +1752,181 @@ SAINT_DIZIER = armies("saint-dizier", [wiki("Battle of Saint-Dizier", "Battle_of
     ru("Tettenborn's Advance Guard", "Hussars and Cossacks",
        "About a thousand horse, which charged the massed French cavalry and got away to Vitry.")])
 
-PARIS = armies("paris", [wiki("Battle of Paris (1814)", "Battle_of_Paris_(1814)")], [
-    fr("Marmont's Wing", "Arrighi's, Ricard's and Lagrange's divisions, Compans's, Ledru des Essarts's and Boyer de Rébeval's provisional divisions, and Bordesoulle's, Merlin's and Chastel's cavalry",
-       "Held the heights of Romainville and Belleville on the right; Arrighi's division held Bagnolet and Montreuil."),
-    fr("Mortier's Wing", "Michel's Guard depots, Charpentier's and Curial's Young Guard and Christiani's Old Guard divisions, with Ornano's and Roussel d'Hurbal's cavalry",
-       "Held the plain on the left, from Pantin and Aubervilliers to La Villette and La Chapelle."),
-    fr("Moncey's National Guard", "The National Guard of Paris", "About twelve thousand men, under Marshal Moncey."),
+# ---------------------------------------------------------------- Paris, 30 March 1814, written
+
+PA_FR = {"label": "French Army, Battle of Paris, 30 March 1814 (Nafziger Collection 814CAG)", "url": NAF + "814CAG.pdf"}
+PA_NOTE = ("After Nafziger's order of battle for Paris at seven in the morning of the 30th, from Koch's and Rapetti's "
+           "histories and the French archives; most of its strengths are of early April.")
+PA_TINY = ("Its battalions had a few dozen to a couple of hundred men each; they are shown at full size, and the list's Small "
+           "upgrade would suit them all.")
+
+
+def pa(f, id_, summary, notes):
+    return again(f, id_, summary, [f["notes"][0], PA_NOTE] + notes)
+
+
+PA_ARRIGHI = force(
+    "paris-arrighi", FR, "Arrighi's Division", "VI Corps (Marmont), right wing", "French",
+    "Lucotte's brigade of depot and veteran battalions, which held Montreuil and covered Bagnolet on the Malassise plateau "
+    "on Marmont's right; the Russians took Montreuil and Bagnolet as the day went on.",
+    [bde("fr-infantry-brigade", "Lucotte's Brigade", "Gén. de Brigade Lucotte",
+         regiments=[one("fr-line-infantry", "1st Veteran Battalion"), one("fr-line-infantry", "2nd Veteran Battalion"),
+                    bn("fr-line-infantry", "2/45th Line"), bn("fr-line-infantry", "2/50th Line"), bn("fr-line-infantry", "1/65th Line"),
+                    bn("fr-line-infantry", "1/66th Line"), bn("fr-line-infantry", "1/72nd Line"), bn("fr-line-infantry", "3/85th Line"),
+                    bn("fr-line-infantry", "1/88th Line")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Arrighi")],
+    notes=[LIST_FR, PA_NOTE,
+           "The brigade had 1,250 men. The 1st Veteran Battalion had over six hundred; the other battalions a few dozen to a "
+           "hundred and sixty. They are shown at full size, and the list's Small upgrade would suit most of them.",
+           "The veteran battalions are shown as Line.",
+           "Nine battalions in one brigade, where the list's takes three regiments, show as a historical departure."])
+
+PA_RICARD = force(
+    "paris-ricard", FR, "Ricard's Division", "8th Division, VI Corps (Marmont)", "French",
+    "Marmont's reserve, massed by battalions before the Tourelles ridge behind the line from Romainville to Belleville.",
+    [bde("fr-infantry-brigade", "Pelleport's Brigade", "Gén. de Brigade Pelleport",
+         regiments=[one("fr-light-infantry", "6th Léger"), one("fr-line-infantry", "4th Line"), one("fr-line-infantry", "6th Line"),
+                    one("fr-line-infantry", "136th Line")]),
+     bde("fr-infantry-brigade", "Clavel's Brigade", "Gén. de Brigade Clavel",
+         regiments=[one("fr-light-infantry", "19th Léger"), one("fr-line-infantry", "138th Line"), one("fr-line-infantry", "144th Line")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Ricard")],
+    notes=[LIST_FR, PA_NOTE,
+           "The division had 726 men in seven battalions. " + PA_TINY,
+           "Nafziger lists the 6th Léger in both brigades; it is shown once, with Pelleport's.",
+           "A brigade of four regiments, where the list's takes three, and two light regiments, where it allows one in the "
+           "division, show as historical departures."])
+
+PA_LAGRANGE = force(
+    "paris-lagrange", FR, "Lagrange's Division", "3rd Division, VI Corps (Marmont)", "French",
+    "Marmont's centre, its two brigades either side of the road from Belleville to Romainville, holding the heights against "
+    "Raevsky's Russians until Marmont asked for terms in the afternoon.",
+    [bde("fr-infantry-brigade", "Fournier's Brigade", "Gén. de Brigade Fournier",
+         regiments=[one("fr-line-infantry", "1st Line"), one("fr-line-infantry", "62nd Line"), one("fr-line-infantry", "132nd Line"),
+                    marine("1st Marine Regiment", 2), marine("2nd Marine Regiment", 4), marine("3rd Marine Regiment", 3),
+                    marine("4th Marine Regiment", 3)]),
+     bde("fr-infantry-brigade", "Joubert's Brigade", "Gén. de Brigade Joubert",
+         regiments=[one("fr-light-infantry", "23rd Léger"), one("fr-light-infantry", "37th Léger"), one("fr-line-infantry", "15th Line"),
+                    one("fr-line-infantry", "16th Line"), one("fr-line-infantry", "70th Line"), one("fr-line-infantry", "121st Line")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Lagrange")],
+    notes=[LIST_FR, PA_NOTE, MARINES,
+           "The division had 1,395 men. " + PA_TINY,
+           "Nafziger gives the regiments without their battalions; the marine regiments' are those of his 12 March return, and "
+           "the others are one battalion each.",
+           "Brigades of seven and six regiments, where the list's take three, fifteen battalions in Fournier's, where it takes "
+           "ten, and two light regiments, where it allows one in the division, show as historical departures. Nafziger gives "
+           "the division no guns."])
+
+PA_BORDESOULLE = again(
+    CH_BORDESOULLE, "paris-bordesoulle",
+    "The remnant of the I Cavalry Corps, in a second line behind the road to Montreuil on Marmont's right.",
+    [LIST_FR, PA_NOTE,
+     "Merlin's light division, 850 men, is Hubert's and Foissac-Latour's brigades; Bordesoulle's heavy division, 895 men, "
+     "Thiry's and Laville's. Their strengths are of 5 April.",
+     CH_DEPOTS,
+     "Each detachment had a few dozen men, the 8th Chasseurs and 4th Cuirassiers over a hundred; they are shown at full "
+     "size, and the list's Small upgrade would suit them all.",
+     "Two heavy cavalry brigades, where the list takes one, cuirassiers and dragoons in one brigade, and more heavy "
+     "cavalry than its half of the army for corps support, show as historical departures. Nafziger gives the corps no guns.",
+     CAV_ONLY])
+PA_BORDESOULLE["brigades"] = [
+    bde("fr-light-cavalry-brigade", "Hubert's Brigade", "Gén. de Brigade Hubert",
+        units=[u("fr-hussar-regt", "Hussar detachments (6th, 7th and 8th Hussars)"),
+               u("fr-lancer", "Chevau-léger detachments (1st, 3rd, 5th and 7th Chevau-légers)")]),
+    bde("fr-light-cavalry-brigade", "Foissac-Latour's Brigade", "Gén. de Brigade Foissac-Latour",
+        units=[u("fr-chasseur-a-cheval", "Chasseur detachments (1st, 3rd and 8th Chasseurs)"),
+               u("fr-chasseur-a-cheval", "Chasseur detachments (9th and 16th Chasseurs)")]),
+    bde("fr-heavy-cavalry-brigade", "Thiry's Brigade", "Gén. de Brigade Thiry",
+        units=[u("fr-cuirassier", "Cuirassier detachments (2nd, 3rd and 6th Cuirassiers)"),
+               u("fr-cuirassier", "Cuirassier detachments (9th, 11th and 12th Cuirassiers)")]),
+    bde("fr-heavy-cavalry-brigade", "Laville's Brigade", "Gén. de Brigade Laville",
+        units=[u("fr-cuirassier", "Cuirassier detachments (4th, 7th and 14th Cuirassiers)"),
+               u("fr-dragoon", "Dragoon detachments (7th, 23rd, 28th and 30th Dragoons)")])]
+PA_BORDESOULLE["missing"] = []
+
+PA_BOYER_DE_REBEVAL = force(
+    "paris-boyer-de-rebeval", FR, "Boyer de Rébeval's Division", "Provisional Corps (Compans)", "French",
+    "Part deployed and part massed before the village of Pré-Saint-Gervais, on the left of Marmont's line, where the "
+    "allied attacks on the plain came in.",
+    [bde("fr-infantry-brigade", "Guye's Brigade", "Gén. de Brigade Guye",
+         regiments=[bn_list("fr-light-infantry", "19th Léger", ["2", "6"]), bn("fr-line-infantry", "3/5th Line"), bn("fr-line-infantry", "3/11th Line")]),
+     bde("fr-infantry-brigade", "Boyer de Rébeval's Second Brigade",
+         regiments=[bn("fr-line-infantry", "7/107th Line"), bn_list("fr-line-infantry", "Garde Nationale du Nord", ["1", "2"])]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "6/1st Foot Artillery")]),
+     bde("fr-artillery-brigade", "Attached Artillery", units=[u("fr-foot-arty", "19/2nd Foot Artillery"), u("fr-foot-arty", "20/5th Foot Artillery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Boyer de Rébeval")],
+    notes=[LIST_FR, PA_NOTE,
+           "Guye's brigade had 1,850 men. The National Guards of the Nord are shown as Line.",
+           "Its three foot batteries are one in its divisional artillery and two in its reserve, as the list takes them; with "
+           "seven battalions, where the list wants eight for each reserve battery, the two show as a historical departure.",
+           "This is a different division from the one Nafziger gives Boyer de Rébeval at Craonne."])
+
+PA_CHARPENTIER = force(
+    "paris-charpentier", FIG, "Charpentier's Division", "7th Young Guard Division, Guard Corps (Mortier)", "French",
+    "Mortier's reserve on the left, massed at the foot of the Chaumont ridge behind the line from Pantin to La Villette.",
+    [bde("fig-young-guard-brigade", "Charpentier's First Brigade",
+         regiments=[regt(f"{n} Voltigeurs", [u("fig-yg-voltigeurs", f"{n} Voltigeurs")]) for n in ("1st", "2nd", "3rd", "4th", "5th", "7th")]),
+     bde("fig-young-guard-brigade", "Le Capitaine's Brigade", "Gén. de Brigade Le Capitaine",
+         regiments=[regt(f"{n} Voltigeurs", [u("fig-yg-voltigeurs", f"{n} Voltigeurs")]) for n in ("10th", "11th", "14th", "15th")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Charpentier")],
+    notes=[LIST_FIG, PA_NOTE, NEW_YG,
+           "The division had 1,500 men, the regiments seventy-five to two hundred and seventy each; each is shown as one "
+           "battalion at full size, and the list's Small upgrade would suit them all.",
+           "Nafziger names the first brigade's commander as Lagrange, from a return of 15 April; it is shown here without him.",
+           "Brigades of six and four regiments, where the list's take three, show as historical departures."])
+PA_CHARPENTIER["missing"] = [{"name": "Cadres of the 12th and 13th Voltigeurs", "reason": "Thirty men or so each, too few for units of their own."}]
+
+PA_CURIAL = force(
+    "paris-curial", FIG, "Curial's Division", "2nd Young Guard Division, Guard Corps (Mortier)", "French",
+    "Bigarré's brigade, massed in reserve behind Pantin, ready to support Sécrétant's Guard depot battalions holding the village.",
+    [bde("fig-young-guard-brigade", "Bigarré's Brigade", "Gén. de Brigade Bigarré",
+         regiments=[regt("5th Voltigeurs", [u("fig-yg-voltigeurs", "5th Voltigeurs")]), regt("6th Voltigeurs", [u("fig-yg-voltigeurs", "6th Voltigeurs")]),
+                    regt("7th Voltigeurs", [u("fig-yg-voltigeurs", "7th Voltigeurs")]),
+                    regt("Converged 8th Voltigeurs", [u("fig-yg-voltigeurs", "4th Voltigeurs"), u("fig-yg-voltigeurs", "8th Voltigeurs")]),
+                    regt("Third and Second Battalions", [u("fig-yg-voltigeurs", "3/3rd Voltigeurs"), u("fig-yg-voltigeurs", "3/14th Voltigeurs"),
+                                                          u("fig-yg-voltigeurs", "2/11th Voltigeurs")]),
+                    regt("9th Tirailleurs", [u("fig-yg-tirailleurs", "9th Tirailleurs")])])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Curial")],
+    notes=[LIST_FIG, PA_NOTE, NEW_YG,
+           "Bigarré's brigade had 1,820 men. The third and second battalions of other regiments that served in it are grouped "
+           "as one regiment here; each unit is shown at full size.",
+           "Six regiments in one brigade, where the list's takes three, and one of three battalions, where it takes two, show "
+           "as historical departures."])
+
+PA_CHRISTIANI = again(
+    LA_CHRISTIANI, "paris-christiani",
+    "Gros's brigade of the Guard's fusiliers, flanqueurs and vélites, massed in reserve between La Villette and La Chapelle "
+    "to support Robert's Guard depot battalions.",
+    [LIST_FIG, PA_NOTE,
+     "The brigade had 1,630 men. Nafziger gives all six of its corps in one brigade under Gros; they are brigaded here as at "
+     "Laon, the fusiliers and the flanqueurs, with the vélites as the list's Italian brigade. Each regiment has two battalions, "
+     "as at Montmirail.",
+     "The Flanqueurs-Chasseurs and Flanqueurs-Grenadiers are the list's Tirailleurs.",
+     "A fusilier brigade with no Young Guard regiment, which the list's brigade wants, shows as a historical departure."])
+
+PA_ROUSSEL = pa(CR_ROUSSEL, "paris-roussel",
+    "Belliard's dragoons on Mortier's far left, out on the plain between the road to Saint-Denis and the Maillot gate.",
+    ["The division had 1,900 men, with two march regiments besides.",
+     "Its two horse batteries are one in its divisional artillery and one in its reserve, as the list takes them.",
+     "Two heavy cavalry brigades, where the list takes one, more heavy cavalry than its half of the army for corps support, "
+     "and a cavalry force with no infantry, show as historical departures. Play it alongside infantry, or agree it with your "
+     "opponent."])
+PA_ROUSSEL["missing"] = [{"name": "Two march regiments", "reason": "Regiments of drafts with Rigaud's brigade, whose make-up isn't known."}]
+
+PARIS = fought("paris", [PA_FR, wiki("Battle of Paris (1814)", "Battle_of_Paris_(1814)")],
+    [PA_ARRIGHI, PA_RICARD, PA_LAGRANGE, PA_BORDESOULLE, PA_BOYER_DE_REBEVAL, PA_CHARPENTIER, PA_CURIAL, PA_CHRISTIANI, PA_ROUSSEL], [
+    fr("Compans's and Ledru des Essarts's Divisions", "Provisional Corps (Compans)",
+       "Chabert's brigade, 2,200 men, in skirmish order in the Romainville woods, and Bongars's, 1,600, on the Beauregard ridge; "
+       "Nafziger doesn't know their battalions."),
+    fr("Chastel's Cavalry", "Provisional Cavalry Corps (Compans)",
+       "Vincent's brigade, 1,600 horse, in line between Charonne and Montreuil; its regiments aren't known."),
+    fr("Michel's Guard Depots", "Mortier's wing",
+       "Four thousand men from the Guard's depots, Sécrétant's brigade behind Pantin and Robert's before Aubervilliers."),
+    fr("Belliard's Other Cavalry and Ornano's", "Cavalry Corps (Belliard)",
+       "Ghigny's, Christophe's and Leclerc's brigades, along the old entrenchments between the road to Saint-Denis and the "
+       "Maillot gate, and Dautencourt's 320 Guard horse on the far left; their regiments aren't known."),
+    fr("Moncey's National Guard", "Paris Guard (Marshal Moncey)",
+       "Some six thousand National Guards on the heights from Montmartre round to the Bercy, with 780 gunners of veteran "
+       "battalions and the École Polytechnique on the city walls, and naval gunners serving the batteries at Pré-Saint-Gervais."),
     ru("Raevsky's Corps", "VI Corps, Army of Bohemia", "Took Montreuil."),
     ru("The Russian Guard and Reserve", "Barclay de Tolly", "Yermolov's Guard came up late; the Russians took Bagnolet and Charonne."),
     ru("Langeron's and Vorontsov's Corps", "Army of Silesia", "Came on by Le Bourget on Blücher's wing."),

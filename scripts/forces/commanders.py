@@ -723,6 +723,7 @@ FORCE_PORTRAITS.update({
     "vauchamps-lefebvre-desnouettes": "lefebvre_desnouettes", "craonne-friant": "friant", "craonne-charpentier": "charpentier",
     "craonne-pac": "nansouty", "vauchamps-kleist": "kleist", "vauchamps-kaptsevich": "kaptsevich",
     "laon-friant": "friant", "laon-charpentier": "charpentier", "laon-ricard": "ricard", "laon-arrighi": "arrighi",
+    "paris-ricard": "ricard", "paris-arrighi": "arrighi", "paris-charpentier": "charpentier",
     "laon-pac": "nansouty", "reims-ricard": "ricard", "reims-arrighi": "arrighi", "reims-friant": "friant",
     "champaubert-olsufiev": "olsufiev", "montmirail-yorck": "yorck", "chateau-thierry-yorck": "yorck",
     "montmirail-vasilchikov": "ilarion_vasilchikov", "chateau-thierry-vasilchikov": "ilarion_vasilchikov",
