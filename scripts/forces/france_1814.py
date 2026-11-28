@@ -2398,6 +2398,136 @@ BAR_SUR_AUBE["toCome"] = [t for t in BAR_SUR_AUBE["toCome"] if t["side"] == "Rus
 BAR_SUR_AUBE["alliances"] = [["Russian", "Bavarian", "Austrian"]]
 
 
+# ================================================================ Arcis-sur-Aube, 20–21 March 1814, written
+
+AR_BAV = {"label": "Bavarian Army Corps, Battle of Arcis-sur-Aube, 20–21 March 1814 (Nafziger Collection 814CAA)", "url": NAF + "814CAA.pdf"}
+AR_FR15 = {"label": "French Army, 15 March 1814 (Nafziger Collection 814CZD)", "url": NAF + "814CZD.pdf"}
+AR_NOTE = ("Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his "
+           "nearest returns: the Guard's of February and March, and Oudinot's of early March.")
+AR_AL_NOTE = ("After Wikipedia's order of battle for La Rothière, seven weeks before; Arcis's own order of battle gives the "
+              "allied corps only by division.")
+AR_BAV_NOTE = "After Nafziger's order of battle for Wrede's Bavarians at Arcis, from the Bavarian war archives."
+
+
+def at_arcis(f, id_, summary, note=AR_NOTE, extra=()):
+    return again(f, id_, summary, [f["notes"][0], note] + list(extra) + f["notes"][2:])
+
+
+AR_FRIANT = at_arcis(MM_FRIANT, "arcis-friant",
+    "The Old Guard under Ney, which held the town of Arcis and the bridge behind it through the two days, and covered the "
+    "crossing back over the Aube.")
+AR_HENRION = force(
+    "arcis-henrion", FIG, "Henrion's Division", "2nd Young Guard Division, under Ney", "French",
+    "The Young Guard under Ney, which held Torcy and the ground before Arcis against Wrede's attacks on the 20th.",
+    [bde("fig-young-guard-brigade", "Henrion's Voltigeurs", units=[u("fig-yg-foot-arty", "10th Young Guard Foot Company")],
+         regiments=[regt("8th Voltigeurs", [u("fig-yg-voltigeurs", "8th Voltigeurs")]), yg("9th Voltigeurs")])],
+    command=[cmd("fig-div-cmd", "Gén. de Division Henrion")],
+    notes=[LIST_FIG, "After Nafziger's return of the army on 15 March, five days before.", NEW_YG,
+           "On 15 March the 8th Voltigeurs had 165 men and the 9th nearly seven hundred, shown as one and two battalions. "
+           "Wikipedia's account gives Henrion a provisional Guard division of 4,500 to 5,500 men; the rest of it isn't known.",
+           "Its foot company, with three battalions where the list wants six for one, shows as a historical departure."])
+AR_HENRION["missing"] = [{"name": "Régiment de Marche", "reason": "A march regiment of about five hundred drafts, whose make-up isn't known."}]
+AR_COLBERT = at_arcis(MM_COLBERT, "arcis-colbert",
+    "The Guard horse under Sébastiani, out on the plain before Arcis; on the 20th Kaisarov's Cossacks drove it back with "
+    "Exelmans's.")
+AR_LEFEBVRE = at_arcis(MM_LEFEBVRE, "arcis-lefebvre-desnouettes",
+    "The largest of the Guard cavalry divisions, some two thousand men, with Sébastiani on the plain before Arcis.")
+AR_LETORT = at_arcis(MM_LAFERRIERE, "arcis-letort",
+    "The Guard's third cavalry division, now Letort's, with Sébastiani on the plain; Curély's brigade covered its pontoon train.")
+AR_LETORT["name"], AR_LETORT["command"] = "Letort's Guard Cavalry", [cmd("fig-div-cmd", "Gén. de Division Letort")]
+AR_DEFRANCE = at_arcis(MM_DEFRANCE, "arcis-defrance",
+    "The Gardes d'Honneur, with Sébastiani's cavalry on the plain before Arcis.")
+AR_LEVAL = at_arcis(LB_LEVAL, "arcis-leval",
+    "Oudinot's strongest division, which came up for the second day and covered the crossing back over the Aube; Leval was "
+    "wounded in the retreat.")
+AR_ROTTEMBOURG = at_arcis(LB_ROTTEMBOURG, "arcis-rottembourg",
+    "Oudinot's Young Guard, which came up for the second day with Leval's.")
+AR_ST_GERMAIN = at_arcis(LB_ST_GERMAIN, "arcis-saint-germain",
+    "Oudinot's cavalry, Maurin's and Delort's divisions, which came up for the second day and struck Pahlen's horse with "
+    "Sébastiani's.")
+
+def bav_regt(name, *bns_):
+    return regt(name, [u("bav-line-infantry", b) for b in bns_])
+
+
+AR_RECHBERG = force(
+    "arcis-rechberg", BAV, "Rechberg's Division", "1st Bavarian Division, V Corps (Wrede)", "Bavarian",
+    "Wrede's leading Bavarians, which attacked Torcy-le-Grand again and again on the 20th, Prince Karl of Bavaria leading "
+    "a brigade, without taking it.",
+    [bde("bav-infantry-brigade", "Prince Karl's Brigade", "Gen-Maj Prince Karl of Bavaria",
+         units=[u("bav-light-infantry", "3rd Jäger Battalion")],
+         regiments=[bav_regt("1st Line", "I/1st Line", "II/1st Line"), bav_regt("3rd Line", "I/3rd Line"), bav_regt("10th National Field Battalion", "10th National Field Battalion")]),
+     bde("bav-infantry-brigade", "Spreti's Brigade", "Gen-Maj Graf Spreti",
+         regiments=[bav_regt("2nd Line", "II/2nd Line"), bav_regt("10th Line", "I/10th Line"),
+                    bav_regt("National Field Battalions", "11th National Field Battalion", "15th National Field Battalion")]),
+     bde("bav-cavalry-brigade", "Vieregg's Brigade", "Gen-Maj Freiherr von Vieregg",
+         units=[u("bav-chevau-leger", "1st Chevau-légers (4 squadrons)"), u("bav-chevau-leger", "2nd Chevau-légers (4 squadrons)"),
+                u("bav-chevau-leger", "7th Chevau-légers (3 squadrons)"), u("bav-light-arty", "4th Wurst Battery")]),
+     bde("bav-divisional-artillery", "Divisional Artillery", units=[u("bav-foot-arty", "5th 6-pdr Foot Battery"), u("bav-position-battery", "3rd 12-pdr Foot Battery")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt von Rechberg")],
+    notes=[LIST_BAV14, AR_BAV_NOTE,
+           "The national field battalions, raised from the districts' militia, are shown as Line; the Wurst battery is the list's "
+           "Light Artillery, with the chevau-légers.",
+           "One of Ulmer's four 12-pdr batteries is with each division as its Position Battery.",
+           "Three regiments in each brigade, where the list's takes two, and three chevau-léger regiments in Vieregg's, show as "
+           "historical departures."])
+AR_LAMOTTE = force(
+    "arcis-lamotte", BAV, "Lamotte's Division", "3rd Bavarian Division, V Corps (Wrede)", "Bavarian",
+    "Wrede's other Bavarian division, in the attacks on Torcy-le-Grand and the second day's advance on Arcis.",
+    [bde("bav-infantry-brigade", "Stockh's Brigade", "Gen-Maj von der Stockh",
+         regiments=[bav_regt("11th Line", "I/11th Line", "II/11th Line"), bav_regt("7th Line", "I/7th Line"),
+                    bav_regt("Kreis Battalions", "1st Iller Kreis Battalion", "1st Unter-Donau Kreis Battalion")]),
+     bde("bav-infantry-brigade", "Deroy's Brigade", "Gen-Maj von Deroy",
+         regiments=[bav_regt("5th Line", "I/5th Line"), bav_regt("8th Line", "I/8th Line"), bav_regt("9th Line", "I/9th Line"),
+                    bav_regt("National Field Battalions", "5th National Field Battalion", "6th National Field Battalion")]),
+     bde("bav-cavalry-brigade", "Diez's Brigade", "Col Diez",
+         units=[u("bav-chevau-leger", "4th Chevau-légers (3 squadrons)"), u("bav-chevau-leger", "5th Chevau-légers (3 squadrons)"),
+                u("bav-light-arty", "1st Wurst Battery")]),
+     bde("bav-divisional-artillery", "Divisional Artillery", units=[u("bav-foot-arty", "9th 6-pdr Foot Battery"), u("bav-position-battery", "8th 12-pdr Foot Battery")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt Freiherr von Lamotte")],
+    notes=[LIST_BAV14, AR_BAV_NOTE,
+           "The Kreis and national field battalions are shown as Line; the Wurst battery is the list's Light Artillery.",
+           "One of Ulmer's four 12-pdr batteries is with each division as its Position Battery.",
+           "Three and four regiments in a brigade, where the list's takes two, show as historical departures."])
+AR_LAMOTTE["missing"] = [{"name": "The rest of Ulmer's reserve", "reason": "A mortar battery, a 6-pdr battery and two more 12-pdr batteries."}]
+
+AR_WREDE_AU = at_arcis(RO_WREDE_AU, "arcis-wrede-austrians",
+    "The Austrian divisions of Wrede's corps; Volkmann's brigade attacked Torcy-le-Grand three times on the 20th.", AR_AL_NOTE)
+AR_GYULAI = at_arcis(RO_GYULAI, "arcis-gyulai",
+    "Gyulai's Austrians, part of the allied army that closed on Arcis for the second day.", AR_AL_NOTE)
+AR_WURTTEMBERG = at_arcis(RO_WURTTEMBERG, "arcis-wurttemberg",
+    "The Württembergers, who joined the second day's attack, with Duka's Russian cuirassiers.", AR_AL_NOTE)
+AR_CHOGLOKOV = force(
+    "arcis-choglokov", RU, "Choglokov's Grenadiers", "1st Grenadier Division, with Wrede", "Russian",
+    "A division of Russian grenadiers attached to Wrede's corps for the attacks on Torcy and Arcis.",
+    [bde("ru-grenadier-brigade", "Knyazhnin's Brigade", "Maj-Gen Knyazhnin II",
+         regiments=[ru_regt("Arakcheyev Grenadiers", 2, "ru-grenadier"), ru_regt("Ekaterinoslav Grenadiers", 2, "ru-grenadier")]),
+     bde("ru-grenadier-brigade", "Yemelyanov's Brigade", "Col Yemelyanov",
+         regiments=[ru_regt("Tauride Grenadiers", 1, "ru-grenadier"), ru_regt("St Petersburg Grenadiers", 2, "ru-grenadier")]),
+     bde("ru-grenadier-brigade", "Sulima's Brigade", "Col Sulima",
+         regiments=[ru_regt("Kexholm Grenadiers", 2, "ru-grenadier"), ru_regt("Pernau Grenadiers", 2, "ru-grenadier")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Choglokov")],
+    notes=[LIST_RU, AR_AL_NOTE,
+           "Three grenadier brigades, where the list allows one, and grenadiers with no infantry brigade to allow them, show "
+           "as historical departures."])
+
+ARCIS.update(fought("arcis-sur-aube", [AR_FR15, MM_FR, CR_FR, TR_FR, AR_BAV, RO_AL, wiki("Battle of Arcis-sur-Aube", "Battle_of_Arcis-sur-Aube")],
+    [AR_FRIANT, AR_HENRION, AR_COLBERT, AR_LEFEBVRE, AR_LETORT, AR_DEFRANCE, AR_LEVAL, AR_ROTTEMBOURG, AR_ST_GERMAIN,
+     AR_RECHBERG, AR_LAMOTTE, AR_WREDE_AU, AR_CHOGLOKOV, AR_GYULAI, AR_WURTTEMBERG], [
+    fr("Janssens's and Boyer's Divisions", "Ney's corps",
+       "Two more divisions of Ney's in the fight for Arcis and Torcy; Janssens was wounded on the 20th and Lefol took his "
+       "division. No return of them for March has been found."),
+    fr("Exelmans's and Berckheim's Divisions", "Cavalry, under Sébastiani",
+       "Two more of Sébastiani's cavalry divisions; Exelmans's was driven back with Colbert's by Kaisarov's Cossacks on the 20th. "
+       "Their regiments aren't known."),
+    ru("Raevsky's Corps", "Gorchakov's and Eugen of Württemberg's infantry corps and Pahlen's cavalry, VI Corps",
+       "Pahlen's cavalry was struck by Sébastiani's on the 21st."),
+    ru("Barclay's Reserve and the Russian Guard", "Grenadiers, cuirassiers and the Guard infantry and cavalry",
+       "With Kaisarov's and Seslavin's Cossacks, who drove back Colbert's and Exelmans's horse on the 20th."),
+    pr("The Prussian Guard", "Alvensleben's infantry and LaRoche's cavalry", "In the allied reserve.")],
+    alliances=(("Bavarian", "Austrian", "Württemberg", "Russian", "Prussian"),)))
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)

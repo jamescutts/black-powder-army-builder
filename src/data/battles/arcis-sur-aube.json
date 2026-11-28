@@ -90,53 +90,2033 @@
   "summary": "Expecting a rearguard, Napoleon found Schwarzenberg's whole army before Arcis; the Guard held on through two days, Napoleon riding over a smoking shell, before the French crossed back over the Aube and he turned east against the allies' communications.",
   "sources": [
     {
+      "label": "French Army, 15 March 1814 (Nafziger Collection 814CZD)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CZD.pdf"
+    },
+    {
+      "label": "Allied and French Forces, Battle of Montmirail, 11 February 1814 (Nafziger Collection 814BAA)",
+      "url": "https://www.napoleon-series.org/nafzigger/814BAA.pdf"
+    },
+    {
+      "label": "French Forces, Battle of Craone, 7 March 1814 (Nafziger Collection 814CAB)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAB.pdf"
+    },
+    {
+      "label": "French Army before Troyes under Macdonald, 2 March 1814 (Nafziger Collection 814CAD)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAD.pdf"
+    },
+    {
+      "label": "Bavarian Army Corps, Battle of Arcis-sur-Aube, 20–21 March 1814 (Nafziger Collection 814CAA)",
+      "url": "https://www.napoleon-series.org/nafzigger/814CAA.pdf"
+    },
+    {
+      "label": "Battle of La Rothière order of battle: the Coalition army (Wikipedia, after Nafziger)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re_order_of_battle"
+    },
+    {
       "label": "Battle of Arcis-sur-Aube (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Arcis-sur-Aube"
     }
   ],
-  "forces": [],
+  "forces": [
+    {
+      "id": "arcis-friant",
+      "nationId": "french-imperial-guard",
+      "name": "Friant's Old Guard",
+      "formation": "1st Old Guard Division, Old Guard (Mortier)",
+      "side": "French",
+      "summary": "The Old Guard under Ney, which held the town of Arcis and the bridge behind it through the two days, and covered the crossing back over the Aube.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "The division had 4,796 men in eight battalions. The 1st Chasseurs and Grenadiers à Pied are the list's Old Guard, and the 2nd, raised in 1811, its Middle Guard.",
+        "Nafziger gives Michel as the commander of the chasseurs' brigade as well as of the 2nd Old Guard Division; the brigade is shown here without him.",
+        "Nafziger gives the Guard artillery together, seven foot and four horse batteries, not by division; the batteries here are those the list's brigades take.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Friant",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Chasseurs à Pied",
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "1/1st Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-chasseurs",
+                  "name": "2/1st Chasseurs à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Chasseurs à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "1/2nd Chasseurs à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-chasseurs",
+                  "name": "2/2nd Chasseurs à Pied"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-old-guard-brigade",
+          "name": "Cambronne's Brigade",
+          "commander": {
+            "name": "Gén. de Division Cambronne",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-og-foot-arty",
+              "name": "Old Guard Foot Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "1/1st Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-old-guard-grenadiers",
+                  "name": "2/1st Grenadiers à Pied"
+                }
+              ]
+            },
+            {
+              "name": "2nd Grenadiers à Pied",
+              "units": [
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "1/2nd Grenadiers à Pied"
+                },
+                {
+                  "unit": "fig-middle-guard-grenadiers",
+                  "name": "2/2nd Grenadiers à Pied"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-marines-brigade",
+          "name": "Attached",
+          "units": [
+            {
+              "unit": "fig-marines",
+              "name": "3/Marines of the Guard"
+            }
+          ]
+        },
+        {
+          "type": "fig-artillery-reserve",
+          "name": "Guard Artillery",
+          "units": [
+            {
+              "unit": "fig-og-heavy-foot-arty",
+              "name": "Old Guard 12-pdr Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-henrion",
+      "nationId": "french-imperial-guard",
+      "name": "Henrion's Division",
+      "formation": "2nd Young Guard Division, under Ney",
+      "side": "French",
+      "summary": "The Young Guard under Ney, which held Torcy and the ground before Arcis against Wrede's attacks on the 20th.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the army on 15 March, five days before.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "On 15 March the 8th Voltigeurs had 165 men and the 9th nearly seven hundred, shown as one and two battalions. Wikipedia's account gives Henrion a provisional Guard division of 4,500 to 5,500 men; the rest of it isn't known.",
+        "Its foot company, with three battalions where the list wants six for one, shows as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Henrion",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Henrion's Voltigeurs",
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "10th Young Guard Foot Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "8th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "9th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/9th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/9th Voltigeurs"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ],
+      "missing": [
+        {
+          "name": "Régiment de Marche",
+          "reason": "A march regiment of about five hundred drafts, whose make-up isn't known."
+        }
+      ]
+    },
+    {
+      "id": "arcis-colbert",
+      "nationId": "french-imperial-guard",
+      "name": "Colbert's Guard Cavalry",
+      "formation": "1st Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The Guard horse under Sébastiani, out on the plain before Arcis; on the 20th Kaisarov's Cossacks drove it back with Exelmans's.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "The division had 2,582 men. Each Guard cavalry regiment had squadrons in each of the three divisions; each division's are shown as one unit of each regiment.",
+        "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Colbert",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Guard Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            },
+            {
+              "unit": "fig-og-horse-arty",
+              "name": "Guard Horse Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Guard Chasseurs",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Polish Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st (Polish) Chevau-légers Lanciers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "arcis-lefebvre-desnouettes",
+      "nationId": "french-imperial-guard",
+      "name": "Lefebvre-Desnouettes's Guard Cavalry",
+      "formation": "2nd Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The largest of the Guard cavalry divisions, some two thousand men, with Sébastiani on the plain before Arcis.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "Its strengths are of 28 January: some 3,300 men, the grenadiers about nine hundred and the other regiments six to seven hundred each.",
+        "Nafziger gives the division without brigades; its regiments are brigaded here as the list takes them, the Gendarmes d'Élite as the small unit the chasseurs' brigade may have with it.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Lefebvre-Desnouettes",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Guard Heavy Cavalry",
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval (6 squadrons)"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Dragoons of the Guard (6 squadrons)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Old Guard Chasseurs",
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval (6 squadrons)"
+            },
+            {
+              "unit": "fig-gendarmes-elite",
+              "name": "Gendarmes d'Élite (2 squadrons)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Guard Lancers",
+          "units": [
+            {
+              "unit": "fig-polish-lancers",
+              "name": "1st Chevau-légers Lanciers (7 squadrons)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "arcis-letort",
+      "nationId": "french-imperial-guard",
+      "name": "Letort's Guard Cavalry",
+      "formation": "3rd Guard Cavalry Division (Nansouty)",
+      "side": "French",
+      "summary": "The Guard's third cavalry division, now Letort's, with Sébastiani on the plain; Curély's brigade covered its pontoon train.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "Lion's brigade was the chasseurs, about five hundred, and the Empress Dragoons, about seven hundred; Letort's the grenadiers, about eight hundred and fifty. The dragoons are with Letort's grenadiers here, as the list's heavy brigade takes them.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Letort",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-heavy-cavalry-brigade",
+          "name": "Letort's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Letort",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-grenadiers-a-cheval-regt",
+              "name": "Grenadiers à Cheval"
+            },
+            {
+              "unit": "fig-empress-dragoons",
+              "name": "Empress Dragoons"
+            }
+          ]
+        },
+        {
+          "type": "fig-light-cavalry-brigade",
+          "name": "Lion's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Lion",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-chasseurs-a-cheval",
+              "name": "Chasseurs à Cheval"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-defrance",
+      "nationId": "france",
+      "name": "Defrance's Gardes d'Honneur",
+      "formation": "Cavalry Division, attached to the Guard",
+      "side": "French",
+      "summary": "The Gardes d'Honneur, with Sébastiani's cavalry on the plain before Arcis.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "The Gardes d'Honneur, raised in 1813 from young men of means who equipped themselves and rode dressed as hussars, are the list's Hussars.",
+        "The division had only 896 men in five regiments; they are shown at full size, and the list's Small upgrade would suit them.",
+        "Nafziger gives the division without brigades. Piquet's brigade of the 10th Hussars and the 1st Gardes d'Honneur, and Ségur's of the 3rd and 4th, are as at La Rothière; the 2nd Gardes d'Honneur are with Ségur's here, three hussar regiments where the list's brigade takes two, a historical departure.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Defrance",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Piquet's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Piquet",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "10th Hussars"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "1st Gardes d'Honneur"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Ségur's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ségur",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "2nd Gardes d'Honneur"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "3rd Gardes d'Honneur"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "4th Gardes d'Honneur"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-leval",
+      "nationId": "france",
+      "name": "Leval's Division",
+      "formation": "7th Division, VII Corps (Oudinot)",
+      "side": "French",
+      "summary": "Oudinot's strongest division, which came up for the second day and covered the crossing back over the Aube; Leval was wounded in the retreat.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "The division had some 5,800 men in seventeen battalions, three to nine hundred each. Nafziger gives Chassé's brigade as its third on 5 March, and as the 9th Division's on 1 March; Wikipedia's account has Chassé leading a division.",
+        "Its foot company of eight 6-pdrs and four howitzers is its divisional artillery, and the 9th Division's company is in its reserve.",
+        "Brigades of four regiments, where the list's take three, and three light regiments, where it allows one in the division, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Leval",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Pinoteau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Pinoteau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "10th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/10th Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "6/10th Léger"
+                }
+              ]
+            },
+            {
+              "name": "3rd Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/3rd Line"
+                }
+              ]
+            },
+            {
+              "name": "15th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/15th Line"
+                }
+              ]
+            },
+            {
+              "name": "130th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/130th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/130th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Montfort's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Montfort",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "17th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/17th Léger"
+                }
+              ]
+            },
+            {
+              "name": "101st Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/101st Line"
+                }
+              ]
+            },
+            {
+              "name": "105th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/105th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/105th Line"
+                }
+              ]
+            },
+            {
+              "name": "118th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/118th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Chassé's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Chassé",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/16th Léger"
+                }
+              ]
+            },
+            {
+              "name": "8th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "28th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/28th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "3/28th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "6/28th Line"
+                }
+              ]
+            },
+            {
+              "name": "54th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/54th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "19/1st Foot Artillery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "22/5th Foot Artillery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-rottembourg",
+      "nationId": "french-imperial-guard",
+      "name": "Rottembourg's Division",
+      "formation": "5th Young Guard Division, VII Corps (Oudinot)",
+      "side": "French",
+      "summary": "Oudinot's Young Guard, which came up for the second day with Leval's.",
+      "notes": [
+        "Built from A Clash of Eagles' Imperial Guard 1812 list, the nearest to 1814.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "Its regiments were newly raised that winter, largely of conscripts under a cadre of veterans; they are the list's Young Guard, as it rates them.",
+        "The division had some seven hundred men in ten battalions by 5 March; they are shown at full size, and the list's Small upgrade would suit them all. Its regiments are voltigeurs now, where at La Rothière they were tirailleurs.",
+        "Its foot company, five 6-pdrs and two howitzers, is with Baudin's brigade.",
+        "Regiments of three battalions, where the list's take two, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fig-div-cmd",
+          "name": "Gén. de Division Rottembourg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Charrière's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Charrière",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "5th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/5th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/5th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "6th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/6th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/6th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fig-young-guard-brigade",
+          "name": "Baudin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Baudin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fig-yg-foot-arty",
+              "name": "11th Young Guard Foot Company"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "7th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/7th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/7th Voltigeurs"
+                }
+              ]
+            },
+            {
+              "name": "8th Voltigeurs",
+              "units": [
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "1/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "2/8th Voltigeurs"
+                },
+                {
+                  "unit": "fig-yg-voltigeurs",
+                  "name": "3/8th Voltigeurs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-saint-germain",
+      "nationId": "france",
+      "name": "Saint-Germain's Cavalry",
+      "formation": "II Cavalry Corps",
+      "side": "French",
+      "summary": "Oudinot's cavalry, Maurin's and Delort's divisions, which came up for the second day and struck Pahlen's horse with Sébastiani's.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "Nafziger has no French order of battle for Arcis. The divisions Wikipedia's account names are built from his nearest returns: the Guard's of February and March, and Oudinot's of early March.",
+        "Maurin's 2nd Light Cavalry Division is Dommanget's and Jamin's brigades, and Delort's 2nd Cuirassier Division Blancard's and Sopransy's: the regiments of Sébastiani's corps of 1813, fifty to a hundred and fifty men each by now. Each is shown as one unit at full size, and the list's Small upgrade would suit them all.",
+        "The chevau-légers lanciers are the list's Lancers. Its two horse detachments are one in its divisional artillery and one in its reserve.",
+        "Light brigades of six and five regiments and a heavy brigade of four, where the list's take four and three, and two heavy brigades, where it takes one, show as historical departures.",
+        "A cavalry force on its own has no infantry brigade, which the list needs to allow its cavalry, so this shows as a historical departure. Play it alongside infantry, or agree it with your opponent.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Saint-Germain",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Dommanget's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Dommanget",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "5th Hussars"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "9th Hussars"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "11th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "12th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "2nd Chevau-légers"
+            },
+            {
+              "unit": "fr-lancer",
+              "name": "4th Chevau-légers"
+            }
+          ]
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Jamin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Jamin",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-lancer",
+              "name": "6th Chevau-légers"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "7th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "20th Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "23rd Chasseurs à Cheval"
+            },
+            {
+              "unit": "fr-chasseur-a-cheval",
+              "name": "24th Chasseurs à Cheval"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Blancard's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Blancard",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-carabinier",
+              "name": "1st Carabiniers"
+            },
+            {
+              "unit": "fr-carabinier",
+              "name": "2nd Carabiniers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "1st Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Sopransy's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Sopransy",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "5th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "8th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "10th Cuirassiers"
+            },
+            {
+              "unit": "fr-cuirassier",
+              "name": "13th Cuirassiers"
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "fr-artillery-brigade",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "fr-horse-arty",
+              "name": "Horse Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-rechberg",
+      "nationId": "bavaria",
+      "name": "Rechberg's Division",
+      "formation": "1st Bavarian Division, V Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Wrede's leading Bavarians, which attacked Torcy-le-Grand again and again on the 20th, Prince Karl of Bavaria leading a brigade, without taking it.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1814; Bavaria had joined the allies in October.",
+        "After Nafziger's order of battle for Wrede's Bavarians at Arcis, from the Bavarian war archives.",
+        "The national field battalions, raised from the districts' militia, are shown as Line; the Wurst battery is the list's Light Artillery, with the chevau-légers.",
+        "One of Ulmer's four 12-pdr batteries is with each division as its Position Battery.",
+        "Three regiments in each brigade, where the list's takes two, and three chevau-léger regiments in Vieregg's, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt von Rechberg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Prince Karl's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Karl of Bavaria",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-light-infantry",
+              "name": "3rd Jäger Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/1st Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/1st Line"
+                }
+              ]
+            },
+            {
+              "name": "3rd Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/3rd Line"
+                }
+              ]
+            },
+            {
+              "name": "10th National Field Battalion",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "10th National Field Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Spreti's Brigade",
+          "commander": {
+            "name": "Gen-Maj Graf Spreti",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/2nd Line"
+                }
+              ]
+            },
+            {
+              "name": "10th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/10th Line"
+                }
+              ]
+            },
+            {
+              "name": "National Field Battalions",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "11th National Field Battalion"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "15th National Field Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Vieregg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Freiherr von Vieregg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "1st Chevau-légers (4 squadrons)"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "2nd Chevau-légers (4 squadrons)"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "7th Chevau-légers (3 squadrons)"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "4th Wurst Battery"
+            }
+          ]
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "5th 6-pdr Foot Battery"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "3rd 12-pdr Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-lamotte",
+      "nationId": "bavaria",
+      "name": "Lamotte's Division",
+      "formation": "3rd Bavarian Division, V Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Wrede's other Bavarian division, in the attacks on Torcy-le-Grand and the second day's advance on Arcis.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1814; Bavaria had joined the allies in October.",
+        "After Nafziger's order of battle for Wrede's Bavarians at Arcis, from the Bavarian war archives.",
+        "The Kreis and national field battalions are shown as Line; the Wurst battery is the list's Light Artillery.",
+        "One of Ulmer's four 12-pdr batteries is with each division as its Position Battery.",
+        "Three and four regiments in a brigade, where the list's takes two, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt Freiherr von Lamotte",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Stockh's Brigade",
+          "commander": {
+            "name": "Gen-Maj von der Stockh",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/11th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/11th Line"
+                }
+              ]
+            },
+            {
+              "name": "7th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/7th Line"
+                }
+              ]
+            },
+            {
+              "name": "Kreis Battalions",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "1st Iller Kreis Battalion"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "1st Unter-Donau Kreis Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Deroy's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Deroy",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "5th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/5th Line"
+                }
+              ]
+            },
+            {
+              "name": "8th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "9th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/9th Line"
+                }
+              ]
+            },
+            {
+              "name": "National Field Battalions",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "5th National Field Battalion"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "6th National Field Battalion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Diez's Brigade",
+          "commander": {
+            "name": "Col Diez",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "4th Chevau-légers (3 squadrons)"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "5th Chevau-légers (3 squadrons)"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "1st Wurst Battery"
+            }
+          ]
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "9th 6-pdr Foot Battery"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "8th 12-pdr Foot Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "The rest of Ulmer's reserve",
+          "reason": "A mortar battery, a 6-pdr battery and two more 12-pdr batteries."
+        }
+      ]
+    },
+    {
+      "id": "arcis-wrede-austrians",
+      "nationId": "austria",
+      "name": "Wrede's Austrians",
+      "formation": "Hardegg's and Splény's divisions, V Corps (Wrede)",
+      "side": "Austrian",
+      "summary": "The Austrian divisions of Wrede's corps; Volkmann's brigade attacked Torcy-le-Grand three times on the 20th.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Wikipedia's order of battle for La Rothière, seven weeks before; Arcis's own order of battle gives the allied corps only by division.",
+        "Hardegg's 1st Division is Geramb's and Mengen's brigades, and Splény's 2nd Division the infantry, whose brigadier isn't known, and Minutillo's cavalry. They were the same regiments as at Hanau.",
+        "Regiments of four battalions, where the list takes two Large ones, one line brigade where the list wants two for the force's points, two advanced guard brigades, where it allows one, a cavalry battery with Minutillo's two regiments, where it wants three, and two position batteries with eight line battalions, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Count Hardegg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Geramb's Brigade",
+          "commander": {
+            "name": "Col Geramb",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/1st Szekler Grenz (IR 14)"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "II/1st Szekler Grenz (IR 14)"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Archduke Joseph Hussars (6 squadrons)"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Mengen's Brigade",
+          "commander": {
+            "name": "Col Mengen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-jager",
+              "name": "3rd Jäger Battalion"
+            },
+            {
+              "unit": "at-uhlan",
+              "name": "Schwarzenberg Uhlans (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Splény's Infantry",
+          "regiments": [
+            {
+              "name": "Jordis Infantry (IR 59)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Jordis"
+                }
+              ]
+            },
+            {
+              "name": "Archduke Rudolph Infantry (IR 14)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Archduke Rudolph"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Minutillo's Brigade",
+          "commander": {
+            "name": "Gen-Maj Minutillo",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-hussar",
+              "name": "Szekler Hussars (6 squadrons)"
+            },
+            {
+              "unit": "at-dragoon",
+              "name": "Knesevich Dragoons (6 squadrons)"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-reserve-artillery",
+          "name": "Reserve Artillery (Stwrtnik)",
+          "units": [
+            {
+              "unit": "at-position-battery",
+              "name": "12-pdr Position Battery"
+            },
+            {
+              "unit": "at-position-battery",
+              "name": "6-pdr Position Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-choglokov",
+      "nationId": "russia",
+      "name": "Choglokov's Grenadiers",
+      "formation": "1st Grenadier Division, with Wrede",
+      "side": "Russian",
+      "summary": "A division of Russian grenadiers attached to Wrede's corps for the attacks on Torcy and Arcis.",
+      "notes": [
+        "Built from A Clash of Eagles' Russian list, which covers 1812-15.",
+        "After Wikipedia's order of battle for La Rothière, seven weeks before; Arcis's own order of battle gives the allied corps only by division.",
+        "Three grenadier brigades, where the list allows one, and grenadiers with no infantry brigade to allow them, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces; but 2 of the 3 brigade commanders at 7, as the list rates at most half of them higher."
+      ],
+      "command": [
+        {
+          "unit": "ru-div-cmd",
+          "name": "Maj-Gen Choglokov",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Knyazhnin's Brigade",
+          "commander": {
+            "name": "Maj-Gen Knyazhnin II",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "Arakcheyev Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Arakcheyev Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Arakcheyev Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Ekaterinoslav Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Ekaterinoslav Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Ekaterinoslav Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Yemelyanov's Brigade",
+          "commander": {
+            "name": "Col Yemelyanov",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Tauride Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "Tauride Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "St Petersburg Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/St Petersburg Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/St Petersburg Grenadiers"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "ru-grenadier-brigade",
+          "name": "Sulima's Brigade",
+          "commander": {
+            "name": "Col Sulima",
+            "variant": "Staff rating 7"
+          },
+          "regiments": [
+            {
+              "name": "Kexholm Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Kexholm Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Kexholm Grenadiers"
+                }
+              ]
+            },
+            {
+              "name": "Pernau Grenadiers",
+              "units": [
+                {
+                  "unit": "ru-grenadier",
+                  "name": "I/Pernau Grenadiers"
+                },
+                {
+                  "unit": "ru-grenadier",
+                  "name": "II/Pernau Grenadiers"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-gyulai",
+      "nationId": "austria",
+      "name": "Gyulai's Corps",
+      "formation": "III Corps, Army of Bohemia",
+      "side": "Austrian",
+      "summary": "Gyulai's Austrians, part of the allied army that closed on Arcis for the second day.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Wikipedia's order of battle for La Rothière, seven weeks before; Arcis's own order of battle gives the allied corps only by division.",
+        "Crenneville's light division is Haecht's and Trenck's brigades, Fresnel's Pflüger's and Csollich's, and Prince Hohenlohe's Splény's and Grimmer's. The St George Grenz regiment's two battalions are one with each of Crenneville's brigades.",
+        "The Mariassy and Ignaz Gyulai regiments, recruited in Hungary, are the list's Hungarian infantry.",
+        "Regiments of three and four battalions, where the list takes two Large ones, two advanced guard brigades, where it allows one, and four brigade batteries and two position batteries, where it allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FZM Gyulai",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Haecht's Brigade",
+          "commander": {
+            "name": "Gen-Maj Haecht",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/St George Grenz (IR 6)"
+            },
+            {
+              "unit": "at-chevauleger",
+              "name": "Klenau Chevau-légers (7 squadrons)"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Trenck's Brigade",
+          "commander": {
+            "name": "Gen-Maj Trenck",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "II/St George Grenz (IR 6)"
+            },
+            {
+              "unit": "at-dragoon",
+              "name": "Rosenberg Dragoons (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Pflüger's Brigade",
+          "commander": {
+            "name": "Gen-Maj Pflüger",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Archduke Ludwig Infantry (IR 8)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Archduke Ludwig"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Archduke Ludwig"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Archduke Ludwig"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Archduke Ludwig"
+                }
+              ]
+            },
+            {
+              "name": "Würzburg Infantry (IR 7)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Würzburg"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Würzburg"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Würzburg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Csollich's Brigade",
+          "commander": {
+            "name": "Gen-Maj Csollich",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kottulinsky Infantry (IR 41)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Kottulinsky"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Kottulinsky"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Kottulinsky"
+                }
+              ]
+            },
+            {
+              "name": "Kaiser Infantry (IR 1)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Kaiser"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Kaiser"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Splény's Brigade",
+          "commander": {
+            "name": "Gen-Maj Splény",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Mariassy Infantry (IR 37)",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Mariassy"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Mariassy"
+                }
+              ]
+            },
+            {
+              "name": "Ignaz Gyulai Infantry (IR 60)",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Ignaz Gyulai"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Ignaz Gyulai"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Grimmer's Brigade",
+          "commander": {
+            "name": "Gen-Maj Grimmer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kollowrat Infantry (IR 36)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Kollowrat"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Kollowrat"
+                }
+              ]
+            },
+            {
+              "name": "Frölich Infantry (IR 28)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Frölich"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Frölich"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Frölich"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "at-position-battery",
+              "name": "12-pdr Position Battery"
+            },
+            {
+              "unit": "at-position-battery",
+              "name": "6-pdr Position Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arcis-wurttemberg",
+      "nationId": "wurttemberg",
+      "name": "The Crown Prince of Württemberg's Corps",
+      "formation": "IV Corps, Army of Bohemia",
+      "side": "Württemberg",
+      "summary": "The Württembergers, who joined the second day's attack, with Duka's Russian cuirassiers.",
+      "notes": [
+        "Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1814; Württemberg had joined the allies in November.",
+        "After Wikipedia's order of battle for La Rothière, seven weeks before; Arcis's own order of battle gives the allied corps only by division.",
+        "Koch's infantry division is the three infantry brigades, Prince Adam's cavalry division the two cavalry brigades.",
+        "The horse chasseur regiments are the list's Jäger zu Pferde, and the Crown Prince's dragoons its Chevau-légers.",
+        "Each foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery.",
+        "Two cavalry brigades, where the list allows one for the infantry, three regiments in Döring's brigade and three light battalions in Stockmayer's, where the list's take two, and two foot batteries, where it allows one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "wt-div-cmd",
+          "name": "Crown Prince of Württemberg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "wt-light-infantry-brigade",
+          "name": "Stockmayer's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Stockmayer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-light-infantry",
+              "name": "I/9th (King's) Jäger"
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "II/9th (King's) Jäger"
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "10th Light"
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Döring's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Döring",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Line (Duke Wilhelm)",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/2nd Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/2nd Line"
+                }
+              ]
+            },
+            {
+              "name": "3rd Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/3rd Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/3rd Line"
+                }
+              ]
+            },
+            {
+              "name": "7th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/7th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/7th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Hohenlohe-Kirchberg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Hohenlohe-Kirchberg",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/4th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/4th Line"
+                }
+              ]
+            },
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/6th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/6th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-cavalry-brigade",
+          "name": "Alvensleben's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Alvensleben",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-jager-cavalry",
+              "name": "2nd Jäger zu Pferde (Duke Louis)"
+            },
+            {
+              "unit": "wt-chevauleger",
+              "name": "3rd Dragoons (Crown Prince)"
+            },
+            {
+              "unit": "wt-horse-arty",
+              "name": "1st Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "wt-cavalry-brigade",
+          "name": "Jett's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Jett",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-jager-cavalry",
+              "name": "4th Jäger zu Pferde (Prince Adam)"
+            },
+            {
+              "unit": "wt-horse-arty",
+              "name": "2nd Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "wt-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "wt-light-arty",
+              "name": "1st Foot Battery"
+            },
+            {
+              "unit": "wt-light-arty",
+              "name": "2nd Foot Battery"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "toCome": [
     {
       "side": "French",
-      "name": "Ney's Infantry",
-      "formation": "Friant's Old Guard, Henrion's Provisional Guard, Janssens's and Boyer's divisions",
-      "summary": "Held Arcis and Torcy against Wrede's attacks; Janssens was wounded on the first day.",
+      "name": "Janssens's and Boyer's Divisions",
+      "formation": "Ney's corps",
+      "summary": "Two more divisions of Ney's in the fight for Arcis and Torcy; Janssens was wounded on the 20th and Lefol took his division. No return of them for March has been found.",
       "flag": "/flags/france.svg"
     },
     {
       "side": "French",
-      "name": "Sébastiani's Cavalry",
-      "formation": "Colbert's, Lefebvre-Desnouettes's and Letort's Guard divisions, Defrance's Gardes d'Honneur, and Exelmans's and Berckheim's divisions",
-      "summary": "Fought the allied horse on the plain: Kaisarov's Cossacks drove back Colbert and Exelmans on the 20th, and on the 21st Sébastiani struck Pahlen's cavalry.",
+      "name": "Exelmans's and Berckheim's Divisions",
+      "formation": "Cavalry, under Sébastiani",
+      "summary": "Two more of Sébastiani's cavalry divisions; Exelmans's was driven back with Colbert's by Kaisarov's Cossacks on the 20th. Their regiments aren't known.",
       "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Oudinot's Corps",
-      "formation": "Leval's division of the VII Corps, with Saint-Germain's II Cavalry Corps",
-      "summary": "Came up for the second day and covered the crossing back over the Aube; Leval was wounded in the retreat.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "Bavarian",
-      "name": "Wrede's Corps",
-      "formation": "Bavarian and Austrian divisions with Choglokov's Russian grenadiers, V Corps, Army of Bohemia",
-      "summary": "Attacked Torcy-le-Grand again and again on the 20th.",
-      "flag": "/flags/bavaria.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "Gyulai's Corps",
-      "formation": "III Corps, Army of Bohemia",
-      "summary": "Crenneville's and Fresnel's divisions and Nostitz's cavalry.",
-      "flag": "/flags/austria.svg"
-    },
-    {
-      "side": "Württemberg",
-      "name": "The Crown Prince of Württemberg's Corps",
-      "formation": "IV Corps, with Duka's Russian cuirassiers",
-      "summary": "Took part in the second day's attack.",
-      "flag": "/flags/wurttemberg.svg"
     },
     {
       "side": "Russian",
