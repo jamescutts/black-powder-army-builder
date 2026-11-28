@@ -69,6 +69,10 @@
     {
       "label": "Battle of Laubressel (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Laubressel"
+    },
+    {
+      "label": "Battle of La Rothière order of battle: the Coalition army (Wikipedia, after Nafziger)",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re_order_of_battle"
     }
   ],
   "forces": [
@@ -1578,6 +1582,1080 @@
           ]
         }
       ]
+    },
+    {
+      "id": "laubressel-wrede-austrians",
+      "nationId": "austria",
+      "name": "Wrede's Austrians",
+      "formation": "Hardegg's and Splény's divisions, V Corps (Wrede)",
+      "side": "Austrian",
+      "summary": "Hardegg's Austrians, who led Wrede's corps towards Montiéramey while its guns opened the attack.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Wikipedia's order of battle for La Rothière, a month before; Laubressel's own order of battle gives the allied corps only by division.",
+        "Hardegg's 1st Division is Geramb's and Mengen's brigades, and Splény's 2nd Division the infantry, whose brigadier isn't known, and Minutillo's cavalry. They were the same regiments as at Hanau.",
+        "Regiments of four battalions, where the list takes two Large ones, one line brigade where the list wants two for the force's points, two advanced guard brigades, where it allows one, a cavalry battery with Minutillo's two regiments, where it wants three, and two position batteries with eight line battalions, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FML Count Hardegg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Geramb's Brigade",
+          "commander": {
+            "name": "Col Geramb",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/1st Szekler Grenz (IR 14)"
+            },
+            {
+              "unit": "at-grenz",
+              "name": "II/1st Szekler Grenz (IR 14)"
+            },
+            {
+              "unit": "at-hussar",
+              "name": "Archduke Joseph Hussars (6 squadrons)"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Mengen's Brigade",
+          "commander": {
+            "name": "Col Mengen",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-jager",
+              "name": "3rd Jäger Battalion"
+            },
+            {
+              "unit": "at-uhlan",
+              "name": "Schwarzenberg Uhlans (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Splény's Infantry",
+          "regiments": [
+            {
+              "name": "Jordis Infantry (IR 59)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Jordis"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Jordis"
+                }
+              ]
+            },
+            {
+              "name": "Archduke Rudolph Infantry (IR 14)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Archduke Rudolph"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Archduke Rudolph"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Minutillo's Brigade",
+          "commander": {
+            "name": "Gen-Maj Minutillo",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-hussar",
+              "name": "Szekler Hussars (6 squadrons)"
+            },
+            {
+              "unit": "at-dragoon",
+              "name": "Knesevich Dragoons (6 squadrons)"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-reserve-artillery",
+          "name": "Reserve Artillery (Stwrtnik)",
+          "units": [
+            {
+              "unit": "at-position-battery",
+              "name": "12-pdr Position Battery"
+            },
+            {
+              "unit": "at-position-battery",
+              "name": "6-pdr Position Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laubressel-rechberg",
+      "nationId": "bavaria",
+      "name": "Rechberg's Division",
+      "formation": "1st Bavarian Division, V Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Rechberg's Bavarians, who attacked towards Courteranges and Troyes.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1814; Bavaria had joined the allies in October.",
+        "After Wikipedia's order of battle for La Rothière, a month before; Laubressel's own order of battle gives the allied corps only by division.",
+        "The Landwehr battalions, national field battalions raised from the districts' militia, are shown as Line. Brigades of single battalions of several regiments have more regiments than the list's brigade takes, which shows as a historical departure.",
+        "Each division's cavalry battery, light 6-pdrs with the gunners riding, is the list's Light Artillery, with its chevau-légers; its 6-pdr battery is its Foot Battery, and one of the corps' four 12-pdr batteries is with each division as its Position Battery.",
+        "The 1st Line's battalion in Maillot's brigade is unnumbered in the order of battle; it is shown as the third. Three chevau-léger regiments in Vieregg's brigade, where the list's takes two, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt von Rechberg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Prince Karl's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Karl of Bavaria",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-light-infantry",
+              "name": "3rd Light Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "1st Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/1st Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/1st Line"
+                }
+              ]
+            },
+            {
+              "name": "I/3rd Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/3rd Line"
+                }
+              ]
+            },
+            {
+              "name": "I/Oberdonau Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Oberdonau Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Maillot's Brigade",
+          "commander": {
+            "name": "Gen-Maj Maillot de la Treille",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-light-infantry",
+              "name": "2nd Light Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "III/1st Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "III/1st Line"
+                }
+              ]
+            },
+            {
+              "name": "I/2nd Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/2nd Line"
+                }
+              ]
+            },
+            {
+              "name": "II/Oberdonau Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/Oberdonau Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Vieregg's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Vieregg",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "1st Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "2nd Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "7th Chevau-légers"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "6-pdr Battery"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "12-pdr Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laubressel-beckers",
+      "nationId": "bavaria",
+      "name": "Beckers's Division",
+      "formation": "2nd Bavarian Division, V Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Beckers's Bavarians, with the rest of Wrede's corps in the advance on Troyes.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1814; Bavaria had joined the allies in October.",
+        "After Wikipedia's order of battle for La Rothière, a month before; Laubressel's own order of battle gives the allied corps only by division.",
+        "The Landwehr battalions, national field battalions raised from the districts' militia, are shown as Line. Brigades of single battalions of several regiments have more regiments than the list's brigade takes, which shows as a historical departure.",
+        "Each division's cavalry battery, light 6-pdrs with the gunners riding, is the list's Light Artillery, with its chevau-légers; its 6-pdr battery is its Foot Battery, and one of the corps' four 12-pdr batteries is with each division as its Position Battery.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt Beckers zu Westerstetten",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Pappenheim's Brigade",
+          "commander": {
+            "name": "Gen-Maj Graf Pappenheim",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-light-infantry",
+              "name": "4th Light Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/4th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/4th Line"
+                }
+              ]
+            },
+            {
+              "name": "Salzach Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "Salzach Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "I/Regen Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Regen Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Zoller's Brigade",
+          "commander": {
+            "name": "Gen-Maj Freiherr von Zoller",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-light-infantry",
+              "name": "1st Light Battalion"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/6th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/6th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/Rezat Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Rezat Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Elbracht's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Elbracht",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "3rd Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "6th Chevau-légers"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "6-pdr Battery"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "12-pdr Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laubressel-lamotte",
+      "nationId": "bavaria",
+      "name": "Lamotte's Division",
+      "formation": "3rd Bavarian Division, V Corps (Wrede)",
+      "side": "Bavarian",
+      "summary": "Lamotte's Bavarians, with the rest of Wrede's corps in the advance on Troyes.",
+      "notes": [
+        "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1814; Bavaria had joined the allies in October.",
+        "After Wikipedia's order of battle for La Rothière, a month before; Laubressel's own order of battle gives the allied corps only by division.",
+        "The Landwehr battalions, national field battalions raised from the districts' militia, are shown as Line. Brigades of single battalions of several regiments have more regiments than the list's brigade takes, which shows as a historical departure.",
+        "Each division's cavalry battery, light 6-pdrs with the gunners riding, is the list's Light Artillery, with its chevau-légers; its 6-pdr battery is its Foot Battery, and one of the corps' four 12-pdr batteries is with each division as its Position Battery.",
+        "The order of battle is unsure of the cavalry brigade's commander, naming Elbracht with a query; it is shown without him.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "bav-div-cmd",
+          "name": "Gen-Lt Freiherr von Lamotte",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Habermann's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Habermann",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "11th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/11th Line"
+                },
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/11th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/7th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/7th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/Unterdonau Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Unterdonau Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "I/Iller Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Iller Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-infantry-brigade",
+          "name": "Deroy's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Deroy",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "I/5th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/5th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/8th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/8th Line"
+                }
+              ]
+            },
+            {
+              "name": "I/9th Line",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/9th Line"
+                }
+              ]
+            },
+            {
+              "name": "II/Iller Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "II/Iller Landwehr"
+                }
+              ]
+            },
+            {
+              "name": "I/Isar Landwehr",
+              "units": [
+                {
+                  "unit": "bav-line-infantry",
+                  "name": "I/Isar Landwehr"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "bav-cavalry-brigade",
+          "name": "Lamotte's Cavalry",
+          "units": [
+            {
+              "unit": "bav-chevau-leger",
+              "name": "4th Chevau-légers"
+            },
+            {
+              "unit": "bav-chevau-leger",
+              "name": "5th Chevau-légers"
+            },
+            {
+              "unit": "bav-light-arty",
+              "name": "Cavalry Battery"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "bav-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "bav-foot-arty",
+              "name": "6-pdr Battery"
+            },
+            {
+              "unit": "bav-position-battery",
+              "name": "12-pdr Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laubressel-wurttemberg",
+      "nationId": "wurttemberg",
+      "name": "The Crown Prince of Württemberg's Corps",
+      "formation": "IV Corps, Army of Bohemia",
+      "side": "Württemberg",
+      "summary": "About fifteen thousand Württembergers on the allied left: Prince Adam's cavalry stood idle, and Koch's and Döring's infantry followed Macdonald towards Sens.",
+      "notes": [
+        "Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1814; Württemberg had joined the allies in November.",
+        "After Wikipedia's order of battle for La Rothière, a month before; Laubressel's own order of battle gives the allied corps only by division.",
+        "Koch's infantry division is the three infantry brigades, Prince Adam's cavalry division the two cavalry brigades.",
+        "The horse chasseur regiments are the list's Jäger zu Pferde, and the Crown Prince's dragoons its Chevau-légers.",
+        "Each foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery.",
+        "Two cavalry brigades, where the list allows one for the infantry, three regiments in Döring's brigade and three light battalions in Stockmayer's, where the list's take two, and two foot batteries, where it allows one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "wt-div-cmd",
+          "name": "Crown Prince of Württemberg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "wt-light-infantry-brigade",
+          "name": "Stockmayer's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Stockmayer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-light-infantry",
+              "name": "I/9th (King's) Jäger"
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "II/9th (King's) Jäger"
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "10th Light"
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Döring's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Döring",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Line (Duke Wilhelm)",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/2nd Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/2nd Line"
+                }
+              ]
+            },
+            {
+              "name": "3rd Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/3rd Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/3rd Line"
+                }
+              ]
+            },
+            {
+              "name": "7th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/7th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/7th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Hohenlohe-Kirchberg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Hohenlohe-Kirchberg",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/4th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/4th Line"
+                }
+              ]
+            },
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/6th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/6th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-cavalry-brigade",
+          "name": "Alvensleben's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Alvensleben",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-jager-cavalry",
+              "name": "2nd Jäger zu Pferde (Duke Louis)"
+            },
+            {
+              "unit": "wt-chevauleger",
+              "name": "3rd Dragoons (Crown Prince)"
+            },
+            {
+              "unit": "wt-horse-arty",
+              "name": "1st Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "wt-cavalry-brigade",
+          "name": "Jett's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Jett",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-jager-cavalry",
+              "name": "4th Jäger zu Pferde (Prince Adam)"
+            },
+            {
+              "unit": "wt-horse-arty",
+              "name": "2nd Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "wt-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "wt-light-arty",
+              "name": "1st Foot Battery"
+            },
+            {
+              "unit": "wt-light-arty",
+              "name": "2nd Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laubressel-gyulai",
+      "nationId": "austria",
+      "name": "Gyulai's Corps",
+      "formation": "III Corps, Army of Bohemia",
+      "side": "Austrian",
+      "summary": "Gyulai's Austrians, about ten thousand, on the allied left, which attacked the French at Silvarouvres.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Wikipedia's order of battle for La Rothière, a month before; Laubressel's own order of battle gives the allied corps only by division.",
+        "Crenneville's light division is Haecht's and Trenck's brigades, Fresnel's Pflüger's and Csollich's, and Prince Hohenlohe's Splény's and Grimmer's. The St George Grenz regiment's two battalions are one with each of Crenneville's brigades.",
+        "The Mariassy and Ignaz Gyulai regiments, recruited in Hungary, are the list's Hungarian infantry.",
+        "Regiments of three and four battalions, where the list takes two Large ones, two advanced guard brigades, where it allows one, and four brigade batteries and two position batteries, where it allows three and one, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "FZM Gyulai",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Haecht's Brigade",
+          "commander": {
+            "name": "Gen-Maj Haecht",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "I/St George Grenz (IR 6)"
+            },
+            {
+              "unit": "at-chevauleger",
+              "name": "Klenau Chevau-légers (7 squadrons)"
+            },
+            {
+              "unit": "at-cavalry-arty",
+              "name": "Cavalry Battery"
+            }
+          ]
+        },
+        {
+          "type": "at-advanced-guard-brigade",
+          "name": "Trenck's Brigade",
+          "commander": {
+            "name": "Gen-Maj Trenck",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-grenz",
+              "name": "II/St George Grenz (IR 6)"
+            },
+            {
+              "unit": "at-dragoon",
+              "name": "Rosenberg Dragoons (6 squadrons)"
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Pflüger's Brigade",
+          "commander": {
+            "name": "Gen-Maj Pflüger",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Archduke Ludwig Infantry (IR 8)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Archduke Ludwig"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Archduke Ludwig"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Archduke Ludwig"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "IV/Archduke Ludwig"
+                }
+              ]
+            },
+            {
+              "name": "Würzburg Infantry (IR 7)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Würzburg"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Würzburg"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Würzburg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Csollich's Brigade",
+          "commander": {
+            "name": "Gen-Maj Csollich",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kottulinsky Infantry (IR 41)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Kottulinsky"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Kottulinsky"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Kottulinsky"
+                }
+              ]
+            },
+            {
+              "name": "Kaiser Infantry (IR 1)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Kaiser"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Kaiser"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Splény's Brigade",
+          "commander": {
+            "name": "Gen-Maj Splény",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Mariassy Infantry (IR 37)",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Mariassy"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Mariassy"
+                }
+              ]
+            },
+            {
+              "name": "Ignaz Gyulai Infantry (IR 60)",
+              "units": [
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "I/Ignaz Gyulai"
+                },
+                {
+                  "unit": "at-infantry-hungarian",
+                  "name": "II/Ignaz Gyulai"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Grimmer's Brigade",
+          "commander": {
+            "name": "Gen-Maj Grimmer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Brigade Battery"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Kollowrat Infantry (IR 36)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Kollowrat"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Kollowrat"
+                }
+              ]
+            },
+            {
+              "name": "Frölich Infantry (IR 28)",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Frölich"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Frölich"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Frölich"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-reserve-artillery",
+          "name": "Corps Artillery",
+          "units": [
+            {
+              "unit": "at-position-battery",
+              "name": "12-pdr Position Battery"
+            },
+            {
+              "unit": "at-position-battery",
+              "name": "6-pdr Position Battery"
+            }
+          ]
+        }
+      ]
     }
   ],
   "toCome": [
@@ -1594,27 +2672,6 @@
       "formation": "Gorchakov's I and Eugen of Württemberg's II Infantry Corps and Pahlen's cavalry, VI Corps",
       "summary": "About fourteen thousand men, who took Bouranton and the Laubressel plateau while Pahlen's horse raided the French artillery park.",
       "flag": "/flags/russia.svg"
-    },
-    {
-      "side": "Bavarian",
-      "name": "Wrede's Corps",
-      "formation": "Three Bavarian and two Austrian divisions, V Corps",
-      "summary": "About twenty thousand men, whose guns opened the attack; they pushed on towards Troyes.",
-      "flag": "/flags/bavaria.svg"
-    },
-    {
-      "side": "Württemberg",
-      "name": "The Crown Prince of Württemberg's Corps",
-      "formation": "Koch's and Döring's divisions and Prince Adam's cavalry, IV Corps",
-      "summary": "About fifteen thousand men on the allied left, who followed Macdonald towards Sens.",
-      "flag": "/flags/wurttemberg.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "Gyulai's Corps",
-      "formation": "Crenneville's, Fresnel's and Hohenlohe's divisions, III Corps",
-      "summary": "About ten thousand Austrians, who attacked at Silvarouvres.",
-      "flag": "/flags/austria.svg"
     }
   ]
 }

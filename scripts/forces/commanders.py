@@ -180,7 +180,7 @@ COMMANDERS.update({
     "vauchamps": {"French": ("Napoleon", "napoleon"), "Prussian": ("Field Marshal Blücher", "blucher"), "Russian": ("Gen-Lt Kaptsevich", "kaptsevich")},
     "mormant": {"French": ("Napoleon", "napoleon"), "Russian": ("Gen-Lt Count Pahlen", "pahlen"), "Austrian": ("FML Hardegg", None), "Bavarian": ("Gen-Lt Lamotte", None)},
     "montereau": {"French": ("Napoleon", "napoleon"), "Württemberg": ("The Crown Prince of Württemberg", None), "Austrian": ("Under the Crown Prince", None)},
-    "bar-sur-aube": {"French": ("Marshal Oudinot", "oudinot"), "Russian": ("General Wittgenstein", "wittgenstein"), "Bavarian": ("General Wrede", "wrede")},
+    "bar-sur-aube": {"French": ("Marshal Oudinot", "oudinot"), "Russian": ("General Wittgenstein", "wittgenstein"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede")},
     "laubressel": {"French": ("Marshal Macdonald", "macdonald"), "Russian": ("General Wittgenstein", "wittgenstein"), "Bavarian": ("General Wrede", "wrede"), "Württemberg": ("The Crown Prince of Württemberg", None), "Austrian": ("FZM Gyulai", None)},
     "craonne": {"French": ("Napoleon", "napoleon"), "Russian": ("Gen-Lt Count Vorontsov", "vorontsov")},
     "laon": {"French": ("Napoleon", "napoleon"), "Prussian": ("Field Marshal Blücher", "blucher"), "Russian": ("Under Blücher", "blucher")},
@@ -191,7 +191,8 @@ COMMANDERS.update({
     "saint-dizier": {"French": ("Napoleon", "napoleon"), "Russian": ("Gen-Lt Winzingerode", "winzingerode")},
     "paris": {"French": ("King Joseph, with Marshals Marmont and Mortier", "joseph"), "Russian": ("General Barclay de Tolly", "barclay"), "Prussian": ("Field Marshal Blücher", "blucher"), "Württemberg": ("The Crown Prince of Württemberg", None), "Austrian": ("Under the Crown Prince", None)},
     "la-rothiere": {"French": ("Napoleon", "napoleon"), "Russian": ("Field Marshal Blücher", "blucher"), "Austrian": ("Under Blücher", "blucher"),
-                    "Württemberg": ("Under Blücher", "blucher"), "Bavarian": ("Under Blücher", "blucher")},
+                    "Württemberg": ("Under Blücher", "blucher"), "Bavarian": ("Under Blücher", "blucher"),
+                    "Prussian": ("Under Blücher", "blucher")},
     "hanau": {"French": ("Napoleon", "napoleon"), "Bavarian": ("General Wrede", "wrede"), "Austrian": ("Under Wrede", "wrede"), "Russian": ("Under Wrede", "wrede")},
 })
 
@@ -725,6 +726,8 @@ FORCE_PORTRAITS.update({
     "laon-friant": "friant", "laon-charpentier": "charpentier", "laon-ricard": "ricard", "laon-arrighi": "arrighi",
     "paris-ricard": "ricard", "paris-arrighi": "arrighi", "paris-charpentier": "charpentier",
     "laubressel-brayer": "brayer", "laubressel-leval": "leval",
+    "la-rothiere-gyulai": "gyulai", "la-rothiere-olsufiev": "olsufiev", "la-rothiere-vasilchikov": "ilarion_vasilchikov",
+    "la-rothiere-wurttemberg": "wurttemberg_crown_prince", "la-rothiere-paskevich": "paskevich",
     "laon-pac": "nansouty", "reims-ricard": "ricard", "reims-arrighi": "arrighi", "reims-friant": "friant",
     "champaubert-olsufiev": "olsufiev", "montmirail-yorck": "yorck", "chateau-thierry-yorck": "yorck",
     "montmirail-vasilchikov": "ilarion_vasilchikov", "chateau-thierry-vasilchikov": "ilarion_vasilchikov",

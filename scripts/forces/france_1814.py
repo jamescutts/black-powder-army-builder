@@ -17,7 +17,7 @@ from pathlib import Path
 import commanders
 import ratings
 from hundred_days import bde, cmd, force, u
-from liberation_1813 import (CAV_ONLY, FIG, FR, LIST_RU, MARINES, NAF, PR15, PR_GROUPED, PR_LIST, PR_SUB, PR_WHOLE, RU,
+from liberation_1813 import (AU, BAV, CAV_ONLY, FIG, FR, LIST_RU, WT, bns, MARINES, NAF, PR15, PR_GROUPED, PR_LIST, PR_SUB, PR_WHOLE, RU,
                              bn_list, marine, pc, pi, pres, regt, ru_regt)
 
 OUT = Path(__file__).resolve().parents[2] / "src" / "data" / "battles"
@@ -2138,6 +2138,264 @@ PARIS = fought("paris", [PA_FR, wiki("Battle of Paris (1814)", "Battle_of_Paris_
 
 ARMIES_TO_COME = (CHAMPAUBERT, MONTMIRAIL, CHATEAU_THIERRY, VAUCHAMPS, MORMANT, MONTEREAU, BAR_SUR_AUBE, LAUBRESSEL, CRAONNE,
                   LAON, REIMS, LIMONEST, ARCIS, FERE_CHAMPENOISE, SAINT_DIZIER, PARIS)
+
+
+# ================================================================ The allies of La Rothière, Laubressel and Bar-sur-Aube
+
+RO_AL = {"label": "Battle of La Rothière order of battle: the Coalition army (Wikipedia, after Nafziger)",
+         "url": "https://en.wikipedia.org/wiki/Battle_of_La_Rothi%C3%A8re_order_of_battle"}
+RO_AL_NOTE = "After Wikipedia's order of battle for La Rothière, from Nafziger's history of the campaign."
+LIST_AU14 = "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814."
+LIST_BAV14 = "Built from A Clash of Eagles' Bavarian 1812 list, the nearest to 1814; Bavaria had joined the allies in October."
+LIST_WT14 = "Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1814; Württemberg had joined the allies in November."
+LW_BAV = ("The Landwehr battalions, national field battalions raised from the districts' militia, are shown as Line. Brigades "
+          "of single battalions of several regiments have more regiments than the list's brigade takes, which shows as a "
+          "historical departure.")
+BAV_ARTY = ("Each division's cavalry battery, light 6-pdrs with the gunners riding, is the list's Light Artillery, with its "
+            "chevau-légers; its 6-pdr battery is its Foot Battery, and one of the corps' four 12-pdr batteries is with each "
+            "division as its Position Battery.")
+
+
+def ru_again(f, id_, summary, notes):
+    g = again(f, id_, summary, notes)
+    return g
+
+
+RO_LIEVEN = ru_again(MM_LIEVEN, "la-rothiere-lieven",
+    "Sacken's left column, eight thousand infantry, which came on at four against La Rothière with the bayonet, its muskets "
+    "wet with snow, and drove Duhesme's men out of the village.",
+    [LIST_RU, RO_AL_NOTE] + MM_LIEVEN["notes"][2:])
+RO_SHCHERBATOV = ru_again(MM_TALYZIN, "la-rothiere-shcherbatov",
+    "Sacken's right column, beside Lieven's in the attack on La Rothière.",
+    [LIST_RU, RO_AL_NOTE, "Talyzin's 7th Division (the first three brigades) and Bernodessov's 18th (the last three)."] + MM_TALYZIN["notes"][3:])
+RO_SHCHERBATOV["name"], RO_SHCHERBATOV["command"] = "Shcherbatov's Corps", [cmd("ru-div-cmd", "Gen-Lt Prince Shcherbatov")]
+RO_OLSUFIEV = ru_again(CH_OLSUFIEV, "la-rothiere-olsufiev",
+    "Five thousand infantry following Sacken's columns, which threw Rottembourg's first brigade out of La Rothière in the evening.",
+    [LIST_RU, RO_AL_NOTE] + CH_OLSUFIEV["notes"][2:])
+RO_OLSUFIEV["missing"] = []
+RO_VASILCHIKOV = ru_again(MM_VASILCHIKOV, "la-rothiere-vasilchikov",
+    "Sacken's horse. Lanskoy's hussars were driven off by Nansouty's Guard cavalry, but Panchulidzev's dragoons, coming up, "
+    "broke the French horsemen as they reached the Russian infantry and took twenty-four of the Guard's horse guns.",
+    [LIST_RU, RO_AL_NOTE] + MM_VASILCHIKOV["notes"][2:])
+RO_KARPOV = ru_again(MM_KARPOV, "la-rothiere-karpov",
+    "Sacken's Cossacks, which with Biron's Prussians covered the gap between Sacken's corps and the Württembergers.",
+    [LIST_RU, RO_AL_NOTE] + MM_KARPOV["notes"][2:])
+
+RO_PASKEVICH = force(
+    "la-rothiere-paskevich", RU, "Paskevich's Grenadiers", "2nd Grenadier Division, Raevsky's Grenadier Corps", "Russian",
+    "The one division of Barclay's reserve that reached the fight, sent with Grimmer's Austrians to help drive Rottembourg's "
+    "Young Guard out of La Rothière at the last.",
+    [bde("ru-grenadier-brigade", "Pisarev's Brigade", "Maj-Gen Pisarev",
+         regiments=[ru_regt("Kiev Grenadiers", 2, "ru-grenadier"), ru_regt("Moscow Grenadiers", 2, "ru-grenadier")]),
+     bde("ru-grenadier-brigade", "Damas's Brigade", "Maj-Gen Damas",
+         regiments=[ru_regt("Astrakhan Grenadiers", 1, "ru-grenadier"), ru_regt("Fanagoria Grenadiers", 1, "ru-grenadier")]),
+     bde("ru-grenadier-brigade", "Paskevich's Third Brigade",
+         regiments=[ru_regt("Siberia Grenadiers", 2, "ru-grenadier"), ru_regt("Little Russia Grenadiers", 2, "ru-grenadier"),
+                    ru_regt("Emperor Grenadiers", 1, "ru-grenadier")])],
+    command=[cmd("ru-div-cmd", "Maj-Gen Paskevich")],
+    notes=[LIST_RU, RO_AL_NOTE,
+           "The order of battle doesn't name the third brigade's commander.",
+           "Three grenadier brigades, where the list allows one, three regiments in one of them, where it takes two, and "
+           "grenadiers with no infantry brigade to allow them, show as historical departures.",
+           "The corps' three batteries are left out: the order of battle gives them to Raevsky's corps as a whole."])
+
+RO_GYULAI = force(
+    "la-rothiere-gyulai", AU, "Gyulai's Corps", "III Corps, Army of Bohemia", "Austrian",
+    "Twelve thousand Austrian infantry on the allied left, which came into action only at four. Fresnel's division crossed "
+    "the Aube to attack Dienville and its bridge from the west bank and was thrown back, and Hohenlohe's attacked from the "
+    "east bank and was repulsed; Gyulai's 12-pdrs bombarded the village, and Grimmer's brigade was sent to help at La "
+    "Rothière. The Austrians only took Dienville at midnight, after Gérard had gone.",
+    [bde("at-advanced-guard-brigade", "Haecht's Brigade", "Gen-Maj Haecht",
+         units=[u("at-grenz", "I/St George Grenz (IR 6)"), u("at-chevauleger", "Klenau Chevau-légers (7 squadrons)"), u("at-cavalry-arty", "Cavalry Battery")]),
+     bde("at-advanced-guard-brigade", "Trenck's Brigade", "Gen-Maj Trenck",
+         units=[u("at-grenz", "II/St George Grenz (IR 6)"), u("at-dragoon", "Rosenberg Dragoons (6 squadrons)")]),
+     bde("at-line-infantry-brigade", "Pflüger's Brigade", "Gen-Maj Pflüger",
+         units=[u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")],
+         regiments=[regt("Archduke Ludwig Infantry (IR 8)", bns("at-infantry-german", "Archduke Ludwig", 4)),
+                    regt("Würzburg Infantry (IR 7)", bns("at-infantry-german", "Würzburg", 3))]),
+     bde("at-line-infantry-brigade", "Csollich's Brigade", "Gen-Maj Csollich",
+         units=[u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")],
+         regiments=[regt("Kottulinsky Infantry (IR 41)", bns("at-infantry-german", "Kottulinsky", 3)),
+                    regt("Kaiser Infantry (IR 1)", bns("at-infantry-german", "Kaiser", 2))]),
+     bde("at-line-infantry-brigade", "Splény's Brigade", "Gen-Maj Splény",
+         units=[u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")],
+         regiments=[regt("Mariassy Infantry (IR 37)", bns("at-infantry-hungarian", "Mariassy", 2)),
+                    regt("Ignaz Gyulai Infantry (IR 60)", bns("at-infantry-hungarian", "Ignaz Gyulai", 2))]),
+     bde("at-line-infantry-brigade", "Grimmer's Brigade", "Gen-Maj Grimmer",
+         units=[u("at-6pdr-brigade-battery", "6-pdr Brigade Battery")],
+         regiments=[regt("Kollowrat Infantry (IR 36)", bns("at-infantry-german", "Kollowrat", 2)),
+                    regt("Frölich Infantry (IR 28)", bns("at-infantry-german", "Frölich", 3))]),
+     bde("at-reserve-artillery", "Corps Artillery", units=[u("at-position-battery", "12-pdr Position Battery"), u("at-position-battery", "6-pdr Position Battery")])],
+    command=[cmd("at-inf-div-cmd", "FZM Gyulai")],
+    notes=[LIST_AU14, RO_AL_NOTE,
+           "Crenneville's light division is Haecht's and Trenck's brigades, Fresnel's Pflüger's and Csollich's, and Prince Hohenlohe's "
+           "Splény's and Grimmer's. The St George Grenz regiment's two battalions are one with each of Crenneville's brigades.",
+           "The Mariassy and Ignaz Gyulai regiments, recruited in Hungary, are the list's Hungarian infantry.",
+           "Regiments of three and four battalions, where the list takes two Large ones, two advanced guard brigades, where it "
+           "allows one, and four brigade batteries and two position batteries, where it allows three and one, show as "
+           "historical departures."])
+RO_GYULAI["missing"] = [{"name": "A second 6-pdr Position Battery", "reason": "The corps' third reserve battery, more than the list takes."}]
+
+RO_WURTTEMBERG = force(
+    "la-rothiere-wurttemberg", WT, "The Crown Prince of Württemberg's Corps", "IV Corps, Army of Bohemia", "Württemberg",
+    "Twelve thousand infantry and 2,500 horse on the allied right, which took the Beaulieu wood and La Giberie, lost it to "
+    "Victor's infantry and took it again at five, with Petit-Mesnil soon after.",
+    [bde("wt-light-infantry-brigade", "Stockmayer's Brigade", "Gen-Maj von Stockmayer",
+         units=[u("wt-light-infantry", "I/9th (King's) Jäger"), u("wt-light-infantry", "II/9th (King's) Jäger"), u("wt-light-infantry", "10th Light")]),
+     bde("wt-infantry-brigade", "Döring's Brigade", "Gen-Maj von Döring",
+         regiments=[regt("2nd Line (Duke Wilhelm)", bns("wt-line-infantry", "2nd Line", 2)), regt("3rd Line", bns("wt-line-infantry", "3rd Line", 2)),
+                    regt("7th Line", bns("wt-line-infantry", "7th Line", 2))]),
+     bde("wt-infantry-brigade", "Hohenlohe-Kirchberg's Brigade", "Gen-Maj Prince Hohenlohe-Kirchberg",
+         regiments=[regt("4th Line", bns("wt-line-infantry", "4th Line", 2)), regt("6th Line", bns("wt-line-infantry", "6th Line", 2))]),
+     bde("wt-cavalry-brigade", "Alvensleben's Brigade", "Gen-Maj von Alvensleben",
+         units=[u("wt-jager-cavalry", "2nd Jäger zu Pferde (Duke Louis)"), u("wt-chevauleger", "3rd Dragoons (Crown Prince)"),
+                u("wt-horse-arty", "1st Horse Battery")]),
+     bde("wt-cavalry-brigade", "Jett's Brigade", "Gen-Maj von Jett",
+         units=[u("wt-jager-cavalry", "4th Jäger zu Pferde (Prince Adam)"), u("wt-horse-arty", "2nd Horse Battery")]),
+     bde("wt-divisional-artillery", "Divisional Artillery",
+         units=[u("wt-light-arty", "1st Foot Battery"), u("wt-light-arty", "2nd Foot Battery")])],
+    command=[cmd("wt-div-cmd", "Crown Prince of Württemberg")],
+    notes=[LIST_WT14, RO_AL_NOTE,
+           "Koch's infantry division is the three infantry brigades, Prince Adam's cavalry division the two cavalry brigades.",
+           "The horse chasseur regiments are the list's Jäger zu Pferde, and the Crown Prince's dragoons its Chevau-légers.",
+           "Each foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery.",
+           "Two cavalry brigades, where the list allows one for the infantry, three regiments in Döring's brigade and three light "
+           "battalions in Stockmayer's, where the list's take two, and two foot batteries, where it allows one, show as "
+           "historical departures."])
+
+RO_WREDE_AU = force(
+    "la-rothiere-wrede-austrians", AU, "Wrede's Austrians", "Hardegg's and Splény's divisions, V Corps (Wrede)", "Austrian",
+    "The Austrian half of Wrede's corps on the extreme allied right. Its horse got past the French squares about seven in the "
+    "evening and took twenty-one guns.",
+    [bde("at-advanced-guard-brigade", "Geramb's Brigade", "Col Geramb",
+         units=[u("at-grenz", "I/1st Szekler Grenz (IR 14)"), u("at-grenz", "II/1st Szekler Grenz (IR 14)"),
+                u("at-hussar", "Archduke Joseph Hussars (6 squadrons)"), u("at-cavalry-arty", "Cavalry Battery")]),
+     bde("at-advanced-guard-brigade", "Mengen's Brigade", "Col Mengen",
+         units=[u("at-jager", "3rd Jäger Battalion"), u("at-uhlan", "Schwarzenberg Uhlans (6 squadrons)")]),
+     bde("at-line-infantry-brigade", "Splény's Infantry",
+         regiments=[regt("Jordis Infantry (IR 59)", bns("at-infantry-german", "Jordis", 4)),
+                    regt("Archduke Rudolph Infantry (IR 14)", bns("at-infantry-german", "Archduke Rudolph", 4))]),
+     bde("at-light-cavalry-brigade", "Minutillo's Brigade", "Gen-Maj Minutillo",
+         units=[u("at-hussar", "Szekler Hussars (6 squadrons)"), u("at-dragoon", "Knesevich Dragoons (6 squadrons)"), u("at-cavalry-arty", "Cavalry Battery")]),
+     bde("at-reserve-artillery", "Reserve Artillery (Stwrtnik)", units=[u("at-position-battery", "12-pdr Position Battery"), u("at-position-battery", "6-pdr Position Battery")])],
+    command=[cmd("at-inf-div-cmd", "FML Count Hardegg")],
+    notes=[LIST_AU14, RO_AL_NOTE,
+           "Hardegg's 1st Division is Geramb's and Mengen's brigades, and Splény's 2nd Division the infantry, whose brigadier "
+           "isn't known, and Minutillo's cavalry. They were the same regiments as at Hanau.",
+           "Regiments of four battalions, where the list takes two Large ones, one line brigade where the list wants two for "
+           "the force's points, two advanced guard brigades, where it allows one, a cavalry battery with Minutillo's two "
+           "regiments, where it wants three, and two position batteries with eight line battalions, show as historical "
+           "departures."])
+
+def bav_bn(name):
+    return regt(name, [u("bav-line-infantry", name)])
+
+
+RO_RECHBERG = force(
+    "la-rothiere-rechberg", BAV, "Rechberg's Division", "1st Bavarian Division, V Corps (Wrede)", "Bavarian",
+    "Wrede's leading division, with his corps as it reached La Chaise at two, cleared Marmont's men out of the Bois d'Ajou "
+    "at four, and took Chaumesnil and held it against Meunier's Young Guard.",
+    [bde("bav-infantry-brigade", "Prince Karl's Brigade", "Gen-Maj Prince Karl of Bavaria",
+         units=[u("bav-light-infantry", "3rd Light Battalion")],
+         regiments=[regt("1st Line", bns("bav-line-infantry", "1st Line", 2)), bav_bn("I/3rd Line"), bav_bn("I/Oberdonau Landwehr")]),
+     bde("bav-infantry-brigade", "Maillot's Brigade", "Gen-Maj Maillot de la Treille",
+         units=[u("bav-light-infantry", "2nd Light Battalion")],
+         regiments=[bav_bn("III/1st Line"), bav_bn("I/2nd Line"), bav_bn("II/Oberdonau Landwehr")]),
+     bde("bav-cavalry-brigade", "Vieregg's Brigade", "Gen-Maj von Vieregg",
+         units=[u("bav-chevau-leger", "1st Chevau-légers"), u("bav-chevau-leger", "2nd Chevau-légers"), u("bav-chevau-leger", "7th Chevau-légers"),
+                u("bav-light-arty", "Cavalry Battery")]),
+     bde("bav-divisional-artillery", "Divisional Artillery", units=[u("bav-foot-arty", "6-pdr Battery"), u("bav-position-battery", "12-pdr Battery")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt von Rechberg")],
+    notes=[LIST_BAV14, RO_AL_NOTE, LW_BAV, BAV_ARTY,
+           "The 1st Line's battalion in Maillot's brigade is unnumbered in the order of battle; it is shown as the third. Three "
+           "chevau-léger regiments in Vieregg's brigade, where the list's takes two, show as a historical departure."])
+
+RO_BECKERS = force(
+    "la-rothiere-beckers", BAV, "Beckers's Division", "2nd Bavarian Division, V Corps (Wrede)", "Bavarian",
+    "Wrede's second division, following Rechberg's against Chaumesnil on the extreme right of the allied line.",
+    [bde("bav-infantry-brigade", "Pappenheim's Brigade", "Gen-Maj Graf Pappenheim",
+         units=[u("bav-light-infantry", "4th Light Battalion")],
+         regiments=[regt("4th Line", bns("bav-line-infantry", "4th Line", 2)), bav_bn("Salzach Landwehr"), bav_bn("I/Regen Landwehr")]),
+     bde("bav-infantry-brigade", "Zoller's Brigade", "Gen-Maj Freiherr von Zoller",
+         units=[u("bav-light-infantry", "1st Light Battalion")],
+         regiments=[regt("6th Line", bns("bav-line-infantry", "6th Line", 2)), bav_bn("I/Rezat Landwehr")]),
+     bde("bav-cavalry-brigade", "Elbracht's Brigade", "Gen-Maj von Elbracht",
+         units=[u("bav-chevau-leger", "3rd Chevau-légers"), u("bav-chevau-leger", "6th Chevau-légers"), u("bav-light-arty", "Cavalry Battery")]),
+     bde("bav-divisional-artillery", "Divisional Artillery", units=[u("bav-foot-arty", "6-pdr Battery"), u("bav-position-battery", "12-pdr Battery")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt Beckers zu Westerstetten")],
+    notes=[LIST_BAV14, RO_AL_NOTE, LW_BAV, BAV_ARTY])
+
+RO_LAMOTTE = force(
+    "la-rothiere-lamotte", BAV, "Lamotte's Division", "3rd Bavarian Division, V Corps (Wrede)", "Bavarian",
+    "Wrede's third division, with his corps on the extreme allied right; in the dark the Bavarian and Württemberg horse "
+    "charged each other by mistake, which stopped the pursuit.",
+    [bde("bav-infantry-brigade", "Habermann's Brigade", "Gen-Maj von Habermann",
+         regiments=[regt("11th Line", bns("bav-line-infantry", "11th Line", 2)), bav_bn("I/7th Line"), bav_bn("I/Unterdonau Landwehr"),
+                    bav_bn("I/Iller Landwehr")]),
+     bde("bav-infantry-brigade", "Deroy's Brigade", "Gen-Maj von Deroy",
+         regiments=[bav_bn("I/5th Line"), bav_bn("I/8th Line"), bav_bn("I/9th Line"), bav_bn("II/Iller Landwehr"), bav_bn("I/Isar Landwehr")]),
+     bde("bav-cavalry-brigade", "Lamotte's Cavalry",
+         units=[u("bav-chevau-leger", "4th Chevau-légers"), u("bav-chevau-leger", "5th Chevau-légers"), u("bav-light-arty", "Cavalry Battery")]),
+     bde("bav-divisional-artillery", "Divisional Artillery", units=[u("bav-foot-arty", "6-pdr Battery"), u("bav-position-battery", "12-pdr Battery")])],
+    command=[cmd("bav-div-cmd", "Gen-Lt Freiherr von Lamotte")],
+    notes=[LIST_BAV14, RO_AL_NOTE, LW_BAV, BAV_ARTY,
+           "The order of battle is unsure of the cavalry brigade's commander, naming Elbracht with a query; it is shown without him."])
+RO_LAMOTTE["missing"] = [{"name": "The fourth 12-pdr battery", "reason": "One of the corps' four, more than one to each division."}]
+
+RO_BIRON = force(
+    "la-rothiere-biron", PR15, "Biron's Cavalry", "Prussian detachment, with Sacken", "Prussian",
+    "A small Prussian brigade which, with Karpov's Cossacks, covered the gap between Sacken's corps and the Württembergers.",
+    [pc("Biron's Brigade", "Gen-Maj Prince Biron of Courland",
+        [u("pr15-hussar", "2nd Silesian Hussars (2 squadrons)"), u("pr15-hussar", "Silesian National Cavalry (2 squadrons)"),
+         u("pr15-dragoon", "Neumark Dragoons (1 squadron)")])],
+    command=[cmd("pr15-corps-cmd", "Gen-Maj Prince Biron of Courland")],
+    notes=[PR_LIST, RO_AL_NOTE,
+           "Five squadrons in all, with a detachment of Cossacks; each regiment's squadrons are shown as one unit. The Silesian "
+           "National Cavalry, a volunteer regiment, is shown as Hussars, the list's cavalry brigade taking no Landwehr.",
+           "A cavalry brigade with no infantry brigade shows as a historical departure."])
+
+LA_ROTHIERE["forces"] += [RO_LIEVEN, RO_SHCHERBATOV, RO_OLSUFIEV, RO_VASILCHIKOV, RO_KARPOV, RO_PASKEVICH, RO_GYULAI,
+                          RO_WURTTEMBERG, RO_WREDE_AU, RO_RECHBERG, RO_BECKERS, RO_LAMOTTE, RO_BIRON]
+LA_ROTHIERE["sources"].append(RO_AL)
+LA_ROTHIERE["toCome"] = [ru("Barclay's Other Reserves", "Choglokov's 1st Grenadier Division and Golitsyn's cuirassiers, Russian Reserve",
+                            "Marched back and forth through the day without coming into action.")]
+LA_ROTHIERE["alliances"] = [["Russian", "Austrian", "Württemberg", "Bavarian", "Prussian"]]
+
+# --- Laubressel and Bar-sur-Aube: the corps of La Rothière, a month on
+
+LB_AL_NOTE = ("After Wikipedia's order of battle for La Rothière, a month before; Laubressel's own order of battle gives the "
+              "allied corps only by division.")
+
+
+def a_month_on(f, id_, summary, note=LB_AL_NOTE):
+    return again(f, id_, summary, [f["notes"][0], note] + f["notes"][2:])
+
+
+LB_GYULAI = a_month_on(RO_GYULAI, "laubressel-gyulai",
+    "Gyulai's Austrians, about ten thousand, on the allied left, which attacked the French at Silvarouvres.")
+LB_WURTTEMBERG = a_month_on(RO_WURTTEMBERG, "laubressel-wurttemberg",
+    "About fifteen thousand Württembergers on the allied left: Prince Adam's cavalry stood idle, and Koch's and Döring's "
+    "infantry followed Macdonald towards Sens.")
+LB_WREDE = [a_month_on(f, f["id"].replace("la-rothiere", "laubressel"), summ) for f, summ in (
+    (RO_WREDE_AU, "Hardegg's Austrians, who led Wrede's corps towards Montiéramey while its guns opened the attack."),
+    (RO_RECHBERG, "Rechberg's Bavarians, who attacked towards Courteranges and Troyes."),
+    (RO_BECKERS, "Beckers's Bavarians, with the rest of Wrede's corps in the advance on Troyes."),
+    (RO_LAMOTTE, "Lamotte's Bavarians, with the rest of Wrede's corps in the advance on Troyes."))]
+LAUBRESSEL["forces"] += LB_WREDE + [LB_WURTTEMBERG, LB_GYULAI]
+LAUBRESSEL["sources"].append(RO_AL)
+LAUBRESSEL["toCome"] = [t for t in LAUBRESSEL["toCome"] if t["side"] in ("French", "Russian")]
+
+BA_AL_NOTE = ("After Wikipedia's order of battle for La Rothière, four weeks before; Bar-sur-Aube's account names Wrede's "
+              "corps but gives none of its own.")
+BA_WREDE = [a_month_on(f, f["id"].replace("la-rothiere", "bar-sur-aube"), summ, BA_AL_NOTE) for f, summ in (
+    (RO_WREDE_AU, "Wrede's Austrians, who came on against Oudinot beside Wittgenstein's Russians."),
+    (RO_RECHBERG, "Wrede's leading Bavarian division in the attack on Oudinot's position."),
+    (RO_BECKERS, "Wrede's second Bavarian division in the attack on Oudinot's position."),
+    (RO_LAMOTTE, "Wrede's third Bavarian division in the attack on Oudinot's position."))]
+BAR_SUR_AUBE["forces"] += BA_WREDE
+BAR_SUR_AUBE["sources"].append(RO_AL)
+BAR_SUR_AUBE["toCome"] = [t for t in BAR_SUR_AUBE["toCome"] if t["side"] == "Russian"]
+BAR_SUR_AUBE["alliances"] = [["Russian", "Bavarian", "Austrian"]]
 
 
 if __name__ == "__main__":
