@@ -3086,6 +3086,70 @@ LAON["forces"] += [LA_VUICH, LA_KRASOVSKY, LA_LAPTEV, LA_STROGANOV, LA_CHERNYSHE
 LAON["toCome"] = [t for t in LAON["toCome"] if t["name"] != "Winzingerode's Corps"]
 
 
+# ================================================================ Limonest: Augereau's Army of Lyon
+
+LI_FR = {"label": "French Army of Lyon, 20 February 1814 (Nafziger Collection 814BDO)", "url": NAF + "814BDO.pdf"}
+LI_NOTE = ("After Nafziger's return of Augereau's Army of Lyon on 20 February, a month before Limonest, from de Tournon's "
+           "notes on the invasion of the Lyonnais. It gives brigades' strengths, not battalions'.")
+LI_ARTY = "Nafziger gives the army's artillery as 27 guns and 800 gunners; a foot battery is with each infantry division here."
+
+LI_MUSNIER = force(
+    "limonest-musnier", FR, "Musnier's Division", "Lyon Reserve Division, Army of Lyon (Augereau)", "French",
+    "Augereau's left before Lyon, which drew back when the Austrians got round behind it.",
+    [bde("fr-infantry-brigade", "Ordonneau's Brigade", "Gén. de Brigade Ordonneau",
+         regiments=[bn_list("fr-line-infantry", "20th Line", ["1", "2"]), bn_list("fr-line-infantry", "67th Line", ["1", "2"]),
+                    bn_list("fr-line-infantry", "2nd Toulon Regiment", ["1", "2"])]),
+     bde("fr-infantry-brigade", "Attached", regiments=[bn("fr-line-infantry", "1/145th Line")]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "Foot Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Musnier")],
+    notes=[LIST_FR, LI_NOTE,
+           "Ordonneau's 20th and 67th Line had 2,300 men together and the 2nd Toulon Regiment 1,250; each regiment is shown as two "
+           "battalions. The 1/145th Line, 580 men, is a brigade of its own here, as the list's brigade takes three regiments.",
+           LI_ARTY])
+LI_MUSNIER["missing"] = [{"name": "Pouchelon's brigade", "reason": "About 3,100 men arriving in Lyon one after another, whose battalions Nafziger doesn't give."}]
+
+LI_PANNETIER = force(
+    "limonest-pannetier", FR, "Pannetier's Division", "2nd (Catalonia) Division, Army of Lyon", "French",
+    "Veterans from the army in Catalonia, which held Dardilly and gave it up when its flank was turned, losing its six guns.",
+    [bde("fr-infantry-brigade", "Gudin's Brigade", "Gén. de Brigade Gudin",
+         regiments=[bn_list("fr-line-infantry", "7th Line", ["1", "2"]), bn_list("fr-light-infantry", "23rd Léger", ["1", "2"])]),
+     bde("fr-infantry-brigade", "Estève's Brigade", "Gén. de Brigade Estève",
+         regiments=[bn_list("fr-line-infantry", "16th Line", ["1", "2"]), bn_list("fr-light-infantry", "1st Léger", ["1", "2"])]),
+     bde("fr-divisional-artillery", "Divisional Artillery", units=[u("fr-foot-arty", "Foot Battery")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Pannetier")],
+    notes=[LIST_FR, LI_NOTE,
+           "Each brigade had about 2,400 men; each regiment is shown as two battalions.", LI_ARTY,
+           "Two light regiments, where the list allows one in the division, show as a historical departure."])
+
+LI_DIGEON = force(
+    "limonest-digeon", FR, "Digeon's Cavalry", "Cavalry Division, Army of Lyon", "French",
+    "Augereau's cavalry, which covered Grange-Blanche and the withdrawal into Lyon.",
+    [bde("fr-heavy-cavalry-brigade", "Cuirassiers", units=[u("fr-cuirassier", "13th Cuirassiers")]),
+     bde("fr-light-cavalry-brigade", "Hussars",
+         units=[u("fr-hussar-regt", "4th Hussars"), u("fr-hussar-regt", "12th Hussars"), u("fr-hussar-regt", "Gardes d'Honneur")])],
+    command=[cmd("fr-div-cmd", "Gén. de Division Digeon")],
+    notes=[LIST_FR, LI_NOTE,
+           "The three regiments had 1,850 men, the Gardes d'Honneur 350 more. Nafziger gives them without brigades. " + GARDES,
+           "Wikipedia's account gives Digeon infantry too at Limonest, and Beurmann's brigade; they aren't on this return.",
+           "Three hussar regiments, where the list's brigade takes two, and cavalry with no infantry brigade, show as historical "
+           "departures."])
+
+LI_REMOND = force(
+    "limonest-remond", FR, "Rémond's National Guards", "National Guard Reserve Brigade, Army of Lyon", "French",
+    "National Guards of Augereau's reserve.",
+    [bde("fr-infantry-brigade", "Rémond's Brigade", "Gén. de Brigade Rémond",
+         regiments=[one("fr-line-infantry", "1st National Guard Battalion"), one("fr-line-infantry", "2nd National Guard Battalion")])],
+    command=[cmd("fr-div-cmd", "Gén. de Brigade Rémond")],
+    notes=[LIST_FR, LI_NOTE, "Two battalions of 1,500 men in all. " + TR_NG,
+           "Wikipedia's account, after Nafziger's history, gives Rémond 3,425 National Guards and nine guns at Limonest."])
+
+LIMONEST.update(fought("limonest", [LI_FR, wiki("Battle of Limonest", "Battle_of_Limonest")],
+    [LI_MUSNIER, LI_PANNETIER, LI_DIGEON, LI_REMOND],
+    [fr("Bardet's Division", "Nîmes Reserve Division, Army of Lyon",
+        "About 4,400 men on the east bank of the Saône, which covered the retreat; Nafziger doesn't give its battalions.")]
+    + [t for t in LIMONEST["toCome"] if t["side"] != "French"]))
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)

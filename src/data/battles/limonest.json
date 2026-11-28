@@ -20,45 +20,347 @@
   "summary": "Augereau's army, which had held the Rhône valley against the Austrians since January, was beaten before Lyon at Limonest by the Prince of Hesse-Homburg, and Lyon fell next day.",
   "sources": [
     {
+      "label": "French Army of Lyon, 20 February 1814 (Nafziger Collection 814BDO)",
+      "url": "https://www.napoleon-series.org/nafzigger/814BDO.pdf"
+    },
+    {
       "label": "Battle of Limonest (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Limonest"
     }
   ],
-  "forces": [],
+  "forces": [
+    {
+      "id": "limonest-musnier",
+      "nationId": "france",
+      "name": "Musnier's Division",
+      "formation": "Lyon Reserve Division, Army of Lyon (Augereau)",
+      "side": "French",
+      "summary": "Augereau's left before Lyon, which drew back when the Austrians got round behind it.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's return of Augereau's Army of Lyon on 20 February, a month before Limonest, from de Tournon's notes on the invasion of the Lyonnais. It gives brigades' strengths, not battalions'.",
+        "Ordonneau's 20th and 67th Line had 2,300 men together and the 2nd Toulon Regiment 1,250; each regiment is shown as two battalions. The 1/145th Line, 580 men, is a brigade of its own here, as the list's brigade takes three regiments.",
+        "Nafziger gives the army's artillery as 27 guns and 800 gunners; a foot battery is with each infantry division here.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Musnier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Ordonneau's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Ordonneau",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "20th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/20th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/20th Line"
+                }
+              ]
+            },
+            {
+              "name": "67th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/67th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/67th Line"
+                }
+              ]
+            },
+            {
+              "name": "2nd Toulon Regiment",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/2nd Toulon Regiment"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/2nd Toulon Regiment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Attached",
+          "regiments": [
+            {
+              "name": "145th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/145th Line"
+                }
+              ]
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ],
+      "missing": [
+        {
+          "name": "Pouchelon's brigade",
+          "reason": "About 3,100 men arriving in Lyon one after another, whose battalions Nafziger doesn't give."
+        }
+      ]
+    },
+    {
+      "id": "limonest-pannetier",
+      "nationId": "france",
+      "name": "Pannetier's Division",
+      "formation": "2nd (Catalonia) Division, Army of Lyon",
+      "side": "French",
+      "summary": "Veterans from the army in Catalonia, which held Dardilly and gave it up when its flank was turned, losing its six guns.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's return of Augereau's Army of Lyon on 20 February, a month before Limonest, from de Tournon's notes on the invasion of the Lyonnais. It gives brigades' strengths, not battalions'.",
+        "Each brigade had about 2,400 men; each regiment is shown as two battalions.",
+        "Nafziger gives the army's artillery as 27 guns and 800 gunners; a foot battery is with each infantry division here.",
+        "Two light regiments, where the list allows one in the division, show as a historical departure.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Pannetier",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Gudin's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Gudin",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "7th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/7th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/7th Line"
+                }
+              ]
+            },
+            {
+              "name": "23rd Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/23rd Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/23rd Léger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Estève's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Estève",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "16th Line",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1/16th Line"
+                },
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2/16th Line"
+                }
+              ]
+            },
+            {
+              "name": "1st Léger",
+              "units": [
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "1/1st Léger"
+                },
+                {
+                  "unit": "fr-light-infantry",
+                  "name": "2/1st Léger"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "fr-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "fr-foot-arty",
+              "name": "Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "limonest-digeon",
+      "nationId": "france",
+      "name": "Digeon's Cavalry",
+      "formation": "Cavalry Division, Army of Lyon",
+      "side": "French",
+      "summary": "Augereau's cavalry, which covered Grange-Blanche and the withdrawal into Lyon.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's return of Augereau's Army of Lyon on 20 February, a month before Limonest, from de Tournon's notes on the invasion of the Lyonnais. It gives brigades' strengths, not battalions'.",
+        "The three regiments had 1,850 men, the Gardes d'Honneur 350 more. Nafziger gives them without brigades. The Gardes d'Honneur, raised in 1813 from young men of means who equipped themselves and rode dressed as hussars, are the list's Hussars.",
+        "Wikipedia's account gives Digeon infantry too at Limonest, and Beurmann's brigade; they aren't on this return.",
+        "Three hussar regiments, where the list's brigade takes two, and cavalry with no infantry brigade, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Division Digeon",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-heavy-cavalry-brigade",
+          "name": "Cuirassiers",
+          "units": [
+            {
+              "unit": "fr-cuirassier",
+              "name": "13th Cuirassiers"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "fr-light-cavalry-brigade",
+          "name": "Hussars",
+          "units": [
+            {
+              "unit": "fr-hussar-regt",
+              "name": "4th Hussars"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "12th Hussars"
+            },
+            {
+              "unit": "fr-hussar-regt",
+              "name": "Gardes d'Honneur"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "limonest-remond",
+      "nationId": "france",
+      "name": "Rémond's National Guards",
+      "formation": "National Guard Reserve Brigade, Army of Lyon",
+      "side": "French",
+      "summary": "National Guards of Augereau's reserve.",
+      "notes": [
+        "Built from A Clash of Eagles' French 1812 list, the nearest to 1814: there is no list for the army Napoleon fought with in France, of the veterans of 1813, conscripts called up that winter and battalions drawn from depots across the Empire.",
+        "After Nafziger's return of Augereau's Army of Lyon on 20 February, a month before Limonest, from de Tournon's notes on the invasion of the Lyonnais. It gives brigades' strengths, not battalions'.",
+        "Two battalions of 1,500 men in all. Its National Guards, raised that winter from the departments, are shown as Line; the list's Wavering or Morale 5 would suit them better.",
+        "Wikipedia's account, after Nafziger's history, gives Rémond 3,425 National Guards and nine guns at Limonest.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "fr-div-cmd",
+          "name": "Gén. de Brigade Rémond",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "fr-infantry-brigade",
+          "name": "Rémond's Brigade",
+          "commander": {
+            "name": "Gén. de Brigade Rémond",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "1st National Guard Battalion",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "1st National Guard Battalion"
+                }
+              ]
+            },
+            {
+              "name": "2nd National Guard Battalion",
+              "units": [
+                {
+                  "unit": "fr-line-infantry",
+                  "name": "2nd National Guard Battalion"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "toCome": [
     {
       "side": "French",
-      "name": "Musnier's Division",
-      "formation": "1st Division, Army of the Rhône (Augereau)",
-      "summary": "Withdrew when the Austrians got behind it.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Pannetier's Division",
-      "formation": "2nd Division, Army of the Rhône",
-      "summary": "Held Dardilly, and gave it up when its flank was turned, losing its six guns.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
       "name": "Bardet's Division",
-      "formation": "3rd Division, Army of the Rhône",
-      "summary": "On the east bank of the Saône; it covered the retreat.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Digeon's Division",
-      "formation": "Cavalry Division, Army of the Rhône",
-      "summary": "The army's cavalry, with infantry besides, covering Grange-Blanche and the withdrawal.",
-      "flag": "/flags/france.svg"
-    },
-    {
-      "side": "French",
-      "name": "Rémond's Reserve",
-      "formation": "Army of the Rhône",
-      "summary": "National Guards, three and a half thousand with nine guns.",
+      "formation": "Nîmes Reserve Division, Army of Lyon",
+      "summary": "About 4,400 men on the east bank of the Saône, which covered the retreat; Nafziger doesn't give its battalions.",
       "flag": "/flags/france.svg"
     },
     {
