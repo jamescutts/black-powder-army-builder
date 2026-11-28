@@ -44,6 +44,10 @@
     {
       "label": "Battle of Montereau (Wikipedia)",
       "url": "https://en.wikipedia.org/wiki/Battle_of_Montereau"
+    },
+    {
+      "label": "Allied IV Corps (Württemberg), 15 February 1814 (Nafziger Collection 814BDG)",
+      "url": "https://www.napoleon-series.org/nafzigger/814BDG.pdf"
     }
   ],
   "forces": [
@@ -555,6 +559,295 @@
           "reason": "A detachment of National Guard infantry with the corps."
         }
       ]
+    },
+    {
+      "id": "montereau-wurttemberg",
+      "nationId": "wurttemberg",
+      "name": "The Crown Prince of Württemberg's Corps",
+      "formation": "IV Corps, Army of Bohemia",
+      "side": "Württemberg",
+      "summary": "The corps left to hold the heights on the north bank before Montereau and cover the bridges, which held off Victor's morning attacks and Gérard's afternoon ones until the line broke, and was driven down into the town and over the bridges with Pajol's horsemen among it; Jett's cavalry covered the retreat.",
+      "notes": [
+        "Built from A Clash of Eagles' Württemberg 1812 list, the nearest to 1814; Württemberg had joined the allies in November.",
+        "After Nafziger's return of the IV Corps on 15 February, three days before Montereau, from Hiller's history of the campaign.",
+        "Koch's infantry is Döring's and Hohenlohe-Kirchberg's brigades, and Stockmayer's light brigade was with the advance guard. The horse chasseur regiments are the list's Jäger zu Pferde, and the Crown Prince's dragoons its Chevau-légers.",
+        "Each foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery.",
+        "The Archduke Ferdinand Hussars, Austrians with the advance guard, are with Schäffer's brigade; an Austrian pioneer company is left out.",
+        "Two cavalry brigades, where the list allows one for the infantry, two Jäger zu Pferde regiments in Jett's brigade, where it takes one, and three regiments in Döring's brigade and four light battalions in Stockmayer's, where the list's take two, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "wt-div-cmd",
+          "name": "Crown Prince of Württemberg",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "wt-cavalry-brigade",
+          "name": "Alvensleben's Advance Guard",
+          "commander": {
+            "name": "Gen-Maj von Alvensleben",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-jager-cavalry",
+              "name": "5th Jäger zu Pferde (4 squadrons)"
+            },
+            {
+              "unit": "wt-horse-arty",
+              "name": "1st Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "wt-light-infantry-brigade",
+          "name": "Stockmayer's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Stockmayer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-light-infantry",
+              "name": "I/9th (King's) Jäger"
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "II/9th (King's) Jäger"
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "I/10th Light"
+            },
+            {
+              "unit": "wt-light-infantry",
+              "name": "II/10th Light"
+            }
+          ]
+        },
+        {
+          "type": "wt-cavalry-brigade",
+          "name": "Jett's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Jett",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "wt-jager-cavalry",
+              "name": "4th Jäger zu Pferde (Prince Adam)"
+            },
+            {
+              "unit": "wt-jager-cavalry",
+              "name": "2nd Jäger zu Pferde (Duke Louis)"
+            },
+            {
+              "unit": "wt-chevauleger",
+              "name": "1st Dragoons (Crown Prince)"
+            },
+            {
+              "unit": "wt-horse-arty",
+              "name": "2nd Horse Battery"
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Döring's Brigade",
+          "commander": {
+            "name": "Gen-Maj von Döring",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "2nd Line (Duke Wilhelm)",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/2nd Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/2nd Line"
+                }
+              ]
+            },
+            {
+              "name": "3rd Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/3rd Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/3rd Line"
+                }
+              ]
+            },
+            {
+              "name": "7th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/7th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/7th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-infantry-brigade",
+          "name": "Hohenlohe-Kirchberg's Brigade",
+          "commander": {
+            "name": "Gen-Maj Prince Hohenlohe-Kirchberg",
+            "variant": "Staff rating 8"
+          },
+          "regiments": [
+            {
+              "name": "4th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/4th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/4th Line"
+                }
+              ]
+            },
+            {
+              "name": "6th Line",
+              "units": [
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "I/6th Line"
+                },
+                {
+                  "unit": "wt-line-infantry",
+                  "name": "II/6th Line"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "wt-divisional-artillery",
+          "name": "Divisional Artillery",
+          "units": [
+            {
+              "unit": "wt-light-arty",
+              "name": "1st Foot Battery"
+            },
+            {
+              "unit": "wt-light-arty",
+              "name": "2nd Foot Battery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "montereau-schaffer",
+      "nationId": "austria",
+      "name": "Schäffer's Brigade",
+      "formation": "Austrian brigade attached to the IV Corps",
+      "side": "Austrian",
+      "summary": "The Austrians lent to the Crown Prince, who held the park of Surville on the heights until the French broke in; Schäffer was taken.",
+      "notes": [
+        "Built from A Clash of Eagles' Austrian 1812 list, the nearest to 1814.",
+        "After Nafziger's return of the IV Corps on 15 February, three days before Montereau, from Hiller's history of the campaign.",
+        "Wikipedia's account gives the brigade the Gyulai and Esterházy regiments as well; Nafziger gives only these two. Both are shown as German infantry.",
+        "The Archduke Ferdinand Hussars rode with the Württembergers' advance guard; they are here, as the Württemberg list can't take them.",
+        "The Zach regiment's three battalions, where the list takes two Large ones, and two batteries with five battalions, where it wants six for a brigade battery and nine for a position battery, show as historical departures.",
+        "Commanders are at Staff Rating 8, the default for historical forces."
+      ],
+      "command": [
+        {
+          "unit": "at-inf-div-cmd",
+          "name": "Gen-Maj Schäffer",
+          "variant": "Staff rating 8"
+        }
+      ],
+      "brigades": [
+        {
+          "type": "at-line-infantry-brigade",
+          "name": "Schäffer's Brigade",
+          "commander": {
+            "name": "Gen-Maj Schäffer",
+            "variant": "Staff rating 8"
+          },
+          "units": [
+            {
+              "unit": "at-6pdr-brigade-battery",
+              "name": "6-pdr Foot Battery (Jerasky)"
+            }
+          ],
+          "regiments": [
+            {
+              "name": "Colloredo Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Colloredo"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Colloredo"
+                }
+              ]
+            },
+            {
+              "name": "Zach Infantry",
+              "units": [
+                {
+                  "unit": "at-infantry-german",
+                  "name": "I/Zach"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "II/Zach"
+                },
+                {
+                  "unit": "at-infantry-german",
+                  "name": "III/Zach"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "at-light-cavalry-brigade",
+          "name": "Attached Hussars",
+          "units": [
+            {
+              "unit": "at-hussar",
+              "name": "Archduke Ferdinand Hussars (5 squadrons)"
+            }
+          ],
+          "commander": {
+            "variant": "Staff rating 8"
+          }
+        },
+        {
+          "type": "at-reserve-artillery",
+          "name": "Attached Artillery",
+          "units": [
+            {
+              "unit": "at-position-battery",
+              "name": "12-pdr Foot Battery (Weigel)"
+            }
+          ]
+        }
+      ]
     }
   ],
   "toCome": [
@@ -571,20 +864,6 @@
       "formation": "Friant's Old Guard and Ney's Young Guard divisions, Nansouty's Guard cavalry and the Guard artillery",
       "summary": "The Guard's forty guns were decisive in the afternoon; how far its infantry fought is not clear.",
       "flag": "/flags/france.svg"
-    },
-    {
-      "side": "Württemberg",
-      "name": "The Crown Prince of Württemberg's Corps",
-      "formation": "Koch's infantry and Prince Adam's cavalry divisions, IV Corps, Army of Bohemia",
-      "summary": "Held the heights on the north bank before Montereau, with four batteries, until the line broke in the afternoon; Jett's cavalry brigade covered the retreat.",
-      "flag": "/flags/wurttemberg.svg"
-    },
-    {
-      "side": "Austrian",
-      "name": "Schäffer's Brigade",
-      "formation": "Attached to the IV Corps",
-      "summary": "Four Austrian infantry regiments and the Archduke Ferdinand Hussars, which held the park of Surville; Schäffer was taken.",
-      "flag": "/flags/austria.svg"
     }
   ]
 }

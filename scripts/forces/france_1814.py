@@ -2882,6 +2882,63 @@ LAON["sources"].append(LA_AL)
 LAON["toCome"] = [t for t in LAON["toCome"] if t["side"] != "Prussian"]
 
 
+# ================================================================ Montereau: the Crown Prince of Württemberg's corps
+
+MT_AL = {"label": "Allied IV Corps (Württemberg), 15 February 1814 (Nafziger Collection 814BDG)", "url": NAF + "814BDG.pdf"}
+MT_AL_NOTE = "After Nafziger's return of the IV Corps on 15 February, three days before Montereau, from Hiller's history of the campaign."
+
+MT_WURTTEMBERG = force(
+    "montereau-wurttemberg", WT, "The Crown Prince of Württemberg's Corps", "IV Corps, Army of Bohemia", "Württemberg",
+    "The corps left to hold the heights on the north bank before Montereau and cover the bridges, which held off Victor's "
+    "morning attacks and Gérard's afternoon ones until the line broke, and was driven down into the town and over the "
+    "bridges with Pajol's horsemen among it; Jett's cavalry covered the retreat.",
+    [bde("wt-cavalry-brigade", "Alvensleben's Advance Guard", "Gen-Maj von Alvensleben",
+         units=[u("wt-jager-cavalry", "5th Jäger zu Pferde (4 squadrons)"), u("wt-horse-arty", "1st Horse Battery")]),
+     bde("wt-light-infantry-brigade", "Stockmayer's Brigade", "Gen-Maj von Stockmayer",
+         units=[u("wt-light-infantry", "I/9th (King's) Jäger"), u("wt-light-infantry", "II/9th (King's) Jäger"),
+                u("wt-light-infantry", "I/10th Light"), u("wt-light-infantry", "II/10th Light")]),
+     bde("wt-cavalry-brigade", "Jett's Brigade", "Gen-Maj von Jett",
+         units=[u("wt-jager-cavalry", "4th Jäger zu Pferde (Prince Adam)"), u("wt-jager-cavalry", "2nd Jäger zu Pferde (Duke Louis)"),
+                u("wt-chevauleger", "1st Dragoons (Crown Prince)"), u("wt-horse-arty", "2nd Horse Battery")]),
+     bde("wt-infantry-brigade", "Döring's Brigade", "Gen-Maj von Döring",
+         regiments=[regt("2nd Line (Duke Wilhelm)", bns("wt-line-infantry", "2nd Line", 2)), regt("3rd Line", bns("wt-line-infantry", "3rd Line", 2)),
+                    regt("7th Line", bns("wt-line-infantry", "7th Line", 2))]),
+     bde("wt-infantry-brigade", "Hohenlohe-Kirchberg's Brigade", "Gen-Maj Prince Hohenlohe-Kirchberg",
+         regiments=[regt("4th Line", bns("wt-line-infantry", "4th Line", 2)), regt("6th Line", bns("wt-line-infantry", "6th Line", 2))]),
+     bde("wt-divisional-artillery", "Divisional Artillery", units=[u("wt-light-arty", "1st Foot Battery"), u("wt-light-arty", "2nd Foot Battery")])],
+    command=[cmd("wt-div-cmd", "Crown Prince of Württemberg")],
+    notes=[LIST_WT14, MT_AL_NOTE,
+           "Koch's infantry is Döring's and Hohenlohe-Kirchberg's brigades, and Stockmayer's light brigade was with the advance "
+           "guard. The horse chasseur regiments are the list's Jäger zu Pferde, and the Crown Prince's dragoons its Chevau-légers.",
+           "Each foot battery, four 6-pdrs and two howitzers, is the list's Light Artillery.",
+           "The Archduke Ferdinand Hussars, Austrians with the advance guard, are with Schäffer's brigade; an Austrian pioneer "
+           "company is left out.",
+           "Two cavalry brigades, where the list allows one for the infantry, two Jäger zu Pferde regiments in Jett's brigade, "
+           "where it takes one, and three regiments in Döring's brigade and four light battalions in Stockmayer's, where the "
+           "list's take two, show as historical departures."])
+
+MT_SCHAFFER = force(
+    "montereau-schaffer", AU, "Schäffer's Brigade", "Austrian brigade attached to the IV Corps", "Austrian",
+    "The Austrians lent to the Crown Prince, who held the park of Surville on the heights until the French broke in; "
+    "Schäffer was taken.",
+    [bde("at-line-infantry-brigade", "Schäffer's Brigade", "Gen-Maj Schäffer", units=[u("at-6pdr-brigade-battery", "6-pdr Foot Battery (Jerasky)")],
+         regiments=[regt("Colloredo Infantry", bns("at-infantry-german", "Colloredo", 2)), regt("Zach Infantry", bns("at-infantry-german", "Zach", 3))]),
+     bde("at-light-cavalry-brigade", "Attached Hussars", units=[u("at-hussar", "Archduke Ferdinand Hussars (5 squadrons)")]),
+     bde("at-reserve-artillery", "Attached Artillery", units=[u("at-position-battery", "12-pdr Foot Battery (Weigel)")])],
+    command=[cmd("at-inf-div-cmd", "Gen-Maj Schäffer")],
+    notes=[LIST_AU14, MT_AL_NOTE,
+           "Wikipedia's account gives the brigade the Gyulai and Esterházy regiments as well; Nafziger gives only these two. "
+           "Both are shown as German infantry.",
+           "The Archduke Ferdinand Hussars rode with the Württembergers' advance guard; they are here, as the Württemberg list "
+           "can't take them.",
+           "The Zach regiment's three battalions, where the list takes two Large ones, and two batteries with five battalions, "
+           "where it wants six for a brigade battery and nine for a position battery, show as historical departures."])
+
+MONTEREAU["forces"] += [MT_WURTTEMBERG, MT_SCHAFFER]
+MONTEREAU["sources"].append(MT_AL)
+MONTEREAU["toCome"] = [t for t in MONTEREAU["toCome"] if t["side"] == "French"]
+
+
 if __name__ == "__main__":
     for b in (BRIENNE, LA_ROTHIERE) + ARMIES_TO_COME:
         write(b)
